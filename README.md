@@ -1,5 +1,5 @@
 <center>
-  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo.png" width=500>
+  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png" width=500>
 </center>
 
 "Dare games" are games which push people's boundaries, and they are usually deeply problematic (perhaps because they were invented by middle schoolers). 
@@ -14,7 +14,9 @@ To play this game, you will need the following:
 * A LOT of Interconnectable game pieces in multiple colors. Something like [this](https://www.temu.com/goods.html?goods_id=601099525129549) or [this](https://www.aliexpress.us/item/2251832777869544.html).
   * If you want to play with 10 players, you will need 10 colors, and at least 10 pieces in each color (so 10x10 = 100 total pieces minimum).
   * For 16 players at least 16 pieces of each of 16 different colors (at least 256 pieces).
-  * Note that our attempts at ordering these interlocking pieces have resulted in lots of some colors and very few of others, so don't assume that you will receive an even number of each color.
+  * Note that our attempts at ordering these interlocking pieces have resulted in lots of some colors and very few of others, so don't assume that you will receive an even number of each color. 
+* Green, yellow, and red poker chips, like [these](https://www.aliexpress.us/item/2251832503659677.html) for keeping score (and voting). The number of green chips should be roughly 5 times the number of players. Yellow represents 5 and red represents 10, so you will need fewer of those colors.
+* An opaque cloth bag, for secret voting, such as [this one](https://www.aliexpress.us/item/3256806296143911.html).
 * [Custom game cards](https://github.com/DaringGames/ShoelessWinkers/tree/main/Cards). You can paste them onto real game cards, or onto blank game cards. You should have:
   * 2 build-up cards
   * 14 theme cards
