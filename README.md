@@ -2,12 +2,24 @@
   <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png" width=500>
 </center>
 
-"Dare games" are games which push people's boundaries, and they are usually deeply problematic (perhaps because they were invented by middle schoolers). 
- * They often have poor consent dynamics, with people doing things because they feel pressured by others
- * Sometimes dares happen which could be physically dangerous or damage relationships
- * Dare games need a way to keep their premise (Giving people an excuse to try boundary-pushing activities and see others do them) while allowing people to smoothly opt out of things they don't want to do or see.
+**Shoeless Winkers** is a game of escalating dares that go as far as possible, but never too far!
 
-**Shoeless Winkers** is a board game of party dares for 3-16 players which attempts to improve these dymanics. The game is currently under construction, and early assets have been published here for play testing.
+**What to Expect**
+
+ * **Solo & Pair Dares:** Take on challenges alone or with a partner, with each dare becoming more daring than the last.
+ * **Consent Cards:** Before pair dares, players privately share their willingness to participate, ensuring everyone is comfortable.
+ * **Escalating Dares:** The first dares start simple (taking off your shoes or winking flirtatiously) but become more daring until your group reaches their limit.
+
+**How the Game Flows**
+
+ * **Choose a theme:** Will you do creative dares? Humiliating dares? Food dares? There are 14 theme cards to choose from.
+ * **On your turn:** Complete a pair dare, do a solo dare, start a drink, or pass.
+ * **Rewards accumulate:** Less chosen options become more valuable each turn they are not chosen. 
+ * **New Dares:** Once someone completes the highest dare, a new harder dare is proposed and voted on.
+ * **Find your limit:** Play ends when dares no longer escalate, and the player with the most points wins.
+
+Dive in and have fun! How far will your group go?
+
 
 To play this game, you will need the following:
 * [The game board](https://github.com/DaringGames/ShoelessWinkers/blob/main/Game%20Board/20x20GameBoard.png), which is designed to be printed on a [20x20 inch quad-fold game board](https://www.amazon.com/dp/B07THLWG3G).
