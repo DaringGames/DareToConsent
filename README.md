@@ -6,17 +6,18 @@
 
 **What to Expect**
 
- * **Solo & Pair Dares:** Take on challenges alone or with a partner, with each dare becoming more daring than the last.
- * **Consent Cards:** Before pair dares, players privately share their willingness to participate, ensuring everyone is comfortable.
- * **Escalating Dares:** The first dares start simple (taking off your shoes or winking flirtatiously) but become more daring until your group reaches their limit.
+ * **Solo & Pair Dares:** Take on challenges alone or with a partner, with each dare becoming more daring than the last
+ * **Consent Cards:** Before two-person dares, players privately share their willingness to participate, ensuring full consent
+ * **Escalating Dares:** TThe first dares start simple, but become more daring until your group reaches their limit
+ * **Secret Vetos:** Anonymously prevent dares that go to far
 
 **How the Game Flows**
 
- * **Choose a theme:** Will you do creative dares? Humiliating dares? Food dares? There are 14 theme cards to choose from.
- * **On your turn:** Complete a pair dare, do a solo dare, start a drink, or pass.
- * **Rewards accumulate:** Less chosen options become more valuable each turn they are not chosen.
- * **New Dares:** Once someone completes the highest dare, a new harder dare is proposed and voted on.
- * **Find your limit:** Play ends when dares no longer escalate, and the player with the most points wins.
+ * **Choose a theme:** Will you do creative dares? Humiliating dares? Food dares? There are 14 theme cards to choose from
+ * **On your turn:** Complete a pair dare, do a solo dare, start a drink, or pass
+ * **Rewards accumulate:** Less chosen options become more valuable each turn they are not chosen
+ * **New Dares:** Once someone completes the highest dare, a new harder dare is proposed and voted on
+ * **Find your limit:** Play ends when dares no longer escalate, and the player with the most points wins
 
 Dive in and have fun! How far will your group go?
 
