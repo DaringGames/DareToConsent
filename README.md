@@ -8,7 +8,7 @@
 
  * **Solo & Pair Dares:** Take on challenges alone or with a partner, with each dare becoming more daring than the last
  * **Consent Cards:** Before two-person dares, players privately share their willingness to participate, ensuring full consent
- * **Escalating Dares:** TThe first dares start simple, but become more daring until your group reaches their limit
+ * **Escalating Dares:** The first dares start simple, but become more daring until your group reaches their limit
  * **Secret Vetos:** Anonymously prevent dares that go to far
 
 **How the Game Flows**
