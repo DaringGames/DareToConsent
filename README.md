@@ -1,6 +1,6 @@
-<center>
+<p align="center">
   <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png" width=500>
-</center>
+</p>
 
 **Shoeless Winkers** is a game of escalating dares that go as far as possible, but never too far!
 
@@ -11,6 +11,10 @@
  * **Escalating Dares:** The first dares start simple, but become more daring until your group reaches their limit
  * **Secret Vetos:** Anonymously prevent dares that go to far
 
+<p align="center">
+  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/promo%20art/Consent%20Card%20Examples.png" width=800>
+</p>
+
 **How the Game Flows**
 
  * **Choose a theme:** Will you do creative dares? Humiliating dares? Food dares? There are 14 theme cards to choose from
@@ -18,6 +22,10 @@
  * **Rewards accumulate:** Less chosen options become more valuable each turn they are not chosen
  * **New Dares:** Once someone completes the highest dare, a new harder dare is proposed and voted on
  * **Find your limit:** Play ends when dares no longer escalate, and the player with the most points wins
+
+<p align="center">
+  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/promo%20art/Theme%20Card%20Examples.png" width=800>
+</p>
 
 Dive in and have fun! How far will your group go?
 
