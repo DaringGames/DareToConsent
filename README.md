@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png" width=500>
+  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png?raw=true" width=500>
 </p>
 
 **Shoeless Winkers** is a game of escalating dares that go as far as possible, but never too far!
@@ -12,7 +12,7 @@
  * **Never too far:** Anyone can prevent dares that go to far
 
 <p align="center">
-  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/promo%20art/Consent%20Card%20Examples.png" width=800>
+  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/promo%20art/Consent%20Card%20Examples.png?raw=true" width=800>
 </p>
 
 **How the Game Flows**
@@ -23,7 +23,7 @@
  * **Find your limit:** Play ends when dares no longer escalate, and the player with the most points wins
 
 <p align="center">
-  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/promo%20art/Theme%20Card%20Examples.png" width=800>
+  <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/promo%20art/Theme%20Card%20Examples.png?raw=true" width=800>
 </p>
 
 Dive in and have fun! How far will your group go?
