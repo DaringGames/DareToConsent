@@ -2,11 +2,11 @@
   <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png?raw=true" width=500>
 </p>
 
-**Shoeless Winkers** is a game of escalating dares that go as far as possible, but never too far!
+**Shoeless Winkers** is a game of escalating two-person dares that go as far as possible, but never too far!
 
 **What to Expect**
 
- * **Two-person Dares:** Take on two-person challenges with another player, with each dare more daring than the last
+ * **Two-person Dares:** Take on challenges with another player, with each dare more daring than the last
  * **Consent Cards:** Before each dare, players privately share their willingness to participate, ensuring full consent
  * **Escalating Dares:** The first dares start simple, but become more daring until your group reaches their limit
  * **Never too far:** Anyone can prevent dares that go to far
