@@ -1,4 +1,10 @@
-<h2>Would you play Spin-the-Bottle if it only chose people who want to kiss each other?</h2>
+<h2>Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?</h2>
+
+Imagine . . .
+
+. . . the bottle is rigged, and knows who wants to kiss who
+
+. . . a game of truth-or-dare, completely pressure-free
 
 <p align="center">
   <img src="https://github.com/DaringGames/ShoelessWinkers/blob/main/Logo%20White%20BG.png?raw=true" width=500>
