@@ -40,7 +40,7 @@ Dive in and have fun! How far will your group go?
 This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
 * [Custom game cards](https://github.com/DaringGames/ShoelessWinkers/blob/main/Cards/HomePrinting.pdf). You should have:
   * 14 theme cards
-  * 3 consent cards for each player, in different colors. For 10 players you would have 30 consent cards, 3 in each color.
+  * 3 consent cards for each player, in different colors
 * A [dare menu](https://github.com/DaringGames/ShoelessWinkers/blob/main/PDFs/Dare%20Menu.pdf) for your group to write down their escalating dares.
 * A pen or pencil to write new dares and tally points
 
