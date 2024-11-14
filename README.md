@@ -45,3 +45,10 @@ To play this game, you will need the following:
 * A pen or pencil to write new dares and tally points
 
 Once you have everything, read [the instructions](https://github.com/DaringGames/ShoelessWinkers/blob/main/PDFs/InstructionsBooklet.pdf) and give the game a try. Please let us know your experience and suggestions!
+
+
+**Backstory**
+
+This game was inspired by a conversation with my school-age children, in which they were telling me how they would improve various board games. I jokingly challenged them to improve spin-the-bottle, and they answered that they would improve it by banning it!
+
+Upon reflection, I realized that there are a lot of things wrong with spin-the-bottle and similar games such as truth-or-dare. I wondered if it was possible to update these games to keep the excitement while losing the pressure. I challenged myself to make a dare game that values enthiastic consent, and can be as tame or as exciting as the players want it to be. Shoeless Winkers is the result.
