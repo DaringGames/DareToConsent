@@ -38,7 +38,7 @@ Dive in and have fun! How far will your group go?
 
 
 This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
-* [Custom game cards](https://github.com/DaringGames/ShoelessWinkers/blob/main/Cards/HomePrinting.pdf). You should have:
+* [Custom game cards](https://github.com/DaringGames/ShoelessWinkers/blob/main/Cards/HomePrinting.pdf)*. You should have:
   * 14 theme cards
   * 3 consent cards for each player, in different colors
 * A [dare menu](https://github.com/DaringGames/ShoelessWinkers/blob/main/PDFs/Dare%20Menu.pdf) for your group to write down their escalating dares.
@@ -52,3 +52,5 @@ Once you have everything, read [the instructions](https://github.com/DaringGames
 This game was inspired by a conversation with my school-age children, in which they were telling me how they would improve various board games. I jokingly challenged them to improve spin-the-bottle, and they answered that they would improve it by banning it!
 
 Upon reflection, I realized that there are a lot of things wrong with spin-the-bottle and similar games such as truth-or-dare. I wondered if it was possible to update these games to keep the excitement while losing the pressure. I challenged myself to make a dare game that values enthusiastic consent, and can be as tame or as exciting as the players want it to be. Shoeless Winkers is the result.
+
+\* My placeholder artwork is a combination of hand-drawn, public domain, and AI-generated. Once I am completely satisfied with the gameplay I'll look into better art.
