@@ -25,24 +25,19 @@ Imagine . . .
 
 **How the Game Flows**
 
- * **Choose a theme:** Will you do creative dares? Humiliating dares? Food dares? There are 14 theme cards to choose from
+ * **Choose a theme:** Will you do creative dares? Humiliating dares? Food dares? There are 16 theme cards to choose from
  * **On your turn:** Choose a dare from the menu, and collect consent cards from other players to see who might join you
  * **New Dares:** Once someone completes the biggest dare, they choose the next dare, with each dare more daring than the last
  * **Who is the most daring?:** First player to 20 points is the winner
-
-<p align="center">
-  <img src="https://github.com/DaringGames/DareToConsent/blob/main/promo%20art/Theme%20Card%20Examples.png?raw=true" width=800>
-</p>
 
 Dive in and have fun! How far will your group go?
 
 
 This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
 * [Custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf)*. You should have:
-  * 14 theme cards
+  * 16 theme cards
   * 3 consent cards for each player, in different colors
-* A [dare menu](https://github.com/DaringGames/DareToConsent/blob/main/PDFs/Dare%20Menu.pdf) for your group to write down their escalating dares.
-* A pen or pencil to write new dares and tally points
+* A piece of paper and pencil for your group's dare menu and to tally points
 
 Once you have everything, read [the instructions](https://github.com/DaringGames/DareToConsent/blob/main/PDFs/InstructionsBooklet.pdf) and give the game a try. Please let us know your experience and suggestions!
 
