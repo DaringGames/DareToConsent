@@ -6,11 +6,12 @@ Imagine . . .
 
 . . . a game of truth-or-dare, completely pressure-free
 
+**Dare to Consent** is a game of escalating two-person dares that go as far as possible, but never too far!
+
 <p align="center">
   <img src="https://github.com/DaringGames/DareToConsent/blob/main/Logo%20White%20BG.png?raw=true" width=500>
 </p>
 
-**Dare to Consent** is a game of escalating two-person dares that go as far as possible, but never too far!
 
 **What to Expect**
 
