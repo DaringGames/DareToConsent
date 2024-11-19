@@ -32,6 +32,7 @@ Imagine . . .
 
 Dive in and have fun! How far will your group go?
 
+**You can Play Right Now**
 
 This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
 * [Custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf)*. You should have:
