@@ -26,7 +26,7 @@ Imagine . . .
 
 **How the Game Flows**
 
- * **Choose a theme:** Will you do creative dares? Humiliating dares? Sensual dares? Food dares? SThere are 16 theme cards to choose from
+ * **Choose a theme:** Will you do creative dares? Humiliating dares? Sensual dares? Food dares? There are 16 theme cards to choose from
  * **On your turn:** Choose a dare from the menu, and collect consent cards from other players to see who might join you
  * **New Dares:** Once someone completes the biggest dare, they choose the next dare, with each dare more daring than the last
  * **Who is the most daring?:** First player to 20 points is the winner
