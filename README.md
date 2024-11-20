@@ -9,7 +9,7 @@ Imagine . . .
 **Dare to Consent** is a game of escalating two-person dares that go as far as possible, but never too far!
 
 <p align="center">
-  <img src="https://github.com/DaringGames/DareToConsent/blob/main/Logo%20White%20BG.png?raw=true" width=500>
+  <img src="https://github.com/DaringGames/DareToConsent/blob/main/Logo%20White%20BG.png?raw=true" width=200>
 </p>
 
 
