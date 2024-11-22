@@ -16,9 +16,9 @@ Imagine . . .
 **What to Expect**
 
  * **Two-person Dares:** Take on challenges with another player, with each dare more daring than the last
- * **Consent Cards:** Before each dare, players privately share their willingness to participate, ensuring full consent
  * **Escalating Dares:** The first dares start simple, but become more daring until your group reaches their limit
  * **Never too far:** Anyone can prevent dares that go to far
+ * **Consent Cards:** Before each dare, players privately share their willingness to participate, ensuring full consent
 
 <p align="center">
   <img src="https://github.com/DaringGames/DareToConsent/blob/main/promo%20art/Consent%20Card%20Examples.png?raw=true" width=800>
