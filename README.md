@@ -38,7 +38,7 @@ Dive in and have fun! How far will your group go?
 This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
 * [Custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf)*. You should have:
   * 16 theme cards
-  * 3 consent cards for each player, in different colors
+  * 3 consent cards for each player
 * A piece of paper and pencil for your group's dare menu and to tally points
 
 Once you have everything, read [the instructions](https://github.com/DaringGames/DareToConsent/blob/main/PDFs/InstructionsBooklet.pdf) and give the game a try. Please let us know your experience and suggestions!
