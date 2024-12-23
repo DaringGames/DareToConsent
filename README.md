@@ -50,4 +50,4 @@ This game was inspired by a conversation with my school-age children, in which t
 
 Upon reflection, I realized that there are a lot of things wrong with spin-the-bottle and similar games such as truth-or-dare. I wondered if it was possible to update these games to keep the excitement while losing the pressure. I challenged myself to make a dare game that values enthusiastic consent, and can be as tame or as exciting as the players want it to be. Dare to Consent is the result.
 
-\* My placeholder artwork is a combination of hand-drawn, public domain, and AI-generated. Once I am completely satisfied with the gameplay I'll look into better art.
+\* Art is in the process of being improved by [Poppy Albright](https://www.behance.net/poppyalbright).
