@@ -1,47 +1,16 @@
 <h2>Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?</h2>
 
-Imagine . . .
-
-. . . the bottle is rigged, and knows who wants to kiss who
-
-. . . a game of truth-or-dare, completely pressure-free
-
-**Dare to Consent** is a game of escalating two-person dares that go as far as possible, but never too far!
-
-<p align="center">
-  <img src="https://github.com/DaringGames/DareToConsent/blob/main/Logo%20White%20BG.png?raw=true" width=200>
-</p>
-
-
-**What to Expect**
-
- * **Two-person Dares:** Take on challenges with another player, with each dare more daring than the last
- * **Escalating Dares:** The first dares start simple, but become more daring until your group reaches their limit
- * **Consent Cards:** Before each dare, players privately share their willingness to participate, ensuring full consent
+In **Dare to Consent**, you choose a two-person dare from the menu, then privately collect consent cards to see who might join you:
 
 <p align="center">
   <img src="https://github.com/DaringGames/DareToConsent/blob/main/promo%20art/Consent%20Card%20Examples.png?raw=true" width=800>
 </p>
 
-**How the Game Flows**
-
- * **Choose a theme:** Will you do creative dares? Humiliating dares? Sensual dares? Food dares? There are 15 themes to choose from
- * **On your turn:** Choose a dare from the menu, and collect consent cards from other players to see who might join you
- * **New Dares:** Once someone completes the biggest dare, they choose the next dare, with each dare more daring than the last
- * **Who is the most daring?:** First player to 20 points is the winner
-
-Dive in and have fun! How far will your group go?
+If you do the biggest dare on the menu, you get to choose the next even bigger dare, until your group reaches their limit.
 
 **You can Play Right Now**
 
-This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
-* [Custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf?raw=true)*. You should have:
-  * 15 theme cards
-  * 3 consent cards for each player
-* A piece of paper and pencil for your group's dare menu and to tally points
-
-Once you have everything, read [the instructions](https://github.com/DaringGames/DareToConsent/blob/main/PDFs/InstructionsBooklet.pdf) and give the game a try. Please let us know your experience and suggestions!
-
+Print our [custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf?raw=true), read [the instructions](https://github.com/DaringGames/DareToConsent/blob/main/PDFs/InstructionsBooklet.pdf), then gather your most adventurous friends and give it a try. How far will your group go? Please let us know your experience and suggestions!
 
 **Backstory**
 
