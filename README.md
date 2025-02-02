@@ -17,7 +17,6 @@ Imagine . . .
 
  * **Two-person Dares:** Take on challenges with another player, with each dare more daring than the last
  * **Escalating Dares:** The first dares start simple, but become more daring until your group reaches their limit
- * **Never too far:** Anyone can prevent dares that go to far
  * **Consent Cards:** Before each dare, players privately share their willingness to participate, ensuring full consent
 
 <p align="center">
@@ -36,7 +35,7 @@ Dive in and have fun! How far will your group go?
 **You can Play Right Now**
 
 This game is in play testing and is not yet for sale. To play this game, you will need to print out the assets. You will need the following:
-* [Custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf)*. You should have:
+* [Custom game cards](https://github.com/DaringGames/DareToConsent/blob/main/Cards/HomePrinting.pdf?raw=true)*. You should have:
   * 15 theme cards
   * 3 consent cards for each player
 * A piece of paper and pencil for your group's dare menu and to tally points
@@ -46,8 +45,6 @@ Once you have everything, read [the instructions](https://github.com/DaringGames
 
 **Backstory**
 
-This game was inspired by a conversation with my school-age children, in which they were telling me how they would improve various board games. I jokingly challenged them to improve spin-the-bottle, and they answered that they would improve it by banning it!
+This game was inspired by a conversation with my children, in which they were telling me how they would improve various board games. I jokingly challenged them to improve spin-the-bottle, and they answered that they would improve it by banning it!
 
 Upon reflection, I realized that there are a lot of things wrong with spin-the-bottle and similar games such as truth-or-dare. I wondered if it was possible to update these games to keep the excitement while losing the pressure. I challenged myself to make a dare game that values enthusiastic consent, and can be as tame or as exciting as the players want it to be. Dare to Consent is the result.
-
-\* Art is in the process of being improved by [Poppy Albright](https://www.behance.net/poppyalbright).
