@@ -6,7 +6,7 @@ In **Dare to Consent**, you choose a two-person dare from the menu, then private
   <img src="https://github.com/DaringGames/DareToConsent/blob/main/promo%20art/Consent%20Card%20Examples.png?raw=true" width=800>
 </p>
 
-If you do the biggest dare on the menu, you get to choose the next even bigger dare, until your group reaches their limit.
+If you do the biggest dare on the menu, you get to choose the next even bigger dare. The dares keep escalating until your group reaches their limit.
 
 **You can Play Right Now**
 
