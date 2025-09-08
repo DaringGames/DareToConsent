@@ -1,0 +1,123 @@
+{
+  "Awkward": {
+    "name": "Awkward",
+    "starts": [
+      { "title": "Both players make silly faces at each other", "extra": "Also, make strange noises" },
+      { "title": "Both players maintain 10 seconds of eye contact", "extra": "... with your foreheads almost touching" }
+    ],
+    "suggestions": ["Maintain eye contact for 60 seconds","Compliment each other awkwardly","Tell a goofy secret","Do an awkward slow clap","Pretend you just met on a bad date"]
+  },
+  "Creative": {
+    "name": "Creative",
+    "starts": [
+      { "title": "Start a sentence for the other player to finish", "extra": "Also, make the sentence rhyme" },
+      { "title": "Pretend you are a mirror image of the other player", "extra": "... while the other player dances" }
+    ],
+    "suggestions": ["Improvise a 2-line poem","Draw a picture of each other in the air","Invent a 5‑second handshake","Speak only in movie quotes","Mime a short story together"]
+  },
+  "Cuddly": {
+    "name": "Cuddly",
+    "starts": [
+      { "title": "Both players shake hands with each other", "extra": "... warmly, using both hands and eye contact" },
+      { "title": "Give each other a side-hug", "extra": "Also, hold it 20 seconds and synch breathing" }
+    ],
+    "suggestions": ["Full hug for 10 seconds","Hand massage for 20 seconds","Sit shoulder‑to‑shoulder","Hold hands for a minute","Lean heads together quietly"]
+  },
+  "Daring": {
+    "name": "Daring",
+    "starts": [
+      { "title": "Both players wink at each other dramatically", "extra": "Also, compliment each other" },
+      { "title": "Both players take off their shoes", "extra": "Also, invent a wacky handshake with your feet" }
+    ],
+    "suggestions": ["Try a short trust fall","Speak a bold compliment","Attempt a silly stunt","Balance something together","Do a dramatic entrance"]
+  },
+  "Disgusting": {
+    "name": "Disgusting",
+    "starts": [
+      { "title": "Both players make yucky faces at each other", "extra": "Also, make gross, nasty noises" },
+      { "title": "Both players touch their foreheads to the floor", "extra": "... and also sniff the floor" }
+    ],
+    "suggestions": ["Describe a gross food memory","Pretend to chew something awful","Smell each other's socks (briefly)","Name the worst smell you know","Invent a nasty potion (no drinking)"]
+  },
+  "Exhausting": {
+    "name": "Exhausting",
+    "starts": [
+      { "title": "Both players stretch as high as they can", "extra": "... while jumping as high as they can" },
+      { "title": "The larger player will try to pick up the smaller", "extra": "... and carry them around the room" }
+    ],
+    "suggestions": ["20 jumping jacks together","Wall‑sit side‑by‑side","Plank and high‑five","Race in place for 30 seconds","Do a silly push‑up together"]
+  },
+  "Humiliating": {
+    "name": "Humiliating",
+    "starts": [
+      { "title": "Both players stare at each other disdainfully", "extra": "Also, criticize each other's appearance" },
+      { "title": "Both players disclose something embarrassing", "extra": "Also, mock the other player's disclosure" }
+    ],
+    "suggestions": ["Tell your most awkward moment","Read a cringe text (summarize)","Attempt a bad impression","Sing off‑key on purpose","Describe your dorkiest outfit"]
+  },
+  "Inedible": {
+    "name": "Inedible",
+    "starts": [
+      { "title": "Both players choose a mild spice/sauce to taste", "extra": "Choose something spicy or gross" },
+      { "title": "Both taste a random food from the fridge", "extra": "Choose for each other" }
+    ],
+    "suggestions": ["Blindfold taste test (safe items)","Mix two harmless sauces","Describe a terrible recipe","Pretend to be food critics","Create a menu of cursed dishes"]
+  },
+  "Intimate": {
+    "name": "Intimate",
+    "starts": [
+      { "title": "Both players disclose a hope, dream, or flaw", "extra": "... Make it something secret or embarrassing" },
+      { "title": "Maintain eye contact for ten seconds", "extra": "Also, try to synchronize your breathing" }
+    ],
+    "suggestions": ["Share a hidden talent","Whisper a compliment","Hold hands and breathe together","Tell a private wish","Describe your perfect day"]
+  },
+  "Juvenile": {
+    "name": "Juvenile",
+    "starts": [
+      { "title": "Both players make silly faces at each other", "extra": "Also, make immature noises" },
+      { "title": "Both players look up each other's noses", "extra": "Also, describe boogers like an avid archeologist" }
+    ],
+    "suggestions": ["Tell a fart joke","Walk like a dinosaur","Speak only in kid voices","Pretend the floor is lava","Act out a cartoon scene"]
+  },
+  "Kinky": {
+    "name": "Kinky",
+    "starts": [
+      { "title": "Both players describe a kink they have heard of", "extra": "Both players disclose a kink they have" },
+      { "title": "Both players swat themselves", "extra": "Both players gently swat each other" }
+    ],
+    "suggestions": ["Define a safe word together","Describe a playful boundary","Compliment a favorite body part","Role‑play a polite request","Share a fictional fantasy premise"]
+  },
+  "Messy": {
+    "name": "Messy",
+    "starts": [
+      { "title": "Both players muss up their own hair", "extra": "Muss up each other's hair" },
+      { "title": "Both players smear food around their mouths", "extra": "Help each other apply the food" }
+    ],
+    "suggestions": ["Draw face paint with ketchup/mustard","Make a shaving‑cream mustache","Stack napkins as costumes","Build a tiny food tower","Wear a silly hat you make now"]
+  },
+  "Risky": {
+    "name": "Risky",
+    "starts": [
+      { "title": "Toss a piece of food into the other player's mouth", "extra": "If it falls on the floor, thrower has to eat it" },
+      { "title": "Balance a cup of water on each other's head", "extra": "... Make it a cup of milk or soda" }
+    ],
+    "suggestions": ["Flip a coin and obey","Walk backwards eyes closed (spotter)","Balance a book while dancing","Juggle soft items","Do a trust lean"]
+  },
+  "Sensual": {
+    "name": "Sensual",
+    "starts": [
+      { "title": "Both players wink at each other flirtatiously", "extra": "Also, compliment each other's appearance" },
+      { "title": "Both players take off shoes (keep them off)", "extra": "Also, play footsie with each other" }
+    ],
+    "suggestions": ["Describe something you find attractive","Trace a heart on the other's palm","Share your favorite scent","Exchange gentle compliments","Synchronize slow movements"]
+  },
+  "Wacky": {
+    "name": "Wacky",
+    "starts": [
+      { "title": "Both players make faces at each other", "extra": "... while babbling incoherently" },
+      { "title": "Both players make up a bizarre dance", "extra": "... while chanting each other's name" }
+    ],
+    "suggestions": ["Speak only in gibberish","Invent a new animal sound","Swap shoes and strut","Pretend gravity changes","Do opposite actions for 30s"]
+  }
+}
+

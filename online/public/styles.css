@@ -1,0 +1,24 @@
+:root{ --bg:#0f1115; --fg:#e7e9ee; --muted:#9aa0aa; --accent:#7cacf8; }
+*{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+body{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+#app{ max-width:900px; margin:0 auto; padding:16px; }
+h1,h2,h3{ margin:8px 0; }
+.card{ background:#151821; border:1px solid #232838; border-radius:12px; padding:12px; margin:10px 0; }
+.row{ display:flex; gap:8px; align-items:center; }
+.col{ display:flex; flex-direction:column; gap:8px; }
+input,select,button,textarea{ width:100%; padding:10px 12px; border-radius:10px; border:1px solid #2a3145; background:#0d1018; color:var(--fg); }
+button.primary{ background:var(--accent); color:#081020; font-weight:700; border:none; }
+.players{ display:flex; flex-wrap:wrap; gap:6px; }
+.pill{ padding:6px 10px; border-radius:999px; border:1px solid #333a55; background:#1b2030; }
+.pill.name{ color:#081020; font-weight:600; }
+.grid{ display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+.grid > :only-child{ grid-column: 1 / -1; }
+.menu{ list-style:none; padding:0; margin:0; }
+.menu li{ padding:10px; border:1px solid #2a3145; border-radius:8px; margin:6px 0; }
+.qr{ display:flex; justify-content:center; }
+small{ color:var(--muted); }
+.table{ width:100%; border-collapse:collapse; }
+.table th,.table td{ border-bottom:1px solid #2a3145; padding:6px; }
+.response-HECK_YES{ color:#7CFC00; font-weight:700; }
+.response-YES_PLEASE{ color:#ffd166; font-weight:700; }
+.response-NO_THANKS{ color:#ef476f; font-weight:700; }
