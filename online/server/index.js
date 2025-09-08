@@ -102,6 +102,26 @@ io.on('connection', (socket) => {
     emitRoom(room);
   });
 
+  socket.on('room:leave', () => {
+    const code = joinInfo.roomCode;
+    if (!code) return;
+    const room = rooms.get(code);
+    if (!room) return;
+    const idx = room.players.findIndex(p => p.id === joinInfo.playerId);
+    if (idx >= 0) room.players.splice(idx, 1);
+    socket.leave(code);
+    console.log(`[room:leave] ${code}`);
+    // Reset join info so further emits don't go to old room
+    joinInfo = { roomCode: null, playerId: null };
+    if (room) {
+      // If turn order exists, remove and normalize
+      if (room.turn?.order) {
+        room.turn.order = room.turn.order.filter(id => id !== (room.players[idx]?.id));
+      }
+      io.to(code).emit('room:state', roomPublicState(room));
+    }
+  });
+
   socket.on('room:peek', ({ code }) => {
     const room = rooms.get(code);
     if (!room) return socket.emit('room:peek:result', { ok: false });

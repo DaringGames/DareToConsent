@@ -4,6 +4,7 @@ body{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.4 system-ui, 
 #app{ max-width:900px; margin:0 auto; padding:16px; }
 h1,h2,h3{ margin:8px 0; }
 .card{ background:#151821; border:1px solid #232838; border-radius:12px; padding:12px; margin:10px 0; }
+.panel{ background:#1b2230; border-color:#2b3348; box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
 .row{ display:flex; gap:8px; align-items:center; }
 .col{ display:flex; flex-direction:column; gap:8px; }
 input,select,button,textarea{ width:100%; padding:10px 12px; border-radius:10px; border:1px solid #2a3145; background:#0d1018; color:var(--fg); }
@@ -12,6 +13,15 @@ button.primary{ background:var(--accent); color:#081020; font-weight:700; border
 .pill{ padding:6px 10px; border-radius:999px; border:1px solid #333a55; background:#1b2030; }
 .pill.name{ color:#081020; font-weight:600; }
 .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+.grid-landing{ display:grid; grid-template-columns: 1fr auto 1fr; gap:12px; align-items:stretch; }
+.grid-landing.single{ grid-template-columns: 1fr; }
+.grid-landing .or{ display:flex; align-items:center; justify-content:center; color:var(--fg); font-weight:700; letter-spacing:0.15em; text-transform:uppercase; opacity:0.85; }
+.grid-landing .or::before, .grid-landing .or::after{ content:""; height:1px; background:#2a3145; flex:1; margin:0 10px; }
+@media (max-width: 700px){
+  .grid{ grid-template-columns: 1fr; }
+  .grid-landing{ grid-template-columns: 1fr; }
+  /* Keep DOM order so the OR separator sits between Join and Create */
+}
 .grid > :only-child{ grid-column: 1 / -1; }
 .menu{ list-style:none; padding:0; margin:0; }
 .menu li{ padding:10px; border:1px solid #2a3145; border-radius:8px; margin:6px 0; }
@@ -22,3 +32,16 @@ small{ color:var(--muted); }
 .response-HECK_YES{ color:#7CFC00; font-weight:700; }
 .response-YES_PLEASE{ color:#ffd166; font-weight:700; }
 .response-NO_THANKS{ color:#ef476f; font-weight:700; }
+
+/* Dare buttons with extra challenge */
+.dare-btn{ text-align:left; display:block; }
+.dare-btn-title{ font-weight:700; }
+.dare-btn-extra{ margin-top:4px; font-size:0.9em; opacity:0.95; }
+
+/* Pretty overlay dialogs */
+#overlay-root{ position:relative; z-index: 9999; }
+.overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.5); display:none; align-items:center; justify-content:center; padding:16px; z-index: 10000; }
+.overlay.show{ display:flex; }
+.overlay .modal{ max-width:520px; width:100%; border-color:#2a3145; }
+.overlay .modal .modal-message{ white-space:pre-wrap; }
+.overlay .modal .modal-buttons{ margin-top:10px; justify-content:flex-end; }

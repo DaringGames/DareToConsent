@@ -27,25 +27,25 @@ function titleView(){
   return `
   <div class="card">
     <h1>Dare to Consent</h1>
-    <p>Start a room or join one with a 3-word code.</p>
-    <div class="grid">
-      ${codeInHash ? '' : `
-      <div class="card">
-        <h3>Create Game</h3>
-        <input id="create-name" placeholder="Your name" />
-        <label for="create-theme"><small>Theme</small></label>
-        <select id="create-theme">
-          ${THEMES ? Object.keys(THEMES).map(k=>`<option value="${k}" ${k===selectedTheme?'selected':''}>${THEMES[k].name}</option>`).join('') : `<option value="Sensual" selected>Sensual</option>`}
-        </select>
-        <button class="primary" id="create-btn">Create</button>
-      </div>
-      `}
-      <div class="card">
+    <p>Join a game or create a new one</p>
+    <div class="grid-landing${codeInHash ? ' single' : ''}">
+      <div class="card panel">
         <h3>Join Game</h3>
         <input id="join-code" placeholder="three-words-like-this" value="${codeInHash}" />
         <input id="join-name" placeholder="Your name" />
         <button class="primary" id="join-btn">Join</button>
       </div>
+      ${codeInHash ? '' : `<div class="or">or</div>`}
+      ${codeInHash ? '' : `
+        <div class="card panel">
+          <h3>Create Game</h3>
+          <select id="create-theme">
+            ${THEMES ? Object.keys(THEMES).map(k=>`<option value="${k}" ${k===selectedTheme?'selected':''}>Theme: ${THEMES[k].name} Dares</option>`).join('') : `<option value="Sensual" selected>Theme: Sensual Dares</option>`}
+          </select>
+          <input id="create-name" placeholder="Your name" />
+          <button class="primary" id="create-btn">Create</button>
+        </div>
+      `}
     </div>
   </div>`;
 }
@@ -91,7 +91,10 @@ function dareButtonsHtml(){
   const r = state.room; if (!r) return '';
   const list = r.dareMenu || [];
   return `<div class="grid">${list.map((d,i)=>`
-    <button class="primary" data-dare-select="${i}">${d.title}</button>
+    <button class="primary dare-btn" data-dare-select="${i}">
+      <div class="dare-btn-title">${d.title}</div>
+      ${d.extra ? `<div class="dare-btn-extra">🌶️ ${d.extra} 🌶️</div>` : ''}
+    </button>
   `).join('')}</div>`;
 }
 
@@ -207,6 +210,13 @@ function render(){
   root.innerHTML = html;
 
   // wiring
+  const doJoin = ()=>{
+    const code = ($('#join-code')?.value || '').trim().toLowerCase();
+    const name = ($('#join-name')?.value || '').trim() || 'Player';
+    if (!code) return; // need a room code
+    state.me = { name };
+    socket.emit('room:join', { code, name });
+  };
   $('#create-btn')?.addEventListener('click', ()=>{
     const name = $('#create-name').value.trim()||'Player';
     const sel = $('#create-theme');
@@ -217,12 +227,9 @@ function render(){
   $('#create-theme')?.addEventListener('change', (e)=>{
     selectedTheme = e.target.value || 'Sensual';
   });
-  $('#join-btn')?.addEventListener('click', ()=>{
-    const code = $('#join-code').value.trim().toLowerCase();
-    const name = $('#join-name').value.trim()||'Player';
-    state.me = { name };
-    socket.emit('room:join', { code, name });
-  });
+  $('#join-btn')?.addEventListener('click', doJoin);
+  $('#join-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
+  $('#join-code')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
   $('#start-game')?.addEventListener('click', ()=>{
     const key = selectedTheme || 'Sensual';
     const seed = seedForTheme(key);
@@ -231,11 +238,14 @@ function render(){
   });
 
   // Dare selection buttons with confirmation
-  $$('#app [data-dare-select]')?.forEach(btn=>btn.addEventListener('click', ()=>{
+  $$('#app [data-dare-select]')?.forEach(btn=>btn.addEventListener('click', async ()=>{
     const index = +btn.getAttribute('data-dare-select');
     const d = state?.room?.dareMenu?.[index];
     const title = d?.title || 'this dare';
-    if (confirm(`Use this dare?\n\n${title}`)) {
+    const lines = [title];
+    if (d?.extra) lines.push('', `🌶️ ${d.extra} 🌶️`);
+    const ok = await showConfirm(lines.join('\n'), { confirmText:'Use Dare', cancelText:'Cancel' });
+    if (ok) {
       socket.emit('turn:selectDare', { index });
     }
   }));
@@ -294,6 +304,78 @@ function prefillFromHash(){
   setTimeout(()=>{ const input = document.querySelector('#join-code'); if (input && !input.value) input.value = code; }, 0);
 }
 
+// Handle user navigating to a different #room while in a game
+window.addEventListener('hashchange', async ()=>{
+  const newCode = location.hash?.slice(1);
+  const current = state?.room?.code;
+  if (current && newCode && newCode !== current) {
+    const ok = await showConfirm(`Leave this game and join ${newCode}?`, { confirmText:'Leave & Join', cancelText:'Stay' });
+    if (ok) {
+      // Leave current room on server and go back to landing to join
+      socket.emit('room:leave');
+      state.room = null;
+      render();
+      prefillFromHash();
+    } else {
+      // Revert hash to current room code
+      try { history.replaceState(null, '', `#${current}`); } catch { location.hash = current; }
+    }
+  }
+});
+
 render();
 loadThemes();
 prefillFromHash();
+
+// --- Pretty overlay dialogs ---
+function ensureOverlayRoot(){
+  let root = document.getElementById('overlay-root');
+  if (!root) {
+    root = document.createElement('div');
+    root.id = 'overlay-root';
+    document.body.appendChild(root);
+  }
+  return root;
+}
+
+function showConfirm(message, { confirmText='OK', cancelText='Cancel' }={}){
+  return new Promise(resolve => {
+    const host = ensureOverlayRoot();
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.innerHTML = `
+      <div class="modal card">
+        <div class="modal-content">
+          <p class="modal-message"></p>
+          <div class="row modal-buttons">
+            <button class="btn-cancel">${cancelText}</button>
+            <button class="primary btn-ok">${confirmText}</button>
+          </div>
+        </div>
+      </div>`;
+    host.appendChild(overlay);
+
+    const msgEl = overlay.querySelector('.modal-message');
+    // Preserve line breaks
+    msgEl.textContent = '';
+    (message||'').toString().split('\n').forEach((line, i) => {
+      if (i>0) msgEl.appendChild(document.createElement('br'));
+      msgEl.appendChild(document.createTextNode(line));
+    });
+
+    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>overlay.remove(), 150); };
+    const decide = (val) => { cleanup(); resolve(val); };
+
+    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(false); });
+    overlay.querySelector('.btn-cancel').addEventListener('click', ()=>decide(false));
+    overlay.querySelector('.btn-ok').addEventListener('click', ()=>decide(true));
+
+    const onKey = (e)=>{
+      if (e.key === 'Escape') { e.preventDefault(); decide(false); }
+      if (e.key === 'Enter') { e.preventDefault(); decide(true); }
+    };
+    document.addEventListener('keydown', onKey, { once:true });
+
+    requestAnimationFrame(()=>overlay.classList.add('show'));
+  });
+}
