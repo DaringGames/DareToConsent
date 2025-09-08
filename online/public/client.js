@@ -17,6 +17,7 @@ const COLOR_HEX = {
 
 let state = { room:null, me:{ name:'', color:'' } };
 let local = { addAfterComplete:false, lastCompleterId:null };
+let peekedRoom = null;
 
 function navigate(hash){ location.hash = hash; render(); }
 
@@ -24,10 +25,12 @@ let selectedTheme = 'Sensual';
 
 function titleView(){
   const codeInHash = location.hash?.slice(1) || '';
+  const hostName = peekedRoom ? peekedRoom.players.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
+  const subtitle = codeInHash && hostName ? `Join ${hostName}'s game` : 'Join a game or create a new one';
   return `
   <div class="card">
     <h1>Dare to Consent</h1>
-    <p>Join a game or create a new one</p>
+    <p>${subtitle}</p>
     <div class="grid-landing${codeInHash ? ' single' : ''}">
       <div class="card panel">
         <h3>Join Game</h3>
@@ -92,8 +95,8 @@ function dareButtonsHtml(){
   const list = r.dareMenu || [];
   return `<div class="grid">${list.map((d,i)=>`
     <button class="primary dare-btn" data-dare-select="${i}">
-      <div class="dare-btn-title">${d.title}</div>
-      ${d.extra ? `<div class="dare-btn-extra">🌶️ ${d.extra} 🌶️</div>` : ''}
+      <div class="dare-btn-title">Dare: ${d.title}</div>
+      ${d.extra ? `<div class="dare-btn-extra">Extra Challenge: 🌶️ ${d.extra} 🌶️</div>` : ''}
     </button>
   `).join('')}</div>`;
 }
@@ -106,7 +109,8 @@ function chosenDareHtml(){
   if (!d) return '';
   return `<div class="card">
     <h3>Dare</h3>
-    <p><b>${d.title}</b><br/><small>Extra: ${d.extra||'—'}</small></p>
+    <p><b>Dare: ${d.title}</b></p>
+    ${d.extra ? `<p><small>Extra Challenge: 🌶️ ${d.extra} 🌶️</small></p>` : ''}
   </div>`;
 }
 
@@ -138,7 +142,7 @@ function mainView(){
 
   let header = '';
   if (showAddOnly) header = 'Write a new Dare';
-  else if (idx == null) header = isMyTurn ? 'Choose a dare' : `Waiting for ${curPlayer?.name||'Player'}`;
+  else if (idx == null) header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'}`;
   else header = isMyTurn ? 'Complete your Dare or Pass' : 'Submit Your Card';
 
   let body = '';
@@ -163,7 +167,7 @@ function mainView(){
       <div class="card">
         <div class="row">
           <button id="btn-pass">Pass</button>
-          <button id="btn-complete" class="primary">Mark Dare Completed / Next Player</button>
+          <button id="btn-complete" class="primary">Dare Completed</button>
         </div>
       </div>
     ` : `
@@ -178,11 +182,11 @@ function mainView(){
     `;
     body = `
       ${chosenDareHtml()}
-      ${actionCard}
       <div class="card">
         <h3>Responses</h3>
         ${submissionsTable()}
       </div>
+      ${actionCard}
     `;
   }
 
@@ -230,6 +234,7 @@ function render(){
   $('#join-btn')?.addEventListener('click', doJoin);
   $('#join-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
   $('#join-code')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
+  $('#create-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { const name = $('#create-name').value.trim()||'Player'; const sel = $('#create-theme'); if (sel && sel.value && name) { if (sel && sel.value) selectedTheme = sel.value; state.me = { name }; socket.emit('room:create', { name }); } } });
   $('#start-game')?.addEventListener('click', ()=>{
     const key = selectedTheme || 'Sensual';
     const seed = seedForTheme(key);
@@ -242,9 +247,9 @@ function render(){
     const index = +btn.getAttribute('data-dare-select');
     const d = state?.room?.dareMenu?.[index];
     const title = d?.title || 'this dare';
-    const lines = [title];
-    if (d?.extra) lines.push('', `🌶️ ${d.extra} 🌶️`);
-    const ok = await showConfirm(lines.join('\n'), { confirmText:'Use Dare', cancelText:'Cancel' });
+    const lines = [`Dare: ${title}`];
+    if (d?.extra) lines.push(`Extra Challenge: 🌶️ ${d.extra} 🌶️`);
+    const ok = await showConfirm(lines.join('\n'), { title: 'Propose this dare?', confirmText:'Use Dare', cancelText:'Cancel' });
     if (ok) {
       socket.emit('turn:selectDare', { index });
     }
@@ -298,6 +303,13 @@ socket.on('room:state', (room)=>{
 });
 socket.on('player:you', ({ playerId })=>{ state.me.id = playerId; });
 
+socket.on('room:peek:result', (result) => {
+  if (result.ok) {
+    peekedRoom = result.state;
+    render();
+  }
+});
+
 function prefillFromHash(){
   const code = location.hash?.slice(1);
   if (!code) return;
@@ -327,6 +339,10 @@ render();
 loadThemes();
 prefillFromHash();
 
+if (location.hash?.slice(1) && !state.room) {
+  socket.emit('room:peek', { code: location.hash.slice(1) });
+}
+
 // --- Pretty overlay dialogs ---
 function ensureOverlayRoot(){
   let root = document.getElementById('overlay-root');
@@ -338,7 +354,7 @@ function ensureOverlayRoot(){
   return root;
 }
 
-function showConfirm(message, { confirmText='OK', cancelText='Cancel' }={}){
+function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' }={}){
   return new Promise(resolve => {
     const host = ensureOverlayRoot();
     const overlay = document.createElement('div');
@@ -346,6 +362,7 @@ function showConfirm(message, { confirmText='OK', cancelText='Cancel' }={}){
     overlay.innerHTML = `
       <div class="modal card">
         <div class="modal-content">
+          <h3 class="modal-title">${title || ''}</h3>
           <p class="modal-message"></p>
           <div class="row modal-buttons">
             <button class="btn-cancel">${cancelText}</button>
