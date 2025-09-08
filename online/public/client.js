@@ -219,6 +219,8 @@ function render(){
     const name = ($('#join-name')?.value || '').trim() || 'Player';
     if (!code) return; // need a room code
     state.me = { name };
+    // Persist intent so a refresh immediately resumes
+    try { saveSession({ code, name }); } catch {}
     socket.emit('room:join', { code, name });
   };
   $('#create-btn')?.addEventListener('click', ()=>{
@@ -226,6 +228,8 @@ function render(){
     const sel = $('#create-theme');
     if (sel && sel.value) selectedTheme = sel.value;
     state.me = { name };
+    // Persist name so we can resume properly
+    try { saveSession({ name }); } catch {}
     socket.emit('room:create', { name });
   });
   $('#create-theme')?.addEventListener('change', (e)=>{
@@ -263,6 +267,8 @@ function render(){
     // After completing the most daring dare, show ONLY the add UI
     local.addAfterComplete = !!most;
     local.lastCompleterId = state.me?.id || null;
+    // Persist UI hint so refresh doesn't lose the "add" screen opportunity
+    try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId }); } catch {}
     socket.emit('turn:complete', { completedMostDaring: !!most });
     if (local.addAfterComplete) render();
   });
@@ -279,6 +285,7 @@ function render(){
     if (title) {
       socket.emit('menu:addDare', { title, extra });
       local.addAfterComplete = false;
+      try { saveUI({ addAfterComplete: false }); } catch {}
       const nd = $('#new-dare'); const ne = $('#new-extra');
       if (nd) nd.value = '';
       if (ne) ne.value = '';
@@ -300,8 +307,20 @@ socket.on('room:state', (room)=>{
     try { history.replaceState(null, '', `#${room.code}`); } catch { location.hash = room.code; }
   }
   render();
+  // Persist session info so we can resume on refresh/reconnect
+  try {
+    const update = {};
+    if (room?.code) update.code = room.code;
+    if (state.me?.name) update.name = state.me.name;
+    if (state.me?.id) update.playerId = state.me.id;
+    if (Object.keys(update).length) saveSession(update);
+  } catch {}
 });
-socket.on('player:you', ({ playerId })=>{ state.me.id = playerId; });
+socket.on('player:you', ({ playerId })=>{
+  state.me.id = playerId;
+  // Save player id for resume
+  try { saveSession({ playerId, code: state.room?.code, name: state.me?.name }); } catch {}
+});
 
 socket.on('room:peek:result', (result) => {
   if (result.ok) {
@@ -326,6 +345,8 @@ window.addEventListener('hashchange', async ()=>{
       // Leave current room on server and go back to landing to join
       socket.emit('room:leave');
       state.room = null;
+      // Clear persisted session/UI so we don't auto-resume the old room
+      try { clearSession(); clearUI(); } catch {}
       render();
       prefillFromHash();
     } else {
@@ -335,9 +356,42 @@ window.addEventListener('hashchange', async ()=>{
   }
 });
 
+/* --- Session/UI persistence helpers and bootstrapping --- */
+const SESSION_KEY = 'dtc.session';
+const UI_KEY = 'dtc.ui';
+
+function loadSession(){ try { return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch { return null; } }
+function saveSession(part){ try { const cur = loadSession() || {}; const next = { ...cur, ...part }; localStorage.setItem(SESSION_KEY, JSON.stringify(next)); } catch {} }
+function clearSession(){ try { localStorage.removeItem(SESSION_KEY); } catch {} }
+
+function loadUI(){ try { return JSON.parse(localStorage.getItem(UI_KEY) || 'null'); } catch { return null; } }
+function saveUI(part){ try { const cur = loadUI() || {}; const next = { ...cur, ...part }; localStorage.setItem(UI_KEY, JSON.stringify(next)); } catch {} }
+function clearUI(){ try { localStorage.removeItem(UI_KEY); } catch {} }
+
+function hydrateSession(){
+  const s = loadSession();
+  if (s?.name && !state.me.name) state.me.name = s.name;
+  if (s?.playerId) state.me.id = s.playerId;
+  const ui = loadUI();
+  if (ui) { local.addAfterComplete = !!ui.addAfterComplete; local.lastCompleterId = ui.lastCompleterId || null; }
+}
+
+function attemptResume(){
+  const s = loadSession();
+  const code = s?.code || location.hash?.slice(1) || '';
+  const playerId = s?.playerId;
+  if (code && playerId) socket.emit('room:resume', { code, playerId });
+}
+
+// Try to resume when socket connects/reconnects
+socket.on('connect', attemptResume);
+
+// Initial boot
+hydrateSession();
 render();
 loadThemes();
 prefillFromHash();
+if (socket.connected) attemptResume();
 
 if (location.hash?.slice(1) && !state.room) {
   socket.emit('room:peek', { code: location.hash.slice(1) });

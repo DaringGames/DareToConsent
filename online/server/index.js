@@ -35,6 +35,8 @@ function nextColor(room){
 
 // In-memory rooms
 const rooms = new Map();
+// Track pending disconnects to avoid marking a player disconnected during quick refresh/reconnect
+const pendingDisconnects = new Map();
 
 function createRoom() {
   let code;
@@ -107,6 +109,11 @@ io.on('connection', (socket) => {
     if (!code) return;
     const room = rooms.get(code);
     if (!room) return;
+
+    // Cancel any pending disconnect flag for this player
+    const pending = pendingDisconnects.get(joinInfo.playerId);
+    if (pending) { clearTimeout(pending); pendingDisconnects.delete(joinInfo.playerId); }
+
     const idx = room.players.findIndex(p => p.id === joinInfo.playerId);
     if (idx >= 0) room.players.splice(idx, 1);
     socket.leave(code);
@@ -127,6 +134,24 @@ io.on('connection', (socket) => {
     if (!room) return socket.emit('room:peek:result', { ok: false });
     const colors = room.players.map(p => p.color).filter(Boolean);
     socket.emit('room:peek:result', { ok: true, state: roomPublicState(room), usedColors: colors });
+  });
+
+  // Resume an existing player session after refresh/reconnect
+  socket.on('room:resume', ({ code, playerId }) => {
+    const room = rooms.get(code);
+    if (!room) return;
+    const player = room.players.find(p => p.id === playerId);
+    if (!player) return;
+
+    // Cancel any pending disconnect mark for this player
+    const t = pendingDisconnects.get(playerId);
+    if (t) { clearTimeout(t); pendingDisconnects.delete(playerId); }
+
+    joinInfo = { roomCode: room.code, playerId: player.id };
+    socket.join(room.code);
+    player.connected = true;
+    socket.emit('player:you', { playerId: player.id });
+    emitRoom(room);
   });
 
   socket.on('player:update', ({ name, color }) => {
@@ -224,15 +249,29 @@ io.on('connection', (socket) => {
     room.dareMenu.push({ title: title?.trim(), extra: extra?.trim(), createdBy: joinInfo.playerId, createdAt: Date.now() });
     emitRoom(room);
   });
+socket.on('disconnect', () => {
+  const { roomCode, playerId } = joinInfo;
+  if (!roomCode || !playerId) return;
 
-  socket.on('disconnect', () => {
-    const room = rooms.get(joinInfo.roomCode);
+  // Delay marking disconnected to allow quick refresh/resume
+  const existing = pendingDisconnects.get(playerId);
+  if (existing) clearTimeout(existing);
+
+  const t = setTimeout(() => {
+    const room = rooms.get(roomCode);
     if (!room) return;
-    const player = room.players.find(p => p.id === joinInfo.playerId);
-    if (player) player.connected = false;
-    console.log(`[disconnect] ${joinInfo.roomCode} ${player?.name || ''}`);
-    emitRoom(room);
-  });
+    const player = room.players.find(p => p.id === playerId);
+    if (player) {
+      player.connected = false;
+      console.log(`[disconnect] ${roomCode} ${player?.name || ''}`);
+      emitRoom(room);
+    }
+    pendingDisconnects.delete(playerId);
+  }, 2000);
+
+  pendingDisconnects.set(playerId, t);
+});
+
 });
 
 const PORT = process.env.PORT || 3000;
