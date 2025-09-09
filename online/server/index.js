@@ -72,9 +72,31 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 io.on('connection', (socket) => {
   let joinInfo = { roomCode: null, playerId: null };
 
-  function emitRoom(room) {
-    socket.emit('room:state', roomPublicState(room));
-    socket.to(joinInfo.roomCode).emit('room:state', roomPublicState(room));
+  async function emitRoom(room) {
+    const base = roomPublicState(room);
+    const activeId = room.turn?.order?.[room.turn?.index];
+
+    const sockets = await io.in(room.code).fetchSockets();
+    for (const s of sockets) {
+      const pid = s.data?.playerId || null;
+
+      // Clone state and filter submissions per recipient
+      const pub = { ...base };
+      if (room.turn) {
+        const subs = room.turn.submissions || [];
+        const canSeeAll = pid && activeId && pid === activeId;
+        // Show all details to the active player, show only own details to others,
+        // but still include placeholder entries for other responders so clients can
+        // render "Responded" without revealing their choice.
+        const visible = subs.map(t => {
+          if (canSeeAll || t.playerId === pid) return t;
+          return { playerId: t.playerId, ts: t.ts };
+        });
+        pub.turn = { ...room.turn, submissions: visible };
+      }
+
+      s.emit('room:state', pub);
+    }
   }
 
   socket.on('room:create', ({ name }) => {
@@ -87,6 +109,8 @@ io.on('connection', (socket) => {
     joinInfo = { roomCode: room.code, playerId: player.id };
     socket.join(room.code);
     socket.emit('player:you', { playerId: player.id });
+    // Track mapping for per-socket tailoring
+    socket.data = { roomCode: room.code, playerId: player.id };
     console.log(`[room:create] ${room.code} host=${player.name}`);
     emitRoom(room);
   });
@@ -100,6 +124,8 @@ io.on('connection', (socket) => {
     joinInfo = { roomCode: room.code, playerId: player.id };
     socket.join(room.code);
     socket.emit('player:you', { playerId: player.id });
+    // Track mapping for per-socket tailoring
+    socket.data = { roomCode: room.code, playerId: player.id };
     console.log(`[room:join] ${room.code} ${player.name}`);
     emitRoom(room);
   });
@@ -119,13 +145,14 @@ io.on('connection', (socket) => {
     socket.leave(code);
     console.log(`[room:leave] ${code}`);
     // Reset join info so further emits don't go to old room
+    socket.data = { roomCode: null, playerId: null };
     joinInfo = { roomCode: null, playerId: null };
     if (room) {
       // If turn order exists, remove and normalize
       if (room.turn?.order) {
         room.turn.order = room.turn.order.filter(id => id !== (room.players[idx]?.id));
       }
-      io.to(code).emit('room:state', roomPublicState(room));
+      emitRoom(room);
     }
   });
 
@@ -151,6 +178,8 @@ io.on('connection', (socket) => {
     socket.join(room.code);
     player.connected = true;
     socket.emit('player:you', { playerId: player.id });
+    // Track mapping for per-socket tailoring
+    socket.data = { roomCode: room.code, playerId: player.id };
     emitRoom(room);
   });
 

@@ -15,6 +15,31 @@ const COLOR_HEX = {
   LtPink:'#ffc4dd', Yellow:'#ffd166', DkGreen:'#1f6f43'
 };
 
+// Choose accessible text color (#f7f9ff or #081020) based on background color
+function contrastOn(hex){
+  try {
+    const rgb = (hex||'#000').replace('#','').trim();
+    const to255 = (s)=>parseInt(s,16);
+    let r,g,b;
+    if (rgb.length===3){
+      r = to255(rgb[0]+rgb[0]); g = to255(rgb[1]+rgb[1]); b = to255(rgb[2]+rgb[2]);
+    } else {
+      r = to255(rgb.slice(0,2)); g = to255(rgb.slice(2,4)); b = to255(rgb.slice(4,6));
+    }
+    const srgb = [r,g,b].map(v=>{
+      v/=255;
+      return v<=0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
+    });
+    const Lbg = 0.2126*srgb[0] + 0.7152*srgb[1] + 0.0722*srgb[2];
+    const light = '#f7f9ff';
+    const dark = '#081020';
+    const Llight = (()=>{ const c=light.slice(1); const R=parseInt(c.slice(0,2),16)/255; const G=parseInt(c.slice(2,4),16)/255; const B=parseInt(c.slice(4,6),16)/255; const s=[R,G,B].map(v=>v<=0.03928? v/12.92 : Math.pow((v+0.055)/1.055,2.4)); return 0.2126*s[0]+0.7152*s[1]+0.0722*s[2]; })();
+    const Ldark = (()=>{ const c=dark.slice(1); const R=parseInt(c.slice(0,2),16)/255; const G=parseInt(c.slice(2,4),16)/255; const B=parseInt(c.slice(4,6),16)/255; const s=[R,G,B].map(v=>v<=0.03928? v/12.92 : Math.pow((v+0.055)/1.055,2.4)); return 0.2126*s[0]+0.7152*s[1]+0.0722*s[2]; })();
+    const contrast = (L1,L2)=>{ const a=Math.max(L1,L2), b=Math.min(L1,L2); return (a+0.05)/(b+0.05); };
+    return contrast(Lbg, Llight) >= contrast(Lbg, Ldark) ? light : dark;
+  } catch { return '#f7f9ff'; }
+}
+
 let state = { room:null, me:{ name:'', color:'' } };
 let local = { addAfterComplete:false, lastCompleterId:null };
 let peekedRoom = null;
@@ -65,6 +90,32 @@ async function loadThemes(){
   }
 }
 
+function profileMenuHtml(r){
+  const name = state.me?.name || 'Player';
+  const meId = state.me?.id || r?.players.find(p=>p.name===state.me.name && p.color===state.me.color)?.id;
+  const me = (r?.players||[]).find(p=>p.id===meId);
+  const colorHex = COLOR_HEX[me?.color || state.me?.color] || '#1b2030';
+  const textColor = contrastOn(colorHex);
+  const taken = new Set((r?.players||[]).filter(p=>p.id!==meId).map(p=>p.color).filter(Boolean));
+  const swatches = COLORS.map(c=>{
+    const isTaken = taken.has(c);
+    const selected = (c=== (me?.color || state.me?.color)) ? 'selected' : '';
+    return `<button class="color-swatch ${selected} ${isTaken?'taken':''}" data-color="${c}" ${isTaken?'data-taken="1" disabled':''} style="background:${COLOR_HEX[c]||'#4a5168'}" title="${c}${isTaken?' (taken)':''}"></button>`;
+  }).join('');
+  return `
+    <div class="profile">
+      <button id="profile-menu-toggle" class="pill name" style="background:${colorHex};color:${textColor}">
+        ${name} <span class="caret">▾</span>
+      </button>
+      <div id="profile-menu" class="dropdown">
+        <div class="menu-row"><button id="change-name">Change name</button></div>
+        <div class="section-title">Choose your color</div>
+        <div class="color-palette">${swatches}</div>
+        <div class="menu-row"><button id="leave-game" class="danger">Leave game</button></div>
+      </div>
+    </div>`;
+}
+
 function lobbyView(){
   const r = state.room;
   const url = `${location.origin}/#${r.code}`;
@@ -72,11 +123,14 @@ function lobbyView(){
   const canStart = !!THEMES && r.players.length >= 3 && isHost;
   return `
   <div class="card">
-    <h2>Room: ${r.code}</h2>
+    <div class="row between">
+      <h2>Room: ${r.code}</h2>
+      ${profileMenuHtml(r)}
+    </div>
     <div class="qr"><canvas id="qr"></canvas></div>
     <small>Share this link: <a href="${url}">${url}</a></small>
     <h3>Players</h3>
-    <div class="players">${r.players.map(p=>`<span class="pill name" style="background:${COLOR_HEX[p.color]||'#1b2030'}">${p.name}</span>`).join('')}</div>
+    <div class="players">${r.players.map(p=>{ const bg = COLOR_HEX[p.color]||'#1b2030'; const tc = contrastOn(bg); return `<span class="pill name" style="background:${bg};color:${tc}">${p.name}</span>`; }).join('')}</div>
     ${isHost ? `
       <div class="col">
         <button class="primary" id="start-game" ${canStart?'':'disabled'}>${canStart?'Start Game':(!THEMES?'Loading themes…':'Waiting for at least 3 players')}</button>
@@ -96,7 +150,7 @@ function dareButtonsHtml(){
   return `<div class="grid">${list.map((d,i)=>`
     <button class="primary dare-btn" data-dare-select="${i}">
       <div class="dare-btn-title">Dare: ${d.title}</div>
-      ${d.extra ? `<div class="dare-btn-extra">Extra Challenge: 🌶️ ${d.extra} 🌶️</div>` : ''}
+      ${d.extra ? `<div class="dare-btn-extra">🌶️ Extra Challenge: ${d.extra}</div>` : ''}
     </button>
   `).join('')}</div>`;
 }
@@ -108,26 +162,44 @@ function chosenDareHtml(){
   const d = r.dareMenu?.[idx];
   if (!d) return '';
   return `<div class="card">
-    <h3>Dare</h3>
     <p><b>Dare: ${d.title}</b></p>
-    ${d.extra ? `<p><small>Extra Challenge: 🌶️ ${d.extra} 🌶️</small></p>` : ''}
+    ${d.extra ? `<p><small>🌶️ Extra Challenge: ${d.extra}</small></p>` : ''}
   </div>`;
 }
 
 function submissionsTable(){
   const r = state.room; if (!r) return '';
-  const order = { HECK_YES:0, YES_PLEASE:1, NO_THANKS:2 };
-  const rows = (r.turn?.submissions||[]).slice().sort((a,b)=>{
-    const d = order[a.response]-order[b.response];
-    return d!==0?d:a.ts-b.ts;
-  });
+  const meId = state.me?.id || r?.players.find(p=>p.name===state.me.name && p.color===state.me.color)?.id;
+  const activeId = r?.turn?.order?.[r.turn.index];
+
+  const rows = (r.players||[])
+    // Exclude only the active player (they don't respond). Include my own row.
+    .filter(p => (!activeId || p.id !== activeId))
+    .map(p=>{
+      const sub = (r.turn?.submissions||[]).find(s => s.playerId === p.id);
+      // Only the active player can see response details
+      const canSee = meId === activeId;
+      const resp = (sub && canSee && sub.response) ? sub.response : null;
+      const color = COLOR_HEX[p.color] || '#4a5168';
+
+      const label =
+        resp === 'HECK_YES' ? "I'll do the dare AND the extra challenge!" :
+        resp === 'YES_PLEASE' ? "I'll do the dare (but not the extra challenge)" :
+        resp === 'NO_THANKS' ? "No Thanks" : '';
+
+      const cell = resp
+        ? `<span class="response-${resp}">${label}</span>`
+        : (sub ? `<span class="muted">Responded</span>` : `<span class="muted">Waiting . . .</span>`);
+
+      return `<tr>
+        <td><span class="dot" style="background:${color}"></span>${p?.name||'Player'}</td>
+        <td>${cell}</td>
+      </tr>`;
+    }).join('');
+
   return `<table class="table">
     <thead><tr><th>Player</th><th>Response</th></tr></thead>
-    <tbody>${rows.map(s=>{
-      const p = r.players.find(p=>p.id===s.playerId);
-      const resp = s.response;
-      return `<tr><td>${p?.name||'Player'}</td><td class="response-${resp}">${resp.replace('_',' ')}</td></tr>`;
-    }).join('')}</tbody>
+    <tbody>${rows}</tbody>
   </table>`;
 }
 
@@ -139,21 +211,44 @@ function mainView(){
   const curPlayer = r.players.find(p=>p.id===curId);
   const idx = r?.turn?.selectedDareIndex;
   const showAddOnly = !!local.addAfterComplete;
+let header = '';
+if (showAddOnly) {
+  header = 'You get to write a new dare!';
+} else if (idx == null) {
+  header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'}`;
+} else {
+  const subs = r.turn?.submissions || [];
+  if (isMyTurn) {
+    const expected = r.players.filter(p => p.id !== curId && p.connected !== false).length;
+    const gotPositive = subs.some(s => s.response === 'HECK_YES' || s.response === 'YES_PLEASE');
+    if (!gotPositive && subs.length < expected) header = 'Waiting for responses . . . ';
+    else if (gotPositive) header = 'Do your dare (or pass)';
+    else header = "Tell the group you've decided to pass";
+  } else {
+    const mySub = subs.find(s => s.playerId === meId);
+    const expected = r.players.filter(p => p.id !== curId && p.connected !== false).length;
+    if (!mySub) header = `Do this Dare with ${curPlayer?.name||'Player'}?`;
+    else if (subs.length < expected) header = 'Waiting for more responses';
+    else header = `Waiting for ${curPlayer?.name||'Player'}`;
+  }
+}
 
-  let header = '';
-  if (showAddOnly) header = 'Write a new Dare';
-  else if (idx == null) header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'}`;
-  else header = isMyTurn ? 'Complete your Dare or Pass' : 'Submit Your Card';
-
+  
   let body = '';
   if (showAddOnly) {
     body = `
     <div class="card">
-      <h3>Add a More Daring Dare</h3>
+      <h3 class="add-dare-title">Confer with the group, and write something more ${((THEMES?.[r.chosenTheme]?.name || r.chosenTheme || 'daring').replace(/\s*Dares\s*$/i,'').toLowerCase())} than previous dares</h3>
       <input id="new-dare" placeholder="New dare" />
-      <input id="new-extra" placeholder="Extra challenge (optional)" />
-      <div id="suggestions" class="players"></div>
-      <button id="add-dare" class="primary">Add to Menu</button>
+      <input id="new-extra" placeholder="Extra challenge" />
+      <div class="row">
+        <button id="add-dare" class="primary">Add to Menu</button>
+      </div>
+      <div class="or-section">
+        <div class="or-divider">— OR —</div>
+        <div><strong>Choose one of these:</strong></div>
+      </div>
+      <div id="examples" class="examples"></div>
     </div>`;
   } else if (idx == null) {
     body = isMyTurn ? `
@@ -163,27 +258,25 @@ function mainView(){
     ` : '';
   } else {
     // Dare selected
+    const myResp = (r.turn?.submissions||[]).find(s => s.playerId === meId)?.response || null;
     const actionCard = isMyTurn ? `
       <div class="card">
         <div class="row">
-          <button id="btn-pass">Pass</button>
-          <button id="btn-complete" class="primary">Dare Completed</button>
+          <button id="btn-end-turn" class="primary">End Turn</button>
         </div>
       </div>
     ` : `
       <div class="card">
-        <h3>Submit Your Card</h3>
         <div class="grid">
-          <button data-resp="HECK_YES" class="primary">Heck Yes</button>
-          <button data-resp="YES_PLEASE">Yes Please</button>
-          <button data-resp="NO_THANKS">No Thanks</button>
+          <button data-resp="HECK_YES" class="btn-response HECK_YES ${myResp==='HECK_YES'?'selected':''}">I'll do the dare AND the extra challenge!</button>
+          <button data-resp="YES_PLEASE" class="btn-response YES_PLEASE ${myResp==='YES_PLEASE'?'selected':''}">I'll do the dare (but not the extra challenge)</button>
+          <button data-resp="NO_THANKS" class="btn-response NO_THANKS ${myResp==='NO_THANKS'?'selected':''}">No Thanks</button>
         </div>
       </div>
     `;
     body = `
       ${chosenDareHtml()}
       <div class="card">
-        <h3>Responses</h3>
         ${submissionsTable()}
       </div>
       ${actionCard}
@@ -192,16 +285,33 @@ function mainView(){
 
   return `
   <div class="card">
-    <h2>${header}</h2>
+    <div class="row between">
+      <h2>${header}</h2>
+      ${profileMenuHtml(r)}
+    </div>
     ${body}
   </div>`;
 }
 
 function wordCloud(theme){
+  // Repurposed to render example dares with extra challenges and a score
   const t = THEMES?.[theme];
-  const sug = t?.suggestions||[];
-  const c = $('#suggestions'); if (!c) return;
-  c.innerHTML = sug.map(w=>`<button class="pill" data-suggest="${w}">${w}</button>`).join('');
+  const fromTheme = Array.isArray(t?.examples) ? t.examples : null;
+  const sug = Array.isArray(t?.suggestions) ? t.suggestions.slice(0, 6) : [];
+  const synth = sug.map((w, i) => ({
+    title: w,
+    extra: 'Take it a clear step further than described',
+    score: Math.min(5, 2 + (i % 4))
+  }));
+  const list = fromTheme || synth;
+  const c = $('#examples'); if (!c) return;
+  const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+  c.innerHTML = list.map((ex,i)=>`
+    <button class="dare-btn example-dare" data-example-index="${i}" data-title="${esc(ex.title)}" data-extra="${esc.extra ? esc(ex.extra) : ''}" data-score="${ex.score||''}">
+      <div class="dare-btn-title">Dare: ${ex.title}</div>
+      <div class="dare-btn-extra">🌶️ Extra Challenge: ${ex.extra}</div>
+    </button>
+  `).join('');
 }
 
 function render(){
@@ -246,13 +356,66 @@ function render(){
     socket.emit('theme:finalize', { theme: key, seedDares: seed });
   });
 
+  // Profile menu (name/color/leave)
+  const pmToggle = $('#profile-menu-toggle');
+  const pm = $('#profile-menu');
+  if (pmToggle && pm) {
+    const closeMenu = (e)=>{
+      if (!pm.contains(e.target) && e.target !== pmToggle) {
+        pm.classList.remove('show');
+        document.removeEventListener('click', closeMenu);
+      }
+    };
+    pmToggle.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      pm.classList.toggle('show');
+      if (pm.classList.contains('show')) {
+        setTimeout(()=>document.addEventListener('click', closeMenu), 0);
+      }
+    });
+    $('#change-name')?.addEventListener('click', async ()=>{
+      const cur = state.me?.name || '';
+      const input = await showPrompt('Change your name', { initialValue: cur, placeholder:'Your name', confirmText:'Save', cancelText:'Cancel', maxLength: 30 });
+      const next = (input || '').trim().slice(0,30);
+      if (next && next !== cur) {
+        state.me.name = next;
+        try { saveSession({ name: next }); } catch {}
+        socket.emit('player:update', { name: next });
+        render();
+      }
+    });
+    $$('#profile-menu [data-color]')?.forEach(el=>{
+      el.addEventListener('click', ()=>{
+        if (el.hasAttribute('disabled') || el.getAttribute('data-taken')==='1' || el.classList.contains('taken')) return;
+        const c = el.getAttribute('data-color');
+        if (c && c !== state.me?.color) {
+          state.me.color = c;
+          socket.emit('player:update', { color: c });
+          render();
+        }
+      });
+    });
+  }
+
+  // Leave game
+  $('#leave-game')?.addEventListener('click', async ()=>{
+    const ok = await showConfirm('Leave this game?', { confirmText:'Leave', cancelText:'Stay' });
+    if (ok) {
+      socket.emit('room:leave');
+      state.room = null;
+      try { clearSession(); clearUI(); } catch {}
+      try { history.replaceState(null, '', '#'); } catch { location.hash = ''; }
+      render();
+    }
+  });
+
   // Dare selection buttons with confirmation
   $$('#app [data-dare-select]')?.forEach(btn=>btn.addEventListener('click', async ()=>{
     const index = +btn.getAttribute('data-dare-select');
     const d = state?.room?.dareMenu?.[index];
     const title = d?.title || 'this dare';
     const lines = [`Dare: ${title}`];
-    if (d?.extra) lines.push(`Extra Challenge: 🌶️ ${d.extra} 🌶️`);
+    if (d?.extra) lines.push(`🌶️ Extra Challenge: ${d.extra}`);
     const ok = await showConfirm(lines.join('\n'), { title: 'Propose this dare?', confirmText:'Use Dare', cancelText:'Cancel' });
     if (ok) {
       socket.emit('turn:selectDare', { index });
@@ -260,15 +423,14 @@ function render(){
   }));
 
   // Turn actions
-  $('#btn-pass')?.addEventListener('click', ()=>socket.emit('turn:pass'));
-  $('#btn-complete')?.addEventListener('click', ()=>{
+  $('#btn-end-turn')?.addEventListener('click', ()=>{
     const r = state.room;
     const most = r?.turn?.selectedDareIndex===r?.dareMenu?.length-1;
     // After completing the most daring dare, show ONLY the add UI
     local.addAfterComplete = !!most;
     local.lastCompleterId = state.me?.id || null;
     // Persist UI hint so refresh doesn't lose the "add" screen opportunity
-    try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId }); } catch {}
+    try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId, roomCode: state.room?.code }); } catch {}
     socket.emit('turn:complete', { completedMostDaring: !!most });
     if (local.addAfterComplete) render();
   });
@@ -279,18 +441,51 @@ function render(){
   }));
 
   // Add new dare (only visible when local.addAfterComplete)
-  $('#add-dare')?.addEventListener('click', ()=>{
-    const title = $('#new-dare').value.trim();
-    const extra = $('#new-extra').value.trim();
-    if (title) {
-      socket.emit('menu:addDare', { title, extra });
-      local.addAfterComplete = false;
-      try { saveUI({ addAfterComplete: false }); } catch {}
-      const nd = $('#new-dare'); const ne = $('#new-extra');
-      if (nd) nd.value = '';
-      if (ne) ne.value = '';
-      render();
+  $('#add-dare')?.addEventListener('click', async ()=>{
+    const title = ($('#new-dare')?.value || '').trim();
+    const extra = ($('#new-extra')?.value || '').trim();
+    if (!title || !extra) {
+      await showConfirm('Please enter both a Dare and an Extra Challenge', { confirmText:'OK', cancelText:'Cancel' });
+      return;
     }
+    socket.emit('menu:addDare', { title, extra });
+    local.addAfterComplete = false;
+    try { saveUI({ addAfterComplete: false }); } catch {}
+    const nd = $('#new-dare'); const ne = $('#new-extra');
+    if (nd) nd.value = '';
+    if (ne) ne.value = '';
+    render();
+  });
+
+  // Example dares click to fill inputs (delegated to handle dynamic content)
+  $('#examples')?.addEventListener('click', (e)=>{
+    const el = e.target.closest('[data-example-index]');
+    if (!el) return;
+    const decode = (s)=> (s||'')
+      .replace(/"/g, '"')
+      .replace(/</g, '<')
+      .replace(/>/g, '>')
+      .replace(/&/g, '&');
+
+    let title = decode(el.getAttribute('data-title') || '');
+    let extra = decode(el.getAttribute('data-extra') || '');
+
+    // Fallback to inner text if attributes are missing/empty
+    if (!title) {
+      const tEl = el.querySelector('.dare-btn-title');
+      if (tEl) title = (tEl.textContent || '').replace(/^Dare:\s*/i, '').trim();
+    }
+    if (!extra) {
+      const xEl = el.querySelector('.dare-btn-extra');
+      if (xEl) {
+        const t = xEl.textContent || '';
+        extra = t.replace(/^.*Extra Challenge:\s*/i, '').trim();
+      }
+    }
+
+    const nd = $('#new-dare'); const ne = $('#new-extra');
+    if (nd) nd.value = title;
+    if (ne) ne.value = extra;
   });
 
   // QR and suggestions
@@ -306,6 +501,18 @@ socket.on('room:state', (room)=>{
   if (room?.code && location.hash.slice(1) !== room.code) {
     try { history.replaceState(null, '', `#${room.code}`); } catch { location.hash = room.code; }
   }
+  // Normalize UI persistence across rooms to avoid stale "add dare" gating
+  try {
+    const ui = loadUI();
+    const uiRoom = ui?.roomCode || null;
+    const uiAdd = !!ui?.addAfterComplete;
+    if (uiAdd && uiRoom !== room.code) {
+      local.addAfterComplete = false;
+      saveUI({ addAfterComplete: false, roomCode: room.code });
+    } else if (uiRoom !== room.code) {
+      saveUI({ roomCode: room.code });
+    }
+  } catch {}
   render();
   // Persist session info so we can resume on refresh/reconnect
   try {
@@ -320,6 +527,14 @@ socket.on('player:you', ({ playerId })=>{
   state.me.id = playerId;
   // Save player id for resume
   try { saveSession({ playerId, code: state.room?.code, name: state.me?.name }); } catch {}
+  // Clear stale UI hint if it belonged to a different player/session
+  try {
+    const ui = loadUI();
+    if (ui?.addAfterComplete && ui?.lastCompleterId && ui.lastCompleterId !== playerId) {
+      local.addAfterComplete = false;
+      saveUI({ addAfterComplete: false });
+    }
+  } catch {}
 });
 
 socket.on('room:peek:result', (result) => {
@@ -446,6 +661,50 @@ function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' 
       if (e.key === 'Enter') { e.preventDefault(); decide(true); }
     };
     document.addEventListener('keydown', onKey, { once:true });
+
+    requestAnimationFrame(()=>overlay.classList.add('show'));
+  });
+}
+
+// Pretty overlay prompt with text input
+function showPrompt(title, { placeholder='', initialValue='', confirmText='OK', cancelText='Cancel', maxLength=60 }={}){
+  return new Promise(resolve=>{
+    const esc = (s)=> (s||'').toString().replace(/&/g,'&').replace(/"/g,'"').replace(/</g,'<');
+    const host = ensureOverlayRoot();
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.innerHTML = `
+      <div class="modal card">
+        <div class="modal-content">
+          <h3 class="modal-title">${title || ''}</h3>
+          <input class="modal-input" type="text" ${maxLength ? `maxlength="${maxLength}"` : ''} placeholder="${esc(placeholder)}" />
+          <div class="row modal-buttons">
+            <button class="btn-cancel">${cancelText}</button>
+            <button class="primary btn-ok">${confirmText}</button>
+          </div>
+        </div>
+      </div>`;
+    host.appendChild(overlay);
+
+    const input = overlay.querySelector('.modal-input');
+    if (typeof initialValue === 'string') input.value = initialValue;
+    setTimeout(()=>{ input.focus(); input.select?.(); }, 0);
+
+    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>overlay.remove(), 150); };
+    const decide = (val) => { cleanup(); resolve(val); };
+
+    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(null); });
+    overlay.querySelector('.btn-cancel').addEventListener('click', ()=>decide(null));
+    overlay.querySelector('.btn-ok').addEventListener('click', ()=>decide(input.value));
+
+    input.addEventListener('keydown', (e)=>{
+      if (e.key === 'Enter') { e.preventDefault(); overlay.querySelector('.btn-ok').click(); }
+      if (e.key === 'Escape') { e.preventDefault(); decide(null); }
+    });
+
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') { e.preventDefault(); decide(null); }
+    }, { once:true });
 
     requestAnimationFrame(()=>overlay.classList.add('show'));
   });
