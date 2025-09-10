@@ -111,6 +111,7 @@ function profileMenuHtml(r){
         <div class="menu-row"><button id="change-name">Change name</button></div>
         <div class="section-title">Choose your color</div>
         <div class="color-palette">${swatches}</div>
+        <div class="menu-row"><button id="add-players">Add Players</button></div>
         <div class="menu-row"><button id="leave-game" class="danger">Leave game</button></div>
       </div>
     </div>`;
@@ -127,7 +128,7 @@ function lobbyView(){
       <h2>Room: ${r.code}</h2>
       ${profileMenuHtml(r)}
     </div>
-    <div class="qr"><canvas id="qr"></canvas></div>
+    <div class="qr"><div id="qr"></div></div>
     <small>Share this link: <a href="${url}">${url}</a></small>
     <h3>Players</h3>
     <div class="players">${r.players.map(p=>{ const bg = COLOR_HEX[p.color]||'#1b2030'; const tc = contrastOn(bg); return `<span class="pill name" style="background:${bg};color:${tc}">${p.name}</span>`; }).join('')}</div>
@@ -296,18 +297,11 @@ if (showAddOnly) {
 function wordCloud(theme){
   // Repurposed to render example dares with extra challenges and a score
   const t = THEMES?.[theme];
-  const fromTheme = Array.isArray(t?.examples) ? t.examples : null;
-  const sug = Array.isArray(t?.suggestions) ? t.suggestions.slice(0, 6) : [];
-  const synth = sug.map((w, i) => ({
-    title: w,
-    extra: 'Take it a clear step further than described',
-    score: Math.min(5, 2 + (i % 4))
-  }));
-  const list = fromTheme || synth;
+  const list = Array.isArray(t?.examples) ? t.examples : [];
   const c = $('#examples'); if (!c) return;
   const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
   c.innerHTML = list.map((ex,i)=>`
-    <button class="dare-btn example-dare" data-example-index="${i}" data-title="${esc(ex.title)}" data-extra="${esc.extra ? esc(ex.extra) : ''}" data-score="${ex.score||''}">
+    <button class="dare-btn example-dare" data-example-index="${i}" data-title="${esc(ex.title)}" data-extra="${esc.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
       <div class="dare-btn-title">Dare: ${ex.title}</div>
       <div class="dare-btn-extra">🌶️ Extra Challenge: ${ex.extra}</div>
     </button>
@@ -384,6 +378,15 @@ function render(){
         render();
       }
     });
+
+    $('#add-players')?.addEventListener('click', async ()=>{
+      pm.classList.remove('show');
+      document.removeEventListener('click', closeMenu);
+      const r = state.room;
+      const url = r?.code ? `${location.origin}/#${r.code}` : location.href;
+      await showInviteOverlay(url);
+    });
+
     $$('#profile-menu [data-color]')?.forEach(el=>{
       el.addEventListener('click', ()=>{
         if (el.hasAttribute('disabled') || el.getAttribute('data-taken')==='1' || el.classList.contains('taken')) return;
@@ -488,10 +491,16 @@ function render(){
     if (ne) ne.value = extra;
   });
 
-  // QR and suggestions
-  if (r?.state==='lobby') import('/lib/qr.js').then(({default: QR})=>{
-    const c = $('#qr'); if (!c) return; const q = QR(); q.canvas(c, `${location.origin}/#${r.code}`);
-  });
+  // QR and examples list
+  if (r?.state==='lobby') import('/lib/qrcode-wrapper.js')
+    .then((m)=>{
+      const el = $('#qr'); if (!el) return;
+      const url = `${location.origin}/#${r.code}`;
+      const fn = m.renderQRCode || m.default;
+      const p = fn ? fn(el, url, { size: 220 }) : null;
+      if (p && typeof p.then === 'function') p.catch(()=>{ /* fallback is the share link below */ });
+    })
+    .catch(()=>{ /* fallback is the share link below */ });
   if (r?.state==='main') wordCloud(r.chosenTheme);
 }
 
@@ -705,6 +714,54 @@ function showPrompt(title, { placeholder='', initialValue='', confirmText='OK', 
     document.addEventListener('keydown', (e)=>{
       if (e.key === 'Escape') { e.preventDefault(); decide(null); }
     }, { once:true });
+
+    requestAnimationFrame(()=>overlay.classList.add('show'));
+  });
+}
+
+// Invite overlay with QR code and share URL
+function showInviteOverlay(url, { title='Add Players', instructions='Ask new players to scan this QR code or visit the link below:' } = {}) {
+  return new Promise(resolve => {
+    const host = ensureOverlayRoot();
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.innerHTML = `
+      <div class="modal card">
+        <div class="modal-content">
+          <h3 class="modal-title">${title}</h3>
+          <div class="qr"><div id="invite-qr"></div></div>
+          <p class="modal-message">${instructions}</p>
+          <div class="row" style="justify-content:center; margin-top:6px;">
+            <a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>
+          </div>
+          <div class="row modal-buttons">
+            <button class="primary btn-ok">OK</button>
+          </div>
+        </div>
+      </div>`;
+    host.appendChild(overlay);
+
+    // Render QR code
+    import('/lib/qrcode-wrapper.js')
+      .then(m => {
+        const el = overlay.querySelector('#invite-qr');
+        if (el) {
+          const fn = m.renderQRCode || m.default;
+          if (fn) fn(el, url, { size: 220 });
+        }
+      })
+      .catch(()=>{});
+
+    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>overlay.remove(), 150); };
+    const decide = () => { cleanup(); resolve(true); };
+
+    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(); });
+    overlay.querySelector('.btn-ok').addEventListener('click', decide);
+
+    const onKey = (e)=>{
+      if (e.key === 'Escape' || e.key === 'Enter') { e.preventDefault(); decide(); }
+    };
+    document.addEventListener('keydown', onKey, { once:true });
 
     requestAnimationFrame(()=>overlay.classList.add('show'));
   });

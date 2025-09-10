@@ -2,196 +2,219 @@
   "Awkward": {
     "name": "Awkward",
     "starts": [
-      { "title": "Both players make silly faces at each other", "extra": "Also, make strange noises" },
-      { "title": "Both players maintain 10 seconds of eye contact", "extra": "... with your foreheads almost touching" }
+      { "title": "Both players make silly faces at each other", "extra": "Also, make strange noises", "spicyness": 0 },
+      { "title": "Both players maintain 10 seconds of eye contact", "extra": "... with your foreheads almost touching", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Maintain eye contact for 30 seconds", "extra": "Do it without smiling and inch closer until your noses nearly touch", "score": 2 },
-      { "title": "Give each other an awkward compliment", "extra": "Deliver it in a formal monotone while maintaining eye contact", "score": 2 },
-      { "title": "Shake hands for 15 seconds", "extra": "Switch to an overly formal two‑handed handshake and hold it for 10 more seconds", "score": 1 }
-    ],
-    "suggestions": ["Maintain eye contact for 60 seconds","Compliment each other awkwardly","Tell a goofy secret","Do an awkward slow clap","Pretend you just met on a bad date"]
+      { "title": "Shake hands for 15 seconds", "extra": "Switch to an overly formal two‑handed handshake and hold it for 10 more seconds", "spicyness": 1 },
+      { "title": "Do an awkward slow clap", "extra": "Stand up and slow clap together for 20 seconds while keeping eye contact", "spicyness": 1 },
+      { "title": "Maintain eye contact for 30 seconds", "extra": "Do it without smiling and inch closer until your noses nearly touch", "spicyness": 2 },
+      { "title": "Give each other an awkward compliment", "extra": "Deliver it in a formal monotone while maintaining eye contact", "spicyness": 2 },
+      { "title": "Tell a goofy secret", "extra": "Whisper it while keeping straight faces, then each share an even goofier one", "spicyness": 2 },
+      { "title": "Pretend you just met on a bad date", "extra": "Role‑play the first 30 seconds with forced small talk", "spicyness": 3 }
+    ]
   },
   "Creative": {
     "name": "Creative",
     "starts": [
-      { "title": "Start a sentence for the other player to finish", "extra": "Also, make the sentence rhyme" },
-      { "title": "Pretend you are a mirror image of the other player", "extra": "... while the other player dances" }
+      { "title": "Start a sentence for the other player to finish", "extra": "Also, make the sentence rhyme", "spicyness": 0 },
+      { "title": "Pretend you are a mirror image of the other player", "extra": "... while the other player dances", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Improvise a 2‑line poem", "extra": "Perform it as a dramatic whisper duet facing each other", "score": 2 },
-      { "title": "Invent a 5‑second handshake", "extra": "Add one synchronized silly sound effect at the end", "score": 2 },
-      { "title": "Draw a picture in the air", "extra": "Let the other trace it on your back with a fingertip", "score": 3 }
-    ],
-    "suggestions": ["Improvise a 2-line poem","Draw a picture of each other in the air","Invent a 5‑second handshake","Speak only in movie quotes","Mime a short story together"]
+      { "title": "Improvise a 2‑line poem", "extra": "Perform it as a dramatic whisper duet facing each other", "spicyness": 2 },
+      { "title": "Invent a 5‑second handshake", "extra": "Add one synchronized silly sound effect at the end", "spicyness": 2 },
+      { "title": "Speak only in movie quotes", "extra": "Hold a 4‑line conversation using only quotes", "spicyness": 2 },
+      { "title": "Mime a short story together", "extra": "Include a clear beginning and a dramatic ending pose", "spicyness": 2 },
+      { "title": "Draw a picture in the air", "extra": "Let the other trace it on your back with a fingertip", "spicyness": 3 }
+    ]
   },
   "Cuddly": {
     "name": "Cuddly",
     "starts": [
-      { "title": "Both players shake hands with each other", "extra": "... warmly, using both hands and eye contact" },
-      { "title": "Give each other a side-hug", "extra": "Also, hold it 20 seconds and synch breathing" }
+      { "title": "Both players shake hands with each other", "extra": "... warmly, using both hands and eye contact", "spicyness": 0 },
+      { "title": "Give each other a side-hug", "extra": "Also, hold it 20 seconds and synch breathing", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Side‑hug for 10 seconds", "extra": "Make it 30 seconds while synchronizing your breathing", "score": 2 },
-      { "title": "Hold hands for a minute", "extra": "Lean heads together while holding hands", "score": 2 },
-      { "title": "Give each other a shoulder squeeze", "extra": "Follow with a slow 5‑count back pat", "score": 1 }
-    ],
-    "suggestions": ["Full hug for 10 seconds","Hand massage for 20 seconds","Sit shoulder‑to‑shoulder","Hold hands for a minute","Lean heads together quietly"]
+      { "title": "Give each other a shoulder squeeze", "extra": "Follow with a slow 5‑count back pat", "spicyness": 1 },
+      { "title": "Sit shoulder‑to‑shoulder", "extra": "Lean lightly into each other for 15 seconds", "spicyness": 1 },
+      { "title": "Side‑hug for 10 seconds", "extra": "Make it 30 seconds while synchronizing your breathing", "spicyness": 2 },
+      { "title": "Hold hands for a minute", "extra": "Lean heads together while holding hands", "spicyness": 2 },
+      { "title": "Hand massage for 20 seconds", "extra": "Switch hands and add gentle thumb circles for 20 more seconds", "spicyness": 2 },
+      { "title": "Full hug for 10 seconds", "extra": "Extend to 20 seconds and sway gently", "spicyness": 3 }
+    ]
   },
   "Daring": {
     "name": "Daring",
     "starts": [
-      { "title": "Both players wink at each other dramatically", "extra": "Also, compliment each other" },
-      { "title": "Both players take off their shoes", "extra": "Also, invent a wacky handshake with your feet" }
+      { "title": "Both players wink at each other dramatically", "extra": "Also, compliment each other", "spicyness": 0 },
+      { "title": "Both players take off their shoes", "extra": "Also, invent a wacky handshake with your feet", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Speak a bold compliment", "extra": "Lean in and whisper it directly in their ear", "score": 3 },
-      { "title": "Strike a confident pose together", "extra": "Hold it while making eye contact for 10 seconds", "score": 2 },
-      { "title": "Tell a flirty joke", "extra": "Deliver a second joke from a step closer", "score": 3 }
-    ],
-    "suggestions": ["Try a short trust fall","Speak a bold compliment","Attempt a silly stunt","Balance something together","Do a dramatic entrance"]
+      { "title": "Strike a confident pose together", "extra": "Hold it while making eye contact for 10 seconds", "spicyness": 2 },
+      { "title": "Balance something together", "extra": "Walk three steps without dropping it", "spicyness": 2 },
+      { "title": "Do a dramatic entrance", "extra": "Announce yourselves with names and a bold pose", "spicyness": 2 },
+      { "title": "Speak a bold compliment", "extra": "Lean in and whisper it directly in their ear", "spicyness": 3 },
+      { "title": "Tell a flirty joke", "extra": "Deliver a second joke from a step closer", "spicyness": 3 },
+      { "title": "Try a short trust fall", "extra": "Keep it brief and safe with a spotter; swap roles once", "spicyness": 3 }
+    ]
   },
   "Disgusting": {
     "name": "Disgusting",
     "starts": [
-      { "title": "Both players make yucky faces at each other", "extra": "Also, make gross, nasty noises" },
-      { "title": "Both players touch their foreheads to the floor", "extra": "... and also sniff the floor" }
+      { "title": "Both players make yucky faces at each other", "extra": "Also, make gross, nasty noises", "spicyness": 0 },
+      { "title": "Both players touch their foreheads to the floor", "extra": "... and also sniff the floor", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Describe a gross food memory", "extra": "Act it out with exaggerated sound effects", "score": 2 },
-      { "title": "Pretend to sniff something stinky", "extra": "Agree on the source and 'find it' together", "score": 2 },
-      { "title": "Make a yucky face", "extra": "Hold it for a photo‑worthy 10 seconds", "score": 1 }
-    ],
-    "suggestions": ["Describe a gross food memory","Pretend to chew something awful","Smell each other's socks (briefly)","Name the worst smell you know","Invent a nasty potion (no drinking)"]
+      { "title": "Make a yucky face", "extra": "Hold it for a photo‑worthy 10 seconds", "spicyness": 1 },
+      { "title": "Name the worst smell you know", "extra": "Describe it in vivid detail for 10 seconds", "spicyness": 1 },
+      { "title": "Describe a gross food memory", "extra": "Act it out with exaggerated sound effects", "spicyness": 2 },
+      { "title": "Pretend to sniff something stinky", "extra": "Agree on the source and 'find it' together", "spicyness": 2 },
+      { "title": "Pretend to chew something awful", "extra": "Make exaggerated faces and offer a 'sample' to the group", "spicyness": 2 },
+      { "title": "Invent a nasty potion (no drinking)", "extra": "Assemble pretend ingredients and give it a gross name", "spicyness": 2 },
+      { "title": "Smell each other's socks (briefly)", "extra": "Hold 3 inches away and do a single 3‑second whiff", "spicyness": 3 }
+    ]
   },
   "Exhausting": {
     "name": "Exhausting",
     "starts": [
-      { "title": "Both players stretch as high as they can", "extra": "... while jumping as high as they can" },
-      { "title": "The larger player will try to pick up the smaller", "extra": "... and carry them around the room" }
+      { "title": "Both players stretch as high as they can", "extra": "... while jumping as high as they can", "spicyness": 0 },
+      { "title": "The larger player will try to pick up the smaller", "extra": "... and carry them around the room", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Wall‑sit side‑by‑side for 20 seconds", "extra": "Extend to 40 seconds if you can", "score": 3 },
-      { "title": "Do 10 jumping jacks together", "extra": "Add 5 more in slow motion", "score": 3 },
-      { "title": "Plank and high‑five", "extra": "Alternate left and right for 6 high‑fives total", "score": 3 }
-    ],
-    "suggestions": ["20 jumping jacks together","Wall‑sit side‑by‑side","Plank and high‑five","Race in place for 30 seconds","Do a silly push‑up together"]
+      { "title": "Wall‑sit side‑by‑side for 20 seconds", "extra": "Extend to 40 seconds if you can", "spicyness": 3 },
+      { "title": "Do 10 jumping jacks together", "extra": "Add 5 more in slow motion", "spicyness": 3 },
+      { "title": "Plank and high‑five", "extra": "Alternate left and right for 6 high‑fives total", "spicyness": 3 },
+      { "title": "Race in place for 30 seconds", "extra": "Finish with a deep breath in and a high‑five out", "spicyness": 3 },
+      { "title": "Do a silly push‑up together", "extra": "Sync three push‑ups and shout 'Together!' on the last one", "spicyness": 3 }
+    ]
   },
   "Humiliating": {
     "name": "Humiliating",
     "starts": [
-      { "title": "Both players stare at each other disdainfully", "extra": "Also, criticize each other's appearance" },
-      { "title": "Both players disclose something embarrassing", "extra": "Also, mock the other player's disclosure" }
+      { "title": "Both players stare at each other disdainfully", "extra": "Also, criticize each other's appearance", "spicyness": 0 },
+      { "title": "Both players disclose something embarrassing", "extra": "Also, mock the other player's disclosure", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Tell your most cringe story", "extra": "Re‑enact one moment of it with exaggerated drama", "score": 3 },
-      { "title": "Attempt a bad impression", "extra": "Perform it as a 10‑second monologue", "score": 2 },
-      { "title": "Sing off‑key on purpose", "extra": "Finish with a theatrical bow", "score": 2 }
-    ],
-    "suggestions": ["Tell your most awkward moment","Read a cringe text (summarize)","Attempt a bad impression","Sing off‑key on purpose","Describe your dorkiest outfit"]
+      { "title": "Attempt a bad impression", "extra": "Perform it as a 10‑second monologue", "spicyness": 2 },
+      { "title": "Sing off‑key on purpose", "extra": "Finish with a theatrical bow", "spicyness": 2 },
+      { "title": "Describe your dorkiest outfit", "extra": "Strike a mini runway pose to finish", "spicyness": 2 },
+      { "title": "Tell your most cringe story", "extra": "Re‑enact one moment of it with exaggerated drama", "spicyness": 3 },
+      { "title": "Read a cringe text (summarize)", "extra": "Perform it like a dramatic reading for 10 seconds", "spicyness": 3 }
+    ]
   },
   "Inedible": {
     "name": "Inedible",
     "starts": [
-      { "title": "Both players choose a mild spice/sauce to taste", "extra": "Choose something spicy or gross" },
-      { "title": "Both taste a random food from the fridge", "extra": "Choose for each other" }
+      { "title": "Both players choose a mild spice/sauce to taste", "extra": "Choose something spicy or gross", "spicyness": 0 },
+      { "title": "Both taste a random food from the fridge", "extra": "Choose for each other", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Taste a harmless sauce", "extra": "Mix in a mystery (safe) ingredient chosen by them", "score": 2 },
-      { "title": "Blindfold taste test (safe items)", "extra": "Guess the ingredient; wrong guess means one more try", "score": 3 },
-      { "title": "Pretend to be food critics", "extra": "Give each other a star rating and a snobby quote", "score": 1 }
-    ],
-    "suggestions": ["Blindfold taste test (safe items)","Mix two harmless sauces","Describe a terrible recipe","Pretend to be food critics","Create a menu of cursed dishes"]
+      { "title": "Pretend to be food critics", "extra": "Give each other a star rating and a snobby quote", "spicyness": 1 },
+      { "title": "Describe a terrible recipe", "extra": "List three cursed ingredients and one outrageous cooking step", "spicyness": 1 },
+      { "title": "Create a menu of cursed dishes", "extra": "Name three dishes and give each a chef‑y description", "spicyness": 1 },
+      { "title": "Taste a harmless sauce", "extra": "Mix in a mystery (safe) ingredient chosen by them", "spicyness": 2 },
+      { "title": "Mix two harmless sauces", "extra": "Let the other pick the combo and give it a 1–5 'would not eat' rating", "spicyness": 2 },
+      { "title": "Blindfold taste test (safe items)", "extra": "Guess the ingredient; wrong guess means one more try", "spicyness": 3 }
+    ]
   },
   "Intimate": {
     "name": "Intimate",
     "starts": [
-      { "title": "Both players disclose a hope, dream, or flaw", "extra": "... Make it something secret or embarrassing" },
-      { "title": "Maintain eye contact for ten seconds", "extra": "Also, try to synchronize your breathing" }
+      { "title": "Both players disclose a hope, dream, or flaw", "extra": "... Make it something secret or embarrassing", "spicyness": 0 },
+      { "title": "Maintain eye contact for ten seconds", "extra": "Also, try to synchronize your breathing", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Hold hands and breathe together", "extra": "Synchronize your breathing for 30 seconds", "score": 2 },
-      { "title": "Whisper a compliment", "extra": "Add a second compliment about something non‑physical", "score": 2 },
-      { "title": "Maintain eye contact for 10 seconds", "extra": "Try for 20 without laughing", "score": 3 }
-    ],
-    "suggestions": ["Share a hidden talent","Whisper a compliment","Hold hands and breathe together","Tell a private wish","Describe your perfect day"]
+      { "title": "Describe your perfect day", "extra": "Include one moment involving each other", "spicyness": 1 },
+      { "title": "Hold hands and breathe together", "extra": "Synchronize your breathing for 30 seconds", "spicyness": 2 },
+      { "title": "Whisper a compliment", "extra": "Add a second compliment about something non‑physical", "spicyness": 2 },
+      { "title": "Share a hidden talent", "extra": "Demonstrate it for 5–10 seconds if you can", "spicyness": 2 },
+      { "title": "Tell a private wish", "extra": "Add why it matters to you", "spicyness": 2 },
+      { "title": "Maintain eye contact for 10 seconds", "extra": "Try for 20 without laughing", "spicyness": 3 }
+    ]
   },
   "Juvenile": {
     "name": "Juvenile",
     "starts": [
-      { "title": "Both players make silly faces at each other", "extra": "Also, make immature noises" },
-      { "title": "Both players look up each other's noses", "extra": "Also, describe boogers like an avid archeologist" }
+      { "title": "Both players make silly faces at each other", "extra": "Also, make immature noises", "spicyness": 0 },
+      { "title": "Both players look up each other's noses", "extra": "Also, describe boogers like an avid archeologist", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Tell a fart joke", "extra": "Add a homemade sound effect on the punchline", "score": 1 },
-      { "title": "Speak only in kid voices", "extra": "Introduce yourselves like it's the first day of school", "score": 2 },
-      { "title": "Pretend the floor is lava", "extra": "Get both feet on a 'safe island' together", "score": 2 }
-    ],
-    "suggestions": ["Tell a fart joke","Walk like a dinosaur","Speak only in kid voices","Pretend the floor is lava","Act out a cartoon scene"]
+      { "title": "Tell a fart joke", "extra": "Add a homemade sound effect on the punchline", "spicyness": 1 },
+      { "title": "Speak only in kid voices", "extra": "Introduce yourselves like it's the first day of school", "spicyness": 2 },
+      { "title": "Pretend the floor is lava", "extra": "Get both feet on a 'safe island' together", "spicyness": 2 },
+      { "title": "Walk like a dinosaur", "extra": "Add a matching roar at the end", "spicyness": 2 },
+      { "title": "Act out a cartoon scene", "extra": "Swap roles halfway through", "spicyness": 2 }
+    ]
   },
   "Kinky": {
     "name": "Kinky",
     "starts": [
-      { "title": "Both players describe a kink they have heard of", "extra": "Both players disclose a kink they have" },
-      { "title": "Both players swat themselves", "extra": "Both players gently swat each other" }
+      { "title": "Both players describe a kink they have heard of", "extra": "Both players disclose a kink they have", "spicyness": 0 },
+      { "title": "Both players swat themselves", "extra": "Both players gently swat each other", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Describe a playful boundary", "extra": "Practice saying 'green / yellow / red' together", "score": 2 },
-      { "title": "Define a safe word", "extra": "Each use it once in a pretend scene title", "score": 2 },
-      { "title": "Compliment a favorite body part", "extra": "Add one respectful reason why you like it", "score": 3 }
-    ],
-    "suggestions": ["Define a safe word together","Describe a playful boundary","Compliment a favorite body part","Role‑play a polite request","Share a fictional fantasy premise"]
+      { "title": "Describe a playful boundary", "extra": "Practice saying 'green / yellow / red' together", "spicyness": 2 },
+      { "title": "Define a safe word", "extra": "Each use it once in a pretend scene title", "spicyness": 2 },
+      { "title": "Share a fictional fantasy premise", "extra": "Keep it PG‑13 and trade one line each to build it", "spicyness": 2 },
+      { "title": "Compliment a favorite body part", "extra": "Add one respectful reason why you like it", "spicyness": 3 },
+      { "title": "Role‑play a polite request", "extra": "Practice asking and receiving a clear 'yes/no/maybe' reply", "spicyness": 3 }
+    ]
   },
   "Messy": {
     "name": "Messy",
     "starts": [
-      { "title": "Both players muss up their own hair", "extra": "Muss up each other's hair" },
-      { "title": "Both players smear food around their mouths", "extra": "Help each other apply the food" }
+      { "title": "Both players muss up their own hair", "extra": "Muss up each other's hair", "spicyness": 0 },
+      { "title": "Both players smear food around their mouths", "extra": "Help each other apply the food", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Make a shaving‑cream or ketchup mustache", "extra": "Let the other add a matching dot on your cheek", "score": 2 },
-      { "title": "Muss up your hair", "extra": "Let the other give it one playful ruffle", "score": 2 },
-      { "title": "Stack napkins as costumes", "extra": "Walk a mini runway together", "score": 1 }
-    ],
-    "suggestions": ["Draw face paint with ketchup/mustard","Make a shaving‑cream mustache","Stack napkins as costumes","Build a tiny food tower","Wear a silly hat you make now"]
+      { "title": "Stack napkins as costumes", "extra": "Walk a mini runway together", "spicyness": 1 },
+      { "title": "Wear a silly hat you make now", "extra": "Pose for a 3‑second photo moment", "spicyness": 1 },
+      { "title": "Make a shaving‑cream or ketchup mustache", "extra": "Let the other add a matching dot on your cheek", "spicyness": 2 },
+      { "title": "Muss up your hair", "extra": "Let the other give it one playful ruffle", "spicyness": 2 },
+      { "title": "Draw face paint with ketchup/mustard", "extra": "Let the other add one accent mark", "spicyness": 2 },
+      { "title": "Build a tiny food tower", "extra": "Balance it for 5 seconds before collapsing it", "spicyness": 2 }
+    ]
   },
   "Risky": {
     "name": "Risky",
     "starts": [
-      { "title": "Toss a piece of food into the other player's mouth", "extra": "If it falls on the floor, thrower has to eat it" },
-      { "title": "Balance a cup of water on each other's head", "extra": "... Make it a cup of milk or soda" }
+      { "title": "Toss a piece of food into the other player's mouth", "extra": "If it falls on the floor, thrower has to eat it", "spicyness": 0 },
+      { "title": "Balance a cup of water on each other's head", "extra": "... Make it a cup of milk or soda", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Do a trust lean", "extra": "Close your eyes for a 3‑count lean", "score": 3 },
-      { "title": "Balance a book while dancing", "extra": "Trade places without dropping it", "score": 4 },
-      { "title": "Flip a coin and obey", "extra": "Loser follows one more silly instruction from the winner", "score": 3 }
-    ],
-    "suggestions": ["Flip a coin and obey","Walk backwards eyes closed (spotter)","Balance a book while dancing","Juggle soft items","Do a trust lean"]
+      { "title": "Do a trust lean", "extra": "Close your eyes for a 3‑count lean", "spicyness": 3 },
+      { "title": "Flip a coin and obey", "extra": "Loser follows one more silly instruction from the winner", "spicyness": 3 },
+      { "title": "Walk backwards eyes closed (spotter)", "extra": "Take five slow steps with a steady hand on your spotter's shoulder", "spicyness": 3 },
+      { "title": "Juggle soft items", "extra": "Pass one item between you mid‑juggle if you can", "spicyness": 3 },
+      { "title": "Balance a book while dancing", "extra": "Trade places without dropping it", "spicyness": 4 }
+    ]
   },
   "Sensual": {
     "name": "Sensual",
     "starts": [
-      { "title": "Both players wink at each other flirtatiously", "extra": "Also, compliment each other's appearance" },
-      { "title": "Both players take off shoes (keep them off)", "extra": "Also, play footsie with each other" }
+      { "title": "Both players wink at each other flirtatiously", "extra": "Also, compliment each other's appearance", "spicyness": 0 },
+      { "title": "Both players take off shoes (keep them off)", "extra": "Also, play footsie with each other", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Trace a heart on the other's palm", "extra": "Repeat on the forearm while making eye contact", "score": 3 },
-      { "title": "Exchange gentle compliments", "extra": "Add a specific detail you noticed today", "score": 2 },
-      { "title": "Synchronize slow movements", "extra": "Stand a little closer and sync for 20 seconds", "score": 4 }
-    ],
-    "suggestions": ["Describe something you find attractive","Trace a heart on the other's palm","Share your favorite scent","Exchange gentle compliments","Synchronize slow movements"]
+      { "title": "Exchange gentle compliments", "extra": "Add a specific detail you noticed today", "spicyness": 2 },
+      { "title": "Describe something you find attractive", "extra": "Include a specific, respectful detail", "spicyness": 2 },
+      { "title": "Trace a heart on the other's palm", "extra": "Repeat on the forearm while making eye contact", "spicyness": 3 },
+      { "title": "Share your favorite scent", "extra": "Offer a neutral item like your sleeve for a gentle 2‑second waft", "spicyness": 3 },
+      { "title": "Synchronize slow movements", "extra": "Stand a little closer and sync for 20 seconds", "spicyness": 4 }
+    ]
   },
   "Wacky": {
     "name": "Wacky",
     "starts": [
-      { "title": "Both players make faces at each other", "extra": "... while babbling incoherently" },
-      { "title": "Both players make up a bizarre dance", "extra": "... while chanting each other's name" }
+      { "title": "Both players make faces at each other", "extra": "... while babbling incoherently", "spicyness": 0 },
+      { "title": "Both players make up a bizarre dance", "extra": "... while chanting each other's name", "spicyness": 0 }
     ],
     "examples": [
-      { "title": "Speak only in gibberish for 10 seconds", "extra": "Add interpretive dance to express your point", "score": 2 },
-      { "title": "Invent a new animal sound", "extra": "Create a 5‑second call‑and‑response together", "score": 2 },
-      { "title": "Do opposite actions for 30 seconds", "extra": "Switch roles halfway through", "score": 2 }
-    ],
-    "suggestions": ["Speak only in gibberish","Invent a new animal sound","Swap shoes and strut","Pretend gravity changes","Do opposite actions for 30s"]
+      { "title": "Speak only in gibberish for 10 seconds", "extra": "Add interpretive dance to express your point", "spicyness": 2 },
+      { "title": "Invent a new animal sound", "extra": "Create a 5‑second call‑and‑response together", "spicyness": 2 },
+      { "title": "Do opposite actions for 30 seconds", "extra": "Switch roles halfway through", "spicyness": 2 },
+      { "title": "Swap shoes and strut", "extra": "Walk a 5‑step runway with exaggerated flair", "spicyness": 2 },
+      { "title": "Pretend gravity changes", "extra": "Alternate heavy and floaty for 10 seconds", "spicyness": 2 }
+    ]
   }
 }
