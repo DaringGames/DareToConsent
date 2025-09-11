@@ -43,6 +43,7 @@ function contrastOn(hex){
 let state = { room:null, me:{ name:'', color:'' } };
 let local = { addAfterComplete:false, lastCompleterId:null };
 let peekedRoom = null;
+let absentDialog = { promptId: null, el: null };
 
 function navigate(hash){ location.hash = hash; render(); }
 
@@ -51,16 +52,17 @@ let selectedTheme = 'Sensual';
 function titleView(){
   const codeInHash = location.hash?.slice(1) || '';
   const hostName = peekedRoom ? peekedRoom.players.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
-  const subtitle = codeInHash && hostName ? `Join ${hostName}'s game` : 'Join a game or create a new one';
+  const subtitle = codeInHash && hostName ? `Join ${hostName}'s game` : "Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?";
   return `
   <div class="card">
     <h1>Dare to Consent</h1>
     <p>${subtitle}</p>
+    <p>Gather your most uninhibited friends to play the <a href="https://github.com/DaringGames/DareToConsent/" target="_blank" rel="noopener noreferrer">free-to-print card game</a> or play online:</p>
     <div class="grid-landing${codeInHash ? ' single' : ''}">
       <div class="card panel">
         <h3>Join Game</h3>
-        <input id="join-code" placeholder="three-words-like-this" value="${codeInHash}" />
-        <input id="join-name" placeholder="Your name" />
+        <input id="join-code" placeholder="three-words-like-this" value="${codeInHash}" maxlength="64" />
+        <input id="join-name" placeholder="Your name" maxlength="30" />
         <button class="primary" id="join-btn">Join</button>
       </div>
       ${codeInHash ? '' : `<div class="or">or</div>`}
@@ -70,7 +72,7 @@ function titleView(){
           <select id="create-theme">
             ${THEMES ? Object.keys(THEMES).map(k=>`<option value="${k}" ${k===selectedTheme?'selected':''}>Theme: ${THEMES[k].name} Dares</option>`).join('') : `<option value="Sensual" selected>Theme: Sensual Dares</option>`}
           </select>
-          <input id="create-name" placeholder="Your name" />
+          <input id="create-name" placeholder="Your name" maxlength="30" />
           <button class="primary" id="create-btn">Create</button>
         </div>
       `}
@@ -120,8 +122,19 @@ function profileMenuHtml(r){
 function lobbyView(){
   const r = state.room;
   const url = `${location.origin}/#${r.code}`;
-  const isHost = r.hostId === state.me?.id;
-  const canStart = !!THEMES && r.players.length >= 3 && isHost;
+  const connectedCount = (r.players || []).filter(p => p.connected !== false).length;
+  const canProceed = connectedCount >= 3;
+
+  const startControls = `
+      <div class="col">
+        ${r.paused ? `
+          <button class="primary" id="resume-game" ${canProceed ? '' : 'disabled'}>${canProceed ? 'Resume Game' : 'Waiting for at least 3 players'}</button>
+        ` : `
+          <button class="primary" id="start-game" ${canProceed ? '' : 'disabled'}>${canProceed ? 'Start Game' : 'Waiting for at least 3 players'}</button>
+        `}
+      </div>
+    `;
+
   return `
   <div class="card">
     <div class="row between">
@@ -132,11 +145,7 @@ function lobbyView(){
     <small>Share this link: <a href="${url}">${url}</a></small>
     <h3>Players</h3>
     <div class="players">${r.players.map(p=>{ const bg = COLOR_HEX[p.color]||'#1b2030'; const tc = contrastOn(bg); return `<span class="pill name" style="background:${bg};color:${tc}">${p.name}</span>`; }).join('')}</div>
-    ${isHost ? `
-      <div class="col">
-        <button class="primary" id="start-game" ${canStart?'':'disabled'}>${canStart?'Start Game':(!THEMES?'Loading themes…':'Waiting for at least 3 players')}</button>
-      </div>
-    ` : `<small>Waiting for host to start the game…</small>`}
+    ${startControls}
   </div>`;
 }
 
@@ -240,8 +249,8 @@ if (showAddOnly) {
     body = `
     <div class="card">
       <h3 class="add-dare-title">Confer with the group, and write something more ${((THEMES?.[r.chosenTheme]?.name || r.chosenTheme || 'daring').replace(/\s*Dares\s*$/i,'').toLowerCase())} than previous dares</h3>
-      <input id="new-dare" placeholder="New dare" />
-      <input id="new-extra" placeholder="Extra challenge" />
+      <input id="new-dare" placeholder="New dare" maxlength="120" />
+      <input id="new-extra" placeholder="Extra challenge" maxlength="160" />
       <div class="row">
         <button id="add-dare" class="primary">Add to Menu</button>
       </div>
@@ -319,8 +328,9 @@ function render(){
 
   // wiring
   const doJoin = ()=>{
-    const code = ($('#join-code')?.value || '').trim().toLowerCase();
-    const name = ($('#join-name')?.value || '').trim() || 'Player';
+    const code = ($('#join-code')?.value || '').trim().toLowerCase().slice(0,64);
+    const nameRaw = ($('#join-name')?.value || '').trim() || 'Player';
+    const name = nameRaw.slice(0,30);
     if (!code) return; // need a room code
     state.me = { name };
     // Persist intent so a refresh immediately resumes
@@ -328,7 +338,7 @@ function render(){
     socket.emit('room:join', { code, name });
   };
   $('#create-btn')?.addEventListener('click', ()=>{
-    const name = $('#create-name').value.trim()||'Player';
+    const name = ($('#create-name').value.trim()||'Player').slice(0,30);
     const sel = $('#create-theme');
     if (sel && sel.value) selectedTheme = sel.value;
     state.me = { name };
@@ -342,12 +352,14 @@ function render(){
   $('#join-btn')?.addEventListener('click', doJoin);
   $('#join-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
   $('#join-code')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
-  $('#create-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { const name = $('#create-name').value.trim()||'Player'; const sel = $('#create-theme'); if (sel && sel.value && name) { if (sel && sel.value) selectedTheme = sel.value; state.me = { name }; socket.emit('room:create', { name }); } } });
+  $('#create-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { const nm = $('#create-name').value.trim()||'Player'; const name = nm.slice(0,30); const sel = $('#create-theme'); if (sel && sel.value && name) { if (sel && sel.value) selectedTheme = sel.value; state.me = { name }; socket.emit('room:create', { name }); } } });
   $('#start-game')?.addEventListener('click', ()=>{
     const key = selectedTheme || 'Sensual';
-    const seed = seedForTheme(key);
-    if (!seed?.length) return;
-    socket.emit('theme:finalize', { theme: key, seedDares: seed });
+    // Let the server seed authoritatively; client themes may not be loaded yet on some players
+    socket.emit('theme:finalize', { theme: key });
+  });
+  $('#resume-game')?.addEventListener('click', ()=>{
+    socket.emit('game:resume');
   });
 
   // Profile menu (name/color/leave)
@@ -445,8 +457,8 @@ function render(){
 
   // Add new dare (only visible when local.addAfterComplete)
   $('#add-dare')?.addEventListener('click', async ()=>{
-    const title = ($('#new-dare')?.value || '').trim();
-    const extra = ($('#new-extra')?.value || '').trim();
+    const title = (($('#new-dare')?.value || '').trim()).slice(0,120);
+    const extra = (($('#new-extra')?.value || '').trim()).slice(0,160);
     if (!title || !extra) {
       await showConfirm('Please enter both a Dare and an Extra Challenge', { confirmText:'OK', cancelText:'Cancel' });
       return;
@@ -550,6 +562,40 @@ socket.on('room:peek:result', (result) => {
   if (result.ok) {
     peekedRoom = result.state;
     render();
+  }
+});
+
+// Unified room error handling (invalid/expired room, rate limits, etc.)
+socket.on('room:error', ({ code, message }) => {
+  try {
+    if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
+      state.room = null;
+      peekedRoom = null;
+      try { clearSession(); clearUI(); } catch {}
+      try { history.replaceState(null, '', '#'); } catch { location.hash = ''; }
+      render();
+    }
+    showConfirm(message || 'An error occurred', { confirmText:'OK', cancelText:'Cancel' });
+  } catch (e) {
+    console.error('room:error handler failed', e);
+  }
+});
+
+// Legacy/compat fallback if server emits generic "error"
+socket.on('error', (payload) => {
+  try {
+    const code = (payload && payload.code) || 'ERROR';
+    const message = (payload && payload.message) || 'An error occurred';
+    if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
+      state.room = null;
+      peekedRoom = null;
+      try { clearSession(); clearUI(); } catch {}
+      try { history.replaceState(null, '', '#'); } catch { location.hash = ''; }
+      render();
+    }
+    showConfirm(message, { confirmText:'OK', cancelText:'Cancel' });
+  } catch (e) {
+    console.error('error handler failed', e);
   }
 });
 
@@ -766,3 +812,74 @@ function showInviteOverlay(url, { title='Add Players', instructions='Ask new pla
     requestAnimationFrame(()=>overlay.classList.add('show'));
   });
 }
+
+// --- Absent (disconnected) active-player detection UI ---
+function showAbsentOverlay({ promptId, targetId, targetName }) {
+  if (!state?.room) return;
+  const host = ensureOverlayRoot();
+  // Clean up any existing overlay first
+  if (absentDialog.el) {
+    try { absentDialog.el.remove(); } catch {}
+    absentDialog = { promptId: null, el: null };
+  }
+  const esc = (s)=> (s||'').toString()
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  overlay.innerHTML = `
+    <div class="modal card">
+      <div class="modal-content">
+        <h3 class="modal-title">Is ${esc(targetName || 'this player')} still playing?</h3>
+        <p class="modal-message">We can't see ${esc(targetName || 'the player')}'s connection. If they are no longer playing, we can remove them from the game.</p>
+        <div class="row modal-buttons">
+          <button class="btn-yes primary">Yes</button>
+          <button class="btn-no danger">No, remove them</button>
+        </div>
+      </div>
+    </div>`;
+  host.appendChild(overlay);
+
+  const btnYes = overlay.querySelector('.btn-yes');
+  const btnNo = overlay.querySelector('.btn-no');
+  const disable = () => { if (btnYes) btnYes.disabled = true; if (btnNo) btnNo.disabled = true; };
+
+  btnYes?.addEventListener('click', ()=>{
+    disable();
+    socket.emit('absent:response', { promptId, targetId, present: true });
+  });
+  btnNo?.addEventListener('click', ()=>{
+    disable();
+    socket.emit('absent:response', { promptId, targetId, present: false });
+  });
+
+  absentDialog.promptId = promptId;
+  absentDialog.el = overlay;
+  requestAnimationFrame(()=>overlay.classList.add('show'));
+}
+
+function dismissAbsentOverlay() {
+  const overlay = absentDialog.el;
+  if (overlay) {
+    overlay.classList.remove('show');
+    setTimeout(()=>{ try { overlay.remove(); } catch {} }, 150);
+  }
+  absentDialog = { promptId: null, el: null };
+}
+
+// Listen for coordinated absent prompts from server
+socket.on('absent:prompt', ({ promptId, targetId, targetName }) => {
+  const meId = state?.me?.id || null;
+  // Don't prompt the target (and avoid duplicate)
+  if ((meId && meId === targetId) || absentDialog.promptId === promptId) return;
+  showAbsentOverlay({ promptId, targetId, targetName });
+});
+
+// Dismiss any current prompt when resolved (any one player responded or target returned)
+socket.on('absent:dismiss', ({ promptId }) => {
+  if (!promptId) return;
+  if (absentDialog.promptId === promptId) dismissAbsentOverlay();
+});
