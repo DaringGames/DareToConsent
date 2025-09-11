@@ -157,8 +157,9 @@ function seedForTheme(key){
 function dareButtonsHtml(){
   const r = state.room; if (!r) return '';
   const list = r.dareMenu || [];
+  const last = Math.max(0, list.length - 1);
   return `<div class="grid">${list.map((d,i)=>`
-    <button class="primary dare-btn" data-dare-select="${i}">
+    <button class="dare-btn ${i===last?'highlight':''}" data-dare-select="${i}">
       <div class="dare-btn-title">Dare: ${d.title}</div>
       ${d.extra ? `<div class="dare-btn-extra">🌶️ Extra Challenge: ${d.extra}</div>` : ''}
     </button>
@@ -181,6 +182,7 @@ function submissionsTable(){
   const r = state.room; if (!r) return '';
   const meId = state.me?.id || r?.players.find(p=>p.name===state.me.name && p.color===state.me.color)?.id;
   const activeId = r?.turn?.order?.[r.turn.index];
+  const isActive = meId === activeId;
 
   const rows = (r.players||[])
     // Exclude only the active player (they don't respond). Include my own row.
@@ -188,27 +190,33 @@ function submissionsTable(){
     .map(p=>{
       const sub = (r.turn?.submissions||[]).find(s => s.playerId === p.id);
       // Only the active player can see response details
-      const canSee = meId === activeId;
-      const resp = (sub && canSee && sub.response) ? sub.response : null;
-      const color = COLOR_HEX[p.color] || '#4a5168';
+      const resp = (sub && isActive && sub.response) ? sub.response : null;
+      const bg = COLOR_HEX[p.color] || '#1b2030';
+      const tc = contrastOn(bg);
 
       const label =
         resp === 'HECK_YES' ? "I'll do the dare AND the extra challenge!" :
         resp === 'YES_PLEASE' ? "I'll do the dare (but not the extra challenge)" :
         resp === 'NO_THANKS' ? "No Thanks" : '';
 
+      const isAffirm = resp === 'HECK_YES' || resp === 'YES_PLEASE';
+      const chooseCell = (isActive && isAffirm) ? `<button class="btn-did-it" data-did-it="${p.id}">We did it</button>` : '';
+
       const cell = resp
         ? `<span class="response-${resp}">${label}</span>`
         : (sub ? `<span class="muted">Responded</span>` : `<span class="muted">Waiting . . .</span>`);
 
       return `<tr>
-        <td><span class="dot" style="background:${color}"></span>${p?.name||'Player'}</td>
+        <td><span class="pill name" style="background:${bg};color:${tc}">${p?.name||'Player'}</span></td>
         <td>${cell}</td>
+        ${isActive ? `<td class="choose-cell">${chooseCell}</td>` : ''}
       </tr>`;
     }).join('');
 
+  const head = `<thead><tr><th>Player</th><th>Response</th>${isActive ? '<th class="choose-col">Choose</th>' : ''}</tr></thead>`;
+
   return `<table class="table">
-    <thead><tr><th>Player</th><th>Response</th></tr></thead>
+    ${head}
     <tbody>${rows}</tbody>
   </table>`;
 }
@@ -225,14 +233,14 @@ let header = '';
 if (showAddOnly) {
   header = 'You get to write a new dare!';
 } else if (idx == null) {
-  header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'}`;
+  header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'} to choose a dare`;
 } else {
   const subs = r.turn?.submissions || [];
   if (isMyTurn) {
     const expected = r.players.filter(p => p.id !== curId && p.connected !== false).length;
     const gotPositive = subs.some(s => s.response === 'HECK_YES' || s.response === 'YES_PLEASE');
     if (!gotPositive && subs.length < expected) header = 'Waiting for responses . . . ';
-    else if (gotPositive) header = 'Do your dare (or pass)';
+    else if (gotPositive) header = 'Choose someone to do your dare (or pass)';
     else header = "Tell the group you've decided to pass";
   } else {
     const mySub = subs.find(s => s.playerId === meId);
@@ -264,15 +272,18 @@ if (showAddOnly) {
     body = isMyTurn ? `
       <div class="card">
         ${dareButtonsHtml()}
+        <div class="dare-highlight-note">If you perform the highlighted dare, you get to write a new dare!</div>
       </div>
     ` : '';
   } else {
     // Dare selected
     const myResp = (r.turn?.submissions||[]).find(s => s.playerId === meId)?.response || null;
+    const subsAll = r.turn?.submissions || [];
+    const gotAffirmative = subsAll.some(s => s.response === 'HECK_YES' || s.response === 'YES_PLEASE');
     const actionCard = isMyTurn ? `
       <div class="card">
-        <div class="row">
-          <button id="btn-end-turn" class="primary">End Turn</button>
+        <div class="grid">
+          <button id="btn-passed" class="btn-passed danger">I passed</button>
         </div>
       </div>
     ` : `
@@ -304,13 +315,17 @@ if (showAddOnly) {
 }
 
 function wordCloud(theme){
-  // Repurposed to render example dares with extra challenges and a score
+  // Repurposed to render example dares with extra challenges
+  // Hide any examples already present in the current dare menu
   const t = THEMES?.[theme];
-  const list = Array.isArray(t?.examples) ? t.examples : [];
   const c = $('#examples'); if (!c) return;
+  const r = state.room;
+  const taken = new Set((r?.dareMenu || []).map(d => `${(d.title||'').trim()}|${(d.extra||'').trim()}`.toLowerCase()));
+  const raw = Array.isArray(t?.examples) ? t.examples : [];
+  const list = raw.filter(ex => !taken.has(`${(ex?.title||'').trim()}|${(ex?.extra||'').trim()}`.toLowerCase()));
   const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
   c.innerHTML = list.map((ex,i)=>`
-    <button class="dare-btn example-dare" data-example-index="${i}" data-title="${esc(ex.title)}" data-extra="${esc.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
+    <button class="dare-btn example-dare" data-example-index="${i}" data-title="${esc(ex.title)}" data-extra="${ex.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
       <div class="dare-btn-title">Dare: ${ex.title}</div>
       <div class="dare-btn-extra">🌶️ Extra Challenge: ${ex.extra}</div>
     </button>
@@ -438,16 +453,25 @@ function render(){
   }));
 
   // Turn actions
-  $('#btn-end-turn')?.addEventListener('click', ()=>{
-    const r = state.room;
-    const most = r?.turn?.selectedDareIndex===r?.dareMenu?.length-1;
-    // After completing the most daring dare, show ONLY the add UI
-    local.addAfterComplete = !!most;
-    local.lastCompleterId = state.me?.id || null;
-    // Persist UI hint so refresh doesn't lose the "add" screen opportunity
-    try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId, roomCode: state.room?.code }); } catch {}
-    socket.emit('turn:complete', { completedMostDaring: !!most });
-    if (local.addAfterComplete) render();
+  // Inline "We did it" buttons next to affirmative responders
+  $$('#app [data-did-it]')?.forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const r = state.room;
+      const isFinal = r?.turn?.selectedDareIndex === r?.dareMenu?.length - 1;
+      // Only when the highlighted (final) dare was performed, show ONLY the add UI
+      local.addAfterComplete = !!isFinal;
+      local.lastCompleterId = state.me?.id || null;
+      // Persist UI hint so refresh doesn't lose the "add" screen opportunity
+      try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId, roomCode: state.room?.code }); } catch {}
+      socket.emit('turn:complete', { completedMostDaring: !!isFinal });
+      if (local.addAfterComplete) render();
+    });
+  });
+  $('#btn-passed')?.addEventListener('click', ()=>{
+    // Passing never grants add-a-dare
+    local.addAfterComplete = false;
+    try { saveUI({ addAfterComplete: false }); } catch {}
+    socket.emit('turn:pass');
   });
 
   // Responses

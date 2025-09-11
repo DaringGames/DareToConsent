@@ -76,6 +76,29 @@ small{ color:var(--muted); }
 .dare-btn-title{ font-weight:700; }
 .dare-btn-extra{ margin-top:4px; font-size:0.9em; opacity:0.95; }
 
+/* Highlight the final dare */
+.dare-btn.highlight{
+  position:relative;
+  border-color: transparent;
+  animation: highlightPulse 1.8s ease-in-out infinite;
+}
+/* removed text badge on highlighted dare */
+@keyframes highlightPulse{
+  0%{ filter:brightness(1.0); }
+  50%{ filter:brightness(1.06); }
+  100%{ filter:brightness(1.0); }
+}
+@media (prefers-reduced-motion: reduce){
+  .dare-btn.highlight{ animation:none; }
+}
+
+/* Note below the list explaining the highlight */
+.dare-highlight-note{
+  margin-top:8px;
+  color: var(--accent);
+  font-weight:600;
+}
+
 /* Pretty overlay dialogs */
 #overlay-root{ position:relative; z-index: 9999; }
 .overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.5); display:none; align-items:center; justify-content:center; padding:16px; z-index: 10000; opacity:0; transition: opacity .15s ease; }
@@ -135,6 +158,12 @@ a:hover{ text-decoration:underline; }
 
 /* Pointers and disabled state */
 button:disabled{ cursor:not-allowed; opacity:.6; }
+button.btn-performed:disabled{
+  background:#2a3145; /* greyed */
+  color:#aab2c5;
+  border:1px solid #2a3145;
+  opacity:1; /* keep readable instead of global fade */
+}
 button:not(:disabled), .dare-btn, .color-swatch{ cursor:pointer; }
 
 /* Smooth transitions for interactive controls */
@@ -172,3 +201,53 @@ button:focus-visible, .dare-btn:focus-visible, .color-swatch:focus-visible{
   outline:2px solid var(--accent);
   outline-offset:2px;
 }
+
+/* Strong glowy outline for highlighted final dare (override) */
+.dare-btn.highlight{
+  z-index: 0; /* establish stacking context */
+}
+.dare-btn.highlight::after{
+  content: "";
+  position: absolute;
+  inset: -5px; /* extend glow outside button bounds */
+  border-radius: calc(var(--radius-1) + 6px);
+  box-shadow:
+    0 0 0 2px var(--accent),                /* crisp ring */
+    0 0 20px 6px rgba(124,172,248,0.45);    /* soft outer glow */
+  pointer-events: none; /* do not intercept clicks */
+}
+@media (prefers-reduced-motion: reduce){
+  .dare-btn.highlight::after{
+    box-shadow:
+      0 0 0 2px var(--accent),
+      0 0 12px 4px rgba(124,172,248,0.35);
+  }
+}
+
+/* Keep highlight single-outline on hover (avoid extra inset ring) */
+.dare-btn.highlight:hover{ box-shadow: none !important; }
+
+/* Inline "We did it" buttons in the response table */
+.btn-did-it{
+  width:auto;
+  display:inline-block;
+  margin-left:8px;
+  padding:4px 10px;
+  border-radius: var(--radius-1);
+  border:none;
+  background: var(--accent);
+  color:#081020;
+  font-weight:700;
+  box-shadow: var(--shadow-1);
+}
+.btn-did-it:hover{ filter:brightness(1.08); }
+
+/* Align "Choose" column to right */
+.table th.choose-col,
+.table td.choose-cell{
+  text-align:right;
+  white-space:nowrap;
+}
+
+/* Left-align table headers for Player and Response */
+.table th{ text-align:left; }
