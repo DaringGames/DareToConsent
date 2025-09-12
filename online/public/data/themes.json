@@ -35,7 +35,7 @@
         "spicyness": 10
       },
       {
-        "title": "One player narrates the other's micro-gestures",
+        "title": "Current player narrates the other's micro-gestures",
         "extra": "Switch roles and exaggerate tiny movements",
         "spicyness": 14
       },
@@ -50,7 +50,7 @@
         "spicyness": 21
       },
       {
-        "title": "One player compliments the other's elbow",
+        "title": "Current player compliments the other's elbow",
         "extra": "Switch and add a second, even weirder compliment",
         "spicyness": 24
       },
@@ -65,7 +65,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player asks for a high-five and misses",
+        "title": "Current player asks for a high-five and misses",
         "extra": "Try again with eyes closed; then switch initiator",
         "spicyness": 35
       },
@@ -81,7 +81,7 @@
         "comment": "Rescore suggested: 40-49 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player practices a cheesy pickup line",
+        "title": "Current player practices a cheesy pickup line",
         "extra": "Switch and deliver an even cheesier one closer",
         "spicyness": 45
       },
@@ -96,7 +96,7 @@
         "spicyness": 51
       },
       {
-        "title": "One player does a slow wink; the other mirrors imperfectly",
+        "title": "Current player does a slow wink; the other mirrors imperfectly",
         "extra": "Increase speed for 5 rapid winks; switch roles",
         "spicyness": 55
       },
@@ -111,15 +111,15 @@
         "spicyness": 61
       },
       {
-        "title": "One player reads a fake bio about the other player",
+        "title": "Current player reads a fake bio about the other player",
         "extra": "Switch and add an embarrassing middle name",
         "spicyness": 65
       },
       {
-        "title": "Both players whisper-talk simultaneous apologies",
-        "extra": "End with an earnest, slightly-too-long hug (5 sec)",
+        "title": "Both players give each other an overly formal shoulder massage with straight arms while maintaining serious faces",
+        "extra": "Switch to intense eye contact while massaging",
         "spicyness": 69,
-        "comment": "Rescore suggested: 60-69 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+        "comment": "Rescore suggested: 60-69 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
         "title": "Both players narrate each other's breathing for 15 seconds",
@@ -128,7 +128,7 @@
         "comment": "Rescore suggested: 70-79 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player adjusts the other's collar like a sitcom parent",
+        "title": "Current player adjusts the other's collar like a sitcom parent",
         "extra": "Switch and smooth each other's hair once",
         "spicyness": 75
       },
@@ -143,7 +143,7 @@
         "spicyness": 81
       },
       {
-        "title": "One player pretends to almost whisper a secret into the other's ear",
+        "title": "Current player pretends to almost whisper a secret into the other's ear",
         "extra": "Actually whisper a harmless word and smile",
         "spicyness": 85
       },
@@ -158,7 +158,7 @@
         "spicyness": 91
       },
       {
-        "title": "One player initiates a slow-motion 'should we/shouldn't we' hug",
+        "title": "Current player initiates a slow-motion 'should we/shouldn't we' hug",
         "extra": "Complete the hug and sway for 5 seconds",
         "spicyness": 95,
         "comment": "Rescore suggested: 90-99 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
@@ -201,7 +201,7 @@
         "spicyness": 8
       },
       {
-        "title": "One player pantomimes an object; the other 'uses' it",
+        "title": "Current player pantomimes an object; the other 'uses' it",
         "extra": "Switch roles and keep eyes closed while guessing",
         "spicyness": 10
       },
@@ -217,7 +217,7 @@
         "comment": "Rescore suggested: 10-19 -> 40-49 (slow dance) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player draws letters on the other's back (over clothes) to guess",
+        "title": "Current player draws letters on the other's back (over clothes) to guess",
         "extra": "Switch roles and use two letters",
         "spicyness": 21
       },
@@ -237,7 +237,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player sculpts the other into a dramatic pose",
+        "title": "Current player sculpts the other into a dramatic pose",
         "extra": "Choose a pose that requires standing close; then switch",
         "spicyness": 35
       },
@@ -252,7 +252,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player sets a photo-pose: back-to-chest with arms around waist (over clothes)",
+        "title": "Current player sets a photo-pose: back-to-chest with arms around waist (over clothes)",
         "extra": "Switch roles and hold for 5 seconds",
         "spicyness": 45,
         "comment": "Rescore suggested: 40-49 -> 60-69 (chest over clothes) — Flag for possible removal or reordering."
@@ -268,7 +268,7 @@
         "spicyness": 51
       },
       {
-        "title": "One player outlines the other's silhouette in the air with hovering hands",
+        "title": "Current player outlines the other's silhouette in the air with hovering hands",
         "extra": "Gently tap shoulders and elbows to 'pin' the outline; then switch",
         "spicyness": 55
       },
@@ -283,7 +283,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player offers a seated 'chair' knee-to-knee; the other perches briefly (clothed)",
+        "title": "Current player offers a seated 'chair' knee-to-knee; the other perches briefly (clothed)",
         "extra": "Switch roles and hold for 5 seconds",
         "spicyness": 66
       },
@@ -293,13 +293,12 @@
         "spicyness": 69
       },
       {
-        "title": "Both players pantomime a cheek kiss without touching lips",
-        "extra": "Add a quick real cheek peck if comfortable",
-        "spicyness": 71,
-        "comment": "Rescore suggested: 70-79 -> 40-49 (cheek/forehead kiss) — Flag for possible removal or reordering."
+        "title": "Both players compose a 'massage duet': alternate strokes on each other's shoulders to a 10-second rhythm (over clothes)",
+        "extra": "Use massage oil",
+        "spicyness": 71
       },
       {
-        "title": "One player gives a slow, clothed, performance-style lap dance",
+        "title": "Current player gives a slow, clothed, performance-style lap dance",
         "extra": "Seated player may place hands on shoulders",
         "spicyness": 75
       },
@@ -315,7 +314,7 @@
         "comment": "Rescore suggested: 80-89 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player slowly removes the other's jacket or overshirt as if on stage",
+        "title": "Current player slowly removes the other's jacket or overshirt as if on stage",
         "extra": "Reverse roles and repeat a little closer",
         "spicyness": 85
       },
@@ -332,7 +331,7 @@
         "comment": "Rescore suggested: 90-99 -> 60-69 (chest over clothes) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player straddles the other's lap (clothed) for a dramatic pose",
+        "title": "Current player straddles the other's lap (clothed) for a dramatic pose",
         "extra": "Hold the pose for a slow count of 20",
         "spicyness": 95
       },
@@ -416,7 +415,7 @@
         "comment": "Rescore suggested: 30-39 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player rests their head on the other player's shoulder",
+        "title": "Current player rests their head on the other player's shoulder",
         "extra": "Switch roles and repeat",
         "spicyness": 39
       },
@@ -426,15 +425,14 @@
         "spicyness": 41
       },
       {
-        "title": "One player lies with head in the other player's lap (clothed, comfortable)",
+        "title": "Current player lies with head in the other player's lap (clothed, comfortable)",
         "extra": "Offer a gentle over‑clothes shoulder rub for 10 seconds",
         "spicyness": 45
       },
       {
-        "title": "Sit side‑by‑side under a shared blanket",
-        "extra": "Wrap it tighter and hold hands underneath",
-        "spicyness": 49,
-        "comment": "Rescore suggested: 40-49 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
+        "title": "Both players trade 30-second back massages over clothes while seated side-by-side",
+        "extra": "Use massage oil",
+        "spicyness": 49
       },
       {
         "title": "Back hug for 20 seconds with arms around waist (over clothes)",
@@ -573,7 +571,7 @@
         "spicyness": 21
       },
       {
-        "title": "One player dips the other dramatically",
+        "title": "Current player dips the other dramatically",
         "extra": "Switch roles and dip even lower",
         "spicyness": 24
       },
@@ -588,15 +586,14 @@
         "spicyness": 31
       },
       {
-        "title": "One player spins the other into a close pose",
+        "title": "Current player spins the other into a close pose",
         "extra": "Finish with a brief hug for a slow count of 3",
         "spicyness": 35
       },
       {
-        "title": "Both players stage a pretend proposal (no ring)",
-        "extra": "Hold hands and bow to each other for 5 seconds",
-        "spicyness": 39,
-        "comment": "Rescore suggested: 30-39 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
+        "title": "Both players trade brisk shoulder-and-neck massages inches apart (over clothes)",
+        "extra": "Use massage oil",
+        "spicyness": 39
       },
       {
         "title": "Both players exchange quick kisses on the cheek",
@@ -615,7 +612,7 @@
         "spicyness": 49
       },
       {
-        "title": "One player back‑hugs the other for 10 seconds (over clothes)",
+        "title": "Current player back‑hugs the other for 10 seconds (over clothes)",
         "extra": "Whisper a bold compliment while holding",
         "spicyness": 51
       },
@@ -630,7 +627,7 @@
         "spicyness": 59
       },
       {
-        "title": "One player sits briefly on the other's lap (clothed) for a pose",
+        "title": "Current player sits briefly on the other's lap (clothed) for a pose",
         "extra": "Switch roles and hold for 5 seconds",
         "spicyness": 61
       },
@@ -650,7 +647,7 @@
         "spicyness": 71
       },
       {
-        "title": "One player gives a clothed lap dance for 15 seconds",
+        "title": "Current player gives a clothed lap dance for 15 seconds",
         "extra": "Seated player may place hands on shoulders or hips",
         "spicyness": 75
       },
@@ -726,7 +723,7 @@
         "spicyness": 8
       },
       {
-        "title": "One player air‑wafts a shoe toward the other from 1 foot away (pretend only)",
+        "title": "Current player air‑wafts a shoe toward the other from 1 foot away (pretend only)",
         "extra": "Switch roles and do one quick waft again",
         "spicyness": 10
       },
@@ -736,12 +733,12 @@
         "spicyness": 14
       },
       {
-        "title": "Both players sniff the air above each other's shoulder (no contact)",
+        "title": "Both players sniff the air above each other's shoulder",
         "extra": "Rate the pretend stink from 1–5",
         "spicyness": 18
       },
       {
-        "title": "One player offers the other an imaginary spoon of 'trash soup'",
+        "title": "Current player offers the other an imaginary spoon of 'trash soup'",
         "extra": "Trade 'bites' and overreact dramatically",
         "spicyness": 21
       },
@@ -761,7 +758,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player performs a dramatic 'fake sneeze' into elbow",
+        "title": "Current player performs a dramatic 'fake sneeze' into elbow",
         "extra": "Other says 'ew' and hands an imaginary tissue; then switch",
         "spicyness": 35
       },
@@ -776,7 +773,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player pretends to scrape gunk from the other's shoe",
+        "title": "Current player pretends to scrape gunk from the other's shoe",
         "extra": "Swap roles and 'flick' it away with a gross sound",
         "spicyness": 45
       },
@@ -786,7 +783,7 @@
         "spicyness": 49
       },
       {
-        "title": "One player pretends to burp into their elbow; the other fans it back",
+        "title": "Current player pretends to burp into their elbow; the other fans it back",
         "extra": "Switch roles and overreact",
         "spicyness": 51
       },
@@ -801,12 +798,12 @@
         "spicyness": 59
       },
       {
-        "title": "Both players draw a ketchup 'mustache' on yourselves (pretend/air)",
+        "title": "Both players draw a ketchup 'mustache' on yourselves",
         "extra": "Help each other 'wipe' it off with exaggerated disgust",
         "spicyness": 61
       },
       {
-        "title": "One player pretends to lick a finger with mystery sauce; the other says 'ew!'",
+        "title": "Current player pretends to lick a finger with mystery sauce; the other says 'ew!'",
         "extra": "Switch roles and lean closer for the reveal",
         "spicyness": 66
       },
@@ -816,12 +813,12 @@
         "spicyness": 69
       },
       {
-        "title": "Both players place noses near each other's shoulder (no contact) for a 'sniff test'",
+        "title": "Both players place noses near each other's shoulder for a 'sniff test'",
         "extra": "Hold steady for a slow count of 3",
         "spicyness": 71
       },
       {
-        "title": "One player pretends to pick lint from the other's hair with over‑the‑top 'ew's",
+        "title": "Current player pretends to pick lint from the other's hair with over‑the‑top 'ew's",
         "extra": "Switch and 'discover' something even grosser",
         "spicyness": 75
       },
@@ -837,22 +834,22 @@
         "comment": "Rescore suggested: 80-89 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player pretends to spritz a 'garbage perfume' around the other (no contact)",
+        "title": "Current player pretends to spritz a 'garbage perfume' around the other",
         "extra": "Circle twice and add a dramatic sniff",
         "spicyness": 85
       },
       {
-        "title": "Both players take turns sniffing the air near each other's armpit area from 6 inches away (no contact)",
+        "title": "Both players take turns sniffing the air near each other's armpit area from 6 inches away",
         "extra": "Do one exaggerated recoil and laugh",
         "spicyness": 89
       },
       {
-        "title": "Both players conduct an 'extreme sniff test' of each other's shoes at arm's length (no contact)",
+        "title": "Both players conduct an 'extreme sniff test' of each other's shoes at arm's length",
         "extra": "Count down from 5 while holding them out",
         "spicyness": 91
       },
       {
-        "title": "One player mimes cleaning imaginary 'toilet monster' splatter off the other's back (over clothes)",
+        "title": "Current player mimes cleaning imaginary 'toilet monster' splatter off the other's back (over clothes)",
         "extra": "Switch roles and add sound effects",
         "spicyness": 95
       },
@@ -899,7 +896,7 @@
         "spicyness": 10
       },
       {
-        "title": "One player leads 10 arm circles while the other mirrors",
+        "title": "Current player leads 10 arm circles while the other mirrors",
         "extra": "Switch and reverse direction",
         "spicyness": 14
       },
@@ -929,7 +926,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player balances on one foot while the other spots",
+        "title": "Current player balances on one foot while the other spots",
         "extra": "Switch feet and roles",
         "spicyness": 35
       },
@@ -939,7 +936,7 @@
         "spicyness": 39
       },
       {
-        "title": "Both players do 5 push‑ups together (knees okay)",
+        "title": "Both players do 5 push‑ups together",
         "extra": "High‑five at the top of the last rep",
         "spicyness": 41
       },
@@ -954,7 +951,7 @@
         "spicyness": 49
       },
       {
-        "title": "One player holds a plank while the other counts to 20",
+        "title": "Current player holds a plank while the other counts to 20",
         "extra": "Switch and try for 25",
         "spicyness": 51
       },
@@ -974,7 +971,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player leads a quick 20‑second dance cardio while the other mirrors",
+        "title": "Current player leads a quick 20‑second dance cardio while the other mirrors",
         "extra": "Swap leaders and repeat",
         "spicyness": 66
       },
@@ -990,7 +987,7 @@
         "spicyness": 71
       },
       {
-        "title": "One player does 8 assisted lunges while the other offers a steady hand",
+        "title": "Current player does 8 assisted lunges while the other offers a steady hand",
         "extra": "Switch roles",
         "spicyness": 75
       },
@@ -1062,7 +1059,7 @@
         "spicyness": 8
       },
       {
-        "title": "One player reenacts an awkward greeting while the other narrates",
+        "title": "Current player reenacts an awkward greeting while the other narrates",
         "extra": "Switch roles and exaggerate",
         "spicyness": 10
       },
@@ -1082,7 +1079,7 @@
         "spicyness": 21
       },
       {
-        "title": "One player reads a mock love poem to the other in monotone",
+        "title": "Current player reads a mock love poem to the other in monotone",
         "extra": "Swap roles and go even bigger",
         "spicyness": 24
       },
@@ -1097,7 +1094,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player invents a humiliating award for themselves; the other presents it",
+        "title": "Current player invents a humiliating award for themselves; the other presents it",
         "extra": "Give a short acceptance speech",
         "spicyness": 35
       },
@@ -1112,7 +1109,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player reads aloud a 'cringe text' summary",
+        "title": "Current player reads aloud a 'cringe text' summary",
         "extra": "The other provides dramatic echoes",
         "spicyness": 45
       },
@@ -1127,7 +1124,7 @@
         "spicyness": 51
       },
       {
-        "title": "One player karaoke hums off‑key while the other backup‑dances",
+        "title": "Current player karaoke hums off‑key while the other backup‑dances",
         "extra": "Switch roles",
         "spicyness": 55
       },
@@ -1142,7 +1139,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player delivers a fake apology to the other for an absurd thing",
+        "title": "Current player delivers a fake apology to the other for an absurd thing",
         "extra": "The other forgives you with too many hugs",
         "spicyness": 66
       },
@@ -1157,12 +1154,12 @@
         "spicyness": 71
       },
       {
-        "title": "One player asks the other for a date in the cheesiest way",
+        "title": "Current player asks the other for a date in the cheesiest way",
         "extra": "Say yes and do a cringey high‑five",
         "spicyness": 75
       },
       {
-        "title": "One player becomes a footstool for the other player's feet for 10 seconds",
+        "title": "Current player uses the dare accepter as a footstool for 10 seconds",
         "extra": "Switch roles and extend to 20 seconds",
         "spicyness": 85,
         "comment": "New concept: humiliating footstool; replaces mis-scored hug content."
@@ -1173,7 +1170,7 @@
         "spicyness": 81
       },
       {
-        "title": "One player does a runway walk with a ridiculous face while the other announces",
+        "title": "Current player does a runway walk with a ridiculous face while the other announces",
         "extra": "Swap and outdo it",
         "spicyness": 85
       },
@@ -1189,7 +1186,7 @@
         "comment": "Rescore suggested: 70-79 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player reenacts their most awkward kiss attempt without touching; the other provides sound effects",
+        "title": "Current player reenacts their most awkward kiss attempt without touching; the other provides sound effects",
         "extra": "Switch roles",
         "spicyness": 95
       },
@@ -1237,7 +1234,7 @@
         "spicyness": 10
       },
       {
-        "title": "One player invents a fake recipe step‑by‑step; the other mimes following it",
+        "title": "Current player invents a fake recipe step‑by‑step; the other mimes following it",
         "extra": "Swap roles",
         "spicyness": 14
       },
@@ -1252,7 +1249,7 @@
         "spicyness": 21
       },
       {
-        "title": "One player mixes two harmless sauces for the other to taste",
+        "title": "Current player mixes two harmless sauces for the other to taste",
         "extra": "Rate it 1–5 'would not eat'",
         "spicyness": 24
       },
@@ -1267,7 +1264,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player designs a 'mystery spice rub' (pretend only) on the other's palm",
+        "title": "Current player designs a 'mystery spice rub' (pretend only) on the other's palm",
         "extra": "Smell and announce its 'notes'",
         "spicyness": 35
       },
@@ -1282,7 +1279,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player invents a cursed smoothie (pretend) and 'serves' it to the other",
+        "title": "Current player invents a cursed smoothie (pretend) and 'serves' it to the other",
         "extra": "Swap and make it worse",
         "spicyness": 45
       },
@@ -1297,7 +1294,7 @@
         "spicyness": 51
       },
       {
-        "title": "One player names three ingredients; the other creates a dish title",
+        "title": "Current player names three ingredients; the other creates a dish title",
         "extra": "Swap roles with even stranger ingredients",
         "spicyness": 55
       },
@@ -1312,7 +1309,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player 'plates' a snack for the other with fancy gestures",
+        "title": "Current player 'plates' a snack for the other with fancy gestures",
         "extra": "Swap and add a ridiculous garnish",
         "spicyness": 66
       },
@@ -1327,7 +1324,7 @@
         "spicyness": 71
       },
       {
-        "title": "One player chooses a safe spice; the other guesses with eyes closed",
+        "title": "Current player chooses a safe spice; the other guesses with eyes closed",
         "extra": "Give a second clue and guess again",
         "spicyness": 75
       },
@@ -1343,7 +1340,7 @@
         "comment": "Rescore suggested: 80-89 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "Both players do a blindfolded safe sip challenge (pre‑agreed items)",
+        "title": "Both players do a blindfolded safe sip challenge",
         "extra": "Lean closer and whisper tasting notes",
         "spicyness": 85
       },
@@ -1354,12 +1351,12 @@
       },
       {
         "title": "Both players pretend to share a gourmet mystery bite from a fork (no stabbing, safe item)",
-        "extra": "Hold the pose nose‑to‑nose (no lip contact) for 3 seconds",
+        "extra": "Hold the pose nose‑to‑nose for 3 seconds",
         "spicyness": 91
       },
       {
         "title": "Both players create a 'restaurant review' of each other's snack plating",
-        "extra": "Include a 'chef hug' (quick side‑hug)",
+        "extra": "Include a 'chef hug'",
         "spicyness": 95,
         "comment": "Rescore suggested: 90-99 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
       },
@@ -1416,7 +1413,7 @@
         "spicyness": 18
       },
       {
-        "title": "One player gives the other a slow hand massage",
+        "title": "Current player gives the other a slow hand massage",
         "extra": "Switch roles and repeat",
         "spicyness": 21
       },
@@ -1482,7 +1479,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player sits in the other’s lap (clothed) and embrace",
+        "title": "Current player sits in the dare accepter’s lap (clothed) and embrace",
         "extra": "Switch positions and repeat",
         "spicyness": 65,
         "comment": "Rescore suggested: 60-69 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
@@ -1493,51 +1490,50 @@
         "spicyness": 69
       },
       {
-        "title": "Share a series of soft kisses at the corners of the mouth",
-        "extra": "Move to the jawline for a couple more; then switch",
+        "title": "Both players share a sexual fantasy you'd like to try together",
+        "extra": "Include specific acts, locations, and how you'd start",
         "spicyness": 71
       },
       {
-        "title": "Give a slow, clothed seated lap dance",
-        "extra": "Seated player may place hands on shoulders or hips",
+        "title": "Current player describes in erotic detail how you would touch the dare accepter from head to toe",
+        "extra": "Dare accepter describes your favorite pace and pressure",
         "spicyness": 75
       },
       {
-        "title": "Both players confess a private insecurity about intimacy (non-graphic)",
-        "extra": "Offer one sentence of reassurance to each other",
+        "title": "Both players trade your hottest sexual memory (real or imagined)",
+        "extra": "Include sounds, positions, and where you finish",
         "spicyness": 79
       },
       {
-        "title": "Share an extended makeout session (clothed)",
-        "extra": "Look into each other’s eyes between kisses for a moment",
+        "title": "Both players script a two-line dirty dialogue for a roleplay you'd like to do",
+        "extra": "Perform the lines while making eye contact",
         "spicyness": 81,
-        "comment": "Rescore suggested: 80-89 -> 60-69 (makeout) — Flag for possible removal or reordering."
+        "comment": "Rescore suggested: 80-89 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "Remove an outer layer (jacket or overshirt) for each other",
-        "extra": "Stand a little closer and repeat",
+        "title": "Both players list three acts you'd like the other to do to you tonight",
+        "extra": "Say the order you'd like them",
         "spicyness": 85
       },
       {
-        "title": "Both players describe a romantic fantasy scene without sexual details",
-        "extra": "Add one line of dialogue you would say",
+        "title": "Both players describe a full sexual scene you want to do together, step by step",
+        "extra": "Add where you'd climax and how",
         "spicyness": 89
       },
       {
-        "title": "Cuddle lying face-to-face, noses touching",
-        "extra": "Share a few soft kisses if you both want to",
+        "title": "Both players whisper exactly how you'd make each other climax",
+        "extra": "Include rhythm, pressure, and positions",
         "spicyness": 91
       },
       {
-        "title": "Both players reveal a private closeness fantasy (non-graphic)",
-        "extra": "Include how you'd want to feel afterwards",
+        "title": "Trade explicit fantasies you haven't shared before",
+        "extra": "Negotiate who would lead and any toys",
         "spicyness": 95
       },
       {
-        "title": "Both players confess the most vulnerable truth you're ready to share tonight",
-        "extra": "Hold hands while sharing and thank each other",
-        "spicyness": 99,
-        "comment": "Rescore suggested: 90-99 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
+        "title": "Confess the dirtiest fantasy you're excited to try with each other",
+        "extra": "Make a plan for the first 60 seconds",
+        "spicyness": 99
       }
     ]
   },
@@ -1699,7 +1695,7 @@
         "spicyness": 91
       },
       {
-        "title": "Both players do a safe piggyback‑pose lean (no lifting)",
+        "title": "Both players do a safe piggyback‑pose lean",
         "extra": "Switch positions and repeat",
         "spicyness": 95
       },
@@ -1768,12 +1764,12 @@
         "comment": "Rescore suggested: 20-29 -> 60-69 (butt over clothes) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player wears a comfy blindfold for 10 seconds",
-        "extra": "Trace a fingertip on the forearm, then switch roles",
+        "title": "Current player wears a blindfold for 10 seconds",
+        "extra": "Trace a fingertip on the dare accepter's forearm, then switch roles",
         "spicyness": 27
       },
       {
-        "title": "One player kneels while the other sets one polite protocol (e.g., 'eyes up')",
+        "title": "Current player kneels while the dare accepter sets one protocol (e.g., 'eyes up')",
         "extra": "Switch roles and repeat",
         "spicyness": 31
       },
@@ -1788,7 +1784,7 @@
         "spicyness": 39
       },
       {
-        "title": "One player gives 10 light pats with a pillow or hand over clothes",
+        "title": "Current player gives 10 pats with a pillow or hand over clothes",
         "extra": "Alternate sides while counting",
         "spicyness": 41
       },
@@ -1803,8 +1799,8 @@
         "spicyness": 49
       },
       {
-        "title": "One player's wrist gets a loose bow with a scarf (quick release, check comfort)",
-        "extra": "Untie, then try the other wrist",
+        "title": "Current player ties a scarf bow on the dare accepter's wrist",
+        "extra": "Untie, then switch wrists",
         "spicyness": 51
       },
       {
@@ -1813,8 +1809,8 @@
         "spicyness": 55
       },
       {
-        "title": "Both players bend over a cushion for 10 gentle swats over clothes",
-        "extra": "Increase to 15 if you both want to",
+        "title": "Both players bend over a cushion for 10 swats over clothes",
+        "extra": "Increase to 15",
         "spicyness": 59
       },
       {
@@ -1833,12 +1829,12 @@
         "spicyness": 69
       },
       {
-        "title": "One player gives a clothed lap dance for 15 seconds",
+        "title": "Current player gives a clothed lap dance for 15 seconds",
         "extra": "Seated player may place hands on hips or shoulders",
         "spicyness": 71
       },
       {
-        "title": "Both players do a 'hands on wall' pose (no pressure) for 10 seconds",
+        "title": "Both players do a 'hands on wall' pose for 10 seconds",
         "extra": "Whisper one praise, then switch",
         "spicyness": 75
       },
@@ -1853,7 +1849,7 @@
         "spicyness": 81
       },
       {
-        "title": "One player whispers three kinky compliments",
+        "title": "Current player whispers three kinky compliments",
         "extra": "Step half a pace closer and whisper one more",
         "spicyness": 85
       },
@@ -1863,13 +1859,12 @@
         "spicyness": 89
       },
       {
-        "title": "Both players combine blindfold + commands + over-clothes touch for 45 seconds",
-        "extra": "Finish with a 10-second aftercare hug",
-        "spicyness": 91,
-        "comment": "Rescore suggested: 90-99 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+        "title": "Current player is blindfolded and kneels; dare accepter presents a body part to identify by smell",
+        "extra": "Then identify by taste",
+        "spicyness": 91
       },
       {
-        "title": "One player kneels between the other's legs (clothed) for 10 seconds with eye contact",
+        "title": "Current player kneels between the other's legs (clothed) for 10 seconds with eye contact",
         "extra": "Place hands on shoulders or thighs over clothing",
         "spicyness": 95,
         "comment": "Rescore suggested: 90-99 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
@@ -1962,7 +1957,7 @@
         "spicyness": 18
       },
       {
-        "title": "One player traces a short face‑paint line on the other's cheek (washable)",
+        "title": "Current player traces a short face‑paint line on the other's cheek (washable)",
         "extra": "Switch and add one more accent line",
         "spicyness": 21
       },
@@ -1982,7 +1977,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player draws a washable dot on the other's hand",
+        "title": "Current player draws a washable dot on the other's hand",
         "extra": "Switch and add a second dot",
         "spicyness": 35
       },
@@ -1997,7 +1992,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player gives the other a 'messy chef' stripe on the cheek (washable)",
+        "title": "Current player gives the other a 'messy chef' stripe on the cheek (washable)",
         "extra": "Switch and add a second stripe",
         "spicyness": 45
       },
@@ -2012,7 +2007,7 @@
         "spicyness": 51
       },
       {
-        "title": "One player draws a washable swirl on the other's wrist",
+        "title": "Current player draws a washable swirl on the other's wrist",
         "extra": "Switch and add a star",
         "spicyness": 55
       },
@@ -2027,7 +2022,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player adds a washable 'war stripe' to the other's cheek",
+        "title": "Current player adds a washable 'war stripe' to the other's cheek",
         "extra": "Switch and add under‑eye dots",
         "spicyness": 66
       },
@@ -2042,7 +2037,7 @@
         "spicyness": 71
       },
       {
-        "title": "One player gently powders the other's sleeve with a tiny pinch of flour (if available)",
+        "title": "Current player gently powders the other's sleeve with a tiny pinch of flour (if available)",
         "extra": "Switch and write an initial with fingertip",
         "spicyness": 75
       },
@@ -2057,7 +2052,7 @@
         "spicyness": 81
       },
       {
-        "title": "One player decorates the other's hand with sauce dots then 'connects' them",
+        "title": "Current player decorates the other's hand with sauce dots then 'connects' them",
         "extra": "Switch roles and add one more connection",
         "spicyness": 85
       },
@@ -2073,7 +2068,7 @@
         "comment": "Rescore suggested: 90-99 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       },
       {
-        "title": "One player finger‑paints a small heart on the other's cheek (washable)",
+        "title": "Current player finger‑paints a small heart on the other's cheek (washable)",
         "extra": "Switch; then hug carefully for 2 seconds",
         "spicyness": 95,
         "comment": "Rescore suggested: 90-99 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
@@ -2116,7 +2111,7 @@
         "spicyness": 8
       },
       {
-        "title": "One player guides the other 5 slow steps eyes‑closed (spotter hand on shoulder)",
+        "title": "Current player guides the other 5 slow steps eyes‑closed (spotter hand on shoulder)",
         "extra": "Switch roles and repeat",
         "spicyness": 10
       },
@@ -2136,7 +2131,7 @@
         "spicyness": 21
       },
       {
-        "title": "One player stands on a low step; the other spots as you step down backward",
+        "title": "Current player stands on a low step; the other spots as you step down backward",
         "extra": "Switch roles",
         "spicyness": 24
       },
@@ -2151,7 +2146,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player walks backward eyes‑closed while the other calls directions",
+        "title": "Current player walks backward eyes‑closed while the other calls directions",
         "extra": "Trade roles and reduce verbal hints",
         "spicyness": 35
       },
@@ -2166,7 +2161,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player piggyback‑pose leans onto the other (no lifting)",
+        "title": "Current player piggyback‑pose leans onto the other",
         "extra": "Switch roles and hold for 3 seconds",
         "spicyness": 45
       },
@@ -2176,14 +2171,14 @@
         "spicyness": 49
       },
       {
-        "title": "Both players attempt a blindfolded touch: find each other's hands safely",
-        "extra": "Hold hands for a slow count of 3",
+        "title": "Current player is blindfolded and must guess which body part the dare accepter presents by smell",
+        "extra": "Then guess by taste",
         "spicyness": 51,
-        "comment": "Rescore suggested: 50-59 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
+        "comment": "Replaced with blindfolded body-part guessing; escalates via taste."
       },
       {
-        "title": "One player stands on a chair while the other spots (stable chair only)",
-        "extra": "Switch roles; safety first",
+        "title": "Current player stands on a chair while the dare accepter spots",
+        "extra": "Switch roles",
         "spicyness": 55
       },
       {
@@ -2197,7 +2192,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player slowly leads the other through a doorway eyes‑closed",
+        "title": "Current player slowly leads the other through a doorway eyes‑closed",
         "extra": "Switch roles and reduce cues",
         "spicyness": 66
       },
@@ -2212,7 +2207,7 @@
         "spicyness": 71
       },
       {
-        "title": "One player spins the other then guides you to a chair",
+        "title": "Current player spins the other then guides you to a chair",
         "extra": "Switch roles and increase spin by one turn",
         "spicyness": 75
       },
@@ -2227,7 +2222,7 @@
         "spicyness": 81
       },
       {
-        "title": "One player leads a slow trust walk outdoors for 30 seconds (safe area)",
+        "title": "Current player leads a slow trust walk outdoors for 30 seconds (safe area)",
         "extra": "Switch roles",
         "spicyness": 85
       },
@@ -2242,7 +2237,7 @@
         "spicyness": 91
       },
       {
-        "title": "One player blindfolds and the other places a safe object in your palm to identify",
+        "title": "Current player blindfolds and the other places a safe object in your palm to identify",
         "extra": "Switch roles with a second object",
         "spicyness": 95
       },
@@ -2325,7 +2320,7 @@
         "spicyness": 65
       },
       {
-        "title": "One player slowly removes the other's top layer; pause and savor the reveal",
+        "title": "Current player slowly removes the dare accepter's top layer; pause and savor the reveal",
         "extra": "Switch roles and stand chest-to-chest for 5 seconds",
         "spicyness": 75
       },
@@ -2397,7 +2392,7 @@
         "comment": "Rescore suggested: 20-29 -> 40-49 (slow dance) — Flag for possible removal or reordering."
       },
       {
-        "title": "Both players lean the other gently against a wall (no pinning) and pause inches apart",
+        "title": "Both players lean the other against a wall and pause inches apart",
         "extra": "Hold a near-kiss for a 3-count while breathing together",
         "spicyness": 38
       },
@@ -2407,10 +2402,9 @@
         "spicyness": 49
       },
       {
-        "title": "Both players run fingers slowly through each other's hair",
-        "extra": "Maintain eye contact and match slow breaths",
-        "spicyness": 57,
-        "comment": "Rescore suggested: 50-59 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
+        "title": "Both players trade slow neck-and-shoulder massages (over clothes)",
+        "extra": "Use massage oil",
+        "spicyness": 57
       },
       {
         "title": "Both players place hands on each other's butt over clothes",
@@ -2418,7 +2412,7 @@
         "spicyness": 68
       },
       {
-        "title": "One player straddles the other's lap (clothed) and make out slowly",
+        "title": "Current player straddles the dare accepter's lap (clothed) and make out slowly",
         "extra": "Switch roles and continue for 10 seconds",
         "spicyness": 78
       },
@@ -2444,7 +2438,7 @@
       },
       {
         "title": "Both players kiss each other's chest",
-        "extra": "Add licking and gentle sucking",
+        "extra": "Add licking and sucking",
         "spicyness": 78
       },
       {
@@ -2495,7 +2489,7 @@
         "spicyness": 8
       },
       {
-        "title": "One player becomes a human mirror for the other",
+        "title": "Current player becomes a human mirror for the other",
         "extra": "Switch roles and exaggerate",
         "spicyness": 10
       },
@@ -2515,7 +2509,7 @@
         "spicyness": 21
       },
       {
-        "title": "One player pretends to be a robot while the other is a translator",
+        "title": "Current player pretends to be a robot while the other is a translator",
         "extra": "Switch roles and add sound effects",
         "spicyness": 24
       },
@@ -2530,7 +2524,7 @@
         "spicyness": 31
       },
       {
-        "title": "One player puppeteers the other's arms (gentle)",
+        "title": "Current player puppeteers the other's arms (gentle)",
         "extra": "Switch roles and escalate the chaos slightly",
         "spicyness": 35
       },
@@ -2545,7 +2539,7 @@
         "spicyness": 41
       },
       {
-        "title": "One player is 'wind'; the other is a wobbly tree",
+        "title": "Current player is 'wind'; the other is a wobbly tree",
         "extra": "Switch and make a storm",
         "spicyness": 45
       },
@@ -2560,7 +2554,7 @@
         "spicyness": 51
       },
       {
-        "title": "One player pretends to be a malfunctioning elevator; the other 'rides'",
+        "title": "Current player pretends to be a malfunctioning elevator; the other 'rides'",
         "extra": "Switch roles and add more 'floors'",
         "spicyness": 55
       },
@@ -2575,7 +2569,7 @@
         "spicyness": 61
       },
       {
-        "title": "One player is a DJ; the other dances like every genre at once",
+        "title": "Current player is a DJ; the other dances like every genre at once",
         "extra": "Swap roles and turn up the chaos",
         "spicyness": 66
       },
@@ -2590,7 +2584,7 @@
         "spicyness": 71
       },
       {
-        "title": "One player frames the other's face like a portrait photographer",
+        "title": "Current player frames the other's face like a portrait photographer",
         "extra": "Switch and 'tilt chin' dramatically",
         "spicyness": 75
       },
@@ -2600,13 +2594,12 @@
         "spicyness": 79
       },
       {
-        "title": "Both players do an over‑the‑top slow‑motion chase",
-        "extra": "Finish with a dramatic hug crash (gentle)",
-        "spicyness": 81,
-        "comment": "Rescore suggested: 80-89 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+        "title": "Both players perform a 'percussion massage' routine on each other's backs to a silly beat (over clothes)",
+        "extra": "Use massage oil",
+        "spicyness": 81
       },
       {
-        "title": "One player becomes 'gravity'; the other acts like a balloon",
+        "title": "Current player becomes 'gravity'; the other acts like a balloon",
         "extra": "Switch and end floating cheek‑to‑cheek for 2 seconds",
         "spicyness": 85
       },
@@ -2621,7 +2614,7 @@
         "spicyness": 91
       },
       {
-        "title": "One player tries to keep a straight face while the other does slapstick",
+        "title": "Current player tries to keep a straight face while the other does slapstick",
         "extra": "Switch roles and stand closer",
         "spicyness": 95
       },
