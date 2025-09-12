@@ -314,22 +314,89 @@ if (showAddOnly) {
   </div>`;
 }
 
-function wordCloud(theme){
-  // Repurposed to render example dares with extra challenges
-  // Hide any examples already present in the current dare menu
+const PAGE_SIZE = 4;
+
+// Build filtered, sorted example list for the given theme
+function examplesListForTheme(theme){
   const t = THEMES?.[theme];
-  const c = $('#examples'); if (!c) return;
   const r = state.room;
   const taken = new Set((r?.dareMenu || []).map(d => `${(d.title||'').trim()}|${(d.extra||'').trim()}`.toLowerCase()));
   const raw = Array.isArray(t?.examples) ? t.examples : [];
-  const list = raw.filter(ex => !taken.has(`${(ex?.title||'').trim()}|${(ex?.extra||'').trim()}`.toLowerCase()));
+  // Stable sort by spicyness ascending, fall back to original order
+  const list = raw
+    .filter(ex => !taken.has(`${(ex?.title||'').trim()}|${(ex?.extra||'').trim()}`.toLowerCase()))
+    .map((ex,i)=>({ ...ex, __idx:i, sp: (typeof ex.spicyness === 'number' ? ex.spicyness : 0) }));
+  list.sort((a,b)=> (a.sp - b.sp) || (a.__idx - b.__idx));
+  return list;
+}
+
+function getExampleOffset(theme){
+  try{
+    const ui = loadUI() || {};
+    const map = ui.exampleOffsets || {};
+    const n = map[theme] || 0;
+    return Math.max(0, parseInt(n,10) || 0);
+  } catch { return 0; }
+}
+function setExampleOffset(theme, offset){
+  try{
+    const ui = loadUI() || {};
+    const map = ui.exampleOffsets || {};
+    map[theme] = Math.max(0, offset|0);
+    saveUI({ exampleOffsets: map });
+  } catch {}
+}
+function shiftExamples(theme, delta){
+  const list = examplesListForTheme(theme);
+  const maxStart = Math.max(0, list.length - PAGE_SIZE);
+  let cur = getExampleOffset(theme);
+  let next = cur + (delta|0);
+  if (next < 0) next = 0;
+  if (next > maxStart) next = maxStart;
+  if (next !== cur) setExampleOffset(theme, next);
+  wordCloud(theme);
+}
+function wordCloud(theme){
+  // Render 4 example dares at a time with nav, remembering position per theme
+  const c = $('#examples'); if (!c) return;
+  const themeKey = state?.room?.chosenTheme || theme;
+  const list = examplesListForTheme(themeKey);
+  const offset = getExampleOffset(themeKey);
+  const page = list.slice(offset, offset + PAGE_SIZE);
+  const canPrev = offset > 0;
+  const canNext = (offset + PAGE_SIZE) < list.length;
+
   const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
-  c.innerHTML = list.map((ex,i)=>`
-    <button class="dare-btn example-dare" data-example-index="${i}" data-title="${esc(ex.title)}" data-extra="${ex.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
-      <div class="dare-btn-title">Dare: ${ex.title}</div>
-      <div class="dare-btn-extra">🌶️ Extra Challenge: ${ex.extra}</div>
-    </button>
+
+  const rows = page.map((ex,i)=>`
+    <tr>
+      <td class="ex-cell-btn">
+        <button class="dare-btn example-dare" data-example-index="${offset + i}" data-title="${esc(ex.title)}" data-extra="${ex.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
+          <div class="dare-btn-title">Dare: ${ex.title}</div>
+          <div class="dare-btn-extra">🌶️ Extra Challenge: ${ex.extra}</div>
+        </button>
+      </td>
+      <td class="ex-cell-spice">
+        <span class="spice-badge" title="Spiciness: ${(ex.sp!=null?ex.sp:(ex.spicyness!=null?ex.spicyness:''))}">
+          <span class="pepper" aria-hidden="true">🌶️</span>
+          <span class="spice-num">${(ex.sp!=null?ex.sp:(ex.spicyness!=null?ex.spicyness:''))}</span>
+        </span>
+      </td>
+    </tr>
   `).join('');
+
+  const table = `<table class="table examples-table"><tbody>${rows}</tbody></table>`;
+
+  const nav = `
+    <div class="examples-nav">
+      <button id="examples-prev" class="btn-examples-prev" ${canPrev ? '' : 'disabled'}>❄️ Show milder dares</button>
+      <button id="examples-next" class="btn-examples-next" ${canNext ? '' : 'disabled'}>🌶️ Show spicier dares</button>
+    </div>
+  `;
+
+  c.innerHTML = table + nav;
+  $('#examples-prev')?.addEventListener('click', ()=> shiftExamples(themeKey, -PAGE_SIZE));
+  $('#examples-next')?.addEventListener('click', ()=> shiftExamples(themeKey, PAGE_SIZE));
 }
 
 function render(){

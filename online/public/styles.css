@@ -131,8 +131,8 @@ button.btn-response.NO_THANKS{ background:#ef476f; color:#081020; }
 .add-dare-title{ font-size: clamp(1rem, 3.2vw, 1.25rem); line-height:1.35; margin-bottom:8px; }
 .or-section{ margin:12px 0 6px; text-align:center; color:var(--muted); }
 .or-section .or-divider{ margin:4px 0 6px; opacity:0.8; }
-.examples{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-@media (max-width:700px){ .examples{ grid-template-columns:1fr; } }
+.examples{ display:block; }
+@media (max-width:700px){ .examples{ display:block; } }
 
 /* Highlight selected response button */
 button.btn-response.selected{ outline:2px solid #e7e9ee; outline-offset:-2px; }
@@ -251,3 +251,49 @@ button:focus-visible, .dare-btn:focus-visible, .color-swatch:focus-visible{
 
 /* Left-align table headers for Player and Response */
 .table th{ text-align:left; }
+
+/* Examples pager below the suggestions grid */
+.examples-nav{
+  display:flex;
+  justify-content:flex-start;
+  gap:8px;
+  margin-top:8px;
+}
+.examples-nav .btn-examples-prev{
+  width:auto;
+}
+.examples-nav .btn-examples-next{
+  width:auto;
+  margin-left:auto; /* always right-justify the spicier button */
+}
+
+/* Suggestions table layout and spiciness badge */
+.examples-table{ width:100%; border-collapse:collapse; margin-top:6px; }
+.examples-table td{ border-bottom:1px solid #2a3145; padding:6px 0; vertical-align:middle; }
+.examples-table .ex-cell-btn{ padding-right:12px; }
+.examples-table .ex-cell-spice{ width:80px; text-align:right; }
+
+.spice-badge{
+  position:relative;
+  display:inline-block;
+  width:66px;  /* ~50% larger footprint */
+  height:54px;
+}
+.spice-badge .pepper{
+  font-size:54px;  /* larger pepper emoji */
+  line-height:54px;
+  display:block;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.4));
+}
+.spice-badge .spice-num{
+  position:absolute;
+  top:62%;   /* bias down */
+  left:64%;  /* bias right */
+  transform:translate(-50%, -50%);
+  font-weight:800;
+  font-size:20px; /* readable two digits on larger pepper */
+  color:#f7f9ff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.85), 0 0 2px rgba(0,0,0,.85);
+}
+
+.examples-table .dare-btn{ width:100%; }
