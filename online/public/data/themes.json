@@ -1431,16 +1431,14 @@
         "spicyness": 27
       },
       {
-        "title": "Hug chest-to-chest (clothed) for 15 seconds",
-        "extra": "Sway slowly together",
-        "spicyness": 31,
-        "comment": "Rescore suggested: 30-39 -> 60-69 (chest over clothes) — Flag for possible removal or reordering."
+        "title": "Both players share a private romantic fantasy you've never told each other",
+        "extra": "Add one specific detail; switch who goes first",
+        "spicyness": 31
       },
       {
-        "title": "Back-to-chest lean with the rear player wrapping arms around",
-        "extra": "Hold hands over the front player's heart (over clothing)",
-        "spicyness": 35,
-        "comment": "Rescore suggested: 30-39 -> 60-69 (chest over clothes) — Flag for possible removal or reordering."
+        "title": "Both players share an insecurity about relationships you've felt recently",
+        "extra": "Each offers one sentence of reassurance in response",
+        "spicyness": 35
       },
       {
         "title": "Hold each other’s faces gently while maintaining eye contact",
@@ -1464,10 +1462,9 @@
         "spicyness": 49
       },
       {
-        "title": "Exchange a lingering hug with heads nestled",
-        "extra": "Keep synchronized breaths to a count of 10",
-        "spicyness": 51,
-        "comment": "Rescore suggested: 50-59 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+        "title": "Both players share something you desire emotionally from a relationship",
+        "extra": "Each adds one concrete example of how that looks day-to-day",
+        "spicyness": 51
       },
       {
         "title": "Trace a line from shoulder to wrist (over clothes)",
@@ -1506,10 +1503,9 @@
         "spicyness": 75
       },
       {
-        "title": "Trace slow circles on each other's lower back (over clothes)",
-        "extra": "Pull into a closer embrace while doing so",
-        "spicyness": 79,
-        "comment": "Rescore suggested: 70-79 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+        "title": "Both players confess a private insecurity about intimacy (non-graphic)",
+        "extra": "Offer one sentence of reassurance to each other",
+        "spicyness": 79
       },
       {
         "title": "Share an extended makeout session (clothed)",
@@ -1523,10 +1519,9 @@
         "spicyness": 85
       },
       {
-        "title": "Stand chest-to-chest, hands exploring each other's back and sides (over clothes)",
-        "extra": "Maintain steady breath and closeness for 30 seconds",
-        "spicyness": 89,
-        "comment": "Rescore suggested: 80-89 -> 60-69 (chest over clothes) — Flag for possible removal or reordering."
+        "title": "Both players describe a romantic fantasy scene without sexual details",
+        "extra": "Add one line of dialogue you would say",
+        "spicyness": 89
       },
       {
         "title": "Cuddle lying face-to-face, noses touching",
@@ -1534,16 +1529,15 @@
         "spicyness": 91
       },
       {
-        "title": "One player straddles the other (clothed) for an intimate hug",
-        "extra": "Hold the embrace for a slow count to 20",
-        "spicyness": 95,
-        "comment": "Rescore suggested: 90-99 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+        "title": "Both players reveal a private closeness fantasy (non-graphic)",
+        "extra": "Include how you'd want to feel afterwards",
+        "spicyness": 95
       },
       {
-        "title": "Share your most passionate, fully clothed makeout and embrace",
-        "extra": "Continue holding each other and breathe together for 30 seconds",
+        "title": "Both players confess the most vulnerable truth you're ready to share tonight",
+        "extra": "Hold hands while sharing and thank each other",
         "spicyness": 99,
-        "comment": "Rescore suggested: 90-99 -> 60-69 (makeout) — Flag for possible removal or reordering."
+        "comment": "Rescore suggested: 90-99 -> 10-19 (very mild intimacy) — Flag for possible removal or reordering."
       }
     ]
   },
