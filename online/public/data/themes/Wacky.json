@@ -1,0 +1,167 @@
+{
+  "name": "Wacky",
+  "starts": [
+    {
+      "title": "Both players make faces at each other",
+      "extra": "... while babbling incoherently",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players make up a bizarre dance",
+      "extra": "... while chanting each other's name",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players speak only in gibberish for 10 seconds",
+      "extra": "Add interpretive dance to express your point",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players invent a new animal sound",
+      "extra": "Create a 5‑second call‑and‑response together",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players pantomime being in zero‑gravity",
+      "extra": "Switch to super‑gravity for 5 seconds",
+      "spicyness": 8
+    },
+    {
+      "title": "Current player becomes a human mirror for the other",
+      "extra": "Switch roles and exaggerate",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players swap shoes and strut",
+      "extra": "Walk a 5‑step runway with exaggerated flair",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players do opposite actions for 30 seconds",
+      "extra": "Switch roles halfway through",
+      "spicyness": 18
+    },
+    {
+      "title": "Both players compose a 2‑line nonsense song together",
+      "extra": "Sing it while tip‑toeing in a circle",
+      "spicyness": 21
+    },
+    {
+      "title": "Current player pretends to be a robot while the other is a translator",
+      "extra": "Switch roles and add sound effects",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players become inflatable tube people for 10 seconds",
+      "extra": "Deflate dramatically",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players act out a cooking show with invisible ingredients",
+      "extra": "Add one completely absurd step",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player puppeteers the other's arms (gentle)",
+      "extra": "Switch roles and escalate the chaos slightly",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players mime being stuck in a doorway together",
+      "extra": "Escape with a synchronized shimmy",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players pretend to be royalty greeting each other",
+      "extra": "Add a ridiculous bow and trumpet sounds",
+      "spicyness": 41
+    },
+    {
+      "title": "Current player is 'wind'; the other is a wobbly tree",
+      "extra": "Switch and make a storm",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players translate each other's normal sentences into gibberish",
+      "extra": "Do one sentence very close together",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players freeze like statues in funny poses",
+      "extra": "Swap poses without breaking character",
+      "spicyness": 51
+    },
+    {
+      "title": "Current player pretends to be a malfunctioning elevator; the other 'rides'",
+      "extra": "Switch roles and add more 'floors'",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players walk like crabs toward each other",
+      "extra": "Do a gentle claw 'high‑five'",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players mime being on a tiny boat in a storm",
+      "extra": "Lean shoulder‑to‑shoulder for balance",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player is a DJ; the other dances like every genre at once",
+      "extra": "Swap roles and turn up the chaos",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players pretend to be magnets that flip between attract/repel",
+      "extra": "End in 'attract' for 3 seconds",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players conduct an orchestra of cat meows",
+      "extra": "Add dog barks for the finale",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player frames the other's face like a portrait photographer",
+      "extra": "Switch and 'tilt chin' dramatically",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players chant a made‑up anthem while spinning slowly",
+      "extra": "Pause nose‑to‑nose without touching for 2 seconds",
+      "spicyness": 79
+    },
+    {
+      "title": "Both players perform a 'percussion massage' routine on each other's backs to a silly beat (over clothes)",
+      "extra": "Use massage oil",
+      "spicyness": 81
+    },
+    {
+      "title": "Current player becomes 'gravity'; the other acts like a balloon",
+      "extra": "Switch and end floating cheek‑to‑cheek for 2 seconds",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players attempt to speak in rhyme for 10 seconds",
+      "extra": "Lean in and whisper the last rhyme",
+      "spicyness": 89
+    },
+    {
+      "title": "Both players become 'mirror twins' and dance inches apart",
+      "extra": "Hold the final pose for a slow count of 5",
+      "spicyness": 91
+    },
+    {
+      "title": "Current player tries to keep a straight face while the other does slapstick",
+      "extra": "Switch roles and stand closer",
+      "spicyness": 95
+    },
+    {
+      "title": "Both players improvise a 5‑second soap opera scene",
+      "extra": "End with a cheek‑to‑cheek freeze",
+      "spicyness": 99
+    }
+  ]
+}

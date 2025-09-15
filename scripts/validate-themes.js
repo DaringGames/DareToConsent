@@ -2,17 +2,46 @@
 const fs = require('fs');
 const path = require('path');
 
-const THEMES_PATH = path.join(process.cwd(), 'online/public/data/themes.json');
+const THEMES_DIR = path.join(process.cwd(), 'online/public/data/themes');
+const MONO_PATH  = path.join(process.cwd(), 'online/public/data', 'themes.json');
+const MIN_EXAMPLES = parseInt(process.env.MIN_EXAMPLES || '20', 10);
 
 function formatBucketLabel(i) { return `${i*10}-${i*10+9}`; }
+
+function loadThemesObject() {
+  // Prefer split files in the themes/ directory
+  try {
+    if (fs.existsSync(THEMES_DIR) && fs.statSync(THEMES_DIR).isDirectory()) {
+      const files = fs.readdirSync(THEMES_DIR).filter(f => f.toLowerCase().endsWith('.json'));
+      if (files.length === 0) throw new Error('No theme files found in themes dir');
+      const data = {};
+      files.sort().forEach(fn => {
+        const full = path.join(THEMES_DIR, fn);
+        const raw = fs.readFileSync(full, 'utf8');
+        const json = JSON.parse(raw);
+        const key = (json && json.name) ? json.name : path.basename(fn, '.json');
+        data[key] = json;
+      });
+      return { data, source: 'dir' };
+    }
+  } catch (err) {
+    console.error('Error loading split themes:', err.message);
+    // Fallback to monolith below
+  }
+
+  // Fallback to monolithic file
+  const raw = fs.readFileSync(MONO_PATH, 'utf8');
+  const json = JSON.parse(raw);
+  return { data: json, source: 'monolith' };
+}
 
 function validateThemes(themes) {
   const results = [];
   for (const [key, theme] of Object.entries(themes)) {
     const examples = Array.isArray(theme.examples) ? theme.examples : [];
     const warnings = [];
-    if (examples.length < 30) {
-      warnings.push(`Examples count is ${examples.length} (< 30)`);
+    if (examples.length < MIN_EXAMPLES) {
+      warnings.push(`Examples count is ${examples.length} (< ${MIN_EXAMPLES})`);
     }
     const buckets = Array(10).fill(0);
     for (const ex of examples) {
@@ -36,10 +65,10 @@ function validateThemes(themes) {
 
 function main() {
   try {
-    const raw = fs.readFileSync(THEMES_PATH, 'utf8');
-    const json = JSON.parse(raw);
-    const results = validateThemes(json);
+    const { data, source } = loadThemesObject();
+    const results = validateThemes(data);
     let warningsTotal = 0;
+    console.log(`[validate] Source: ${source === 'dir' ? THEMES_DIR : MONO_PATH}`);
     for (const r of results) {
       if (r.warnings.length) {
         console.warn(`\n[WARN] Theme "${r.theme}"`);
@@ -60,7 +89,7 @@ function main() {
       console.log('\nValidation passed.');
     }
   } catch (err) {
-    console.error('Error reading or parsing themes file:', err.message);
+    console.error('Error reading or parsing themes:', err.message);
     process.exit(2);
   }
 }

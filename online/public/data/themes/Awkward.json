@@ -1,0 +1,167 @@
+{
+  "name": "Awkward",
+  "starts": [
+    {
+      "title": "Both players make silly faces at each other",
+      "extra": "Also, make strange noises",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players maintain 10 seconds of eye contact",
+      "extra": "... with your foreheads almost touching",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players hold an overly formal handshake for 10 seconds",
+      "extra": "Switch to a limp handshake for 5 more seconds",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players stand too close while introducing yourselves",
+      "extra": "Repeat introductions even closer without laughing",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players mirror each other's awkward wave for 15 seconds",
+      "extra": "Add a silly half-bow at the end",
+      "spicyness": 8
+    },
+    {
+      "title": "Maintain unblinking eye contact while slowly nodding",
+      "extra": "Inch closer until your noses almost touch",
+      "spicyness": 10
+    },
+    {
+      "title": "Current player narrates the other's micro-gestures",
+      "extra": "Switch roles and exaggerate tiny movements",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players ask each other out in the most monotone voice",
+      "extra": "Repeat while staring at each other's forehead",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players give each other an overly formal shoulder massage with straight arms while maintaining serious faces",
+      "extra": "Switch to intense eye contact while massaging",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players narrate each other's breathing for 15 seconds",
+      "extra": "Match the rhythm while maintaining eye contact",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players try to speak at the same time for 10 seconds",
+      "extra": "Now take turns finishing each other's sentences",
+      "spicyness": 18
+    },
+    {
+      "title": "Both players attempt a hug then abort it mid-way",
+      "extra": "Try again and hold the hug for a slow count of 5",
+      "spicyness": 21
+    },
+    {
+      "title": "Current player compliments the other's elbow",
+      "extra": "Switch and add a second, even weirder compliment",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players whisper hello from two feet apart",
+      "extra": "Shuffle one small step closer and whisper again",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players slowly lean in like a movie kiss then stop",
+      "extra": "Hold the near-kiss pose for 5 seconds and grin",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player asks for a high-five and misses",
+      "extra": "Try again with eyes closed; then switch initiator",
+      "spicyness": 35
+    },
+    {
+      "title": "Current player initiates a slow-motion 'should we/shouldn't we' hug",
+      "extra": "Complete the hug and sway for 5 seconds",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players attempt to walk past each other and keep blocking",
+      "extra": "Solve it with an exaggerated sidestep hug",
+      "spicyness": 39
+    },
+    {
+      "title": "Current player practices a cheesy pickup line",
+      "extra": "Switch and deliver an even cheesier one closer",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players stage a cringe photo pose together",
+      "extra": "Hold the pose for 10 seconds while deadpan smiling",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players whisper compliments 6 inches apart",
+      "extra": "Add one oddly specific compliment about posture",
+      "spicyness": 51
+    },
+    {
+      "title": "Current player does a slow wink; the other mirrors imperfectly",
+      "extra": "Increase speed for 5 rapid winks; switch roles",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players pretend to dance but only move shoulders",
+      "extra": "Add tiny hip sways for 10 seconds",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players freeze in a painfully long handshake",
+      "extra": "Interlace fingers and hold for 5 more seconds",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player reads a fake bio about the other player",
+      "extra": "Switch and add an embarrassing middle name",
+      "spicyness": 65
+    },
+    {
+      "title": "Current player adjusts the other's collar like a sitcom parent",
+      "extra": "Switch and smooth each other's hair once",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players practice a dramatic near-confession then bail",
+      "extra": "Try again and say one flirty line each",
+      "spicyness": 79
+    },
+    {
+      "title": "Both players hover your hands near each other's cheeks",
+      "extra": "Hold the hover for 5 seconds without touching",
+      "spicyness": 81
+    },
+    {
+      "title": "Current player pretends to almost whisper a secret into the other's ear",
+      "extra": "Actually whisper a harmless word and smile",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players reenact a soap-opera almost-kiss",
+      "extra": "Freeze inches apart for 10 seconds",
+      "spicyness": 89
+    },
+    {
+      "title": "Both players do a staged awkward cuddle side-by-side",
+      "extra": "Increase closeness for a slow count to 10",
+      "spicyness": 91
+    },
+    {
+      "title": "Both players practice a dramatic 'we can't' scene inches apart",
+      "extra": "End with a brief cheek-to-cheek touch",
+      "spicyness": 99
+    }
+  ]
+}

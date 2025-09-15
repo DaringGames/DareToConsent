@@ -1,0 +1,167 @@
+{
+  "name": "Inedible",
+  "starts": [
+    {
+      "title": "Both players choose a mild spice/sauce to taste",
+      "extra": "Choose something spicy or gross",
+      "spicyness": 0
+    },
+    {
+      "title": "Both taste a random food from the fridge",
+      "extra": "Choose for each other",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players pretend to be food critics of plain crackers",
+      "extra": "Give each other a star rating and a snobby quote",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players invent the worst dish name you can",
+      "extra": "Add one cursed ingredient",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players create a menu of cursed dishes",
+      "extra": "Give each a chef‑y description",
+      "spicyness": 8
+    },
+    {
+      "title": "Both players taste a harmless sauce (safe item you both approve)",
+      "extra": "Add a mystery safe ingredient chosen by the other",
+      "spicyness": 10
+    },
+    {
+      "title": "Current player invents a fake recipe step‑by‑step; the other mimes following it",
+      "extra": "Swap roles",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players feed each other one safe tiny bite at the same time",
+      "extra": "Hold eye contact for a slow count of 3",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players describe the smell of a safe kitchen item (e.g., cinnamon)",
+      "extra": "Guess each other's pick",
+      "spicyness": 18
+    },
+    {
+      "title": "Both players do a blindfold smell test (safe items only)",
+      "extra": "If wrong, guess once more",
+      "spicyness": 21
+    },
+    {
+      "title": "Current player mixes two harmless sauces for the other to taste",
+      "extra": "Rate it 1–5 'would not eat'",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players build a tiny food tower (safe items)",
+      "extra": "Balance it for 5 seconds before collapsing it",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players pretend to host a cursed cooking show",
+      "extra": "Name your signature 'inedible' dish dramatically",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player designs a 'mystery spice rub' (pretend only) on the other's palm",
+      "extra": "Smell and announce its 'notes'",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players create a 'restaurant review' of each other's snack plating",
+      "extra": "Include a 'chef hug'",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players taste a tiny dab of a safe hot sauce (if willing)",
+      "extra": "Describe the flavor like a sommelier",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players exchange a safe, tiny bite you each choose",
+      "extra": "Add one dramatic tasting note",
+      "spicyness": 41
+    },
+    {
+      "title": "Current player invents a cursed smoothie (pretend) and 'serves' it to the other",
+      "extra": "Swap and make it worse",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players perform a 5‑second chef's table critique",
+      "extra": "Repeat with harsher 'professional' voices",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players try a safe blindfolded taste of something you agree on",
+      "extra": "Describe texture with one wild metaphor",
+      "spicyness": 51
+    },
+    {
+      "title": "Current player names three ingredients; the other creates a dish title",
+      "extra": "Swap roles with even stranger ingredients",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players compare two safe sips (e.g., water vs. seltzer)",
+      "extra": "Declare a winner and toast",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players pretend to feed each other 'invisible soup'",
+      "extra": "React with exaggerated delight and disgust alternately",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player 'plates' a snack for the other with fancy gestures",
+      "extra": "Swap and add a ridiculous garnish",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players do a synchronized 'chef nod' after tasting something safe",
+      "extra": "Then do a synchronized 'nope' face",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players narrate each other's chewing like sports commentators (safe snack)",
+      "extra": "Switch roles mid‑bite",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player chooses a safe spice; the other guesses with eyes closed",
+      "extra": "Give a second clue and guess again",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players compose a haiku about a terrible imaginary dish",
+      "extra": "Perform it with dramatic hand flourishes",
+      "spicyness": 79
+    },
+    {
+      "title": "Both players do a blindfolded safe sip challenge",
+      "extra": "Lean closer and whisper tasting notes",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players swap safe snacks and rate each other's pick",
+      "extra": "Re‑rate after one more tiny bite",
+      "spicyness": 89
+    },
+    {
+      "title": "Both players pretend to share a gourmet mystery bite from a fork (no stabbing, safe item)",
+      "extra": "Hold the pose nose‑to‑nose for 3 seconds",
+      "spicyness": 91
+    },
+    {
+      "title": "Both players present mock awards for the worst dish name you created tonight",
+      "extra": "End with a dramatic acceptance bow together",
+      "spicyness": 99
+    }
+  ]
+}

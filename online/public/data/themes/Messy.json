@@ -1,0 +1,167 @@
+{
+  "name": "Messy",
+  "starts": [
+    {
+      "title": "Both players muss up their own hair",
+      "extra": "Muss up each other's hair",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players smear food around their mouths",
+      "extra": "Help each other apply the food",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players muss up each other's hair playfully",
+      "extra": "Freeze your 'wild hair' faces for 3 seconds",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players stack napkins as costumes",
+      "extra": "Walk a mini runway together",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players air‑paint a stripe on each other's cheek",
+      "extra": "Add a second swirl in the air",
+      "spicyness": 8
+    },
+    {
+      "title": "Both players draw ketchup or mustard mustaches (tiny dab)",
+      "extra": "Add a matching dot on each other's cheek",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players put a tiny whipped‑cream 'cloud' on your own nose, then show each other",
+      "extra": "Gently wipe each other's noses",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players frame each other's face with messy 'stage makeup' (washable, small)",
+      "extra": "Pose forehead‑to‑forehead for 3 seconds",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players make a 'messy face' selfie pose",
+      "extra": "Smudge your own cheek a little more",
+      "spicyness": 18
+    },
+    {
+      "title": "Current player traces a short face‑paint line on the other's cheek (washable)",
+      "extra": "Switch and add one more accent line",
+      "spicyness": 21
+    },
+    {
+      "title": "Both players dab a tiny dot of sauce on each other's fingertip, then boop noses",
+      "extra": "Trade a second boop",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players build a tiny food tower (safe items)",
+      "extra": "Balance it for 5 seconds before collapsing it",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players wear paper‑towel 'capes' and strike a hero pose",
+      "extra": "Add a ketchup 'badge' (tiny dab) to each other's cape",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player draws a washable dot on the other's hand",
+      "extra": "Switch and add a second dot",
+      "spicyness": 35
+    },
+    {
+      "title": "Current player finger‑paints a small heart on the other's cheek (washable)",
+      "extra": "Switch; then hug carefully for 2 seconds",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players put on 'clown cheeks' (two small dabs) in a mirror",
+      "extra": "Pose cheek‑to‑cheek for 2 seconds",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players finger‑paint a small heart on each other's forearm (washable)",
+      "extra": "Outline it once more",
+      "spicyness": 41
+    },
+    {
+      "title": "Current player gives the other a 'messy chef' stripe on the cheek (washable)",
+      "extra": "Switch and add a second stripe",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players decorate each other's hands with ketchup/mustard dots",
+      "extra": "Connect two dots with a line",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players sprinkle a tiny pinch of safe sprinkles or glitter‑confetti on each other's sleeve",
+      "extra": "Brush it off dramatically",
+      "spicyness": 51
+    },
+    {
+      "title": "Current player draws a washable swirl on the other's wrist",
+      "extra": "Switch and add a star",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players swap messy 'chef hats' made of napkins",
+      "extra": "Add one funny flair each",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players put a tiny chocolate or syrup dot on each other's palm",
+      "extra": "Lick your own palm clean slowly",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player adds a washable 'war stripe' to the other's cheek",
+      "extra": "Switch and add under‑eye dots",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players gesture a 'paint roller' across each other's back (over clothes)",
+      "extra": "Add a second 'coat'",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players draw a washable smile on each other's shoulder (over clothes if marker)",
+      "extra": "Pose shoulder‑to‑shoulder",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player gently powders the other's sleeve with a tiny pinch of flour (if available)",
+      "extra": "Switch and write an initial with fingertip",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players put a tiny shaving‑cream swirl on each other's knuckle",
+      "extra": "Remove it for each other with a napkin",
+      "spicyness": 79
+    },
+    {
+      "title": "Both players face‑paint a mini 'team mark' on each other's cheek (washable)",
+      "extra": "Press cheeks together for 2 seconds",
+      "spicyness": 81
+    },
+    {
+      "title": "Current player decorates the other's hand with sauce dots then 'connects' them",
+      "extra": "Switch roles and add one more connection",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players add a tiny dab of whipped cream on each other's nose and smile",
+      "extra": "Hold nose‑to‑nose without touching for 3 seconds",
+      "spicyness": 89
+    },
+    {
+      "title": "Both players make your messiest selfie faces together",
+      "extra": "Cheek‑to‑cheek and snap again",
+      "spicyness": 99
+    }
+  ]
+}

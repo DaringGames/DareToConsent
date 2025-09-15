@@ -1,0 +1,167 @@
+{
+  "name": "Disgusting",
+  "starts": [
+    {
+      "title": "Both players make yucky faces at each other",
+      "extra": "Also, make gross, nasty noises",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players touch their foreheads to the floor",
+      "extra": "... and also sniff the floor",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players make exaggerated gag faces at each other",
+      "extra": "Freeze the face for a photo‑worthy 5 seconds",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players describe the 'worst smell' you can imagine",
+      "extra": "Act it out with silly sniffing and coughing sounds",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players mime chewing something awful together",
+      "extra": "Offer each other an imaginary 'sample' and recoil",
+      "spicyness": 8
+    },
+    {
+      "title": "Current player air‑wafts a shoe toward the other from 1 foot away (pretend only)",
+      "extra": "Switch roles and do one quick waft again",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players pretend to find 'mystery goo' under a table",
+      "extra": "Touch it with one fingertip in slow motion and shudder together",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players dab imaginary 'stink cream' on each other's cheeks",
+      "extra": "Do a synchronized 'ewww' while holding eye contact",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players sniff the air above each other's shoulder",
+      "extra": "Rate the pretend stink from 1–5",
+      "spicyness": 18
+    },
+    {
+      "title": "Current player offers the other an imaginary spoon of 'trash soup'",
+      "extra": "Trade 'bites' and overreact dramatically",
+      "spicyness": 21
+    },
+    {
+      "title": "Both players take a 3‑inch sock sniff (quick single whiff)",
+      "extra": "Swap socks for a second single whiff",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players describe the texture of 'cursed oatmeal'",
+      "extra": "Pretend to swallow a lump and grimace together",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players pretend to pick gum off the bottom of a chair",
+      "extra": "Stretch it like slime between your fingers (mime)",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player performs a dramatic 'fake sneeze' into elbow",
+      "extra": "Other says 'ew' and hands an imaginary tissue; then switch",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players sniff a pretend rotten egg you 'found'",
+      "extra": "Lean in closer for a second sniff and stagger away",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players apply imaginary 'stink cologne' to each other",
+      "extra": "Waft it onto neck and wrist (no actual contact needed)",
+      "spicyness": 41
+    },
+    {
+      "title": "Current player pretends to scrape gunk from the other's shoe",
+      "extra": "Swap roles and 'flick' it away with a gross sound",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players invent a revolting sandwich, layer by layer",
+      "extra": "Mime feeding each other one theatrical 'bite'",
+      "spicyness": 49
+    },
+    {
+      "title": "Current player pretends to burp into their elbow; the other fans it back",
+      "extra": "Switch roles and overreact",
+      "spicyness": 51
+    },
+    {
+      "title": "Both players sniff each other's sleeve near the wrist",
+      "extra": "Hold the sniff for a brave 2 seconds",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players do a 'gross taste test' with imaginary spoons",
+      "extra": "Trade your worst 'flavor notes' and do one more 'taste'",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players draw a ketchup 'mustache' on yourselves",
+      "extra": "Help each other 'wipe' it off with exaggerated disgust",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player pretends to lick a finger with mystery sauce; the other says 'ew!'",
+      "extra": "Switch roles and lean closer for the reveal",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players smell each other's palms (quick single sniff)",
+      "extra": "Rate the imaginary scent and switch hands",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players place noses near each other's shoulder for a 'sniff test'",
+      "extra": "Hold steady for a slow count of 3",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player pretends to pick lint from the other's hair with over‑the‑top 'ew's",
+      "extra": "Switch and 'discover' something even grosser",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players mime scraping slime off each other's forearms",
+      "extra": "Finish by 'flicking' it away at the same time",
+      "spicyness": 79
+    },
+    {
+      "title": "Current player pretends to spritz a 'garbage perfume' around the other",
+      "extra": "Circle twice and add a dramatic sniff",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players take turns sniffing the air near each other's armpit area from 6 inches away",
+      "extra": "Do one exaggerated recoil and laugh",
+      "spicyness": 89
+    },
+    {
+      "title": "Both players conduct an 'extreme sniff test' of each other's shoes at arm's length",
+      "extra": "Count down from 5 while holding them out",
+      "spicyness": 91
+    },
+    {
+      "title": "Current player mimes cleaning imaginary 'toilet monster' splatter off the other's back (over clothes)",
+      "extra": "Switch roles and add sound effects",
+      "spicyness": 95
+    },
+    {
+      "title": "Both players hold the grossest face you can while pretending to taste 'sewer stew'",
+      "extra": "Try to keep it for 10 seconds",
+      "spicyness": 99
+    }
+  ]
+}

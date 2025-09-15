@@ -1,0 +1,177 @@
+{
+  "name": "Cuddly",
+  "starts": [
+    {
+      "title": "Both players shake hands with each other",
+      "extra": "... warmly, using both hands and eye contact",
+      "spicyness": 0
+    },
+    {
+      "title": "Give each other a side-hug",
+      "extra": "Also, hold it 20 seconds and synch breathing",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Give each other a warm shoulder squeeze",
+      "extra": "Follow with a slow 5‑count back pat",
+      "spicyness": 1
+    },
+    {
+      "title": "Sit shoulder-to-shoulder and count to 15 together",
+      "extra": "Lean heads together for 10 more seconds",
+      "spicyness": 4
+    },
+    {
+      "title": "Hold both hands for 10 seconds while smiling at each other",
+      "extra": "Trace tiny circles with your thumbs",
+      "spicyness": 8
+    },
+    {
+      "title": "Back‑to‑back lean and breathe together for 20 seconds",
+      "extra": "Close your eyes and sync five breaths",
+      "spicyness": 10
+    },
+    {
+      "title": "Walk arm‑in‑arm once around the space",
+      "extra": "Do a tiny two‑step while linked",
+      "spicyness": 14
+    },
+    {
+      "title": "Sit facing each other, knees touching, and hold both hands",
+      "extra": "Keep eye contact for a slow count of 10",
+      "spicyness": 15
+    },
+    {
+      "title": "Lie side‑by‑side and hold hands between you (clothed)",
+      "extra": "Bring foreheads together for 10 seconds",
+      "spicyness": 15
+    },
+    {
+      "title": "Spooning (clothed) with gentle caresses along back and arms over clothing",
+      "extra": "Afterwards, hold face‑to‑face eye contact for 10 seconds",
+      "spicyness": 15
+    },
+    {
+      "title": "Sit‑in‑lap cuddle (clothed), arms around each other, and hold for a minute",
+      "extra": "Maintain steady eye contact and slow synchronized breathing",
+      "spicyness": 15
+    },
+    {
+      "title": "Sit with knees touching and chat softly for 20 seconds",
+      "extra": "Maintain gentle eye contact for the last 5 seconds",
+      "spicyness": 18
+    },
+    {
+      "title": "Give each other a slow hand massage for 20 seconds",
+      "extra": "Switch hands and repeat for 20 more",
+      "spicyness": 22
+    },
+    {
+      "title": "Touch foreheads for 10 seconds",
+      "extra": "Add a soft nose‑to‑nose nuzzle for 3 seconds",
+      "spicyness": 24
+    },
+    {
+      "title": "Side‑hug for 20 seconds",
+      "extra": "Synchronize your breathing while holding",
+      "spicyness": 29
+    },
+    {
+      "title": "Full hug for 20 seconds",
+      "extra": "Sway gently together for 10 more seconds",
+      "spicyness": 35
+    },
+    {
+      "title": "Back hug for 20 seconds with arms around waist (over clothes)",
+      "extra": "Whisper a kind compliment while holding",
+      "spicyness": 35
+    },
+    {
+      "title": "Sit on each other's laps (clothed) and hug for 15 seconds",
+      "extra": "Switch laps and repeat",
+      "spicyness": 35
+    },
+    {
+      "title": "Sit face‑to‑face, legs intertwined (clothed), and hold a close hug",
+      "extra": "Maintain a soft cheek‑to‑cheek press for 10 seconds",
+      "spicyness": 35
+    },
+    {
+      "title": "Current player rests their head on the other player's shoulder",
+      "extra": "Switch roles and repeat",
+      "spicyness": 39
+    },
+    {
+      "title": "Cheek‑to‑cheek hug for 20 seconds",
+      "extra": "Switch cheeks and repeat",
+      "spicyness": 41
+    },
+    {
+      "title": "Current player lies with head in the other player's lap (clothed, comfortable)",
+      "extra": "Offer a gentle over‑clothes shoulder rub for 10 seconds",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players trade 30-second back massages over clothes while seated side-by-side",
+      "extra": "Use massage oil",
+      "spicyness": 49
+    },
+    {
+      "title": "Sit on the floor, one behind the other, and lean back‑to‑chest (clothed)",
+      "extra": "Swap roles and repeat",
+      "spicyness": 51
+    },
+    {
+      "title": "Stand chest‑to‑chest and hug (clothed) for 15 seconds",
+      "extra": "Extend to 30 seconds with slow breathing",
+      "spicyness": 59
+    },
+    {
+      "title": "Spooning on couch or floor (fully clothed) for 30 seconds",
+      "extra": "Synchronize a slow count to 20",
+      "spicyness": 61
+    },
+    {
+      "title": "Stand behind the other and wrap arms around chest (over clothes) for 30 seconds",
+      "extra": "Rest chin on shoulder and sway slowly",
+      "spicyness": 65
+    },
+    {
+      "title": "Lie chest‑to‑chest (clothed) with full‑body cuddle for 40 seconds",
+      "extra": "Place one hand over the other player's heart (over clothing) and breathe together",
+      "spicyness": 65
+    },
+    {
+      "title": "Tightly spoon (clothed) with legs intertwined",
+      "extra": "The front player guides the back player's hand to a comfortable over‑clothes chest hold",
+      "spicyness": 65
+    },
+    {
+      "title": "Tight spooning (clothed) with one arm draped over torso",
+      "extra": "Guide that hand to a comfortable hand‑on‑chest position over clothing",
+      "spicyness": 71
+    },
+    {
+      "title": "Straddle hug sitting face‑to‑face (clothed) and hold for 20 seconds",
+      "extra": "Breathe in sync for 10 more",
+      "spicyness": 75
+    },
+    {
+      "title": "Lie chest‑to‑chest (clothed) and embrace for 20 seconds",
+      "extra": "Add a gentle over‑clothes back rub",
+      "spicyness": 79
+    },
+    {
+      "title": "Lie spooning under a blanket (clothed) and hold a full‑body cuddle for 60 seconds",
+      "extra": "Synchronize your breathing and squeeze gently on each exhale",
+      "spicyness": 85
+    },
+    {
+      "title": "Lie chest‑to‑chest under one blanket (clothed) and hold perfectly still for 60 seconds",
+      "extra": "Place one ear over the other's heartbeat for the last 10 seconds",
+      "spicyness": 95
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "name": "Creative",
+  "starts": [
+    {
+      "title": "Start a sentence for the other player to finish",
+      "extra": "Also, make the sentence rhyme",
+      "spicyness": 0
+    },
+    {
+      "title": "Pretend you are a mirror image of the other player",
+      "extra": "... while the other player dances",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players improvise a 2-line poem in unison",
+      "extra": "Echo it in a whisper duet facing each other",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players invent a 3-move handshake",
+      "extra": "Add a foot tap on the last beat and repeat",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players speak only in sound effects for 10 seconds",
+      "extra": "Mirror the other player's sounds for 5 more seconds",
+      "spicyness": 8
+    },
+    {
+      "title": "Current player pantomimes an object; the other 'uses' it",
+      "extra": "Switch roles and keep eyes closed while guessing",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players trace shapes in the air for the other to guess",
+      "extra": "Then draw the shape on each other's forearm (over clothes) with a fingertip",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players outline each other's back and sides with flattened palms (over clothes)",
+      "extra": "Move slowly while maintaining eye contact",
+      "spicyness": 15
+    },
+    {
+      "title": "Current player draws letters on the other's back (over clothes) to guess",
+      "extra": "Switch roles and use two letters",
+      "spicyness": 21
+    },
+    {
+      "title": "Both players mime a meet-cute scene together",
+      "extra": "End in a close pose shoulder-to-shoulder",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players perform a silent duet while holding one hand",
+      "extra": "Close your eyes for the last 5 seconds",
+      "spicyness": 29
+    },
+    {
+      "title": "Both players choreograph a 10-second slow dance with foreheads nearly touching",
+      "extra": "Finish cheek-to-cheek for a count of 3",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player sculpts the other into a dramatic pose",
+      "extra": "Choose a pose that requires standing close; then switch",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players stage a near-kiss scene ending in a long embrace",
+      "extra": "Optionally share a gentle kiss if you both want to",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players dip into a close embrace and hold",
+      "extra": "Cheek-to-cheek, whisper one line from an epic romance",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players parody a grand love confession in two lines",
+      "extra": "Whisper your lines from 6 inches apart",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players paint imaginary body art on each other's arms (over clothes)",
+      "extra": "Extend to shoulders with slow strokes",
+      "spicyness": 41
+    },
+    {
+      "title": "Both players mirror slow dance steps without touching",
+      "extra": "Step one pace closer and repeat",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players tango-walk in a straight line with hands on each other's shoulders",
+      "extra": "Move hands briefly to each other's waist (over clothes)",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players do a 'costume styling' pass: fix collars, smooth hair, adjust sleeves",
+      "extra": "Turn slowly while the other adds one more adjustment",
+      "spicyness": 51
+    },
+    {
+      "title": "Current player outlines the other's silhouette in the air with hovering hands",
+      "extra": "Gently tap shoulders and elbows to 'pin' the outline; then switch",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players freeze like mannequins; the other positions arms and hips (over clothes)",
+      "extra": "Swap and add one more adjustment",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players perform a human-mirror dance palm-to-palm",
+      "extra": "Slide palms up to shoulders and back down in sync",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player sets a photo-pose: back-to-chest with arms around waist (over clothes)",
+      "extra": "Switch roles and hold for 5 seconds",
+      "spicyness": 65
+    },
+    {
+      "title": "Both players pose chest-to-chest (clothed) like living statues",
+      "extra": "Breathe together for a slow count of 10",
+      "spicyness": 65
+    },
+    {
+      "title": "Current player offers a seated 'chair' knee-to-knee; the other perches briefly (clothed)",
+      "extra": "Switch roles and hold for 5 seconds",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players create a living sculpture: arms entwined, shoulder-to-shoulder",
+      "extra": "Add a soft cheek-to-cheek touch for a slow count of 3",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players compose a 'massage duet': alternate strokes on each other's shoulders to a 10-second rhythm (over clothes)",
+      "extra": "Use massage oil",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player gives a slow, clothed, performance-style lap dance",
+      "extra": "Seated player may place hands on shoulders",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players trace a small heart on each other's chest (over clothes)",
+      "extra": "Follow with a warm hug for 5 seconds",
+      "spicyness": 79
+    },
+    {
+      "title": "Current player slowly removes the other's jacket or overshirt as if on stage",
+      "extra": "Reverse roles and repeat a little closer",
+      "spicyness": 85
+    },
+    {
+      "title": "Current player straddles the other's lap (clothed) for a dramatic pose",
+      "extra": "Hold the pose for a slow count of 20",
+      "spicyness": 95
+    }
+  ]
+}

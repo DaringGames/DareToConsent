@@ -1,0 +1,167 @@
+{
+  "name": "Humiliating",
+  "starts": [
+    {
+      "title": "Both players stare at each other disdainfully",
+      "extra": "Also, criticize each other's appearance",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players disclose something embarrassing",
+      "extra": "Also, mock the other player's disclosure",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players attempt your worst celebrity impression",
+      "extra": "Hold a frozen pose for 5 seconds",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players sing the alphabet off‑key together",
+      "extra": "End with a synchronized bow",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players tell each other your dorkiest outfit ever",
+      "extra": "Do a mini runway pose",
+      "spicyness": 8
+    },
+    {
+      "title": "Current player reenacts an awkward greeting while the other narrates",
+      "extra": "Switch roles and exaggerate",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players read a fake dramatic review of yourselves",
+      "extra": "Add an embarrassing middle name",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players write a silly word or symbol on each other's face with a washable marker",
+      "extra": "Add a mark in a more visible spot like the forehead",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players recreate your worst middle‑school dance together",
+      "extra": "Hold hands for the last 3 seconds",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players whisper your most cringe hobby from teen years",
+      "extra": "Act it out for 5 seconds",
+      "spicyness": 18
+    },
+    {
+      "title": "Both players share a tiny embarrassing secret",
+      "extra": "Hold eye contact and say 'thanks' to each other",
+      "spicyness": 21
+    },
+    {
+      "title": "Current player reads a mock love poem to the other in monotone",
+      "extra": "Swap roles and go even bigger",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players do a goofy dance you swore you'd never do",
+      "extra": "Do it closer together",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players pretend you bombed a joke and apologize",
+      "extra": "Apologize again dramatically",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player invents a humiliating award for themselves; the other presents it",
+      "extra": "Give a short acceptance speech",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players reenact your most awkward photo pose",
+      "extra": "Hold it for 10 seconds",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players roast each other's shoes gently",
+      "extra": "Roast an accessory too",
+      "spicyness": 41
+    },
+    {
+      "title": "Current player reads aloud a 'cringe text' summary",
+      "extra": "The other provides dramatic echoes",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players act like over‑eager fans of each other",
+      "extra": "Ask for a selfie and pose cheek‑to‑cheek briefly",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players try to compliment yourselves but keep failing",
+      "extra": "The other helps you finish the sentence",
+      "spicyness": 51
+    },
+    {
+      "title": "Current player karaoke hums off‑key while the other backup‑dances",
+      "extra": "Switch roles",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players dramatically mispronounce each other's names",
+      "extra": "Pronounce correctly and bow",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players reenact a school presentation meltdown",
+      "extra": "Add 'slides' you forgot",
+      "spicyness": 61
+    },
+    {
+      "title": "Current player delivers a fake apology to the other for an absurd thing",
+      "extra": "The other forgives you with too many hugs",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players pose for a ridiculous prom photo",
+      "extra": "Chest‑to‑chest 2‑second pose",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players rap your grocery lists badly while the other beatboxes",
+      "extra": "Switch roles",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player asks the other for a date in the cheesiest way",
+      "extra": "Say yes and do a cringey high‑five",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players introduce each other with embarrassing made‑up achievements",
+      "extra": "Curtsy or bow dramatically",
+      "spicyness": 81
+    },
+    {
+      "title": "Current player uses the dare accepter as a footstool for 10 seconds",
+      "extra": "Switch roles and extend to 20 seconds",
+      "spicyness": 85
+    },
+    {
+      "title": "Current player does a runway walk with a ridiculous face while the other announces",
+      "extra": "Swap and outdo it",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players invent silly nicknames for each other and use them for 10 seconds",
+      "extra": "Whisper them while close",
+      "spicyness": 89
+    },
+    {
+      "title": "Current player reenacts their most awkward kiss attempt without touching; the other provides sound effects",
+      "extra": "Switch roles",
+      "spicyness": 95
+    }
+  ]
+}

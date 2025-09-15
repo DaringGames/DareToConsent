@@ -1,0 +1,167 @@
+{
+  "name": "Daring",
+  "starts": [
+    {
+      "title": "Both players wink at each other dramatically",
+      "extra": "Also, compliment each other",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players take off their shoes",
+      "extra": "Also, invent a wacky handshake with your feet",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players take a big confident step toward each other and grin",
+      "extra": "Seal it with a held fist-bump for 5 seconds",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players hype each other up loudly",
+      "extra": "Repeat the hype as a whisper from a foot away",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players high‑five and keep hands aloft together",
+      "extra": "Step closer and maintain eye contact for 5 seconds",
+      "spicyness": 8
+    },
+    {
+      "title": "Both players runway‑walk toward each other and stop close",
+      "extra": "Hold the pose and smile for a slow count of 3",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players play chicken walking straight at each other",
+      "extra": "Stop nose‑to‑nose without laughing",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players trade the boldest compliment you dare",
+      "extra": "Say a second, even bolder one from closer",
+      "spicyness": 18
+    },
+    {
+      "title": "Both players pose back‑to‑back like action heroes",
+      "extra": "Hook elbows together and hold for 5 seconds",
+      "spicyness": 21
+    },
+    {
+      "title": "Current player dips the other dramatically",
+      "extra": "Switch roles and dip even lower",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players state your names inches apart",
+      "extra": "Pause, smile, and step back together",
+      "spicyness": 29
+    },
+    {
+      "title": "Both players whisper a secret while inching closer",
+      "extra": "Share a second secret from even closer",
+      "spicyness": 31
+    },
+    {
+      "title": "Current player spins the other into a close pose",
+      "extra": "Finish with a brief hug for a slow count of 3",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players trade brisk shoulder-and-neck massages inches apart (over clothes)",
+      "extra": "Use massage oil",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players exchange quick kisses on the cheek",
+      "extra": "Add a soft forehead kiss if you both want to",
+      "spicyness": 41
+    },
+    {
+      "title": "Both players swap an accessory (hat, scarf, jacket)",
+      "extra": "Wear it for the rest of the round",
+      "spicyness": 49
+    },
+    {
+      "title": "Current player back‑hugs the other for 10 seconds (over clothes)",
+      "extra": "Whisper a bold compliment while holding",
+      "spicyness": 51
+    },
+    {
+      "title": "Both players stand chest‑to‑chest and breathe slowly",
+      "extra": "Maintain closeness for a slow count of 10",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players dance boldly for 20 seconds",
+      "extra": "Finish cheek‑to‑cheek for 5 seconds",
+      "spicyness": 59
+    },
+    {
+      "title": "Current player sits briefly on the other's lap (clothed) for a pose",
+      "extra": "Switch roles and hold for 5 seconds",
+      "spicyness": 61
+    },
+    {
+      "title": "Both players take a selfie shoulder‑to‑shoulder",
+      "extra": "Do a second take leaning chest‑to‑chest for 2 seconds",
+      "spicyness": 65
+    },
+    {
+      "title": "Both players share a makeout session (fully clothed)",
+      "extra": "Pause to smile at each other between kisses",
+      "spicyness": 65
+    },
+    {
+      "title": "Both players hold a chest‑to‑chest embrace with exploring hands (over clothes)",
+      "extra": "Maintain closeness for 30 seconds",
+      "spicyness": 65
+    },
+    {
+      "title": "Both players share a tight straddle hug (clothed)",
+      "extra": "Rock slowly together for a slow count of 10",
+      "spicyness": 65
+    },
+    {
+      "title": "Both players share your most passionate clothed makeout and embrace",
+      "extra": "Breathe together and hold each other for 30 seconds",
+      "spicyness": 65
+    },
+    {
+      "title": "Both players trace fingertips on each other's forearms",
+      "extra": "Continue along shoulders (over clothes)",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players hold each other around the waist (clothed)",
+      "extra": "Pull a little closer for the last 5 seconds",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players play the near‑kiss game: stop a breath apart",
+      "extra": "Hold the pose for a slow count of 5",
+      "spicyness": 71
+    },
+    {
+      "title": "Current player gives a clothed lap dance for 15 seconds",
+      "extra": "Seated player may place hands on shoulders or hips",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players outline each other's back and sides (over clothes)",
+      "extra": "Move slower and stand closer",
+      "spicyness": 79
+    },
+    {
+      "title": "Both players remove each other's jacket or top layer",
+      "extra": "Stand closer and repeat the reveal",
+      "spicyness": 85
+    },
+    {
+      "title": "Both players exchange shirts behind a barrier, then reveal",
+      "extra": "Model each other's look for 5 seconds",
+      "spicyness": 95
+    }
+  ]
+}

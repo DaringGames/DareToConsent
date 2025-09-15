@@ -1,0 +1,167 @@
+{
+  "name": "Juvenile",
+  "starts": [
+    {
+      "title": "Both players make silly faces at each other",
+      "extra": "Also, make immature noises",
+      "spicyness": 0
+    },
+    {
+      "title": "Both players look up each other's noses",
+      "extra": "Also, describe boogers like an avid archeologist",
+      "spicyness": 0
+    }
+  ],
+  "examples": [
+    {
+      "title": "Both players trade your silliest fart joke",
+      "extra": "Add a homemade sound effect on each punchline",
+      "spicyness": 1
+    },
+    {
+      "title": "Both players speak only in kid voices for 10 seconds",
+      "extra": "Introduce yourselves like it's the first day of school",
+      "spicyness": 4
+    },
+    {
+      "title": "Both players walk like dinosaurs side‑by‑side",
+      "extra": "End with a synchronized roar",
+      "spicyness": 8
+    },
+    {
+      "title": "Both players play 'floor is lava' and jump to a safe spot together",
+      "extra": "Hold hands on the safe spot for 3 seconds",
+      "spicyness": 10
+    },
+    {
+      "title": "Both players hopscotch along imaginary squares",
+      "extra": "High‑five each other at the end",
+      "spicyness": 14
+    },
+    {
+      "title": "Both players hide under a blanket for 7 seconds and whisper goofy secrets",
+      "extra": "Hold hands while you whisper",
+      "spicyness": 15
+    },
+    {
+      "title": "Both players play 'Simon Says' with ultra‑silly commands",
+      "extra": "Switch leaders and out‑silly each other",
+      "spicyness": 18
+    },
+    {
+      "title": "Both players air‑draw mustaches on yourselves",
+      "extra": "Air‑draw a dot on each other's cheek",
+      "spicyness": 21
+    },
+    {
+      "title": "Both players swap the goofiest accessories you can find",
+      "extra": "Wear them for the rest of this round",
+      "spicyness": 24
+    },
+    {
+      "title": "Both players build a tiny pillow‑fort doorway together",
+      "extra": "Crawl through it together like secret agents",
+      "spicyness": 27
+    },
+    {
+      "title": "Both players do silly walks side‑by‑side for 10 seconds",
+      "extra": "Mirror each other's silliest move at the end",
+      "spicyness": 31
+    },
+    {
+      "title": "Both players play a gentle hat keep‑away",
+      "extra": "Freeze in a goofy pose when the hat changes hands",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players do a two‑person conga line of just you two",
+      "extra": "Add a quick back‑hug for 3 seconds",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players spin in place then stabilize each other",
+      "extra": "Finish with a steadying embrace for 3 seconds",
+      "spicyness": 35
+    },
+    {
+      "title": "Both players choreograph a 10‑second cartoon dance",
+      "extra": "Repeat the last move a little closer together",
+      "spicyness": 39
+    },
+    {
+      "title": "Both players tell the worst knock‑knock joke you know",
+      "extra": "Step one foot closer to each other before the punchline",
+      "spicyness": 41
+    },
+    {
+      "title": "Both players pretend to burp the alphabet (no real burps needed)",
+      "extra": "Finish with a dramatic bow or curtsy",
+      "spicyness": 45
+    },
+    {
+      "title": "Both players act out a scene from a kids' show",
+      "extra": "Add a shoulder‑bump celebration at the end",
+      "spicyness": 49
+    },
+    {
+      "title": "Both players sit back‑to‑back and try to stand up together",
+      "extra": "Repeat once faster",
+      "spicyness": 51
+    },
+    {
+      "title": "Both players hop while holding both hands",
+      "extra": "Do one slow spin together at the end",
+      "spicyness": 55
+    },
+    {
+      "title": "Both players play freeze‑tag with just the two of you",
+      "extra": "Add a 3‑second 'meltdown' unfreeze",
+      "spicyness": 59
+    },
+    {
+      "title": "Both players talk like robots for 15 seconds",
+      "extra": "Gently beep each other's nose at the end",
+      "spicyness": 61
+    },
+    {
+      "title": "Both players do the pat‑head/rub‑belly challenge",
+      "extra": "Switch hands and try again",
+      "spicyness": 66
+    },
+    {
+      "title": "Both players do the chicken dance facing each other",
+      "extra": "Add a quick cheek‑to‑cheek pose for 2 seconds",
+      "spicyness": 69
+    },
+    {
+      "title": "Both players wear each other's small accessory briefly",
+      "extra": "Swap back with eyes closed",
+      "spicyness": 71
+    },
+    {
+      "title": "Both players create a secret handshake with 6 moves",
+      "extra": "Add a stomp at the end",
+      "spicyness": 75
+    },
+    {
+      "title": "Both players pretend to be puppets and take turns 'controlling' each other",
+      "extra": "Play the last 3 seconds very close together",
+      "spicyness": 79
+    },
+    {
+      "title": "Both players lip‑sync a silly duet",
+      "extra": "Lean in close on the last word",
+      "spicyness": 81
+    },
+    {
+      "title": "Both players slow‑dance like it's middle school (arms wide)",
+      "extra": "Cheek‑to‑cheek for 2 seconds",
+      "spicyness": 91
+    },
+    {
+      "title": "Both players do a safe piggyback‑pose lean",
+      "extra": "Switch positions and repeat",
+      "spicyness": 95
+    }
+  ]
+}
