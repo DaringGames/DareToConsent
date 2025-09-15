@@ -20,7 +20,32 @@
 const fs = require('fs');
 const path = require('path');
 
-const THEMES_PATH = path.resolve(__dirname, '../online/public/data/themes.json');
+const THEMES_DIR = path.resolve(__dirname, '../online/public/data/themes');
+const MONO_PATH  = path.resolve(__dirname, '../online/public/data/themes.json');
+
+function loadThemes() {
+  // Prefer split directory
+  if (fs.existsSync(THEMES_DIR) && fs.statSync(THEMES_DIR).isDirectory()) {
+    const files = fs.readdirSync(THEMES_DIR).filter(f => f.toLowerCase().endsWith('.json'));
+    if (files.length > 0) {
+      const data = {};
+      const fileMap = {};
+      for (const fn of files) {
+        const fp = path.join(THEMES_DIR, fn);
+        const raw = fs.readFileSync(fp, 'utf8');
+        const json = JSON.parse(raw);
+        const key = (json && json.name) ? json.name : path.basename(fn, '.json');
+        data[key] = json;
+        fileMap[key] = fp;
+      }
+      return { data, source: 'dir', fileMap };
+    }
+  }
+  // Fallback to monolith
+  const raw = fs.readFileSync(MONO_PATH, 'utf8');
+  const data = JSON.parse(raw);
+  return { data, source: 'monolith', fileMap: null };
+}
 
 // Tokenization utilities (aligned with audit heuristics)
 const STOPWORDS = new Set([
@@ -173,8 +198,7 @@ function triageTheme(themeName, theme) {
 }
 
 function main() {
-  const raw = fs.readFileSync(THEMES_PATH, 'utf8');
-  const data = JSON.parse(raw);
+  const { data, source, fileMap } = loadThemes();
 
   const summary = {};
   let totalRemoved = 0;
@@ -190,9 +214,18 @@ function main() {
     totalKeptFlag += res.keptFlagged;
   }
 
-  fs.writeFileSync(THEMES_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
+  // Write back
+  if (source === 'dir' && fileMap) {
+    for (const [key, obj] of Object.entries(data)) {
+      const fp = fileMap[key] || path.join(THEMES_DIR, `${key}.json`);
+      fs.writeFileSync(fp, JSON.stringify(obj, null, 2) + '\n', 'utf8');
+    }
+  } else {
+    fs.writeFileSync(MONO_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
+  }
 
   // Print report
+  console.log(`[triage] Source: ${source === 'dir' ? THEMES_DIR : MONO_PATH}`);
   console.log('[triage] Completed triage of mis-scored items');
   console.log(`[triage] Moved (rescored): ${totalMoved}`);
   console.log(`[triage] Removed (low variety): ${totalRemoved}`);

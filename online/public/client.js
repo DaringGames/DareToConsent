@@ -83,12 +83,33 @@ function titleView(){
 // Theme data
 let THEMES = null;
 async function loadThemes(){
+  // Try split directory first via index.json, then fall back to monolithic themes.json
+  try {
+    const idxRes = await fetch('/data/themes/index.json', { cache: 'no-store' });
+    if (idxRes.ok) {
+      const list = await idxRes.json(); // array of theme names or filenames
+      const names = Array.isArray(list) ? list : [];
+      const fetches = names.map(n => {
+        const base = (n || '').toString().replace(/\.json$/i, '');
+        const url = `/data/themes/${encodeURIComponent(base)}.json`;
+        return fetch(url, { cache: 'no-store' })
+          .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+          .then(json => [base, json]);
+      });
+      const entries = await Promise.all(fetches);
+      THEMES = entries.reduce((acc, [k, v]) => { acc[k] = v; return acc; }, {});
+      render();
+      return;
+    }
+  } catch (e) {
+    console.warn('Failed to load split theme files; falling back to monolithic themes.json', e);
+  }
   try {
     const res = await fetch('/data/themes.json', { cache: 'no-store' });
     THEMES = await res.json();
     render();
   } catch (e) {
-    console.error('Failed to load themes.json', e);
+    console.error('Failed to load themes (both split and monolithic)', e);
   }
 }
 

@@ -18,11 +18,34 @@
 const fs = require('fs');
 const path = require('path');
 
-const THEMES_PATH = path.join(__dirname, '..', 'online', 'public', 'data', 'themes.json');
+const THEMES_DIR = path.join(__dirname, '..', 'online', 'public', 'data', 'themes');
+const MONO_PATH  = path.join(__dirname, '..', 'online', 'public', 'data', 'themes.json');
 
-// Load themes
-const raw = fs.readFileSync(THEMES_PATH, 'utf8');
-const data = JSON.parse(raw);
+function loadThemes() {
+  // Prefer split directory
+  if (fs.existsSync(THEMES_DIR) && fs.statSync(THEMES_DIR).isDirectory()) {
+    const files = fs.readdirSync(THEMES_DIR).filter(f => f.toLowerCase().endsWith('.json'));
+    if (files.length > 0) {
+      const data = {};
+      const fileMap = {};
+      for (const fn of files) {
+        const fp = path.join(THEMES_DIR, fn);
+        const raw = fs.readFileSync(fp, 'utf8');
+        const json = JSON.parse(raw);
+        const key = (json && json.name) ? json.name : path.basename(fn, '.json');
+        data[key] = json;
+        fileMap[key] = fp;
+      }
+      return { data, source: 'dir', fileMap };
+    }
+  }
+  // Fallback to monolith
+  const raw = fs.readFileSync(MONO_PATH, 'utf8');
+  const data = JSON.parse(raw);
+  return { data, source: 'monolith', fileMap: null };
+}
+
+const { data, source, fileMap } = loadThemes();
 
 const stopwords = new Set([
   'both','players','player','switch','roles','each','other',
@@ -182,9 +205,17 @@ for (const themeName of Object.keys(data)) {
 }
 
 // Write back
-fs.writeFileSync(THEMES_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
+if (source === 'dir' && fileMap) {
+  for (const [key, obj] of Object.entries(data)) {
+    const fp = fileMap[key] || path.join(THEMES_DIR, `${key}.json`);
+    fs.writeFileSync(fp, JSON.stringify(obj, null, 2) + '\n', 'utf8');
+  }
+} else {
+  fs.writeFileSync(MONO_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
 
 // Summary
+console.log(`[audit] Source: ${source === 'dir' ? THEMES_DIR : MONO_PATH}`);
 console.log(`[audit] Duplicates flagged: ${totalDup}`);
 console.log(`[audit] Rescore suggestions: ${totalRescore}`);
-console.log(`[audit] Updated: ${THEMES_PATH}`);
+console.log(`[audit] Updated: ${source === 'dir' ? THEMES_DIR : MONO_PATH}`);

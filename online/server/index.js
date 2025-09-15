@@ -9,15 +9,48 @@ import fs from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load themes on server for authoritative seeding
+// Load themes on server for authoritative seeding (prefer split files, fallback to monolith)
 let THEMES = {};
-try {
-  const themesPath = path.join(__dirname, '../public/data/themes.json');
-  const raw = fs.readFileSync(themesPath, 'utf8');
-  THEMES = JSON.parse(raw);
-} catch (e) {
-  console.error('Failed to load themes.json', e);
+function loadServerThemes() {
+  const themesDir = path.join(__dirname, '../public/data/themes');
+  const indexPath = path.join(themesDir, 'index.json');
+  try {
+    if (fs.existsSync(themesDir) && fs.statSync(themesDir).isDirectory()) {
+      let names = [];
+      if (fs.existsSync(indexPath)) {
+        const rawIdx = fs.readFileSync(indexPath, 'utf8');
+        const list = JSON.parse(rawIdx);
+        names = Array.isArray(list) ? list : [];
+      } else {
+        names = fs.readdirSync(themesDir)
+          .filter(f => f.toLowerCase().endsWith('.json'))
+          .map(f => path.basename(f, '.json'));
+      }
+      const data = {};
+      for (const base of names) {
+        const fp = path.join(themesDir, `${base}.json`);
+        if (!fs.existsSync(fp)) continue;
+        const raw = fs.readFileSync(fp, 'utf8');
+        const json = JSON.parse(raw);
+        const key = (json && json.name) ? json.name : base;
+        data[key] = json;
+      }
+      if (Object.keys(data).length > 0) return data;
+    }
+  } catch (e) {
+    console.error('Failed to load split themes', e);
+  }
+  // Fallback to monolith
+  try {
+    const monoPath = path.join(__dirname, '../public/data/themes.json');
+    const raw = fs.readFileSync(monoPath, 'utf8');
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error('Failed to load fallback themes.json', e);
+    return {};
+  }
 }
+THEMES = loadServerThemes();
 function serverSeedForTheme(key) {
   try {
     const t = THEMES?.[key];
