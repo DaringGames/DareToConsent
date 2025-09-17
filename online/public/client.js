@@ -41,7 +41,7 @@ function contrastOn(hex){
 }
 
 let state = { room:null, me:{ name:'', color:'' } };
-let local = { addAfterComplete:false, lastCompleterId:null };
+let local = { addAfterComplete:false, lastCompleterId:null, desiredColor:null };
 let peekedRoom = null;
 let absentDialog = { promptId: null, el: null };
 
@@ -62,7 +62,7 @@ function titleView(){
       <div class="card panel">
         <h3>Join Game</h3>
         <input id="join-code" placeholder="three-words-like-this" value="${codeInHash}" maxlength="64" />
-        <input id="join-name" placeholder="Your name" maxlength="30" />
+        <input id="join-name" placeholder="Your name" value="${(state?.me?.name || (loadSession()?.name || '')).toString().slice(0,30)}" maxlength="30" />
         <button class="primary" id="join-btn">Join</button>
       </div>
       ${codeInHash ? '' : `<div class="or">or</div>`}
@@ -249,11 +249,30 @@ function mainView(){
   const curId = r?.turn?.order?.[r.turn.index];
   const curPlayer = r.players.find(p=>p.id===curId);
   const idx = r?.turn?.selectedDareIndex;
-  const showAddOnly = !!local.addAfterComplete;
+
+  // "Add a dare" lock: after a highlighted dare was completed, only the completer may write a new dare
+  const addingLock = r?.turn?.status === 'adding';
+  const addingBy = r?.turn?.addingBy || null;
+  const isAddingOwner = !!(meId && addingBy && addingBy === meId);
+  const writingName = (r.players.find(p => p.id === addingBy)?.name) || 'Player';
+
+  // Do not show the "add-a-dare" gating when I'm currently expected to act
+  // (either it's my turn, or a dare is selected and I haven't responded yet).
+  const mySubEarly = (r.turn?.submissions || []).find(s => s.playerId === meId);
+  const busyNow = !!(isMyTurn || (idx != null && !mySubEarly));
+  // Only the player who clicked "We did it" (the completer) should ever see the add-a-dare UI
+  const isCompleter = !!(local?.lastCompleterId && meId && local.lastCompleterId === meId);
+  // Show add UI if server says we're the writer; fall back to local flags for legacy persistence
+  const showAddOnly = (addingLock && isAddingOwner) || (!!local.addAfterComplete && isCompleter && !busyNow && isAddingOwner);
+
 let header = '';
 if (showAddOnly) {
   header = 'You get to write a new dare!';
+} else if (addingLock && !isAddingOwner) {
+  // While a new dare is being written by someone else, everyone else waits
+  header = `Waiting for ${writingName} to write a new dare`;
 } else if (idx == null) {
+  // No dare selected yet: this is the "choose a dare" phase
   header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'} to choose a dare`;
 } else {
   const subs = r.turn?.submissions || [];
@@ -261,7 +280,7 @@ if (showAddOnly) {
     const expected = r.players.filter(p => p.id !== curId && p.connected !== false).length;
     const gotPositive = subs.some(s => s.response === 'HECK_YES' || s.response === 'YES_PLEASE');
     if (!gotPositive && subs.length < expected) header = 'Waiting for responses . . . ';
-    else if (gotPositive) header = 'Choose someone to do your dare (or pass)';
+    else if (gotPositive) header = 'Choose who to do your dare with (or pass)';
     else header = "Tell the group you've decided to pass";
   } else {
     const mySub = subs.find(s => s.playerId === meId);
@@ -290,12 +309,17 @@ if (showAddOnly) {
       <div id="examples" class="examples"></div>
     </div>`;
   } else if (idx == null) {
-    body = isMyTurn ? `
-      <div class="card">
-        ${dareButtonsHtml()}
-        <div class="dare-highlight-note">If you perform the highlighted dare, you get to write a new dare!</div>
-      </div>
-    ` : '';
+    // If adding is locked by someone else, show nothing interactive
+    if (addingLock && !isAddingOwner) {
+      body = '';
+    } else {
+      body = isMyTurn ? `
+        <div class="card">
+          ${dareButtonsHtml()}
+          <div class="dare-highlight-note">If you perform the highlighted dare, you get to write a new dare!</div>
+        </div>
+      ` : '';
+    }
   } else {
     // Dare selected
     const myResp = (r.turn?.submissions||[]).find(s => s.playerId === meId)?.response || null;
@@ -310,6 +334,7 @@ if (showAddOnly) {
     ` : `
       <div class="card">
         <div class="grid">
+          <div class="response-label" style="font-weight:600; margin: 0 0 6px 0;">Your response:</div>
           <button data-resp="HECK_YES" class="btn-response HECK_YES ${myResp==='HECK_YES'?'selected':''}">I'll do the dare AND the extra challenge!</button>
           <button data-resp="YES_PLEASE" class="btn-response YES_PLEASE ${myResp==='YES_PLEASE'?'selected':''}">I'll do the dare (but not the extra challenge)</button>
           <button data-resp="NO_THANKS" class="btn-response NO_THANKS ${myResp==='NO_THANKS'?'selected':''}">No Thanks</button>
@@ -447,7 +472,10 @@ function render(){
     state.me = { name };
     // Persist name so we can resume properly
     try { saveSession({ name }); } catch {}
-    socket.emit('room:create', { name });
+    // Clear any stale "add-after-complete" UI from past games
+    try { local.addAfterComplete = false; local.lastCompleterId = null; saveUI({ addAfterComplete:false, lastCompleterId:null }); } catch {}
+    // Include the selected theme so the server can store a room-scoped preference
+    socket.emit('room:create', { name, theme: selectedTheme || 'Sensual' });
   });
   $('#create-theme')?.addEventListener('change', (e)=>{
     selectedTheme = e.target.value || 'Sensual';
@@ -529,6 +557,11 @@ function render(){
 
   // Dare selection buttons with confirmation
   $$('#app [data-dare-select]')?.forEach(btn=>btn.addEventListener('click', async ()=>{
+    const rnow = state?.room;
+    const meNow = state?.me?.id || (rnow?.players||[]).find(p=>p.name===state.me?.name && p.color===state.me?.color)?.id;
+    // Block selecting a dare while someone else is writing one
+    if (rnow?.turn?.status === 'adding' && rnow?.turn?.addingBy && rnow.turn.addingBy !== meNow) return;
+
     const index = +btn.getAttribute('data-dare-select');
     const d = state?.room?.dareMenu?.[index];
     const title = d?.title || 'this dare';
@@ -548,9 +581,11 @@ function render(){
       const isFinal = r?.turn?.selectedDareIndex === r?.dareMenu?.length - 1;
       // Only when the highlighted (final) dare was performed, show ONLY the add UI
       local.addAfterComplete = !!isFinal;
+      // The player who confirms “We did it” (the active chooser) earns the right to write the new dare
       local.lastCompleterId = state.me?.id || null;
       // Persist UI hint so refresh doesn't lose the "add" screen opportunity
       try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId, roomCode: state.room?.code }); } catch {}
+      // Server authoritatively assigns add window to the active chooser; no need to send responder id
       socket.emit('turn:complete', { completedMostDaring: !!isFinal });
       if (local.addAfterComplete) render();
     });
@@ -641,9 +676,20 @@ socket.on('room:state', (room)=>{
     const uiAdd = !!ui?.addAfterComplete;
     if (uiAdd && uiRoom !== room.code) {
       local.addAfterComplete = false;
-      saveUI({ addAfterComplete: false, roomCode: room.code });
+      saveUI({ addAfterComplete: false, roomCode: room.code, lastCompleterId: null });
     } else if (uiRoom !== room.code) {
       saveUI({ roomCode: room.code });
+    }
+    // Extra guard: on a freshly started game (first player's turn, no selection yet),
+    // force-clear any lingering "add-a-dare" UI that may have persisted across sessions.
+    if (room?.state === 'main'
+        && room?.turn?.index === 0
+        && room?.turn?.selectedDareIndex == null
+        && (room?.turn?.status === 'collecting' || !room?.turn?.status)) {
+      if (local.addAfterComplete) {
+        local.addAfterComplete = false;
+        saveUI({ addAfterComplete:false, lastCompleterId:null, roomCode: room.code });
+      }
     }
   } catch {}
   render();
@@ -653,6 +699,7 @@ socket.on('room:state', (room)=>{
     if (room?.code) update.code = room.code;
     if (state.me?.name) update.name = state.me.name;
     if (state.me?.id) update.playerId = state.me.id;
+    update.autoJoin = false;
     if (Object.keys(update).length) saveSession(update);
   } catch {}
 });
@@ -668,6 +715,18 @@ socket.on('player:you', ({ playerId })=>{
       saveUI({ addAfterComplete: false });
     }
   } catch {}
+  // If we have a desired color carried over from a previous room, attempt to set it now
+  try {
+    if (local?.desiredColor && typeof local.desiredColor === 'string') {
+      if (state?.me?.color !== local.desiredColor) {
+        socket.emit('player:update', { color: local.desiredColor });
+        state.me.color = local.desiredColor;
+      }
+      local.desiredColor = null;
+    }
+  } catch {}
+  // Clear any pending autoJoin intent now that we have a player identity
+  try { saveSession({ playerId, code: state.room?.code, name: state.me?.name, autoJoin: false }); } catch {}
 });
 
 socket.on('room:peek:result', (result) => {
@@ -717,24 +776,56 @@ function prefillFromHash(){
   setTimeout(()=>{ const input = document.querySelector('#join-code'); if (input && !input.value) input.value = code; }, 0);
 }
 
-// Handle user navigating to a different #room while in a game
+// Handle user navigating to a different #room (both while in a room and on the landing page)
 window.addEventListener('hashchange', async ()=>{
-  const newCode = location.hash?.slice(1);
-  const current = state?.room?.code;
+  const newCode = (location.hash?.slice(1) || '').trim();
+  const current = (state?.room?.code || '').trim();
+
+  // Case 1: In a game, switching to another game -> confirm and fast join
   if (current && newCode && newCode !== current) {
     const ok = await showConfirm(`Leave this game and join ${newCode}?`, { confirmText:'Leave & Join', cancelText:'Stay' });
     if (ok) {
-      // Leave current room on server and go back to landing to join
+      // Preserve my identity (name/color) and fast-join the new room
+      const sess = (()=>{ try { return loadSession(); } catch { return null; }})();
+      const keepName = (state?.me?.name || sess?.name || 'Player').toString().slice(0,30);
+      const keepColor = state?.me?.color || null;
+      try { saveSession({ name: keepName, code: newCode, playerId: null, autoJoin: true }); } catch {}
+      // Will request this color after we get our new playerId
+      local.desiredColor = keepColor || null;
+      // Leave old room and immediately join the new one
       socket.emit('room:leave');
       state.room = null;
-      // Clear persisted session/UI so we don't auto-resume the old room
-      try { clearSession(); clearUI(); } catch {}
+      try { clearUI(); } catch {} // clear transient UI but keep name
+      // Small delay to avoid race with server 'room:leave' handling
+      setTimeout(()=>{ socket.emit('room:join', { code: newCode, name: keepName }); }, 60);
+      // Redundant safety: try auto-join shortly after in case of packet drop
+      setTimeout(()=>{ try { attemptAutoJoin(); } catch {} }, 250);
+      // Optionally ping peek to warm path (no-op if not needed)
+      try { socket.emit('room:peek', { code: newCode }); } catch {}
+      // Optimistically reflect name/color locally before server roundtrip
+      state.me = { ...(state.me||{}), name: keepName, color: keepColor };
       render();
-      prefillFromHash();
     } else {
       // Revert hash to current room code
       try { history.replaceState(null, '', `#${current}`); } catch { location.hash = current; }
     }
+    return;
+  }
+
+  // Case 2: On landing (no current room) -> update join UI and peek target room without refresh
+  if (!current) {
+    try { saveSession({ code: newCode || null }); } catch {}
+    // Update the join form's code field
+    prefillFromHash();
+    // Ask server for basic info so the landing subtitle can say "Join <host>'s game"
+    if (newCode) {
+      try { socket.emit('room:peek', { code: newCode }); } catch {}
+    } else {
+      // Hash cleared: remove any prior peek information
+      peekedRoom = null;
+    }
+    // Re-render landing immediately; it will re-render again on peek result
+    render();
   }
 });
 
@@ -765,15 +856,33 @@ function attemptResume(){
   if (code && playerId) socket.emit('room:resume', { code, playerId });
 }
 
-// Try to resume when socket connects/reconnects
-socket.on('connect', attemptResume);
+// Auto-join helper: if we have a code+name but no playerId, and intent flag is set, join
+function attemptAutoJoin(){
+  try{
+    if (state?.room) return;
+    const s = loadSession();
+    const code = s?.code || location.hash?.slice(1) || '';
+    const name = (s?.name || '').toString().trim().slice(0,30);
+    const pid = s?.playerId;
+    const want = !!s?.autoJoin;
+    if (want && code && name && !pid) {
+      socket.emit('room:join', { code, name });
+    }
+  } catch {}
+}
+
+// Try to resume when socket connects/reconnects; also ensure pending auto-join is attempted
+socket.on('connect', ()=>{
+  attemptResume();
+  attemptAutoJoin();
+});
 
 // Initial boot
 hydrateSession();
 render();
 loadThemes();
 prefillFromHash();
-if (socket.connected) attemptResume();
+if (socket.connected) { attemptResume(); attemptAutoJoin(); }
 
 if (location.hash?.slice(1) && !state.room) {
   socket.emit('room:peek', { code: location.hash.slice(1) });
