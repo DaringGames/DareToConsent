@@ -14,153 +14,93 @@
   ],
   "examples": [
     {
-      "title": "Both players speak only in gibberish for 10 seconds",
-      "extra": "Add interpretive dance to express your point",
+      "title": "Both players talk complete gibberish to each other",
+      "extra": "Scream the gibberish instead of talking",
       "spicyness": 1
     },
     {
-      "title": "Both players invent a new animal sound",
-      "extra": "Create a 5‑second call‑and‑response together",
+      "title": "Both players make the weirdest faces possible at each other",
+      "extra": "Add bizarre sound effects to the faces",
       "spicyness": 4
     },
     {
-      "title": "Both players pantomime being in zero‑gravity",
-      "extra": "Switch to super‑gravity for 5 seconds",
+      "title": "Current player and dare acceptor have a conversation using only animal noises",
+      "extra": "Act out the animals you're imitating",
       "spicyness": 8
     },
     {
-      "title": "Current player becomes a human mirror for the other",
-      "extra": "Switch roles and exaggerate",
+      "title": "Both players pretend to be aliens trying to communicate",
+      "extra": "Add alien dance moves to the communication",
       "spicyness": 10
     },
     {
-      "title": "Both players swap shoes and strut",
-      "extra": "Walk a 5‑step runway with exaggerated flair",
+      "title": "Current player gives dare acceptor a 'weirdo' makeover with imaginary makeup",
+      "extra": "Add imaginary wacky accessories like clown noses",
       "spicyness": 14
     },
     {
-      "title": "Both players do opposite actions for 30 seconds",
-      "extra": "Switch roles halfway through",
+      "title": "Both players attempt to walk like chickens while clucking",
+      "extra": "Have a chicken dance-off competition",
       "spicyness": 18
     },
     {
-      "title": "Both players compose a 2‑line nonsense song together",
-      "extra": "Sing it while tip‑toeing in a circle",
+      "title": "Both players act out what a porn scene for octopuses would look like",
+      "extra": "Perform the octopus scene in a pool or bathtub",
       "spicyness": 21
     },
     {
-      "title": "Current player pretends to be a robot while the other is a translator",
-      "extra": "Switch roles and add sound effects",
+      "title": "Current player licks a whipped cream mustache off dare acceptor's face",
+      "extra": "Lick an entire whipped cream beard off their face",
       "spicyness": 24
     },
     {
-      "title": "Both players become inflatable tube people for 10 seconds",
-      "extra": "Deflate dramatically",
+      "title": "Both players give each other a 'wacky' massage using random kitchen utensils",
+      "extra": "Use the utensils to play the butt bongos",
       "spicyness": 27
     },
     {
-      "title": "Both players act out a cooking show with invisible ingredients",
-      "extra": "Add one completely absurd step",
-      "spicyness": 31
-    },
-    {
-      "title": "Current player puppeteers the other's arms (gentle)",
-      "extra": "Switch roles and escalate the chaos slightly",
+      "title": "Both players attempt to dance like inflatable tube men at a car dealership",
+      "extra": "Make the dance increasingly sensual and flirty",
       "spicyness": 35
     },
     {
-      "title": "Both players mime being stuck in a doorway together",
-      "extra": "Escape with a synchronized shimmy",
-      "spicyness": 39
-    },
-    {
-      "title": "Both players pretend to be royalty greeting each other",
-      "extra": "Add a ridiculous bow and trumpet sounds",
-      "spicyness": 41
-    },
-    {
-      "title": "Current player is 'wind'; the other is a wobbly tree",
-      "extra": "Switch and make a storm",
+      "title": "Current player feeds dare acceptor exotic fruits while making animal noises",
+      "extra": "Lick any juice that drips onto each other's skin",
       "spicyness": 45
     },
     {
-      "title": "Both players translate each other's normal sentences into gibberish",
-      "extra": "Do one sentence very close together",
-      "spicyness": 49
-    },
-    {
-      "title": "Both players freeze like statues in funny poses",
-      "extra": "Swap poses without breaking character",
+      "title": "Both players have a 'tickle fight'",
+      "extra": "Strip to your underware first",
       "spicyness": 51
     },
     {
-      "title": "Current player pretends to be a malfunctioning elevator; the other 'rides'",
-      "extra": "Switch roles and add more 'floors'",
+      "title": "Both players attempt to seduce each other while speaking only in pig Latin",
+      "extra": "Add physical seduction moves to the pig Latin speaking",
       "spicyness": 55
     },
     {
-      "title": "Both players walk like crabs toward each other",
-      "extra": "Do a gentle claw 'high‑five'",
-      "spicyness": 59
-    },
-    {
-      "title": "Both players mime being on a tiny boat in a storm",
-      "extra": "Lean shoulder‑to‑shoulder for balance",
+      "title": "Both players strip to underwear and wear it on their heads like silly hats",
+      "extra": "Stage a nude wrestling match using the underwear as wrestling masks",
       "spicyness": 61
     },
     {
-      "title": "Current player is a DJ; the other dances like every genre at once",
-      "extra": "Swap roles and turn up the chaos",
+      "title": "Current player gives dare acceptor a 'bizarre body painting' using chocolate syrup",
+      "extra": "Lick the chocolate designs off each other's bodies",
       "spicyness": 66
     },
     {
-      "title": "Both players pretend to be magnets that flip between attract/repel",
-      "extra": "End in 'attract' for 3 seconds",
-      "spicyness": 69
-    },
-    {
-      "title": "Both players conduct an orchestra of cat meows",
-      "extra": "Add dog barks for the finale",
-      "spicyness": 71
-    },
-    {
-      "title": "Current player frames the other's face like a portrait photographer",
-      "extra": "Switch and 'tilt chin' dramatically",
+      "title": "Both players give each other a 'silly massage' using Jell-O as lubricant",
+      "extra": "Slurp the Jell-O off each other's bodies",
       "spicyness": 75
     },
     {
-      "title": "Both players chant a made‑up anthem while spinning slowly",
-      "extra": "Pause nose‑to‑nose without touching for 2 seconds",
-      "spicyness": 79
-    },
-    {
-      "title": "Both players perform a 'percussion massage' routine on each other's backs to a silly beat (over clothes)",
-      "extra": "Use massage oil",
-      "spicyness": 81
-    },
-    {
-      "title": "Current player becomes 'gravity'; the other acts like a balloon",
-      "extra": "Switch and end floating cheek‑to‑cheek for 2 seconds",
-      "spicyness": 85
-    },
-    {
-      "title": "Both players attempt to speak in rhyme for 10 seconds",
-      "extra": "Lean in and whisper the last rhyme",
+      "title": "Both players have a 'food fight' using only sensual foods like whipped cream",
+      "extra": "Lick and clean each other thoroughly after the food fight",
       "spicyness": 89
     },
     {
-      "title": "Both players become 'mirror twins' and dance inches apart",
-      "extra": "Hold the final pose for a slow count of 5",
-      "spicyness": 91
-    },
-    {
-      "title": "Current player tries to keep a straight face while the other does slapstick",
-      "extra": "Switch roles and stand closer",
-      "spicyness": 95
-    },
-    {
-      "title": "Both players improvise a 5‑second soap opera scene",
-      "extra": "End with a cheek‑to‑cheek freeze",
+      "title": "Current player receives a 'wacky lap dance' from dare acceptor",
+      "extra": "Add guided touching to make it intensely sensual",
       "spicyness": 99
     }
   ]

@@ -14,154 +14,109 @@
   ],
   "examples": [
     {
-      "title": "Both players roll shoulders and take 10 deep breaths together",
-      "extra": "Sync the last 3 breaths perfectly",
+      "title": "Both players do ten jumping jacks together",
+      "extra": "High-five after each jumping jack",
       "spicyness": 1
     },
     {
-      "title": "Both players march in place for 15 seconds",
-      "extra": "Pump knees higher for the last 5 seconds",
+      "title": "Arm-wrestle for thirty seconds",
+      "extra": "Switch hands and arm-wrestle for another thirty seconds",
       "spicyness": 4
     },
     {
-      "title": "Both players do 5 slow squats side‑by‑side",
-      "extra": "Hold the last squat for a 3‑count",
+      "title": "Both players do push-ups side by side",
+      "extra": "Do push-ups facing each other, close enough to touch noses",
       "spicyness": 8
     },
     {
-      "title": "Both players high‑knees in place for 10 seconds",
-      "extra": "Clap both hands together on every third knee",
+      "title": "The larger player gives the smaller player a piggyback ride around the room",
+      "extra": "The smaller player must hold on with their legs wrapped around",
       "spicyness": 10
     },
     {
-      "title": "Current player leads 10 arm circles while the other mirrors",
-      "extra": "Switch and reverse direction",
+      "title": "Both players hold a squat position back-to-back for one minute",
+      "extra": "Interlock arms while squatting",
       "spicyness": 14
     },
     {
-      "title": "Both players hold a chair pose (no chair) and reach to hold hands",
-      "extra": "Maintain for a slow count of 10",
+      "title": "The larger player lifts the smaller player in a fireman's carry",
+      "extra": "Carry them around the room twice",
       "spicyness": 15
     },
     {
-      "title": "Both players lunge‑walk 6 steps toward each other",
-      "extra": "Hold a low lunge and smile for 3 seconds",
+      "title": "Both players do mirror exercises - one leads, the other copies",
+      "extra": "Maintain eye contact throughout the exercises",
       "spicyness": 18
     },
     {
-      "title": "Both players hold a 15‑second wall‑sit side‑by‑side",
-      "extra": "Extend to 25 seconds",
+      "title": "The larger player holds the smaller player in a bridal carry for thirty seconds",
+      "extra": "Spin around three times while holding",
       "spicyness": 21
     },
     {
-      "title": "Both players plank face‑to‑face for 10 seconds",
-      "extra": "Tap right hands together once",
+      "title": "Both players do partner sit-ups, holding each other's wrists",
+      "extra": "Add a high-five at the top of each sit-up",
       "spicyness": 24
     },
     {
-      "title": "Both players do 10 jumping jacks together",
-      "extra": "Add 5 more in slow motion",
+      "title": "Both players do a wheelbarrow race across the room",
+      "extra": "The wheelbarrow player must use only one hand",
+      "spicyness": 26
+    },
+    {
+      "title": "The larger player gives the smaller player a shoulder ride around the room",
+      "extra": "The smaller player must hold on with only their thighs",
       "spicyness": 27
     },
     {
-      "title": "Both players do 8 slow toe‑touches together",
-      "extra": "Hold the last stretch for 5 seconds",
-      "spicyness": 31
-    },
-    {
-      "title": "Current player balances on one foot while the other spots",
-      "extra": "Switch feet and roles",
+      "title": "The larger player spins the smaller player in their arms like a dance",
+      "extra": "Spin faster and dip at the end",
       "spicyness": 35
     },
     {
-      "title": "Both players alternate side‑lunges for 20 seconds",
-      "extra": "Finish with a synchronized pose",
+      "title": "Both players do partner push-ups - one on top of the other",
+      "extra": "The top player must maintain contact with the bottom player's back",
       "spicyness": 39
     },
     {
-      "title": "Both players do 5 push‑ups together",
-      "extra": "High‑five at the top of the last rep",
+      "title": "The larger player holds the smaller player against a wall in a standing embrace",
+      "extra": "Lift the smaller player's legs off the ground",
       "spicyness": 41
     },
     {
-      "title": "Both players bear‑crawl toward each other for 3 steps",
-      "extra": "Reverse back to start",
+      "title": "Both players wrap arms around each other and spin in circles until dizzy",
+      "extra": "Fall down together and stay embraced for ten seconds",
       "spicyness": 45
     },
     {
-      "title": "Both players squat‑hold and pass a light object back and forth 10 times",
-      "extra": "Hold for 5 more seconds",
+      "title": "The larger player carries the smaller player in a cradle carry around the room",
+      "extra": "Rock them gently like a baby for thirty seconds",
       "spicyness": 49
     },
     {
-      "title": "Current player holds a plank while the other counts to 20",
-      "extra": "Switch and try for 25",
-      "spicyness": 51
-    },
-    {
-      "title": "Both players back‑to‑back sit then stand up together without using hands",
-      "extra": "Repeat once faster",
-      "spicyness": 55
-    },
-    {
-      "title": "Both players hold a side‑plank for 10 seconds",
-      "extra": "Switch sides and hold 10 more",
-      "spicyness": 59
-    },
-    {
-      "title": "Both players do mountain climbers together for 15 seconds",
-      "extra": "Add 5 seconds more",
+      "title": "The larger player pins the smaller player to the floor in a wrestling hold",
+      "extra": "Maintain the pin for thirty seconds",
       "spicyness": 61
     },
     {
-      "title": "Current player leads a quick 20‑second dance cardio while the other mirrors",
-      "extra": "Swap leaders and repeat",
+      "title": "Both players do partner yoga - one lifts the other in a supported pose",
+      "extra": "Hold the pose for one minute with full body contact",
       "spicyness": 66
     },
     {
-      "title": "Both players do 10 squat jumps together",
-      "extra": "Add 5 tiny pulses at the bottom after the last one",
-      "spicyness": 71
-    },
-    {
-      "title": "Current player does 8 assisted lunges while the other offers a steady hand",
-      "extra": "Switch roles",
+      "title": "The larger player holds the smaller player in a full body press against the wall",
+      "extra": "Smaller player tries to escape for 1 minute",
       "spicyness": 75
     },
     {
-      "title": "Both players quick‑step in place for 20 seconds",
-      "extra": "Finish with a big jump and laugh",
-      "spicyness": 79
-    },
-    {
-      "title": "Both players plank face‑to‑face and tap left then right hands",
-      "extra": "Hold for 10 more seconds",
-      "spicyness": 81
-    },
-    {
-      "title": "Simulate a piggyback: back player rests hands on front player's shoulders; both rise to tiptoes 5 times",
-      "extra": "Switch positions and repeat",
-      "spicyness": 85
-    },
-    {
-      "title": "Both players hold a deep lunge facing each other for 15 seconds",
-      "extra": "Extend to 20 seconds",
+      "title": "The larger player lies on top of the smaller player face-to-face",
+      "extra": "The smaller player tries to escape for 1 minute",
       "spicyness": 89
     },
     {
-      "title": "Both players hold a 30‑second wall‑sit while holding hands",
-      "extra": "Raise one foot for the last 5 seconds (alternate)",
-      "spicyness": 91
-    },
-    {
-      "title": "Both players do a 20‑second steady burpee pace together",
-      "extra": "Add one bonus burpee",
+      "title": "Both players do a wrestling match for two minutes",
+      "extra": "Strip to umderwear first",
       "spicyness": 95
-    },
-    {
-      "title": "Both players plank for 30 seconds while counting together",
-      "extra": "Finish with a triumphant double high‑five",
-      "spicyness": 99
     }
   ]
 }

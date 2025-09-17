@@ -14,154 +14,114 @@
   ],
   "examples": [
     {
-      "title": "Both players do a gentle trust lean",
-      "extra": "Close your eyes for a 3‑count lean",
+      "title": "Players toss an egg back and forth at increasing distances",
+      "extra": "Both players throw eggs simultaneously",
       "spicyness": 1
     },
     {
-      "title": "Both players flip a coin to choose who leads",
-      "extra": "Loser follows one more silly instruction from the winner",
+      "title": "Current player does a trust fall and dare acceptor catches them",
+      "extra": "Do the fall over a hard floor",
       "spicyness": 4
     },
     {
-      "title": "Both players balance a book while walking side‑by‑side",
-      "extra": "Trade places without dropping it",
+      "title": "Both players balance on one foot while holding hands",
+      "extra": "Close eyes while balancing",
       "spicyness": 8
     },
     {
-      "title": "Current player guides the other 5 slow steps eyes‑closed (spotter hand on shoulder)",
-      "extra": "Switch roles and repeat",
+      "title": "Players pass a lit candle between them without blowing it out",
+      "extra": "Pass it with mouths only",
       "spicyness": 10
     },
     {
-      "title": "Both players walk heel‑to‑toe toward each other",
-      "extra": "Hold the pose one breath when inches apart",
+      "title": "Current player wears a blindfold and dare acceptor guides them through an obstacle course",
+      "extra": "Guide using only whispers",
       "spicyness": 14
     },
     {
-      "title": "Both players do a 10‑second eyes‑closed lean, foreheads near, steadying each other",
-      "extra": "Extend to 15 seconds",
+      "title": "Both players try to eat a messy food without using hands",
+      "extra": "Feed each other the food",
       "spicyness": 15
     },
     {
-      "title": "Both players toss a soft item back and forth increasing distance",
-      "extra": "Take one extra big step apart",
+      "title": "Players play a game of 'hot potato' with an ice cube",
+      "extra": "Use bare hands only",
       "spicyness": 18
     },
     {
-      "title": "Both players do a tiny trust fall from 6 inches with clear catch",
-      "extra": "Switch roles and repeat",
+      "title": "Current player and dare acceptor swap shirts for the rest of the game",
+      "extra": "Swap pants as well",
       "spicyness": 21
     },
     {
-      "title": "Current player stands on a low step; the other spots as you step down backward",
-      "extra": "Switch roles",
+      "title": "Both players whisper a secret to each other",
+      "extra": "Whisper it while maintaining eye contact",
       "spicyness": 24
     },
     {
-      "title": "Both players balance on one foot facing each other",
-      "extra": "Reach out and touch fingertips for stability",
+      "title": "Players compete in a staring contest",
+      "extra": "First to blink has to remove a clothing item",
       "spicyness": 27
     },
     {
-      "title": "Both players try a slow spin holding both hands",
-      "extra": "Spin back the other way",
+      "title": "Dare acceptor looks through current player's photos on their phone",
+      "extra": "Post a random photo to social media",
       "spicyness": 31
     },
     {
-      "title": "Current player walks backward eyes‑closed while the other calls directions",
-      "extra": "Trade roles and reduce verbal hints",
+      "title": "Flip a coin to determine which player has to remove a clothing item",
+      "extra": "Raise stakes to two clothing items",
       "spicyness": 35
     },
     {
-      "title": "Both players pass around a cup of water without using thumbs",
-      "extra": "Add one extra pass",
+      "title": "Current player is blindfolded and guesses body part by smelling",
+      "extra": "Determine by tasting",
       "spicyness": 39
     },
     {
-      "title": "Both players stand on one foot and high‑five",
-      "extra": "Hold the high‑five for a 3‑count",
+      "title": "Both players share a drink from the same glass without hands",
+      "extra": "Use only mouths to pass the glass",
       "spicyness": 41
     },
     {
-      "title": "Current player piggyback‑pose leans onto the other",
-      "extra": "Switch roles and hold for 3 seconds",
-      "spicyness": 45
-    },
-    {
-      "title": "Both players do a slow three‑step dance while balancing a book",
-      "extra": "Add a turn at the end",
+      "title": "Current player gives dare acceptor a massage with a risky object (e.g., ice)",
+      "extra": "Use a vibrating phone instead",
       "spicyness": 49
     },
     {
-      "title": "Current player is blindfolded and must guess which body part the dare accepter presents by smell",
-      "extra": "Then guess by taste",
+      "title": "Both players draw on each other's skin with washable marker",
+      "extra": "Draw on intimate areas",
       "spicyness": 51
     },
     {
-      "title": "Current player stands on a chair while the dare accepter spots",
-      "extra": "Switch roles",
-      "spicyness": 55
-    },
-    {
-      "title": "Both players navigate a tiny obstacle course you set for each other",
-      "extra": "Attempt it eyes‑closed with a verbal guide",
+      "title": "Current player and dare acceptor kiss through a piece of paper",
+      "extra": "Skip the paper",
       "spicyness": 59
     },
     {
-      "title": "Both players try a near‑kiss freeze (stop a breath apart)",
-      "extra": "Hold for a 3‑count while steadying each other",
+      "title": "Both players take a selfie in a compromising position",
+      "extra": "Set it as phone wallpaper for a day",
       "spicyness": 61
     },
     {
-      "title": "Current player slowly leads the other through a doorway eyes‑closed",
-      "extra": "Switch roles and reduce cues",
-      "spicyness": 66
-    },
-    {
-      "title": "Both players take 10 steps backward holding hands",
-      "extra": "Add 5 more steps",
-      "spicyness": 69
-    },
-    {
-      "title": "Both players walk side‑by‑side with one foot on a line",
-      "extra": "Switch sides and repeat",
+      "title": "Both players streak naked outside to the mailbox and back",
+      "extra": "Do a 30-second dance at the mailbox",
       "spicyness": 71
     },
     {
-      "title": "Current player spins the other then guides you to a chair",
-      "extra": "Switch roles and increase spin by one turn",
-      "spicyness": 75
-    },
-    {
-      "title": "Both players stand nose‑to‑nose and try not to laugh",
-      "extra": "Stay there while counting to 10",
-      "spicyness": 79
-    },
-    {
-      "title": "Both players trade jackets behind a door or barrier, then reveal",
-      "extra": "Model the new look for 5 seconds",
-      "spicyness": 81
-    },
-    {
-      "title": "Current player leads a slow trust walk outdoors for 30 seconds (safe area)",
-      "extra": "Switch roles",
+      "title": "Dare acceptor gets to spank current player on the bare butt",
+      "extra": "Use a household object for spanking",
       "spicyness": 85
     },
     {
-      "title": "Both players attempt a very slow dip with strong footing and spotter hands",
-      "extra": "Hold for a 3‑count and return safely",
-      "spicyness": 89
+      "title": "Current player receives a lapdance from dare acceptor",
+      "extra": "Add guided touching",
+      "spicyness": 93
     },
     {
-      "title": "Both players balance a cup of water on each other's head (over towel) for 5 seconds",
-      "extra": "Take one careful step",
-      "spicyness": 91
-    },
-    {
-      "title": "Current player blindfolds and the other places a safe object in your palm to identify",
-      "extra": "Switch roles with a second object",
-      "spicyness": 95
+      "title": "Current player is blindfolded while dare acceptor touches their body however they like",
+      "extra": "Explore their body with both hands and mouth",
+      "spicyness": 97
     }
   ]
 }

@@ -51,6 +51,17 @@ function loadServerThemes() {
   }
 }
 THEMES = loadServerThemes();
+
+// Resolve a theme name to a valid key in THEMES (case-insensitive), or null
+function resolveThemeKey(name){
+  try {
+    const names = Object.keys(THEMES || {});
+    const n = (name || '').toString().trim().toLowerCase();
+    if (!n) return null;
+    return names.find(k => k.toLowerCase() === n) || null;
+  } catch { return null; }
+}
+
 function serverSeedForTheme(key) {
   try {
     const t = THEMES?.[key];
@@ -249,7 +260,7 @@ io.on('connection', (socket) => {
     if (dismiss && ac.promptId) io.to(room.code).emit('absent:dismiss', { promptId: ac.promptId });
     room._absent = null;
   }
-  function scheduleAbsentPrompt(room, delayMs = 10000) {
+  function scheduleAbsentPrompt(room, delayMs = 1000) {
     try {
       const active = getActivePlayer(room);
       const activeId = getActiveId(room);
@@ -292,7 +303,7 @@ io.on('connection', (socket) => {
     const act = getActivePlayer(room);
     console.log(`[turn] focus room ${room.code} active=`, act?.name, 'connected=', act?.connected);
     clearAbsentTimers(room, { dismiss: true });
-    scheduleAbsentPrompt(room, 10000);
+    scheduleAbsentPrompt(room, 1000);
   }
   // Pause the game if connected players drop below 3; returns true if state changed
   function updateStateForConnectedCount(room) {
@@ -305,7 +316,7 @@ io.on('connection', (socket) => {
     }
     return false;
   }
-  socket.on('room:create', ({ name }) => {
+  socket.on('room:create', ({ name, theme }) => {
     const ip = getClientIp(socket);
     if (!rateLimitAllow(ip, 'room:create', 10, 10*60*1000)) {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
@@ -317,6 +328,24 @@ io.on('connection', (socket) => {
     player.color = nextColor(room);
     room.players.push(player);
     room.hostId = player.id;
+    // Persist the creator's theme preference so later "start game" uses it authoritatively
+    try {
+      const wanted = (typeof theme === 'string' ? theme : null);
+      const resolved = resolveThemeKey(wanted);
+      const fallback = resolveThemeKey('Sensual') || (Object.keys(THEMES||{})[0] || null);
+      const pref = resolved || fallback;
+      room.settings = room.settings || {};
+      if (pref) {
+        room.settings.preferredTheme = pref;
+        // Reflect intended theme in lobby state so all clients see it before the game starts
+        room.chosenTheme = pref;
+        console.log(`[room:create] theme pref=${pref} (requested=${wanted||''}) room=${room.code}`);
+      } else {
+        console.warn(`[room:create] no valid theme resolved (requested=${wanted||''}) room=${room.code}`);
+      }
+    } catch (e) {
+      console.error('[room:create] failed to resolve/store preferred theme', e);
+    }
     joinInfo = { roomCode: room.code, playerId: player.id };
     socket.join(room.code);
     socket.emit('player:you', { playerId: player.id });
@@ -347,6 +376,24 @@ io.on('connection', (socket) => {
     // Track mapping for per-socket tailoring
     socket.data = { roomCode: room.code, playerId: player.id };
     console.log(`[room:join] ${room.code} ${player.name}`);
+
+    // If a player joins while a game is in progress, add them into the turn rotation
+    // so they get turns going forward. Insert them just after the current active index
+    // to keep rotation fairness, and avoid duplicates.
+    try {
+      if (room.state === 'main' && room.turn && Array.isArray(room.turn.order)) {
+        const already = room.turn.order.includes(player.id);
+        if (!already) {
+          const curIdx = typeof room.turn.index === 'number' ? room.turn.index : -1;
+          const insertAt = Math.max(0, Math.min(room.turn.order.length, (curIdx >= 0 ? curIdx + 1 : room.turn.order.length)));
+          room.turn.order.splice(insertAt, 0, player.id);
+          console.log(`[room:join] inserted into turn.order at ${insertAt}; orderSize=${room.turn.order.length} room=${room.code}`);
+        }
+      }
+    } catch (e) {
+      console.warn('[room:join] failed to insert player into turn order', e);
+    }
+
     touch(room);
     emitRoom(room);
   });
@@ -372,8 +419,11 @@ io.on('connection', (socket) => {
       room.hostId = room.players[0]?.id || null;
     }
 
-    // Update turn order and index
+    // Update turn order and index (and sanitize turn state if removal affects active/authoring player)
     if (room.turn?.order) {
+      const wasActive = (room.turn.order?.[room.turn.index] || null) === removedId;
+      const wasAddingOwner = room.turn?.addingBy === removedId;
+
       const removedIdx = room.turn.order.indexOf(removedId);
       if (removedIdx >= 0) {
         room.turn.order.splice(removedIdx, 1);
@@ -384,8 +434,29 @@ io.on('connection', (socket) => {
             room.turn.index = (room.turn.index - 1 + room.turn.order.length) % room.turn.order.length;
           } else if (removedIdx === room.turn.index) {
             if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
+            // At this point, room.turn.index points to the next player
           }
         }
+      }
+
+      // Drop any submissions from the removed player
+      if (Array.isArray(room.turn.submissions)) {
+        room.turn.submissions = room.turn.submissions.filter(s => s && s.playerId !== removedId);
+      }
+
+      if (wasAddingOwner) {
+        // Cancel authoring window and hand turn to next player
+        room.turn.status = 'collecting';
+        delete room.turn.addingBy;
+        room.turn.selectedDareIndex = null;
+        room.turn.submissions = [];
+        console.log(`[remove] authoring player removed -> resume collecting index=${room.turn.index} room=${room.code}`);
+      } else if (wasActive) {
+        // Active chooser removed: reset selection and resume with next player
+        room.turn.selectedDareIndex = null;
+        room.turn.submissions = [];
+        room.turn.status = 'collecting';
+        console.log(`[remove] active chooser removed -> resume collecting index=${room.turn.index} room=${room.code}`);
       }
     }
 
@@ -402,6 +473,7 @@ io.on('connection', (socket) => {
 
     const changed = updateStateForConnectedCount(room);
     touch(room);
+    if (!changed && room.state === 'main') onTurnFocus(room);
     emitRoom(room);
   });
 
@@ -499,14 +571,20 @@ io.on('connection', (socket) => {
       return;
     }
 
-    // Authoritative server-side seeding (ignore client-provided seeds)
-    let key = (typeof theme === 'string' && THEMES && THEMES[theme]) ? theme
-            : (THEMES && THEMES['Sensual'] ? 'Sensual' : (theme || 'Sensual'));
+    // Authoritative server-side seeding
+    // Prefer creator's stored theme; then any lobby-reflected choice; then the request param; fallback to Sensual/first.
+    const stored = resolveThemeKey(room?.settings?.preferredTheme);
+    const lobby  = resolveThemeKey(room?.chosenTheme);
+    const param  = resolveThemeKey(typeof theme === 'string' ? theme : null);
+    const candidate = stored || lobby || param;
+    let key = candidate || (resolveThemeKey('Sensual') || (Object.keys(THEMES||{})[0] || 'Sensual'));
     let seed = serverSeedForTheme(key);
     if (!Array.isArray(seed) || seed.length === 0) {
-      key = (THEMES && THEMES['Sensual']) ? 'Sensual' : key;
+      const fb = resolveThemeKey('Sensual') || key;
+      key = fb;
       seed = serverSeedForTheme(key);
     }
+    console.log(`[theme:finalize] choose theme key=${key} (stored=${stored||''} lobby=${lobby||''} param=${param||''}) room=${room.code}`);
 
     room.chosenTheme = key;
     room.dareMenu = (seed || []).slice(0, 100).map(d => ({ ...d, createdAt: Date.now() }));
@@ -552,6 +630,8 @@ io.on('connection', (socket) => {
   socket.on('turn:selectDare', ({ index }) => {
     const room = rooms.get(joinInfo.roomCode);
     if (!room || room.state !== 'main') return;
+    // Block selecting a dare while a player is writing a new dare
+    if (room.turn?.status === 'adding') return;
     const ip = getClientIp(socket);
     if (!rateLimitAllow(ip, 'turn:selectDare', 30, 60*1000)) {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
@@ -583,6 +663,8 @@ io.on('connection', (socket) => {
   socket.on('turn:pass', () => {
     const room = rooms.get(joinInfo.roomCode);
     if (!room || room.state !== 'main') return;
+    // Block pass during add-a-dare window
+    if (room.turn?.status === 'adding') return;
     const ip = getClientIp(socket);
     if (!rateLimitAllow(ip, 'turn:pass', 30, 60*1000)) {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
@@ -598,19 +680,36 @@ io.on('connection', (socket) => {
     emitRoom(room);
   });
 
-  socket.on('turn:complete', ({ completedMostDaring }) => {
+  socket.on('turn:complete', ({ completedMostDaring, completerId }) => {
     const room = rooms.get(joinInfo.roomCode);
     if (!room || room.state !== 'main') return;
     const ip = getClientIp(socket);
     if (!rateLimitAllow(ip, 'turn:complete', 30, 60*1000)) {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
     }
-    room.turn.status = 'done';
-    room.turn.index = (room.turn.index + 1) % room.turn.order.length;
-    // reset selections
+
+    const beforeIndex = room.turn?.index;
+    const beforeActive = (room.turn?.order || [])[beforeIndex] || null;
+    const chooser = joinInfo.playerId;
+
+    // Reset selections for the completed dare
     room.turn.selectedDareIndex = null;
     room.turn.submissions = [];
-    // client will call menu:add if needed
+
+    if (completedMostDaring) {
+      // Do NOT advance the turn yet. The active chooser (current player) must write a new dare.
+      room.turn.status = 'adding';
+      room.turn.addingBy = chooser;
+      console.log(`[turn:complete] MOST-DARING completed by chooser=${chooser}; lock add window to chooser; keep index=${beforeIndex} active=${beforeActive} room=${room.code}`);
+    } else {
+      // Normal completion: advance to next player and continue collecting
+      room.turn.status = 'collecting';
+      delete room.turn.addingBy;
+      room.turn.index = (room.turn.index + 1) % room.turn.order.length;
+      const afterActive = room.turn.order[room.turn.index];
+      console.log(`[turn:complete] normal completion by chooser=${chooser}; index ${beforeIndex}->${room.turn.index} active=${afterActive} room=${room.code}`);
+    }
+
     touch(room);
     onTurnFocus(room);
     emitRoom(room);
@@ -630,7 +729,18 @@ io.on('connection', (socket) => {
       return emitError(socket, 'This game already has the maximum of 100 dares.', 'DARE_LIMIT');
     }
     room.dareMenu.push({ title: titleSafe, extra: extraSafe, createdBy: joinInfo.playerId, createdAt: Date.now() });
+
+    // Exit 'adding' window and advance turn to the next player to choose a dare
+    const beforeIndex = room.turn?.index | 0;
+    room.turn.status = 'collecting';
+    delete room.turn.addingBy;
+    room.turn.index = (room.turn.index + 1) % room.turn.order.length;
+    const afterActive = room.turn.order[room.turn.index];
+
+    console.log(`[menu:addDare] added by pid=${joinInfo.playerId}; index ${beforeIndex}->${room.turn.index} active=${afterActive} room=${room.code}`);
+
     touch(room);
+    onTurnFocus(room);
     emitRoom(room);
   });
 
@@ -670,8 +780,11 @@ io.on('connection', (socket) => {
       room.hostId = room.players[0]?.id || null;
     }
 
-    // Update turn order and index
+    // Update turn order and index (and sanitize turn state if removal affects active/authoring player)
     if (room.turn?.order) {
+      const wasActive = (room.turn.order?.[room.turn.index] || null) === removedId;
+      const wasAddingOwner = room.turn?.addingBy === removedId;
+
       const removedIdx = room.turn.order.indexOf(removedId);
       if (removedIdx >= 0) {
         room.turn.order.splice(removedIdx, 1);
@@ -682,8 +795,29 @@ io.on('connection', (socket) => {
             room.turn.index = (room.turn.index - 1 + room.turn.order.length) % room.turn.order.length;
           } else if (removedIdx === room.turn.index) {
             if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
+            // At this point, room.turn.index points to the next player
           }
         }
+      }
+
+      // Drop any submissions from the removed player
+      if (Array.isArray(room.turn.submissions)) {
+        room.turn.submissions = room.turn.submissions.filter(s => s && s.playerId !== removedId);
+      }
+
+      if (wasAddingOwner) {
+        // Cancel authoring window and hand turn to next player
+        room.turn.status = 'collecting';
+        delete room.turn.addingBy;
+        room.turn.selectedDareIndex = null;
+        room.turn.submissions = [];
+        console.log(`[remove.absent] authoring player removed -> resume collecting index=${room.turn.index} room=${room.code}`);
+      } else if (wasActive) {
+        // Active chooser removed: reset selection and resume with next player
+        room.turn.selectedDareIndex = null;
+        room.turn.submissions = [];
+        room.turn.status = 'collecting';
+        console.log(`[remove.absent] active chooser removed -> resume collecting index=${room.turn.index} room=${room.code}`);
       }
     }
 

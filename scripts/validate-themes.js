@@ -16,9 +16,13 @@ function loadThemesObject() {
       if (files.length === 0) throw new Error('No theme files found in themes dir');
       const data = {};
       files.sort().forEach(fn => {
+        // Skip the index.json manifest and any non-theme helpers
+        if (/^index\.json$/i.test(fn)) return;
         const full = path.join(THEMES_DIR, fn);
         const raw = fs.readFileSync(full, 'utf8');
         const json = JSON.parse(raw);
+        // Only include objects that look like themes (must have examples array)
+        if (!json || typeof json !== 'object' || !Array.isArray(json.examples)) return;
         const key = (json && json.name) ? json.name : path.basename(fn, '.json');
         data[key] = json;
       });

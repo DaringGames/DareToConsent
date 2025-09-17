@@ -14,154 +14,134 @@
   ],
   "examples": [
     {
-      "title": "Both players pretend to be food critics of plain crackers",
-      "extra": "Give each other a star rating and a snobby quote",
+      "title": "Dare acceptor chooses a condiment for current player to taste",
+      "extra": "Do it blindfolded",
       "spicyness": 1
     },
     {
-      "title": "Both players invent the worst dish name you can",
-      "extra": "Add one cursed ingredient",
+      "title": "Both players taste a spoonful of mustard",
+      "extra": "Hold it in your mouth for 10 seconds",
       "spicyness": 4
     },
     {
-      "title": "Both players create a menu of cursed dishes",
-      "extra": "Give each a chef‑y description",
+      "title": "Current player feeds dare acceptor a piece of fruit",
+      "extra": "Use only your mouth to pass it",
       "spicyness": 8
     },
     {
-      "title": "Both players taste a harmless sauce (safe item you both approve)",
-      "extra": "Add a mystery safe ingredient chosen by the other",
+      "title": "Both players take a shot of pickle juice",
+      "extra": "Chase it with something sweet",
       "spicyness": 10
     },
     {
-      "title": "Current player invents a fake recipe step‑by‑step; the other mimes following it",
-      "extra": "Swap roles",
+      "title": "Dare acceptor puts whipped cream on current player's nose",
+      "extra": "Lick it off with your tongue",
       "spicyness": 14
     },
     {
-      "title": "Both players feed each other one safe tiny bite at the same time",
-      "extra": "Hold eye contact for a slow count of 3",
+      "title": "Current player puts chocolate syrup on dare acceptor's finger",
+      "extra": "Suck it clean",
       "spicyness": 15
     },
     {
-      "title": "Both players describe the smell of a safe kitchen item (e.g., cinnamon)",
-      "extra": "Guess each other's pick",
+      "title": "Both players share a spicy chip",
+      "extra": "Pass it mouth to mouth",
       "spicyness": 18
     },
     {
-      "title": "Both players do a blindfold smell test (safe items only)",
-      "extra": "If wrong, guess once more",
+      "title": "Current player draws a ketchup mustache on dare acceptor",
+      "extra": "Lick it off slowly",
       "spicyness": 21
     },
     {
-      "title": "Current player mixes two harmless sauces for the other to taste",
-      "extra": "Rate it 1–5 'would not eat'",
+      "title": "Dare acceptor puts honey on current player's lips",
+      "extra": "Kiss it off",
       "spicyness": 24
     },
     {
-      "title": "Both players build a tiny food tower (safe items)",
-      "extra": "Balance it for 5 seconds before collapsing it",
+      "title": "Both players take a shot of hot sauce",
+      "extra": "Do it while maintaining eye contact",
       "spicyness": 27
     },
     {
-      "title": "Both players pretend to host a cursed cooking show",
-      "extra": "Name your signature 'inedible' dish dramatically",
+      "title": "Current player puts ketchup earrings on dare acceptor",
+      "extra": "Lick them off one by one",
       "spicyness": 31
     },
     {
-      "title": "Current player designs a 'mystery spice rub' (pretend only) on the other's palm",
-      "extra": "Smell and announce its 'notes'",
+      "title": "Dare acceptor feeds current player a spoonful of wasabi",
+      "extra": "Do it while whispering something sexy",
       "spicyness": 35
     },
     {
-      "title": "Both players create a 'restaurant review' of each other's snack plating",
-      "extra": "Include a 'chef hug'",
+      "title": "Both players share a piece of ginger",
+      "extra": "Pass it back and forth with your mouths",
       "spicyness": 35
     },
     {
-      "title": "Both players taste a tiny dab of a safe hot sauce (if willing)",
-      "extra": "Describe the flavor like a sommelier",
+      "title": "Current player puts chocolate sauce on dare acceptor's neck",
+      "extra": "Lick it off while giving a neck massage",
       "spicyness": 39
     },
     {
-      "title": "Both players exchange a safe, tiny bite you each choose",
-      "extra": "Add one dramatic tasting note",
+      "title": "Dare acceptor puts a cherry tomato in current player's mouth",
+      "extra": "Bite it in half and share",
       "spicyness": 41
     },
     {
-      "title": "Current player invents a cursed smoothie (pretend) and 'serves' it to the other",
-      "extra": "Swap and make it worse",
+      "title": "Both players take a teaspoon of cinnamon in the mouth",
+      "extra": "Touch noses until you swallow",
       "spicyness": 45
     },
     {
-      "title": "Both players perform a 5‑second chef's table critique",
-      "extra": "Repeat with harsher 'professional' voices",
+      "title": "Current player puts whipped cream on dare acceptor's shoulder",
+      "extra": "Lick it off while giving a shoulder massage",
       "spicyness": 49
     },
     {
-      "title": "Both players try a safe blindfolded taste of something you agree on",
-      "extra": "Describe texture with one wild metaphor",
+      "title": "Dare acceptor pours a cold drink down current player's chest",
+      "extra": "Lick it up from the stomach",
       "spicyness": 51
     },
     {
-      "title": "Current player names three ingredients; the other creates a dish title",
-      "extra": "Swap roles with even stranger ingredients",
-      "spicyness": 55
-    },
-    {
-      "title": "Both players compare two safe sips (e.g., water vs. seltzer)",
-      "extra": "Declare a winner and toast",
+      "title": "Current player puts chocolate syrup on dare acceptor's collarbone",
+      "extra": "Lick it clean while whispering gibberish",
       "spicyness": 59
     },
     {
-      "title": "Both players pretend to feed each other 'invisible soup'",
-      "extra": "React with exaggerated delight and disgust alternately",
+      "title": "Dare acceptor feeds current player a spoonful of horseradish",
+      "extra": "Do it while sitting in their lap",
       "spicyness": 61
     },
     {
-      "title": "Current player 'plates' a snack for the other with fancy gestures",
-      "extra": "Swap and add a ridiculous garnish",
+      "title": "Both players take a shot of vinegar",
+      "extra": "Kiss immediately after to share the taste",
       "spicyness": 66
     },
     {
-      "title": "Both players do a synchronized 'chef nod' after tasting something safe",
-      "extra": "Then do a synchronized 'nope' face",
+      "title": "Current player puts caramel sauce on dare acceptor's wrist",
+      "extra": "Lick it off slowly while maintaining eye contact",
       "spicyness": 69
     },
     {
-      "title": "Both players narrate each other's chewing like sports commentators (safe snack)",
-      "extra": "Switch roles mid‑bite",
+      "title": "Dare acceptor puts a mint in current player's mouth",
+      "extra": "French kiss to share the freshness",
       "spicyness": 71
     },
     {
-      "title": "Current player chooses a safe spice; the other guesses with eyes closed",
-      "extra": "Give a second clue and guess again",
-      "spicyness": 75
-    },
-    {
-      "title": "Both players compose a haiku about a terrible imaginary dish",
-      "extra": "Perform it with dramatic hand flourishes",
+      "title": "Current player pours wine over dare acceptor's bare chest",
+      "extra": "Drink it directly from their skin",
       "spicyness": 79
     },
     {
-      "title": "Both players do a blindfolded safe sip challenge",
-      "extra": "Lean closer and whisper tasting notes",
+      "title": "Dare acceptor licks hot sauce off current player's nipple",
+      "extra": "Massage the other nipple while you lick",
       "spicyness": 85
     },
     {
-      "title": "Both players swap safe snacks and rate each other's pick",
-      "extra": "Re‑rate after one more tiny bite",
-      "spicyness": 89
-    },
-    {
-      "title": "Both players pretend to share a gourmet mystery bite from a fork (no stabbing, safe item)",
-      "extra": "Hold the pose nose‑to‑nose for 3 seconds",
-      "spicyness": 91
-    },
-    {
-      "title": "Both players present mock awards for the worst dish name you created tonight",
-      "extra": "End with a dramatic acceptance bow together",
-      "spicyness": 99
+      "title": "Current player licks honey off dare acceptor's inner thigh",
+      "extra": "Periodically ask \"Nervous?\" and move closer to intimate areas until they say yes.",
+      "spicyness": 95
     }
   ]
 }

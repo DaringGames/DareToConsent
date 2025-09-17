@@ -14,153 +14,103 @@
   ],
   "examples": [
     {
-      "title": "Both players improvise a 2-line poem in unison",
-      "extra": "Echo it in a whisper duet facing each other",
+      "title": "Take turns adding words to create a silly sentence together",
+      "extra": "Make the sentence rhyme",
       "spicyness": 1
     },
     {
-      "title": "Both players invent a 3-move handshake",
-      "extra": "Add a foot tap on the last beat and repeat",
+      "title": "Sing a duet of a popular song together",
+      "extra": "Improvise new lyrics to the song",
       "spicyness": 4
     },
     {
-      "title": "Both players speak only in sound effects for 10 seconds",
-      "extra": "Mirror the other player's sounds for 5 more seconds",
+      "title": "Draw a portrait of each other without looking at the paper",
+      "extra": "Use your non-dominant hand for drawing",
       "spicyness": 8
     },
     {
-      "title": "Current player pantomimes an object; the other 'uses' it",
-      "extra": "Switch roles and keep eyes closed while guessing",
+      "title": "Create a short story together, each adding one sentence at a time",
+      "extra": "Make it a fantasy adventure story",
       "spicyness": 10
     },
     {
-      "title": "Both players trace shapes in the air for the other to guess",
-      "extra": "Then draw the shape on each other's forearm (over clothes) with a fingertip",
+      "title": "Perform a short improv scene as characters you both know",
+      "extra": "Switch characters halfway through the scene",
       "spicyness": 14
     },
     {
-      "title": "Both players outline each other's back and sides with flattened palms (over clothes)",
-      "extra": "Move slowly while maintaining eye contact",
+      "title": "Write a haiku together about the current moment",
+      "extra": "Make it a slightly sensual haiku",
       "spicyness": 15
     },
     {
-      "title": "Current player draws letters on the other's back (over clothes) to guess",
-      "extra": "Switch roles and use two letters",
+      "title": "Act out a famous movie scene together",
+      "extra": "Add your own creative twist to the ending",
       "spicyness": 21
     },
     {
-      "title": "Both players mime a meet-cute scene together",
-      "extra": "End in a close pose shoulder-to-shoulder",
+      "title": "Create a dance routine to a song of your choice",
+      "extra": "Incorporate a dip or lift into the dance",
       "spicyness": 24
     },
     {
-      "title": "Both players perform a silent duet while holding one hand",
-      "extra": "Close your eyes for the last 5 seconds",
+      "title": "Whisper a secret fantasy to each other",
+      "extra": "Act out the fantasy with gestures only",
       "spicyness": 29
     },
     {
-      "title": "Both players choreograph a 10-second slow dance with foreheads nearly touching",
-      "extra": "Finish cheek-to-cheek for a count of 3",
+      "title": "Roleplay a romantic restaurant scene together",
+      "extra": "Include feeding each other dessert",
       "spicyness": 31
     },
     {
-      "title": "Current player sculpts the other into a dramatic pose",
-      "extra": "Choose a pose that requires standing close; then switch",
+      "title": "Create a sensual poem together, alternating lines",
+      "extra": "Whisper the poem to each other intimately",
       "spicyness": 35
     },
     {
-      "title": "Both players stage a near-kiss scene ending in a long embrace",
-      "extra": "Optionally share a gentle kiss if you both want to",
+      "title": "Improvise a slow dance to music only you can hear",
+      "extra": "Slow dance together",
       "spicyness": 35
     },
     {
-      "title": "Both players dip into a close embrace and hold",
-      "extra": "Cheek-to-cheek, whisper one line from an epic romance",
+      "title": "Act out a steamy scene from a romance novel",
+      "extra": "Add your own creative dialogue",
       "spicyness": 35
     },
     {
-      "title": "Both players parody a grand love confession in two lines",
-      "extra": "Whisper your lines from 6 inches apart",
-      "spicyness": 39
-    },
-    {
-      "title": "Both players paint imaginary body art on each other's arms (over clothes)",
-      "extra": "Extend to shoulders with slow strokes",
+      "title": "Collaborate a fantasy story about being stranded on a desert island",
+      "extra": "Make it increasingly romantic and sensual",
       "spicyness": 41
     },
     {
-      "title": "Both players mirror slow dance steps without touching",
-      "extra": "Step one pace closer and repeat",
+      "title": "Roleplay a phone sex conversation with someone trying to call tech support",
+      "extra": "Make it increasingly explicit",
       "spicyness": 45
     },
     {
-      "title": "Both players tango-walk in a straight line with hands on each other's shoulders",
-      "extra": "Move hands briefly to each other's waist (over clothes)",
-      "spicyness": 49
-    },
-    {
-      "title": "Both players do a 'costume styling' pass: fix collars, smooth hair, adjust sleeves",
-      "extra": "Turn slowly while the other adds one more adjustment",
+      "title": "Create a sensual dance routine together",
+      "extra": "Incorporate body contact and close movements",
       "spicyness": 51
     },
     {
-      "title": "Current player outlines the other's silhouette in the air with hovering hands",
-      "extra": "Gently tap shoulders and elbows to 'pin' the outline; then switch",
-      "spicyness": 55
-    },
-    {
-      "title": "Both players freeze like mannequins; the other positions arms and hips (over clothes)",
-      "extra": "Swap and add one more adjustment",
-      "spicyness": 59
-    },
-    {
-      "title": "Both players perform a human-mirror dance palm-to-palm",
-      "extra": "Slide palms up to shoulders and back down in sync",
-      "spicyness": 61
-    },
-    {
-      "title": "Current player sets a photo-pose: back-to-chest with arms around waist (over clothes)",
-      "extra": "Switch roles and hold for 5 seconds",
+      "title": "Create a sensual striptease routine together",
+      "extra": "Incorporate props and creative movements",
       "spicyness": 65
     },
     {
-      "title": "Both players pose chest-to-chest (clothed) like living statues",
-      "extra": "Breathe together for a slow count of 10",
-      "spicyness": 65
+      "title": "Roleplay a fantasy of being caught in a passionate moment",
+      "extra": "Make the scene increasingly intense and creative",
+      "spicyness": 70
     },
     {
-      "title": "Current player offers a seated 'chair' knee-to-knee; the other perches briefly (clothed)",
-      "extra": "Switch roles and hold for 5 seconds",
-      "spicyness": 66
+      "title": "Roleplay acting out a softcore porn scene together",
+      "extra": "Add your own creative twists and dialogue",
+      "spicyness": 80
     },
     {
-      "title": "Both players create a living sculpture: arms entwined, shoulder-to-shoulder",
-      "extra": "Add a soft cheek-to-cheek touch for a slow count of 3",
-      "spicyness": 69
-    },
-    {
-      "title": "Both players compose a 'massage duet': alternate strokes on each other's shoulders to a 10-second rhythm (over clothes)",
-      "extra": "Use massage oil",
-      "spicyness": 71
-    },
-    {
-      "title": "Current player gives a slow, clothed, performance-style lap dance",
-      "extra": "Seated player may place hands on shoulders",
-      "spicyness": 75
-    },
-    {
-      "title": "Both players trace a small heart on each other's chest (over clothes)",
-      "extra": "Follow with a warm hug for 5 seconds",
-      "spicyness": 79
-    },
-    {
-      "title": "Current player slowly removes the other's jacket or overshirt as if on stage",
-      "extra": "Reverse roles and repeat a little closer",
-      "spicyness": 85
-    },
-    {
-      "title": "Current player straddles the other's lap (clothed) for a dramatic pose",
-      "extra": "Hold the pose for a slow count of 20",
+      "title": "One player performs a creative lapdance for the other player",
+      "extra": "Include guided touching during the lapdance",
       "spicyness": 95
     }
   ]
