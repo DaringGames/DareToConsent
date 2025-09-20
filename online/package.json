@@ -4,10 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "start": "PORT=3001 node server/index.js",
-    "dev": "PORT=3001 node server/index.js"
+    "start": "PORT=3001 node -r dotenv/config server/index.js",
+    "dev": "PORT=3001 node -r dotenv/config server/index.js"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.0.0",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nanoid": "^5.0.7",
     "socket.io": "^4.7.5"

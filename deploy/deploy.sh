@@ -101,9 +101,9 @@ npm ci --omit=dev
 EOSSH
 
 echo "${YEL}==> Staging runtime configs (PM2 ecosystem, Nginx vhost)${NC}"
-scp ${SSH_OPTS} -q "deploy/nginx/daretoconsent.conf" "${REMOTE}:/tmp/daretoconsent.conf"
+# Skipping template upload; render Nginx vhost via heredoc to avoid sed -i temp files
 
-ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" APP_HOST="$APP_HOST" bash -s <<'EOSSH'
+ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" APP_HOST="$APP_HOST" DTC_ADMIN_TOKEN="${DTC_ADMIN_TOKEN:-}" DTC_DIGEST_TO="${DTC_DIGEST_TO:-}" DTC_DIGEST_FROM="${DTC_DIGEST_FROM:-}" DEFAULT_DOMAIN="${DEFAULT_DOMAIN:-}" AWS_REGION="${AWS_REGION:-}" SES_REGION="${SES_REGION:-}" CERTBOT_EMAIL="${CERTBOT_EMAIL:-}" bash -s <<'EOSSH'
 set -euo pipefail
 APP_DIR="${APP_DIR:-/opt/daretoconsent}"
 APP_PORT="${APP_PORT:-3001}"
@@ -120,7 +120,13 @@ module.exports = {
       env: {
         NODE_ENV: "production",
         PORT: "${APP_PORT}",
-        HOST: "${APP_HOST}"
+        HOST: "${APP_HOST}",
+        DTC_ADMIN_TOKEN: "${DTC_ADMIN_TOKEN}",
+        DTC_DIGEST_TO: "${DTC_DIGEST_TO}",
+        DTC_DIGEST_FROM: "${DTC_DIGEST_FROM}",
+        DEFAULT_DOMAIN: "${DEFAULT_DOMAIN}",
+        AWS_REGION: "${AWS_REGION}",
+        SES_REGION: "${SES_REGION}"
       },
       instances: 1,
       exec_mode: "fork",
@@ -136,7 +142,7 @@ EOF
 EOSSH
 
 echo "${YEL}==> Installing/Updating Nginx vhost for ${DOMAIN}${NC}"
-ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" APP_HOST="$APP_HOST" bash -s -- "${DOMAIN}" <<'EOSSH'
+ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" APP_HOST="$APP_HOST" CERTBOT_EMAIL="${CERTBOT_EMAIL:-}" bash -s -- "${DOMAIN}" <<'EOSSH'
 set -euo pipefail
 APP_DIR="${APP_DIR:-/opt/daretoconsent}"
 APP_PORT="${APP_PORT:-3001}"
@@ -150,25 +156,13 @@ fi
 sudo mkdir -p /var/www/letsencrypt
 
 DOM="$1"
-VHOST_TMP="/tmp/daretoconsent.conf"
 CERT_DIR="/etc/letsencrypt/live/${DOM}"
 CERT_OK="no"
 if [[ -f "${CERT_DIR}/fullchain.pem" && -f "${CERT_DIR}/privkey.pem" ]]; then
   CERT_OK="yes"
 fi
 
-# Replace server_name, cert paths, and upstream in the template we uploaded
-if [[ -f "$VHOST_TMP" ]]; then
-  # server_name
-  sudo sed -i "s/server_name .*/server_name ${DOM} www.${DOM};/" "$VHOST_TMP" || true
-  # certificate paths (ensure they point at the correct domain directory)
-  sudo sed -i "s|/etc/letsencrypt/live/[^/]\\+/|/etc/letsencrypt/live/${DOM}/|g" "$VHOST_TMP" || true
-  # upstream proxy_pass host:port to the app variables
-  sudo sed -i -E "s|proxy_pass http://[0-9\\.]+:[0-9]+;|proxy_pass http://${APP_HOST}:${APP_PORT};|g" "$VHOST_TMP" || true
-fi
-
 write_conf_http_only() {
-  # Minimal HTTP-only vhost so we can issue certs and serve the app immediately
   sudo tee /etc/nginx/conf.d/daretoconsent.conf >/dev/null <<CONF
 server {
   listen 80;
@@ -192,29 +186,75 @@ server {
 CONF
 }
 
-install_conf_with_tls() {
-  if [[ -d /etc/nginx/sites-available ]]; then
-    sudo mv "\$VHOST_TMP" "/etc/nginx/sites-available/daretoconsent.conf"
-    sudo ln -sfn "/etc/nginx/sites-available/daretoconsent.conf" "/etc/nginx/sites-enabled/daretoconsent.conf"
-  elif [[ -d /etc/nginx/conf.d ]]; then
-    sudo mv "\$VHOST_TMP" "/etc/nginx/conf.d/daretoconsent.conf"
-  else
-    echo "Unable to locate Nginx vhost directory. Please place the vhost manually." >&2
-    exit 4
-  fi
+write_conf_with_tls() {
+  sudo tee /etc/nginx/conf.d/daretoconsent.conf >/dev/null <<CONF
+server {
+  listen 80;
+  listen [::]:80;
+  server_name ${DOM} www.${DOM};
+
+  location /.well-known/acme-challenge/ {
+    root /var/www/letsencrypt;
+  }
+
+  # Redirect all HTTP to HTTPS
+  location / {
+    return 301 https://\$host\$request_uri;
+  }
 }
 
-if [[ "\$CERT_OK" == "yes" ]]; then
-  # Certs already present: install full TLS vhost
-  install_conf_with_tls
-else
-  # No certs yet: install HTTP-only vhost so certbot can succeed and site is up on HTTP
-  write_conf_http_only
-fi
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+  server_name ${DOM} www.${DOM};
 
-sudo nginx -t
-sudo systemctl reload nginx || sudo service nginx reload
+  ssl_certificate /etc/letsencrypt/live/${DOM}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/${DOM}/privkey.pem;
+
+  add_header X-Frame-Options SAMEORIGIN;
+  add_header X-Content-Type-Options nosniff;
+  add_header Referrer-Policy same-origin;
+
+  location / {
+    proxy_set_header Host \$host;
+    proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto \$scheme;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade \$http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_pass http://${APP_HOST}:${APP_PORT};
+  }
+}
+CONF
+}
+
+if [[ "${CERT_OK}" == "yes" ]]; then
+  write_conf_with_tls
+  sudo nginx -t
+  sudo systemctl reload nginx || sudo service nginx reload
+else
+  write_conf_http_only
+  sudo nginx -t
+  sudo systemctl reload nginx || sudo service nginx reload
+
+  if command -v certbot >/dev/null 2>&1; then
+    EMAIL="${CERTBOT_EMAIL:-ops@example.com}"
+    sudo certbot --nginx -d "${DOM}" -d "www.${DOM}" --non-interactive --agree-tos -m "${EMAIL}" --redirect || true
+    if [[ -f "/etc/letsencrypt/live/${DOM}/fullchain.pem" && -f "/etc/letsencrypt/live/${DOM}/privkey.pem" ]]; then
+      write_conf_with_tls
+      sudo nginx -t
+      sudo systemctl reload nginx || sudo service nginx reload
+    else
+      echo "WARN: certbot did not install certs for ${DOM}. HTTPS may serve a default certificate until certs are issued."
+    fi
+  else
+    echo "WARN: certbot not available; skipping automatic certificate provisioning."
+  fi
+fi
 EOSSH
+
+# Fallback direct certbot run to avoid any variable escaping issues inside heredocs
+# Fallback certbot block removed; handled in primary vhost step
 
 echo "${YEL}==> Starting app with PM2${NC}"
 ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" bash -s <<'EOSSH'

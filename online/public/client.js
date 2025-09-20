@@ -39,6 +39,22 @@ function contrastOn(hex){
     return contrast(Lbg, Llight) >= contrast(Lbg, Ldark) ? light : dark;
   } catch { return '#f7f9ff'; }
 }
+// --- Sanitization helpers ---
+function escapeHtml(s){
+  const str = (s == null ? '' : String(s));
+  return str.replace(/[&<>"']/g, m => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[m]));
+}
+function escapeAttr(s){
+  // Attribute-safe (includes quotes)
+  return escapeHtml(s).replace(/`/g, '&#96;');
+}
+function sanitizeInput(s, max){
+  // Strip control chars; enforce max length
+  const out = String(s == null ? '' : s).replace(/[\x00-\x1F\x7F]/g, '');
+  return typeof max === 'number' ? out.slice(0, max) : out;
+}
 
 let state = { room:null, me:{ name:'', color:'' } };
 let local = { addAfterComplete:false, lastCompleterId:null, desiredColor:null };
@@ -52,7 +68,7 @@ let selectedTheme = 'Sensual';
 function titleView(){
   const codeInHash = location.hash?.slice(1) || '';
   const hostName = peekedRoom ? peekedRoom.players.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
-  const subtitle = codeInHash && hostName ? `Join ${hostName}'s game` : "Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?";
+  const subtitle = codeInHash && hostName ? `Join ${escapeHtml(hostName)}'s game` : "Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?";
   return `
   <div class="card">
     <h1>Dare to Consent</h1>
@@ -61,8 +77,8 @@ function titleView(){
     <div class="grid-landing${codeInHash ? ' single' : ''}">
       <div class="card panel">
         <h3>Join Game</h3>
-        <input id="join-code" placeholder="three-words-like-this" value="${codeInHash}" maxlength="64" />
-        <input id="join-name" placeholder="Your name" value="${(state?.me?.name || (loadSession()?.name || '')).toString().slice(0,30)}" maxlength="30" />
+        <input id="join-code" placeholder="three-words-like-this" value="${escapeAttr(codeInHash)}" maxlength="64" />
+        <input id="join-name" placeholder="Your name" value="${escapeAttr((state?.me?.name || (loadSession()?.name || '')).toString().slice(0,30))}" maxlength="30" />
         <button class="primary" id="join-btn">Join</button>
       </div>
       ${codeInHash ? '' : `<div class="or">or</div>`}
@@ -123,12 +139,12 @@ function profileMenuHtml(r){
   const swatches = COLORS.map(c=>{
     const isTaken = taken.has(c);
     const selected = (c=== (me?.color || state.me?.color)) ? 'selected' : '';
-    return `<button class="color-swatch ${selected} ${isTaken?'taken':''}" data-color="${c}" ${isTaken?'data-taken="1" disabled':''} style="background:${COLOR_HEX[c]||'#4a5168'}" title="${c}${isTaken?' (taken)':''}"></button>`;
+    return `<button type="button" class="color-swatch ${selected} ${isTaken?'taken':''}" data-color="${c}" ${isTaken?'data-taken="1" disabled':''} style="background:${COLOR_HEX[c]||'#4a5168'}" title="${c}${isTaken?' (taken)':''}" aria-label="${c}${isTaken?' (taken)':''}"></button>`;
   }).join('');
   return `
     <div class="profile">
-      <button id="profile-menu-toggle" class="pill name" style="background:${colorHex};color:${textColor}">
-        ${name} <span class="caret">▾</span>
+      <button id="profile-menu-toggle" class="pill name" style="background:${colorHex};color:${textColor}" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu">
+        ${escapeHtml(name)} <span class="caret">▾</span>
       </button>
       <div id="profile-menu" class="dropdown">
         <div class="menu-row"><button id="change-name">Change name</button></div>
@@ -159,13 +175,13 @@ function lobbyView(){
   return `
   <div class="card">
     <div class="row between">
-      <h2>Room: ${r.code}</h2>
+      <h2>Room: ${escapeHtml(r.code)}</h2>
       ${profileMenuHtml(r)}
     </div>
     <div class="qr"><div id="qr"></div></div>
     <small>Share this link: <a href="${url}">${url}</a></small>
     <h3>Players</h3>
-    <div class="players">${r.players.map(p=>{ const bg = COLOR_HEX[p.color]||'#1b2030'; const tc = contrastOn(bg); return `<span class="pill name" style="background:${bg};color:${tc}">${p.name}</span>`; }).join('')}</div>
+    <div class="players">${r.players.map(p=>{ const bg = COLOR_HEX[p.color]||'#1b2030'; const tc = contrastOn(bg); return `<span class="pill name" style="background:${bg};color:${tc}">${escapeHtml(p.name)}</span>`; }).join('')}</div>
     ${startControls}
   </div>`;
 }
@@ -181,8 +197,8 @@ function dareButtonsHtml(){
   const last = Math.max(0, list.length - 1);
   return `<div class="grid">${list.map((d,i)=>`
     <button class="dare-btn ${i===last?'highlight':''}" data-dare-select="${i}">
-      <div class="dare-btn-title">Dare: ${d.title}</div>
-      ${d.extra ? `<div class="dare-btn-extra">🌶️ Extra Challenge: ${d.extra}</div>` : ''}
+      <div class="dare-btn-title">Dare: ${escapeHtml(d.title)}</div>
+      ${d.extra ? `<div class="dare-btn-extra">🌶️ Extra Challenge: ${escapeHtml(d.extra)}</div>` : ''}
     </button>
   `).join('')}</div>`;
 }
@@ -194,8 +210,8 @@ function chosenDareHtml(){
   const d = r.dareMenu?.[idx];
   if (!d) return '';
   return `<div class="card">
-    <p><b>Dare: ${d.title}</b></p>
-    ${d.extra ? `<p><small>🌶️ Extra Challenge: ${d.extra}</small></p>` : ''}
+    <p><b>Dare: ${escapeHtml(d.title)}</b></p>
+    ${d.extra ? `<p><small>🌶️ Extra Challenge: ${escapeHtml(d.extra)}</small></p>` : ''}
   </div>`;
 }
 
@@ -228,7 +244,7 @@ function submissionsTable(){
         : (sub ? `<span class="muted">Responded</span>` : `<span class="muted">Waiting . . .</span>`);
 
       return `<tr>
-        <td><span class="pill name" style="background:${bg};color:${tc}">${p?.name||'Player'}</span></td>
+        <td><span class="pill name" style="background:${bg};color:${tc}">${escapeHtml(p?.name||'Player')}</span></td>
         <td>${cell}</td>
         ${isActive ? `<td class="choose-cell">${chooseCell}</td>` : ''}
       </tr>`;
@@ -353,7 +369,7 @@ if (showAddOnly) {
   return `
   <div class="card">
     <div class="row between">
-      <h2>${header}</h2>
+      <h2 aria-live="polite">${escapeHtml(header)}</h2>
       ${profileMenuHtml(r)}
     </div>
     ${body}
@@ -418,8 +434,8 @@ function wordCloud(theme){
     <tr>
       <td class="ex-cell-btn">
         <button class="dare-btn example-dare" data-example-index="${offset + i}" data-title="${esc(ex.title)}" data-extra="${ex.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
-          <div class="dare-btn-title">Dare: ${ex.title}</div>
-          <div class="dare-btn-extra">🌶️ Extra Challenge: ${ex.extra}</div>
+          <div class="dare-btn-title">Dare: ${escapeHtml(ex.title)}</div>
+          <div class="dare-btn-extra">🌶️ Extra Challenge: ${escapeHtml(ex.extra)}</div>
         </button>
       </td>
       <td class="ex-cell-spice">
@@ -453,22 +469,51 @@ function render(){
   else if (r.state==='lobby') html = lobbyView();
   else if (r.state==='main') html = mainView();
   root.innerHTML = html;
+// Update document title from the first h2 on the page (status headline)
+try {
+  const h2 = root.querySelector('h2');
+  const status = (h2 && h2.textContent) ? h2.textContent.trim() : '';
+  document.title = `Dare to Consent${status ? ' — ' + status : ''}`;
+} catch {}
+
+// Initialize activity hooks and idle watcher (used for "Need more time?" nudge)
+try { ensureActivityHooks(); updateIdleWatch(); } catch {}
+
+  
+
 
   // wiring
-  const doJoin = ()=>{
-    const code = ($('#join-code')?.value || '').trim().toLowerCase().slice(0,64);
+  const doJoin = async ()=>{
+    const codeRaw = ($('#join-code')?.value || '').trim().toLowerCase();
     const nameRaw = ($('#join-name')?.value || '').trim() || 'Player';
-    const name = nameRaw.slice(0,30);
+    const code = sanitizeInput(codeRaw, 64);
+    const name = sanitizeInput(nameRaw, 30);
     if (!code) return; // need a room code
+
+    // Age gate: require explicit 18+ confirmation before joining any room
+    const ok = await showAgeGate();
+    if (!ok) {
+      try { location.assign('https://pbskids.org/'); } catch { location.href = 'https://pbskids.org/'; }
+      return;
+    }
+
     state.me = { name };
     // Persist intent so a refresh immediately resumes
     try { saveSession({ code, name }); } catch {}
     socket.emit('room:join', { code, name });
   };
-  $('#create-btn')?.addEventListener('click', ()=>{
-    const name = ($('#create-name').value.trim()||'Player').slice(0,30);
+  $('#create-btn')?.addEventListener('click', async ()=>{
+    const name = sanitizeInput($('#create-name').value.trim()||'Player', 30);
     const sel = $('#create-theme');
     if (sel && sel.value) selectedTheme = sel.value;
+
+    // Age gate: require explicit 18+ confirmation before creating a room
+    const ok = await showAgeGate();
+    if (!ok) {
+      try { location.assign('https://pbskids.org/'); } catch { location.href = 'https://pbskids.org/'; }
+      return;
+    }
+
     state.me = { name };
     // Persist name so we can resume properly
     try { saveSession({ name }); } catch {}
@@ -481,9 +526,33 @@ function render(){
     selectedTheme = e.target.value || 'Sensual';
   });
   $('#join-btn')?.addEventListener('click', doJoin);
-  $('#join-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
-  $('#join-code')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') doJoin(); });
-  $('#create-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { const nm = $('#create-name').value.trim()||'Player'; const name = nm.slice(0,30); const sel = $('#create-theme'); if (sel && sel.value && name) { if (sel && sel.value) selectedTheme = sel.value; state.me = { name }; socket.emit('room:create', { name }); } } });
+  $('#join-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { e.preventDefault(); doJoin(); } });
+  $('#join-code')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { e.preventDefault(); doJoin(); } });
+  $('#create-name')?.addEventListener('keydown', async (e)=>{
+    if (e.key==='Enter') {
+      e.preventDefault();
+      const nm = $('#create-name').value.trim()||'Player';
+      const name = sanitizeInput(nm, 30);
+      const sel = $('#create-theme');
+      if (sel && sel.value && name) {
+        if (sel && sel.value) selectedTheme = sel.value;
+
+        // Age gate before creating a room via Enter key
+        const ok = await showAgeGate();
+        if (!ok) {
+          try { location.assign('https://pbskids.org/'); } catch { location.href = 'https://pbskids.org/'; }
+          return;
+        }
+
+        state.me = { name };
+        // Persist name so we can resume properly
+        try { saveSession({ name }); } catch {}
+        // Clear any stale "add-after-complete" UI from past games
+        try { local.addAfterComplete = false; local.lastCompleterId = null; saveUI({ addAfterComplete:false, lastCompleterId:null }); } catch {}
+        socket.emit('room:create', { name, theme: selectedTheme || 'Sensual' });
+      }
+    }
+  });
   $('#start-game')?.addEventListener('click', ()=>{
     const key = selectedTheme || 'Sensual';
     // Let the server seed authoritatively; client themes may not be loaded yet on some players
@@ -500,20 +569,22 @@ function render(){
     const closeMenu = (e)=>{
       if (!pm.contains(e.target) && e.target !== pmToggle) {
         pm.classList.remove('show');
+        try { pmToggle.setAttribute('aria-expanded','false'); } catch {}
         document.removeEventListener('click', closeMenu);
       }
     };
     pmToggle.addEventListener('click', (e)=>{
       e.stopPropagation();
-      pm.classList.toggle('show');
-      if (pm.classList.contains('show')) {
+      const open = pm.classList.toggle('show');
+      try { pmToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); } catch {}
+      if (open) {
         setTimeout(()=>document.addEventListener('click', closeMenu), 0);
       }
     });
     $('#change-name')?.addEventListener('click', async ()=>{
       const cur = state.me?.name || '';
       const input = await showPrompt('Change your name', { initialValue: cur, placeholder:'Your name', confirmText:'Save', cancelText:'Cancel', maxLength: 30 });
-      const next = (input || '').trim().slice(0,30);
+      const next = sanitizeInput((input || '').trim(), 30);
       if (next && next !== cur) {
         state.me.name = next;
         try { saveSession({ name: next }); } catch {}
@@ -871,6 +942,154 @@ function attemptAutoJoin(){
   } catch {}
 }
 
+// --- Accessibility and dialog helpers ---
+function trapFocus(overlay){
+  try{
+    const sel = 'a[href], area[href], input:not([disabled]):not([type=hidden]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const get = () => Array.from(overlay.querySelectorAll(sel)).filter(el => (el.offsetParent !== null) || el === document.activeElement);
+    function onKey(e){
+      if (e.key !== 'Tab') return;
+      const list = get();
+      if (!list.length) return;
+      const first = list[0], last = list[list.length-1];
+      if (e.shiftKey){
+        if (document.activeElement === first || document.activeElement === overlay){
+          e.preventDefault(); last.focus();
+        }
+      } else {
+        if (document.activeElement === last){
+          e.preventDefault(); first.focus();
+        }
+      }
+    }
+    overlay.addEventListener('keydown', onKey);
+  } catch {}
+}
+
+function decorateDialogA11y(overlay, { idPrefix='dialog', titleSel='.modal-title', messageSel='.modal-message' } = {}){
+  try{
+    const modal = overlay.querySelector('.modal');
+    if (!modal) return;
+    modal.setAttribute('role','dialog');
+    modal.setAttribute('aria-modal','true');
+    const title = overlay.querySelector(titleSel);
+    const message = overlay.querySelector(messageSel);
+    const titleId = `${idPrefix}-title`;
+    const msgId = `${idPrefix}-message`;
+    if (title && !title.id) title.id = titleId;
+    if (message && !message.id) message.id = msgId;
+    if (title) modal.setAttribute('aria-labelledby', title.id);
+    if (message) modal.setAttribute('aria-describedby', message.id);
+    setTimeout(()=>{
+      const first = overlay.querySelector('button, [tabindex]:not([tabindex="-1"])');
+      if (first && first.focus) first.focus();
+    }, 0);
+    trapFocus(overlay);
+  } catch {}
+}
+
+// --- Age gate ---
+function showAgeGate(){
+  return new Promise(resolve=>{
+    const host = ensureOverlayRoot();
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.innerHTML = `
+      <div class="modal card">
+        <div class="modal-content">
+          <h3 class="modal-title">Mature content</h3>
+          <p class="modal-message">This game is intended for adults 18 years or older.</p>
+          <div class="row modal-buttons">
+            <button class="primary btn-18" autofocus>I'm 18+</button>
+            <button class="btn-under">I'm too young</button>
+          </div>
+        </div>
+      </div>`;
+    host.appendChild(overlay);
+    try { decorateDialogA11y(overlay, { idPrefix:'age' }); } catch {}
+    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>{ try{ overlay.remove(); } catch{} }, 150); };
+    const decide = (val) => { cleanup(); resolve(val); };
+    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(false); });
+    overlay.querySelector('.btn-under')?.addEventListener('click', ()=>decide(false));
+    overlay.querySelector('.btn-18')?.addEventListener('click', ()=>decide(true));
+    document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') { e.preventDefault(); decide(false); } }, { once:true });
+    requestAnimationFrame(()=>overlay.classList.add('show'));
+  });
+}
+
+// --- Idle detection (active player) ---
+let activity = { lastInputTs: Date.now(), installed: false, idleTimer: null, nudgeTimer: null, needOverlay: null };
+
+function markActivity(){
+  activity.lastInputTs = Date.now();
+  if (activity.needOverlay) {
+    try { activity.needOverlay.close(); } catch {}
+    activity.needOverlay = null;
+  }
+}
+
+function ensureActivityHooks(){
+  if (activity.installed) return;
+  activity.installed = true;
+  ['pointerdown','mousedown','mouseup','click','keydown','touchstart','focus'].forEach(evt=>{
+    window.addEventListener(evt, markActivity, { passive:true, capture:true });
+  });
+}
+
+function isMyTurnNow(){
+  try{
+    const r = state.room; if (!r) return false;
+    const meId = state.me?.id || (r.players||[]).find(p=>p.name===state.me?.name && p.color===state.me?.color)?.id;
+    return r?.state==='main' && r?.turn?.order?.[r.turn.index]===meId;
+  } catch { return false; }
+}
+
+function showNeedMoreTime(){
+  const host = ensureOverlayRoot();
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  overlay.innerHTML = `
+    <div class="modal card">
+      <div class="modal-content">
+        <h3 class="modal-title">Need more time?</h3>
+        <p class="modal-message">It's your turn. Tap “I'm here” to keep your turn.</p>
+        <div class="row modal-buttons">
+          <button class="primary btn-ok">I'm here</button>
+        </div>
+      </div>
+    </div>`;
+  host.appendChild(overlay);
+  try { decorateDialogA11y(overlay, { idPrefix:'idle' }); } catch {}
+  let closed = false;
+  const close = () => { if (closed) return; closed = true; overlay.classList.remove('show'); setTimeout(()=>{ try{ overlay.remove(); } catch{} }, 150); };
+  overlay.addEventListener('click', (e)=>{ if (e.target === overlay) close(); });
+  overlay.querySelector('.btn-ok')?.addEventListener('click', ()=>{ markActivity(); close(); });
+  document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') { e.preventDefault(); close(); } }, { once:true });
+  requestAnimationFrame(()=>overlay.classList.add('show'));
+  return { close };
+}
+
+function updateIdleWatch(){
+  try{
+    if (activity.idleTimer) { clearTimeout(activity.idleTimer); activity.idleTimer = null; }
+    if (activity.nudgeTimer) { clearTimeout(activity.nudgeTimer); activity.nudgeTimer = null; }
+    if (!isMyTurnNow()) return;
+    const now = Date.now();
+    const waitMs = Math.max(0, 60000 - (now - (activity.lastInputTs || 0)));
+    activity.idleTimer = setTimeout(()=>{
+      if (!isMyTurnNow()) return;
+      activity.needOverlay = showNeedMoreTime();
+      activity.nudgeTimer = setTimeout(()=>{
+        if (!isMyTurnNow()) return;
+        const since = Date.now() - (activity.lastInputTs || 0);
+        if (since >= 70000) {
+          try { socket.emit('idle:escalate'); } catch {}
+        }
+      }, 10000);
+    }, waitMs);
+  } catch {}
+}
+
 // Try to resume when socket connects/reconnects; also ensure pending auto-join is attempted
 socket.on('connect', ()=>{
   attemptResume();
@@ -905,17 +1124,18 @@ function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' 
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     overlay.innerHTML = `
-      <div class="modal card">
+      <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-message">
         <div class="modal-content">
-          <h3 class="modal-title">${title || ''}</h3>
-          <p class="modal-message"></p>
+          <h3 class="modal-title" id="confirm-title">${title || ''}</h3>
+          <p class="modal-message" id="confirm-message"></p>
           <div class="row modal-buttons">
             <button class="btn-cancel">${cancelText}</button>
-            <button class="primary btn-ok">${confirmText}</button>
+            <button class="primary btn-ok" autofocus>${confirmText}</button>
           </div>
         </div>
       </div>`;
     host.appendChild(overlay);
+    try { decorateDialogA11y(overlay, { idPrefix:'absent' }); } catch {}
 
     const msgEl = overlay.querySelector('.modal-message');
     // Preserve line breaks
@@ -925,7 +1145,14 @@ function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' 
       msgEl.appendChild(document.createTextNode(line));
     });
 
-    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>overlay.remove(), 150); };
+    const prev = document.activeElement;
+    const cleanup = () => {
+      overlay.classList.remove('show');
+      setTimeout(()=>{
+        try { overlay.remove(); } catch {}
+        try { prev && prev.focus && prev.focus(); } catch {}
+      }, 150);
+    };
     const decide = (val) => { cleanup(); resolve(val); };
 
     overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(false); });
@@ -937,6 +1164,10 @@ function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' 
       if (e.key === 'Enter') { e.preventDefault(); decide(true); }
     };
     document.addEventListener('keydown', onKey, { once:true });
+    // Focus management and trap
+    const okBtn = overlay.querySelector('.btn-ok');
+    if (okBtn) okBtn.focus();
+    try { trapFocus(overlay); } catch {}
 
     requestAnimationFrame(()=>overlay.classList.add('show'));
   });
@@ -950,9 +1181,9 @@ function showPrompt(title, { placeholder='', initialValue='', confirmText='OK', 
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     overlay.innerHTML = `
-      <div class="modal card">
+      <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="prompt-title">
         <div class="modal-content">
-          <h3 class="modal-title">${title || ''}</h3>
+          <h3 class="modal-title" id="prompt-title">${title || ''}</h3>
           <input class="modal-input" type="text" ${maxLength ? `maxlength="${maxLength}"` : ''} placeholder="${esc(placeholder)}" />
           <div class="row modal-buttons">
             <button class="btn-cancel">${cancelText}</button>
@@ -966,7 +1197,14 @@ function showPrompt(title, { placeholder='', initialValue='', confirmText='OK', 
     if (typeof initialValue === 'string') input.value = initialValue;
     setTimeout(()=>{ input.focus(); input.select?.(); }, 0);
 
-    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>overlay.remove(), 150); };
+    const prev = document.activeElement;
+    const cleanup = () => {
+      overlay.classList.remove('show');
+      setTimeout(()=>{
+        try { overlay.remove(); } catch {}
+        try { prev && prev.focus && prev.focus(); } catch {}
+      }, 150);
+    };
     const decide = (val) => { cleanup(); resolve(val); };
 
     overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(null); });
@@ -982,6 +1220,8 @@ function showPrompt(title, { placeholder='', initialValue='', confirmText='OK', 
       if (e.key === 'Escape') { e.preventDefault(); decide(null); }
     }, { once:true });
 
+    // Focus and trap
+    try { trapFocus(overlay); } catch {}
     requestAnimationFrame(()=>overlay.classList.add('show'));
   });
 }
@@ -1019,7 +1259,14 @@ function showInviteOverlay(url, { title='Add Players', instructions='Ask new pla
       })
       .catch(()=>{});
 
-    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>overlay.remove(), 150); };
+    const prev = document.activeElement;
+    const cleanup = () => {
+      overlay.classList.remove('show');
+      setTimeout(()=>{
+        try { overlay.remove(); } catch {}
+        try { prev && prev.focus && prev.focus(); } catch {}
+      }, 150);
+    };
     const decide = () => { cleanup(); resolve(true); };
 
     overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(); });
@@ -1030,6 +1277,10 @@ function showInviteOverlay(url, { title='Add Players', instructions='Ask new pla
     };
     document.addEventListener('keydown', onKey, { once:true });
 
+    // Focus and trap
+    const okBtn = overlay.querySelector('.btn-ok');
+    if (okBtn) okBtn.focus();
+    try { trapFocus(overlay); } catch {}
     requestAnimationFrame(()=>overlay.classList.add('show'));
   });
 }
@@ -1052,10 +1303,10 @@ function showAbsentOverlay({ promptId, targetId, targetName }) {
   const overlay = document.createElement('div');
   overlay.className = 'overlay';
   overlay.innerHTML = `
-    <div class="modal card">
+    <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="absent-title" aria-describedby="absent-message">
       <div class="modal-content">
-        <h3 class="modal-title">Is ${esc(targetName || 'this player')} still playing?</h3>
-        <p class="modal-message">We can't see ${esc(targetName || 'the player')}'s connection. If they are no longer playing, we can remove them from the game.</p>
+        <h3 class="modal-title" id="absent-title">Is ${esc(targetName || 'this player')} still playing?</h3>
+        <p class="modal-message" id="absent-message">We can't see ${esc(targetName || 'the player')}'s connection. If they are no longer playing, we can remove them from the game.</p>
         <div class="row modal-buttons">
           <button class="btn-yes primary">Yes</button>
           <button class="btn-no danger">No, remove them</button>
@@ -1079,6 +1330,10 @@ function showAbsentOverlay({ promptId, targetId, targetName }) {
 
   absentDialog.promptId = promptId;
   absentDialog.el = overlay;
+  // Focus and trap
+  const yesBtn = overlay.querySelector('.btn-yes');
+  if (yesBtn) yesBtn.focus();
+  try { trapFocus(overlay); } catch {}
   requestAnimationFrame(()=>overlay.classList.add('show'));
 }
 
