@@ -1,3 +1,5 @@
+import 'dotenv/config';
+import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
@@ -5,9 +7,12 @@ import { customAlphabet } from 'nanoid';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
+import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+// Also try loading a project-root .env if running from online/ dir
+try { dotenv.config({ path: path.join(__dirname, '../../.env') }); } catch {}
 
 // Load themes on server for authoritative seeding (prefer split files, fallback to monolith)
 let THEMES = {};
@@ -51,6 +56,181 @@ function loadServerThemes() {
   }
 }
 THEMES = loadServerThemes();
+
+// --- Analytics and daily digest email (in-memory, reset after send) ---
+const stats = {
+  since: Date.now(),
+  visitors: new Set(),
+  attemptedStarts: 0,
+  successfulStarts: 0,
+  games: new Map(), // code -> { code, createdAt, theme:null|string, started:false, events:[{ts,type,message}] }
+  successSinceLastSend: false,
+  lastSentAt: 0,
+  // Initialize to today's UTC date so the first digest waits for the next day boundary
+  lastDigestDay: new Date().toISOString().slice(0,10)
+};
+
+function getReqIp(req) {
+  try {
+    const xf = (req.headers?.['x-forwarded-for'] || '').toString();
+    const ip = xf ? xf.split(',')[0].trim() : (req.socket?.remoteAddress || '');
+    return ip || 'unknown';
+  } catch { return 'unknown'; }
+}
+function ensureGame(code) {
+  let g = stats.games.get(code);
+  if (!g) {
+    g = { code, createdAt: Date.now(), theme: null, started: false, events: [] };
+    stats.games.set(code, g);
+  }
+  return g;
+}
+function logEvent(code, type, message) {
+  try {
+    const g = ensureGame(code);
+    g.events.push({ ts: Date.now(), type, message });
+    if (g.events.length > 500) g.events.shift();
+  } catch {}
+}
+function playerName(room, pid) {
+  const p = (room?.players || []).find(p => p.id === pid);
+  return (p?.name || 'Player');
+}
+
+// AWS SES client (uses instance role if present)
+const SES_REGION = process.env.AWS_REGION || process.env.SES_REGION || 'us-west-2';
+const DIGEST_TO = process.env.DTC_DIGEST_TO || 'JamesWillettVentures@gmail.com';
+const DIGEST_FROM = process.env.DTC_DIGEST_FROM || `no-reply@${process.env.DEFAULT_DOMAIN || 'daretoconsent.com'}`;
+// Explicit SES identity/ARN to avoid IAM resource mismatches
+const AWS_ACCOUNT_ID = process.env.AWS_ACCOUNT_ID || '607100099518';
+const SES_IDENTITY = process.env.SES_IDENTITY || (DIGEST_FROM.includes('@') ? DIGEST_FROM.split('@')[1] : 'daretoconsent.com');
+const SES_SOURCE_ARN = process.env.SES_SOURCE_ARN || `arn:aws:ses:${SES_REGION}:${AWS_ACCOUNT_ID}:identity/${SES_IDENTITY}`;
+let sesClient = null;
+function getSes() {
+  if (!sesClient) sesClient = new SESClient({ region: SES_REGION });
+  return sesClient;
+}
+// Track last email attempt for diagnostics
+let lastEmailStatus = {
+  at: 0,
+  ok: false,
+  messageId: null,
+  error: null,
+  to: DIGEST_TO,
+  from: DIGEST_FROM,
+  region: SES_REGION
+};
+function formatTs(ts) {
+  try { return new Date(ts).toISOString(); } catch { return String(ts); }
+}
+function makeDigestText() {
+  const lines = [];
+  lines.push(`Dare to Consent — daily usage summary`);
+  lines.push(`Period start: ${formatTs(stats.since)}`);
+  lines.push(`Generated at: ${formatTs(Date.now())}`);
+  lines.push('');
+  lines.push(`1) Total unique visitors: ${stats.visitors.size}`);
+  lines.push(`2) Attempted game starts (room:create): ${stats.attemptedStarts}`);
+  lines.push(`3) Games successfully started (>=3 players and clicked start): ${stats.successfulStarts}`);
+  lines.push('');
+  const started = Array.from(stats.games.values())
+    .filter(g => g.started)
+    .sort((a,b) => b.createdAt - a.createdAt)
+    .slice(0, 5);
+  if (started.length === 0) {
+    lines.push(`No successfully started games in this period.`);
+  } else {
+    lines.push(`4) Up to 5 game logs:`);
+    for (const g of started) {
+      lines.push('');
+      lines.push(`Game ${g.code} — theme: ${g.theme || '(unknown)'} — createdAt: ${formatTs(g.createdAt)}`);
+      for (const ev of g.events) {
+        lines.push(` - [${formatTs(ev.ts)}] ${ev.type}: ${ev.message}`);
+      }
+    }
+  }
+  return lines.join('\n');
+}
+async function sendDigest({ force=false, to=null, subj=null } = {}) {
+  const text = makeDigestText();
+  const subject = (typeof subj === 'string' && subj.trim()) ? subj.trim() : `Dare to Consent — Daily Summary`;
+  const toAddr = (typeof to === 'string' && to.trim()) ? to.trim() : DIGEST_TO;
+  try {
+    console.log(`[digest] preparing send from=${DIGEST_FROM} to=${toAddr} region=${SES_REGION} subj=${subj}`);
+    const ses = getSes();
+    const cmd = new SendEmailCommand({
+      Destination: { ToAddresses: [toAddr] },
+      Message: {
+        Subject: { Data: subject, Charset: 'UTF-8' },
+        Body: { Text: { Data: text, Charset: 'UTF-8' } }
+      },
+      Source: DIGEST_FROM,
+      SourceArn: SES_SOURCE_ARN,
+      ReturnPath: DIGEST_FROM,
+      ReturnPathArn: SES_SOURCE_ARN
+    });
+    const resp = await ses.send(cmd);
+    const msgId = resp?.MessageId || null;
+    console.log(`[digest] sent daily summary to ${toAddr} (${msgId || 'no-id'})`);
+    lastEmailStatus = {
+      at: Date.now(),
+      ok: true,
+      messageId: msgId,
+      error: null,
+      to: toAddr,
+      from: DIGEST_FROM,
+      region: SES_REGION
+    };
+    // Reset counters after successful send
+    stats.since = Date.now();
+    stats.visitors.clear();
+    stats.attemptedStarts = 0;
+    stats.successfulStarts = 0;
+    stats.games.clear();
+    stats.successSinceLastSend = false;
+    stats.lastSentAt = Date.now();
+    stats.lastDigestDay = new Date().toISOString().slice(0,10); // UTC date
+    return msgId;
+  } catch (e) {
+    console.error('[digest] failed to send summary', e);
+    lastEmailStatus = {
+      at: Date.now(),
+      ok: false,
+      messageId: null,
+      error: String(e?.name || e?.message || e),
+      to: toAddr,
+      from: DIGEST_FROM,
+      region: SES_REGION,
+      sourceArn: SES_SOURCE_ARN
+    };
+    throw e;
+  }
+}
+function maybeSendDigest() {
+  try {
+    const today = new Date().toISOString().slice(0,10); // UTC day boundary
+    const dayChanged = stats.lastDigestDay !== today;
+    if (!dayChanged) return;
+    if (!stats.successSinceLastSend) return; // accumulate until at least one success occurs
+    sendDigest({ force:false });
+  } catch (e) {
+    console.error('[digest] maybeSendDigest error', e);
+  }
+}
+// Check every 5 minutes for daily send opportunity
+setInterval(maybeSendDigest, 5 * 60 * 1000);
+
+// Basic sanitization for user-provided strings: strip control chars and enforce max length
+function sanitizeText(v, maxLen = 120) {
+  try {
+    const s = (typeof v === 'string' ? v : String(v || ''))
+      .replace(/[\x00-\x1F\x7F]/g, '') // drop control chars
+      .trim();
+    return (typeof maxLen === 'number' ? s.slice(0, maxLen) : s);
+  } catch {
+    return '';
+  }
+}
 
 // Resolve a theme name to a valid key in THEMES (case-insensitive), or null
 function resolveThemeKey(name){
@@ -207,11 +387,81 @@ function roomPublicState(room) {
 /* removed: collaborative theme elimination */
 
 // Serve static client
+app.use((req, _res, next) => {
+  try {
+    const ip = getReqIp(req);
+    if (ip) stats.visitors.add(ip);
+  } catch {}
+  next();
+});
 app.use(express.static(path.join(__dirname, '../public')));
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
+// Optional admin diagnostics for digest preview/sending (guarded by token)
+const ADMIN_TOKEN = process.env.DTC_ADMIN_TOKEN || null;
+function adminAllowed(req) {
+  if (!ADMIN_TOKEN) return false;
+  try {
+    const q = (req.query?.token || '').toString();
+    const h = (req.headers?.['x-admin-token'] || '').toString();
+    return q === ADMIN_TOKEN || h === ADMIN_TOKEN;
+  } catch { return false; }
+}
+app.get('/admin/digest-preview', (req, res) => {
+  if (!adminAllowed(req)) return res.status(404).send('Not found');
+  res.type('text/plain').send(makeDigestText());
+});
+app.get('/admin/digest-info', (req, res) => {
+  if (!adminAllowed(req)) return res.status(404).send('Not found');
+  res.json({
+    lastEmailStatus,
+    stats: {
+      since: stats.since,
+      visitors: stats.visitors.size,
+      attemptedStarts: stats.attemptedStarts,
+      successfulStarts: stats.successfulStarts,
+      lastSentAt: stats.lastSentAt || 0,
+      lastDigestDay: stats.lastDigestDay,
+      successSinceLastSend: !!stats.successSinceLastSend
+    },
+    email: {
+      toDefault: DIGEST_TO,
+      from: DIGEST_FROM,
+      region: SES_REGION
+    }
+  });
+});
+app.post('/admin/send-digest-now', async (req, res) => {
+  if (!adminAllowed(req)) return res.status(404).send('Not found');
+  try {
+    const to = (req.query?.to || '').toString().trim() || null;
+    const subj = (req.query?.subj || '').toString().trim() || null;
+    const messageId = await sendDigest({ force:true, to, subj });
+    res.json({ ok: true, messageId });
+  } catch (e) {
+    console.error('[admin] send-digest-now failed', e);
+    res.status(500).json({ ok: false, error: 'send_failed' });
+  }
+});
+
+// Convenience GET endpoint so sending can be triggered via a browser URL
+app.get('/admin/send-digest-now', async (req, res) => {
+  if (!adminAllowed(req)) return res.status(404).send('Not found');
+  try {
+    const to = (req.query?.to || '').toString().trim() || null;
+    const subj = (req.query?.subj || '').toString().trim() || null;
+    const messageId = await sendDigest({ force:true, to, subj });
+    res.json({ ok: true, messageId });
+  } catch (e) {
+    console.error('[admin] send-digest-now GET failed', e);
+    res.status(500).json({ ok: false, error: 'send_failed' });
+  }
+});
+
 io.on('connection', (socket) => {
   let joinInfo = { roomCode: null, playerId: null };
+  // Count unique visitors by socket IP as well
+  try { const ip = getClientIp(socket); if (ip) stats.visitors.add(ip); } catch {}
 
   async function emitRoom(room) {
     const base = roomPublicState(room);
@@ -322,7 +572,7 @@ io.on('connection', (socket) => {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
     }
     const room = createRoom();
-    const safeName = (typeof name === 'string' ? name.trim().slice(0, 30) : '');
+    const safeName = sanitizeText(name, 30);
     const player = { id: nano(), name: safeName || 'Player', color: null, connected: true };
     // Assign first available color
     player.color = nextColor(room);
@@ -352,6 +602,10 @@ io.on('connection', (socket) => {
     // Track mapping for per-socket tailoring
     socket.data = { roomCode: room.code, playerId: player.id };
     console.log(`[room:create] ${room.code} host=${player.name}`);
+    try {
+      stats.attemptedStarts++;
+      logEvent(room.code, 'create', `Room created by ${player.name}`);
+    } catch {}
     touch(room);
     emitRoom(room);
   });
@@ -366,7 +620,7 @@ io.on('connection', (socket) => {
       return emitError(socket, 'No such game (it may have expired).', 'NO_SUCH_ROOM');
     }
     const room = rooms.get(safeCode);
-    const safeName = (typeof name === 'string' ? name.trim().slice(0, 30) : '');
+    const safeName = sanitizeText(name, 30);
     const player = { id: nano(), name: safeName || 'Player', color: null, connected: true };
     player.color = nextColor(room);
     room.players.push(player);
@@ -376,6 +630,7 @@ io.on('connection', (socket) => {
     // Track mapping for per-socket tailoring
     socket.data = { roomCode: room.code, playerId: player.id };
     console.log(`[room:join] ${room.code} ${player.name}`);
+    try { logEvent(room.code, 'join', `${player.name} joined the room`); } catch {}
 
     // If a player joins while a game is in progress, add them into the turn rotation
     // so they get turns going forward. Insert them just after the current active index
@@ -409,6 +664,7 @@ io.on('connection', (socket) => {
     if (pending) { clearTimeout(pending); pendingDisconnects.delete(joinInfo.playerId); }
 
     const removedId = joinInfo.playerId;
+    const who = room.players.find(p => p.id === removedId)?.name || 'Player';
 
     // Remove from players
     const idx = room.players.findIndex(p => p.id === removedId);
@@ -467,6 +723,7 @@ io.on('connection', (socket) => {
 
     socket.leave(code);
     console.log(`[room:leave] ${code}`);
+    try { logEvent(code, 'leave', `${who} left the room`); } catch {}
     // Reset join info so further emits don't go to old room
     socket.data = { roomCode: null, playerId: null };
     joinInfo = { roomCode: null, playerId: null };
@@ -528,7 +785,7 @@ io.on('connection', (socket) => {
     }
     const player = room.players.find(p => p.id === joinInfo.playerId);
     if (!player) return;
-    if (typeof name === 'string') player.name = name.trim().slice(0, 30);
+    if (typeof name === 'string') player.name = sanitizeText(name, 30);
     // Color updates via UI are not used in this prototype; keep unique if sent
     if (typeof color === 'string') {
       const taken = new Set(room.players.filter(p => p.id !== player.id).map(p => p.color));
@@ -587,6 +844,19 @@ io.on('connection', (socket) => {
     console.log(`[theme:finalize] choose theme key=${key} (stored=${stored||''} lobby=${lobby||''} param=${param||''}) room=${room.code}`);
 
     room.chosenTheme = key;
+    // Mark game started once
+    try {
+      const g = ensureGame(room.code);
+      g.theme = key;
+      if (!g.started) {
+        g.started = true;
+        stats.successfulStarts++;
+        stats.successSinceLastSend = true;
+        logEvent(room.code, 'start', `Game started (theme: ${key})`);
+      } else {
+        logEvent(room.code, 'start', `Game resumed (theme: ${key})`);
+      }
+    } catch {}
     room.dareMenu = (seed || []).slice(0, 100).map(d => ({ ...d, createdAt: Date.now() }));
     room.state = 'main';
     room.paused = false;
@@ -639,6 +909,12 @@ io.on('connection', (socket) => {
     room.turn.selectedDareIndex = index;
     room.turn.submissions = [];
     room.turn.status = 'collecting';
+    try {
+      const chooserId = joinInfo.playerId;
+      const chooser = room.players.find(p => p.id === chooserId)?.name || 'Player';
+      const title = room.dareMenu?.[index]?.title || `index ${index}`;
+      logEvent(room.code, 'select', `${chooser} proposed dare: ${title}`);
+    } catch {}
     touch(room);
     emitRoom(room);
   });
@@ -656,6 +932,10 @@ io.on('connection', (socket) => {
     const exists = room.turn.submissions.find(s => s.playerId === playerId);
     const submission = { playerId, response: resp, ts: Date.now() };
     if (exists) Object.assign(exists, submission); else room.turn.submissions.push(submission);
+    try {
+      const who = playerName(room, playerId);
+      logEvent(room.code, 'respond', `${who} responded ${resp}`);
+    } catch {}
     touch(room);
     emitRoom(room);
   });
@@ -669,6 +949,15 @@ io.on('connection', (socket) => {
     if (!rateLimitAllow(ip, 'turn:pass', 30, 60*1000)) {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
     }
+
+    // Log pass event (include dare title if available) before resetting state
+    try {
+      const idx = room.turn?.selectedDareIndex;
+      const title = (typeof idx === 'number' && idx >= 0) ? (room.dareMenu?.[idx]?.title || null) : null;
+      const who = playerName(room, joinInfo.playerId);
+      logEvent(room.code, 'pass', `${who} passed${title ? ` on: ${title}` : ''}`);
+    } catch {}
+
     room.turn.selectedDareIndex = null;
     room.turn.submissions = [];
     room.turn.status = 'done';
@@ -710,6 +999,10 @@ io.on('connection', (socket) => {
       console.log(`[turn:complete] normal completion by chooser=${chooser}; index ${beforeIndex}->${room.turn.index} active=${afterActive} room=${room.code}`);
     }
 
+    try {
+      const who = playerName(room, chooser);
+      logEvent(room.code, 'complete', `${who} confirmed completion${completedMostDaring ? ' (most daring)' : ''}`);
+    } catch {}
     touch(room);
     onTurnFocus(room);
     emitRoom(room);
@@ -722,13 +1015,18 @@ io.on('connection', (socket) => {
     if (!rateLimitAllow(ip, 'menu:addDare', 20, 60*1000)) {
       return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
     }
-    const titleSafe = (typeof title === 'string' ? title.trim().slice(0, 120) : '');
-    const extraSafe = (typeof extra === 'string' ? extra.trim().slice(0, 160) : '');
+    const titleSafe = sanitizeText(title, 120);
+    const extraSafe = sanitizeText(extra, 160);
     if (!titleSafe || !extraSafe) return;
     if ((room.dareMenu?.length || 0) >= 100) {
       return emitError(socket, 'This game already has the maximum of 100 dares.', 'DARE_LIMIT');
     }
     room.dareMenu.push({ title: titleSafe, extra: extraSafe, createdBy: joinInfo.playerId, createdAt: Date.now() });
+
+    try {
+      const who = playerName(room, joinInfo.playerId);
+      logEvent(room.code, 'add-dare', `${who} added dare: ${titleSafe} (extra: ${extraSafe})`);
+    } catch {}
 
     // Exit 'adding' window and advance turn to the next player to choose a dare
     const beforeIndex = room.turn?.index | 0;
@@ -744,6 +1042,28 @@ io.on('connection', (socket) => {
     emitRoom(room);
   });
 
+  // Manual idle escalation from the active player's browser:
+  // After 60s idle + 10s no response to the "Need more time?" nudge,
+  // the active client emits 'idle:escalate' to ask the room if they're still playing.
+  socket.on('idle:escalate', () => {
+    const code = joinInfo.roomCode;
+    if (!code) return;
+    const room = rooms.get(code);
+    if (!room || room.state !== 'main') return;
+    const activeId = (room.turn?.order || [])[room.turn?.index || 0] || null;
+    // Only the active player may escalate their own idle state
+    if (!activeId || activeId !== joinInfo.playerId) return;
+    // Only escalate if the active player is still connected (i.e., we can see their browser)
+    const target = room.players.find(p => p.id === activeId);
+    if (!target || target.connected === false) return;
+
+    const ac = ensureAbsent(room);
+    ac.targetId = activeId;
+    ac.promptId = nano();
+    // Prompt the entire room to confirm whether the active player is still playing
+    io.to(room.code).emit('absent:prompt', { promptId: ac.promptId, targetId: ac.targetId, targetName: target.name || 'Player' });
+  });
+ 
   // One-player coordinated resolution: Is the absent active player still playing?
   socket.on('absent:response', ({ promptId, targetId, present }) => {
     const code = joinInfo.roomCode;
