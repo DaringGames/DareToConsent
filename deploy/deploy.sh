@@ -41,6 +41,41 @@ if [[ -f ".env" ]]; then
   set +o allexport
 fi
 
+# If SSM namespace is provided, pull secrets from AWS SSM Parameter Store unless already set in env
+if command -v aws >/dev/null 2>&1; then
+  if [[ -n "${SSM_NAMESPACE:-}" ]]; then
+    echo "${YEL}==> Loading secrets from SSM: ${SSM_NAMESPACE}${NC}"
+    ssm_get() {
+      local name="$1"
+      aws --profile "${AWS_PROFILE:-default}" --region "${AWS_REGION:-us-west-2}" \
+        ssm get-parameter --name "$name" --with-decryption \
+        --query 'Parameter.Value' --output text 2>/dev/null || true
+    }
+    # Only populate if not already provided via local env
+    if [[ -z "${DTC_DIGEST_TO:-}" ]]; then
+      DTC_DIGEST_TO="$(ssm_get "${SSM_NAMESPACE}/DTC_DIGEST_TO")"
+    fi
+    if [[ -z "${DTC_DIGEST_FROM:-}" ]]; then
+      DTC_DIGEST_FROM="$(ssm_get "${SSM_NAMESPACE}/DTC_DIGEST_FROM")"
+    fi
+    if [[ -z "${DTC_ADMIN_TOKEN:-}" ]]; then
+      DTC_ADMIN_TOKEN="$(ssm_get "${SSM_NAMESPACE}/DTC_ADMIN_TOKEN")"
+    fi
+    if [[ -z "${SES_REGION:-}" ]]; then
+      SES_REGION="$(ssm_get "${SSM_NAMESPACE}/SES_REGION")"
+    fi
+    if [[ -z "${AWS_ACCOUNT_ID:-}" ]]; then
+      AWS_ACCOUNT_ID="$(ssm_get "${SSM_NAMESPACE}/AWS_ACCOUNT_ID")"
+    fi
+    if [[ -z "${SES_IDENTITY:-}" ]]; then
+      SES_IDENTITY="$(ssm_get "${SSM_NAMESPACE}/SES_IDENTITY")"
+    fi
+    if [[ -z "${SES_SOURCE_ARN:-}" ]]; then
+      SES_SOURCE_ARN="$(ssm_get "${SSM_NAMESPACE}/SES_SOURCE_ARN")"
+    fi
+  fi
+fi
+
 # Defaults (can be overridden by env or .env)
 SSH_OPTS="${SSH_OPTS:-}"
 if [[ -z "${SSH_OPTS}" && -n "${EC2_SSH_KEY_PATH:-}" ]]; then
@@ -103,7 +138,7 @@ EOSSH
 echo "${YEL}==> Staging runtime configs (PM2 ecosystem, Nginx vhost)${NC}"
 # Skipping template upload; render Nginx vhost via heredoc to avoid sed -i temp files
 
-ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" APP_HOST="$APP_HOST" DTC_ADMIN_TOKEN="${DTC_ADMIN_TOKEN:-}" DTC_DIGEST_TO="${DTC_DIGEST_TO:-}" DTC_DIGEST_FROM="${DTC_DIGEST_FROM:-}" DEFAULT_DOMAIN="${DEFAULT_DOMAIN:-}" AWS_REGION="${AWS_REGION:-}" SES_REGION="${SES_REGION:-}" CERTBOT_EMAIL="${CERTBOT_EMAIL:-}" bash -s <<'EOSSH'
+ssh ${SSH_OPTS} -T "${REMOTE}" APP_DIR="$APP_DIR" APP_PORT="$APP_PORT" APP_HOST="$APP_HOST" DTC_ADMIN_TOKEN="${DTC_ADMIN_TOKEN:-}" DTC_DIGEST_TO="${DTC_DIGEST_TO:-}" DTC_DIGEST_FROM="${DTC_DIGEST_FROM:-}" DEFAULT_DOMAIN="${DEFAULT_DOMAIN:-}" AWS_REGION="${AWS_REGION:-}" SES_REGION="${SES_REGION:-}" AWS_ACCOUNT_ID="${AWS_ACCOUNT_ID:-}" SES_IDENTITY="${SES_IDENTITY:-}" SES_SOURCE_ARN="${SES_SOURCE_ARN:-}" CERTBOT_EMAIL="${CERTBOT_EMAIL:-}" bash -s <<'EOSSH'
 set -euo pipefail
 APP_DIR="${APP_DIR:-/opt/daretoconsent}"
 APP_PORT="${APP_PORT:-3001}"
@@ -126,7 +161,10 @@ module.exports = {
         DTC_DIGEST_FROM: "${DTC_DIGEST_FROM}",
         DEFAULT_DOMAIN: "${DEFAULT_DOMAIN}",
         AWS_REGION: "${AWS_REGION}",
-        SES_REGION: "${SES_REGION}"
+        SES_REGION: "${SES_REGION}",
+        AWS_ACCOUNT_ID: "${AWS_ACCOUNT_ID}",
+        SES_IDENTITY: "${SES_IDENTITY}",
+        SES_SOURCE_ARN: "${SES_SOURCE_ARN}"
       },
       instances: 1,
       exec_mode: "fork",

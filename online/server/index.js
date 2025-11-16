@@ -99,7 +99,8 @@ function playerName(room, pid) {
 
 // AWS SES client (uses instance role if present)
 const SES_REGION = process.env.AWS_REGION || process.env.SES_REGION || 'us-west-2';
-const DIGEST_TO = process.env.DTC_DIGEST_TO || 'null';
+// Digest recipient must be provided via env/secret; no hard-coded default
+const DIGEST_TO = process.env.DTC_DIGEST_TO || null;
 const DIGEST_FROM = process.env.DTC_DIGEST_FROM || `no-reply@${process.env.DEFAULT_DOMAIN || 'daretoconsent.com'}`;
 // Explicit SES identity/ARN to avoid IAM resource mismatches
 const AWS_ACCOUNT_ID = process.env.AWS_ACCOUNT_ID || '607100099518';
@@ -155,6 +156,20 @@ async function sendDigest({ force=false, to=null, subj=null } = {}) {
   const text = makeDigestText();
   const subject = (typeof subj === 'string' && subj.trim()) ? subj.trim() : `Dare to Consent — Daily Summary`;
   const toAddr = (typeof to === 'string' && to.trim()) ? to.trim() : DIGEST_TO;
+  if (!toAddr) {
+    // Digest sending is disabled when no recipient is configured
+    console.warn('[digest] no recipient configured (DTC_DIGEST_TO). Skipping send.');
+    lastEmailStatus = {
+      at: Date.now(),
+      ok: false,
+      messageId: null,
+      error: 'no_recipient_configured',
+      to: null,
+      from: DIGEST_FROM,
+      region: SES_REGION
+    };
+    return null;
+  }
   try {
     console.log(`[digest] preparing send from=${DIGEST_FROM} to=${toAddr} region=${SES_REGION} subj=${subj}`);
     const ses = getSes();
@@ -1199,4 +1214,3 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`DareToConsent online dev server on http://localhost:${PORT}`);
 });
-
