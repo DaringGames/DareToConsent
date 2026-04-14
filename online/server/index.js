@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
@@ -11,8 +10,9 @@ import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+dotenv.config({ quiet: true });
 // Also try loading a project-root .env if running from online/ dir
-try { dotenv.config({ path: path.join(__dirname, '../../.env') }); } catch {}
+try { dotenv.config({ path: path.join(__dirname, '../../.env'), quiet: true }); } catch {}
 
 // Load themes on server for authoritative seeding (prefer split files, fallback to monolith)
 let THEMES = {};
@@ -417,9 +417,8 @@ const ADMIN_TOKEN = process.env.DTC_ADMIN_TOKEN || null;
 function adminAllowed(req) {
   if (!ADMIN_TOKEN) return false;
   try {
-    const q = (req.query?.token || '').toString();
     const h = (req.headers?.['x-admin-token'] || '').toString();
-    return q === ADMIN_TOKEN || h === ADMIN_TOKEN;
+    return h === ADMIN_TOKEN;
   } catch { return false; }
 }
 app.get('/admin/digest-preview', (req, res) => {
@@ -455,20 +454,6 @@ app.post('/admin/send-digest-now', async (req, res) => {
     res.json({ ok: true, messageId });
   } catch (e) {
     console.error('[admin] send-digest-now failed', e);
-    res.status(500).json({ ok: false, error: 'send_failed' });
-  }
-});
-
-// Convenience GET endpoint so sending can be triggered via a browser URL
-app.get('/admin/send-digest-now', async (req, res) => {
-  if (!adminAllowed(req)) return res.status(404).send('Not found');
-  try {
-    const to = (req.query?.to || '').toString().trim() || null;
-    const subj = (req.query?.subj || '').toString().trim() || null;
-    const messageId = await sendDigest({ force:true, to, subj });
-    res.json({ ok: true, messageId });
-  } catch (e) {
-    console.error('[admin] send-digest-now GET failed', e);
     res.status(500).json({ ok: false, error: 'send_failed' });
   }
 });
