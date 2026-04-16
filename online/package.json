@@ -6,7 +6,9 @@
   "scripts": {
     "start": "PORT=3001 node server/index.js",
     "dev": "PORT=3001 node server/index.js",
-    "smoke": "node scripts/smoke-flow.mjs"
+    "smoke": "node scripts/smoke-flow.mjs",
+    "translate:themes": "node scripts/translate-themes.mjs",
+    "s3:lifecycle": "bash scripts/configure-avatar-lifecycle.sh"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1030.0",

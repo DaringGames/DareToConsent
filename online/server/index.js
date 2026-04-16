@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, ListObjectsV2Command, DeleteObjectsCommand } from '@aws-sdk/client-s3';
 
 import words from '../public/data/words.js';
 
@@ -31,6 +31,8 @@ const S3_REGION = process.env.AWS_REGION || process.env.S3_REGION || 'us-west-2'
 const AVATAR_BUCKET = process.env.DTC_AVATAR_BUCKET || process.env.S3_BUCKET || 'worstinworld-assets-prod';
 const AVATAR_PREFIX = (process.env.DTC_AVATAR_PREFIX || 'img/dtc-selfies').replace(/^\/+|\/+$/g, '');
 const AVATAR_BASE_URL = (process.env.DTC_AVATAR_BASE_URL || `https://${AVATAR_BUCKET}.s3.${S3_REGION}.amazonaws.com`).replace(/\/+$/g, '');
+const AVATAR_TTL_MS = 8 * 60 * 60 * 1000;
+const AVATAR_SWEEP_MS = 30 * 60 * 1000;
 
 let THEMES = {};
 function loadServerThemes() {
@@ -307,6 +309,7 @@ function purgeIfExpired(code) {
   const room = rooms.get(code);
   if (room && isExpired(room)) {
     clearTurnTimer(room);
+    purgeRoomAvatars(room);
     rooms.delete(code);
     return true;
   }
@@ -317,11 +320,54 @@ setInterval(() => {
   for (const [code, room] of rooms.entries()) {
     if ((now - (room.lastActivity || room.createdAt || 0)) > EXPIRE_MS) {
       clearTurnTimer(room);
+      purgeRoomAvatars(room);
       rooms.delete(code);
       io.to(code).emit('room:error', { code: 'ROOM_EXPIRED', message: 'Room expired' });
     }
   }
 }, SWEEP_MS);
+
+async function deleteS3Keys(keys) {
+  if (!keys.length) return;
+  try {
+    await getS3().send(new DeleteObjectsCommand({
+      Bucket: AVATAR_BUCKET,
+      Delete: { Objects: keys.map(Key => ({ Key })), Quiet: true }
+    }));
+  } catch (e) {
+    console.warn('[avatar] delete failed', e?.name || e?.message || e);
+  }
+}
+function purgeRoomAvatars(room) {
+  const keys = [];
+  const base = `${AVATAR_BASE_URL}/`;
+  for (const p of room?.players || []) {
+    if (!p.avatarUrl || !p.avatarUrl.startsWith(base)) continue;
+    keys.push(p.avatarUrl.slice(base.length));
+  }
+  deleteS3Keys(keys);
+}
+async function sweepExpiredAvatars() {
+  const cutoff = Date.now() - AVATAR_TTL_MS;
+  let ContinuationToken;
+  try {
+    do {
+      const resp = await getS3().send(new ListObjectsV2Command({
+        Bucket: AVATAR_BUCKET,
+        Prefix: `${AVATAR_PREFIX}/`,
+        ContinuationToken
+      }));
+      const stale = (resp.Contents || [])
+        .filter(obj => obj.Key && obj.LastModified && obj.LastModified.getTime() < cutoff)
+        .map(obj => obj.Key);
+      for (let i = 0; i < stale.length; i += 1000) await deleteS3Keys(stale.slice(i, i + 1000));
+      ContinuationToken = resp.IsTruncated ? resp.NextContinuationToken : null;
+    } while (ContinuationToken);
+  } catch (e) {
+    console.warn('[avatar] sweep failed', e?.name || e?.message || e);
+  }
+}
+setInterval(sweepExpiredAvatars, AVATAR_SWEEP_MS);
 
 function ensureConsentMaps(room, from, to) {
   room.consents[from] ||= {};
