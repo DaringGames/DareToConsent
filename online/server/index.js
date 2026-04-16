@@ -7,76 +7,70 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+
+import words from '../public/data/words.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ quiet: true });
-// Also try loading a project-root .env if running from online/ dir
 try { dotenv.config({ path: path.join(__dirname, '../../.env'), quiet: true }); } catch {}
 
-// Load themes on server for authoritative seeding (prefer split files, fallback to monolith)
+const nano = customAlphabet('abcdefghijklmnopqrstuvwxyz', 10);
+const shortId = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 8);
+const GENDERS = ['male', 'female', 'nonbinary'];
+const LANGUAGES = ['en', 'es', 'pt'];
+const COLORS = [
+  'Purple','Red','White','Brown','Grey','DkBlue','Silver','Green','Orange','Lavender','DkRed','Black','Blue','Pink','LtBlue','LtPink','Yellow','DkGreen'
+];
+const EXPIRE_MS = 3 * 60 * 60 * 1000;
+const SWEEP_MS = 5 * 60 * 1000;
+const MAX_DARES = 100;
+const AVATAR_MAX_BYTES = 180_000;
+const S3_REGION = process.env.AWS_REGION || process.env.S3_REGION || 'us-west-2';
+const AVATAR_BUCKET = process.env.DTC_AVATAR_BUCKET || process.env.S3_BUCKET || 'worstinworld-assets-prod';
+const AVATAR_PREFIX = (process.env.DTC_AVATAR_PREFIX || 'img/dtc-selfies').replace(/^\/+|\/+$/g, '');
+const AVATAR_BASE_URL = (process.env.DTC_AVATAR_BASE_URL || `https://${AVATAR_BUCKET}.s3.${S3_REGION}.amazonaws.com`).replace(/\/+$/g, '');
+
 let THEMES = {};
 function loadServerThemes() {
   const themesDir = path.join(__dirname, '../public/data/themes');
   const indexPath = path.join(themesDir, 'index.json');
   try {
-    if (fs.existsSync(themesDir) && fs.statSync(themesDir).isDirectory()) {
-      let names = [];
-      if (fs.existsSync(indexPath)) {
-        const rawIdx = fs.readFileSync(indexPath, 'utf8');
-        const list = JSON.parse(rawIdx);
-        names = Array.isArray(list) ? list : [];
-      } else {
-        names = fs.readdirSync(themesDir)
-          .filter(f => f.toLowerCase().endsWith('.json'))
-          .map(f => path.basename(f, '.json'));
-      }
-      const data = {};
-      for (const base of names) {
-        const fp = path.join(themesDir, `${base}.json`);
-        if (!fs.existsSync(fp)) continue;
-        const raw = fs.readFileSync(fp, 'utf8');
-        const json = JSON.parse(raw);
-        const key = (json && json.name) ? json.name : base;
-        data[key] = json;
-      }
-      if (Object.keys(data).length > 0) return data;
+    const names = fs.existsSync(indexPath)
+      ? JSON.parse(fs.readFileSync(indexPath, 'utf8'))
+      : fs.readdirSync(themesDir).filter(f => f.endsWith('.json')).map(f => path.basename(f, '.json'));
+    const data = {};
+    for (const baseRaw of names || []) {
+      const base = String(baseRaw).replace(/\.json$/i, '');
+      const fp = path.join(themesDir, `${base}.json`);
+      if (!fs.existsSync(fp)) continue;
+      const json = JSON.parse(fs.readFileSync(fp, 'utf8'));
+      data[json?.name || base] = json;
     }
+    if (Object.keys(data).length) return data;
   } catch (e) {
     console.error('Failed to load split themes', e);
   }
-  // Fallback to monolith
   try {
-    const monoPath = path.join(__dirname, '../public/data/themes.json');
-    const raw = fs.readFileSync(monoPath, 'utf8');
-    return JSON.parse(raw);
-  } catch (e) {
-    console.error('Failed to load fallback themes.json', e);
+    return JSON.parse(fs.readFileSync(path.join(__dirname, '../public/data/themes.json'), 'utf8'));
+  } catch {
     return {};
   }
 }
 THEMES = loadServerThemes();
 
-// --- Analytics and daily digest email (in-memory, reset after send) ---
 const stats = {
   since: Date.now(),
   visitors: new Set(),
   attemptedStarts: 0,
   successfulStarts: 0,
-  games: new Map(), // code -> { code, createdAt, theme:null|string, started:false, events:[{ts,type,message}] }
+  games: new Map(),
   successSinceLastSend: false,
   lastSentAt: 0,
-  // Initialize to today's UTC date so the first digest waits for the next day boundary
   lastDigestDay: new Date().toISOString().slice(0,10)
 };
 
-function getReqIp(req) {
-  try {
-    const xf = (req.headers?.['x-forwarded-for'] || '').toString();
-    const ip = xf ? xf.split(',')[0].trim() : (req.socket?.remoteAddress || '');
-    return ip || 'unknown';
-  } catch { return 'unknown'; }
-}
 function ensureGame(code) {
   let g = stats.games.get(code);
   if (!g) {
@@ -92,26 +86,27 @@ function logEvent(code, type, message) {
     if (g.events.length > 500) g.events.shift();
   } catch {}
 }
-function playerName(room, pid) {
-  const p = (room?.players || []).find(p => p.id === pid);
-  return (p?.name || 'Player');
+function formatTs(ts) {
+  try { return new Date(ts).toISOString(); } catch { return String(ts); }
 }
 
-// AWS SES client (uses instance role if present)
 const SES_REGION = process.env.AWS_REGION || process.env.SES_REGION || 'us-west-2';
-// Digest recipient must be provided via env/secret; no hard-coded default
 const DIGEST_TO = process.env.DTC_DIGEST_TO || null;
 const DIGEST_FROM = process.env.DTC_DIGEST_FROM || `no-reply@${process.env.DEFAULT_DOMAIN || 'daretoconsent.com'}`;
-// Explicit SES identity/ARN to avoid IAM resource mismatches
 const AWS_ACCOUNT_ID = process.env.AWS_ACCOUNT_ID || '607100099518';
 const SES_IDENTITY = process.env.SES_IDENTITY || (DIGEST_FROM.includes('@') ? DIGEST_FROM.split('@')[1] : 'daretoconsent.com');
 const SES_SOURCE_ARN = process.env.SES_SOURCE_ARN || `arn:aws:ses:${SES_REGION}:${AWS_ACCOUNT_ID}:identity/${SES_IDENTITY}`;
 let sesClient = null;
+let s3Client = null;
 function getSes() {
   if (!sesClient) sesClient = new SESClient({ region: SES_REGION });
   return sesClient;
 }
-// Track last email attempt for diagnostics
+function getS3() {
+  if (!s3Client) s3Client = new S3Client({ region: S3_REGION });
+  return s3Client;
+}
+
 let lastEmailStatus = {
   at: 0,
   ok: false,
@@ -121,12 +116,9 @@ let lastEmailStatus = {
   from: DIGEST_FROM,
   region: SES_REGION
 };
-function formatTs(ts) {
-  try { return new Date(ts).toISOString(); } catch { return String(ts); }
-}
 function makeDigestText() {
   const lines = [];
-  lines.push(`Dare to Consent — daily usage summary`);
+  lines.push('Dare to Consent - daily usage summary');
   lines.push(`Period start: ${formatTs(stats.since)}`);
   lines.push(`Generated at: ${formatTs(Date.now())}`);
   lines.push('');
@@ -134,69 +126,40 @@ function makeDigestText() {
   lines.push(`2) Attempted game starts (room:create): ${stats.attemptedStarts}`);
   lines.push(`3) Games successfully started (>=3 players and clicked start): ${stats.successfulStarts}`);
   lines.push('');
-  const started = Array.from(stats.games.values())
-    .filter(g => g.started)
-    .sort((a,b) => b.createdAt - a.createdAt)
-    .slice(0, 5);
-  if (started.length === 0) {
-    lines.push(`No successfully started games in this period.`);
+  const started = Array.from(stats.games.values()).filter(g => g.started).sort((a,b) => b.createdAt - a.createdAt).slice(0, 5);
+  if (!started.length) {
+    lines.push('No successfully started games in this period.');
   } else {
-    lines.push(`4) Up to 5 game logs:`);
+    lines.push('4) Up to 5 game logs:');
     for (const g of started) {
       lines.push('');
-      lines.push(`Game ${g.code} — theme: ${g.theme || '(unknown)'} — createdAt: ${formatTs(g.createdAt)}`);
-      for (const ev of g.events) {
-        lines.push(` - [${formatTs(ev.ts)}] ${ev.type}: ${ev.message}`);
-      }
+      lines.push(`Game ${g.code} - theme: ${g.theme || '(unknown)'} - createdAt: ${formatTs(g.createdAt)}`);
+      for (const ev of g.events) lines.push(` - [${formatTs(ev.ts)}] ${ev.type}: ${ev.message}`);
     }
   }
   return lines.join('\n');
 }
-async function sendDigest({ force=false, to=null, subj=null } = {}) {
-  const text = makeDigestText();
-  const subject = (typeof subj === 'string' && subj.trim()) ? subj.trim() : `Dare to Consent — Daily Summary`;
+async function sendDigest({ to=null, subj=null } = {}) {
   const toAddr = (typeof to === 'string' && to.trim()) ? to.trim() : DIGEST_TO;
   if (!toAddr) {
-    // Digest sending is disabled when no recipient is configured
-    console.warn('[digest] no recipient configured (DTC_DIGEST_TO). Skipping send.');
-    lastEmailStatus = {
-      at: Date.now(),
-      ok: false,
-      messageId: null,
-      error: 'no_recipient_configured',
-      to: null,
-      from: DIGEST_FROM,
-      region: SES_REGION
-    };
+    lastEmailStatus = { at: Date.now(), ok: false, messageId: null, error: 'no_recipient_configured', to: null, from: DIGEST_FROM, region: SES_REGION };
     return null;
   }
+  const subject = (typeof subj === 'string' && subj.trim()) ? subj.trim() : 'Dare to Consent - Daily Summary';
+  const cmd = new SendEmailCommand({
+    Destination: { ToAddresses: [toAddr] },
+    Message: {
+      Subject: { Data: subject, Charset: 'UTF-8' },
+      Body: { Text: { Data: makeDigestText(), Charset: 'UTF-8' } }
+    },
+    Source: DIGEST_FROM,
+    SourceArn: SES_SOURCE_ARN,
+    ReturnPath: DIGEST_FROM,
+    ReturnPathArn: SES_SOURCE_ARN
+  });
   try {
-    console.log(`[digest] preparing send from=${DIGEST_FROM} to=${toAddr} region=${SES_REGION} subj=${subj}`);
-    const ses = getSes();
-    const cmd = new SendEmailCommand({
-      Destination: { ToAddresses: [toAddr] },
-      Message: {
-        Subject: { Data: subject, Charset: 'UTF-8' },
-        Body: { Text: { Data: text, Charset: 'UTF-8' } }
-      },
-      Source: DIGEST_FROM,
-      SourceArn: SES_SOURCE_ARN,
-      ReturnPath: DIGEST_FROM,
-      ReturnPathArn: SES_SOURCE_ARN
-    });
-    const resp = await ses.send(cmd);
-    const msgId = resp?.MessageId || null;
-    console.log(`[digest] sent daily summary to ${toAddr} (${msgId || 'no-id'})`);
-    lastEmailStatus = {
-      at: Date.now(),
-      ok: true,
-      messageId: msgId,
-      error: null,
-      to: toAddr,
-      from: DIGEST_FROM,
-      region: SES_REGION
-    };
-    // Reset counters after successful send
+    const resp = await getSes().send(cmd);
+    lastEmailStatus = { at: Date.now(), ok: true, messageId: resp?.MessageId || null, error: null, to: toAddr, from: DIGEST_FROM, region: SES_REGION };
     stats.since = Date.now();
     stats.visitors.clear();
     stats.attemptedStarts = 0;
@@ -204,122 +167,37 @@ async function sendDigest({ force=false, to=null, subj=null } = {}) {
     stats.games.clear();
     stats.successSinceLastSend = false;
     stats.lastSentAt = Date.now();
-    stats.lastDigestDay = new Date().toISOString().slice(0,10); // UTC date
-    return msgId;
+    stats.lastDigestDay = new Date().toISOString().slice(0,10);
+    return resp?.MessageId || null;
   } catch (e) {
-    console.error('[digest] failed to send summary', e);
-    lastEmailStatus = {
-      at: Date.now(),
-      ok: false,
-      messageId: null,
-      error: String(e?.name || e?.message || e),
-      to: toAddr,
-      from: DIGEST_FROM,
-      region: SES_REGION,
-      sourceArn: SES_SOURCE_ARN
-    };
+    lastEmailStatus = { at: Date.now(), ok: false, messageId: null, error: String(e?.name || e?.message || e), to: toAddr, from: DIGEST_FROM, region: SES_REGION, sourceArn: SES_SOURCE_ARN };
     throw e;
   }
 }
 function maybeSendDigest() {
   try {
-    const today = new Date().toISOString().slice(0,10); // UTC day boundary
-    const dayChanged = stats.lastDigestDay !== today;
-    if (!dayChanged) return;
-    if (!stats.successSinceLastSend) return; // accumulate until at least one success occurs
-    sendDigest({ force:false });
+    const today = new Date().toISOString().slice(0,10);
+    if (stats.lastDigestDay !== today && stats.successSinceLastSend) sendDigest();
   } catch (e) {
     console.error('[digest] maybeSendDigest error', e);
   }
 }
-// Check every 5 minutes for daily send opportunity
 setInterval(maybeSendDigest, 5 * 60 * 1000);
 
-// Basic sanitization for user-provided strings: strip control chars and enforce max length
-function sanitizeText(v, maxLen = 120) {
+function getReqIp(req) {
   try {
-    const s = (typeof v === 'string' ? v : String(v || ''))
-      .replace(/[\x00-\x1F\x7F]/g, '') // drop control chars
-      .trim();
-    return (typeof maxLen === 'number' ? s.slice(0, maxLen) : s);
-  } catch {
-    return '';
-  }
+    const xf = (req.headers?.['x-forwarded-for'] || '').toString();
+    return xf ? xf.split(',')[0].trim() : (req.socket?.remoteAddress || 'unknown');
+  } catch { return 'unknown'; }
 }
-
-// Resolve a theme name to a valid key in THEMES (case-insensitive), or null
-function resolveThemeKey(name){
-  try {
-    const names = Object.keys(THEMES || {});
-    const n = (name || '').toString().trim().toLowerCase();
-    if (!n) return null;
-    return names.find(k => k.toLowerCase() === n) || null;
-  } catch { return null; }
-}
-
-function serverSeedForTheme(key) {
-  try {
-    const t = THEMES?.[key];
-    if (!t || !Array.isArray(t.starts)) return [];
-    return t.starts.map(s => ({ title: s.title, extra: s.extra }));
-  } catch {
-    return [];
-  }
-}
-
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server, {
-  cors: { origin: '*' },
-  maxHttpBufferSize: 1_000_000 // 1MB to prevent oversized payload abuse
-});
-
-// Three-word code generator
-import words from '../public/data/words.js';
-const nano = customAlphabet('abcdefghijklmnopqrstuvwxyz', 10);
-function pickWord() {
-  return words[Math.floor(Math.random() * words.length)];
-}
-function generateCode() {
-  return `${pickWord()}-${pickWord()}-${pickWord()}`;
-}
-
-// Player color palette and helper
-const COLORS = [
-  'Purple','Red','White','Brown','Grey','DkBlue','Silver','Green','Orange','Lavender','DkRed','Black','Blue','Pink','LtBlue','LtPink','Yellow','DkGreen'
-];
-function nextColor(room){
-  const taken = new Set(room.players.map(p=>p.color).filter(Boolean));
-  return COLORS.find(c=>!taken.has(c)) || null;
-}
-
-// In-memory rooms
-const rooms = new Map();
-// Track pending disconnects to avoid marking a player disconnected during quick refresh/reconnect
-const pendingDisconnects = new Map();
-
-// Inactivity expiration and rate limiting
-const EXPIRE_MS = 3 * 60 * 60 * 1000; // 3 hours
-const SWEEP_MS = 5 * 60 * 1000; // sweep every 5 minutes
-const ipCounters = new Map(); // key: ip|action -> { count, resetAt }
-
-// Periodically prune stale rate-limit counters to avoid unbounded growth
-function pruneIpCounters() {
-  const now = Date.now();
-  for (const [k, v] of ipCounters.entries()) {
-    if (!v || v.resetAt <= now) ipCounters.delete(k);
-  }
-}
-setInterval(pruneIpCounters, 60 * 1000);
-
 function getClientIp(socket) {
   try {
     const xf = (socket.handshake?.headers?.['x-forwarded-for'] || '').toString();
-    const ip = xf ? xf.split(',')[0].trim() : (socket.handshake?.address || '');
-    return ip || 'unknown';
+    return xf ? xf.split(',')[0].trim() : (socket.handshake?.address || 'unknown');
   } catch { return 'unknown'; }
 }
 
+const ipCounters = new Map();
 function rateLimitAllow(ip, action, limit, windowMs) {
   const key = `${ip}|${action}`;
   const now = Date.now();
@@ -334,43 +212,65 @@ function rateLimitAllow(ip, action, limit, windowMs) {
   }
   return false;
 }
-
-function emitError(socket, message, code='ERROR') {
-  try {
-    socket.emit('room:error', { code, message });
-    // legacy fallback for earlier clients
-    socket.emit('error', { message, code });
-  } catch {}
-}
-
-function isExpired(room) {
-  if (!room) return true;
-  return (Date.now() - (room.lastActivity || room.createdAt || 0)) > EXPIRE_MS;
-}
-
-function purgeIfExpired(code) {
-  const room = rooms.get(code);
-  if (room && isExpired(room)) {
-    rooms.delete(code);
-    return true;
-  }
-  return false;
-}
-
-function touch(room) {
-  if (room) room.lastActivity = Date.now();
-}
-
-// Periodic sweep to clean up expired rooms
 setInterval(() => {
   const now = Date.now();
-  for (const [code, room] of rooms.entries()) {
-    if ((now - (room.lastActivity || room.createdAt || 0)) > EXPIRE_MS) {
-      rooms.delete(code);
-      try { io.to(code).emit('room:error', { code:'ROOM_EXPIRED', message:'Room expired' }); } catch {}
-    }
+  for (const [k, v] of ipCounters.entries()) if (!v || v.resetAt <= now) ipCounters.delete(k);
+}, 60 * 1000);
+
+function sanitizeText(v, maxLen = 120) {
+  try {
+    return String(v || '').replace(/[\x00-\x1F\x7F]/g, '').trim().slice(0, maxLen);
+  } catch {
+    return '';
   }
-}, SWEEP_MS);
+}
+function sanitizeGender(v) {
+  return GENDERS.includes(v) ? v : 'nonbinary';
+}
+function sanitizeLanguage(v) {
+  return LANGUAGES.includes(v) ? v : 'en';
+}
+function sanitizePrefs(v) {
+  const arr = Array.isArray(v) ? v : [];
+  const out = arr.filter(x => GENDERS.includes(x));
+  return out.length ? [...new Set(out)] : [...GENDERS];
+}
+function resolveThemeKey(name) {
+  const n = String(name || '').trim().toLowerCase();
+  return Object.keys(THEMES || {}).find(k => k.toLowerCase() === n) || null;
+}
+function serverSeedForTheme(key) {
+  const t = THEMES?.[key];
+  if (!t || !Array.isArray(t.starts)) return [];
+  return t.starts.map(s => ({ title: s.title, extra: s.extra, spicyness: s.spicyness }));
+}
+function pickWord() {
+  return words[Math.floor(Math.random() * words.length)];
+}
+function generateCode() {
+  return `${pickWord()}-${pickWord()}-${pickWord()}`;
+}
+function nextColor(room) {
+  const taken = new Set(room.players.map(p => p.color).filter(Boolean));
+  return COLORS.find(c => !taken.has(c)) || null;
+}
+function emitError(socket, message, code='ERROR') {
+  socket.emit('room:error', { code, message });
+}
+function publicPlayer(p) {
+  return {
+    id: p.id,
+    name: p.name,
+    color: p.color,
+    avatarUrl: p.avatarUrl || null,
+    gender: p.gender,
+    language: p.language || 'en',
+    connected: p.connected !== false
+  };
+}
+
+const rooms = new Map();
+const pendingDisconnects = new Map();
 
 function createRoom() {
   let code;
@@ -381,45 +281,337 @@ function createRoom() {
     createdAt: Date.now(),
     lastActivity: Date.now(),
     hostId: null,
-    state: 'lobby', // lobby|main
-    paused: false, // whether the game is paused due to <3 connected players
-    players: [], // {id,name,color,connected}
+    state: 'lobby',
+    paused: false,
+    players: [],
     chosenTheme: null,
-    dareMenu: [], // [{title, extra, createdBy, createdAt}]
-    turn: null, // see below
-    settings: {}
+    dareMenu: [],
+    turn: null,
+    settings: {},
+    consents: {},
+    consentTouched: {},
+    pendingPrompts: {},
+    completedSinceDareAdded: 0,
+    _turnTimer: null
   };
   rooms.set(code, room);
   return room;
 }
+function touch(room) {
+  if (room) room.lastActivity = Date.now();
+}
+function isExpired(room) {
+  return !room || (Date.now() - (room.lastActivity || room.createdAt || 0)) > EXPIRE_MS;
+}
+function purgeIfExpired(code) {
+  const room = rooms.get(code);
+  if (room && isExpired(room)) {
+    clearTurnTimer(room);
+    rooms.delete(code);
+    return true;
+  }
+  return false;
+}
+setInterval(() => {
+  const now = Date.now();
+  for (const [code, room] of rooms.entries()) {
+    if ((now - (room.lastActivity || room.createdAt || 0)) > EXPIRE_MS) {
+      clearTurnTimer(room);
+      rooms.delete(code);
+      io.to(code).emit('room:error', { code: 'ROOM_EXPIRED', message: 'Room expired' });
+    }
+  }
+}, SWEEP_MS);
 
-function roomPublicState(room) {
-  // Do not expose IPs or secrets
-  const { id, code, state, paused, players, chosenTheme, dareMenu, turn, createdAt, hostId } = room;
-  return { id, code, state, paused, players, chosenTheme, dareMenu, turn, createdAt, hostId };
+function ensureConsentMaps(room, from, to) {
+  room.consents[from] ||= {};
+  room.consents[from][to] ||= {};
+  room.consentTouched[from] ||= {};
+  room.consentTouched[from][to] ||= {};
+}
+function getConsent(room, from, to, dareId) {
+  return !!room.consents?.[from]?.[to]?.[dareId];
+}
+function hasTouched(room, from, to, dareId) {
+  return Object.prototype.hasOwnProperty.call(room.consentTouched?.[from]?.[to] || {}, dareId);
+}
+function setConsent(room, from, to, dareId, value, { touched=true } = {}) {
+  if (!from || !to || !dareId || from === to) return;
+  ensureConsentMaps(room, from, to);
+  room.consents[from][to][dareId] = !!value;
+  if (touched) room.consentTouched[from][to][dareId] = true;
+}
+function genderDefault(player, target) {
+  return !!(player?.preferredGenders || []).includes(target?.gender);
+}
+function playerName(room, id) {
+  return room.players.find(p => p.id === id)?.name || 'Player';
+}
+function activeId(room) {
+  return room.turn?.order?.[room.turn.index] || null;
+}
+function connectedPlayers(room) {
+  return room.players.filter(p => p.connected !== false);
+}
+function findDare(room, dareId) {
+  return room.dareMenu.find(d => d.id === dareId) || null;
+}
+function dareIndex(room, dareId) {
+  return room.dareMenu.findIndex(d => d.id === dareId);
+}
+function consentCountFor(room, targetId, dareId) {
+  return room.players.filter(p => p.id !== targetId && p.connected !== false && getConsent(room, p.id, targetId, dareId)).length;
+}
+function playerDareCountFor(room, fromId, targetId) {
+  return room.dareMenu.filter(d => getConsent(room, fromId, targetId, d.id)).length;
+}
+function viewerConsent(room, meId) {
+  const out = {};
+  for (const p of room.players) {
+    if (p.id === meId) continue;
+    out[p.id] = {};
+    for (const d of room.dareMenu) out[p.id][d.id] = getConsent(room, meId, p.id, d.id);
+  }
+  return out;
+}
+function viewerCounts(room, meId) {
+  return {
+    players: room.players.filter(p => p.id !== meId && p.connected !== false).map(p => ({
+      playerId: p.id,
+      count: playerDareCountFor(room, p.id, meId)
+    })),
+    dares: room.dareMenu.map(d => ({
+      dareId: d.id,
+      count: consentCountFor(room, meId, d.id)
+    }))
+  };
+}
+function addPrompt(room, playerId, prompt) {
+  room.pendingPrompts[playerId] ||= [];
+  room.pendingPrompts[playerId].push({ id: shortId(), createdAt: Date.now(), ...prompt });
+}
+function removePrompt(room, playerId, promptId) {
+  const list = room.pendingPrompts[playerId] || [];
+  room.pendingPrompts[playerId] = list.filter(p => p.id !== promptId);
+}
+function buildOnboardingPrompt(room, player) {
+  const targets = room.players.filter(p => p.id !== player.id && p.connected !== false);
+  const firstDefaults = {};
+  for (const t of targets) firstDefaults[t.id] = genderDefault(player, t);
+  return {
+    type: 'onboarding',
+    dares: room.dareMenu.map(d => ({ id: d.id, title: d.title })),
+    players: targets.map(publicPlayer),
+    firstDefaults
+  };
+}
+function defaultForNewPlayerByHistory(room, player, newPlayer, dareId) {
+  const sameGender = room.players.filter(p => p.id !== player.id && p.id !== newPlayer.id && p.gender === newPlayer.gender);
+  let total = 0;
+  let yes = 0;
+  for (const target of sameGender) {
+    if (!hasTouched(room, player.id, target.id, dareId)) continue;
+    total++;
+    if (getConsent(room, player.id, target.id, dareId)) yes++;
+  }
+  if (total > 0) return yes / total >= 0.5;
+  return genderDefault(player, newPlayer);
+}
+function queueExistingPlayerNewJoinPrompts(room, newPlayer) {
+  for (const player of room.players) {
+    if (player.id === newPlayer.id) continue;
+    const defaults = {};
+    for (const dare of room.dareMenu) defaults[dare.id] = defaultForNewPlayerByHistory(room, player, newPlayer, dare.id);
+    for (const dare of room.dareMenu) setConsent(room, player.id, newPlayer.id, dare.id, defaults[dare.id], { touched: false });
+    addPrompt(room, player.id, {
+      type: 'new-player',
+      player: publicPlayer(newPlayer),
+      dares: room.dareMenu.map(d => ({ id: d.id, title: d.title })),
+      defaults
+    });
+  }
+}
+function queueNewDarePrompts(room, dare, previousDareId) {
+  for (const player of room.players) {
+    const defaults = {};
+    const targets = room.players.filter(p => p.id !== player.id && p.connected !== false);
+    for (const target of targets) {
+      let val = genderDefault(player, target);
+      if (previousDareId && hasTouched(room, player.id, target.id, previousDareId)) {
+        val = getConsent(room, player.id, target.id, previousDareId);
+      }
+      defaults[target.id] = val;
+      setConsent(room, player.id, target.id, dare.id, val, { touched: false });
+    }
+    addPrompt(room, player.id, {
+      type: 'new-dare',
+      dare: { id: dare.id, title: dare.title },
+      players: targets.map(publicPlayer),
+      defaults
+    });
+  }
+}
+function applyOnboarding(room, playerId, entries) {
+  for (const e of Array.isArray(entries) ? entries : []) {
+    if (!room.dareMenu.some(d => d.id === e.dareId)) continue;
+    if (!room.players.some(p => p.id === e.targetId && p.id !== playerId)) continue;
+    setConsent(room, playerId, e.targetId, e.dareId, !!e.value, { touched: true });
+  }
+}
+function applyNewPlayerPrompt(room, playerId, targetId, values) {
+  const target = room.players.find(p => p.id === targetId);
+  if (!target) return;
+  for (const dare of room.dareMenu) {
+    setConsent(room, playerId, target.id, dare.id, !!values?.[dare.id], { touched: true });
+  }
+}
+function applyNewDarePrompt(room, playerId, dareId, values) {
+  if (!findDare(room, dareId)) return;
+  for (const target of room.players) {
+    if (target.id === playerId) continue;
+    setConsent(room, playerId, target.id, dareId, !!values?.[target.id], { touched: true });
+  }
+}
+function clearTurnTimer(room) {
+  if (room?._turnTimer) clearTimeout(room._turnTimer);
+  if (room) room._turnTimer = null;
+}
+function scheduleTurnTimer(room, ms, fn) {
+  clearTurnTimer(room);
+  if (room.turn) room.turn.timerEndsAt = Date.now() + ms;
+  room._turnTimer = setTimeout(() => {
+    room._turnTimer = null;
+    try { fn(); } catch (e) { console.error('turn timer failed', e); }
+  }, ms);
+}
+function setChooseMode(room) {
+  clearTurnTimer(room);
+  room.turn = {
+    order: room.turn?.order?.length ? room.turn.order.filter(id => room.players.some(p => p.id === id)) : room.players.map(p => p.id),
+    index: room.turn?.index || 0,
+    phase: 'chooseMode',
+    mode: null,
+    selectedDareId: null,
+    selectedPlayerId: null,
+    responses: {},
+    performing: null,
+    timerEndsAt: null
+  };
+  if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
+}
+function advanceTurn(room) {
+  clearTurnTimer(room);
+  const order = (room.turn?.order || []).filter(id => room.players.some(p => p.id === id));
+  room.turn = {
+    order,
+    index: order.length ? ((room.turn?.index || 0) + 1) % order.length : 0,
+    phase: 'chooseMode',
+    mode: null,
+    selectedDareId: null,
+    selectedPlayerId: null,
+    responses: {},
+    performing: null,
+    timerEndsAt: null
+  };
+}
+function finalizeDareResponses(room) {
+  if (!room || room.turn?.phase !== 'dareRespond') return;
+  const active = activeId(room);
+  const dareId = room.turn.selectedDareId;
+  for (const p of connectedPlayers(room)) {
+    if (p.id === active) continue;
+    if (Object.prototype.hasOwnProperty.call(room.turn.responses || {}, p.id)) continue;
+    const val = getConsent(room, p.id, active, dareId);
+    room.turn.responses[p.id] = val;
+  }
+  room.turn.phase = 'choosePartner';
+  room.turn.timerEndsAt = null;
+  clearTurnTimer(room);
+  touch(room);
+  emitRoom(room);
+}
+function finalizePersonResponses(room) {
+  if (!room || room.turn?.phase !== 'personRespond') return;
+  const active = activeId(room);
+  const targetId = room.turn.selectedPlayerId;
+  const responses = {};
+  for (const d of room.dareMenu) responses[d.id] = getConsent(room, targetId, active, d.id);
+  room.turn.responses = responses;
+  room.turn.phase = 'chooseDareForPlayer';
+  room.turn.timerEndsAt = null;
+  clearTurnTimer(room);
+  touch(room);
+  emitRoom(room);
+}
+function eligibleAddCount(room) {
+  return Math.min(room.dareMenu.length, 1 + Math.floor((room.completedSinceDareAdded || 0) / 2));
+}
+function updateStateForConnectedCount(room) {
+  const connectedCount = connectedPlayers(room).length;
+  if (room.state === 'main' && connectedCount < 3) {
+    room.state = 'lobby';
+    room.paused = true;
+    clearTurnTimer(room);
+    return true;
+  }
+  return false;
+}
+function safeTurnForViewer(room, viewerId) {
+  if (!room.turn) return null;
+  const turn = { ...room.turn };
+  const active = activeId(room);
+  if (viewerId !== active && turn.phase !== 'performing') {
+    if (turn.phase === 'choosePartner' || turn.phase === 'chooseDareForPlayer') {
+      turn.responses = {};
+    }
+  }
+  return turn;
+}
+async function emitRoom(room) {
+  const sockets = await io.in(room.code).fetchSockets();
+  for (const s of sockets) {
+    const pid = s.data?.playerId || null;
+    const pub = {
+      id: room.id,
+      code: room.code,
+      state: room.state,
+      paused: room.paused,
+      players: room.players.map(publicPlayer),
+      chosenTheme: room.chosenTheme,
+      dareMenu: room.dareMenu.map(d => ({ id: d.id, title: d.title, extra: d.extra, createdBy: d.createdBy || null, sourceLang: d.sourceLang || 'en', createdAt: d.createdAt })),
+      turn: safeTurnForViewer(room, pid),
+      createdAt: room.createdAt,
+      hostId: room.hostId,
+      completedSinceDareAdded: room.completedSinceDareAdded || 0,
+      me: pid ? {
+        id: pid,
+        counts: viewerCounts(room, pid),
+        consent: viewerConsent(room, pid),
+        pendingPrompts: room.pendingPrompts[pid] || []
+      } : null
+    };
+    s.emit('room:state', pub);
+  }
 }
 
-/* removed: collaborative theme elimination */
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: { origin: '*' },
+  maxHttpBufferSize: 1_000_000
+});
 
-// Serve static client
 app.use((req, _res, next) => {
-  try {
-    const ip = getReqIp(req);
-    if (ip) stats.visitors.add(ip);
-  } catch {}
+  try { stats.visitors.add(getReqIp(req)); } catch {}
   next();
 });
+app.use(express.json({ limit: '350kb' }));
 app.use(express.static(path.join(__dirname, '../public')));
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
-// Optional admin diagnostics for digest preview/sending (guarded by token)
 const ADMIN_TOKEN = process.env.DTC_ADMIN_TOKEN || null;
 function adminAllowed(req) {
-  if (!ADMIN_TOKEN) return false;
-  try {
-    const h = (req.headers?.['x-admin-token'] || '').toString();
-    return h === ADMIN_TOKEN;
-  } catch { return false; }
+  return !!ADMIN_TOKEN && String(req.headers?.['x-admin-token'] || '') === ADMIN_TOKEN;
 }
 app.get('/admin/digest-preview', (req, res) => {
   if (!adminAllowed(req)) return res.status(404).send('Not found');
@@ -427,772 +619,426 @@ app.get('/admin/digest-preview', (req, res) => {
 });
 app.get('/admin/digest-info', (req, res) => {
   if (!adminAllowed(req)) return res.status(404).send('Not found');
-  res.json({
-    lastEmailStatus,
-    stats: {
-      since: stats.since,
-      visitors: stats.visitors.size,
-      attemptedStarts: stats.attemptedStarts,
-      successfulStarts: stats.successfulStarts,
-      lastSentAt: stats.lastSentAt || 0,
-      lastDigestDay: stats.lastDigestDay,
-      successSinceLastSend: !!stats.successSinceLastSend
-    },
-    email: {
-      toDefault: DIGEST_TO,
-      from: DIGEST_FROM,
-      region: SES_REGION
-    }
-  });
+  res.json({ lastEmailStatus, stats: { since: stats.since, visitors: stats.visitors.size, attemptedStarts: stats.attemptedStarts, successfulStarts: stats.successfulStarts, lastSentAt: stats.lastSentAt || 0, lastDigestDay: stats.lastDigestDay, successSinceLastSend: !!stats.successSinceLastSend } });
 });
-app.post('/admin/send-digest-now', async (req, res) => {
-  if (!adminAllowed(req)) return res.status(404).send('Not found');
+
+app.post('/api/avatar', async (req, res) => {
+  const ip = getReqIp(req);
+  if (!rateLimitAllow(ip, 'avatar', 20, 10 * 60 * 1000)) return res.status(429).json({ ok: false, error: 'rate_limited' });
+  const code = sanitizeText(req.body?.code, 64).toLowerCase();
+  const playerId = sanitizeText(req.body?.playerId, 40);
+  const image = String(req.body?.image || '');
+  if (purgeIfExpired(code) || !rooms.has(code)) return res.status(404).json({ ok: false, error: 'room_not_found' });
+  const room = rooms.get(code);
+  const player = room.players.find(p => p.id === playerId);
+  if (!player) return res.status(403).json({ ok: false, error: 'player_not_found' });
+  const match = image.match(/^data:image\/(jpeg|jpg|png|webp);base64,([a-z0-9+/=]+)$/i);
+  if (!match) return res.status(400).json({ ok: false, error: 'bad_image' });
+  const ext = match[1].toLowerCase() === 'jpg' ? 'jpeg' : match[1].toLowerCase();
+  const body = Buffer.from(match[2], 'base64');
+  if (!body.length || body.length > AVATAR_MAX_BYTES) return res.status(400).json({ ok: false, error: 'image_too_large' });
+  const magic = body.subarray(0, 12).toString('hex');
+  const isJpeg = magic.startsWith('ffd8ff');
+  const isPng = magic.startsWith('89504e470d0a1a0a');
+  const isWebp = body.subarray(0, 4).toString() === 'RIFF' && body.subarray(8, 12).toString() === 'WEBP';
+  if (!isJpeg && !isPng && !isWebp) return res.status(400).json({ ok: false, error: 'bad_image' });
+  const contentType = isPng ? 'image/png' : isWebp ? 'image/webp' : 'image/jpeg';
+  const key = `${AVATAR_PREFIX}/${room.code}/${player.id}-${Date.now().toString(36)}-${shortId()}.${contentType.split('/')[1]}`;
   try {
-    const to = (req.query?.to || '').toString().trim() || null;
-    const subj = (req.query?.subj || '').toString().trim() || null;
-    const messageId = await sendDigest({ force:true, to, subj });
-    res.json({ ok: true, messageId });
+    await getS3().send(new PutObjectCommand({
+      Bucket: AVATAR_BUCKET,
+      Key: key,
+      Body: body,
+      ContentType: contentType,
+      CacheControl: 'private, max-age=28800',
+      Metadata: { room: room.code, player: player.id, expires: String(Date.now() + 8 * 60 * 60 * 1000) }
+    }));
+    const url = `${AVATAR_BASE_URL}/${key}`;
+    player.avatarUrl = url;
+    touch(room);
+    await emitRoom(room);
+    res.json({ ok: true, url });
   } catch (e) {
-    console.error('[admin] send-digest-now failed', e);
-    res.status(500).json({ ok: false, error: 'send_failed' });
+    console.error('[avatar] upload failed', e);
+    res.status(500).json({ ok: false, error: 'upload_failed' });
   }
 });
 
 io.on('connection', (socket) => {
   let joinInfo = { roomCode: null, playerId: null };
-  // Count unique visitors by socket IP as well
-  try { const ip = getClientIp(socket); if (ip) stats.visitors.add(ip); } catch {}
+  try { stats.visitors.add(getClientIp(socket)); } catch {}
 
-  async function emitRoom(room) {
-    const base = roomPublicState(room);
-    const activeId = room.turn?.order?.[room.turn?.index];
-
-    const sockets = await io.in(room.code).fetchSockets();
-    for (const s of sockets) {
-      const pid = s.data?.playerId || null;
-
-      // Clone state and filter submissions per recipient
-      const pub = { ...base };
-      if (room.turn) {
-        const subs = room.turn.submissions || [];
-        const canSeeAll = pid && activeId && pid === activeId;
-        // Show all details to the active player, show only own details to others,
-        // but still include placeholder entries for other responders so clients can
-        // render "Responded" without revealing their choice.
-        const visible = subs.map(t => {
-          if (canSeeAll || t.playerId === pid) return t;
-          return { playerId: t.playerId, ts: t.ts };
-        });
-        pub.turn = { ...room.turn, submissions: visible };
-      }
-
-      s.emit('room:state', pub);
-    }
+  function currentRoom() {
+    return rooms.get(joinInfo.roomCode);
   }
-
-  // --- Absent-player coordination helpers ---
-  function getActiveId(room) {
-    return room.turn?.order?.[room.turn?.index] || null;
+  function currentPlayer(room) {
+    return room?.players.find(p => p.id === joinInfo.playerId) || null;
   }
-  function getActivePlayer(room) {
-    const id = getActiveId(room);
-    return id ? (room.players.find(p => p.id === id) || null) : null;
-  }
-  function ensureAbsent(room) {
-    if (!room._absent) room._absent = { promptTimer: null, recheckTimer: null, targetId: null, promptId: null };
-    return room._absent;
-  }
-  function clearAbsentTimers(room, { dismiss=false } = {}) {
-    const ac = room._absent;
-    if (!ac) return;
-    if (ac.promptTimer) clearTimeout(ac.promptTimer);
-    if (ac.recheckTimer) clearTimeout(ac.recheckTimer);
-    if (dismiss && ac.promptId) io.to(room.code).emit('absent:dismiss', { promptId: ac.promptId });
-    room._absent = null;
-  }
-  function scheduleAbsentPrompt(room, delayMs = 1000) {
-    try {
-      const active = getActivePlayer(room);
-      const activeId = getActiveId(room);
-      if (!activeId || !active) return;
-      // Schedule regardless of current flag; we re-check connectivity at fire time
-      console.log(`[absent] schedule prompt in ${Math.max(0, delayMs|0)}ms for`, active?.name, 'room', room.code);
-      const ac = ensureAbsent(room);
-      ac.targetId = activeId;
-      ac.promptId = nano();
-      if (ac.promptTimer) clearTimeout(ac.promptTimer);
-      ac.promptTimer = setTimeout(() => {
-        const r = rooms.get(room.code);
-        if (!r) return;
-        const currentId = getActiveId(r);
-        if (!currentId || currentId !== ac.targetId) return;
-        const target = r.players.find(p => p.id === ac.targetId);
-        if (!target || target.connected !== false) return;
-        console.log(`[absent] emit prompt for`, target?.name, 'room', r.code);
-        io.to(room.code).emit('absent:prompt', { promptId: ac.promptId, targetId: ac.targetId, targetName: target.name || 'Player' });
-      }, Math.max(0, delayMs|0));
-    } catch (e) {
-      console.error('scheduleAbsentPrompt error', e);
-    }
-  }
-  function scheduleReaskIfStillAbsent(room, delayMs = 60000) {
-    const ac = ensureAbsent(room);
-    if (ac.recheckTimer) clearTimeout(ac.recheckTimer);
-    ac.recheckTimer = setTimeout(() => {
-      const r = rooms.get(room.code);
-      if (!r) return;
-      const activeId = getActiveId(r);
-      if (!activeId || activeId !== ac.targetId) return;
-      const target = r.players.find(p => p.id === ac.targetId);
-      if (!target || target.connected !== false) return;
-      ac.promptId = nano();
-      io.to(room.code).emit('absent:prompt', { promptId: ac.promptId, targetId: ac.targetId, targetName: target.name || 'Player' });
-    }, Math.max(0, delayMs|0));
-  }
-  function onTurnFocus(room) {
-    const act = getActivePlayer(room);
-    console.log(`[turn] focus room ${room.code} active=`, act?.name, 'connected=', act?.connected);
-    clearAbsentTimers(room, { dismiss: true });
-    scheduleAbsentPrompt(room, 1000);
-  }
-  // Pause the game if connected players drop below 3; returns true if state changed
-  function updateStateForConnectedCount(room) {
-    const connectedCount = (room.players || []).filter(p => p.connected !== false).length;
-    if (room.state === 'main' && connectedCount < 3) {
-      room.state = 'lobby';
-      room.paused = true;
-      console.log(`[pause] room ${room.code} paused due to insufficient players (${connectedCount})`);
-      return true;
-    }
-    return false;
-  }
-  socket.on('room:create', ({ name, theme }) => {
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'room:create', 10, 10*60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-    const room = createRoom();
-    const safeName = sanitizeText(name, 30);
-    const player = { id: nano(), name: safeName || 'Player', color: null, connected: true };
-    // Assign first available color
+  function makePlayer(room, payload) {
+    const player = {
+      id: nano(),
+      name: sanitizeText(payload?.name, 30) || 'Player',
+      color: null,
+      avatarUrl: null,
+      gender: sanitizeGender(payload?.gender),
+      preferredGenders: sanitizePrefs(payload?.preferredGenders),
+      language: sanitizeLanguage(payload?.language),
+      connected: true
+    };
     player.color = nextColor(room);
-    room.players.push(player);
-    room.hostId = player.id;
-    // Persist the creator's theme preference so later "start game" uses it authoritatively
-    try {
-      const wanted = (typeof theme === 'string' ? theme : null);
-      const resolved = resolveThemeKey(wanted);
-      const fallback = resolveThemeKey('Sensual') || (Object.keys(THEMES||{})[0] || null);
-      const pref = resolved || fallback;
-      room.settings = room.settings || {};
-      if (pref) {
-        room.settings.preferredTheme = pref;
-        // Reflect intended theme in lobby state so all clients see it before the game starts
-        room.chosenTheme = pref;
-        console.log(`[room:create] theme pref=${pref} (requested=${wanted||''}) room=${room.code}`);
-      } else {
-        console.warn(`[room:create] no valid theme resolved (requested=${wanted||''}) room=${room.code}`);
-      }
-    } catch (e) {
-      console.error('[room:create] failed to resolve/store preferred theme', e);
-    }
+    return player;
+  }
+  function attach(room, player) {
     joinInfo = { roomCode: room.code, playerId: player.id };
     socket.join(room.code);
-    socket.emit('player:you', { playerId: player.id });
-    // Track mapping for per-socket tailoring
     socket.data = { roomCode: room.code, playerId: player.id };
-    console.log(`[room:create] ${room.code} host=${player.name}`);
-    try {
-      stats.attemptedStarts++;
-      logEvent(room.code, 'create', `Room created by ${player.name}`);
-    } catch {}
+    socket.emit('player:you', { playerId: player.id });
+  }
+
+  socket.on('room:create', ({ name, theme, gender, preferredGenders, language }) => {
+    const ip = getClientIp(socket);
+    if (!rateLimitAllow(ip, 'room:create', 10, 10*60*1000)) return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
+    const room = createRoom();
+    const player = makePlayer(room, { name, gender, preferredGenders, language });
+    room.players.push(player);
+    room.hostId = player.id;
+    const wanted = resolveThemeKey(theme);
+    const fallback = resolveThemeKey('Sensual') || Object.keys(THEMES || {})[0] || null;
+    room.settings.preferredTheme = wanted || fallback;
+    room.chosenTheme = room.settings.preferredTheme;
+    attach(room, player);
+    stats.attemptedStarts++;
+    logEvent(room.code, 'create', `Room created by ${player.name}`);
     touch(room);
     emitRoom(room);
   });
 
-  socket.on('room:join', ({ code, name }) => {
+  socket.on('room:join', ({ code, name, gender, preferredGenders, language }) => {
     const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'room:join', 60, 10*60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-    const safeCode = (typeof code === 'string' ? code.trim().toLowerCase().slice(0, 64) : '');
-    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) {
-      return emitError(socket, 'No such game (it may have expired).', 'NO_SUCH_ROOM');
-    }
+    if (!rateLimitAllow(ip, 'room:join', 60, 10*60*1000)) return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
+    const safeCode = sanitizeText(code, 64).toLowerCase();
+    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) return emitError(socket, 'No such game (it may have expired).', 'NO_SUCH_ROOM');
     const room = rooms.get(safeCode);
-    const safeName = sanitizeText(name, 30);
-    const player = { id: nano(), name: safeName || 'Player', color: null, connected: true };
-    player.color = nextColor(room);
+    const player = makePlayer(room, { name, gender, preferredGenders, language });
     room.players.push(player);
-    joinInfo = { roomCode: room.code, playerId: player.id };
-    socket.join(room.code);
-    socket.emit('player:you', { playerId: player.id });
-    // Track mapping for per-socket tailoring
-    socket.data = { roomCode: room.code, playerId: player.id };
-    console.log(`[room:join] ${room.code} ${player.name}`);
-    try { logEvent(room.code, 'join', `${player.name} joined the room`); } catch {}
-
-    // If a player joins while a game is in progress, add them into the turn rotation
-    // so they get turns going forward. Insert them just after the current active index
-    // to keep rotation fairness, and avoid duplicates.
-    try {
-      if (room.state === 'main' && room.turn && Array.isArray(room.turn.order)) {
-        const already = room.turn.order.includes(player.id);
-        if (!already) {
-          const curIdx = typeof room.turn.index === 'number' ? room.turn.index : -1;
-          const insertAt = Math.max(0, Math.min(room.turn.order.length, (curIdx >= 0 ? curIdx + 1 : room.turn.order.length)));
-          room.turn.order.splice(insertAt, 0, player.id);
-          console.log(`[room:join] inserted into turn.order at ${insertAt}; orderSize=${room.turn.order.length} room=${room.code}`);
-        }
-      }
-    } catch (e) {
-      console.warn('[room:join] failed to insert player into turn order', e);
+    if (room.state === 'main' && room.turn?.order) {
+      const insertAt = Math.min(room.turn.order.length, (room.turn.index || 0) + 1);
+      room.turn.order.splice(insertAt, 0, player.id);
+      addPrompt(room, player.id, buildOnboardingPrompt(room, player));
+      queueExistingPlayerNewJoinPrompts(room, player);
     }
-
+    attach(room, player);
+    logEvent(room.code, 'join', `${player.name} joined the room`);
     touch(room);
     emitRoom(room);
   });
 
   socket.on('room:leave', () => {
-    const code = joinInfo.roomCode;
-    if (!code) return;
-    const room = rooms.get(code);
+    const room = currentRoom();
     if (!room) return;
-
-    // Cancel any pending disconnect flag for this player
-    const pending = pendingDisconnects.get(joinInfo.playerId);
-    if (pending) { clearTimeout(pending); pendingDisconnects.delete(joinInfo.playerId); }
-
     const removedId = joinInfo.playerId;
-    const who = room.players.find(p => p.id === removedId)?.name || 'Player';
-
-    // Remove from players
-    const idx = room.players.findIndex(p => p.id === removedId);
-    if (idx >= 0) room.players.splice(idx, 1);
-
-    // Reassign host if needed
-    if (room.hostId === removedId) {
-      room.hostId = room.players[0]?.id || null;
-    }
-
-    // Update turn order and index (and sanitize turn state if removal affects active/authoring player)
+    const pending = pendingDisconnects.get(removedId);
+    if (pending) { clearTimeout(pending); pendingDisconnects.delete(removedId); }
+    const who = playerName(room, removedId);
+    room.players = room.players.filter(p => p.id !== removedId);
+    delete room.pendingPrompts[removedId];
+    if (room.hostId === removedId) room.hostId = room.players[0]?.id || null;
     if (room.turn?.order) {
-      const wasActive = (room.turn.order?.[room.turn.index] || null) === removedId;
-      const wasAddingOwner = room.turn?.addingBy === removedId;
-
-      const removedIdx = room.turn.order.indexOf(removedId);
-      if (removedIdx >= 0) {
-        room.turn.order.splice(removedIdx, 1);
-        if (room.turn.order.length === 0) {
-          room.turn.index = 0;
-        } else {
-          if (removedIdx < room.turn.index) {
-            room.turn.index = (room.turn.index - 1 + room.turn.order.length) % room.turn.order.length;
-          } else if (removedIdx === room.turn.index) {
-            if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
-            // At this point, room.turn.index points to the next player
-          }
-        }
-      }
-
-      // Drop any submissions from the removed player
-      if (Array.isArray(room.turn.submissions)) {
-        room.turn.submissions = room.turn.submissions.filter(s => s && s.playerId !== removedId);
-      }
-
-      if (wasAddingOwner) {
-        // Cancel authoring window and hand turn to next player
-        room.turn.status = 'collecting';
-        delete room.turn.addingBy;
-        room.turn.selectedDareIndex = null;
-        room.turn.submissions = [];
-        console.log(`[remove] authoring player removed -> resume collecting index=${room.turn.index} room=${room.code}`);
-      } else if (wasActive) {
-        // Active chooser removed: reset selection and resume with next player
-        room.turn.selectedDareIndex = null;
-        room.turn.submissions = [];
-        room.turn.status = 'collecting';
-        console.log(`[remove] active chooser removed -> resume collecting index=${room.turn.index} room=${room.code}`);
-      }
+      const oldIdx = room.turn.order.indexOf(removedId);
+      const wasActive = activeId(room) === removedId;
+      room.turn.order = room.turn.order.filter(id => id !== removedId);
+      if (oldIdx >= 0 && oldIdx < room.turn.index) room.turn.index--;
+      if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
+      if (wasActive) setChooseMode(room);
     }
-
-    // Clear any absent timers targeting this player
-    if (room._absent?.targetId === removedId) {
-      clearAbsentTimers(room, { dismiss: true });
-    }
-
-    socket.leave(code);
-    console.log(`[room:leave] ${code}`);
-    try { logEvent(code, 'leave', `${who} left the room`); } catch {}
-    // Reset join info so further emits don't go to old room
+    socket.leave(room.code);
     socket.data = { roomCode: null, playerId: null };
     joinInfo = { roomCode: null, playerId: null };
-
-    const changed = updateStateForConnectedCount(room);
+    logEvent(room.code, 'leave', `${who} left the room`);
+    updateStateForConnectedCount(room);
     touch(room);
-    if (!changed && room.state === 'main') onTurnFocus(room);
     emitRoom(room);
   });
 
   socket.on('room:peek', ({ code }) => {
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'room:peek', 180, 60*1000)) {
-      return; // silently drop excessive peeks
-    }
-    const safeCode = (typeof code === 'string' ? code.trim().toLowerCase().slice(0, 64) : '');
-    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) {
-      return socket.emit('room:peek:result', { ok: false });
-    }
+    if (!rateLimitAllow(getClientIp(socket), 'room:peek', 180, 60*1000)) return;
+    const safeCode = sanitizeText(code, 64).toLowerCase();
+    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) return socket.emit('room:peek:result', { ok: false });
     const room = rooms.get(safeCode);
-    const colors = room.players.map(p => p.color).filter(Boolean);
-    socket.emit('room:peek:result', { ok: true, state: roomPublicState(room), usedColors: colors });
+    socket.emit('room:peek:result', {
+      ok: true,
+      state: {
+        code: room.code,
+        state: room.state,
+        players: room.players.map(publicPlayer),
+        hostId: room.hostId,
+        chosenTheme: room.chosenTheme
+      }
+    });
   });
 
-  // Resume an existing player session after refresh/reconnect
   socket.on('room:resume', ({ code, playerId }) => {
-    const safeCode = (typeof code === 'string' ? code.trim().toLowerCase().slice(0, 64) : '');
-    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) {
-      return emitError(socket, 'No such game (it may have expired).', 'NO_SUCH_ROOM');
-    }
+    const safeCode = sanitizeText(code, 64).toLowerCase();
+    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) return emitError(socket, 'No such game (it may have expired).', 'NO_SUCH_ROOM');
     const room = rooms.get(safeCode);
     const player = room.players.find(p => p.id === playerId);
     if (!player) return;
-
-    // Cancel any pending disconnect mark for this player
     const t = pendingDisconnects.get(playerId);
     if (t) { clearTimeout(t); pendingDisconnects.delete(playerId); }
-
-    joinInfo = { roomCode: room.code, playerId: player.id };
-    socket.join(room.code);
     player.connected = true;
-    // If this player is the active turn, cancel any absent prompt/re-ask
-    if (getActiveId(room) === player.id) {
-      clearAbsentTimers(room, { dismiss: true });
-    }
-    socket.emit('player:you', { playerId: player.id });
-    // Track mapping for per-socket tailoring
-    socket.data = { roomCode: room.code, playerId: player.id };
+    attach(room, player);
     touch(room);
     emitRoom(room);
   });
 
-  socket.on('player:update', ({ name, color }) => {
-    const room = rooms.get(joinInfo.roomCode);
-    if (!room) return;
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'player:update', 30, 60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-    const player = room.players.find(p => p.id === joinInfo.playerId);
-    if (!player) return;
-    if (typeof name === 'string') player.name = sanitizeText(name, 30);
-    // Color updates via UI are not used in this prototype; keep unique if sent
+  socket.on('player:update', ({ name, color, gender, preferredGenders, language }) => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player) return;
+    if (!rateLimitAllow(getClientIp(socket), 'player:update', 60, 60*1000)) return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
+    if (typeof name === 'string') player.name = sanitizeText(name, 30) || player.name;
     if (typeof color === 'string') {
       const taken = new Set(room.players.filter(p => p.id !== player.id).map(p => p.color));
-      if (!taken.has(color)) player.color = color;
+      if (!taken.has(color)) {
+        player.color = color;
+        player.avatarUrl = null;
+      }
     }
+    if (typeof gender === 'string') player.gender = sanitizeGender(gender);
+    if (Array.isArray(preferredGenders)) player.preferredGenders = sanitizePrefs(preferredGenders);
+    if (typeof language === 'string') player.language = sanitizeLanguage(language);
     touch(room);
     emitRoom(room);
   });
-
-  // removed: collaborative theme start
-
-  // removed: collaborative theme voting
-
-  // removed: collaborative theme round advancement
-
-  // removed: collaborative theme tie resolution
 
   socket.on('theme:finalize', ({ theme }) => {
-    const roomCode = joinInfo.roomCode;
-    const playerId = joinInfo.playerId;
-    const room = rooms.get(roomCode);
-    if (!room) { console.warn(`[theme:finalize] no room for socket code=${roomCode}`); return; }
-    const ip = getClientIp(socket);
-    const player = room.players.find(p => p.id === playerId) || null;
-    console.log(`[theme:finalize] request by pid=${playerId} name=${player?.name||''} ip=${ip} room=${room.code} state=${room.state} paused=${room.paused}`);
-
-    if (!rateLimitAllow(ip, 'theme:finalize', 10, 60*1000)) {
-      console.warn(`[theme:finalize] rate-limited pid=${playerId} ip=${ip}`);
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-    // Allow any player to start the game when enough players are connected
-    if (room.state !== 'lobby') {
-      console.warn(`[theme:finalize] reject not in lobby (state=${room.state}) pid=${playerId}`);
-      return;
-    }
-    // Enforce minimum player requirement of 3 connected players
-    const connectedCount = room.players.filter(p => p.connected !== false).length;
-    if (connectedCount < 3) {
-      console.warn(`[theme:finalize] reject insufficient players connected=${connectedCount} pid=${playerId}`);
-      return;
-    }
-
-    // Authoritative server-side seeding
-    // Prefer creator's stored theme; then any lobby-reflected choice; then the request param; fallback to Sensual/first.
-    const stored = resolveThemeKey(room?.settings?.preferredTheme);
-    const lobby  = resolveThemeKey(room?.chosenTheme);
-    const param  = resolveThemeKey(typeof theme === 'string' ? theme : null);
-    const candidate = stored || lobby || param;
-    let key = candidate || (resolveThemeKey('Sensual') || (Object.keys(THEMES||{})[0] || 'Sensual'));
+    const room = currentRoom();
+    if (!room || room.state !== 'lobby') return;
+    if (!rateLimitAllow(getClientIp(socket), 'theme:finalize', 10, 60*1000)) return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
+    if (connectedPlayers(room).length < 3) return;
+    let key = resolveThemeKey(room.settings.preferredTheme) || resolveThemeKey(room.chosenTheme) || resolveThemeKey(theme) || resolveThemeKey('Sensual') || Object.keys(THEMES || {})[0];
     let seed = serverSeedForTheme(key);
-    if (!Array.isArray(seed) || seed.length === 0) {
-      const fb = resolveThemeKey('Sensual') || key;
-      key = fb;
+    if (!seed.length) {
+      key = resolveThemeKey('Sensual') || key;
       seed = serverSeedForTheme(key);
     }
-    console.log(`[theme:finalize] choose theme key=${key} (stored=${stored||''} lobby=${lobby||''} param=${param||''}) room=${room.code}`);
-
     room.chosenTheme = key;
-    // Mark game started once
-    try {
-      const g = ensureGame(room.code);
-      g.theme = key;
-      if (!g.started) {
-        g.started = true;
-        stats.successfulStarts++;
-        stats.successSinceLastSend = true;
-        logEvent(room.code, 'start', `Game started (theme: ${key})`);
-      } else {
-        logEvent(room.code, 'start', `Game resumed (theme: ${key})`);
-      }
-    } catch {}
-    room.dareMenu = (seed || []).slice(0, 100).map(d => ({ ...d, createdAt: Date.now() }));
+    room.dareMenu = seed.slice(0, MAX_DARES).map(d => ({ id: shortId(), title: sanitizeText(d.title, 160), extra: sanitizeText(d.extra, 180), createdAt: Date.now(), sourceLang: 'en' }));
     room.state = 'main';
     room.paused = false;
-    // Initialize turn order by join sequence
-    room.turn = {
-      order: room.players.map(p => p.id),
-      index: 0,
-      selectedDareIndex: null,
-      submissions: [],
-      status: 'collecting'
-    };
+    room.turn = { order: room.players.map(p => p.id), index: 0 };
+    setChooseMode(room);
+    for (const player of room.players) addPrompt(room, player.id, buildOnboardingPrompt(room, player));
+    const g = ensureGame(room.code);
+    g.theme = key;
+    if (!g.started) {
+      g.started = true;
+      stats.successfulStarts++;
+      stats.successSinceLastSend = true;
+    }
+    logEvent(room.code, 'start', `Game started (theme: ${key})`);
     touch(room);
-    console.log(`[theme:finalize] START by pid=${playerId} name=${player?.name||''} room=${room.code} theme=${key} connected=${connectedCount}`);
-    onTurnFocus(room);
     emitRoom(room);
   });
 
-  // Resume game after pause (any player)
   socket.on('game:resume', () => {
-    const roomCode = joinInfo.roomCode;
-    const playerId = joinInfo.playerId;
-    const room = rooms.get(roomCode);
-    if (!room) { console.warn(`[game:resume] no room for socket code=${roomCode}`); return; }
-    const ip = getClientIp(socket);
-    const player = room.players.find(p => p.id === playerId) || null;
-    console.log(`[game:resume] request by pid=${playerId} name=${player?.name||''} ip=${ip} room=${room.code} state=${room.state} paused=${room.paused}`);
-
-    const connectedCount = (room.players || []).filter(p => p.connected !== false).length;
-    if (connectedCount < 3) {
-      console.warn(`[game:resume] reject insufficient players connected=${connectedCount} pid=${playerId}`);
-      return;
-    }
+    const room = currentRoom();
+    if (!room || connectedPlayers(room).length < 3) return;
     room.state = 'main';
     room.paused = false;
     touch(room);
-    console.log(`[game:resume] RESUME by pid=${playerId} name=${player?.name||''} room=${room.code} connected=${connectedCount}`);
-    onTurnFocus(room);
     emitRoom(room);
   });
 
-  socket.on('turn:selectDare', ({ index }) => {
-    const room = rooms.get(joinInfo.roomCode);
-    if (!room || room.state !== 'main') return;
-    // Block selecting a dare while a player is writing a new dare
-    if (room.turn?.status === 'adding') return;
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'turn:selectDare', 30, 60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-    room.turn.selectedDareIndex = index;
-    room.turn.submissions = [];
-    room.turn.status = 'collecting';
-    try {
-      const chooserId = joinInfo.playerId;
-      const chooser = room.players.find(p => p.id === chooserId)?.name || 'Player';
-      const title = room.dareMenu?.[index]?.title || `index ${index}`;
-      logEvent(room.code, 'select', `${chooser} proposed dare: ${title}`);
-    } catch {}
+  socket.on('consent:promptSubmit', ({ promptId, type, entries, targetId, dareId, values }) => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player) return;
+    const prompt = (room.pendingPrompts[player.id] || []).find(p => p.id === promptId);
+    if (!prompt || (type && prompt.type !== type)) return;
+    if (prompt.type === 'onboarding') applyOnboarding(room, player.id, entries);
+    if (prompt.type === 'new-player') applyNewPlayerPrompt(room, player.id, targetId || prompt.player?.id, values || {});
+    if (prompt.type === 'new-dare') applyNewDarePrompt(room, player.id, dareId || prompt.dare?.id, values || {});
+    removePrompt(room, player.id, prompt.id);
     touch(room);
     emitRoom(room);
   });
 
-  socket.on('turn:submit', ({ response }) => {
-    const room = rooms.get(joinInfo.roomCode);
-    if (!room || room.state !== 'main') return;
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'turn:submit', 240, 60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
+  socket.on('consent:update', ({ targetId, dareId, value }) => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player || !findDare(room, dareId)) return;
+    if (!room.players.some(p => p.id === targetId && p.id !== player.id)) return;
+    setConsent(room, player.id, targetId, dareId, !!value, { touched: true });
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('turn:chooseMode', ({ mode }) => {
+    const room = currentRoom();
+    if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId || room.turn?.phase !== 'chooseMode') return;
+    if (!['dare', 'player'].includes(mode)) return;
+    room.turn.phase = mode === 'dare' ? 'chooseDare' : 'choosePlayer';
+    room.turn.mode = mode;
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('turn:selectDare', ({ dareId }) => {
+    const room = currentRoom();
+    if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId || room.turn?.phase !== 'chooseDare') return;
+    if (!findDare(room, dareId)) return;
+    room.turn.phase = 'dareRespond';
+    room.turn.selectedDareId = dareId;
+    room.turn.selectedPlayerId = null;
+    room.turn.responses = {};
+    scheduleTurnTimer(room, 5000, () => finalizeDareResponses(room));
+    logEvent(room.code, 'select-dare', `${playerName(room, joinInfo.playerId)} chose ${findDare(room, dareId)?.title || 'a dare'}`);
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('turn:submitDareResponse', ({ dareId, value, sendNow }) => {
+    const room = currentRoom();
+    if (!room || room.turn?.phase !== 'dareRespond') return;
+    const active = activeId(room);
     const playerId = joinInfo.playerId;
-    const resp = typeof response === 'string' ? response : '';
-    if (!['HECK_YES','YES_PLEASE','NO_THANKS'].includes(resp)) return;
-    const exists = room.turn.submissions.find(s => s.playerId === playerId);
-    const submission = { playerId, response: resp, ts: Date.now() };
-    if (exists) Object.assign(exists, submission); else room.turn.submissions.push(submission);
-    try {
-      const who = playerName(room, playerId);
-      logEvent(room.code, 'respond', `${who} responded ${resp}`);
-    } catch {}
+    if (playerId === active || dareId !== room.turn.selectedDareId) return;
+    setConsent(room, playerId, active, dareId, !!value, { touched: true });
+    room.turn.responses[playerId] = !!value;
+    const expected = connectedPlayers(room).filter(p => p.id !== active).length;
+    if (sendNow || Object.keys(room.turn.responses).length >= expected) {
+      finalizeDareResponses(room);
+    } else {
+      touch(room);
+      emitRoom(room);
+    }
+  });
+
+  socket.on('turn:selectPlayer', ({ playerId }) => {
+    const room = currentRoom();
+    if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId || room.turn?.phase !== 'choosePlayer') return;
+    const target = room.players.find(p => p.id === playerId && p.id !== joinInfo.playerId && p.connected !== false);
+    if (!target) return;
+    room.turn.phase = 'personRespond';
+    room.turn.selectedPlayerId = target.id;
+    room.turn.selectedDareId = null;
+    room.turn.responses = {};
+    for (const d of room.dareMenu) room.turn.responses[d.id] = getConsent(room, target.id, joinInfo.playerId, d.id);
+    scheduleTurnTimer(room, 10000, () => finalizePersonResponses(room));
+    logEvent(room.code, 'select-player', `${playerName(room, joinInfo.playerId)} chose ${target.name}`);
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('turn:submitPersonResponses', ({ entries, sendNow }) => {
+    const room = currentRoom();
+    if (!room || room.turn?.phase !== 'personRespond') return;
+    const active = activeId(room);
+    if (joinInfo.playerId !== room.turn.selectedPlayerId) return;
+    for (const e of Array.isArray(entries) ? entries : []) {
+      if (!findDare(room, e.dareId)) continue;
+      setConsent(room, joinInfo.playerId, active, e.dareId, !!e.value, { touched: true });
+      room.turn.responses[e.dareId] = !!e.value;
+    }
+    if (sendNow) {
+      finalizePersonResponses(room);
+    } else {
+      scheduleTurnTimer(room, 10000, () => finalizePersonResponses(room));
+      touch(room);
+      emitRoom(room);
+    }
+  });
+
+  socket.on('turn:choosePartner', ({ playerId }) => {
+    const room = currentRoom();
+    if (!room || room.turn?.phase !== 'choosePartner' || activeId(room) !== joinInfo.playerId) return;
+    if (!room.turn.responses?.[playerId]) return;
+    const dareId = room.turn.selectedDareId;
+    setConsent(room, joinInfo.playerId, playerId, dareId, true, { touched: true });
+    room.turn.phase = 'performing';
+    room.turn.performing = { activeId: joinInfo.playerId, partnerId: playerId, dareId };
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('turn:chooseDareForPlayer', ({ dareId }) => {
+    const room = currentRoom();
+    if (!room || room.turn?.phase !== 'chooseDareForPlayer' || activeId(room) !== joinInfo.playerId) return;
+    if (!room.turn.responses?.[dareId]) return;
+    const partnerId = room.turn.selectedPlayerId;
+    setConsent(room, joinInfo.playerId, partnerId, dareId, true, { touched: true });
+    room.turn.phase = 'performing';
+    room.turn.performing = { activeId: joinInfo.playerId, partnerId, dareId };
     touch(room);
     emitRoom(room);
   });
 
   socket.on('turn:pass', () => {
-    const room = rooms.get(joinInfo.roomCode);
-    if (!room || room.state !== 'main') return;
-    // Block pass during add-a-dare window
-    if (room.turn?.status === 'adding') return;
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'turn:pass', 30, 60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-
-    // Log pass event (include dare title if available) before resetting state
-    try {
-      const idx = room.turn?.selectedDareIndex;
-      const title = (typeof idx === 'number' && idx >= 0) ? (room.dareMenu?.[idx]?.title || null) : null;
-      const who = playerName(room, joinInfo.playerId);
-      logEvent(room.code, 'pass', `${who} passed${title ? ` on: ${title}` : ''}`);
-    } catch {}
-
-    room.turn.selectedDareIndex = null;
-    room.turn.submissions = [];
-    room.turn.status = 'done';
-    // next player
-    room.turn.index = (room.turn.index + 1) % room.turn.order.length;
-    room.turn.status = 'collecting';
+    const room = currentRoom();
+    if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId) return;
+    logEvent(room.code, 'pass', `${playerName(room, joinInfo.playerId)} passed`);
+    advanceTurn(room);
     touch(room);
-    onTurnFocus(room);
     emitRoom(room);
   });
 
-  socket.on('turn:complete', ({ completedMostDaring, completerId }) => {
-    const room = rooms.get(joinInfo.roomCode);
-    if (!room || room.state !== 'main') return;
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'turn:complete', 30, 60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-
-    const beforeIndex = room.turn?.index;
-    const beforeActive = (room.turn?.order || [])[beforeIndex] || null;
-    const chooser = joinInfo.playerId;
-
-    // Reset selections for the completed dare
-    room.turn.selectedDareIndex = null;
-    room.turn.submissions = [];
-
-    if (completedMostDaring) {
-      // Do NOT advance the turn yet. The active chooser (current player) must write a new dare.
-      room.turn.status = 'adding';
-      room.turn.addingBy = chooser;
-      console.log(`[turn:complete] MOST-DARING completed by chooser=${chooser}; lock add window to chooser; keep index=${beforeIndex} active=${beforeActive} room=${room.code}`);
+  socket.on('turn:complete', () => {
+    const room = currentRoom();
+    if (!room || room.turn?.phase !== 'performing' || activeId(room) !== joinInfo.playerId) return;
+    const dareId = room.turn.performing?.dareId;
+    const idx = dareIndex(room, dareId);
+    const thresholdStart = Math.max(0, room.dareMenu.length - eligibleAddCount(room));
+    logEvent(room.code, 'complete', `${playerName(room, joinInfo.playerId)} completed ${findDare(room, dareId)?.title || 'a dare'}`);
+    if (idx >= thresholdStart) {
+      clearTurnTimer(room);
+      room.turn.phase = 'adding';
+      room.turn.addingBy = joinInfo.playerId;
+      room.turn.timerEndsAt = null;
     } else {
-      // Normal completion: advance to next player and continue collecting
-      room.turn.status = 'collecting';
-      delete room.turn.addingBy;
-      room.turn.index = (room.turn.index + 1) % room.turn.order.length;
-      const afterActive = room.turn.order[room.turn.index];
-      console.log(`[turn:complete] normal completion by chooser=${chooser}; index ${beforeIndex}->${room.turn.index} active=${afterActive} room=${room.code}`);
+      room.completedSinceDareAdded = (room.completedSinceDareAdded || 0) + 1;
+      advanceTurn(room);
     }
-
-    try {
-      const who = playerName(room, chooser);
-      logEvent(room.code, 'complete', `${who} confirmed completion${completedMostDaring ? ' (most daring)' : ''}`);
-    } catch {}
-    touch(room);
-    onTurnFocus(room);
-    emitRoom(room);
-  });
-
-  socket.on('menu:addDare', ({ title, extra }) => {
-    const room = rooms.get(joinInfo.roomCode);
-    if (!room || room.state !== 'main') return;
-    const ip = getClientIp(socket);
-    if (!rateLimitAllow(ip, 'menu:addDare', 20, 60*1000)) {
-      return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
-    }
-    const titleSafe = sanitizeText(title, 120);
-    const extraSafe = sanitizeText(extra, 160);
-    if (!titleSafe || !extraSafe) return;
-    if ((room.dareMenu?.length || 0) >= 100) {
-      return emitError(socket, 'This game already has the maximum of 100 dares.', 'DARE_LIMIT');
-    }
-    room.dareMenu.push({ title: titleSafe, extra: extraSafe, createdBy: joinInfo.playerId, createdAt: Date.now() });
-
-    try {
-      const who = playerName(room, joinInfo.playerId);
-      logEvent(room.code, 'add-dare', `${who} added dare: ${titleSafe} (extra: ${extraSafe})`);
-    } catch {}
-
-    // Exit 'adding' window and advance turn to the next player to choose a dare
-    const beforeIndex = room.turn?.index | 0;
-    room.turn.status = 'collecting';
-    delete room.turn.addingBy;
-    room.turn.index = (room.turn.index + 1) % room.turn.order.length;
-    const afterActive = room.turn.order[room.turn.index];
-
-    console.log(`[menu:addDare] added by pid=${joinInfo.playerId}; index ${beforeIndex}->${room.turn.index} active=${afterActive} room=${room.code}`);
-
-    touch(room);
-    onTurnFocus(room);
-    emitRoom(room);
-  });
-
-  // Manual idle escalation from the active player's browser:
-  // After 60s idle + 10s no response to the "Need more time?" nudge,
-  // the active client emits 'idle:escalate' to ask the room if they're still playing.
-  socket.on('idle:escalate', () => {
-    const code = joinInfo.roomCode;
-    if (!code) return;
-    const room = rooms.get(code);
-    if (!room || room.state !== 'main') return;
-    const activeId = (room.turn?.order || [])[room.turn?.index || 0] || null;
-    // Only the active player may escalate their own idle state
-    if (!activeId || activeId !== joinInfo.playerId) return;
-    // Only escalate if the active player is still connected (i.e., we can see their browser)
-    const target = room.players.find(p => p.id === activeId);
-    if (!target || target.connected === false) return;
-
-    const ac = ensureAbsent(room);
-    ac.targetId = activeId;
-    ac.promptId = nano();
-    // Prompt the entire room to confirm whether the active player is still playing
-    io.to(room.code).emit('absent:prompt', { promptId: ac.promptId, targetId: ac.targetId, targetName: target.name || 'Player' });
-  });
- 
-  // One-player coordinated resolution: Is the absent active player still playing?
-  socket.on('absent:response', ({ promptId, targetId, present }) => {
-    const code = joinInfo.roomCode;
-    if (!code) return;
-    const room = rooms.get(code);
-    if (!room) return;
-    const ac = room._absent;
-    if (!ac) return;
-    if (ac.promptId !== promptId || ac.targetId !== targetId) return;
-
-    // Dismiss dialog for everyone
-    io.to(room.code).emit('absent:dismiss', { promptId });
-
-    if (present) {
-      // Re-ask after 60s if still absent and still their turn
-      scheduleReaskIfStillAbsent(room, 60000);
-      touch(room);
-      return;
-    }
-
-    // Remove the absent player from the game
-    const removedId = targetId;
-
-    // Cancel any pending disconnect timer for that player
-    const pend = pendingDisconnects.get(removedId);
-    if (pend) { clearTimeout(pend); pendingDisconnects.delete(removedId); }
-
-    // Remove from players
-    const idx = room.players.findIndex(p => p.id === removedId);
-    if (idx >= 0) room.players.splice(idx, 1);
-
-    // Reassign host if needed
-    if (room.hostId === removedId) {
-      room.hostId = room.players[0]?.id || null;
-    }
-
-    // Update turn order and index (and sanitize turn state if removal affects active/authoring player)
-    if (room.turn?.order) {
-      const wasActive = (room.turn.order?.[room.turn.index] || null) === removedId;
-      const wasAddingOwner = room.turn?.addingBy === removedId;
-
-      const removedIdx = room.turn.order.indexOf(removedId);
-      if (removedIdx >= 0) {
-        room.turn.order.splice(removedIdx, 1);
-        if (room.turn.order.length === 0) {
-          room.turn.index = 0;
-        } else {
-          if (removedIdx < room.turn.index) {
-            room.turn.index = (room.turn.index - 1 + room.turn.order.length) % room.turn.order.length;
-          } else if (removedIdx === room.turn.index) {
-            if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
-            // At this point, room.turn.index points to the next player
-          }
-        }
-      }
-
-      // Drop any submissions from the removed player
-      if (Array.isArray(room.turn.submissions)) {
-        room.turn.submissions = room.turn.submissions.filter(s => s && s.playerId !== removedId);
-      }
-
-      if (wasAddingOwner) {
-        // Cancel authoring window and hand turn to next player
-        room.turn.status = 'collecting';
-        delete room.turn.addingBy;
-        room.turn.selectedDareIndex = null;
-        room.turn.submissions = [];
-        console.log(`[remove.absent] authoring player removed -> resume collecting index=${room.turn.index} room=${room.code}`);
-      } else if (wasActive) {
-        // Active chooser removed: reset selection and resume with next player
-        room.turn.selectedDareIndex = null;
-        room.turn.submissions = [];
-        room.turn.status = 'collecting';
-        console.log(`[remove.absent] active chooser removed -> resume collecting index=${room.turn.index} room=${room.code}`);
-      }
-    }
-
-    // Check if we must pause due to insufficient players
-    const pausedChanged = updateStateForConnectedCount(room);
-    if (pausedChanged) {
-      clearAbsentTimers(room, { dismiss: true });
-      touch(room);
-      emitRoom(room);
-      return;
-    }
-
-
-    // Clear absent timers and push updated state
-    clearAbsentTimers(room);
     touch(room);
     emitRoom(room);
-
-    // Establish focus on the (potentially new) active player
-    onTurnFocus(room);
   });
-socket.on('disconnect', () => {
-  const { roomCode, playerId } = joinInfo;
-  if (!roomCode || !playerId) return;
 
-  // Delay marking disconnected to allow quick refresh/resume
-  const existing = pendingDisconnects.get(playerId);
-  if (existing) clearTimeout(existing);
+  socket.on('menu:addDare', ({ title }) => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player || room.turn?.phase !== 'adding' || room.turn?.addingBy !== player.id) return;
+    const titleSafe = sanitizeText(title, 160);
+    if (!titleSafe || room.dareMenu.length >= MAX_DARES) return;
+    const previous = room.dareMenu[room.dareMenu.length - 1]?.id || null;
+    const dare = { id: shortId(), title: titleSafe, extra: '', createdBy: player.id, createdAt: Date.now(), sourceLang: player.language || 'en' };
+    room.dareMenu.push(dare);
+    room.completedSinceDareAdded = 0;
+    queueNewDarePrompts(room, dare, previous);
+    logEvent(room.code, 'add-dare', `${player.name} added dare: ${titleSafe}`);
+    advanceTurn(room);
+    touch(room);
+    emitRoom(room);
+  });
 
-  const t = setTimeout(() => {
-    const room = rooms.get(roomCode);
-    if (!room) return;
-    const player = room.players.find(p => p.id === playerId);
-    if (player) {
-      player.connected = false;
-      console.log(`[disconnect] ${roomCode} ${player?.name || ''}`);
-      // Pause the game if too few connected remain
-      const changed = updateStateForConnectedCount(room);
-      touch(room);
-      emitRoom(room);
-      if (!changed) {
-        // If it's their turn, schedule an absent prompt
-        const isActive = room.turn?.order?.[room.turn.index] === playerId;
-        console.log(`[absent] after disconnect isActive=${!!isActive} for`, player?.name);
-        if (isActive) {
-          scheduleAbsentPrompt(room, 10000);
-        }
+  socket.on('disconnect', () => {
+    const { roomCode, playerId } = joinInfo;
+    if (!roomCode || !playerId) return;
+    const existing = pendingDisconnects.get(playerId);
+    if (existing) clearTimeout(existing);
+    const t = setTimeout(() => {
+      const room = rooms.get(roomCode);
+      if (!room) return;
+      const player = room.players.find(p => p.id === playerId);
+      if (player) {
+        player.connected = false;
+        updateStateForConnectedCount(room);
+        touch(room);
+        emitRoom(room);
       }
-    }
-    pendingDisconnects.delete(playerId);
-  }, 2000);
-
-  pendingDisconnects.set(playerId, t);
-});
-
+      pendingDisconnects.delete(playerId);
+    }, 2000);
+    pendingDisconnects.set(playerId, t);
+  });
 });
 
 const PORT = process.env.PORT || 3000;

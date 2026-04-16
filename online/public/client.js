@@ -6,1108 +6,969 @@ const $$ = (sel, el=document) => [...el.querySelectorAll(sel)];
 const COLORS = [
   'Purple','Red','White','Brown','Grey','DkBlue','Silver','Green','Orange','Lavender','DkRed','Black','Blue','Pink','LtBlue','LtPink','Yellow','DkGreen'
 ];
-
-// Color mapping for UI pills and dropdown dots
 const COLOR_HEX = {
   Purple:'#7e52b7', Red:'#d64045', White:'#f4f6f9', Brown:'#8b5e3c', Grey:'#7a8a99',
   DkBlue:'#2d4e8a', Silver:'#c0c7d1', Green:'#2e8b57', Orange:'#f28c28', Lavender:'#b497c5',
   DkRed:'#8b1e2b', Black:'#0c0f15', Blue:'#3b82f6', Pink:'#e78fb3', LtBlue:'#78c4ff',
   LtPink:'#ffc4dd', Yellow:'#ffd166', DkGreen:'#1f6f43'
 };
+const GENDERS = ['male', 'female', 'nonbinary'];
+const LANGS = ['en', 'es', 'pt'];
+const SESSION_KEY = 'dtc.session';
+const UI_KEY = 'dtc.ui';
+const PAGE_SIZE = 4;
 
-// Choose accessible text color (#f7f9ff or #081020) based on background color
+const I18N = {
+  en: {
+    title:'Dare to Consent',
+    tagline:'Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?',
+    joinGame:'Join Game',
+    createGame:'Create Game',
+    room:'Room',
+    players:'Players',
+    startGame:'Start Game',
+    resumeGame:'Resume Game',
+    waitingForPlayers:'Waiting for at least 3 players',
+    yourName:'Your name',
+    yourGender:'Your gender',
+    prefer:'You prefer dares with players who are',
+    male:'male',
+    female:'female',
+    nonbinary:'nonbinary/other',
+    language:'Language',
+    english:'English',
+    spanish:'Spanish',
+    portuguese:'Portuguese',
+    join:'Join',
+    create:'Create',
+    theme:'Theme',
+    changeName:'Change name',
+    chooseColor:'Choose your color',
+    useSelfie:'Use selfie',
+    addPlayers:'Add Players',
+    leaveGame:'Leave game',
+    share:'Share this link',
+    yourTurn:'It is your turn',
+    chooseDareMode:'Choose a dare and see who will do it with you',
+    choosePlayerMode:'Choose a person and see what dares they will do with you',
+    chooseDare:'Choose a dare',
+    choosePlayer:'Choose a player',
+    waitingChoose:'Waiting for {name} to choose',
+    waitingRespond:'Waiting for {name} to respond',
+    waitingPerform:'Waiting for {a} and {b} to do: {dare}',
+    waitingAdd:'Waiting for {name} to add a new dare',
+    consentPlayers:'Click a player to edit which dares you consent to do with them:',
+    consentDares:'Click a dare to edit which players you consent to do the dare with:',
+    consentCount:'consents to {count} dares',
+    dareCount:'{count} players consent',
+    oneDare:'consents to 1 dare',
+    onePlayer:'1 player consents',
+    back:'Back',
+    save:'Save',
+    submit:'Submit',
+    sendNow:'Send Now',
+    yesPlease:'Yes please',
+    noThanks:'No thanks',
+    sendingIn:'Sending in {seconds}',
+    selectedDare:'{name} has chosen "{dare}"',
+    chosenYou:'{name} wants to see what dares you will do with them',
+    activeOptionsPlayers:'Choose who to do this dare with, or pass',
+    activeOptionsDares:'Choose what dare to do with {name}, or pass',
+    pass:'Pass',
+    weDidIt:'We did it',
+    noOptions:'No current matches. You can pass.',
+    areYouSure:'You previously said you did not want this dare with this person. Continue?',
+    addDareTitle:'You get to write a new dare',
+    newDare:'New dare',
+    addToMenu:'Add to Menu',
+    examples:'Choose one of these',
+    milder:'Show milder dares',
+    spicier:'Show spicier dares',
+    onboardingTitle:'Set your dare preferences',
+    onboardingHelp:'For this dare, choose who you would do it with.',
+    joinedTitle:'{name} has joined!',
+    joinedHelp:'Choose which dares you consent to do with this player.',
+    newDareTitle:'A new dare has been added',
+    newDareHelp:'You consent to this dare with:',
+    mature:'Mature content',
+    matureBody:'This game is intended for adults 18 years or older.',
+    adult:'I am 18+',
+    under:'I am too young',
+    ok:'OK',
+    cancel:'Cancel',
+    loading:'Loading',
+    uploadFailed:'Selfie upload failed. Please try a smaller photo.'
+  },
+  es: {
+    title:'Dare to Consent',
+    tagline:'¿Jugarías a la botella si solo eligiera personas que QUIEREN besarse?',
+    joinGame:'Unirse al juego',
+    createGame:'Crear juego',
+    room:'Sala',
+    players:'Jugadores',
+    startGame:'Empezar juego',
+    resumeGame:'Reanudar juego',
+    waitingForPlayers:'Esperando al menos 3 jugadores',
+    yourName:'Tu nombre',
+    yourGender:'Tu género',
+    prefer:'Prefieres retos con jugadores que son',
+    male:'hombre',
+    female:'mujer',
+    nonbinary:'no binario/otro',
+    language:'Idioma',
+    english:'Inglés',
+    spanish:'Español',
+    portuguese:'Portugués',
+    join:'Unirse',
+    create:'Crear',
+    theme:'Tema',
+    changeName:'Cambiar nombre',
+    chooseColor:'Elige tu color',
+    useSelfie:'Usar selfie',
+    addPlayers:'Agregar jugadores',
+    leaveGame:'Salir del juego',
+    share:'Comparte este enlace',
+    yourTurn:'Es tu turno',
+    chooseDareMode:'Elige un reto y mira quién lo hará contigo',
+    choosePlayerMode:'Elige una persona y mira qué retos hará contigo',
+    chooseDare:'Elige un reto',
+    choosePlayer:'Elige un jugador',
+    waitingChoose:'Esperando a que {name} elija',
+    waitingRespond:'Esperando la respuesta de {name}',
+    waitingPerform:'Esperando a que {a} y {b} hagan: {dare}',
+    waitingAdd:'Esperando a que {name} agregue un nuevo reto',
+    consentPlayers:'Toca un jugador para editar qué retos aceptas hacer con esa persona:',
+    consentDares:'Toca un reto para editar con qué jugadores aceptas hacerlo:',
+    consentCount:'acepta {count} retos',
+    dareCount:'{count} jugadores aceptan',
+    oneDare:'acepta 1 reto',
+    onePlayer:'1 jugador acepta',
+    back:'Atrás',
+    save:'Guardar',
+    submit:'Enviar',
+    sendNow:'Enviar ahora',
+    yesPlease:'Sí, por favor',
+    noThanks:'No, gracias',
+    sendingIn:'Enviando en {seconds}',
+    selectedDare:'{name} eligió "{dare}"',
+    chosenYou:'{name} quiere ver qué retos harías con él/ella',
+    activeOptionsPlayers:'Elige con quién hacer este reto, o pasa',
+    activeOptionsDares:'Elige qué reto hacer con {name}, o pasa',
+    pass:'Pasar',
+    weDidIt:'Lo hicimos',
+    noOptions:'No hay coincidencias actuales. Puedes pasar.',
+    areYouSure:'Antes dijiste que no querías este reto con esta persona. ¿Continuar?',
+    addDareTitle:'Puedes escribir un nuevo reto',
+    newDare:'Nuevo reto',
+    addToMenu:'Agregar al menú',
+    examples:'Elige uno de estos',
+    milder:'Mostrar retos más suaves',
+    spicier:'Mostrar retos más picantes',
+    onboardingTitle:'Configura tus preferencias',
+    onboardingHelp:'Para este reto, elige con quién lo harías.',
+    joinedTitle:'¡{name} se unió!',
+    joinedHelp:'Elige qué retos aceptas hacer con este jugador.',
+    newDareTitle:'Se agregó un nuevo reto',
+    newDareHelp:'Aceptas este reto con:',
+    mature:'Contenido para adultos',
+    matureBody:'Este juego es para personas adultas de 18 años o más.',
+    adult:'Tengo 18+',
+    under:'Soy menor',
+    ok:'OK',
+    cancel:'Cancelar',
+    loading:'Cargando',
+    uploadFailed:'No se pudo subir la selfie. Prueba con una foto más pequeña.'
+  },
+  pt: {
+    title:'Dare to Consent',
+    tagline:'Você jogaria Verdade ou Consequência se ele só escolhesse pessoas que QUEREM se beijar?',
+    joinGame:'Entrar no jogo',
+    createGame:'Criar jogo',
+    room:'Sala',
+    players:'Jogadores',
+    startGame:'Começar jogo',
+    resumeGame:'Retomar jogo',
+    waitingForPlayers:'Aguardando pelo menos 3 jogadores',
+    yourName:'Seu nome',
+    yourGender:'Seu gênero',
+    prefer:'Você prefere desafios com jogadores que são',
+    male:'homem',
+    female:'mulher',
+    nonbinary:'não binário/outro',
+    language:'Idioma',
+    english:'Inglês',
+    spanish:'Espanhol',
+    portuguese:'Português',
+    join:'Entrar',
+    create:'Criar',
+    theme:'Tema',
+    changeName:'Mudar nome',
+    chooseColor:'Escolha sua cor',
+    useSelfie:'Usar selfie',
+    addPlayers:'Adicionar jogadores',
+    leaveGame:'Sair do jogo',
+    share:'Compartilhe este link',
+    yourTurn:'É a sua vez',
+    chooseDareMode:'Escolha um desafio e veja quem fará com você',
+    choosePlayerMode:'Escolha uma pessoa e veja quais desafios ela fará com você',
+    chooseDare:'Escolha um desafio',
+    choosePlayer:'Escolha um jogador',
+    waitingChoose:'Aguardando {name} escolher',
+    waitingRespond:'Aguardando resposta de {name}',
+    waitingPerform:'Aguardando {a} e {b} fazerem: {dare}',
+    waitingAdd:'Aguardando {name} adicionar um novo desafio',
+    consentPlayers:'Toque em um jogador para editar quais desafios você aceita fazer com essa pessoa:',
+    consentDares:'Toque em um desafio para editar com quais jogadores você aceita fazê-lo:',
+    consentCount:'aceita {count} desafios',
+    dareCount:'{count} jogadores aceitam',
+    oneDare:'aceita 1 desafio',
+    onePlayer:'1 jogador aceita',
+    back:'Voltar',
+    save:'Salvar',
+    submit:'Enviar',
+    sendNow:'Enviar agora',
+    yesPlease:'Sim, por favor',
+    noThanks:'Não, obrigado',
+    sendingIn:'Enviando em {seconds}',
+    selectedDare:'{name} escolheu "{dare}"',
+    chosenYou:'{name} quer ver quais desafios você faria com ele/ela',
+    activeOptionsPlayers:'Escolha com quem fazer este desafio, ou passe',
+    activeOptionsDares:'Escolha qual desafio fazer com {name}, ou passe',
+    pass:'Passar',
+    weDidIt:'Nós fizemos',
+    noOptions:'Não há combinações atuais. Você pode passar.',
+    areYouSure:'Você disse antes que não queria este desafio com esta pessoa. Continuar?',
+    addDareTitle:'Você pode escrever um novo desafio',
+    newDare:'Novo desafio',
+    addToMenu:'Adicionar ao menu',
+    examples:'Escolha um destes',
+    milder:'Mostrar desafios mais leves',
+    spicier:'Mostrar desafios mais picantes',
+    onboardingTitle:'Defina suas preferências',
+    onboardingHelp:'Para este desafio, escolha com quem você faria.',
+    joinedTitle:'{name} entrou!',
+    joinedHelp:'Escolha quais desafios você aceita fazer com este jogador.',
+    newDareTitle:'Um novo desafio foi adicionado',
+    newDareHelp:'Você aceita este desafio com:',
+    mature:'Conteúdo adulto',
+    matureBody:'Este jogo é destinado a adultos com 18 anos ou mais.',
+    adult:'Tenho 18+',
+    under:'Sou menor',
+    ok:'OK',
+    cancel:'Cancelar',
+    loading:'Carregando',
+    uploadFailed:'Falha ao enviar a selfie. Tente uma foto menor.'
+  }
+};
+
+let THEMES = null;
+let selectedTheme = 'Sensual';
+let peekedRoom = null;
+let state = { room:null, me:{ name:'', id:null, language:'en', gender:'nonbinary', preferredGenders:[...GENDERS] } };
+let local = { edit:null, prompt:{}, exampleOffsets:{} };
+
+function lang(){ return state.me.language || loadSession()?.language || 'en'; }
+function t(key, vars={}){
+  const s = (I18N[lang()]?.[key] || I18N.en[key] || key).toString();
+  return s.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
+}
+function escapeHtml(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
+}
+function escapeAttr(s){ return escapeHtml(s).replace(/`/g, '&#96;'); }
+function sanitizeInput(s, max){ return String(s == null ? '' : s).replace(/[\x00-\x1F\x7F]/g, '').trim().slice(0, max); }
 function contrastOn(hex){
   try {
-    const rgb = (hex||'#000').replace('#','').trim();
-    const to255 = (s)=>parseInt(s,16);
-    let r,g,b;
-    if (rgb.length===3){
-      r = to255(rgb[0]+rgb[0]); g = to255(rgb[1]+rgb[1]); b = to255(rgb[2]+rgb[2]);
-    } else {
-      r = to255(rgb.slice(0,2)); g = to255(rgb.slice(2,4)); b = to255(rgb.slice(4,6));
-    }
-    const srgb = [r,g,b].map(v=>{
-      v/=255;
-      return v<=0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
-    });
-    const Lbg = 0.2126*srgb[0] + 0.7152*srgb[1] + 0.0722*srgb[2];
-    const light = '#f7f9ff';
-    const dark = '#081020';
-    const Llight = (()=>{ const c=light.slice(1); const R=parseInt(c.slice(0,2),16)/255; const G=parseInt(c.slice(2,4),16)/255; const B=parseInt(c.slice(4,6),16)/255; const s=[R,G,B].map(v=>v<=0.03928? v/12.92 : Math.pow((v+0.055)/1.055,2.4)); return 0.2126*s[0]+0.7152*s[1]+0.0722*s[2]; })();
-    const Ldark = (()=>{ const c=dark.slice(1); const R=parseInt(c.slice(0,2),16)/255; const G=parseInt(c.slice(2,4),16)/255; const B=parseInt(c.slice(4,6),16)/255; const s=[R,G,B].map(v=>v<=0.03928? v/12.92 : Math.pow((v+0.055)/1.055,2.4)); return 0.2126*s[0]+0.7152*s[1]+0.0722*s[2]; })();
-    const contrast = (L1,L2)=>{ const a=Math.max(L1,L2), b=Math.min(L1,L2); return (a+0.05)/(b+0.05); };
-    return contrast(Lbg, Llight) >= contrast(Lbg, Ldark) ? light : dark;
+    const rgb = (hex||'#000').replace('#','');
+    const r = parseInt(rgb.slice(0,2),16), g = parseInt(rgb.slice(2,4),16), b = parseInt(rgb.slice(4,6),16);
+    const yiq = ((r*299)+(g*587)+(b*114))/1000;
+    return yiq >= 150 ? '#081020' : '#f7f9ff';
   } catch { return '#f7f9ff'; }
 }
-// --- Sanitization helpers ---
-function escapeHtml(s){
-  const str = (s == null ? '' : String(s));
-  return str.replace(/[&<>"']/g, m => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  }[m]));
+function loadSession(){ try { return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch { return null; } }
+function saveSession(part){ try { localStorage.setItem(SESSION_KEY, JSON.stringify({ ...(loadSession() || {}), ...part })); } catch {} }
+function clearSession(){ try { localStorage.removeItem(SESSION_KEY); } catch {} }
+function loadUI(){ try { return JSON.parse(localStorage.getItem(UI_KEY) || 'null'); } catch { return null; } }
+function saveUI(part){ try { localStorage.setItem(UI_KEY, JSON.stringify({ ...(loadUI() || {}), ...part })); } catch {} }
+function meId(){ return state.me?.id || null; }
+function mePlayer(){ return state.room?.players?.find(p => p.id === meId()) || null; }
+function player(id){ return state.room?.players?.find(p => p.id === id) || null; }
+function dare(id){ return state.room?.dareMenu?.find(d => d.id === id) || null; }
+function activeId(){ return state.room?.turn?.order?.[state.room?.turn?.index] || null; }
+function activePlayer(){ return player(activeId()); }
+function isActive(){ return !!meId() && meId() === activeId(); }
+function secondsLeft(){
+  const end = state.room?.turn?.timerEndsAt || 0;
+  return Math.max(0, Math.ceil((end - Date.now()) / 1000));
 }
-function escapeAttr(s){
-  // Attribute-safe (includes quotes)
-  return escapeHtml(s).replace(/`/g, '&#96;');
+function countText(n, kind){
+  if (kind === 'dare') return n === 1 ? t('oneDare') : t('consentCount', { count:n });
+  return n === 1 ? t('onePlayer') : t('dareCount', { count:n });
 }
-function sanitizeInput(s, max){
-  // Strip control chars; enforce max length
-  const out = String(s == null ? '' : s).replace(/[\x00-\x1F\x7F]/g, '');
-  return typeof max === 'number' ? out.slice(0, max) : out;
+function avatarHtml(p, small=false){
+  if (p?.avatarUrl) return `<span class="avatar ${small?'small':''}"><img src="${escapeAttr(p.avatarUrl)}" alt=""></span>`;
+  const bg = COLOR_HEX[p?.color] || '#1b2030';
+  const tc = contrastOn(bg);
+  return `<span class="avatar color ${small?'small':''}" style="background:${bg};color:${tc}">${escapeHtml((p?.name || '?').slice(0,1).toUpperCase())}</span>`;
 }
-
-let state = { room:null, me:{ name:'', color:'' } };
-let local = { addAfterComplete:false, lastCompleterId:null, desiredColor:null };
-let peekedRoom = null;
-let absentDialog = { promptId: null, el: null };
-
-function navigate(hash){ location.hash = hash; render(); }
-
-let selectedTheme = 'Sensual';
-
-function titleView(){
-  const codeInHash = location.hash?.slice(1) || '';
-  const hostName = peekedRoom ? peekedRoom.players.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
-  const subtitle = codeInHash && hostName ? `Join ${escapeHtml(hostName)}'s game` : "Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?";
-  return `
-  <div class="card">
-    <h1>Dare to Consent</h1>
-    <p>${subtitle}</p>
-    <p>Gather your most uninhibited friends to play the <a href="https://github.com/DaringGames/DareToConsent/" target="_blank" rel="noopener noreferrer">free-to-print card game</a> or play online:</p>
-    <div class="grid-landing${codeInHash ? ' single' : ''}">
-      <div class="card panel">
-        <h3>Join Game</h3>
-        <input id="join-code" placeholder="three-words-like-this" value="${escapeAttr(codeInHash)}" maxlength="64" />
-        <input id="join-name" placeholder="Your name" value="${escapeAttr((state?.me?.name || (loadSession()?.name || '')).toString().slice(0,30))}" maxlength="30" />
-        <button class="primary" id="join-btn">Join</button>
-      </div>
-      ${codeInHash ? '' : `<div class="or">or</div>`}
-      ${codeInHash ? '' : `
-        <div class="card panel">
-          <h3>Create Game</h3>
-          <select id="create-theme">
-            ${THEMES ? Object.keys(THEMES).map(k=>`<option value="${k}" ${k===selectedTheme?'selected':''}>Theme: ${THEMES[k].name} Dares</option>`).join('') : `<option value="Sensual" selected>Theme: Sensual Dares</option>`}
-          </select>
-          <input id="create-name" placeholder="Your name" maxlength="30" />
-          <button class="primary" id="create-btn">Create</button>
-        </div>
-      `}
-    </div>
-  </div>`;
+function namePill(p){
+  return `<span class="player-pill">${avatarHtml(p, true)}<span>${escapeHtml(p?.name || 'Player')}</span></span>`;
 }
 
-// Theme data
-let THEMES = null;
 async function loadThemes(){
-  // Try split directory first via index.json, then fall back to monolithic themes.json
   try {
     const idxRes = await fetch('/data/themes/index.json', { cache: 'no-store' });
     if (idxRes.ok) {
-      const list = await idxRes.json(); // array of theme names or filenames
-      const names = Array.isArray(list) ? list : [];
-      const fetches = names.map(n => {
-        const base = (n || '').toString().replace(/\.json$/i, '');
-        const url = `/data/themes/${encodeURIComponent(base)}.json`;
-        return fetch(url, { cache: 'no-store' })
-          .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-          .then(json => [base, json]);
-      });
-      const entries = await Promise.all(fetches);
+      const list = await idxRes.json();
+      const entries = await Promise.all((Array.isArray(list) ? list : []).map(n => {
+        const base = String(n || '').replace(/\.json$/i, '');
+        return fetch(`/data/themes/${encodeURIComponent(base)}.json`, { cache:'no-store' }).then(r => r.json()).then(json => [base, json]);
+      }));
       THEMES = entries.reduce((acc, [k, v]) => { acc[k] = v; return acc; }, {});
       render();
       return;
     }
   } catch (e) {
-    console.warn('Failed to load split theme files; falling back to monolithic themes.json', e);
+    console.warn('Failed to load split themes', e);
   }
   try {
-    const res = await fetch('/data/themes.json', { cache: 'no-store' });
-    THEMES = await res.json();
+    THEMES = await (await fetch('/data/themes.json', { cache:'no-store' })).json();
     render();
   } catch (e) {
-    console.error('Failed to load themes (both split and monolithic)', e);
+    console.error('Failed to load themes', e);
   }
 }
+function localizedExample(ex){
+  const l = lang();
+  const tr = ex?.translations?.[l] || ex?.i18n?.[l] || null;
+  return {
+    ...ex,
+    title: tr?.title || ex?.[`title_${l}`] || ex?.title || '',
+    extra: tr?.extra || ex?.[`extra_${l}`] || ex?.extra || ''
+  };
+}
+function examplesListForTheme(theme){
+  const tData = THEMES?.[theme];
+  const room = state.room;
+  const taken = new Set((room?.dareMenu || []).map(d => (d.title || '').trim().toLowerCase()));
+  const raw = Array.isArray(tData?.examples) ? tData.examples : [];
+  return raw
+    .filter(ex => !taken.has((ex?.title || '').trim().toLowerCase()))
+    .map((ex, i) => ({ ...localizedExample(ex), __idx:i, sp: typeof ex.spicyness === 'number' ? ex.spicyness : 0 }))
+    .sort((a,b) => (a.sp - b.sp) || (a.__idx - b.__idx));
+}
 
-function profileMenuHtml(r){
-  const name = state.me?.name || 'Player';
-  const meId = state.me?.id || r?.players.find(p=>p.name===state.me.name && p.color===state.me.color)?.id;
-  const me = (r?.players||[]).find(p=>p.id===meId);
-  const colorHex = COLOR_HEX[me?.color || state.me?.color] || '#1b2030';
-  const textColor = contrastOn(colorHex);
-  const taken = new Set((r?.players||[]).filter(p=>p.id!==meId).map(p=>p.color).filter(Boolean));
-  const swatches = COLORS.map(c=>{
-    const isTaken = taken.has(c);
-    const selected = (c=== (me?.color || state.me?.color)) ? 'selected' : '';
-    return `<button type="button" class="color-swatch ${selected} ${isTaken?'taken':''}" data-color="${c}" ${isTaken?'data-taken="1" disabled':''} style="background:${COLOR_HEX[c]||'#4a5168'}" title="${c}${isTaken?' (taken)':''}" aria-label="${c}${isTaken?' (taken)':''}"></button>`;
+function genderFields(prefix, selected='nonbinary', prefs=GENDERS){
+  return `
+    <label class="field-label">${t('yourGender')}</label>
+    <div class="choice-row">${GENDERS.map(g => `
+      <label><input type="radio" name="${prefix}-gender" value="${g}" ${selected===g?'checked':''}> ${t(g)}</label>
+    `).join('')}</div>
+    <label class="field-label">${t('prefer')}</label>
+    <div class="choice-row">${GENDERS.map(g => `
+      <label><input type="checkbox" name="${prefix}-pref" value="${g}" ${(prefs||[]).includes(g)?'checked':''}> ${t(g)}</label>
+    `).join('')}</div>
+  `;
+}
+function languageSelect(id, value=lang()){
+  return `<label class="field-label" for="${id}">${t('language')}</label>
+  <select id="${id}">
+    <option value="en" ${value==='en'?'selected':''}>${t('english')}</option>
+    <option value="es" ${value==='es'?'selected':''}>${t('spanish')}</option>
+    <option value="pt" ${value==='pt'?'selected':''}>${t('portuguese')}</option>
+  </select>`;
+}
+function collectProfile(prefix){
+  const name = sanitizeInput($(`#${prefix}-name`)?.value || 'Player', 30) || 'Player';
+  const gender = $(`input[name="${prefix}-gender"]:checked`)?.value || 'nonbinary';
+  const preferredGenders = $$(`input[name="${prefix}-pref"]:checked`).map(x => x.value);
+  const language = $(`#${prefix}-language`)?.value || lang();
+  return { name, gender, preferredGenders: preferredGenders.length ? preferredGenders : [...GENDERS], language };
+}
+
+function titleView(){
+  const codeInHash = location.hash?.slice(1) || '';
+  const sess = loadSession() || {};
+  const hostName = peekedRoom ? peekedRoom.players?.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
+  const subtitle = codeInHash && hostName ? `Join ${escapeHtml(hostName)}'s game` : t('tagline');
+  return `
+    <section class="card landing">
+      <h1>${t('title')}</h1>
+      <p>${subtitle}</p>
+      <div class="grid-landing${codeInHash ? ' single' : ''}">
+        <div class="panel">
+          <h3>${t('joinGame')}</h3>
+          <input id="join-code" placeholder="three-words-like-this" value="${escapeAttr(codeInHash)}" maxlength="64">
+          <input id="join-name" placeholder="${t('yourName')}" value="${escapeAttr(sess.name || '')}" maxlength="30">
+          ${genderFields('join', sess.gender || 'nonbinary', sess.preferredGenders || GENDERS)}
+          ${languageSelect('join-language', sess.language || lang())}
+          <button class="primary" id="join-btn">${t('join')}</button>
+        </div>
+        ${codeInHash ? '' : `<div class="or">or</div>
+        <div class="panel">
+          <h3>${t('createGame')}</h3>
+          <select id="create-theme">
+            ${(THEMES ? Object.keys(THEMES) : ['Sensual']).map(k => `<option value="${escapeAttr(k)}" ${k===selectedTheme?'selected':''}>${t('theme')}: ${escapeHtml(THEMES?.[k]?.name || k)}</option>`).join('')}
+          </select>
+          <input id="create-name" placeholder="${t('yourName')}" value="${escapeAttr(sess.name || '')}" maxlength="30">
+          ${genderFields('create', sess.gender || 'nonbinary', sess.preferredGenders || GENDERS)}
+          ${languageSelect('create-language', sess.language || lang())}
+          <button class="primary" id="create-btn">${t('create')}</button>
+        </div>`}
+      </div>
+    </section>`;
+}
+
+function profileMenuHtml(room){
+  const me = mePlayer() || state.me;
+  const taken = new Set((room?.players||[]).filter(p => p.id !== meId()).map(p => p.color).filter(Boolean));
+  const swatches = COLORS.map(c => {
+    const disabled = taken.has(c);
+    return `<button type="button" class="color-swatch ${me?.color===c?'selected':''} ${disabled?'taken':''}" data-color="${c}" ${disabled?'disabled':''} style="background:${COLOR_HEX[c]||'#4a5168'}" title="${c}"></button>`;
   }).join('');
   return `
     <div class="profile">
-      <button id="profile-menu-toggle" class="pill name" style="background:${colorHex};color:${textColor}" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu">
-        ${escapeHtml(name)} <span class="caret">▾</span>
-      </button>
+      <button id="profile-menu-toggle" class="profile-toggle">${avatarHtml(me)}<span>${escapeHtml(me?.name || 'Player')}</span><span class="caret">▾</span></button>
       <div id="profile-menu" class="dropdown">
-        <div class="menu-row"><button id="change-name">Change name</button></div>
-        <div class="section-title">Choose your color</div>
+        <div class="menu-row"><button id="change-name">${t('changeName')}</button></div>
+        <label class="field-label">${t('chooseColor')}</label>
         <div class="color-palette">${swatches}</div>
-        <div class="menu-row"><button id="add-players">Add Players</button></div>
-        <div class="menu-row"><button id="leave-game" class="danger">Leave game</button></div>
+        <div class="menu-row">
+          <label class="file-button">${t('useSelfie')}<input id="selfie-input" type="file" accept="image/*" capture="user"></label>
+        </div>
+        ${languageSelect('profile-language', me?.language || lang())}
+        <div class="menu-row"><button id="add-players">${t('addPlayers')}</button></div>
+        <div class="menu-row"><button id="leave-game" class="danger">${t('leaveGame')}</button></div>
       </div>
     </div>`;
 }
-
 function lobbyView(){
   const r = state.room;
   const url = `${location.origin}/#${r.code}`;
   const connectedCount = (r.players || []).filter(p => p.connected !== false).length;
   const canProceed = connectedCount >= 3;
-
-  const startControls = `
-      <div class="col">
-        ${r.paused ? `
-          <button class="primary" id="resume-game" ${canProceed ? '' : 'disabled'}>${canProceed ? 'Resume Game' : 'Waiting for at least 3 players'}</button>
-        ` : `
-          <button class="primary" id="start-game" ${canProceed ? '' : 'disabled'}>${canProceed ? 'Start Game' : 'Waiting for at least 3 players'}</button>
-        `}
-      </div>
-    `;
-
   return `
-  <div class="card">
-    <div class="row between">
-      <h2>Room: ${escapeHtml(r.code)}</h2>
-      ${profileMenuHtml(r)}
-    </div>
-    <div class="qr"><div id="qr"></div></div>
-    <small>Share this link: <a href="${url}">${url}</a></small>
-    <h3>Players</h3>
-    <div class="players">${r.players.map(p=>{ const bg = COLOR_HEX[p.color]||'#1b2030'; const tc = contrastOn(bg); return `<span class="pill name" style="background:${bg};color:${tc}">${escapeHtml(p.name)}</span>`; }).join('')}</div>
-    ${startControls}
-  </div>`;
-}
-
-function seedForTheme(key){
-  const t = THEMES?.[key];
-  return t?.starts?.map(s => ({ title: s.title, extra: s.extra })) || [];
-}
-
-function dareButtonsHtml(){
-  const r = state.room; if (!r) return '';
-  const list = r.dareMenu || [];
-  const last = Math.max(0, list.length - 1);
-  return `<div class="grid">${list.map((d,i)=>`
-    <button class="dare-btn ${i===last?'highlight':''}" data-dare-select="${i}">
-      <div class="dare-btn-title">Dare: ${escapeHtml(d.title)}</div>
-      ${d.extra ? `<div class="dare-btn-extra">🌶️ Extra Challenge: ${escapeHtml(d.extra)}</div>` : ''}
-    </button>
-  `).join('')}</div>`;
-}
-
-function chosenDareHtml(){
-  const r = state.room; if (!r) return '';
-  const idx = r.turn?.selectedDareIndex;
-  if (idx==null) return '';
-  const d = r.dareMenu?.[idx];
-  if (!d) return '';
-  return `<div class="card">
-    <p><b>Dare: ${escapeHtml(d.title)}</b></p>
-    ${d.extra ? `<p><small>🌶️ Extra Challenge: ${escapeHtml(d.extra)}</small></p>` : ''}
-  </div>`;
-}
-
-function submissionsTable(){
-  const r = state.room; if (!r) return '';
-  const meId = state.me?.id || r?.players.find(p=>p.name===state.me.name && p.color===state.me.color)?.id;
-  const activeId = r?.turn?.order?.[r.turn.index];
-  const isActive = meId === activeId;
-
-  const rows = (r.players||[])
-    // Exclude only the active player (they don't respond). Include my own row.
-    .filter(p => (!activeId || p.id !== activeId))
-    .map(p=>{
-      const sub = (r.turn?.submissions||[]).find(s => s.playerId === p.id);
-      // Only the active player can see response details
-      const resp = (sub && isActive && sub.response) ? sub.response : null;
-      const bg = COLOR_HEX[p.color] || '#1b2030';
-      const tc = contrastOn(bg);
-
-      const label =
-        resp === 'HECK_YES' ? "I'll do the dare AND the extra challenge!" :
-        resp === 'YES_PLEASE' ? "I'll do the dare (but not the extra challenge)" :
-        resp === 'NO_THANKS' ? "No Thanks" : '';
-
-      const isAffirm = resp === 'HECK_YES' || resp === 'YES_PLEASE';
-      const chooseCell = (isActive && isAffirm) ? `<button class="btn-did-it" data-did-it="${p.id}">We did it</button>` : '';
-
-      const cell = resp
-        ? `<span class="response-${resp}">${label}</span>`
-        : (sub ? `<span class="muted">Responded</span>` : `<span class="muted">Waiting . . .</span>`);
-
-      return `<tr>
-        <td><span class="pill name" style="background:${bg};color:${tc}">${escapeHtml(p?.name||'Player')}</span></td>
-        <td>${cell}</td>
-        ${isActive ? `<td class="choose-cell">${chooseCell}</td>` : ''}
-      </tr>`;
-    }).join('');
-
-  const head = `<thead><tr><th>Player</th><th>Response</th>${isActive ? '<th class="choose-col">Choose</th>' : ''}</tr></thead>`;
-
-  return `<table class="table">
-    ${head}
-    <tbody>${rows}</tbody>
-  </table>`;
-}
-
-function mainView(){
-  const r = state.room; if (!r) return '';
-  const meId = state.me?.id || r?.players.find(p=>p.name===state.me.name && p.color===state.me.color)?.id;
-  const isMyTurn = r?.turn?.order?.[r.turn.index]===meId;
-  const curId = r?.turn?.order?.[r.turn.index];
-  const curPlayer = r.players.find(p=>p.id===curId);
-  const idx = r?.turn?.selectedDareIndex;
-
-  // "Add a dare" lock: after a highlighted dare was completed, only the completer may write a new dare
-  const addingLock = r?.turn?.status === 'adding';
-  const addingBy = r?.turn?.addingBy || null;
-  const isAddingOwner = !!(meId && addingBy && addingBy === meId);
-  const writingName = (r.players.find(p => p.id === addingBy)?.name) || 'Player';
-
-  // Do not show the "add-a-dare" gating when I'm currently expected to act
-  // (either it's my turn, or a dare is selected and I haven't responded yet).
-  const mySubEarly = (r.turn?.submissions || []).find(s => s.playerId === meId);
-  const busyNow = !!(isMyTurn || (idx != null && !mySubEarly));
-  // Only the player who clicked "We did it" (the completer) should ever see the add-a-dare UI
-  const isCompleter = !!(local?.lastCompleterId && meId && local.lastCompleterId === meId);
-  // Show add UI if server says we're the writer; fall back to local flags for legacy persistence
-  const showAddOnly = (addingLock && isAddingOwner) || (!!local.addAfterComplete && isCompleter && !busyNow && isAddingOwner);
-
-let header = '';
-if (showAddOnly) {
-  header = 'You get to write a new dare!';
-} else if (addingLock && !isAddingOwner) {
-  // While a new dare is being written by someone else, everyone else waits
-  header = `Waiting for ${writingName} to write a new dare`;
-} else if (idx == null) {
-  // No dare selected yet: this is the "choose a dare" phase
-  header = isMyTurn ? 'Choose a dare to perform with another player' : `Waiting for ${curPlayer?.name||'Player'} to choose a dare`;
-} else {
-  const subs = r.turn?.submissions || [];
-  if (isMyTurn) {
-    const expected = r.players.filter(p => p.id !== curId && p.connected !== false).length;
-    const gotPositive = subs.some(s => s.response === 'HECK_YES' || s.response === 'YES_PLEASE');
-    if (!gotPositive && subs.length < expected) header = 'Waiting for responses . . . ';
-    else if (gotPositive) header = 'Choose who to do your dare with (or pass)';
-    else header = "Tell the group you've decided to pass";
-  } else {
-    const mySub = subs.find(s => s.playerId === meId);
-    const expected = r.players.filter(p => p.id !== curId && p.connected !== false).length;
-    if (!mySub) header = `Do this Dare with ${curPlayer?.name||'Player'}?`;
-    else if (subs.length < expected) header = 'Waiting for more responses';
-    else header = `Waiting for ${curPlayer?.name||'Player'}`;
-  }
-}
-
-  
-  let body = '';
-  if (showAddOnly) {
-    body = `
-    <div class="card">
-      <h3 class="add-dare-title">Confer with the group, and write something more ${((THEMES?.[r.chosenTheme]?.name || r.chosenTheme || 'daring').replace(/\s*Dares\s*$/i,'').toLowerCase())} than previous dares</h3>
-      <input id="new-dare" placeholder="New dare" maxlength="120" />
-      <input id="new-extra" placeholder="Extra challenge" maxlength="160" />
-      <div class="row">
-        <button id="add-dare" class="primary">Add to Menu</button>
+    <section class="card">
+      <div class="row between">
+        <h2>${t('room')}: ${escapeHtml(r.code)}</h2>
+        ${profileMenuHtml(r)}
       </div>
-      <div class="or-section">
-        <div class="or-divider">— OR —</div>
-        <div><strong>Choose one of these:</strong></div>
-      </div>
-      <div id="examples" class="examples"></div>
-    </div>`;
-  } else if (idx == null) {
-    // If adding is locked by someone else, show nothing interactive
-    if (addingLock && !isAddingOwner) {
-      body = '';
-    } else {
-      body = isMyTurn ? `
-        <div class="card">
-          ${dareButtonsHtml()}
-          <div class="dare-highlight-note">If you perform the highlighted dare, you get to write a new dare!</div>
-        </div>
-      ` : '';
-    }
-  } else {
-    // Dare selected
-    const myResp = (r.turn?.submissions||[]).find(s => s.playerId === meId)?.response || null;
-    const subsAll = r.turn?.submissions || [];
-    const gotAffirmative = subsAll.some(s => s.response === 'HECK_YES' || s.response === 'YES_PLEASE');
-    const actionCard = isMyTurn ? `
-      <div class="card">
-        <div class="grid">
-          <button id="btn-passed" class="btn-passed danger">I passed</button>
-        </div>
-      </div>
-    ` : `
-      <div class="card">
-        <div class="grid">
-          <div class="response-label" style="font-weight:600; margin: 0 0 6px 0;">Your response:</div>
-          <button data-resp="HECK_YES" class="btn-response HECK_YES ${myResp==='HECK_YES'?'selected':''}">I'll do the dare AND the extra challenge!</button>
-          <button data-resp="YES_PLEASE" class="btn-response YES_PLEASE ${myResp==='YES_PLEASE'?'selected':''}">I'll do the dare (but not the extra challenge)</button>
-          <button data-resp="NO_THANKS" class="btn-response NO_THANKS ${myResp==='NO_THANKS'?'selected':''}">No Thanks</button>
-        </div>
-      </div>
-    `;
-    body = `
-      ${chosenDareHtml()}
-      <div class="card">
-        ${submissionsTable()}
-      </div>
-      ${actionCard}
-    `;
-  }
-
-  return `
-  <div class="card">
-    <div class="row between">
-      <h2 aria-live="polite">${escapeHtml(header)}</h2>
-      ${profileMenuHtml(r)}
-    </div>
-    ${body}
-  </div>`;
+      <div class="qr"><div id="qr"></div></div>
+      <small>${t('share')}: <a href="${url}">${url}</a></small>
+      <h3>${t('players')}</h3>
+      <div class="players">${r.players.map(namePill).join('')}</div>
+      <button class="primary" id="${r.paused ? 'resume-game' : 'start-game'}" ${canProceed ? '' : 'disabled'}>${canProceed ? (r.paused ? t('resumeGame') : t('startGame')) : t('waitingForPlayers')}</button>
+    </section>`;
 }
-
-const PAGE_SIZE = 4;
-
-// Build filtered, sorted example list for the given theme
-function examplesListForTheme(theme){
-  const t = THEMES?.[theme];
+function statusText(){
   const r = state.room;
-  const taken = new Set((r?.dareMenu || []).map(d => `${(d.title||'').trim()}|${(d.extra||'').trim()}`.toLowerCase()));
-  const raw = Array.isArray(t?.examples) ? t.examples : [];
-  // Stable sort by spicyness ascending, fall back to original order
-  const list = raw
-    .filter(ex => !taken.has(`${(ex?.title||'').trim()}|${(ex?.extra||'').trim()}`.toLowerCase()))
-    .map((ex,i)=>({ ...ex, __idx:i, sp: (typeof ex.spicyness === 'number' ? ex.spicyness : 0) }));
-  list.sort((a,b)=> (a.sp - b.sp) || (a.__idx - b.__idx));
-  return list;
+  const turn = r?.turn;
+  const act = activePlayer();
+  if (!turn) return '';
+  if (turn.phase === 'adding') return turn.addingBy === meId() ? t('addDareTitle') : t('waitingAdd', { name: player(turn.addingBy)?.name || 'Player' });
+  if (turn.phase === 'performing') {
+    const a = player(turn.performing?.activeId);
+    const b = player(turn.performing?.partnerId);
+    const d = dare(turn.performing?.dareId);
+    return t('waitingPerform', { a:a?.name || 'Player', b:b?.name || 'Player', dare:d?.title || '' });
+  }
+  if (isActive()) {
+    if (turn.phase === 'chooseMode') return t('yourTurn');
+    if (turn.phase === 'chooseDare') return t('chooseDare');
+    if (turn.phase === 'choosePlayer') return t('choosePlayer');
+    if (turn.phase === 'dareRespond') return t('waitingRespond', { name:'players' });
+    if (turn.phase === 'personRespond') return t('waitingRespond', { name:player(turn.selectedPlayerId)?.name || 'Player' });
+    if (turn.phase === 'choosePartner') return t('activeOptionsPlayers');
+    if (turn.phase === 'chooseDareForPlayer') return t('activeOptionsDares', { name: player(turn.selectedPlayerId)?.name || 'Player' });
+  }
+  if (turn.phase === 'dareRespond') return t('selectedDare', { name:act?.name || 'Player', dare:dare(turn.selectedDareId)?.title || '' });
+  if (turn.phase === 'personRespond') return t('waitingRespond', { name:player(turn.selectedPlayerId)?.name || 'Player' });
+  return t('waitingChoose', { name:act?.name || 'Player' });
+}
+function defaultDashboard(){
+  const r = state.room;
+  const counts = r.me?.counts || { players:[], dares:[] };
+  const others = r.players.filter(p => p.id !== meId() && p.connected !== false);
+  return `
+    <div class="split">
+      <section>
+        <h3>${t('consentPlayers')}</h3>
+        <div class="list">${others.map(p => {
+          const count = counts.players.find(c => c.playerId === p.id)?.count || 0;
+          return `<button class="list-item" data-edit-player="${p.id}">${namePill(p)} <small>${countText(count, 'dare')}</small></button>`;
+        }).join('') || `<p><small>${t('waitingForPlayers')}</small></p>`}</div>
+      </section>
+      <section>
+        <h3>${t('consentDares')}</h3>
+        <div class="list">${r.dareMenu.map(d => {
+          const count = counts.dares.find(c => c.dareId === d.id)?.count || 0;
+          return `<button class="list-item" data-edit-dare="${d.id}"><span>${escapeHtml(d.title)}</span> <small>${countText(count, 'player')}</small></button>`;
+        }).join('')}</div>
+      </section>
+    </div>`;
+}
+function editPanel(){
+  const r = state.room;
+  const edit = local.edit;
+  if (!edit) return defaultDashboard();
+  if (edit.type === 'player') {
+    const p = player(edit.id);
+    if (!p) { local.edit = null; return defaultDashboard(); }
+    const count = r.me?.counts?.players?.find(c => c.playerId === p.id)?.count || 0;
+    return `
+      <section class="panel">
+        <button class="secondary narrow" id="back-edit">${t('back')}</button>
+        <h3>${escapeHtml(p.name)} ${countText(count, 'dare')}</h3>
+        <div class="check-list">${r.dareMenu.map(d => `
+          <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
+        `).join('')}</div>
+      </section>`;
+  }
+  const d = dare(edit.id);
+  if (!d) { local.edit = null; return defaultDashboard(); }
+  const count = r.me?.counts?.dares?.find(c => c.dareId === d.id)?.count || 0;
+  return `
+    <section class="panel">
+      <button class="secondary narrow" id="back-edit">${t('back')}</button>
+      <h3>${countText(count, 'player')} "${escapeHtml(d.title)}"</h3>
+      <div class="check-list">${r.players.filter(p => p.id !== meId() && p.connected !== false).map(p => `
+        <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${namePill(p)}</label>
+      `).join('')}</div>
+    </section>`;
+}
+function activeBody(){
+  const r = state.room;
+  const turn = r.turn;
+  const counts = r.me?.counts || { players:[], dares:[] };
+  if (!isActive()) return editPanel();
+  if (turn.phase === 'chooseMode') return `
+    <div class="panel">
+      <button class="choice-big" data-mode="dare">${t('chooseDareMode')}</button>
+      <button class="choice-big" data-mode="player">${t('choosePlayerMode')}</button>
+    </div>`;
+  if (turn.phase === 'chooseDare') return `
+    <div class="panel">
+      <h3>${t('chooseDare')}</h3>
+      <div class="list">${r.dareMenu.map(d => {
+        const count = counts.dares.find(c => c.dareId === d.id)?.count || 0;
+        return `<button class="list-item ${count===0?'disabled':''}" data-select-dare="${d.id}" ${count===0?'disabled':''}><span>${escapeHtml(d.title)}</span><small>${countText(count, 'player')}</small></button>`;
+      }).join('')}</div>
+    </div>`;
+  if (turn.phase === 'choosePlayer') return `
+    <div class="panel">
+      <h3>${t('choosePlayer')}</h3>
+      <div class="list">${r.players.filter(p => p.id !== meId() && p.connected !== false).map(p => {
+        const count = counts.players.find(c => c.playerId === p.id)?.count || 0;
+        return `<button class="list-item ${count===0?'disabled':''}" data-select-player="${p.id}" ${count===0?'disabled':''}>${namePill(p)}<small>${countText(count, 'dare')}</small></button>`;
+      }).join('')}</div>
+    </div>`;
+  if (turn.phase === 'choosePartner') {
+    const d = dare(turn.selectedDareId);
+    const yes = Object.entries(turn.responses || {}).filter(([,v]) => !!v).map(([id]) => player(id)).filter(Boolean);
+    return `
+      <div class="panel">
+        <h3>${t('activeOptionsPlayers')}</h3>
+        <p><b>${escapeHtml(d?.title || '')}</b></p>
+        <div class="list">${yes.map(p => `<button class="list-item" data-choose-partner="${p.id}">${namePill(p)}</button>`).join('') || `<p>${t('noOptions')}</p>`}</div>
+        <button class="danger" id="pass-turn">${t('pass')}</button>
+      </div>`;
+  }
+  if (turn.phase === 'chooseDareForPlayer') {
+    const p = player(turn.selectedPlayerId);
+    const yes = r.dareMenu.filter(d => turn.responses?.[d.id]);
+    return `
+      <div class="panel">
+        <h3>${t('activeOptionsDares', { name:p?.name || 'Player' })}</h3>
+        <div class="list">${yes.map(d => `<button class="list-item" data-choose-dare-final="${d.id}"><span>${escapeHtml(d.title)}</span></button>`).join('') || `<p>${t('noOptions')}</p>`}</div>
+        <button class="danger" id="pass-turn">${t('pass')}</button>
+      </div>`;
+  }
+  if (turn.phase === 'performing') {
+    const d = dare(turn.performing?.dareId);
+    const p = player(turn.performing?.partnerId);
+    return `
+      <div class="panel">
+        <h3>${escapeHtml(d?.title || '')}</h3>
+        <p>${namePill(mePlayer())} ${namePill(p)}</p>
+        <button class="primary" id="complete-turn">${t('weDidIt')}</button>
+        <button class="danger" id="pass-turn">${t('pass')}</button>
+      </div>`;
+  }
+  if (turn.phase === 'adding' && turn.addingBy === meId()) {
+    return `
+      <div class="panel">
+        <h3>${t('addDareTitle')}</h3>
+        <input id="new-dare" placeholder="${t('newDare')}" maxlength="160">
+        <button class="primary" id="add-dare">${t('addToMenu')}</button>
+        <div class="or-section">${t('examples')}</div>
+        <div id="examples"></div>
+      </div>`;
+  }
+  return editPanel();
+}
+function mainView(){
+  const r = state.room;
+  return `
+    <section class="card game">
+      <div class="row between">
+        <h2 aria-live="polite">${escapeHtml(statusText())}</h2>
+        ${profileMenuHtml(r)}
+      </div>
+      ${activeBody()}
+    </section>
+    ${overlayHtml()}`;
 }
 
-function getExampleOffset(theme){
-  try{
-    const ui = loadUI() || {};
-    const map = ui.exampleOffsets || {};
-    const n = map[theme] || 0;
-    return Math.max(0, parseInt(n,10) || 0);
-  } catch { return 0; }
+function promptState(prompt){
+  local.prompt[prompt.id] ||= {};
+  return local.prompt[prompt.id];
 }
-function setExampleOffset(theme, offset){
-  try{
-    const ui = loadUI() || {};
-    const map = ui.exampleOffsets || {};
-    map[theme] = Math.max(0, offset|0);
-    saveUI({ exampleOffsets: map });
-  } catch {}
+function overlayHtml(){
+  const r = state.room;
+  const prompt = r?.me?.pendingPrompts?.[0];
+  if (prompt) return `<div class="blocking">${promptOverlay(prompt)}</div>`;
+  const turn = r?.turn;
+  if (turn?.phase === 'dareRespond' && !isActive() && !Object.prototype.hasOwnProperty.call(turn.responses || {}, meId())) {
+    return `<div class="blocking">${dareResponseOverlay(turn)}</div>`;
+  }
+  if (turn?.phase === 'personRespond' && turn.selectedPlayerId === meId()) {
+    return `<div class="blocking">${personResponseOverlay(turn)}</div>`;
+  }
+  return '';
 }
-function shiftExamples(theme, delta){
+function promptOverlay(prompt){
+  if (prompt.type === 'onboarding') return onboardingOverlay(prompt);
+  if (prompt.type === 'new-player') return newPlayerOverlay(prompt);
+  if (prompt.type === 'new-dare') return newDareOverlay(prompt);
+  return '';
+}
+function onboardingOverlay(prompt){
+  const ps = promptState(prompt);
+  ps.step ??= 0;
+  ps.selections ||= {};
+  const cur = prompt.dares[ps.step];
+  if (!cur) return '';
+  const prev = prompt.dares[ps.step - 1];
+  ps.selections[cur.id] ||= prev ? { ...(ps.selections[prev.id] || {}) } : { ...(prompt.firstDefaults || {}) };
+  return `
+    <div class="modal-card">
+      <h3>${t('onboardingTitle')}</h3>
+      <p>${t('onboardingHelp')}</p>
+      <h2>${escapeHtml(cur.title)}</h2>
+      <div class="check-list">${(prompt.players || []).map(p => `
+        <label><input type="checkbox" data-onboard-player="${p.id}" ${ps.selections[cur.id]?.[p.id]?'checked':''}> ${namePill(p)}</label>
+      `).join('')}</div>
+      <div class="row">
+        <button class="secondary" id="onboard-prev" ${ps.step === 0 ? 'disabled' : ''}>${t('back')}</button>
+        <button class="primary" id="onboard-next">${ps.step === prompt.dares.length - 1 ? t('submit') : t('save')}</button>
+      </div>
+    </div>`;
+}
+function newPlayerOverlay(prompt){
+  const ps = promptState(prompt);
+  ps.values ||= { ...(prompt.defaults || {}) };
+  return `
+    <div class="modal-card">
+      <h3>${t('joinedTitle', { name:prompt.player?.name || 'Player' })}</h3>
+      <p>${t('joinedHelp')}</p>
+      <div class="check-list">${(prompt.dares || []).map(d => `
+        <label><input type="checkbox" data-new-player-dare="${d.id}" ${ps.values[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
+      `).join('')}</div>
+      <button class="primary" id="submit-new-player">${t('submit')}</button>
+    </div>`;
+}
+function newDareOverlay(prompt){
+  const ps = promptState(prompt);
+  ps.values ||= { ...(prompt.defaults || {}) };
+  return `
+    <div class="modal-card">
+      <h3>${t('newDareTitle')}</h3>
+      <p><b>${escapeHtml(prompt.dare?.title || '')}</b></p>
+      <p>${t('newDareHelp')}</p>
+      <div class="check-list">${(prompt.players || []).map(p => `
+        <label><input type="checkbox" data-new-dare-player="${p.id}" ${ps.values[p.id]?'checked':''}> ${namePill(p)}</label>
+      `).join('')}</div>
+      <button class="primary" id="submit-new-dare">${t('submit')}</button>
+    </div>`;
+}
+function dareResponseOverlay(turn){
+  const d = dare(turn.selectedDareId);
+  const act = activePlayer();
+  const current = !!state.room?.me?.consent?.[act?.id]?.[d?.id];
+  return `
+    <div class="modal-card">
+      <h3>${t('selectedDare', { name:act?.name || 'Player', dare:d?.title || '' })}</h3>
+      <div class="radio-stack">
+        <label><input type="radio" name="dare-response" value="yes" ${current?'checked':''}> ${t('yesPlease')}</label>
+        <label><input type="radio" name="dare-response" value="no" ${!current?'checked':''}> ${t('noThanks')}</label>
+      </div>
+      <button class="primary" id="send-dare-response">${t('sendNow')}</button>
+      <small>${t('sendingIn', { seconds:secondsLeft() })}</small>
+    </div>`;
+}
+function personResponseOverlay(turn){
+  const act = activePlayer();
+  return `
+    <div class="modal-card">
+      <h3>${t('chosenYou', { name:act?.name || 'Player' })}</h3>
+      <div class="check-list">${state.room.dareMenu.map(d => `
+        <label><input type="checkbox" data-person-dare="${d.id}" ${turn.responses?.[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
+      `).join('')}</div>
+      <button class="primary" id="send-person-response">${t('sendNow')}</button>
+      <small>${t('sendingIn', { seconds:secondsLeft() })}</small>
+    </div>`;
+}
+
+function renderExamples(){
+  const el = $('#examples');
+  if (!el) return;
+  const theme = state.room?.chosenTheme || selectedTheme;
   const list = examplesListForTheme(theme);
-  const maxStart = Math.max(0, list.length - PAGE_SIZE);
-  let cur = getExampleOffset(theme);
-  let next = cur + (delta|0);
-  if (next < 0) next = 0;
-  if (next > maxStart) next = maxStart;
-  if (next !== cur) setExampleOffset(theme, next);
-  wordCloud(theme);
-}
-function wordCloud(theme){
-  // Render 4 example dares at a time with nav, remembering position per theme
-  const c = $('#examples'); if (!c) return;
-  const themeKey = state?.room?.chosenTheme || theme;
-  const list = examplesListForTheme(themeKey);
-  const offset = getExampleOffset(themeKey);
+  const offset = local.exampleOffsets[theme] || 0;
   const page = list.slice(offset, offset + PAGE_SIZE);
-  const canPrev = offset > 0;
-  const canNext = (offset + PAGE_SIZE) < list.length;
-
-  const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
-
-  const rows = page.map((ex,i)=>`
-    <tr>
-      <td class="ex-cell-btn">
-        <button class="dare-btn example-dare" data-example-index="${offset + i}" data-title="${esc(ex.title)}" data-extra="${ex.extra ? esc(ex.extra) : ''}" data-score="${(ex.spicyness!=null?ex.spicyness:'')}">
-          <div class="dare-btn-title">Dare: ${escapeHtml(ex.title)}</div>
-          <div class="dare-btn-extra">🌶️ Extra Challenge: ${escapeHtml(ex.extra)}</div>
-        </button>
-      </td>
-      <td class="ex-cell-spice">
-        <span class="spice-badge" title="Spiciness: ${(ex.sp!=null?ex.sp:(ex.spicyness!=null?ex.spicyness:''))}">
-          <span class="pepper" aria-hidden="true">🌶️</span>
-          <span class="spice-num">${(ex.sp!=null?ex.sp:(ex.spicyness!=null?ex.spicyness:''))}</span>
-        </span>
-      </td>
-    </tr>
-  `).join('');
-
-  const table = `<table class="table examples-table"><tbody>${rows}</tbody></table>`;
-
-  const nav = `
+  el.innerHTML = `
+    <div class="list">${page.map(ex => `<button class="list-item" data-example-title="${escapeAttr(ex.title)}"><span>${escapeHtml(ex.title)}</span><small>${ex.sp}</small></button>`).join('')}</div>
     <div class="examples-nav">
-      <button id="examples-prev" class="btn-examples-prev" ${canPrev ? '' : 'disabled'}>❄️ Show milder dares</button>
-      <button id="examples-next" class="btn-examples-next" ${canNext ? '' : 'disabled'}>🌶️ Show spicier dares</button>
-    </div>
-  `;
-
-  c.innerHTML = table + nav;
-  $('#examples-prev')?.addEventListener('click', ()=> shiftExamples(themeKey, -PAGE_SIZE));
-  $('#examples-next')?.addEventListener('click', ()=> shiftExamples(themeKey, PAGE_SIZE));
+      <button id="examples-prev" ${offset <= 0 ? 'disabled' : ''}>${t('milder')}</button>
+      <button id="examples-next" ${(offset + PAGE_SIZE) >= list.length ? 'disabled' : ''}>${t('spicier')}</button>
+    </div>`;
 }
 
 function render(){
   const root = $('#app');
   const r = state.room;
-  let html = '';
-  if (!r) html = titleView();
-  else if (r.state==='lobby') html = lobbyView();
-  else if (r.state==='main') html = mainView();
-  root.innerHTML = html;
-// Update document title from the first h2 on the page (status headline)
-try {
-  const h2 = root.querySelector('h2');
-  const status = (h2 && h2.textContent) ? h2.textContent.trim() : '';
-  document.title = `Dare to Consent${status ? ' — ' + status : ''}`;
-} catch {}
+  root.innerHTML = !r ? titleView() : (r.state === 'lobby' ? lobbyView() : mainView());
+  try {
+    const h2 = root.querySelector('h2');
+    const status = h2?.textContent?.trim() || '';
+    document.title = `${t('title')}${status ? ' - ' + status : ''}`;
+  } catch {}
+  wire();
+  if (r?.state === 'lobby') renderQr();
+  if (r?.state === 'main') renderExamples();
+}
 
-// Initialize activity hooks and idle watcher (used for "Need more time?" nudge)
-try { ensureActivityHooks(); updateIdleWatch(); } catch {}
-
-  
-
-
-  // wiring
-  const doJoin = async ()=>{
-    const codeRaw = ($('#join-code')?.value || '').trim().toLowerCase();
-    const nameRaw = ($('#join-name')?.value || '').trim() || 'Player';
-    const code = sanitizeInput(codeRaw, 64);
-    const name = sanitizeInput(nameRaw, 30);
-    if (!code) return; // need a room code
-
-    // Age gate: require explicit 18+ confirmation before joining any room
-    const ok = await showAgeGate();
-    if (!ok) {
-      try { location.assign('https://pbskids.org/'); } catch { location.href = 'https://pbskids.org/'; }
-      return;
-    }
-
-    state.me = { name };
-    // Persist intent so a refresh immediately resumes
-    try { saveSession({ code, name }); } catch {}
-    socket.emit('room:join', { code, name });
-  };
-  $('#create-btn')?.addEventListener('click', async ()=>{
-    const name = sanitizeInput($('#create-name').value.trim()||'Player', 30);
-    const sel = $('#create-theme');
-    if (sel && sel.value) selectedTheme = sel.value;
-
-    // Age gate: require explicit 18+ confirmation before creating a room
-    const ok = await showAgeGate();
-    if (!ok) {
-      try { location.assign('https://pbskids.org/'); } catch { location.href = 'https://pbskids.org/'; }
-      return;
-    }
-
-    state.me = { name };
-    // Persist name so we can resume properly
-    try { saveSession({ name }); } catch {}
-    // Clear any stale "add-after-complete" UI from past games
-    try { local.addAfterComplete = false; local.lastCompleterId = null; saveUI({ addAfterComplete:false, lastCompleterId:null }); } catch {}
-    // Include the selected theme so the server can store a room-scoped preference
-    socket.emit('room:create', { name, theme: selectedTheme || 'Sensual' });
-  });
-  $('#create-theme')?.addEventListener('change', (e)=>{
-    selectedTheme = e.target.value || 'Sensual';
-  });
+function wire(){
+  $('#join-language')?.addEventListener('change', e => { state.me.language = e.target.value; saveSession({ language:e.target.value }); render(); });
+  $('#create-language')?.addEventListener('change', e => { state.me.language = e.target.value; saveSession({ language:e.target.value }); render(); });
+  $('#create-theme')?.addEventListener('change', e => selectedTheme = e.target.value || 'Sensual');
   $('#join-btn')?.addEventListener('click', doJoin);
-  $('#join-name')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { e.preventDefault(); doJoin(); } });
-  $('#join-code')?.addEventListener('keydown', (e)=>{ if (e.key==='Enter') { e.preventDefault(); doJoin(); } });
-  $('#create-name')?.addEventListener('keydown', async (e)=>{
-    if (e.key==='Enter') {
-      e.preventDefault();
-      const nm = $('#create-name').value.trim()||'Player';
-      const name = sanitizeInput(nm, 30);
-      const sel = $('#create-theme');
-      if (sel && sel.value && name) {
-        if (sel && sel.value) selectedTheme = sel.value;
-
-        // Age gate before creating a room via Enter key
-        const ok = await showAgeGate();
-        if (!ok) {
-          try { location.assign('https://pbskids.org/'); } catch { location.href = 'https://pbskids.org/'; }
-          return;
-        }
-
-        state.me = { name };
-        // Persist name so we can resume properly
-        try { saveSession({ name }); } catch {}
-        // Clear any stale "add-after-complete" UI from past games
-        try { local.addAfterComplete = false; local.lastCompleterId = null; saveUI({ addAfterComplete:false, lastCompleterId:null }); } catch {}
-        socket.emit('room:create', { name, theme: selectedTheme || 'Sensual' });
-      }
+  $('#create-btn')?.addEventListener('click', doCreate);
+  $('#join-code')?.addEventListener('keydown', e => { if (e.key === 'Enter') doJoin(); });
+  $('#join-name')?.addEventListener('keydown', e => { if (e.key === 'Enter') doJoin(); });
+  $('#create-name')?.addEventListener('keydown', e => { if (e.key === 'Enter') doCreate(); });
+  $('#start-game')?.addEventListener('click', () => socket.emit('theme:finalize', { theme:selectedTheme || 'Sensual' }));
+  $('#resume-game')?.addEventListener('click', () => socket.emit('game:resume'));
+  wireProfile();
+  $$('[data-edit-player]').forEach(b => b.addEventListener('click', () => { local.edit = { type:'player', id:b.dataset.editPlayer }; render(); }));
+  $$('[data-edit-dare]').forEach(b => b.addEventListener('click', () => { local.edit = { type:'dare', id:b.dataset.editDare }; render(); }));
+  $('#back-edit')?.addEventListener('click', () => { local.edit = null; render(); });
+  $$('[data-consent-target][data-consent-dare]').forEach(cb => cb.addEventListener('change', () => {
+    socket.emit('consent:update', { targetId:cb.dataset.consentTarget, dareId:cb.dataset.consentDare, value:cb.checked });
+  }));
+  $$('[data-mode]').forEach(b => b.addEventListener('click', () => socket.emit('turn:chooseMode', { mode:b.dataset.mode })));
+  $$('[data-select-dare]').forEach(b => b.addEventListener('click', () => socket.emit('turn:selectDare', { dareId:b.dataset.selectDare })));
+  $$('[data-select-player]').forEach(b => b.addEventListener('click', () => socket.emit('turn:selectPlayer', { playerId:b.dataset.selectPlayer })));
+  $$('[data-choose-partner]').forEach(b => b.addEventListener('click', async () => {
+    const didConsent = !!state.room?.me?.consent?.[b.dataset.choosePartner]?.[state.room?.turn?.selectedDareId];
+    if (!didConsent && !await showConfirm(t('areYouSure'), { confirmText:t('ok'), cancelText:t('cancel') })) return;
+    socket.emit('turn:choosePartner', { playerId:b.dataset.choosePartner });
+  }));
+  $$('[data-choose-dare-final]').forEach(b => b.addEventListener('click', async () => {
+    const target = state.room?.turn?.selectedPlayerId;
+    const didConsent = !!state.room?.me?.consent?.[target]?.[b.dataset.chooseDareFinal];
+    if (!didConsent && !await showConfirm(t('areYouSure'), { confirmText:t('ok'), cancelText:t('cancel') })) return;
+    socket.emit('turn:chooseDareForPlayer', { dareId:b.dataset.chooseDareFinal });
+  }));
+  $('#pass-turn')?.addEventListener('click', () => socket.emit('turn:pass'));
+  $('#complete-turn')?.addEventListener('click', () => socket.emit('turn:complete'));
+  $('#add-dare')?.addEventListener('click', () => {
+    const title = sanitizeInput($('#new-dare')?.value || '', 160);
+    if (title) socket.emit('menu:addDare', { title });
+  });
+  $('#examples')?.addEventListener('click', e => {
+    const b = e.target.closest('[data-example-title]');
+    if (b && $('#new-dare')) $('#new-dare').value = b.dataset.exampleTitle || '';
+  });
+  $('#examples-prev')?.addEventListener('click', () => shiftExamples(-PAGE_SIZE));
+  $('#examples-next')?.addEventListener('click', () => shiftExamples(PAGE_SIZE));
+  wirePromptControls();
+}
+function shiftExamples(delta){
+  const theme = state.room?.chosenTheme || selectedTheme;
+  const list = examplesListForTheme(theme);
+  const max = Math.max(0, list.length - PAGE_SIZE);
+  local.exampleOffsets[theme] = Math.max(0, Math.min(max, (local.exampleOffsets[theme] || 0) + delta));
+  saveUI({ exampleOffsets:local.exampleOffsets });
+  renderExamples();
+}
+async function doJoin(){
+  const code = sanitizeInput($('#join-code')?.value || '', 64).toLowerCase();
+  if (!code) return;
+  const profile = collectProfile('join');
+  const ok = await showAgeGate();
+  if (!ok) return location.assign('https://pbskids.org/');
+  state.me = { ...state.me, ...profile };
+  saveSession({ ...profile, code, playerId:null });
+  socket.emit('room:join', { code, ...profile });
+}
+async function doCreate(){
+  const profile = collectProfile('create');
+  const ok = await showAgeGate();
+  if (!ok) return location.assign('https://pbskids.org/');
+  state.me = { ...state.me, ...profile };
+  saveSession({ ...profile, playerId:null });
+  socket.emit('room:create', { theme:selectedTheme || 'Sensual', ...profile });
+}
+function wireProfile(){
+  const toggle = $('#profile-menu-toggle');
+  const menu = $('#profile-menu');
+  if (!toggle || !menu) return;
+  const close = e => {
+    if (!menu.contains(e.target) && e.target !== toggle) {
+      menu.classList.remove('show');
+      document.removeEventListener('click', close);
+    }
+  };
+  toggle.addEventListener('click', e => {
+    e.stopPropagation();
+    menu.classList.toggle('show');
+    setTimeout(() => document.addEventListener('click', close), 0);
+  });
+  $('#change-name')?.addEventListener('click', async () => {
+    const next = sanitizeInput(await showPrompt(t('changeName'), { initialValue:mePlayer()?.name || state.me.name, placeholder:t('yourName'), confirmText:t('save'), cancelText:t('cancel'), maxLength:30 }) || '', 30);
+    if (next) {
+      state.me.name = next;
+      saveSession({ name:next });
+      socket.emit('player:update', { name:next });
     }
   });
-  $('#start-game')?.addEventListener('click', ()=>{
-    const key = selectedTheme || 'Sensual';
-    // Let the server seed authoritatively; client themes may not be loaded yet on some players
-    socket.emit('theme:finalize', { theme: key });
+  $$('#profile-menu [data-color]').forEach(b => b.addEventListener('click', () => {
+    socket.emit('player:update', { color:b.dataset.color });
+  }));
+  $('#profile-language')?.addEventListener('change', e => {
+    state.me.language = e.target.value;
+    saveSession({ language:e.target.value });
+    socket.emit('player:update', { language:e.target.value });
+    render();
   });
-  $('#resume-game')?.addEventListener('click', ()=>{
-    socket.emit('game:resume');
+  $('#selfie-input')?.addEventListener('change', e => uploadSelfie(e.target.files?.[0]));
+  $('#add-players')?.addEventListener('click', () => showInviteOverlay(`${location.origin}/#${state.room.code}`));
+  $('#leave-game')?.addEventListener('click', async () => {
+    if (!await showConfirm('Leave this game?', { confirmText:t('leaveGame'), cancelText:t('cancel') })) return;
+    socket.emit('room:leave');
+    state.room = null;
+    state.me.id = null;
+    clearSession();
+    history.replaceState(null, '', '#');
+    render();
   });
-
-  // Profile menu (name/color/leave)
-  const pmToggle = $('#profile-menu-toggle');
-  const pm = $('#profile-menu');
-  if (pmToggle && pm) {
-    const closeMenu = (e)=>{
-      if (!pm.contains(e.target) && e.target !== pmToggle) {
-        pm.classList.remove('show');
-        try { pmToggle.setAttribute('aria-expanded','false'); } catch {}
-        document.removeEventListener('click', closeMenu);
+}
+function wirePromptControls(){
+  const prompt = state.room?.me?.pendingPrompts?.[0];
+  if (!prompt) return;
+  const ps = promptState(prompt);
+  if (prompt.type === 'onboarding') {
+    const cur = prompt.dares[ps.step];
+    $$('[data-onboard-player]').forEach(cb => cb.addEventListener('change', () => {
+      ps.selections[cur.id] ||= {};
+      ps.selections[cur.id][cb.dataset.onboardPlayer] = cb.checked;
+    }));
+    $('#onboard-prev')?.addEventListener('click', () => { ps.step = Math.max(0, ps.step - 1); render(); });
+    $('#onboard-next')?.addEventListener('click', () => {
+      if (ps.step < prompt.dares.length - 1) {
+        ps.step++;
+        render();
+        return;
+      }
+      const entries = [];
+      for (const d of prompt.dares) {
+        const vals = ps.selections[d.id] || {};
+        for (const p of prompt.players) entries.push({ dareId:d.id, targetId:p.id, value:!!vals[p.id] });
+      }
+      socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, entries });
+      delete local.prompt[prompt.id];
+    });
+  }
+  if (prompt.type === 'new-player') {
+    $$('[data-new-player-dare]').forEach(cb => cb.addEventListener('change', () => { ps.values[cb.dataset.newPlayerDare] = cb.checked; }));
+    $('#submit-new-player')?.addEventListener('click', () => {
+      socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, targetId:prompt.player.id, values:ps.values });
+      delete local.prompt[prompt.id];
+    });
+  }
+  if (prompt.type === 'new-dare') {
+    $$('[data-new-dare-player]').forEach(cb => cb.addEventListener('change', () => { ps.values[cb.dataset.newDarePlayer] = cb.checked; }));
+    $('#submit-new-dare')?.addEventListener('click', () => {
+      socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, dareId:prompt.dare.id, values:ps.values });
+      delete local.prompt[prompt.id];
+    });
+  }
+  $$('input[name="dare-response"]').forEach(r => r.addEventListener('change', () => sendDareResponse(false)));
+  $('#send-dare-response')?.addEventListener('click', () => sendDareResponse(true));
+  $$('[data-person-dare]').forEach(cb => cb.addEventListener('change', () => sendPersonResponses(false)));
+  $('#send-person-response')?.addEventListener('click', () => sendPersonResponses(true));
+}
+function sendDareResponse(sendNow){
+  const yes = $('input[name="dare-response"]:checked')?.value === 'yes';
+  socket.emit('turn:submitDareResponse', { dareId:state.room.turn.selectedDareId, value:yes, sendNow });
+}
+function sendPersonResponses(sendNow){
+  const entries = $$('[data-person-dare]').map(cb => ({ dareId:cb.dataset.personDare, value:cb.checked }));
+  socket.emit('turn:submitPersonResponses', { entries, sendNow });
+}
+async function uploadSelfie(file){
+  if (!file || !state.room || !meId()) return;
+  try {
+    const dataUrl = await resizeImage(file, 112);
+    const res = await fetch('/api/avatar', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body:JSON.stringify({ code:state.room.code, playerId:meId(), image:dataUrl })
+    });
+    if (!res.ok) throw new Error('upload failed');
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.error || 'upload failed');
+  } catch (e) {
+    console.error(e);
+    showConfirm(t('uploadFailed'), { confirmText:t('ok'), cancelText:t('cancel') });
+  }
+}
+function resizeImage(file, size){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        const side = Math.min(img.width, img.height);
+        const sx = (img.width - side) / 2;
+        const sy = (img.height - side) / 2;
+        ctx.drawImage(img, sx, sy, side, side, 0, 0, size, size);
+        URL.revokeObjectURL(url);
+        resolve(canvas.toDataURL('image/jpeg', 0.76));
+      } catch (e) {
+        reject(e);
       }
     };
-    pmToggle.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      const open = pm.classList.toggle('show');
-      try { pmToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); } catch {}
-      if (open) {
-        setTimeout(()=>document.addEventListener('click', closeMenu), 0);
-      }
-    });
-    $('#change-name')?.addEventListener('click', async ()=>{
-      const cur = state.me?.name || '';
-      const input = await showPrompt('Change your name', { initialValue: cur, placeholder:'Your name', confirmText:'Save', cancelText:'Cancel', maxLength: 30 });
-      const next = sanitizeInput((input || '').trim(), 30);
-      if (next && next !== cur) {
-        state.me.name = next;
-        try { saveSession({ name: next }); } catch {}
-        socket.emit('player:update', { name: next });
-        render();
-      }
-    });
-
-    $('#add-players')?.addEventListener('click', async ()=>{
-      pm.classList.remove('show');
-      document.removeEventListener('click', closeMenu);
-      const r = state.room;
-      const url = r?.code ? `${location.origin}/#${r.code}` : location.href;
-      await showInviteOverlay(url);
-    });
-
-    $$('#profile-menu [data-color]')?.forEach(el=>{
-      el.addEventListener('click', ()=>{
-        if (el.hasAttribute('disabled') || el.getAttribute('data-taken')==='1' || el.classList.contains('taken')) return;
-        const c = el.getAttribute('data-color');
-        if (c && c !== state.me?.color) {
-          state.me.color = c;
-          socket.emit('player:update', { color: c });
-          render();
-        }
-      });
-    });
-  }
-
-  // Leave game
-  $('#leave-game')?.addEventListener('click', async ()=>{
-    const ok = await showConfirm('Leave this game?', { confirmText:'Leave', cancelText:'Stay' });
-    if (ok) {
-      socket.emit('room:leave');
-      state.room = null;
-      try { clearSession(); clearUI(); } catch {}
-      try { history.replaceState(null, '', '#'); } catch { location.hash = ''; }
-      render();
-    }
+    img.onerror = reject;
+    img.src = url;
   });
+}
 
-  // Dare selection buttons with confirmation
-  $$('#app [data-dare-select]')?.forEach(btn=>btn.addEventListener('click', async ()=>{
-    const rnow = state?.room;
-    const meNow = state?.me?.id || (rnow?.players||[]).find(p=>p.name===state.me?.name && p.color===state.me?.color)?.id;
-    // Block selecting a dare while someone else is writing one
-    if (rnow?.turn?.status === 'adding' && rnow?.turn?.addingBy && rnow.turn.addingBy !== meNow) return;
-
-    const index = +btn.getAttribute('data-dare-select');
-    const d = state?.room?.dareMenu?.[index];
-    const title = d?.title || 'this dare';
-    const lines = [`Dare: ${title}`];
-    if (d?.extra) lines.push(`🌶️ Extra Challenge: ${d.extra}`);
-    const ok = await showConfirm(lines.join('\n'), { title: 'Propose this dare?', confirmText:'Use Dare', cancelText:'Cancel' });
-    if (ok) {
-      socket.emit('turn:selectDare', { index });
-    }
-  }));
-
-  // Turn actions
-  // Inline "We did it" buttons next to affirmative responders
-  $$('#app [data-did-it]')?.forEach(b=>{
-    b.addEventListener('click', ()=>{
-      const r = state.room;
-      const isFinal = r?.turn?.selectedDareIndex === r?.dareMenu?.length - 1;
-      // Only when the highlighted (final) dare was performed, show ONLY the add UI
-      local.addAfterComplete = !!isFinal;
-      // The player who confirms “We did it” (the active chooser) earns the right to write the new dare
-      local.lastCompleterId = state.me?.id || null;
-      // Persist UI hint so refresh doesn't lose the "add" screen opportunity
-      try { saveUI({ addAfterComplete: local.addAfterComplete, lastCompleterId: local.lastCompleterId, roomCode: state.room?.code }); } catch {}
-      // Server authoritatively assigns add window to the active chooser; no need to send responder id
-      socket.emit('turn:complete', { completedMostDaring: !!isFinal });
-      if (local.addAfterComplete) render();
-    });
-  });
-  $('#btn-passed')?.addEventListener('click', ()=>{
-    // Passing never grants add-a-dare
-    local.addAfterComplete = false;
-    try { saveUI({ addAfterComplete: false }); } catch {}
-    socket.emit('turn:pass');
-  });
-
-  // Responses
-  $$('#app [data-resp]')?.forEach(b=>b.addEventListener('click', ()=>{
-    socket.emit('turn:submit', { response: b.getAttribute('data-resp') });
-  }));
-
-  // Add new dare (only visible when local.addAfterComplete)
-  $('#add-dare')?.addEventListener('click', async ()=>{
-    const title = (($('#new-dare')?.value || '').trim()).slice(0,120);
-    const extra = (($('#new-extra')?.value || '').trim()).slice(0,160);
-    if (!title || !extra) {
-      await showConfirm('Please enter both a Dare and an Extra Challenge', { confirmText:'OK', cancelText:'Cancel' });
-      return;
-    }
-    socket.emit('menu:addDare', { title, extra });
-    local.addAfterComplete = false;
-    try { saveUI({ addAfterComplete: false }); } catch {}
-    const nd = $('#new-dare'); const ne = $('#new-extra');
-    if (nd) nd.value = '';
-    if (ne) ne.value = '';
-    render();
-  });
-
-  // Example dares click to fill inputs (delegated to handle dynamic content)
-  $('#examples')?.addEventListener('click', (e)=>{
-    const el = e.target.closest('[data-example-index]');
-    if (!el) return;
-    const decode = (s)=> (s||'')
-      .replace(/"/g, '"')
-      .replace(/</g, '<')
-      .replace(/>/g, '>')
-      .replace(/&/g, '&');
-
-    let title = decode(el.getAttribute('data-title') || '');
-    let extra = decode(el.getAttribute('data-extra') || '');
-
-    // Fallback to inner text if attributes are missing/empty
-    if (!title) {
-      const tEl = el.querySelector('.dare-btn-title');
-      if (tEl) title = (tEl.textContent || '').replace(/^Dare:\s*/i, '').trim();
-    }
-    if (!extra) {
-      const xEl = el.querySelector('.dare-btn-extra');
-      if (xEl) {
-        const t = xEl.textContent || '';
-        extra = t.replace(/^.*Extra Challenge:\s*/i, '').trim();
-      }
-    }
-
-    const nd = $('#new-dare'); const ne = $('#new-extra');
-    if (nd) nd.value = title;
-    if (ne) ne.value = extra;
-  });
-
-  // QR and examples list
-  if (r?.state==='lobby') import('/lib/qrcode-wrapper.js')
-    .then((m)=>{
-      const el = $('#qr'); if (!el) return;
-      const url = `${location.origin}/#${r.code}`;
+function renderQr(){
+  import('/lib/qrcode-wrapper.js')
+    .then(m => {
+      const el = $('#qr');
+      if (!el) return;
       const fn = m.renderQRCode || m.default;
-      const p = fn ? fn(el, url, { size: 220 }) : null;
-      if (p && typeof p.then === 'function') p.catch(()=>{ /* fallback is the share link below */ });
+      if (fn) fn(el, `${location.origin}/#${state.room.code}`, { size:220 });
     })
-    .catch(()=>{ /* fallback is the share link below */ });
-  if (r?.state==='main') wordCloud(r.chosenTheme);
+    .catch(() => {});
 }
-
-socket.on('room:state', (room)=>{
-  state.room = room;
-  // Ensure URL hash reflects the current room code for easy sharing
-  if (room?.code && location.hash.slice(1) !== room.code) {
-    try { history.replaceState(null, '', `#${room.code}`); } catch { location.hash = room.code; }
-  }
-  // Normalize UI persistence across rooms to avoid stale "add dare" gating
-  try {
-    const ui = loadUI();
-    const uiRoom = ui?.roomCode || null;
-    const uiAdd = !!ui?.addAfterComplete;
-    if (uiAdd && uiRoom !== room.code) {
-      local.addAfterComplete = false;
-      saveUI({ addAfterComplete: false, roomCode: room.code, lastCompleterId: null });
-    } else if (uiRoom !== room.code) {
-      saveUI({ roomCode: room.code });
-    }
-    // Extra guard: on a freshly started game (first player's turn, no selection yet),
-    // force-clear any lingering "add-a-dare" UI that may have persisted across sessions.
-    if (room?.state === 'main'
-        && room?.turn?.index === 0
-        && room?.turn?.selectedDareIndex == null
-        && (room?.turn?.status === 'collecting' || !room?.turn?.status)) {
-      if (local.addAfterComplete) {
-        local.addAfterComplete = false;
-        saveUI({ addAfterComplete:false, lastCompleterId:null, roomCode: room.code });
-      }
-    }
-  } catch {}
-  render();
-  // Persist session info so we can resume on refresh/reconnect
-  try {
-    const update = {};
-    if (room?.code) update.code = room.code;
-    if (state.me?.name) update.name = state.me.name;
-    if (state.me?.id) update.playerId = state.me.id;
-    update.autoJoin = false;
-    if (Object.keys(update).length) saveSession(update);
-  } catch {}
-});
-socket.on('player:you', ({ playerId })=>{
-  state.me.id = playerId;
-  // Save player id for resume
-  try { saveSession({ playerId, code: state.room?.code, name: state.me?.name }); } catch {}
-  // Clear stale UI hint if it belonged to a different player/session
-  try {
-    const ui = loadUI();
-    if (ui?.addAfterComplete && ui?.lastCompleterId && ui.lastCompleterId !== playerId) {
-      local.addAfterComplete = false;
-      saveUI({ addAfterComplete: false });
-    }
-  } catch {}
-  // If we have a desired color carried over from a previous room, attempt to set it now
-  try {
-    if (local?.desiredColor && typeof local.desiredColor === 'string') {
-      if (state?.me?.color !== local.desiredColor) {
-        socket.emit('player:update', { color: local.desiredColor });
-        state.me.color = local.desiredColor;
-      }
-      local.desiredColor = null;
-    }
-  } catch {}
-  // Clear any pending autoJoin intent now that we have a player identity
-  try { saveSession({ playerId, code: state.room?.code, name: state.me?.name, autoJoin: false }); } catch {}
-});
-
-socket.on('room:peek:result', (result) => {
-  if (result.ok) {
-    peekedRoom = result.state;
-    render();
-  }
-});
-
-// Unified room error handling (invalid/expired room, rate limits, etc.)
-socket.on('room:error', ({ code, message }) => {
-  try {
-    if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
-      state.room = null;
-      peekedRoom = null;
-      try { clearSession(); clearUI(); } catch {}
-      try { history.replaceState(null, '', '#'); } catch { location.hash = ''; }
-      render();
-    }
-    showConfirm(message || 'An error occurred', { confirmText:'OK', cancelText:'Cancel' });
-  } catch (e) {
-    console.error('room:error handler failed', e);
-  }
-});
-
-// Legacy/compat fallback if server emits generic "error"
-socket.on('error', (payload) => {
-  try {
-    const code = (payload && payload.code) || 'ERROR';
-    const message = (payload && payload.message) || 'An error occurred';
-    if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
-      state.room = null;
-      peekedRoom = null;
-      try { clearSession(); clearUI(); } catch {}
-      try { history.replaceState(null, '', '#'); } catch { location.hash = ''; }
-      render();
-    }
-    showConfirm(message, { confirmText:'OK', cancelText:'Cancel' });
-  } catch (e) {
-    console.error('error handler failed', e);
-  }
-});
-
-function prefillFromHash(){
-  const code = location.hash?.slice(1);
-  if (!code) return;
-  setTimeout(()=>{ const input = document.querySelector('#join-code'); if (input && !input.value) input.value = code; }, 0);
-}
-
-// Handle user navigating to a different #room (both while in a room and on the landing page)
-window.addEventListener('hashchange', async ()=>{
-  const newCode = (location.hash?.slice(1) || '').trim();
-  const current = (state?.room?.code || '').trim();
-
-  // Case 1: In a game, switching to another game -> confirm and fast join
-  if (current && newCode && newCode !== current) {
-    const ok = await showConfirm(`Leave this game and join ${newCode}?`, { confirmText:'Leave & Join', cancelText:'Stay' });
-    if (ok) {
-      // Preserve my identity (name/color) and fast-join the new room
-      const sess = (()=>{ try { return loadSession(); } catch { return null; }})();
-      const keepName = (state?.me?.name || sess?.name || 'Player').toString().slice(0,30);
-      const keepColor = state?.me?.color || null;
-      try { saveSession({ name: keepName, code: newCode, playerId: null, autoJoin: true }); } catch {}
-      // Will request this color after we get our new playerId
-      local.desiredColor = keepColor || null;
-      // Leave old room and immediately join the new one
-      socket.emit('room:leave');
-      state.room = null;
-      try { clearUI(); } catch {} // clear transient UI but keep name
-      // Small delay to avoid race with server 'room:leave' handling
-      setTimeout(()=>{ socket.emit('room:join', { code: newCode, name: keepName }); }, 60);
-      // Redundant safety: try auto-join shortly after in case of packet drop
-      setTimeout(()=>{ try { attemptAutoJoin(); } catch {} }, 250);
-      // Optionally ping peek to warm path (no-op if not needed)
-      try { socket.emit('room:peek', { code: newCode }); } catch {}
-      // Optimistically reflect name/color locally before server roundtrip
-      state.me = { ...(state.me||{}), name: keepName, color: keepColor };
-      render();
-    } else {
-      // Revert hash to current room code
-      try { history.replaceState(null, '', `#${current}`); } catch { location.hash = current; }
-    }
-    return;
-  }
-
-  // Case 2: On landing (no current room) -> update join UI and peek target room without refresh
-  if (!current) {
-    try { saveSession({ code: newCode || null }); } catch {}
-    // Update the join form's code field
-    prefillFromHash();
-    // Ask server for basic info so the landing subtitle can say "Join <host>'s game"
-    if (newCode) {
-      try { socket.emit('room:peek', { code: newCode }); } catch {}
-    } else {
-      // Hash cleared: remove any prior peek information
-      peekedRoom = null;
-    }
-    // Re-render landing immediately; it will re-render again on peek result
-    render();
-  }
-});
-
-/* --- Session/UI persistence helpers and bootstrapping --- */
-const SESSION_KEY = 'dtc.session';
-const UI_KEY = 'dtc.ui';
-
-function loadSession(){ try { return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch { return null; } }
-function saveSession(part){ try { const cur = loadSession() || {}; const next = { ...cur, ...part }; localStorage.setItem(SESSION_KEY, JSON.stringify(next)); } catch {} }
-function clearSession(){ try { localStorage.removeItem(SESSION_KEY); } catch {} }
-
-function loadUI(){ try { return JSON.parse(localStorage.getItem(UI_KEY) || 'null'); } catch { return null; } }
-function saveUI(part){ try { const cur = loadUI() || {}; const next = { ...cur, ...part }; localStorage.setItem(UI_KEY, JSON.stringify(next)); } catch {} }
-function clearUI(){ try { localStorage.removeItem(UI_KEY); } catch {} }
-
-function hydrateSession(){
-  const s = loadSession();
-  if (s?.name && !state.me.name) state.me.name = s.name;
-  if (s?.playerId) state.me.id = s.playerId;
-  const ui = loadUI();
-  if (ui) { local.addAfterComplete = !!ui.addAfterComplete; local.lastCompleterId = ui.lastCompleterId || null; }
-}
-
-function attemptResume(){
-  const s = loadSession();
-  const code = s?.code || location.hash?.slice(1) || '';
-  const playerId = s?.playerId;
-  if (code && playerId) socket.emit('room:resume', { code, playerId });
-}
-
-// Auto-join helper: if we have a code+name but no playerId, and intent flag is set, join
-function attemptAutoJoin(){
-  try{
-    if (state?.room) return;
-    const s = loadSession();
-    const code = s?.code || location.hash?.slice(1) || '';
-    const name = (s?.name || '').toString().trim().slice(0,30);
-    const pid = s?.playerId;
-    const want = !!s?.autoJoin;
-    if (want && code && name && !pid) {
-      socket.emit('room:join', { code, name });
-    }
-  } catch {}
-}
-
-// --- Accessibility and dialog helpers ---
-function trapFocus(overlay){
-  try{
-    const sel = 'a[href], area[href], input:not([disabled]):not([type=hidden]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-    const get = () => Array.from(overlay.querySelectorAll(sel)).filter(el => (el.offsetParent !== null) || el === document.activeElement);
-    function onKey(e){
-      if (e.key !== 'Tab') return;
-      const list = get();
-      if (!list.length) return;
-      const first = list[0], last = list[list.length-1];
-      if (e.shiftKey){
-        if (document.activeElement === first || document.activeElement === overlay){
-          e.preventDefault(); last.focus();
-        }
-      } else {
-        if (document.activeElement === last){
-          e.preventDefault(); first.focus();
-        }
-      }
-    }
-    overlay.addEventListener('keydown', onKey);
-  } catch {}
-}
-
-function decorateDialogA11y(overlay, { idPrefix='dialog', titleSel='.modal-title', messageSel='.modal-message' } = {}){
-  try{
-    const modal = overlay.querySelector('.modal');
-    if (!modal) return;
-    modal.setAttribute('role','dialog');
-    modal.setAttribute('aria-modal','true');
-    const title = overlay.querySelector(titleSel);
-    const message = overlay.querySelector(messageSel);
-    const titleId = `${idPrefix}-title`;
-    const msgId = `${idPrefix}-message`;
-    if (title && !title.id) title.id = titleId;
-    if (message && !message.id) message.id = msgId;
-    if (title) modal.setAttribute('aria-labelledby', title.id);
-    if (message) modal.setAttribute('aria-describedby', message.id);
-    setTimeout(()=>{
-      const first = overlay.querySelector('button, [tabindex]:not([tabindex="-1"])');
-      if (first && first.focus) first.focus();
-    }, 0);
-    trapFocus(overlay);
-  } catch {}
-}
-
-// --- Age gate ---
-function showAgeGate(){
-  return new Promise(resolve=>{
-    const host = ensureOverlayRoot();
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    overlay.innerHTML = `
-      <div class="modal card">
-        <div class="modal-content">
-          <h3 class="modal-title">Mature content</h3>
-          <p class="modal-message">This game is intended for adults 18 years or older.</p>
-          <div class="row modal-buttons">
-            <button class="primary btn-18" autofocus>I'm 18+</button>
-            <button class="btn-under">I'm too young</button>
-          </div>
-        </div>
-      </div>`;
-    host.appendChild(overlay);
-    try { decorateDialogA11y(overlay, { idPrefix:'age' }); } catch {}
-    const cleanup = () => { overlay.classList.remove('show'); setTimeout(()=>{ try{ overlay.remove(); } catch{} }, 150); };
-    const decide = (val) => { cleanup(); resolve(val); };
-    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(false); });
-    overlay.querySelector('.btn-under')?.addEventListener('click', ()=>decide(false));
-    overlay.querySelector('.btn-18')?.addEventListener('click', ()=>decide(true));
-    document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') { e.preventDefault(); decide(false); } }, { once:true });
-    requestAnimationFrame(()=>overlay.classList.add('show'));
-  });
-}
-
-// --- Idle detection (active player) ---
-let activity = { lastInputTs: Date.now(), installed: false, idleTimer: null, nudgeTimer: null, needOverlay: null };
-
-function markActivity(){
-  activity.lastInputTs = Date.now();
-  if (activity.needOverlay) {
-    try { activity.needOverlay.close(); } catch {}
-    activity.needOverlay = null;
-  }
-}
-
-function ensureActivityHooks(){
-  if (activity.installed) return;
-  activity.installed = true;
-  ['pointerdown','mousedown','mouseup','click','keydown','touchstart','focus'].forEach(evt=>{
-    window.addEventListener(evt, markActivity, { passive:true, capture:true });
-  });
-}
-
-function isMyTurnNow(){
-  try{
-    const r = state.room; if (!r) return false;
-    const meId = state.me?.id || (r.players||[]).find(p=>p.name===state.me?.name && p.color===state.me?.color)?.id;
-    return r?.state==='main' && r?.turn?.order?.[r.turn.index]===meId;
-  } catch { return false; }
-}
-
-function showNeedMoreTime(){
-  const host = ensureOverlayRoot();
-  const overlay = document.createElement('div');
-  overlay.className = 'overlay';
-  overlay.innerHTML = `
-    <div class="modal card">
-      <div class="modal-content">
-        <h3 class="modal-title">Need more time?</h3>
-        <p class="modal-message">It's your turn. Tap “I'm here” to keep your turn.</p>
-        <div class="row modal-buttons">
-          <button class="primary btn-ok">I'm here</button>
-        </div>
-      </div>
-    </div>`;
-  host.appendChild(overlay);
-  try { decorateDialogA11y(overlay, { idPrefix:'idle' }); } catch {}
-  let closed = false;
-  const close = () => { if (closed) return; closed = true; overlay.classList.remove('show'); setTimeout(()=>{ try{ overlay.remove(); } catch{} }, 150); };
-  overlay.addEventListener('click', (e)=>{ if (e.target === overlay) close(); });
-  overlay.querySelector('.btn-ok')?.addEventListener('click', ()=>{ markActivity(); close(); });
-  document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') { e.preventDefault(); close(); } }, { once:true });
-  requestAnimationFrame(()=>overlay.classList.add('show'));
-  return { close };
-}
-
-function updateIdleWatch(){
-  try{
-    if (activity.idleTimer) { clearTimeout(activity.idleTimer); activity.idleTimer = null; }
-    if (activity.nudgeTimer) { clearTimeout(activity.nudgeTimer); activity.nudgeTimer = null; }
-    if (!isMyTurnNow()) return;
-    const now = Date.now();
-    const waitMs = Math.max(0, 60000 - (now - (activity.lastInputTs || 0)));
-    activity.idleTimer = setTimeout(()=>{
-      if (!isMyTurnNow()) return;
-      activity.needOverlay = showNeedMoreTime();
-      activity.nudgeTimer = setTimeout(()=>{
-        if (!isMyTurnNow()) return;
-        const since = Date.now() - (activity.lastInputTs || 0);
-        if (since >= 70000) {
-          try { socket.emit('idle:escalate'); } catch {}
-        }
-      }, 10000);
-    }, waitMs);
-  } catch {}
-}
-
-// Try to resume when socket connects/reconnects; also ensure pending auto-join is attempted
-socket.on('connect', ()=>{
-  attemptResume();
-  attemptAutoJoin();
-});
-
-// Initial boot
-hydrateSession();
-render();
-loadThemes();
-prefillFromHash();
-if (socket.connected) { attemptResume(); attemptAutoJoin(); }
-
-if (location.hash?.slice(1) && !state.room) {
-  socket.emit('room:peek', { code: location.hash.slice(1) });
-}
-
-// --- Pretty overlay dialogs ---
 function ensureOverlayRoot(){
   let root = document.getElementById('overlay-root');
   if (!root) {
@@ -1117,245 +978,110 @@ function ensureOverlayRoot(){
   }
   return root;
 }
-
 function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' }={}){
   return new Promise(resolve => {
     const host = ensureOverlayRoot();
     const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    overlay.innerHTML = `
-      <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-message">
-        <div class="modal-content">
-          <h3 class="modal-title" id="confirm-title">${title || ''}</h3>
-          <p class="modal-message" id="confirm-message"></p>
-          <div class="row modal-buttons">
-            <button class="btn-cancel">${cancelText}</button>
-            <button class="primary btn-ok" autofocus>${confirmText}</button>
-          </div>
-        </div>
-      </div>`;
+    overlay.className = 'overlay show';
+    overlay.innerHTML = `<div class="modal card"><h3>${escapeHtml(title)}</h3><p></p><div class="row modal-buttons"><button class="btn-cancel">${escapeHtml(cancelText)}</button><button class="primary btn-ok">${escapeHtml(confirmText)}</button></div></div>`;
+    overlay.querySelector('p').textContent = message || '';
     host.appendChild(overlay);
-    try { decorateDialogA11y(overlay, { idPrefix:'absent' }); } catch {}
-
-    const msgEl = overlay.querySelector('.modal-message');
-    // Preserve line breaks
-    msgEl.textContent = '';
-    (message||'').toString().split('\n').forEach((line, i) => {
-      if (i>0) msgEl.appendChild(document.createElement('br'));
-      msgEl.appendChild(document.createTextNode(line));
-    });
-
-    const prev = document.activeElement;
-    const cleanup = () => {
-      overlay.classList.remove('show');
-      setTimeout(()=>{
-        try { overlay.remove(); } catch {}
-        try { prev && prev.focus && prev.focus(); } catch {}
-      }, 150);
-    };
-    const decide = (val) => { cleanup(); resolve(val); };
-
-    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(false); });
-    overlay.querySelector('.btn-cancel').addEventListener('click', ()=>decide(false));
-    overlay.querySelector('.btn-ok').addEventListener('click', ()=>decide(true));
-
-    const onKey = (e)=>{
-      if (e.key === 'Escape') { e.preventDefault(); decide(false); }
-      if (e.key === 'Enter') { e.preventDefault(); decide(true); }
-    };
-    document.addEventListener('keydown', onKey, { once:true });
-    // Focus management and trap
-    const okBtn = overlay.querySelector('.btn-ok');
-    if (okBtn) okBtn.focus();
-    try { trapFocus(overlay); } catch {}
-
-    requestAnimationFrame(()=>overlay.classList.add('show'));
+    const close = val => { overlay.remove(); resolve(val); };
+    overlay.querySelector('.btn-cancel').addEventListener('click', () => close(false));
+    overlay.querySelector('.btn-ok').addEventListener('click', () => close(true));
   });
 }
-
-// Pretty overlay prompt with text input
 function showPrompt(title, { placeholder='', initialValue='', confirmText='OK', cancelText='Cancel', maxLength=60 }={}){
-  return new Promise(resolve=>{
-    const esc = (s)=> (s||'').toString().replace(/&/g,'&').replace(/"/g,'"').replace(/</g,'<');
-    const host = ensureOverlayRoot();
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    overlay.innerHTML = `
-      <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="prompt-title">
-        <div class="modal-content">
-          <h3 class="modal-title" id="prompt-title">${title || ''}</h3>
-          <input class="modal-input" type="text" ${maxLength ? `maxlength="${maxLength}"` : ''} placeholder="${esc(placeholder)}" />
-          <div class="row modal-buttons">
-            <button class="btn-cancel">${cancelText}</button>
-            <button class="primary btn-ok">${confirmText}</button>
-          </div>
-        </div>
-      </div>`;
-    host.appendChild(overlay);
-
-    const input = overlay.querySelector('.modal-input');
-    if (typeof initialValue === 'string') input.value = initialValue;
-    setTimeout(()=>{ input.focus(); input.select?.(); }, 0);
-
-    const prev = document.activeElement;
-    const cleanup = () => {
-      overlay.classList.remove('show');
-      setTimeout(()=>{
-        try { overlay.remove(); } catch {}
-        try { prev && prev.focus && prev.focus(); } catch {}
-      }, 150);
-    };
-    const decide = (val) => { cleanup(); resolve(val); };
-
-    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(null); });
-    overlay.querySelector('.btn-cancel').addEventListener('click', ()=>decide(null));
-    overlay.querySelector('.btn-ok').addEventListener('click', ()=>decide(input.value));
-
-    input.addEventListener('keydown', (e)=>{
-      if (e.key === 'Enter') { e.preventDefault(); overlay.querySelector('.btn-ok').click(); }
-      if (e.key === 'Escape') { e.preventDefault(); decide(null); }
-    });
-
-    document.addEventListener('keydown', (e)=>{
-      if (e.key === 'Escape') { e.preventDefault(); decide(null); }
-    }, { once:true });
-
-    // Focus and trap
-    try { trapFocus(overlay); } catch {}
-    requestAnimationFrame(()=>overlay.classList.add('show'));
-  });
-}
-
-// Invite overlay with QR code and share URL
-function showInviteOverlay(url, { title='Add Players', instructions='Ask new players to scan this QR code or visit the link below:' } = {}) {
   return new Promise(resolve => {
     const host = ensureOverlayRoot();
     const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    overlay.innerHTML = `
-      <div class="modal card">
-        <div class="modal-content">
-          <h3 class="modal-title">${title}</h3>
-          <div class="qr"><div id="invite-qr"></div></div>
-          <p class="modal-message">${instructions}</p>
-          <div class="row" style="justify-content:center; margin-top:6px;">
-            <a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>
-          </div>
-          <div class="row modal-buttons">
-            <button class="primary btn-ok">OK</button>
-          </div>
-        </div>
-      </div>`;
+    overlay.className = 'overlay show';
+    overlay.innerHTML = `<div class="modal card"><h3>${escapeHtml(title)}</h3><input class="modal-input" maxlength="${maxLength}" placeholder="${escapeAttr(placeholder)}"><div class="row modal-buttons"><button class="btn-cancel">${escapeHtml(cancelText)}</button><button class="primary btn-ok">${escapeHtml(confirmText)}</button></div></div>`;
+    const input = overlay.querySelector('input');
+    input.value = initialValue || '';
     host.appendChild(overlay);
-
-    // Render QR code
-    import('/lib/qrcode-wrapper.js')
-      .then(m => {
-        const el = overlay.querySelector('#invite-qr');
-        if (el) {
-          const fn = m.renderQRCode || m.default;
-          if (fn) fn(el, url, { size: 220 });
-        }
-      })
-      .catch(()=>{});
-
-    const prev = document.activeElement;
-    const cleanup = () => {
-      overlay.classList.remove('show');
-      setTimeout(()=>{
-        try { overlay.remove(); } catch {}
-        try { prev && prev.focus && prev.focus(); } catch {}
-      }, 150);
-    };
-    const decide = () => { cleanup(); resolve(true); };
-
-    overlay.addEventListener('click', (e)=>{ if (e.target === overlay) decide(); });
-    overlay.querySelector('.btn-ok').addEventListener('click', decide);
-
-    const onKey = (e)=>{
-      if (e.key === 'Escape' || e.key === 'Enter') { e.preventDefault(); decide(); }
-    };
-    document.addEventListener('keydown', onKey, { once:true });
-
-    // Focus and trap
-    const okBtn = overlay.querySelector('.btn-ok');
-    if (okBtn) okBtn.focus();
-    try { trapFocus(overlay); } catch {}
-    requestAnimationFrame(()=>overlay.classList.add('show'));
+    input.focus();
+    const close = val => { overlay.remove(); resolve(val); };
+    overlay.querySelector('.btn-cancel').addEventListener('click', () => close(null));
+    overlay.querySelector('.btn-ok').addEventListener('click', () => close(input.value));
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') close(input.value); });
+  });
+}
+function showAgeGate(){
+  return showConfirm(t('matureBody'), { title:t('mature'), confirmText:t('adult'), cancelText:t('under') });
+}
+function showInviteOverlay(url){
+  return new Promise(resolve => {
+    const host = ensureOverlayRoot();
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay show';
+    overlay.innerHTML = `<div class="modal card"><h3>${t('addPlayers')}</h3><div class="qr"><div id="invite-qr"></div></div><p><a href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(url)}</a></p><button class="primary btn-ok">${t('ok')}</button></div>`;
+    host.appendChild(overlay);
+    import('/lib/qrcode-wrapper.js').then(m => { const fn = m.renderQRCode || m.default; if (fn) fn(overlay.querySelector('#invite-qr'), url, { size:220 }); }).catch(()=>{});
+    overlay.querySelector('.btn-ok').addEventListener('click', () => { overlay.remove(); resolve(true); });
   });
 }
 
-// --- Absent (disconnected) active-player detection UI ---
-function showAbsentOverlay({ promptId, targetId, targetName }) {
-  if (!state?.room) return;
-  const host = ensureOverlayRoot();
-  // Clean up any existing overlay first
-  if (absentDialog.el) {
-    try { absentDialog.el.remove(); } catch {}
-    absentDialog = { promptId: null, el: null };
+socket.on('room:state', room => {
+  state.room = room;
+  if (room?.me?.id) state.me.id = room.me.id;
+  const p = room?.players?.find(p => p.id === state.me.id);
+  if (p) {
+    state.me = { ...state.me, name:p.name, color:p.color, language:p.language || state.me.language, gender:p.gender || state.me.gender };
+    saveSession({ code:room.code, playerId:p.id, name:p.name, language:p.language || state.me.language, gender:p.gender || state.me.gender });
   }
-  const esc = (s)=> (s||'').toString()
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
-
-  const overlay = document.createElement('div');
-  overlay.className = 'overlay';
-  overlay.innerHTML = `
-    <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="absent-title" aria-describedby="absent-message">
-      <div class="modal-content">
-        <h3 class="modal-title" id="absent-title">Is ${esc(targetName || 'this player')} still playing?</h3>
-        <p class="modal-message" id="absent-message">We can't see ${esc(targetName || 'the player')}'s connection. If they are no longer playing, we can remove them from the game.</p>
-        <div class="row modal-buttons">
-          <button class="btn-yes primary">Yes</button>
-          <button class="btn-no danger">No, remove them</button>
-        </div>
-      </div>
-    </div>`;
-  host.appendChild(overlay);
-
-  const btnYes = overlay.querySelector('.btn-yes');
-  const btnNo = overlay.querySelector('.btn-no');
-  const disable = () => { if (btnYes) btnYes.disabled = true; if (btnNo) btnNo.disabled = true; };
-
-  btnYes?.addEventListener('click', ()=>{
-    disable();
-    socket.emit('absent:response', { promptId, targetId, present: true });
-  });
-  btnNo?.addEventListener('click', ()=>{
-    disable();
-    socket.emit('absent:response', { promptId, targetId, present: false });
-  });
-
-  absentDialog.promptId = promptId;
-  absentDialog.el = overlay;
-  // Focus and trap
-  const yesBtn = overlay.querySelector('.btn-yes');
-  if (yesBtn) yesBtn.focus();
-  try { trapFocus(overlay); } catch {}
-  requestAnimationFrame(()=>overlay.classList.add('show'));
-}
-
-function dismissAbsentOverlay() {
-  const overlay = absentDialog.el;
-  if (overlay) {
-    overlay.classList.remove('show');
-    setTimeout(()=>{ try { overlay.remove(); } catch {} }, 150);
+  if (room?.code && location.hash.slice(1) !== room.code) {
+    try { history.replaceState(null, '', `#${room.code}`); } catch { location.hash = room.code; }
   }
-  absentDialog = { promptId: null, el: null };
-}
-
-// Listen for coordinated absent prompts from server
-socket.on('absent:prompt', ({ promptId, targetId, targetName }) => {
-  const meId = state?.me?.id || null;
-  // Don't prompt the target (and avoid duplicate)
-  if ((meId && meId === targetId) || absentDialog.promptId === promptId) return;
-  showAbsentOverlay({ promptId, targetId, targetName });
+  render();
+});
+socket.on('player:you', ({ playerId }) => {
+  state.me.id = playerId;
+  saveSession({ playerId, code:state.room?.code, name:state.me.name, language:state.me.language, gender:state.me.gender, preferredGenders:state.me.preferredGenders });
+});
+socket.on('room:peek:result', result => {
+  peekedRoom = result.ok ? result.state : null;
+  render();
+});
+socket.on('room:error', ({ code, message }) => {
+  if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
+    state.room = null;
+    state.me.id = null;
+    peekedRoom = null;
+    clearSession();
+    try { history.replaceState(null, '', '#'); } catch {}
+    render();
+  }
+  showConfirm(message || 'Error', { confirmText:t('ok'), cancelText:t('cancel') });
+});
+socket.on('connect', () => {
+  const s = loadSession();
+  const code = s?.code || location.hash?.slice(1) || '';
+  if (s?.playerId && code) socket.emit('room:resume', { code, playerId:s.playerId });
 });
 
-// Dismiss any current prompt when resolved (any one player responded or target returned)
-socket.on('absent:dismiss', ({ promptId }) => {
-  if (!promptId) return;
-  if (absentDialog.promptId === promptId) dismissAbsentOverlay();
+window.addEventListener('hashchange', () => {
+  const code = location.hash?.slice(1) || '';
+  if (!state.room && code) socket.emit('room:peek', { code });
 });
+setInterval(() => {
+  if (state.room?.turn?.timerEndsAt && state.room.turn.timerEndsAt > Date.now()) render();
+}, 1000);
+
+function hydrate(){
+  const s = loadSession() || {};
+  const ui = loadUI() || {};
+  state.me = {
+    ...state.me,
+    name:s.name || '',
+    id:s.playerId || null,
+    language:s.language || 'en',
+    gender:s.gender || 'nonbinary',
+    preferredGenders:s.preferredGenders || [...GENDERS]
+  };
+  local.exampleOffsets = ui.exampleOffsets || {};
+}
+hydrate();
+render();
+loadThemes();
+if (location.hash?.slice(1)) socket.emit('room:peek', { code:location.hash.slice(1) });

@@ -5,13 +5,18 @@
   "type": "module",
   "scripts": {
     "start": "PORT=3001 node server/index.js",
-    "dev": "PORT=3001 node server/index.js"
+    "dev": "PORT=3001 node server/index.js",
+    "smoke": "node scripts/smoke-flow.mjs"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1030.0",
     "@aws-sdk/client-ses": "^3.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "nanoid": "^5.0.7",
     "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.3"
   }
 }
