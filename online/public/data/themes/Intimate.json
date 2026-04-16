@@ -4,159 +4,469 @@
     {
       "title": "Both players disclose a hope, dream, or flaw",
       "extra": "Make it something secret or embarrassing",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores revelan una esperanza, un sueño o un defecto",
+          "extra": "Haz que sea algo secreto o embarazoso"
+        },
+        "pt": {
+          "title": "Ambos os jogadores revelam uma esperança, sonho ou falha",
+          "extra": "Faça disso algo secreto ou embaraçoso"
+        }
+      }
     },
     {
       "title": "Maintain eye contact for ten seconds",
       "extra": "Also, try to synchronize your breathing",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Mantén el contacto visual durante diez segundos",
+          "extra": "Además, intenta sincronizar tu respiración"
+        },
+        "pt": {
+          "title": "Mantenha contato visual por dez segundos",
+          "extra": "Além disso, tente sincronizar sua respiração"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Share something you've never told anyone before",
       "extra": "Make it a sexual secret or fantasy",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Comparte algo que nunca le hayas contado a nadie antes",
+          "extra": "Conviértelo en un secreto sexual o una fantasía"
+        },
+        "pt": {
+          "title": "Compartilhe algo que você nunca contou a ninguém antes",
+          "extra": "Faça disso um segredo ou fantasia sexual"
+        }
+      }
     },
     {
       "title": "Give each other a gentle hand massage",
       "extra": "Use scented lotion and make it sensual",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Dése un suave masaje de manos",
+          "extra": "Usa una loción perfumada y hazla sensual"
+        },
+        "pt": {
+          "title": "Dê um ao outro uma massagem suave nas mãos",
+          "extra": "Use loção perfumada e torne-a sensual"
+        }
+      }
     },
     {
       "title": "Disclose your first crush or romantic experience",
       "extra": "Share details about what made it exciting",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Revela tu primera experiencia romántica o de enamoramiento",
+          "extra": "Comparta detalles sobre lo que lo hizo emocionante"
+        },
+        "pt": {
+          "title": "Revele sua primeira paixão ou experiência romântica",
+          "extra": "Compartilhe detalhes sobre o que o tornou empolgante"
+        }
+      }
     },
     {
       "title": "Exchange shoulder massages for one minute each",
       "extra": "Remove shirts and use massage oil",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Cambie los masajes de hombro durante un minuto cada uno",
+          "extra": "Quítese las camisas y use aceite de masaje"
+        },
+        "pt": {
+          "title": "Troque massagens nos ombros por um minuto cada",
+          "extra": "Retire as camisas e use óleo de massagem"
+        }
+      }
     },
     {
       "title": "Share your most embarrassing moment",
       "extra": "Make it something sexually related",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Comparte tu momento más embarazoso",
+          "extra": "Haz que sea algo relacionado con lo sexual"
+        },
+        "pt": {
+          "title": "Compartilhe seu momento mais embaraçoso",
+          "extra": "Faça disso algo relacionado sexualmente"
+        }
+      }
     },
     {
       "title": "Hug each other tightly for 30 seconds",
       "extra": "Add gentle rocking and whispering compliments",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Abrázense con fuerza durante 30 segundos",
+          "extra": "Agrega halagos suaves, balbuceando y susurrando"
+        },
+        "pt": {
+          "title": "Abracem um ao outro com força por 30 segundos",
+          "extra": "Adicione um toque suave e elogios sussurrantes"
+        }
+      }
     },
     {
       "title": "Share a sexual fantasy you've never acted on",
       "extra": "Describe it in vivid detail",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Comparte una fantasía sexual sobre la que nunca hayas actuado",
+          "extra": "Descríbelo con detalles vívidos"
+        },
+        "pt": {
+          "title": "Compartilhe uma fantasia sexual na qual você nunca atuou",
+          "extra": "Descreva-o em detalhes vívidos"
+        }
+      }
     },
     {
       "title": "Give each other a foot massage",
       "extra": "Include foot kissing",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Dése un masaje de pies",
+          "extra": "Incluir besos en los pies"
+        },
+        "pt": {
+          "title": "Faça uma massagem nos pés um no outro",
+          "extra": "Inclua beijos nos pés"
+        }
+      }
     },
     {
       "title": "Disclose what turns you on the most",
       "extra": "Be specific about physical sensations",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Revela qué es lo que más te excita",
+          "extra": "Sea específico acerca de las sensaciones físicas"
+        },
+        "pt": {
+          "title": "Divulgue o que mais te excita",
+          "extra": "Seja específico sobre as sensações físicas"
+        }
+      }
     },
     {
       "title": "Slow dance together for one song",
       "extra": "With hands on butts",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Bailen despacio juntos para una canción",
+          "extra": "Con las manos en el trasero"
+        },
+        "pt": {
+          "title": "Dancem lentamente juntos para uma música",
+          "extra": "Com as mãos nas bundas"
+        }
+      }
     },
     {
       "title": "Share your favorite type of kiss",
       "extra": "Demonstrate it on each other's hands",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Comparte tu tipo de beso favorito",
+          "extra": "Demuéstrenlo en las manos del otro"
+        },
+        "pt": {
+          "title": "Compartilhe seu tipo favorito de beijo",
+          "extra": "Demonstre isso nas mãos um do outro"
+        }
+      }
     },
     {
       "title": "Give each other a scalp massage",
       "extra": "Include gentle hair pulling if desired",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Dése un masaje en el cuero cabelludo",
+          "extra": "Incluya un suave estiramiento del cabello si lo desea"
+        },
+        "pt": {
+          "title": "Dê um ao outro uma massagem no couro cabeludo",
+          "extra": "Inclua um puxão suave do cabelo, se desejar"
+        }
+      }
     },
     {
       "title": "Share your most adventurous sexual experience",
       "extra": "Include all the juicy details",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Comparte tu experiencia sexual más aventurera",
+          "extra": "Incluye todos los detalles jugosos"
+        },
+        "pt": {
+          "title": "Compartilhe sua experiência sexual mais aventureira",
+          "extra": "Inclua todos os detalhes interessantes"
+        }
+      }
     },
     {
       "title": "Embrace while standing and sway together",
       "extra": "Add gentle grinding against each other",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Abrázate de pie y balancéate juntos",
+          "extra": "Añada un suave molido uno contra el otro"
+        },
+        "pt": {
+          "title": "Abracem em pé e balançam juntos",
+          "extra": "Adicione uma moagem suave uma contra a outra"
+        }
+      }
     },
     {
       "title": "Disclose what you find most attractive about each other",
       "extra": "Be specific about physical features",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Revelen lo que encuentran más atractivo el uno del otro",
+          "extra": "Sea específico acerca de las características físicas"
+        },
+        "pt": {
+          "title": "Divulgue o que vocês acham mais atraente um no outro",
+          "extra": "Seja específico sobre as características físicas"
+        }
+      }
     },
     {
       "title": "Kiss each other on the lips for 10 seconds",
       "extra": "Add tongue and make it passionate",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Bésense en los labios durante 10 segundos",
+          "extra": "Añade lengua y haz que sea apasionante"
+        },
+        "pt": {
+          "title": "Beije um ao outro na boca por 10 segundos",
+          "extra": "Adicione a língua e torne-a apaixonada"
+        }
+      }
     },
     {
       "title": "Share your wildest sexual desire",
       "extra": "No limits - be completely honest",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Comparte tu deseo sexual más salvaje",
+          "extra": "Sin límites, sé completamente honesto"
+        },
+        "pt": {
+          "title": "Compartilhe seu desejo sexual mais selvagem",
+          "extra": "Sem limites - seja completamente honesto"
+        }
+      }
     },
     {
       "title": "Make out while sitting face-to-face",
       "extra": "Let hands explore each other's bodies",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Besos mientras estás sentado cara a cara",
+          "extra": "Deja que las manos exploren el cuerpo del otro"
+        },
+        "pt": {
+          "title": "Beije enquanto está sentado cara a cara",
+          "extra": "Deixe as mãos explorarem os corpos umas das outras"
+        }
+      }
     },
     {
       "title": "Kiss each other's necks and collarbones",
       "extra": "Add gentle biting and sucking",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Bésense el cuello y las clavículas",
+          "extra": "Agregue morder y chupar suavemente"
+        },
+        "pt": {
+          "title": "Beije o pescoço e as clavículas um do outro",
+          "extra": "Adicione mordidas e sucções suaves"
+        }
+      }
     },
     {
       "title": "Share your ideal sexual scenario",
       "extra": "Describe it like you're directing a movie",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Comparte tu escenario sexual ideal",
+          "extra": "Descríbelo como si estuvieras dirigiendo una película"
+        },
+        "pt": {
+          "title": "Compartilhe seu cenário sexual ideal",
+          "extra": "Descreva como se estivesse dirigindo um filme"
+        }
+      }
     },
     {
       "title": "Make out with one player straddling the other",
       "extra": "Add grinding and body exploration",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "Besa con un jugador sentado a horcajadas sobre el otro",
+          "extra": "Agregue trituración y exploración corporal"
+        },
+        "pt": {
+          "title": "Beije com um jogador cruzando o outro",
+          "extra": "Adicione trituração e exploração corporal"
+        }
+      }
     },
     {
       "title": "Disclose your most sensitive body part",
       "extra": "Allow the other person to gently touch it",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Revela la parte más sensible de tu cuerpo",
+          "extra": "Permita que la otra persona lo toque suavemente"
+        },
+        "pt": {
+          "title": "Revele sua parte mais sensível do corpo",
+          "extra": "Permita que a outra pessoa toque suavemente"
+        }
+      }
     },
     {
       "title": "Both players flash an intimate body part briefly",
       "extra": "Keep it exposed for the rest of the game",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores muestran brevemente una parte íntima del cuerpo",
+          "extra": "Manténgalo expuesto durante el resto del juego"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mostram brevemente uma parte íntima do corpo",
+          "extra": "Mantenha-o exposto pelo resto do jogo"
+        }
+      }
     },
     {
       "title": "Share your favorite sexual position",
       "extra": "Demonstrate it fully clothed",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "Comparte tu posición sexual favorita",
+          "extra": "Demuéstralo completamente vestido"
+        },
+        "pt": {
+          "title": "Compartilhe sua posição sexual favorita",
+          "extra": "Demonstre que está totalmente vestido"
+        }
+      }
     },
     {
       "title": "Make out under a blanket with touching allowed",
       "extra": "Remove clothing to comfort level",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Sáquese debajo de una manta y se permita tocarlo",
+          "extra": "Quítese la ropa hasta que esté cómodo"
+        },
+        "pt": {
+          "title": "Bata debaixo de um cobertor com o toque permitido",
+          "extra": "Remova a roupa até o nível de conforto"
+        }
+      }
     },
     {
       "title": "Disclose your ultimate sexual fantasy",
       "extra": "No boundaries - be completely explicit",
-      "spicyness": 89
+      "spicyness": 89,
+      "translations": {
+        "es": {
+          "title": "Revela tu máxima fantasía sexual",
+          "extra": "Sin límites: sé completamente explícito"
+        },
+        "pt": {
+          "title": "Revele sua fantasia sexual definitiva",
+          "extra": "Sem limites - seja completamente explícito"
+        }
+      }
     },
     {
       "title": "Give each other a full body massage with oil",
       "extra": "Include intimate areas",
-      "spicyness": 91
+      "spicyness": 91,
+      "translations": {
+        "es": {
+          "title": "Dése un masaje corporal completo con aceite",
+          "extra": "Incluya áreas íntimas"
+        },
+        "pt": {
+          "title": "Faça um ao outro uma massagem de corpo inteiro com óleo",
+          "extra": "Inclua áreas íntimas"
+        }
+      }
     },
     {
       "title": "Share your most intense orgasm experience",
       "extra": "Describe it in explicit detail",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "Comparte tu experiencia de orgasmo más intensa",
+          "extra": "Descríbalo con detalle explícito"
+        },
+        "pt": {
+          "title": "Compartilhe sua experiência de orgasmo mais intensa",
+          "extra": "Descreva-o em detalhes explícitos"
+        }
+      }
     },
     {
       "title": "Seven minutes in heaven - do whatever you want in a closet",
       "extra": "Aim for mutual pleasure and climax",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Siete minutos en el cielo: haz lo que quieras en un armario",
+          "extra": "Apunta al placer mutuo y al clímax"
+        },
+        "pt": {
+          "title": "Sete minutos no céu - faça o que quiser em um armário",
+          "extra": "Busque o prazer mútuo e o clímax"
+        }
+      }
     }
   ]
 }

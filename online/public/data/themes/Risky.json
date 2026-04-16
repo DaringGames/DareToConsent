@@ -4,124 +4,364 @@
     {
       "title": "Toss a piece of food into the other player's mouth",
       "extra": "If it falls on the floor, thrower has to eat it",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Lanza un trozo de comida en la boca del otro jugador",
+          "extra": "Si cae al suelo, el lanzador tiene que comérselo"
+        },
+        "pt": {
+          "title": "Jogue um pedaço de comida na boca do outro jogador",
+          "extra": "Se cair no chão, o lançador tem que comê-lo"
+        }
+      }
     },
     {
       "title": "Balance a cup of water on each other's head",
       "extra": "... Make it a cup of milk or soda",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Balanceen una taza de agua sobre la cabeza del otro",
+          "extra": "... Que sea una taza de leche o refresco"
+        },
+        "pt": {
+          "title": "Equilibre um copo de água na cabeça um do outro",
+          "extra": "... Faça uma xícara de leite ou refrigerante"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Players toss an egg back and forth at increasing distances",
       "extra": "Both players throw eggs simultaneously",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Los jugadores lanzan un huevo de un lado a otro a distancias cada vez mayores",
+          "extra": "Ambos jugadores lanzan huevos simultáneamente"
+        },
+        "pt": {
+          "title": "Os jogadores jogam um ovo para frente e para trás em distâncias crescentes",
+          "extra": "Ambos os jogadores jogam ovos simultaneamente"
+        }
+      }
     },
     {
       "title": "Current player does a trust fall and dare acceptor catches them",
       "extra": "Do the fall over a hard floor",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace una caída de confianza y quien acepta el reto lo atrapa",
+          "extra": "Haz la caída sobre un suelo duro"
+        },
+        "pt": {
+          "title": "O jogador da vez faz uma queda de confiança e quem aceita o desafio o segura",
+          "extra": "Faça a queda sobre um piso duro"
+        }
+      }
     },
     {
       "title": "Both players balance on one foot while holding hands",
       "extra": "Close eyes while balancing",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se mantienen en equilibrio sobre un pie mientras se toman de la mano",
+          "extra": "Cierra los ojos mientras mantienes el equilibrio"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se equilibram em um pé enquanto estão de mãos dadas",
+          "extra": "Feche os olhos enquanto se equilibra"
+        }
+      }
     },
     {
       "title": "Players pass a lit candle between them without blowing it out",
       "extra": "Pass it with mouths only",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Los jugadores pasan una vela encendida entre ellos sin apagarla",
+          "extra": "Pásalo solo con la boca"
+        },
+        "pt": {
+          "title": "Os jogadores passam uma vela acesa entre eles sem apagá-la",
+          "extra": "Passe apenas com a boca"
+        }
+      }
     },
     {
       "title": "Current player wears a blindfold and dare acceptor guides them through an obstacle course",
       "extra": "Guide using only whispers",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lleva una venda en los ojos y quien acepta el reto lo guía a través de una carrera de obstáculos",
+          "extra": "Guía que usa solo susurros"
+        },
+        "pt": {
+          "title": "O jogador da vez usa uma venda nos olhos e quem aceita o desafio o guia por uma pista de obstáculos",
+          "extra": "Guia usando apenas sussurros"
+        }
+      }
     },
     {
       "title": "Both players try to eat a messy food without using hands",
       "extra": "Feed each other the food",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan comer una comida desordenada sin usar las manos.",
+          "extra": "Aliméntense unos a otros con la comida"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam comer uma comida bagunçada sem usar as mãos",
+          "extra": "Alimente um ao outro com comida"
+        }
+      }
     },
     {
       "title": "Players play a game of 'hot potato' with an ice cube",
       "extra": "Use bare hands only",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Los jugadores juegan a la «patata caliente» con un cubito de hielo",
+          "extra": "Use solo las manos desnudas"
+        },
+        "pt": {
+          "title": "Os jogadores jogam um jogo de “batata quente” com um cubo de gelo",
+          "extra": "Use apenas as mãos nuas"
+        }
+      }
     },
     {
       "title": "Current player and dare acceptor swap shirts for the rest of the game",
       "extra": "Swap pants as well",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno y quien acepta el reto cambian sus camisetas por el resto del juego",
+          "extra": "Cambia también los pantalones"
+        },
+        "pt": {
+          "title": "O jogador da vez e quem aceita o desafio trocam camisetas pelo resto do jogo",
+          "extra": "Troque as calças também"
+        }
+      }
     },
     {
       "title": "Both players whisper a secret to each other",
       "extra": "Whisper it while maintaining eye contact",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se susurran un secreto",
+          "extra": "Susurra mientras mantienes el contacto visual"
+        },
+        "pt": {
+          "title": "Ambos os jogadores sussurram um segredo um para o outro",
+          "extra": "Sussurre enquanto mantém contato visual"
+        }
+      }
     },
     {
       "title": "Players compete in a staring contest",
       "extra": "First to blink has to remove a clothing item",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Los jugadores compiten en un concurso de miradas",
+          "extra": "El primero en parpadear tiene que quitarse una prenda"
+        },
+        "pt": {
+          "title": "Os jogadores competem em uma competição inicial",
+          "extra": "Primeiro a piscar tem que remover um item de roupa"
+        }
+      }
     },
     {
       "title": "Dare acceptor looks through current player's photos on their phone",
       "extra": "Post a random photo to social media",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto mira las fotos de los jugador en turno en su teléfono",
+          "extra": "Publica una foto aleatoria en las redes sociales"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio examina as fotos do jogador da vez em seu telefone",
+          "extra": "Publique uma foto aleatória nas redes sociais"
+        }
+      }
     },
     {
       "title": "Flip a coin to determine which player has to remove a clothing item",
       "extra": "Raise stakes to two clothing items",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Lanza una moneda para determinar qué jugador debe quitarse una prenda",
+          "extra": "Aumente las apuestas a dos prendas de vestir"
+        },
+        "pt": {
+          "title": "Lance uma moeda para determinar qual jogador deve remover uma peça de roupa",
+          "extra": "Aumente as apostas para dois itens de vestuário"
+        }
+      }
     },
     {
       "title": "Current player is blindfolded and guesses body part by smelling",
       "extra": "Determine by tasting",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno tiene los ojos vendados y adivina la parte del cuerpo oliendo",
+          "extra": "Determinar mediante degustación"
+        },
+        "pt": {
+          "title": "O jogador da vez está com os olhos vendados e adivinha parte do corpo cheirando",
+          "extra": "Determine por degustação"
+        }
+      }
     },
     {
       "title": "Both players share a drink from the same glass without hands",
       "extra": "Use only mouths to pass the glass",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una bebida del mismo vaso sin manos",
+          "extra": "Use solo la boca para pasar el vaso"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham uma bebida do mesmo copo sem as mãos",
+          "extra": "Use apenas bocas para passar o copo"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a massage with a risky object (e.g., ice)",
       "extra": "Use a vibrating phone instead",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno da un masaje al que acepta el desafío con un objeto arriesgado (por ejemplo, hielo)",
+          "extra": "En su lugar, utilice un teléfono con vibración"
+        },
+        "pt": {
+          "title": "O jogador da vez faz uma massagem aquem aceita o desafio com um objeto perigoso (por exemplo, gelo)",
+          "extra": "Em vez disso, use um telefone vibratório"
+        }
+      }
     },
     {
       "title": "Both players draw on each other's skin with washable marker",
       "extra": "Draw on intimate areas",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores dibujan en la piel del otro con un marcador lavable",
+          "extra": "Dibuja en áreas íntimas"
+        },
+        "pt": {
+          "title": "Ambos os jogadores desenham na pele um do outro com um marcador lavável",
+          "extra": "Desenhe em áreas íntimas"
+        }
+      }
     },
     {
       "title": "Current player and dare acceptor kiss through a piece of paper",
       "extra": "Skip the paper",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno y quien acepta el reto se besan a través de una hoja de papel",
+          "extra": "Omite el papel"
+        },
+        "pt": {
+          "title": "O jogador da vez e quem aceita o desafio se beijam através de uma folha de papel",
+          "extra": "Ignore o papel"
+        }
+      }
     },
     {
       "title": "Both players take a selfie in a compromising position",
       "extra": "Set it as phone wallpaper for a day",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se toman una selfie en una posición comprometedora",
+          "extra": "Configúralo como fondo de pantalla del teléfono por un día"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tiram uma selfie em uma posição comprometedora",
+          "extra": "Defina-o como papel de parede do telefone por um dia"
+        }
+      }
     },
     {
       "title": "Both players streak naked outside to the mailbox and back",
       "extra": "Do a 30-second dance at the mailbox",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores salen desnudos fuera del buzón y vuelven",
+          "extra": "Haz un baile de 30 segundos en el buzón"
+        },
+        "pt": {
+          "title": "Ambos os jogadores correm nus até a caixa de correio e voltam",
+          "extra": "Faça uma dança de 30 segundos na caixa de correio"
+        }
+      }
     },
     {
       "title": "Dare acceptor gets to spank current player on the bare butt",
       "extra": "Use a household object for spanking",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto puede golpear al jugador en turno en el trasero desnudo",
+          "extra": "Usa un objeto doméstico para dar nalgadas"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio pode dar uma surra no jogador da vez na bunda nua",
+          "extra": "Use um objeto doméstico para dar palmadas"
+        }
+      }
     },
     {
       "title": "Current player receives a lapdance from dare acceptor",
       "extra": "Add guided touching",
-      "spicyness": 93
+      "spicyness": 93,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibe un baile en el regazo de quien acepta el reto",
+          "extra": "Añade toques guiados"
+        },
+        "pt": {
+          "title": "O jogador da vez recebe uma dança no colo de quem aceita o desafio",
+          "extra": "Adicionar toque guiado"
+        }
+      }
     },
     {
       "title": "Current player is blindfolded while dare acceptor touches their body however they like",
       "extra": "Explore their body with both hands and mouth",
-      "spicyness": 97
+      "spicyness": 97,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno tiene los ojos vendados mientras quien acepta el reto toca su cuerpo como quiera.",
+          "extra": "Explore su cuerpo con las manos y la boca"
+        },
+        "pt": {
+          "title": "O jogador da vez está com os olhos vendados enquantquem aceita o desafio toca seu corpo como quiser",
+          "extra": "Explore seu corpo com as mãos e a boca"
+        }
+      }
     }
   ]
 }

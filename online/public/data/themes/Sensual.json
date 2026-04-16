@@ -4,121 +4,341 @@
     {
       "title": "Both players wink at each other flirtatiously",
       "extra": "Also, compliment each other's appearance",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se guiñan un ojo coqueto",
+          "extra": "Además, elogien la apariencia del otro"
+        },
+        "pt": {
+          "title": "Ambos os jogadores piscam um para o outro flertando",
+          "extra": "Além disso, elogie a aparência um do outro"
+        }
+      }
     },
     {
       "title": "Both players take off shoes (keep them off)",
       "extra": "Also, play footsie with each other",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se quitan los zapatos (manténgalos quitados)",
+          "extra": "Además, jueguen al fútbol unos con otros"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tiram os sapatos (mantenha-os sem sapatos)",
+          "extra": "Além disso, joguem futebol um com o outro"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Exchange compliments",
       "extra": "Make them sexy compliments",
-      "spicyness": 2
+      "spicyness": 2,
+      "translations": {
+        "es": {
+          "title": "Intercambien elogios",
+          "extra": "Que sean elogios sexys"
+        },
+        "pt": {
+          "title": "Troque elogios",
+          "extra": "Faça-os elogios sensuais"
+        }
+      }
     },
     {
       "title": "Trace a heart on the other's palm",
       "extra": "Trace your name on their bare stomach",
-      "spicyness": 5
+      "spicyness": 5,
+      "translations": {
+        "es": {
+          "title": "Traza un corazón en la palma del otro",
+          "extra": "Traza tu nombre en su estómago desnudo"
+        },
+        "pt": {
+          "title": "Trace um coração na palma da outra",
+          "extra": "Trace seu nome na barriga nua deles"
+        }
+      }
     },
     {
       "title": "Current player will give dare acceptor a shoulder massage",
       "extra": "Follow up with a long hug",
       "spicyness": 9,
-      "comment": "Rescore suggested: 0-9 -> 30-39 (hug/embrace) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 0-9 -> 30-39 (hug/embrace) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le dará a quien acepta el reto un masaje en el hombro",
+          "extra": "Sigue con un abrazo largo"
+        },
+        "pt": {
+          "title": "O jogador da vez fará uma massagem nos ombros de quem aceita o desafio",
+          "extra": "Continue com um longo abraço"
+        }
+      }
     },
     {
       "title": "Shower kisses on each other's cheeks",
       "extra": "Extend kisses down to the neck",
-      "spicyness": 16
+      "spicyness": 16,
+      "translations": {
+        "es": {
+          "title": "Besos de ducha en las mejillas del otro",
+          "extra": "Extiende los besos hasta el cuello"
+        },
+        "pt": {
+          "title": "Beijos no banho nas bochechas um do outro",
+          "extra": "Estenda os beijos até o pescoço"
+        }
+      }
     },
     {
       "title": "Current player will give dare acceptor a back massage",
       "extra": "Strip to comfort level and use massage oil",
-      "spicyness": 22
+      "spicyness": 22,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le dará a quien acepta el reto un masaje de espalda",
+          "extra": "Desnúdate hasta que te sientas cómodo y usa aceite de masaje"
+        },
+        "pt": {
+          "title": "O jogador da vez fará uma massagem nas costas de quem aceita o desafio",
+          "extra": "Tire a roupa até o nível de conforto e use óleo de massagem"
+        }
+      }
     },
     {
       "title": "Both players slow-dance",
       "extra": "Let hands roam downward",
       "spicyness": 28,
-      "comment": "Rescore suggested: 20-29 -> 40-49 (slow dance) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 20-29 -> 40-49 (slow dance) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores bailan despacio",
+          "extra": "Deja que las manos deambulen hacia abajo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dançam lentamente",
+          "extra": "Deixe as mãos vagarem para baixo"
+        }
+      }
     },
     {
       "title": "Kiss on the lips",
       "extra": "Add a little tongue play",
       "spicyness": 33,
-      "comment": "Rescore suggested: 30-39 -> 70-79 (tongue use) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 30-39 -> 70-79 (tongue use) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "Beso en los labios",
+          "extra": "Añade un poco de juego de lenguas"
+        },
+        "pt": {
+          "title": "Beijo na boca",
+          "extra": "Adicione um pouco de jogo de língua"
+        }
+      }
     },
     {
       "title": "Both players briefly flash an intimate body part",
       "extra": "Keep that part exposed for the rest of the game",
       "spicyness": 40,
-      "comment": "Rescore suggested: 40-49 -> 80-89 (flashing) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 40-49 -> 80-89 (flashing) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores muestran brevemente una parte íntima del cuerpo",
+          "extra": "Mantén esa parte expuesta durante el resto del juego"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mostram brevemente uma parte íntima do corpo",
+          "extra": "Mantenha essa parte exposta pelo resto do jogo"
+        }
+      }
     },
     {
       "title": "Current player will remove a clothing item from dare acceptor",
       "extra": "touch what is revealed",
-      "spicyness": 42
+      "spicyness": 42,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno quitará una prenda de vestir de quien acepta el reto",
+          "extra": "toca lo que se revela"
+        },
+        "pt": {
+          "title": "O jogador da vez removerá uma peça de roupa de quem aceita o desafio",
+          "extra": "toque o que é revelado"
+        }
+      }
     },
     {
       "title": "Touch each other's butt over clothes",
       "extra": "and under clothes",
       "spicyness": 45,
-      "comment": "Rescore suggested: 40-49 -> 70-79 (butt under clothes) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 40-49 -> 70-79 (butt under clothes) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "Tóquense el trasero sobre la ropa",
+          "extra": "y debajo de la ropa"
+        },
+        "pt": {
+          "title": "Toque a bunda um do outro sobre as roupas",
+          "extra": "e debaixo da roupa"
+        }
+      }
     },
     {
       "title": "Current player will receive a srip tease from dare acceptor",
       "extra": "Make it a lap dance with guided touching",
       "spicyness": 50,
-      "comment": "Rescore suggested: 50-59 -> 70-79 (lap dance) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 50-59 -> 70-79 (lap dance) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá un strip-tease de quien acepta el reto.",
+          "extra": "Conviértelo en un baile erótico con toques guiados"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá um strip-tease de quem aceita o desafio",
+          "extra": "Faça disso uma dança erótica com toque guiado"
+        }
+      }
     },
     {
       "title": "Touch each other's chest over clothes",
       "extra": "and under clothes",
       "spicyness": 55,
-      "comment": "Rescore suggested: 50-59 -> 70-79 (chest under clothes) — Flag for possible removal or reordering."
+      "comment": "Rescore suggested: 50-59 -> 70-79 (chest under clothes) — Flag for possible removal or reordering.",
+      "translations": {
+        "es": {
+          "title": "Tóquense el pecho sobre la ropa",
+          "extra": "y debajo de la ropa"
+        },
+        "pt": {
+          "title": "Toque o peito um do outro sobre as roupas",
+          "extra": "e debaixo da roupa"
+        }
+      }
     },
     {
       "title": "Both players make out while one player sits in the other's lap",
       "extra": "Let hands wander",
-      "spicyness": 60
+      "spicyness": 60,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se besan mientras un jugador se sienta en el regazo del otro",
+          "extra": "Deja que las manos divaguen"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se beijam enquanto um jogador se senta no colo do outro",
+          "extra": "Deixe as mãos vagarem"
+        }
+      }
     },
     {
       "title": "Both players strip to underwear and make out under a blanket",
       "extra": "Let hands wander",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se desnudan en ropa interior y se besan bajo una manta",
+          "extra": "Deja que las manos divaguen"
+        },
+        "pt": {
+          "title": "Ambos os jogadores vestem roupas íntimas e se beijam debaixo de um cobertor.",
+          "extra": "Deixe as mãos vagarem"
+        }
+      }
     },
     {
       "title": "Both players kiss each other's bare chest",
       "extra": "Add licking and sucking",
-      "spicyness": 78
+      "spicyness": 78,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se besan el pecho desnudo",
+          "extra": "Agrega lamer y chupar"
+        },
+        "pt": {
+          "title": "Ambos os jogadores beijam o peito nu um do outro",
+          "extra": "Adicione lamber e chupar"
+        }
+      }
     },
     {
       "title": "Both players touch each other's genitals over clothes",
       "extra": "and under clothes",
-      "spicyness": 83
+      "spicyness": 83,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se tocan los genitales del otro sobre la ropa",
+          "extra": "y debajo de la ropa"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tocam os órgãos genitais um do outro sobre as roupas",
+          "extra": "e debaixo da roupa"
+        }
+      }
     },
     {
       "title": "Current player uses a vibrating toy on dare acceptor",
       "extra": "Aim for a climax",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno usa un juguete vibrador en quien acepta el reto",
+          "extra": "Apunta al clímax"
+        },
+        "pt": {
+          "title": "O jogador da vez usa um brinquedo vibratório nquem aceita o desafio",
+          "extra": "Busque um clímax"
+        }
+      }
     },
     {
       "title": "Current player will dry hump with dare acceptor",
       "extra": "Aim for a climax",
-      "spicyness": 92
+      "spicyness": 92,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno simula sexo con ropa con quien acepta el reto",
+          "extra": "Apunta al clímax"
+        },
+        "pt": {
+          "title": "O jogador da vez simula sexo com roupa com quem aceita o desafio",
+          "extra": "Busque um clímax"
+        }
+      }
     },
     {
       "title": "Current player will receive oral sex from the dare acceptor",
       "extra": "Aim for a climax",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá sexo oral de quien acepta el reto",
+          "extra": "Apunta al clímax"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá sexo oral de quem aceita o desafio",
+          "extra": "Busque um clímax"
+        }
+      }
     },
     {
       "title": "Both players have penetrative sex with each other",
       "extra": "Aim for climaxes",
-      "spicyness": 98
+      "spicyness": 98,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores tienen relaciones sexuales penetrantes entre sí",
+          "extra": "Apunta a los clímax"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem sexo com penetração um com o outro",
+          "extra": "Busque o clímax"
+        }
+      }
     }
   ]
 }

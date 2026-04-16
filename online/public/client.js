@@ -264,7 +264,17 @@ const I18N = {
 let THEMES = null;
 let selectedTheme = 'Sensual';
 let peekedRoom = null;
-let state = { room:null, me:{ name:'', id:null, language:'en', gender:'nonbinary', preferredGenders:[...GENDERS] } };
+function browserLanguage(){
+  try {
+    const langs = Array.isArray(navigator.languages) && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (const raw of langs) {
+      const code = String(raw || '').toLowerCase().split('-')[0];
+      if (LANGS.includes(code)) return code;
+    }
+  } catch {}
+  return 'en';
+}
+let state = { room:null, me:{ name:'', id:null, language:browserLanguage(), gender:'nonbinary', preferredGenders:[...GENDERS] } };
 let local = { edit:null, prompt:{}, exampleOffsets:{} };
 
 function lang(){ return state.me.language || loadSession()?.language || 'en'; }
@@ -1079,7 +1089,7 @@ function hydrate(){
     ...state.me,
     name:s.name || '',
     id:s.playerId || null,
-    language:s.language || 'en',
+    language:s.language || browserLanguage(),
     gender:s.gender || 'nonbinary',
     preferredGenders:s.preferredGenders || [...GENDERS]
   };

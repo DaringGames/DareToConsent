@@ -4,144 +4,424 @@
     {
       "title": "Both players wink at each other dramatically",
       "extra": "Also, compliment each other",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se guiñan un ojo dramáticamente",
+          "extra": "Además, felicítense"
+        },
+        "pt": {
+          "title": "Ambos os jogadores piscam um para o outro dramaticamente.",
+          "extra": "Além disso, elogiem um ao outro"
+        }
+      }
     },
     {
       "title": "Both players take off their shoes",
       "extra": "Also, invent a wacky handshake with your feet",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se quitan los zapatos",
+          "extra": "Además, inventa un extraño apretón de manos con los pies"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tiram os sapatos",
+          "extra": "Além disso, invente um aperto de mão maluco com os pés"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players give each other a gentle high-five",
       "extra": "Also, make it a lingering high-five with eye contact",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores chocan los cinco suavemente",
+          "extra": "Además, choca los cinco de forma persistente con el contacto visual"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dão um ao outro um leve high-five",
+          "extra": "Além disso, faça um high-five persistente com contato visual"
+        }
+      }
     },
     {
       "title": "Both players hold hands for 10 seconds",
       "extra": "Also, interlace fingers and sync three breaths",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan la mano durante 10 segundos",
+          "extra": "Además, entrelaza los dedos y sincroniza tres respiraciones"
+        },
+        "pt": {
+          "title": "Ambos os jogadores ficam de mãos dadas por 10 segundos",
+          "extra": "Além disso, entrelace os dedos e sincronize três respirações"
+        }
+      }
     },
     {
       "title": "Both players do ten jumping jacks together",
       "extra": "High-five after each jumping jack",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen diez saltos de tijera juntos.",
+          "extra": "Choca los cinco después de cada salto"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem dez polichinelos juntos",
+          "extra": "Dê cinco cumprimentos após cada macaco"
+        }
+      }
     },
     {
       "title": "Both players sniff each other's armpits",
       "extra": "Take a deep inhale and describe the smell",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se huelen las axilas",
+          "extra": "Inhale profundamente y describa el olor"
+        },
+        "pt": {
+          "title": "Ambos os jogadores cheiram as axilas um do outro",
+          "extra": "Inspire profundamente e descreva o cheiro"
+        }
+      }
     },
     {
       "title": "Both players do push-ups side by side",
       "extra": "Do push-ups facing each other, close enough to touch noses",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen flexiones uno al lado del otro",
+          "extra": "Haga flexiones una frente a la otra, lo suficientemente cerca como para tocarse la nariz"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem flexões lado a lado",
+          "extra": "Faça flexões de frente uma para a outra, perto o suficiente para tocar o nariz"
+        }
+      }
     },
     {
       "title": "Both players give each other awkward compliments",
       "extra": "Make them overly dramatic and cheesy",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se hacen elogios incómodos",
+          "extra": "Hazlos demasiado dramáticos y cursis"
+        },
+        "pt": {
+          "title": "Ambos os jogadores trocam elogios estranhos.",
+          "extra": "Torne-os excessivamente dramáticos e extravagantes"
+        }
+      }
     },
     {
       "title": "Both players admit a secret crush on someone in the room",
       "extra": "Also, describe what you find attractive about them",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores admiten que están enamorados en secreto por alguien en la sala",
+          "extra": "Además, describe lo que te parece atractivo de ellos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores admitem uma paixão secreta por alguém na sala",
+          "extra": "Além disso, descreva o que você acha atraente neles"
+        }
+      }
     },
     {
       "title": "Both players do partner sit-ups, holding each other's wrists",
       "extra": "Add a high-five at the top of each sit-up",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen sentadillas en pareja, cogiéndose las muñecas",
+          "extra": "Choca los cinco en la parte superior de cada sentadilla"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem abdominais em parceria, segurando os pulsos um do outro",
+          "extra": "Adicione um high-five na parte superior de cada flexão"
+        }
+      }
     },
     {
       "title": "Whisper a secret fantasy to each other",
       "extra": "Act out the fantasy with gestures only",
-      "spicyness": 29
+      "spicyness": 29,
+      "translations": {
+        "es": {
+          "title": "Susurra una fantasía secreta el uno al otro",
+          "extra": "Representa la fantasía solo con gestos"
+        },
+        "pt": {
+          "title": "Sussurrem uma fantasia secreta um para o outro",
+          "extra": "Realize a fantasia apenas com gestos"
+        }
+      }
     },
     {
       "title": "Roleplay a romantic restaurant scene together",
       "extra": "Include feeding each other dessert",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Jueguen juntos una escena romántica en un restaurante",
+          "extra": "Incluya alimentarse unos a otros con postre"
+        },
+        "pt": {
+          "title": "Interprete uma cena romântica de restaurante juntos",
+          "extra": "Inclua alimentar um ao outro com sobremesa"
+        }
+      }
     },
     {
       "title": "Both players do mirror exercises - one leads, the other copies",
       "extra": "Maintain eye contact throughout the exercises",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen ejercicios de espejo: uno lidera y el otro copia",
+          "extra": "Mantenga el contacto visual durante los ejercicios"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem exercícios de espelho - um conduz, o outro copia",
+          "extra": "Mantenha contato visual durante os exercícios"
+        }
+      }
     },
     {
       "title": "Both players try to speak in a foreign accent badly",
       "extra": "Also, have a full conversation in the accent",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan hablar mal con acento extranjero",
+          "extra": "Además, mantén una conversación completa con el acento"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam falar mal com sotaque estrangeiro",
+          "extra": "Além disso, tenha uma conversa completa com sotaque"
+        }
+      }
     },
     {
       "title": "Both players share a mouthful of water and spit it back",
       "extra": "Swirl it around before spitting",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una bocanada de agua y la devuelven",
+          "extra": "Gíralo antes de escupir"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dividem um bocado de água e cospem de volta",
+          "extra": "Gire antes de cuspir"
+        }
+      }
     },
     {
       "title": "Both players wear each other's shoes on the wrong feet",
       "extra": "Also, walk around the room like that",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores usan los zapatos del otro con el pie equivocado",
+          "extra": "Además, camina por la habitación de esa manera"
+        },
+        "pt": {
+          "title": "Ambos os jogadores usam os sapatos um do outro com os pés errados",
+          "extra": "Além disso, ande pela sala assim"
+        }
+      }
     },
     {
       "title": "Both players do a silly dance with exaggerated hip movements",
       "extra": "Also, maintain eye contact while dancing",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen un baile tonto con movimientos exagerados de cadera",
+          "extra": "Además, mantén el contacto visual mientras bailas"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem uma dança boba com movimentos exagerados do quadril",
+          "extra": "Além disso, mantenha contato visual enquanto dança"
+        }
+      }
     },
     {
       "title": "Both players sit on each other's laps and have a silly conversation",
       "extra": "Also, use baby talk throughout",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se sientan en el regazo del otro y tienen una conversación tonta",
+          "extra": "Además, usa el lenguaje infantil en todo momento"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se sentam no colo um do outro e têm uma conversa boba",
+          "extra": "Além disso, use a conversa com o bebê o tempo todo"
+        }
+      }
     },
     {
       "title": "Both players lick each other's ears",
       "extra": "Get right inside the ear canal",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen las orejas",
+          "extra": "Entra directamente en el canal auditivo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as orelhas um do outro",
+          "extra": "Entre diretamente no canal auditivo"
+        }
+      }
     },
     {
       "title": "Both players briefly pull up their shirts for the other to see",
       "extra": "Both players flash the whole group",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se levantan brevemente las camisas para que el otro las vea",
+          "extra": "Ambos jugadores muestran a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores levantam brevemente suas camisas para o outro ver",
+          "extra": "Ambos os jogadores mostram todo o grupo"
+        }
+      }
     },
     {
       "title": "Both players do partner push-ups - one on top of the other",
       "extra": "The top player must maintain contact with the bottom player's back",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen flexiones en pareja, una encima de la otra",
+          "extra": "El mejor jugador debe mantener contacto con la espalda del jugador inferior"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem flexões em parceria - uma em cima da outra",
+          "extra": "O melhor jogador deve manter contato com as costas do jogador inferior"
+        }
+      }
     },
     {
       "title": "Both players lick each other's sweaty backs",
       "extra": "After doing some exercise",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen la espalda sudorosa",
+          "extra": "Después de hacer algo de ejercicio"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as costas suadas um do outro",
+          "extra": "Depois de fazer algum exercício"
+        }
+      }
     },
     {
       "title": "The larger player pins the smaller player to the floor in a wrestling hold",
       "extra": "Maintain the pin for thirty seconds",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande clava al jugador más pequeño en el suelo en una bodega de lucha libre",
+          "extra": "Mantenga el pin durante treinta segundos"
+        },
+        "pt": {
+          "title": "O jogador maior prende o jogador menor no chão em um porão de luta livre",
+          "extra": "Mantenha o pino por trinta segundos"
+        }
+      }
     },
     {
       "title": "Both players moon each other",
       "extra": "Moon the whole group",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se alzan",
+          "extra": "Moon, todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores luam um para o outro",
+          "extra": "Moon, todo o grupo"
+        }
+      }
     },
     {
       "title": "The larger player holds the smaller player against a wall in a standing embrace",
       "extra": "Lift the smaller player's legs off the ground",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande sostiene al jugador más pequeño contra una pared en un abrazo de pie.",
+          "extra": "Levanta las piernas del jugador más pequeño del suelo"
+        },
+        "pt": {
+          "title": "O jogador maior segura o jogador menor contra a parede em um abraço de pé",
+          "extra": "Levante as pernas do jogador menor do chão"
+        }
+      }
     },
     {
       "title": "Current player will do an awkward lap dance for dare acceptor",
       "extra": "Add guided touching",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hará un baile erótico incómodo para quien acepta el reto",
+          "extra": "Añade toques guiados"
+        },
+        "pt": {
+          "title": "O jogador da vez fará uma dança erótica estranha para quem aceita o desafio",
+          "extra": "Adicionar toque guiado"
+        }
+      }
     },
     {
       "title": "Both players flash their genitals to each other",
       "extra": "Flash the whole group",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores muestran sus genitales el uno al otro",
+          "extra": "Muestra a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mostram seus órgãos genitais um para o outro",
+          "extra": "Mostre todo o grupo"
+        }
+      }
     },
     {
       "title": "From the knee, move your hand incrementally more intimate, asking \"Nervous?\" until they say yes.",
       "extra": "Use your lips instead of your hand",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Desde la rodilla, mueve la mano de forma cada vez más íntima y pregunta: «¿Nervioso?» hasta que digan que sí.",
+          "extra": "Usa los labios en lugar de la mano"
+        },
+        "pt": {
+          "title": "Do joelho, mova sua mão cada vez mais intimamente, perguntando “Nervoso?” até que eles digam sim.",
+          "extra": "Use seus lábios em vez de sua mão"
+        }
+      }
     }
   ]
 }

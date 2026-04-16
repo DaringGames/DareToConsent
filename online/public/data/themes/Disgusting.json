@@ -4,124 +4,364 @@
     {
       "title": "Both players make yucky faces at each other",
       "extra": "Also, make gross, nasty noises",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se hacen muecas el uno al otro",
+          "extra": "Además, haz ruidos asquerosos y desagradables"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem caretas um para o outro",
+          "extra": "Além disso, faça ruídos grosseiros e desagradáveis"
+        }
+      }
     },
     {
       "title": "Both players touch their foreheads to the floor",
       "extra": "... and also sniff the floor",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores tocan el suelo con la frente",
+          "extra": "... y también oler el suelo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tocam suas testas no chão.",
+          "extra": "... e também cheirar o chão"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players sniff each other's armpits",
       "extra": "Take a deep inhale and describe the smell",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se huelen las axilas",
+          "extra": "Inhale profundamente y describa el olor"
+        },
+        "pt": {
+          "title": "Ambos os jogadores cheiram as axilas um do outro",
+          "extra": "Inspire profundamente e descreva o cheiro"
+        }
+      }
     },
     {
       "title": "Both players pick each other's noses",
       "extra": "And show each other what you found",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se hurgan las narices",
+          "extra": "Y muéstrense el uno al otro lo que han encontrado"
+        },
+        "pt": {
+          "title": "Ambos os jogadores escolhem o nariz um do outro",
+          "extra": "E mostre um ao outro o que você encontrou"
+        }
+      }
     },
     {
       "title": "Both players lick each other's elbows",
       "extra": "Make it a long, slobbery lick",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen los codos",
+          "extra": "Haz que sea una lamida larga y babosa"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem os cotovelos um do outro",
+          "extra": "Faça uma longa e babada lambida"
+        }
+      }
     },
     {
       "title": "Both players smell each other's feet",
       "extra": "Take a big whiff right between the toes",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se huelen los pies",
+          "extra": "Toma una gran bocanada justo entre los dedos de los pies"
+        },
+        "pt": {
+          "title": "Ambos os jogadores cheiram os pés um do outro",
+          "extra": "Dê uma boa cheirada bem entre os dedos"
+        }
+      }
     },
     {
       "title": "Both players exchange chewed gum",
       "extra": "Chew it for 30 seconds before swapping",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intercambian chicles",
+          "extra": "Mastícalo durante 30 segundos antes de cambiarlo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores trocam chiclete mascado",
+          "extra": "Mastigue por 30 segundos antes de trocar"
+        }
+      }
     },
     {
       "title": "Both players lick each other's ears",
       "extra": "Get right inside the ear canal",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen las orejas",
+          "extra": "Entra directamente en el canal auditivo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as orelhas um do outro",
+          "extra": "Entre diretamente no canal auditivo"
+        }
+      }
     },
     {
       "title": "Both players taste each other's sweat",
       "extra": "Lick it directly from the skin",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores prueban el sudor del otro",
+          "extra": "Lámalo directamente de la piel"
+        },
+        "pt": {
+          "title": "Ambos os jogadores sentem o gosto do suor um do outro",
+          "extra": "Lamba-o diretamente da pele"
+        }
+      }
     },
     {
       "title": "Both players share a used tissue",
       "extra": "Blow your nose into it first",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten un pañuelo usado",
+          "extra": "Primero suénate la nariz"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham um lenço usado",
+          "extra": "Assoe seu nariz primeiro"
+        }
+      }
     },
     {
       "title": "Both players lick each other's toes",
       "extra": "Suck on each toe individually",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen los dedos de los pies",
+          "extra": "Chupe cada dedo del pie individualmente"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem os dedos um do outro",
+          "extra": "Chupe cada dedo individualmente"
+        }
+      }
     },
     {
       "title": "Both players sniff each other's belly buttons",
       "extra": "Dig deep to get the good stuff",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se huelen los ombligos",
+          "extra": "Profundiza para conseguir lo bueno"
+        },
+        "pt": {
+          "title": "Ambos os jogadores cheiram o umbigo um do outro",
+          "extra": "Cave fundo para obter as coisas boas"
+        }
+      }
     },
     {
       "title": "Both players exchange belly button lint",
       "extra": "Taste each other's lint",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intercambian pelusa en el ombligo",
+          "extra": "Saboreen la pelusa del otro"
+        },
+        "pt": {
+          "title": "Ambos os jogadores trocam fiapos no umbigo",
+          "extra": "Prove os fiapos um do outro"
+        }
+      }
     },
     {
       "title": "Both players lick each other's armpits",
       "extra": "Make sure they're sweaty first",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen las axilas",
+          "extra": "Primero asegúrate de que estén sudorosos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as axilas um do outro",
+          "extra": "Verifique se eles estão suados primeiro"
+        }
+      }
     },
     {
       "title": "Both players share a mouthful of water and spit it back",
       "extra": "Swirl it around before spitting",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una bocanada de agua y la devuelven",
+          "extra": "Gíralo antes de escupir"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dividem um bocado de água e cospem de volta",
+          "extra": "Gire antes de cuspir"
+        }
+      }
     },
     {
       "title": "Both players smell each other's used underwear",
       "extra": "Take a deep sniff right in the crotch area",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores huelen la ropa interior usada del otro",
+          "extra": "Olfatea profundamente justo en la zona de la entrepierna"
+        },
+        "pt": {
+          "title": "Ambos os jogadores cheiram as roupas íntimas usadas um do outro",
+          "extra": "Dê uma cheirada profunda na área da virilha"
+        }
+      }
     },
     {
       "title": "Both players lick each other's feet clean",
       "extra": "Make them walk barefoot first",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen los pies hasta dejarlos limpios",
+          "extra": "Haz que caminen descalzos primero"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem os pés um do outro para limpar",
+          "extra": "Faça-os andar descalços primeiro"
+        }
+      }
     },
     {
       "title": "Both players taste each other's earwax",
       "extra": "Dig it out with your finger first",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores prueban el cerumen del otro",
+          "extra": "Sácalo primero con el dedo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores provam a cera do ouvido um do outro",
+          "extra": "Desenterre com o dedo primeiro"
+        }
+      }
     },
     {
       "title": "Both players lick each other's nostrils",
       "extra": "Try to suck something out",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen las fosas nasales",
+          "extra": "Intenta chupar algo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as narinas um do outro",
+          "extra": "Tente sugar alguma coisa"
+        }
+      }
     },
     {
       "title": "Both players taste each other's toe jam",
       "extra": "Dig it out with your teeth",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores prueban la mermelada de dedos del otro",
+          "extra": "Sácalo con los dientes"
+        },
+        "pt": {
+          "title": "Ambos os jogadores provam a geleia do pé um do outro",
+          "extra": "Desenterre com seus dentes"
+        }
+      }
     },
     {
       "title": "Both players lick each other's sweaty backs",
       "extra": "After doing some exercise",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen la espalda sudorosa",
+          "extra": "Después de hacer algo de ejercicio"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as costas suadas um do outro",
+          "extra": "Depois de fazer algum exercício"
+        }
+      }
     },
     {
       "title": "Both players share a mouthful of food and chew it together",
       "extra": "Make it something messy like oatmeal",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten un bocado de comida y lo mastican juntos",
+          "extra": "Haz que sea algo desordenado como la avena"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham um bocado de comida e a mastigam juntos",
+          "extra": "Faça algo bagunçado, como aveia"
+        }
+      }
     },
     {
       "title": "Both players lick each other's dirty feet",
       "extra": "After walking through mud or dirt",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen los pies sucios",
+          "extra": "Después de caminar por barro o tierra"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem os pés sujos um do outro",
+          "extra": "Depois de caminhar pela lama ou sujeira"
+        }
+      }
     },
     {
       "title": "Both players give each other a golden shower",
       "extra": "Aim for the mouth",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan una lluvia dorada",
+          "extra": "Apunta a la boca"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dão um ao outro uma chuva dourada",
+          "extra": "Aponte para a boca"
+        }
+      }
     }
   ]
 }

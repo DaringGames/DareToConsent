@@ -4,164 +4,484 @@
     {
       "title": "Both players describe a kink they have heard of",
       "extra": "Both players demonstrate a kink they have",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores describen un problema del que han oído hablar",
+          "extra": "Ambos jugadores demuestran la perversión que tienen"
+        },
+        "pt": {
+          "title": "Ambos os jogadores descrevem uma distorção da qual já ouviram falar",
+          "extra": "Ambos os jogadores demonstram uma distorção que têm"
+        }
+      }
     },
     {
       "title": "Both players swat themselves",
       "extra": "Both players swat each other's bare skin",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se golpean",
+          "extra": "Ambos jugadores se golpean la piel desnuda"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se suicidaram",
+          "extra": "Ambos os jogadores batem na pele nua um do outro"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players share one boundary for tonight",
       "extra": "Also share something you want pushed tonight",
-      "spicyness": 5
+      "spicyness": 5,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten un límite para esta noche",
+          "extra": "Comparte también algo que quieras publicar esta noche"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham um limite para esta noite.",
+          "extra": "Compartilhe também algo que você deseja que seja divulgado hoje à noite"
+        }
+      }
     },
     {
       "title": "Current player kneels between dare acceptor's legs with eye contact",
       "extra": "Also caress their inner thighs",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno se arrodilla entre las piernas de quien acepta el reto con contacto visual",
+          "extra": "Acaricia también la parte interna de sus muslos"
+        },
+        "pt": {
+          "title": "O jogador da vez se ajoelha entre as pernas de quem aceita o desafio com contato visual",
+          "extra": "Também acaricie a parte interna das coxas"
+        }
+      }
     },
     {
       "title": "Current player will reach around dare acceptor to pin their arms",
       "extra": "Add breath control while pinned",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno rodeará a quien acepta el reto para sujetarle los brazos",
+          "extra": "Añade control de la respiración mientras estás inmovilizado"
+        },
+        "pt": {
+          "title": "O jogador da vez envolverá quem aceita o desafio para prender seus braços",
+          "extra": "Adicione controle de respiração enquanto estiver preso"
+        }
+      }
     },
     {
       "title": "Current player will tie dare acceptor's wrists loosely with a scarf",
       "extra": "Use rope and add predicament",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno atará holgadamente las muñecas de quien acepta el reto con una bufanda",
+          "extra": "Usa cuerda y añade una situación incómoda"
+        },
+        "pt": {
+          "title": "O jogador da vez amarrará os pulsos de quem aceita o desafio frouxamente com um lenço",
+          "extra": "Use corda e acrescente dificuldades"
+        }
+      }
     },
     {
       "title": "Both players take turns giving gentle spanks",
       "extra": "Use implements on bare skin",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se turnan para dar suaves nalgadas",
+          "extra": "Use los implementos sobre la piel desnuda"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se revezam dando palmadas suaves.",
+          "extra": "Use implementos na pele nua"
+        }
+      }
     },
     {
       "title": "Current player will feed dare acceptor while blindfolded",
       "extra": "Add temperature play with food",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno alimentará al que acepte el desafío con los ojos vendados",
+          "extra": "Añade temperatura, juega con la comida"
+        },
+        "pt": {
+          "title": "O jogador da vez alimentará quem aceita o desafio com os olhos vendados",
+          "extra": "Adicione temperatura, brinque com a comida"
+        }
+      }
     },
     {
       "title": "Both players whisper dirty commands to each other",
       "extra": "Obey while restrained",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se susurran órdenes sucias",
+          "extra": "Obedece mientras estés restringido"
+        },
+        "pt": {
+          "title": "Ambos os jogadores sussurram comandos sujos um para o outro",
+          "extra": "Obedeça enquanto estiver preso"
+        }
+      }
     },
     {
       "title": "Current player will apply ice to dare acceptor's skin",
       "extra": "Follow with candle wax",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno aplica hielo en la piel de quien acepta el reto",
+          "extra": "Sigue con cera para velas"
+        },
+        "pt": {
+          "title": "O jogador da vez aplica gelo na pele de quem aceita o desafio",
+          "extra": "Siga com cera de vela"
+        }
+      }
     },
     {
       "title": "Current player will roleplay as master and dare acceptor will roleplay as slave",
       "extra": "Slave performs three humiliating acts",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno jugará como amo y quien acepta el reto jugará como esclavo",
+          "extra": "El esclavo realiza tres actos humillantes"
+        },
+        "pt": {
+          "title": "O jogador da vez interpretará o papel de mestre e quem aceita o desafio interpretará o papel de escravo",
+          "extra": "Escravo realiza três atos humilhantes"
+        }
+      }
     },
     {
       "title": "Current player will give dare acceptor sensual flogging",
       "extra": "Alternate with electrostimulation",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le dará a quien acepta el reto una sensual flagelación",
+          "extra": "Alterna con electroestimulación"
+        },
+        "pt": {
+          "title": "O jogador da vez dará açoites sensuais aquem aceita o desafio",
+          "extra": "Alterne com eletroestimulação"
+        }
+      }
     },
     {
       "title": "Dare acceptor will wear a collar and be current player will hold the leash",
       "extra": "Add leash-guided tasks",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto usará un collar y el jugador en turno sujetará la correa",
+          "extra": "Añade tareas guiadas por correa"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio usará uma coleira e o jogador da vez segurará a coleira",
+          "extra": "Adicione tarefas guiadas por coleira"
+        }
+      }
     },
     {
       "title": "Current player will apply hot wax to dare acceptor's skin",
       "extra": "Follow with knife play",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno aplica cera caliente en la piel de quien acepta el reto",
+          "extra": "Sigue con el juego con el cuchillo"
+        },
+        "pt": {
+          "title": "O jogador da vez aplica cera quente na pele de quem aceita o desafio",
+          "extra": "Continue com o jogo de faca"
+        }
+      }
     },
     {
       "title": "Dare acceptor will be restrained while the current player teases",
       "extra": "Add sensory deprivation",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto será inmovilizado mientras el jugador en turno se burla",
+          "extra": "Añade privación sensorial"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio será restringido enquanto o jogador da vez brinca",
+          "extra": "Adicione privação sensorial"
+        }
+      }
     },
     {
       "title": "Current player will edge dare acceptor then stop",
       "extra": "Repeat until begging",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lleva a quien acepta el reto al borde del orgasmo y luego se detiene",
+          "extra": "Repite hasta rogar"
+        },
+        "pt": {
+          "title": "O jogador da vez leva quem aceita o desafio até perto do orgasmo e depois para",
+          "extra": "Repita até implorar"
+        }
+      }
     },
     {
       "title": "Both players expose an intimate area while others watch",
       "extra": "Add toy stimulation",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores exponen una zona íntima mientras otros miran",
+          "extra": "Añade estimulación con juguetes"
+        },
+        "pt": {
+          "title": "Ambos os jogadores expõem uma área íntima enquanto outros assistem",
+          "extra": "Adicione estimulação de brinquedo"
+        }
+      }
     },
     {
       "title": "Current player will receive a sensual electrostimulation",
       "extra": "Target erogenous zones",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá una sensual electroestimulación",
+          "extra": "Apunte a las zonas erógenas"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá uma eletroestimulação sensual",
+          "extra": "Zonas erógenas alvo"
+        }
+      }
     },
     {
       "title": "Current player will create a predicament bondage challenge for dare acceptor",
       "extra": "Add electrostimulation penalty",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno creará un desafío de bondage difícil para quien acepta el reto",
+          "extra": "Añade penalización por electroestimulación"
+        },
+        "pt": {
+          "title": "O jogador da vez criará um desafio difícil de bondage para quem aceita o desafio",
+          "extra": "Adicionar penalidade de eletroestimulação"
+        }
+      }
     },
     {
       "title": "Current player will humiliate dare acceptor verbally",
       "extra": "Add physical demonstration",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno humillará verbalmente a quien acepta el reto",
+          "extra": "Añade demostración física"
+        },
+        "pt": {
+          "title": "O jogador da vez humilhará verbalmente quem aceita o desafio",
+          "extra": "Adicionar demonstração física"
+        }
+      }
     },
     {
       "title": "Current player will force orgasm on dare acceptor",
       "extra": "Continue through overstimulation",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno forzará el orgasmo en quien acepta el reto",
+          "extra": "Continúe con la sobreestimulación"
+        },
+        "pt": {
+          "title": "O jogador da vez forçará o orgasmo nquem aceita o desafio",
+          "extra": "Continue com a superestimulação"
+        }
+      }
     },
     {
       "title": "Both players plan and execute a consensual non-consent roleplay",
       "extra": "Add impact play",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores planifican y ejecutan un juego de rol consensuado y sin consentimiento",
+          "extra": "Añade Impact Play"
+        },
+        "pt": {
+          "title": "Ambos os jogadores planejam e executam um RPG consensual sem consentimento",
+          "extra": "Adicione um jogo de impacto"
+        }
+      }
     },
     {
       "title": "Current player will suspend dare acceptor in partial bondage",
       "extra": "Add multiple sensations",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno suspenderá al que acepte el desafío en régimen de bondage parcial",
+          "extra": "Añade múltiples sensaciones"
+        },
+        "pt": {
+          "title": "O jogador da vez suspenderá quem aceita o desafio em bondage parcial",
+          "extra": "Adicione várias sensações"
+        }
+      }
     },
     {
       "title": "Both players engage in public play with risk of being seen",
       "extra": "Add remote control toy",
-      "spicyness": 78
+      "spicyness": 78,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan en público con el riesgo de ser vistos",
+          "extra": "Añade juguete de control remoto"
+        },
+        "pt": {
+          "title": "Ambos os jogadores participam de jogos públicos com risco de serem vistos",
+          "extra": "Adicionar brinquedo de controle remoto"
+        }
+      }
     },
     {
       "title": "Current player will administer violet wand to dare acceptor",
       "extra": "Add sound effects",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno usa una varita violeta en quien acepta el reto",
+          "extra": "Añade efectos de sonido"
+        },
+        "pt": {
+          "title": "O jogador da vez usa uma varinha violeta em quem aceita o desafio",
+          "extra": "Adicione efeitos sonoros"
+        }
+      }
     },
     {
       "title": "Current player will use dull knife play on dare acceptor",
       "extra": "Add blood play",
-      "spicyness": 81
+      "spicyness": 81,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace juego con cuchillo sin filo con quien acepta el reto",
+          "extra": "Agrega juego con sangre"
+        },
+        "pt": {
+          "title": "O jogador da vez faz jogo com faca sem fio em quem aceita o desafio",
+          "extra": "Adicione jogo com sangue"
+        }
+      }
     },
     {
       "title": "Current player will perform needle play on dare acceptor",
       "extra": "Add decorative pattern",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace juego con agujas con quien acepta el reto",
+          "extra": "Añade patrón decorativo"
+        },
+        "pt": {
+          "title": "O jogador da vez faz jogo com agulhas em quem aceita o desafio",
+          "extra": "Adicionar padrão decorativo"
+        }
+      }
     },
     {
       "title": "Both players engage in fire play with proper safety",
       "extra": "Add wax removal play",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores participan en el juego con fuego con la debida seguridad",
+          "extra": "Añade juego de eliminación de cera"
+        },
+        "pt": {
+          "title": "Ambos os jogadores jogam fogo com a devida segurança",
+          "extra": "Adicione um jogo de remoção de cera"
+        }
+      }
     },
     {
       "title": "Both players engage in breath play with orgasm control",
       "extra": "Add orgasm denial",
-      "spicyness": 91
+      "spicyness": 91,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan con la respiración y controlan el orgasmo.",
+          "extra": "Añade negación del orgasmo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores praticam jogos respiratórios com controle de orgasmos",
+          "extra": "Adicionar negação do orgasmo"
+        }
+      }
     },
     {
       "title": "Current player will administer electrostimulation to dare acceptor's genitals",
       "extra": "Aim for multiple orgasms",
-      "spicyness": 92
+      "spicyness": 92,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno aplica electroestimulación en los genitales de quien acepta el reto",
+          "extra": "Apunta a tener orgasmos múltiples"
+        },
+        "pt": {
+          "title": "O jogador da vez aplica eletroestimulação nos genitais de quem aceita o desafio",
+          "extra": "Procure orgasmos múltiplos"
+        }
+      }
     },
     {
       "title": "Current player will give breath play to dare acceptor using safe signals",
       "extra": "Add genital stimulation",
-      "spicyness": 96
+      "spicyness": 96,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace juego de respiración con quien acepta el reto usando señales seguras",
+          "extra": "Añade estimulación genital"
+        },
+        "pt": {
+          "title": "O jogador da vez faz jogo de respiração com quem aceita o desafio usando sinais seguros",
+          "extra": "Adicione estimulação genital"
+        }
+      }
     },
     {
       "title": "Both players engage in extreme consensual non-consent scene with penetration",
       "extra": "Add audience participation",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores participan en una escena extrema de no consentimiento consensuado con penetración",
+          "extra": "Añade participación de la audiencia"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se envolvem em uma cena extrema de não consentimento consensual com penetração",
+          "extra": "Adicione a participação do público"
+        }
+      }
     }
   ]
 }

@@ -4,149 +4,439 @@
     {
       "title": "Both players shake hands with each other",
       "extra": "... warmly, using both hands and eye contact",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan la mano",
+          "extra": "... calurosamente, con ambas manos y contacto visual"
+        },
+        "pt": {
+          "title": "Ambos os jogadores apertam as mãos um do outro",
+          "extra": "... calorosamente, usando as mãos e o contato visual"
+        }
+      }
     },
     {
       "title": "Give each other a side-hug",
       "extra": "Also, hold it 20 seconds and synch breathing",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Dense un abrazo lateral",
+          "extra": "Además, sosténgalo durante 20 segundos y sincronice la respiración"
+        },
+        "pt": {
+          "title": "Dê um abraço lateral um no outro",
+          "extra": "Além disso, segure 20 segundos e sincronize a respiração"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players give each other a gentle high-five",
       "extra": "Also, make it a lingering high-five with eye contact",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores chocan los cinco suavemente",
+          "extra": "Además, choca los cinco de forma persistente con el contacto visual"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dão um ao outro um leve high-five",
+          "extra": "Além disso, faça um high-five persistente com contato visual"
+        }
+      }
     },
     {
       "title": "Both players hold hands for 10 seconds",
       "extra": "Also, interlace fingers and sync three breaths",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan la mano durante 10 segundos",
+          "extra": "Además, entrelaza los dedos y sincroniza tres respiraciones"
+        },
+        "pt": {
+          "title": "Ambos os jogadores ficam de mãos dadas por 10 segundos",
+          "extra": "Além disso, entrelace os dedos e sincronize três respirações"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a quick shoulder squeeze",
       "extra": "Also, add a gentle neck rub",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto un rápido apretón de hombros",
+          "extra": "Además, agrega un suave masaje para el cuello"
+        },
+        "pt": {
+          "title": "O jogador da vez aperta rapidamente o ombro de quem aceita o desafio",
+          "extra": "Além disso, adicione uma massagem suave no pescoço"
+        }
+      }
     },
     {
       "title": "Sit side by side with shoulders touching for 30 seconds",
       "extra": "Also, both put an arm around the other player",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Siéntese uno al lado del otro con los hombros tocándose durante 30 segundos",
+          "extra": "Además, ambos abrazan al otro jugador"
+        },
+        "pt": {
+          "title": "Sente-se lado a lado com os ombros se tocando por 30 segundos",
+          "extra": "Além disso, ambos colocaram um braço em volta do outro jogador"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a simple hand massage (one hand)",
       "extra": "Also, massage both hands slowly",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto un simple masaje en las manos (una mano)",
+          "extra": "Además, masajea ambas manos lentamente"
+        },
+        "pt": {
+          "title": "O jogador da vez dá aquem aceita o desafio uma simples massagem nas mãos (uma mão)",
+          "extra": "Além disso, massageie as duas mãos lentamente"
+        }
+      }
     },
     {
       "title": "Exchange a front hug for 10 seconds",
       "extra": "Also, sway slowly together",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Intercambia un abrazo frontal durante 10 segundos",
+          "extra": "Además, balancéense lentamente juntos"
+        },
+        "pt": {
+          "title": "Troque um abraço frontal por 10 segundos",
+          "extra": "Além disso, balançam lentamente juntos"
+        }
+      }
     },
     {
       "title": "Sit facing each other with knees touching for 20 seconds",
       "extra": "Also, maintain soft eye contact",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Siéntese uno frente al otro con las rodillas tocándose durante 20 segundos",
+          "extra": "Además, mantenga un contacto visual suave"
+        },
+        "pt": {
+          "title": "Sente-se frente a frente com os joelhos se tocando por 20 segundos.",
+          "extra": "Além disso, mantenha contato visual suave"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a gentle scalp massage",
       "extra": "Also, include a slow temple rub",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto un suave masaje en el cuero cabelludo",
+          "extra": "Además, incluye un masaje lento en la sien"
+        },
+        "pt": {
+          "title": "O jogador da vez dá aquem aceita o desafio uma massagem suave no couro cabeludo",
+          "extra": "Além disso, inclua uma massagem lenta nas têmporas"
+        }
+      }
     },
     {
       "title": "Both players give each other light back scratches over clothes",
       "extra": "Also, draw slow lines down the back",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se devuelven ligeros arañazos en la ropa.",
+          "extra": "Además, dibuja líneas lentas en la parte posterior"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dão leves arranhões nas costas um do outro sobre as roupas",
+          "extra": "Além disso, desenhe linhas lentas na parte de trás"
+        }
+      }
     },
     {
       "title": "Sit back-to-back and breathe together for five slow breaths",
       "extra": "Also, reach back and hold hands behind you",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Siéntense espalda con espalda y respiren juntos durante cinco respiraciones lentas",
+          "extra": "Además, estira la mano hacia atrás y sostén las manos detrás de ti"
+        },
+        "pt": {
+          "title": "Sente-se de costas e respirem juntos por cinco respirações lentas",
+          "extra": "Além disso, estenda a mão para trás e segure as mãos atrás de você"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor an over-clothes shoulder and upper-back massage",
       "extra": "Also extend the massage to lower back",
-      "spicyness": 22
+      "spicyness": 22,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da al que acepta el desafío un masaje en los hombros y la parte superior de la espalda por encima de la ropa",
+          "extra": "También extienda el masaje a la parte inferior de la espalda"
+        },
+        "pt": {
+          "title": "O jogador da vez oferece aquem aceita o desafio uma massagem por cima da roupa nos ombros e na parte superior das costas",
+          "extra": "Estenda também a massagem para a região lombar."
+        }
+      }
     },
     {
       "title": "Both players trace gentle shapes on each other's forearms",
       "extra": "Also, trace slowly from wrist to elbow",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores trazan formas suaves en los antebrazos del otro",
+          "extra": "Además, traza lentamente desde la muñeca hasta el codo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores traçam formas suaves nos antebraços um do outro",
+          "extra": "Além disso, trace lentamente do pulso ao cotovelo"
+        }
+      }
     },
     {
       "title": "Sit close with thighs touching and lean into each other",
       "extra": "Also, wrap one arm around each other",
-      "spicyness": 29
+      "spicyness": 29,
+      "translations": {
+        "es": {
+          "title": "Siéntese cerca con los muslos tocándose e inclínese uno contra el otro",
+          "extra": "Además, envuelva un brazo alrededor del otro"
+        },
+        "pt": {
+          "title": "Sente-se perto, com as coxas se tocando e encoste-se uma na outra.",
+          "extra": "Além disso, envolva um braço em volta do outro"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a foot rub through socks",
       "extra": "Also, rub calves",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto un masaje en los pies a través de los calcetines",
+          "extra": "Además, frote las pantorrillas"
+        },
+        "pt": {
+          "title": "O jogador da vez massageia os pés de quem aceita o desafio nas meias",
+          "extra": "Além disso, esfregue as panturrilhas"
+        }
+      }
     },
     {
       "title": "Place forehead to forehead for 20 seconds",
       "extra": "Also, rub noses gently",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Coloque la frente contra la frente durante 20 segundos",
+          "extra": "Además, frote la nariz suavemente"
+        },
+        "pt": {
+          "title": "Coloque a testa na testa por 20 segundos",
+          "extra": "Além disso, esfregue suavemente os narizes"
+        }
+      }
     },
     {
       "title": "Sit with one player between the other's legs facing forward; outer player wraps arms around waist",
       "extra": "Also, rest chin on the other's shoulder",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Siéntese con un jugador entre las piernas del otro mirando hacia adelante; el jugador externo envuelve los brazos alrededor de la cintura",
+          "extra": "Además, apoye la barbilla sobre el hombro del otro"
+        },
+        "pt": {
+          "title": "Sente-se com um jogador entre as pernas do outro voltado para frente; o jogador externo envolve os braços em volta da cintura",
+          "extra": "Além disso, apoie o queixo no ombro do outro"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a full back massage over clothes for 1 minute",
       "extra": "Also, include the upper arms",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto un masaje de espalda completo sobre la ropa durante 1 minuto",
+          "extra": "Además, incluye la parte superior de los brazos"
+        },
+        "pt": {
+          "title": "O jogador da vez dá aquem aceita o desafio uma massagem nas costas sobre as roupas por 1 minuto",
+          "extra": "Além disso, inclua a parte superior dos braços"
+        }
+      }
     },
     {
       "title": "Lie on your sides facing each other and embrace for 30 seconds",
       "extra": "Also, touch foreheads while breathing together",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Acuéstese de lado uno frente al otro y abrácese durante 30 segundos.",
+          "extra": "Además, toquen la frente mientras respiran juntos"
+        },
+        "pt": {
+          "title": "Deite-se de lado, um de frente para o outro, e abrace por 30 segundos.",
+          "extra": "Além disso, toque na testa enquanto respiramos juntos"
+        }
+      }
     },
     {
       "title": "Dare acceptor rests head in current player's lap; current player gently strokes hair",
       "extra": "Also, include a light temple massage",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "El jugador que acepta desafíos apoya la cabeza en el regazo del jugador en turno; el jugador en turno acaricia suavemente el cabello",
+          "extra": "Además, incluye un ligero masaje en la sien"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio descansa a cabeça no colo do jogador da vez; o jogador da vez acaricia suavemente o cabelo",
+          "extra": "Além disso, inclua uma leve massagem no templo"
+        }
+      }
     },
     {
       "title": "Spoon on your sides for 1 minute",
       "extra": "Also, outer player's hand on inner players stomach under shirt",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Coloque una cuchara en los costados durante 1 minuto",
+          "extra": "Además, la mano exterior del jugador sobre el estómago del jugador interior, debajo de la camisa"
+        },
+        "pt": {
+          "title": "Coloque uma colher nas laterais por 1 minuto",
+          "extra": "Além disso, a mão externa do jogador sobre a barriga interna do jogador por baixo da camisa"
+        }
+      }
     },
     {
       "title": "Sit on the floor with one between the other's legs facing the same direction; cuddle close",
       "extra": "Also, hands on stomach, underneath shirt",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Siéntate en el suelo con una entre las piernas de la otra mirando en la misma dirección; abrázate",
+          "extra": "Además, las manos sobre el estómago, debajo de la camisa"
+        },
+        "pt": {
+          "title": "Sente-se no chão com uma entre as pernas da outra voltada para a mesma direção; aconchegue-se e feche",
+          "extra": "Além disso, mãos na barriga, embaixo da camisa"
+        }
+      }
     },
     {
       "title": "Lie side by side facing each other and cuddle with full-body contact (clothed)",
       "extra": "Also, intertwine legs lightly",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "Acuéstese uno al lado del otro uno frente al otro y abrácense con todo el cuerpo (vestidos)",
+          "extra": "Además, entrelaza las piernas ligeramente"
+        },
+        "pt": {
+          "title": "Deite-se lado a lado de frente um para o outro e abraçe-se em contato com o corpo inteiro (vestido)",
+          "extra": "Além disso, entrelace as pernas levemente"
+        }
+      }
     },
     {
       "title": "Sit in a chair with dare acceptor sideways on current player's lap for a cuddle",
       "extra": "Also, stroke back underneath shirt",
-      "spicyness": 68
+      "spicyness": 68,
+      "translations": {
+        "es": {
+          "title": "Siéntate en una silla con la persona que acepte el desafío de lado en el regazo del jugador en turno para abrazarlo",
+          "extra": "Además, acaricia la espalda por debajo de la camisa"
+        },
+        "pt": {
+          "title": "Sente-se em uma cadeira com quem aceita o desafio de lado no colo do jogador da vez para um abraço",
+          "extra": "Além disso, passe as costas por baixo da camisa"
+        }
+      }
     },
     {
       "title": "Lie face-to-face; dare acceptor drapes one leg over current player's hips and cuddle close",
       "extra": "Also, play with each other's hair",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Acuéstate cara a cara; el jugador que se atreve a aceptar cubre una pierna sobre las caderas del jugador en turno y lo abraza",
+          "extra": "Además, jueguen con el cabello del otro"
+        },
+        "pt": {
+          "title": "Deite-se cara a cara; quem aceita o desafio coloca uma perna sobre os quadris do jogador da vez e se aconchega",
+          "extra": "Além disso, brinque com o cabelo um do outro"
+        }
+      }
     },
     {
       "title": "Straddle cuddle: dare acceptor sits astride current player's lap for a close hug",
       "extra": "Stroke each other's back under the shirt",
-      "spicyness": 76
+      "spicyness": 76,
+      "translations": {
+        "es": {
+          "title": "Abrazo a horcajadas: el osado quien acepta el reto se sienta a horcajadas sobre el regazo del jugador en turno para darle un fuerte abrazo",
+          "extra": "Acariciarse la espalda debajo de la camisa"
+        },
+        "pt": {
+          "title": "Straddle cuddle: quem aceita o desafio se senta no colo do jogador da vez para um abraço apertado",
+          "extra": "Acaricie as costas um do outro por baixo da camisa"
+        }
+      }
     },
     {
       "title": "Lie chest-to-chest with one person on top",
       "extra": "Also synchronize breathing",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Acuéstese pecho contra pecho con una persona encima",
+          "extra": "Sincronice también la respiración"
+        },
+        "pt": {
+          "title": "Deite-se de peito a peito com uma pessoa por cima",
+          "extra": "Também sincronize a respiração"
+        }
+      }
     },
     {
       "title": "Spoon tightly under a blanket with legs entwined",
       "extra": "Outer player's hand rests on inner player's chest",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "Con una cuchara, coloque bien debajo de una manta con las piernas entrelazadas.",
+          "extra": "La mano exterior del jugador descansa sobre el pecho interior del jugador"
+        },
+        "pt": {
+          "title": "Coloque bem debaixo de um cobertor com as pernas entrelaçadas",
+          "extra": "A mão externa do jogador repousa sobre o peito interno do jogador"
+        }
+      }
     }
   ]
 }

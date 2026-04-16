@@ -4,104 +4,304 @@
     {
       "title": "Both players make faces at each other",
       "extra": "... while babbling incoherently",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se hacen muecas",
+          "extra": "... mientras balbucea incoherentemente"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem caretas um para o outro",
+          "extra": "... enquanto balbucia de forma incoerente"
+        }
+      }
     },
     {
       "title": "Both players make up a bizarre dance",
       "extra": "... while chanting each other's name",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores inventan un baile estrafalario",
+          "extra": "... mientras cantan el nombre del otro"
+        },
+        "pt": {
+          "title": "Ambos os jogadores inventam uma dança bizarra",
+          "extra": "... enquanto cantam o nome um do outro"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players talk complete gibberish to each other",
       "extra": "Scream the gibberish instead of talking",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hablan un completo galimatías el uno con el otro",
+          "extra": "Grita tonterías en lugar de hablar"
+        },
+        "pt": {
+          "title": "Ambos os jogadores falam bobagens completas um com o outro",
+          "extra": "Grite sem sentido em vez de falar"
+        }
+      }
     },
     {
       "title": "Both players make the weirdest faces possible at each other",
       "extra": "Add bizarre sound effects to the faces",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se ponen las caras más raras posibles el uno al otro",
+          "extra": "Añade efectos de sonido extraños a las caras"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem as caretas mais estranhas possíveis um para o outro",
+          "extra": "Adicione efeitos sonoros bizarros aos rostos"
+        }
+      }
     },
     {
       "title": "Current player and dare acceptor have a conversation using only animal noises",
       "extra": "Act out the animals you're imitating",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno y quien acepta el reto mantienen una conversación utilizando solo ruidos de animales",
+          "extra": "Representa a los animales que estás imitando"
+        },
+        "pt": {
+          "title": "O jogador da vez e quem aceita o desafio conversam usando apenas ruídos de animais",
+          "extra": "Represente os animais que você está imitando"
+        }
+      }
     },
     {
       "title": "Both players pretend to be aliens trying to communicate",
       "extra": "Add alien dance moves to the communication",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se hacen pasar por extraterrestres que intentan comunicarse",
+          "extra": "Añade movimientos de baile alienígenas a la comunicación"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fingem ser alienígenas tentando se comunicar",
+          "extra": "Adicione movimentos de dança alienígenas à comunicação"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a 'weirdo' makeover with imaginary makeup",
       "extra": "Add imaginary wacky accessories like clown noses",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto un cambio de imagen «raro» con maquillaje imaginario",
+          "extra": "Añade accesorios extravagantes imaginarios como narices de payaso"
+        },
+        "pt": {
+          "title": "O jogador da vez dá aquem aceita o desafio uma maquiagem “esquisita” com maquiagem imaginária",
+          "extra": "Adicione acessórios malucos imaginários, como narizes de palhaço"
+        }
+      }
     },
     {
       "title": "Both players attempt to walk like chickens while clucking",
       "extra": "Have a chicken dance-off competition",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan caminar como pollos mientras cacarean",
+          "extra": "Haz una competencia de baile de pollos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam andar como galinhas enquanto cacarejam",
+          "extra": "Faça uma competição de dança de galinhas"
+        }
+      }
     },
     {
       "title": "Both players act out what a porn scene for octopuses would look like",
       "extra": "Perform the octopus scene in a pool or bathtub",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores representan cómo sería una escena porno para pulpos",
+          "extra": "Realiza la escena del pulpo en una piscina o bañera"
+        },
+        "pt": {
+          "title": "Ambos os jogadores interpretam como seria uma cena pornográfica para polvos",
+          "extra": "Realize a cena do polvo em uma piscina ou banheira"
+        }
+      }
     },
     {
       "title": "Current player licks a whipped cream mustache off dare acceptor's face",
       "extra": "Lick an entire whipped cream beard off their face",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lame un bigote de crema batida de la cara de quien acepta el reto",
+          "extra": "Lámele toda una barba de crema batida de la cara"
+        },
+        "pt": {
+          "title": "O jogador da vez lambe um bigode de chantilly do rosto de quem aceita o desafio",
+          "extra": "Lamba uma barba inteira de chantilly do rosto"
+        }
+      }
     },
     {
       "title": "Both players give each other a 'wacky' massage using random kitchen utensils",
       "extra": "Use the utensils to play the butt bongos",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan un masaje «loco» con utensilios de cocina aleatorios",
+          "extra": "Usa los utensilios para tocar los bongos de culatas"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem uma massagem “maluca” um no outro usando utensílios de cozinha aleatórios",
+          "extra": "Use os utensílios para tocar bongôs"
+        }
+      }
     },
     {
       "title": "Both players attempt to dance like inflatable tube men at a car dealership",
       "extra": "Make the dance increasingly sensual and flirty",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan bailar como hombres de tubos inflables en un concesionario de automóviles",
+          "extra": "Haz que el baile sea cada vez más sensual y coqueto"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam dançar como homens de tubo inflável em uma concessionária de carros",
+          "extra": "Torne a dança cada vez mais sensual e sedutora"
+        }
+      }
     },
     {
       "title": "Current player feeds dare acceptor exotic fruits while making animal noises",
       "extra": "Lick any juice that drips onto each other's skin",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno alimenta a los que se atreven a aceptar frutas exóticas mientras hace ruidos de animales",
+          "extra": "Lamen cualquier jugo que gotee sobre la piel del otro"
+        },
+        "pt": {
+          "title": "O jogador da vez alimenta quem aceita o desafio com frutas exóticas enquanto faz barulhos de animais",
+          "extra": "Lambam qualquer suco que pingar na pele um do outro"
+        }
+      }
     },
     {
       "title": "Both players have a 'tickle fight'",
       "extra": "Strip to your underware first",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores tienen una «pelea de cosquillas»",
+          "extra": "Quítate primero la ropa interior"
+        },
+        "pt": {
+          "title": "Ambos os jogadores têm uma “luta de cócegas”",
+          "extra": "Tire a roupa íntima primeiro"
+        }
+      }
     },
     {
       "title": "Both players attempt to seduce each other while speaking only in pig Latin",
       "extra": "Add physical seduction moves to the pig Latin speaking",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan seducirse mientras hablan solo en latín porcino.",
+          "extra": "Añade movimientos de seducción física al cerdo de habla latina"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam seduzir um ao outro enquanto falam apenas em latim de porco",
+          "extra": "Adicione movimentos de sedução física ao porco que fala latim"
+        }
+      }
     },
     {
       "title": "Both players strip to underwear and wear it on their heads like silly hats",
       "extra": "Stage a nude wrestling match using the underwear as wrestling masks",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se desnudan en ropa interior y se la llevan en la cabeza como si fueran sombreros tontos",
+          "extra": "Organiza un combate de lucha desnuda usando la ropa interior como máscaras de lucha libre"
+        },
+        "pt": {
+          "title": "Ambos os jogadores vestem roupas íntimas e as usam na cabeça como chapéus bobos.",
+          "extra": "Organize uma luta de luta livre nua usando a cueca como máscara de luta livre"
+        }
+      }
     },
     {
       "title": "Current player gives dare acceptor a 'bizarre body painting' using chocolate syrup",
       "extra": "Lick the chocolate designs off each other's bodies",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le da a quien acepta el reto una «extraña pintura corporal» con sirope de chocolate",
+          "extra": "Lámense los diseños de chocolate del cuerpo del otro"
+        },
+        "pt": {
+          "title": "O jogador da vez dá aquem aceita o desafio uma “pintura corporal bizarra” usando calda de chocolate",
+          "extra": "Lambam os desenhos de chocolate dos corpos uns dos outros"
+        }
+      }
     },
     {
       "title": "Both players give each other a 'silly massage' using Jell-O as lubricant",
       "extra": "Slurp the Jell-O off each other's bodies",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan un «masaje tonto» usando gelatina como lubricante",
+          "extra": "Sorban la gelatina de los cuerpos de los demás"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem uma “massagem boba” usando gelatina como lubrificante",
+          "extra": "Beba a gelatina dos corpos um do outro"
+        }
+      }
     },
     {
       "title": "Both players have a 'food fight' using only sensual foods like whipped cream",
       "extra": "Lick and clean each other thoroughly after the food fight",
-      "spicyness": 89
+      "spicyness": 89,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores tienen una «pelea de comida» usando solo alimentos sensuales como crema batida",
+          "extra": "Lámense y límpiense bien después de la pelea."
+        },
+        "pt": {
+          "title": "Ambos os jogadores têm uma “briga de comida” usando apenas comidas sensuais, como chantilly",
+          "extra": "Lambam e limpe-se bem após a briga pela comida"
+        }
+      }
     },
     {
       "title": "Current player receives a 'wacky lap dance' from dare acceptor",
       "extra": "Add guided touching to make it intensely sensual",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibe un «loco baile erótico» de quien acepta el reto",
+          "extra": "Añade toques guiados para hacerlo intensamente sensual"
+        },
+        "pt": {
+          "title": "O jogador da vez recebe uma “dança erótica” de quem aceita o desafio",
+          "extra": "Adicione um toque guiado para torná-lo intensamente sensual"
+        }
+      }
     }
   ]
 }

@@ -4,114 +4,334 @@
     {
       "title": "Start a sentence for the other player to finish",
       "extra": "Also, make the sentence rhyme",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Empieza una frase para que el otro jugador la termine",
+          "extra": "Además, haz que la oración rime"
+        },
+        "pt": {
+          "title": "Comece uma frase para o outro jogador terminar",
+          "extra": "Além disso, faça a frase rimar"
+        }
+      }
     },
     {
       "title": "Pretend you are a mirror image of the other player",
       "extra": "... while the other player dances",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Imagina que eres una imagen reflejada del otro jugador",
+          "extra": "... mientras el otro jugador baila"
+        },
+        "pt": {
+          "title": "Finja que você é uma imagem espelhada do outro jogador",
+          "extra": "... enquanto o outro jogador dança"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Take turns adding words to create a silly sentence together",
       "extra": "Make the sentence rhyme",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Túrnense para agregar palabras para crear juntos una oración tonta",
+          "extra": "Haz que la oración rime"
+        },
+        "pt": {
+          "title": "Se revezam adicionando palavras para criar uma frase boba.",
+          "extra": "Faça a frase rimar"
+        }
+      }
     },
     {
       "title": "Sing a duet of a popular song together",
       "extra": "Improvise new lyrics to the song",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Canten juntos un dueto de una canción popular",
+          "extra": "Improvisa nuevas letras para la canción"
+        },
+        "pt": {
+          "title": "Cantem juntos um dueto de uma música popular",
+          "extra": "Improvise novas letras para a música"
+        }
+      }
     },
     {
       "title": "Draw a portrait of each other without looking at the paper",
       "extra": "Use your non-dominant hand for drawing",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Dibujen un retrato el uno del otro sin mirar el papel",
+          "extra": "Usa tu mano no dominante para dibujar"
+        },
+        "pt": {
+          "title": "Desenhe um retrato um do outro sem olhar para o papel",
+          "extra": "Use sua mão não dominante para desenhar"
+        }
+      }
     },
     {
       "title": "Create a short story together, each adding one sentence at a time",
       "extra": "Make it a fantasy adventure story",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Creen juntos una historia corta, cada uno añadiendo una oración a la vez",
+          "extra": "Haz que sea una historia de aventuras y fantasía"
+        },
+        "pt": {
+          "title": "Crie um conto juntos, cada um adicionando uma frase por vez",
+          "extra": "Faça disso uma história de aventura e fantasia"
+        }
+      }
     },
     {
       "title": "Perform a short improv scene as characters you both know",
       "extra": "Switch characters halfway through the scene",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Realiza una breve escena de improvisación con personajes que ambos conozcáis",
+          "extra": "Cambia de personaje a mitad de escena"
+        },
+        "pt": {
+          "title": "Faça uma pequena cena de improvisação com personagens que vocês dois conhecem",
+          "extra": "Troque de personagem no meio da cena"
+        }
+      }
     },
     {
       "title": "Write a haiku together about the current moment",
       "extra": "Make it a slightly sensual haiku",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Escriban juntos un haiku sobre el momento actual",
+          "extra": "Haz que sea un haiku un poco sensual"
+        },
+        "pt": {
+          "title": "Escrevam juntos um haicai sobre o momento atual",
+          "extra": "Faça disso um haicai levemente sensual"
+        }
+      }
     },
     {
       "title": "Act out a famous movie scene together",
       "extra": "Add your own creative twist to the ending",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Representan juntos una escena de película famosa",
+          "extra": "Añade tu propio toque creativo al final"
+        },
+        "pt": {
+          "title": "Encenem juntos uma cena de filme famosa",
+          "extra": "Adicione seu próprio toque criativo ao final"
+        }
+      }
     },
     {
       "title": "Create a dance routine to a song of your choice",
       "extra": "Incorporate a dip or lift into the dance",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Crea una rutina de baile con una canción de tu elección",
+          "extra": "Incorpora un chapuzón o un lifting en el baile"
+        },
+        "pt": {
+          "title": "Crie uma rotina de dança para uma música de sua escolha",
+          "extra": "Incorpore um mergulho ou uma elevação na dança"
+        }
+      }
     },
     {
       "title": "Whisper a secret fantasy to each other",
       "extra": "Act out the fantasy with gestures only",
-      "spicyness": 29
+      "spicyness": 29,
+      "translations": {
+        "es": {
+          "title": "Susurra una fantasía secreta el uno al otro",
+          "extra": "Representa la fantasía solo con gestos"
+        },
+        "pt": {
+          "title": "Sussurrem uma fantasia secreta um para o outro",
+          "extra": "Realize a fantasia apenas com gestos"
+        }
+      }
     },
     {
       "title": "Roleplay a romantic restaurant scene together",
       "extra": "Include feeding each other dessert",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Jueguen juntos una escena romántica en un restaurante",
+          "extra": "Incluya alimentarse unos a otros con postre"
+        },
+        "pt": {
+          "title": "Interprete uma cena romântica de restaurante juntos",
+          "extra": "Inclua alimentar um ao outro com sobremesa"
+        }
+      }
     },
     {
       "title": "Create a sensual poem together, alternating lines",
       "extra": "Whisper the poem to each other intimately",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Creen juntos un poema sensual, alternando líneas",
+          "extra": "Susurren el poema el uno al otro íntimamente"
+        },
+        "pt": {
+          "title": "Crie um poema sensual juntos, alternando linhas",
+          "extra": "Sussurrem o poema um para o outro intimamente"
+        }
+      }
     },
     {
       "title": "Improvise a slow dance to music only you can hear",
       "extra": "Slow dance together",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Improvisa un baile lento con música que solo tú puedes escuchar",
+          "extra": "Bailen despacio juntos"
+        },
+        "pt": {
+          "title": "Improvise uma dança lenta ao som de uma música que só você pode ouvir",
+          "extra": "Dançam lentamente juntos"
+        }
+      }
     },
     {
       "title": "Act out a steamy scene from a romance novel",
       "extra": "Add your own creative dialogue",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Representa una escena apasionante de una novela romántica",
+          "extra": "Añade tu propio diálogo creativo"
+        },
+        "pt": {
+          "title": "Represente uma cena quente de um romance",
+          "extra": "Adicione seu próprio diálogo criativo"
+        }
+      }
     },
     {
       "title": "Collaborate a fantasy story about being stranded on a desert island",
       "extra": "Make it increasingly romantic and sensual",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Colabora en una historia fantástica sobre estar atrapado en una isla desierta",
+          "extra": "Hazlo cada vez más romántico y sensual"
+        },
+        "pt": {
+          "title": "Colabore com uma história de fantasia sobre estar preso em uma ilha deserta",
+          "extra": "Torne-o cada vez mais romântico e sensual"
+        }
+      }
     },
     {
       "title": "Roleplay a phone sex conversation with someone trying to call tech support",
       "extra": "Make it increasingly explicit",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Haz un juego de rol: una conversación sexual telefónica con alguien que intenta llamar al soporte técnico",
+          "extra": "Hazlo cada vez más explícito"
+        },
+        "pt": {
+          "title": "Roleplay de uma conversa de sexo por telefone com alguém tentando ligar para o suporte técnico",
+          "extra": "Torne isso cada vez mais explícito"
+        }
+      }
     },
     {
       "title": "Create a sensual dance routine together",
       "extra": "Incorporate body contact and close movements",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Creen juntos una sensual rutina de baile",
+          "extra": "Incorpora el contacto corporal y los movimientos cercanos"
+        },
+        "pt": {
+          "title": "Crie uma rotina de dança sensual juntos",
+          "extra": "Incorpore contato corporal e movimentos próximos"
+        }
+      }
     },
     {
       "title": "Create a sensual striptease routine together",
       "extra": "Incorporate props and creative movements",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "Creen juntos una sensual rutina de striptease",
+          "extra": "Incorpora accesorios y movimientos creativos"
+        },
+        "pt": {
+          "title": "Crie uma rotina sensual de strip-tease juntos",
+          "extra": "Incorpore adereços e movimentos criativos"
+        }
+      }
     },
     {
       "title": "Roleplay a fantasy of being caught in a passionate moment",
       "extra": "Make the scene increasingly intense and creative",
-      "spicyness": 70
+      "spicyness": 70,
+      "translations": {
+        "es": {
+          "title": "Juego de rol: una fantasía de quedar atrapado en un momento apasionante",
+          "extra": "Haz que la escena sea cada vez más intensa y creativa"
+        },
+        "pt": {
+          "title": "Roleplay: a fantasia de ser pego em um momento de paixão",
+          "extra": "Torne a cena cada vez mais intensa e criativa"
+        }
+      }
     },
     {
       "title": "Roleplay acting out a softcore porn scene together",
       "extra": "Add your own creative twists and dialogue",
-      "spicyness": 80
+      "spicyness": 80,
+      "translations": {
+        "es": {
+          "title": "Juego de rol representando una escena porno softcore juntos",
+          "extra": "Añade tus propios giros creativos y diálogos"
+        },
+        "pt": {
+          "title": "RPG encenando uma cena pornográfica softcore juntos",
+          "extra": "Adicione seus próprios toques criativos e diálogos"
+        }
+      }
     },
     {
       "title": "One player performs a creative lapdance for the other player",
       "extra": "Include guided touching during the lapdance",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "Un jugador realiza un lapdance creativo para el otro jugador",
+          "extra": "Incluye toques guiados durante el lapdance"
+        },
+        "pt": {
+          "title": "Um jogador executa uma dança erótica criativa para o outro jogador",
+          "extra": "Inclua toques guiados durante a dança erótica"
+        }
+      }
     }
   ]
 }

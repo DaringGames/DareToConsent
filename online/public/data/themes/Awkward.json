@@ -4,144 +4,424 @@
     {
       "title": "Both players make silly faces at each other",
       "extra": "Also, make strange noises",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen muecas el uno con el otro",
+          "extra": "Además, haz ruidos extraños"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem caretas um para o outro",
+          "extra": "Além disso, faça ruídos estranhos"
+        }
+      }
     },
     {
       "title": "Both players maintain 10 seconds of eye contact",
       "extra": "... with your foreheads almost touching",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores mantienen 10 segundos de contacto visual",
+          "extra": "... con la frente casi tocándose"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mantêm 10 segundos de contato visual",
+          "extra": "... com suas testas quase se tocando"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players share an embarrassing childhood story",
       "extra": "Also, imitate how you acted in that story",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una embarazosa historia de infancia",
+          "extra": "Además, imita cómo actuaste en esa historia"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham uma história de infância embaraçosa",
+          "extra": "Além disso, imite como você agiu nessa história"
+        }
+      }
     },
     {
       "title": "Both players admit a secret crush on someone in the room",
       "extra": "Also, describe what you find attractive about them",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores admiten que están enamorados en secreto por alguien en la sala",
+          "extra": "Además, describe lo que te parece atractivo de ellos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores admitem uma paixão secreta por alguém na sala",
+          "extra": "Além disso, descreva o que você acha atraente neles"
+        }
+      }
     },
     {
       "title": "Both players maintain eye contact while making funny faces",
       "extra": "Also, don't blink for 10 seconds",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores mantienen el contacto visual mientras hacen muecas",
+          "extra": "Además, no parpadee durante 10 segundos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mantêm contato visual enquanto fazem caretas engraçadas",
+          "extra": "Além disso, não pisque por 10 segundos"
+        }
+      }
     },
     {
       "title": "Whisper an embarrassing secret to each other",
       "extra": "Also, repeat it out loud for the group",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Susurra un secreto embarazoso el uno al otro",
+          "extra": "Además, repítelo en voz alta para el grupo"
+        },
+        "pt": {
+          "title": "Sussurrem um segredo embaraçoso um para o outro",
+          "extra": "Além disso, repita em voz alta para o grupo"
+        }
+      }
     },
     {
       "title": "Hold hands awkwardly for 30 seconds",
       "extra": "Also, interlock fingers and squeeze tightly",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Sostenga las manos torpemente durante 30 segundos",
+          "extra": "Además, entrelaza los dedos y aprieta con fuerza"
+        },
+        "pt": {
+          "title": "Segure as mãos desajeitadamente por 30 segundos",
+          "extra": "Além disso, entrelace os dedos e aperte com força"
+        }
+      }
     },
     {
       "title": "Give each other awkward compliments",
       "extra": "Make them overly dramatic and cheesy",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Darse cumplidos incómodos",
+          "extra": "Hazlos demasiado dramáticos y cursis"
+        },
+        "pt": {
+          "title": "Dê elogios estranhos um ao outro",
+          "extra": "Torne-os excessivamente dramáticos e extravagantes"
+        }
+      }
     },
     {
       "title": "Dance badly together for one song",
       "extra": "Also, try to mimic each other's worst moves",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Bailen mal juntos para una canción",
+          "extra": "Además, traten de imitar los peores movimientos de los demás"
+        },
+        "pt": {
+          "title": "Dançam mal juntos para uma música",
+          "extra": "Além disso, tente imitar os piores movimentos um do outro"
+        }
+      }
     },
     {
       "title": "Imitate each other's walk or mannerisms",
       "extra": "Also, exaggerate them to be ridiculous",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Imiten el caminar o los gestos de los demás",
+          "extra": "Además, exagéralos para que sean ridículos"
+        },
+        "pt": {
+          "title": "Imite a caminhada ou os maneirismos um do outro",
+          "extra": "Além disso, exagere-os para serem ridículos"
+        }
+      }
     },
     {
       "title": "Give each other a one finger shoulder massage",
       "extra": "Only use your nose to do the massage",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Dése un masaje con un dedo y hombro",
+          "extra": "Usa solo tu nariz para hacer el masaje"
+        },
+        "pt": {
+          "title": "Faça uma massagem nos ombros com um dedo",
+          "extra": "Use apenas o nariz para fazer a massagem"
+        }
+      }
     },
     {
       "title": "Swap an item of clothing with each other",
       "extra": "Also, wear it for the rest of the game",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Intercambien una prenda de vestir entre sí",
+          "extra": "Además, úsala durante el resto del juego"
+        },
+        "pt": {
+          "title": "Troque uma peça de roupa entre si",
+          "extra": "Além disso, use-o pelo resto do jogo"
+        }
+      }
     },
     {
       "title": "Show each other an embarrassing photo on your phone",
       "extra": "Also, set it as the other's wallpaper temporarily",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Muéstrense una foto embarazosa en su teléfono",
+          "extra": "Además, configúralo como fondo de pantalla del otro temporalmente"
+        },
+        "pt": {
+          "title": "Mostre um ao outro uma foto embaraçosa no seu telefone",
+          "extra": "Além disso, defina-o temporariamente como papel de parede do outro"
+        }
+      }
     },
     {
       "title": "Sit so close that your legs are touching",
       "extra": "Also, maintain that position for 5 minutes",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Siéntate tan cerca que tus piernas se toquen",
+          "extra": "Además, mantén esa posición durante 5 minutos"
+        },
+        "pt": {
+          "title": "Sente-se tão perto que suas pernas se toquem",
+          "extra": "Além disso, mantenha essa posição por 5 minutos"
+        }
+      }
     },
     {
       "title": "Both players imitate each other's laugh",
       "extra": "Also, try to make it even more exaggerated",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores imitan la risa del otro",
+          "extra": "Además, trata de hacerlo aún más exagerado"
+        },
+        "pt": {
+          "title": "Ambos os jogadores imitam a risada um do outro",
+          "extra": "Além disso, tente torná-lo ainda mais exagerado"
+        }
+      }
     },
     {
       "title": "Both players do the chicken dance together",
       "extra": "Also, cluck like chickens throughout",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores bailan juntos el baile del pollo.",
+          "extra": "Además, cacarean como pollos por todas partes"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem a dança da galinha juntos",
+          "extra": "Além disso, cacareja como galinhas por toda parte"
+        }
+      }
     },
     {
       "title": "Both players attempt to do a coordinated dance move and fail",
       "extra": "Also, laugh at each other's mistakes",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan hacer un movimiento de baile coordinado y fallan",
+          "extra": "Además, ríete de los errores de los demás"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam fazer um movimento de dança coordenado e falham",
+          "extra": "Além disso, riam dos erros uns dos outros"
+        }
+      }
     },
     {
       "title": "Both players try to speak in a foreign accent badly",
       "extra": "Also, have a full conversation in the accent",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan hablar mal con acento extranjero",
+          "extra": "Además, mantén una conversación completa con el acento"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam falar mal com sotaque estrangeiro",
+          "extra": "Além disso, tenha uma conversa completa com sotaque"
+        }
+      }
     },
     {
       "title": "Both players make animal noises at each other",
       "extra": "Also, act like the animal for 30 seconds",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen ruidos de animales el uno al otro",
+          "extra": "Además, actúa como el animal durante 30 segundos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem barulhos de animais um para o outro",
+          "extra": "Além disso, aja como o animal por 30 segundos"
+        }
+      }
     },
     {
       "title": "Wear each other's shoes on the wrong feet",
       "extra": "Also, walk around the room like that",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Usen los zapatos del otro con el pie equivocado",
+          "extra": "Además, camina por la habitación de esa manera"
+        },
+        "pt": {
+          "title": "Use os sapatos um do outro com os pés errados",
+          "extra": "Além disso, ande pela sala assim"
+        }
+      }
     },
     {
       "title": "Sit on each other's laps and have a silly conversation",
       "extra": "Also, use baby talk throughout",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Sentarse en el regazo del otro y tener una conversación tonta",
+          "extra": "Además, usa el lenguaje infantil en todo momento"
+        },
+        "pt": {
+          "title": "Sente-se no colo um do outro e tenha uma conversa boba",
+          "extra": "Além disso, use a conversa com o bebê o tempo todo"
+        }
+      }
     },
     {
       "title": "Do a silly dance with exaggerated hip movements",
       "extra": "Also, maintain eye contact while dancing",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Haz un baile tonto con movimientos exagerados de cadera",
+          "extra": "Además, mantén el contacto visual mientras bailas"
+        },
+        "pt": {
+          "title": "Faça uma dança boba com movimentos exagerados do quadril",
+          "extra": "Além disso, mantenha contato visual enquanto dança"
+        }
+      }
     },
     {
       "title": "Both players briefly pull up their shirts for the other to see",
       "extra": "Both players flash the whole group",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se levantan brevemente las camisas para que el otro las vea",
+          "extra": "Ambos jugadores muestran a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores levantam brevemente suas camisas para o outro ver",
+          "extra": "Ambos os jogadores mostram todo o grupo"
+        }
+      }
     },
     {
       "title": "Both players moon each other",
       "extra": "Moon the whole group",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se alzan",
+          "extra": "Moon, todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores luam um para o outro",
+          "extra": "Moon, todo o grupo"
+        }
+      }
     },
     {
       "title": "Current player will do an awkward lap dance for dare acceptor",
       "extra": "Also, use a prop like a scarf or hat",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hará un baile erótico incómodo para quien acepta el reto",
+          "extra": "Además, usa un accesorio como una bufanda o un sombrero"
+        },
+        "pt": {
+          "title": "O jogador da vez fará uma dança erótica estranha para quem aceita o desafio",
+          "extra": "Além disso, use um adereço como um cachecol ou chapéu"
+        }
+      }
     },
     {
       "title": "Both players flash their genitals to each other",
       "extra": "Flash the whole group",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores muestran sus genitales el uno al otro",
+          "extra": "Muestra a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mostram seus órgãos genitais um para o outro",
+          "extra": "Mostre todo o grupo"
+        }
+      }
     },
     {
       "title": "Both players streak naked to the front door and back quickly",
       "extra": "Streak all the way to the mailbox and back",
-      "spicyness": 92
+      "spicyness": 92,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lanzan desnudos a la puerta principal y regresan rápidamente",
+          "extra": "Streak hasta el buzón de correo y viceversa"
+        },
+        "pt": {
+          "title": "Ambos os jogadores correm nus até a porta da frente e voltam rapidamente",
+          "extra": "Corra até a caixa de correio e volte"
+        }
+      }
     },
     {
       "title": "From the knee, move your hand incrementally more intimate, asking \"Nervous?\" until they say yes.",
       "extra": "Use your lips instead of your hand",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Desde la rodilla, mueve la mano de forma cada vez más íntima y pregunta: «¿Nervioso?» hasta que digan que sí.",
+          "extra": "Usa los labios en lugar de la mano"
+        },
+        "pt": {
+          "title": "Do joelho, mova sua mão cada vez mais intimamente, perguntando “Nervoso?” até que eles digam sim.",
+          "extra": "Use seus lábios em vez de sua mão"
+        }
+      }
     }
   ]
 }

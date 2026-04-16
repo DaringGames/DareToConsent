@@ -4,114 +4,334 @@
     {
       "title": "Both players muss up their own hair",
       "extra": "Muss up each other's hair",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se arruinan el pelo",
+          "extra": "Arruinarse el pelo el uno al otro"
+        },
+        "pt": {
+          "title": "Ambos os jogadores bagunçam seus próprios cabelos",
+          "extra": "Bagunçam o cabelo um do outro"
+        }
+      }
     },
     {
       "title": "Both players smear food around their mouths",
       "extra": "Help each other apply the food",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se ponen comida en la boca",
+          "extra": "Ayúdense unos a otros a aplicar la comida"
+        },
+        "pt": {
+          "title": "Ambos os jogadores espalham comida pela boca",
+          "extra": "Ajudem uns aos outros a aplicar a comida"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Current player will muss up dare acceptor's hair",
       "extra": "Sprinkle water in it and scrunch it messily",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno estropeará el pelo de quien acepta el reto",
+          "extra": "Espolvorea agua en él y arrújalo desordenadamente"
+        },
+        "pt": {
+          "title": "O jogador da vez estragará o cabelo de quem aceita o desafio",
+          "extra": "Polvilhe água e amasse bagunçadamente"
+        }
+      }
     },
     {
       "title": "Dare acceptor will squirt current player with ketchup",
       "extra": "Smear it around with your fingers",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto rociará al jugador en turno con salsa de tomate",
+          "extra": "Frótalo con los dedos"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio esguichará ketchup no jogador da vez",
+          "extra": "Esfregue com os dedos"
+        }
+      }
     },
     {
       "title": "Current player will draw on dare acceptor's face with washable marker",
       "extra": "Add silly decorations all over their cheeks",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno dibujará en la cara de quien acepta el reto con un rotulador lavable",
+          "extra": "Añade decoraciones tontas en sus mejillas"
+        },
+        "pt": {
+          "title": "O jogador da vez desenhará no rosto de quem aceita o desafio com um marcador lavável",
+          "extra": "Adicione decorações bobas em suas bochechas"
+        }
+      }
     },
     {
       "title": "Dare acceptor will dust current player's shirt with flour",
       "extra": "Pat handprints all over their chest",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto espolvoreará la camiseta del jugador en turno con harina",
+          "extra": "Dales palmaditas con las huellas de las manos por todo el pecho"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio polvilhará a camisa do jogador da vez com farinha",
+          "extra": "Impressões de mãos de Pat por todo o peito."
+        }
+      }
     },
     {
       "title": "Current player will put whipped cream on dare acceptor's nose",
       "extra": "Spread it to both cheeks with your finger",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pondrá crema batida en la nariz de quien acepta el reto",
+          "extra": "Extiéndelo en ambas mejillas con el dedo"
+        },
+        "pt": {
+          "title": "O jogador da vez colocará chantilly no nariz de quem aceita o desafio",
+          "extra": "Espalhe nas duas bochechas com o dedo."
+        }
+      }
     },
     {
       "title": "Dare acceptor will drizzle chocolate syrup on current player's arm",
       "extra": "Spread it from wrist to elbow with both hands",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto rociará sirope de chocolate en el brazo del jugador en turno",
+          "extra": "Extiéndalo desde la muñeca hasta el codo con ambas manos"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio colocará xarope de chocolate no braço do jogador da vez",
+          "extra": "Espalhe-o do pulso ao cotovelo com as duas mãos"
+        }
+      }
     },
     {
       "title": "Dare acceptor will crack an egg over current player's head",
       "extra": "Comb the egg into their hair",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto romperá un huevo sobre la cabeza del jugador en turno",
+          "extra": "Peina el huevo en su cabello"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio quebrará um ovo na cabeça do jogador da vez",
+          "extra": "Penteie o ovo em seus cabelos"
+        }
+      }
     },
     {
       "title": "Current player will finger paint a heart on dare acceptor's forearm with chocolate",
       "extra": "Write your initials next to it and kiss their wrist",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pintará con el dedo un corazón en el antebrazo del ganador del desafío con chocolate",
+          "extra": "Escribe tus iniciales al lado y besa su muñeca"
+        },
+        "pt": {
+          "title": "O jogador da vez pintará com o dedo um coração no antebraço de quem aceita o desafio com chocolate",
+          "extra": "Escreva suas iniciais ao lado e beije seu pulso"
+        }
+      }
     },
     {
       "title": "Dare acceptor will pour syrup from current player's throat to collarbone",
       "extra": "Use both hands to massage it into their skin",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto echará sirope desde la garganta del jugador en turno hasta la clavícula",
+          "extra": "Usa ambas manos para masajearlo en su piel"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio despejará xarope da garganta do jogador da vez até a clavícula",
+          "extra": "Use as duas mãos para massagear a pele"
+        }
+      }
     },
     {
       "title": "Current player will pie dare acceptor in the face with whipped cream",
       "extra": "Slowly wipe it around their face in circles",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le dará un golpe en la cara al que acepte el desafío con crema batida",
+          "extra": "Límpielo lentamente alrededor de la cara en círculos"
+        },
+        "pt": {
+          "title": "O jogador da vez colocará quem aceita o desafio na cara com chantilly",
+          "extra": "Limpe-o lentamente ao redor do rosto em círculos."
+        }
+      }
     },
     {
       "title": "Current player will drizzle honey on dare acceptor's shoulder",
       "extra": "Lick the honey off their skin",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno rociará miel en el hombro de quien acepta el reto",
+          "extra": "Lame la miel de su piel"
+        },
+        "pt": {
+          "title": "O jogador da vez jogará mel no ombro de quem aceita o desafio",
+          "extra": "Lamba o mel de sua pele"
+        }
+      }
     },
     {
       "title": "Dare acceptor will strip current player to their underwear and throw eggs at them",
       "extra": "Step closer and smear the egg around their body",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto desnudará al jugador en turno hasta dejarlo en ropa interior y le arrojará huevos",
+          "extra": "Acércate y unta el huevo alrededor de su cuerpo"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio tirará a roupa íntima do jogador da vez e jogará ovos nele",
+          "extra": "Aproxime-se e espalhe o ovo em volta do corpo."
+        }
+      }
     },
     {
       "title": "Current player will draw frosting designs on dare acceptor's bare stomach",
       "extra": "Lick off one of the designs",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno dibujará diseños de glaseado con el estómago desnudo del que se atreva a aceptar",
+          "extra": "Lame uno de los diseños"
+        },
+        "pt": {
+          "title": "O jogador da vez desenhará desenhos de glacê na barriga nua de quem aceita o desafio",
+          "extra": "Escolha um dos designs"
+        }
+      }
     },
     {
       "title": "Dare acceptor will pour cold water down current player's back under their shirt",
       "extra": "Massage their back through the wet fabric",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto echará agua fría por la espalda del jugador en turno por debajo de su camiseta",
+          "extra": "Masajea su espalda a través de la tela mojada"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio despejará água fria nas costas do jogador da vez, debaixo da camisa",
+          "extra": "Massageie suas costas através do tecido molhado"
+        }
+      }
     },
     {
       "title": "Current player will make a sundae on dare acceptor's chest with syrup and whipped cream",
       "extra": "Eat it directly off their body",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno preparará un sundae en el pecho de quien acepta el reto con sirope y crema batida",
+          "extra": "Cómelo directamente de su cuerpo"
+        },
+        "pt": {
+          "title": "O jogador da vez fará um sundae no peito de quem aceita o desafio com xarope e chantilly",
+          "extra": "Coma diretamente de seu corpo"
+        }
+      }
     },
     {
       "title": "Dare acceptor will feed current player chocolate sauce from their fingers",
       "extra": "Suck each finger clean slowly",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto alimentará al jugador en turno con salsa de chocolate con sus dedos",
+          "extra": "Chupe cada dedo para limpiarlo lentamente"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio alimentará o jogador da vez com molho de chocolate com seus dedos",
+          "extra": "Chupe cada dedo lentamente"
+        }
+      }
     },
     {
       "title": "Current player will sit on dare acceptor's lap while they pour chocolate down your back",
       "extra": "Grind against them while they spread it around",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno se sentará en el regazo de quien acepta el reto mientras le vierte chocolate por la espalda",
+          "extra": "Muela contra ellos mientras lo esparcen"
+        },
+        "pt": {
+          "title": "O jogador da vez se sentará no colo de quem aceita o desafio enquanto derrama chocolate em suas costas",
+          "extra": "Moa contra eles enquanto eles o espalham"
+        }
+      }
     },
     {
       "title": "Dare acceptor will cover current player's chest in whipped cream and lick it off",
       "extra": "Focus extra attention on their nipples",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto cubrirá el pecho del jugador en turno con crema batida y se lo lamerá",
+          "extra": "Presta más atención a sus pezones"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio cobrirá o peito do jogador da vez com chantilly e o lamberá",
+          "extra": "Concentre atenção extra em seus mamilos"
+        }
+      }
     },
     {
       "title": "Current player will pour honey on dare acceptor's inner thighs",
       "extra": "Lick it off slowly, getting closer to their groin",
-      "spicyness": 81
+      "spicyness": 81,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno echará miel en la parte interna de los muslos del jugador que se atreva",
+          "extra": "Lámela lentamente, acercándose a su ingle"
+        },
+        "pt": {
+          "title": "O jogador da vez colocará mel na parte interna das coxas de quem aceita o desafio",
+          "extra": "Lamba-o lentamente, chegando mais perto de sua virilha"
+        }
+      }
     },
     {
       "title": "Current player will lick chocolate sauce off dare acceptor's genitals",
       "extra": "Try to make them orgasm",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lamerá salsa de chocolate de los genitales del que se atreva a aceptar",
+          "extra": "Intenta hacer que tengan un orgasmo"
+        },
+        "pt": {
+          "title": "O jogador da vez lamberá o molho de chocolate dos órgãos genitais de quem aceita o desafio",
+          "extra": "Tente fazê-los ter orgasmos"
+        }
+      }
     }
   ]
 }

@@ -4,164 +4,484 @@
     {
       "title": "Both players stare at each other disdainfully",
       "extra": "Also, criticize each other's appearance",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se miran con desdén",
+          "extra": "Además, critiquen la apariencia de los demás"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se encaram com desdém",
+          "extra": "Além disso, critiquem a aparência um do outro"
+        }
+      }
     },
     {
       "title": "Both players disclose something embarrassing",
       "extra": "Also, mock the other player's disclosure",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores revelan algo embarazoso",
+          "extra": "Además, burla de la revelación del otro jugador"
+        },
+        "pt": {
+          "title": "Ambos os jogadores revelam algo embaraçoso",
+          "extra": "Além disso, zombe da revelação do outro jogador"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Current player describes dare acceptor's worst feature",
       "extra": "Make them repeat it back",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno describe la peor característica de quien acepta el reto",
+          "extra": "Haz que lo repitan"
+        },
+        "pt": {
+          "title": "O jogador da vez descreve a pior característica de quem aceita o desafio",
+          "extra": "Faça com que repitam"
+        }
+      }
     },
     {
       "title": "Dare acceptor must beg current player for approval",
       "extra": "Add physical groveling",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe rogar al jugador en turno su aprobación",
+          "extra": "Añade humillación física"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve implorar a aprovação do jogador da vez",
+          "extra": "Adicione o rastejamento físico"
+        }
+      }
     },
     {
       "title": "Both players share most embarrassing childhood memory",
       "extra": "Act it out dramatically",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten el recuerdo más embarazoso de la infancia",
+          "extra": "Actúa dramáticamente"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham a mais embaraçosa memória de infância",
+          "extra": "Aja de forma dramática"
+        }
+      }
     },
     {
       "title": "Current player assigns humiliating nickname to dare acceptor",
       "extra": "Must use it for rest of game",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno asigna un apodo humillante a quien acepta el reto",
+          "extra": "Debe usarlo durante el resto del juego"
+        },
+        "pt": {
+          "title": "O jogador da vez atribui um apelido humilhante aquem aceita o desafio",
+          "extra": "Deve usá-lo para o resto do jogo"
+        }
+      }
     },
     {
       "title": "Dare acceptor must describe themselves negatively",
       "extra": "Current player adds embellishments",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe describirse a sí mismo de manera negativa",
+          "extra": "El jugador en turno añade adornos"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve se descrever negativamente",
+          "extra": "O jogador da vez adiciona enfeites"
+        }
+      }
     },
     {
       "title": "Both players wear silly signs mocking themselves",
       "extra": "Add audience voting",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores llevan carteles tontos burlándose de sí mismos",
+          "extra": "Añade votación de la audiencia"
+        },
+        "pt": {
+          "title": "Ambos os jogadores usam cartazes bobos zombando de si mesmos",
+          "extra": "Adicionar votação do público"
+        }
+      }
     },
     {
       "title": "Current player uses dare acceptor as human footrest",
       "extra": "Add verbal commentary",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno usa quien acepta el reto como reposapiés humano",
+          "extra": "Añade comentario verbal"
+        },
+        "pt": {
+          "title": "O jogador da vez usa quem aceita o desafio como apoio para os pés humano",
+          "extra": "Adicione comentários verbais"
+        }
+      }
     },
     {
       "title": "Dare acceptor must perform embarrassing impression",
       "extra": "Current player rates it poorly",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe dar una impresión embarazosa",
+          "extra": "El jugador en turno lo califica mal"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve causar uma impressão embaraçosa",
+          "extra": "O jogador da vez o avalia mal"
+        }
+      }
     },
     {
       "title": "Both players exchange humiliating truths",
       "extra": "Must thank each other sincerely",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intercambian verdades humillantes",
+          "extra": "Deben darse las gracias sinceramente"
+        },
+        "pt": {
+          "title": "Ambos os jogadores trocam verdades humilhantes",
+          "extra": "Devem agradecer um ao outro sinceramente"
+        }
+      }
     },
     {
       "title": "Current player writes degrading message on dare acceptor",
       "extra": "Display it prominently",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno escribe un mensaje degradante en quien acepta el reto",
+          "extra": "Muéstralo de forma destacada"
+        },
+        "pt": {
+          "title": "O jogador da vez escreve uma mensagem degradante nquem aceita o desafio",
+          "extra": "Exiba-o de forma proeminente"
+        }
+      }
     },
     {
       "title": "Dare acceptor must wear ridiculous outfit chosen by current player",
       "extra": "Add public walk",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe usar un atuendo ridículo elegido por el jugador en turno",
+          "extra": "Añade paseo público"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve usar uma roupa ridícula escolhida pelo jogador da vez",
+          "extra": "Adicionar passeio público"
+        }
+      }
     },
     {
       "title": "Both players compete in most humiliating pose",
       "extra": "Loser must keep pose",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores compiten en la pose más humillante",
+          "extra": "El perdedor debe mantener la pose"
+        },
+        "pt": {
+          "title": "Ambos os jogadores competem na pose mais humilhante",
+          "extra": "O perdedor deve manter a pose"
+        }
+      }
     },
     {
       "title": "Current player verbally degrades dare acceptor",
       "extra": "Dare acceptor must agree",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno degrada verbalmente a quien acepta el reto",
+          "extra": "Quien acepta el reto debe estar de acuerdo"
+        },
+        "pt": {
+          "title": "O jogador da vez degrada verbalmente quem aceita o desafio",
+          "extra": "Quem aceita o desafio deve concordar"
+        }
+      }
     },
     {
       "title": "Dare acceptor must serve current player humbly",
       "extra": "Add physical gestures",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe servir al jugador en turno con humildad",
+          "extra": "Añade gestos físicos"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve servir humildemente o jogador da vez",
+          "extra": "Adicione gestos físicos"
+        }
+      }
     },
     {
       "title": "Both players reveal deepest shame",
       "extra": "Must laugh at each other",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores revelan su más profunda vergüenza",
+          "extra": "Deben reírse el uno del otro"
+        },
+        "pt": {
+          "title": "Ambos os jogadores revelam a mais profunda vergonha",
+          "extra": "Devem rir um do outro"
+        }
+      }
     },
     {
       "title": "Current player photographs dare acceptor in humiliating pose",
       "extra": "Set as phone wallpaper",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno fotografía a quien acepta el reto en una pose humillante",
+          "extra": "Establecer como fondo de pantalla del teléfono"
+        },
+        "pt": {
+          "title": "O jogador da vez fotografa quem aceita o desafio em uma pose humilhante",
+          "extra": "Definir como papel de parede do telefone"
+        }
+      }
     },
     {
       "title": "Dare acceptor must beg for forgiveness for imaginary crime",
       "extra": "Current player demands more",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe pedir perdón por un crimen imaginario",
+          "extra": "El jugador en turno exige más"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve implorar por perdão por um crime imaginário",
+          "extra": "O jogador da vez exige mais"
+        }
+      }
     },
     {
       "title": "Both players wear demeaning labels chosen by others",
       "extra": "Must defend them seriously",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores llevan etiquetas degradantes elegidas por otros",
+          "extra": "Hay que defenderlos en serio"
+        },
+        "pt": {
+          "title": "Ambos os jogadores usam rótulos humilhantes escolhidos por outros",
+          "extra": "Deve defendê-los seriamente"
+        }
+      }
     },
     {
       "title": "Current player forces dare acceptor to crawl",
       "extra": "Add leash and commands",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno obliga a quien acepta el reto a gatear",
+          "extra": "Añade correa y comandos"
+        },
+        "pt": {
+          "title": "O jogador da vez força quem aceita o desafio a engatinhar",
+          "extra": "Adicione coleira e comandos"
+        }
+      }
     },
     {
       "title": "Dare acceptor must worship current player's feet",
       "extra": "Add verbal praise",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe adorar los pies del jugador en turno",
+          "extra": "Agrega elogios verbales"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve adorar os pés do jogador da vez",
+          "extra": "Adicione elogios verbais"
+        }
+      }
     },
     {
       "title": "Both players perform humiliating puppet show",
       "extra": "Based on real flaws",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores interpretan un humillante espectáculo de títeres",
+          "extra": "Basado en defectos reales"
+        },
+        "pt": {
+          "title": "Ambos os jogadores realizam um show de marionetes humilhante",
+          "extra": "Baseado em falhas reais"
+        }
+      }
     },
     {
       "title": "Current player auctions off dare acceptor's dignity",
       "extra": "Must fulfill winning bid",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno subasta la dignidad de quien acepta el reto",
+          "extra": "Debe cumplir con la oferta ganadora"
+        },
+        "pt": {
+          "title": "O jogador da vez leiloa a dignidade de quem aceita o desafio",
+          "extra": "Deve cumprir a proposta vencedora"
+        }
+      }
     },
     {
       "title": "Dare acceptor must wear gag and serve drinks",
       "extra": "Add clumsy act",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto debe llevar una mordaza y servir bebidas",
+          "extra": "Añade acto torpe"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio deve usar mordaça e servir bebidas",
+          "extra": "Adicione um ato desajeitado"
+        }
+      }
     },
     {
       "title": "Both players recreate most humiliating moments",
       "extra": "With exaggerated flaws",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores recrean los momentos más humillantes",
+          "extra": "Con defectos exagerados"
+        },
+        "pt": {
+          "title": "Ambos os jogadores recriam os momentos mais humilhantes",
+          "extra": "Com falhas exageradas"
+        }
+      }
     },
     {
       "title": "Current player writes humiliating confession for dare acceptor",
       "extra": "Must read aloud dramatically",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno escribe una confesión humillante para quien acepta el reto",
+          "extra": "Debe leerse en voz alta dramáticamente"
+        },
+        "pt": {
+          "title": "O jogador da vez escreve uma confissão humilhante para quem aceita o desafio",
+          "extra": "Deve ser lido em voz alta dramaticamente"
+        }
+      }
     },
     {
       "title": "Dare acceptor becomes current player's nude human chair",
       "extra": "Add verbal humiliation",
-      "spicyness": 81
+      "spicyness": 81,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto se convierte en la silla humana desnuda del jugador en turno",
+          "extra": "Agrega humillación verbal"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio se torna a cadeira humana nua do jogador da vez",
+          "extra": "Adicione humilhação verbal"
+        }
+      }
     },
     {
       "title": "Both players engage in nude truth or dare",
       "extra": "Must choose most humiliating act",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan verdad o reto desnudos",
+          "extra": "Debe elegir el acto más humillante"
+        },
+        "pt": {
+          "title": "Ambos os jogadores jogam verdade ou desafio nus",
+          "extra": "Deve escolher o ato mais humilhante"
+        }
+      }
     },
     {
       "title": "Current player forces nude dare acceptor to beg for clothing",
       "extra": "Grant items mockingly",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno obliga a quien acepta el reto, desnudo, a rogar por ropa",
+          "extra": "Otorga objetos burlonamente"
+        },
+        "pt": {
+          "title": "O jogador da vez força quem aceita o desafio, nu, a implorar por roupas",
+          "extra": "Conceda itens de forma zombeteira"
+        }
+      }
     },
     {
       "title": "Nude dare acceptor must wear demeaning collar with bell",
       "extra": "Perform sexy dance when rung",
-      "spicyness": 89
+      "spicyness": 89,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto, desnudo, debe usar un collar humillante con cascabel",
+          "extra": "Realiza un baile sexy cuando tocas"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio, nu, deve usar uma coleira humilhante com sino",
+          "extra": "Faça uma dança sexy ao tocar"
+        }
+      }
     },
     {
       "title": "Current player subjects dare acceptor to humiliating sex act",
       "extra": "Record for blackmail",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno somete a quien acepta el reto a un acto sexual humillante",
+          "extra": "Grábalo para chantaje"
+        },
+        "pt": {
+          "title": "O jogador da vez submete quem aceita o desafio a um ato sexual humilhante",
+          "extra": "Grave para chantagem"
+        }
+      }
     }
   ]
 }

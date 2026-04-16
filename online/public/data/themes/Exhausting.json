@@ -4,119 +4,349 @@
     {
       "title": "Both players stretch as high as they can",
       "extra": "... while jumping as high as they can",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se estiran lo más alto que pueden",
+          "extra": "... mientras saltan tan alto como pueden"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se esticam o mais alto que podem.",
+          "extra": "... enquanto pulam o mais alto que podem"
+        }
+      }
     },
     {
       "title": "The larger player will try to pick up the smaller",
       "extra": "... and carry them around the room",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande intentará coger al más pequeño",
+          "extra": "... y llévalos por la habitación"
+        },
+        "pt": {
+          "title": "O jogador maior tentará pegar o menor",
+          "extra": "... e carregue-os pela sala"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players do ten jumping jacks together",
       "extra": "High-five after each jumping jack",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen diez saltos de tijera juntos.",
+          "extra": "Choca los cinco después de cada salto"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem dez polichinelos juntos",
+          "extra": "Dê cinco cumprimentos após cada macaco"
+        }
+      }
     },
     {
       "title": "Arm-wrestle for thirty seconds",
       "extra": "Switch hands and arm-wrestle for another thirty seconds",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Lucha de brazos durante treinta segundos",
+          "extra": "Cambia de manos y lucha de brazos durante otros treinta segundos"
+        },
+        "pt": {
+          "title": "Luta de braço por trinta segundos",
+          "extra": "Troque de mãos e lute de braço por mais trinta segundos"
+        }
+      }
     },
     {
       "title": "Both players do push-ups side by side",
       "extra": "Do push-ups facing each other, close enough to touch noses",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen flexiones uno al lado del otro",
+          "extra": "Haga flexiones una frente a la otra, lo suficientemente cerca como para tocarse la nariz"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem flexões lado a lado",
+          "extra": "Faça flexões de frente uma para a outra, perto o suficiente para tocar o nariz"
+        }
+      }
     },
     {
       "title": "The larger player gives the smaller player a piggyback ride around the room",
       "extra": "The smaller player must hold on with their legs wrapped around",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande le da al jugador más pequeño un paseo a cuestas por la habitación",
+          "extra": "El jugador más pequeño debe agarrarse con las piernas alrededor"
+        },
+        "pt": {
+          "title": "O jogador maior dá ao jogador menor um passeio de carona pela sala.",
+          "extra": "O jogador menor deve se segurar com as pernas enroladas"
+        }
+      }
     },
     {
       "title": "Both players hold a squat position back-to-back for one minute",
       "extra": "Interlock arms while squatting",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores mantienen una posición en cuclillas consecutiva durante un minuto",
+          "extra": "Entrelaza los brazos mientras estás en cuclillas"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mantêm uma posição de agachamento consecutivo por um minuto",
+          "extra": "Entrelace os braços enquanto se agacha"
+        }
+      }
     },
     {
       "title": "The larger player lifts the smaller player in a fireman's carry",
       "extra": "Carry them around the room twice",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande levanta al jugador más pequeño en un carro de bombero.",
+          "extra": "Llévalos por la habitación dos veces"
+        },
+        "pt": {
+          "title": "O jogador maior levanta o jogador menor no transporte de um bombeiro",
+          "extra": "Carregue-os pela sala duas vezes"
+        }
+      }
     },
     {
       "title": "Both players do mirror exercises - one leads, the other copies",
       "extra": "Maintain eye contact throughout the exercises",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen ejercicios de espejo: uno lidera y el otro copia",
+          "extra": "Mantenga el contacto visual durante los ejercicios"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem exercícios de espelho - um conduz, o outro copia",
+          "extra": "Mantenha contato visual durante os exercícios"
+        }
+      }
     },
     {
       "title": "The larger player holds the smaller player in a bridal carry for thirty seconds",
       "extra": "Spin around three times while holding",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande sostiene al jugador más pequeño en un transporte nupcial durante treinta segundos",
+          "extra": "Gira tres veces mientras lo sostienes"
+        },
+        "pt": {
+          "title": "O jogador maior segura o jogador menor em uma bolsa de noiva por trinta segundos",
+          "extra": "Gire três vezes enquanto segura"
+        }
+      }
     },
     {
       "title": "Both players do partner sit-ups, holding each other's wrists",
       "extra": "Add a high-five at the top of each sit-up",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen sentadillas en pareja, cogiéndose las muñecas",
+          "extra": "Choca los cinco en la parte superior de cada sentadilla"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem abdominais em parceria, segurando os pulsos um do outro",
+          "extra": "Adicione um high-five na parte superior de cada flexão"
+        }
+      }
     },
     {
       "title": "Both players do a wheelbarrow race across the room",
       "extra": "The wheelbarrow player must use only one hand",
-      "spicyness": 26
+      "spicyness": 26,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen una carrera de carretilla por la habitación",
+          "extra": "El jugador de la carretilla debe usar solo una mano"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem uma corrida de carrinho de mão pela sala",
+          "extra": "O jogador de carrinho de mão deve usar apenas uma mão"
+        }
+      }
     },
     {
       "title": "The larger player gives the smaller player a shoulder ride around the room",
       "extra": "The smaller player must hold on with only their thighs",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande le da al jugador más pequeño un paseo a hombros por la habitación.",
+          "extra": "El jugador más pequeño debe sujetarse solo con los muslos"
+        },
+        "pt": {
+          "title": "O jogador maior dá ao jogador menor um passeio de ombro pela sala",
+          "extra": "O jogador menor deve se segurar apenas com as coxas"
+        }
+      }
     },
     {
       "title": "The larger player spins the smaller player in their arms like a dance",
       "extra": "Spin faster and dip at the end",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande hace girar al jugador más pequeño en sus brazos como si fuera un baile",
+          "extra": "Gira más rápido y sumérgete al final"
+        },
+        "pt": {
+          "title": "O jogador maior gira o jogador menor em seus braços como uma dança",
+          "extra": "Gire mais rápido e mergulhe no final"
+        }
+      }
     },
     {
       "title": "Both players do partner push-ups - one on top of the other",
       "extra": "The top player must maintain contact with the bottom player's back",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen flexiones en pareja, una encima de la otra",
+          "extra": "El mejor jugador debe mantener contacto con la espalda del jugador inferior"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem flexões em parceria - uma em cima da outra",
+          "extra": "O melhor jogador deve manter contato com as costas do jogador inferior"
+        }
+      }
     },
     {
       "title": "The larger player holds the smaller player against a wall in a standing embrace",
       "extra": "Lift the smaller player's legs off the ground",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande sostiene al jugador más pequeño contra una pared en un abrazo de pie.",
+          "extra": "Levanta las piernas del jugador más pequeño del suelo"
+        },
+        "pt": {
+          "title": "O jogador maior segura o jogador menor contra a parede em um abraço de pé",
+          "extra": "Levante as pernas do jogador menor do chão"
+        }
+      }
     },
     {
       "title": "Both players wrap arms around each other and spin in circles until dizzy",
       "extra": "Fall down together and stay embraced for ten seconds",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se abrazan y giran en círculos hasta que se marean",
+          "extra": "Caed juntos y permaneced abrazados durante diez segundos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se abraçam e giram em círculos até ficarem tontos.",
+          "extra": "Caiam juntos e fiquem abraçados por dez segundos"
+        }
+      }
     },
     {
       "title": "The larger player carries the smaller player in a cradle carry around the room",
       "extra": "Rock them gently like a baby for thirty seconds",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande lleva al jugador más pequeño en una cuna y lo lleva por la habitación.",
+          "extra": "Muévelos suavemente como un bebé durante treinta segundos"
+        },
+        "pt": {
+          "title": "O jogador maior carrega o jogador menor em um berço e carrega pela sala",
+          "extra": "Balance-os suavemente como um bebê por trinta segundos"
+        }
+      }
     },
     {
       "title": "The larger player pins the smaller player to the floor in a wrestling hold",
       "extra": "Maintain the pin for thirty seconds",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande clava al jugador más pequeño en el suelo en una bodega de lucha libre",
+          "extra": "Mantenga el pin durante treinta segundos"
+        },
+        "pt": {
+          "title": "O jogador maior prende o jogador menor no chão em um porão de luta livre",
+          "extra": "Mantenha o pino por trinta segundos"
+        }
+      }
     },
     {
       "title": "Both players do partner yoga - one lifts the other in a supported pose",
       "extra": "Hold the pose for one minute with full body contact",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen yoga en pareja: uno levanta al otro en una postura de apoyo",
+          "extra": "Mantén la postura durante un minuto con contacto corporal completo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores praticam ioga em parceria - um levanta o outro em uma pose apoiada",
+          "extra": "Mantenha a postura por um minuto com contato corporal completo"
+        }
+      }
     },
     {
       "title": "The larger player holds the smaller player in a full body press against the wall",
       "extra": "Smaller player tries to escape for 1 minute",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande sostiene al jugador más pequeño con todo su cuerpo, presionándolo contra la pared.",
+          "extra": "El jugador más pequeño intenta escapar durante 1 minuto"
+        },
+        "pt": {
+          "title": "O jogador maior segura o jogador menor pressionando o corpo inteiro contra a parede",
+          "extra": "Jogador menor tenta escapar por 1 minuto"
+        }
+      }
     },
     {
       "title": "The larger player lies on top of the smaller player face-to-face",
       "extra": "The smaller player tries to escape for 1 minute",
-      "spicyness": 89
+      "spicyness": 89,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande yace sobre el jugador más pequeño cara a cara",
+          "extra": "El jugador más pequeño intenta escapar durante 1 minuto"
+        },
+        "pt": {
+          "title": "O jogador maior fica em cima do jogador menor cara a cara",
+          "extra": "O jogador menor tenta escapar por 1 minuto"
+        }
+      }
     },
     {
       "title": "Both players do a wrestling match for two minutes",
       "extra": "Strip to umderwear first",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen un combate de lucha libre durante dos minutos",
+          "extra": "Quítale primero ropa interior"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem uma partida de luta livre por dois minutos",
+          "extra": "Tire a roupa íntima primeiro"
+        }
+      }
     }
   ]
 }

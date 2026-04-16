@@ -4,144 +4,424 @@
     {
       "title": "Both players choose a mild spice/sauce to taste",
       "extra": "Choose something spicy or gross",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores eligen una especia/salsa suave al gusto",
+          "extra": "Elige algo picante o asqueroso"
+        },
+        "pt": {
+          "title": "Ambos os jogadores escolhem um tempero/molho suave a gosto",
+          "extra": "Escolha algo picante ou nojento"
+        }
+      }
     },
     {
       "title": "Both taste a random food from the fridge",
       "extra": "Choose for each other",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos prueban un alimento aleatorio de la nevera",
+          "extra": "Elijan el uno para el otro"
+        },
+        "pt": {
+          "title": "Ambos provam uma comida aleatória da geladeira",
+          "extra": "Escolha um para o outro"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Dare acceptor chooses a condiment for current player to taste",
       "extra": "Do it blindfolded",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto se atreve a elegir un condimento para que lo pruebe el jugador en turno",
+          "extra": "Hazlo con los ojos vendados"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio escolhe um condimento para o jogador da vez provar",
+          "extra": "Faça isso com os olhos vendados"
+        }
+      }
     },
     {
       "title": "Both players taste a spoonful of mustard",
       "extra": "Hold it in your mouth for 10 seconds",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores prueban una cucharada de mostaza",
+          "extra": "Manténgalo en la boca durante 10 segundos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores provam uma colher de mostarda",
+          "extra": "Mantenha-o na boca por 10 segundos"
+        }
+      }
     },
     {
       "title": "Current player feeds dare acceptor a piece of fruit",
       "extra": "Use only your mouth to pass it",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Los feeds del jugador en turno se atreven a aceptar una fruta",
+          "extra": "Usa solo tu boca para expulsarlo"
+        },
+        "pt": {
+          "title": "O jogador da vez alimenta quem aceita o desafio com um pedaço de fruta",
+          "extra": "Use apenas sua boca para passá-la"
+        }
+      }
     },
     {
       "title": "Both players take a shot of pickle juice",
       "extra": "Chase it with something sweet",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores toman un trago de jugo de pepinillos",
+          "extra": "Persíguelo con algo dulce"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tomam uma dose de suco de picles",
+          "extra": "Persiga-o com algo doce"
+        }
+      }
     },
     {
       "title": "Dare acceptor puts whipped cream on current player's nose",
       "extra": "Lick it off with your tongue",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto pone crema batida en la nariz del jugador en turno",
+          "extra": "Lámela con la lengua"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio coloca chantilly no nariz do jogador da vez",
+          "extra": "Lamba com sua língua"
+        }
+      }
     },
     {
       "title": "Current player puts chocolate syrup on dare acceptor's finger",
       "extra": "Suck it clean",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pone sirope de chocolate en el dedo de quien acepta el reto",
+          "extra": "Chupa hasta que quede limpio"
+        },
+        "pt": {
+          "title": "O jogador da vez coloca xarope de chocolate no dedo de quem aceita o desafio",
+          "extra": "Chupe-o para limpar"
+        }
+      }
     },
     {
       "title": "Both players share a spicy chip",
       "extra": "Pass it mouth to mouth",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una ficha picante",
+          "extra": "Pásalo boca a boca"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham um chip picante",
+          "extra": "Passe de boca em boca"
+        }
+      }
     },
     {
       "title": "Current player draws a ketchup mustache on dare acceptor",
       "extra": "Lick it off slowly",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno dibuja un bigote de salsa de tomate en quien acepta el reto",
+          "extra": "Lámela lentamente"
+        },
+        "pt": {
+          "title": "O jogador da vez desenha um bigode de ketchup nquem aceita o desafio",
+          "extra": "Lamba-o lentamente"
+        }
+      }
     },
     {
       "title": "Dare acceptor puts honey on current player's lips",
       "extra": "Kiss it off",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto pone miel en los labios del jugador en turno",
+          "extra": "¡Dale un beso!"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio coloca mel nos lábios do jogador da vez",
+          "extra": "Beije isso"
+        }
+      }
     },
     {
       "title": "Both players take a shot of hot sauce",
       "extra": "Do it while maintaining eye contact",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores toman un trago de salsa picante",
+          "extra": "Hazlo mientras mantienes el contacto visual"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tomam uma dose de molho picante",
+          "extra": "Faça isso enquanto mantém contato visual"
+        }
+      }
     },
     {
       "title": "Current player puts ketchup earrings on dare acceptor",
       "extra": "Lick them off one by one",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pone pendientes de ketchup en quien acepta el reto",
+          "extra": "Lámelos uno por uno"
+        },
+        "pt": {
+          "title": "O jogador da vez coloca brincos de ketchup nquem aceita o desafio",
+          "extra": "Lamba-os um por um"
+        }
+      }
     },
     {
       "title": "Dare acceptor feeds current player a spoonful of wasabi",
       "extra": "Do it while whispering something sexy",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto le da al jugador en turno una cucharada de wasabi",
+          "extra": "Hazlo mientras susurras algo sexy"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio alimenta o jogador da vez com uma colher de wasabi",
+          "extra": "Faça isso enquanto sussurra algo sexy"
+        }
+      }
     },
     {
       "title": "Both players share a piece of ginger",
       "extra": "Pass it back and forth with your mouths",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten un trozo de jengibre",
+          "extra": "Pásalo de un lado a otro con la boca"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham um pedaço de gengibre",
+          "extra": "Passe-o para frente e para trás com a boca"
+        }
+      }
     },
     {
       "title": "Current player puts chocolate sauce on dare acceptor's neck",
       "extra": "Lick it off while giving a neck massage",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pone salsa de chocolate en el cuello del ganador del desafío",
+          "extra": "Lámela mientras le das un masaje en el cuello"
+        },
+        "pt": {
+          "title": "O jogador da vez coloca calda de chocolate no pescoço de quem aceita o desafio",
+          "extra": "Lamba-o enquanto faz uma massagem no pescoço"
+        }
+      }
     },
     {
       "title": "Dare acceptor puts a cherry tomato in current player's mouth",
       "extra": "Bite it in half and share",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto pone un tomate cherry en la boca del jugador en turno",
+          "extra": "Muérdelo por la mitad y compártelo"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio coloca um tomate cereja na boca do jogador da vez",
+          "extra": "Morda ao meio e compartilhe"
+        }
+      }
     },
     {
       "title": "Both players take a teaspoon of cinnamon in the mouth",
       "extra": "Touch noses until you swallow",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores toman una cucharadita de canela en la boca",
+          "extra": "Tócate la nariz hasta tragar"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tomam uma colher de chá de canela na boca",
+          "extra": "Toque nos narizes até engolir"
+        }
+      }
     },
     {
       "title": "Current player puts whipped cream on dare acceptor's shoulder",
       "extra": "Lick it off while giving a shoulder massage",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pone crema batida en el hombro de quien acepta el reto",
+          "extra": "Lámela mientras le das un masaje en los hombros"
+        },
+        "pt": {
+          "title": "O jogador da vez coloca chantilly no ombro de quem aceita o desafio",
+          "extra": "Lamba-o enquanto faz uma massagem nos ombros"
+        }
+      }
     },
     {
       "title": "Dare acceptor pours a cold drink down current player's chest",
       "extra": "Lick it up from the stomach",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto vierte una bebida fría en el pecho del jugador en turno",
+          "extra": "Lámalo desde el estómago"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio derrama uma bebida gelada no peito do jogador da vez",
+          "extra": "Lamba-o do estômago"
+        }
+      }
     },
     {
       "title": "Current player puts chocolate syrup on dare acceptor's collarbone",
       "extra": "Lick it clean while whispering gibberish",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pone sirope de chocolate en la clavícula de quien acepta el reto",
+          "extra": "Lámala hasta dejarla limpia mientras susurras tonterías"
+        },
+        "pt": {
+          "title": "O jogador da vez coloca xarope de chocolate na clavícula de quem aceita o desafio",
+          "extra": "Lamba-o enquanto sussurra bobagens"
+        }
+      }
     },
     {
       "title": "Dare acceptor feeds current player a spoonful of horseradish",
       "extra": "Do it while sitting in their lap",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto le da al jugador en turno una cucharada de rábano picante",
+          "extra": "Hazlo mientras estás sentado en su regazo"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio alimenta o jogador da vez com uma colher de rábano",
+          "extra": "Faça isso enquanto está sentado no colo deles"
+        }
+      }
     },
     {
       "title": "Both players take a shot of vinegar",
       "extra": "Kiss immediately after to share the taste",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores toman un trago de vinagre",
+          "extra": "Besa inmediatamente después para compartir el sabor"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tomam uma dose de vinagre",
+          "extra": "Beije imediatamente depois para compartilhar o sabor"
+        }
+      }
     },
     {
       "title": "Current player puts caramel sauce on dare acceptor's wrist",
       "extra": "Lick it off slowly while maintaining eye contact",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pone salsa de caramelo en la muñeca de quien acepta el reto",
+          "extra": "Lámela lentamente mientras mantienes el contacto visual"
+        },
+        "pt": {
+          "title": "O jogador da vez coloca molho de caramelo no pulso de quem aceita o desafio",
+          "extra": "Lamba-o lentamente enquanto mantém contato visual"
+        }
+      }
     },
     {
       "title": "Dare acceptor puts a mint in current player's mouth",
       "extra": "French kiss to share the freshness",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto pone una menta en la boca del jugador en turno",
+          "extra": "Beso francés para compartir la frescura"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio coloca uma menta na boca do jogador da vez",
+          "extra": "Beijo francês para compartilhar o frescor"
+        }
+      }
     },
     {
       "title": "Current player pours wine over dare acceptor's bare chest",
       "extra": "Drink it directly from their skin",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno vierte vino sobre el pecho desnudo del osado quien acepta el reto",
+          "extra": "Bébelo directamente de su piel"
+        },
+        "pt": {
+          "title": "O jogador da vez derrama vinho sobre o peito nu de quem aceita o desafio",
+          "extra": "Beba diretamente de sua pele"
+        }
+      }
     },
     {
       "title": "Dare acceptor licks hot sauce off current player's nipple",
       "extra": "Massage the other nipple while you lick",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "quien acepta el reto lame la salsa picante del pezón del jugador en turno",
+          "extra": "Masajea el otro pezón mientras lames"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio lambe o molho picante do mamilo do jogador da vez",
+          "extra": "Massageie o outro mamilo enquanto lambe"
+        }
+      }
     },
     {
       "title": "Current player licks honey off dare acceptor's inner thigh",
       "extra": "Periodically ask \"Nervous?\" and move closer to intimate areas until they say yes.",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lame la miel de la parte interna del muslo de quien acepta el reto",
+          "extra": "Pregunte periódicamente «¿Nervioso?» y acércate a las zonas íntimas hasta que digan que sí."
+        },
+        "pt": {
+          "title": "O jogador da vez lambe mel da parte interna da coxa de quem aceita o desafio",
+          "extra": "Pergunte periodicamente “Nervoso?” e aproxime-se de áreas íntimas até que eles digam sim."
+        }
+      }
     }
   ]
 }

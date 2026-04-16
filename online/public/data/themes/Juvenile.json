@@ -4,124 +4,364 @@
     {
       "title": "Both players make silly faces at each other",
       "extra": "Also, make immature noises",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen muecas el uno con el otro",
+          "extra": "Además, haga ruidos inmaduros"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem caretas um para o outro",
+          "extra": "Além disso, faça ruídos imaturos"
+        }
+      }
     },
     {
       "title": "Both players look up each other's noses",
       "extra": "Also, describe boogers like an avid archeologist",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se miran las narices",
+          "extra": "Además, describe a los mocos como un ávido arqueólogo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores olham para o nariz um do outro",
+          "extra": "Além disso, descreva melecas como um ávido arqueólogo"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players make armpit fart sounds at each other",
       "extra": "Try to make real farts too",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen sonidos de pedos en las axilas el uno al otro",
+          "extra": "Intenta hacer pedos de verdad también"
+        },
+        "pt": {
+          "title": "Ambos os jogadores emitem sons de peido nas axilas um para o outro",
+          "extra": "Tente fazer peidos reais também."
+        }
+      }
     },
     {
       "title": "Dare acceptor will sniff current player's farts",
       "extra": "Also, describe what you think they ate",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto olerá los pedos del jugador en turno",
+          "extra": "Además, describe lo que crees que comieron"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio cheirará os peidos do jogador da vez",
+          "extra": "Além disso, descreva o que você acha que eles comeram"
+        }
+      }
     },
     {
       "title": "Both players attempt to burp the entire ABCs",
       "extra": "Also, burp each other's names",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan eructar todo el abecedario",
+          "extra": "Además, hagan eructar los nombres de los demás"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam arrotar todo o alfabeto",
+          "extra": "Além disso, arrotem os nomes uns dos outros"
+        }
+      }
     },
     {
       "title": "Who can do the sillier walk?",
       "extra": "Also, add ridiculous sound effects to the walk",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "¿Quién puede hacer la caminata más tonta?",
+          "extra": "Además, agrega efectos de sonido ridículos a la caminata"
+        },
+        "pt": {
+          "title": "Quem pode fazer a caminhada mais boba?",
+          "extra": "Além disso, adicione efeitos sonoros ridículos à caminhada"
+        }
+      }
     },
     {
       "title": "Both players compare belly button lint collections",
       "extra": "Also, trade and display the best pieces",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparan las colecciones de pelusas para ombligo",
+          "extra": "Además, intercambia y exhibe las mejores piezas"
+        },
+        "pt": {
+          "title": "Ambos os jogadores comparam coleções de fiapos para umbigo",
+          "extra": "Além disso, negocie e exiba as melhores peças"
+        }
+      }
     },
     {
       "title": "Current player will pull down their pants while dare acceptor attempts to light their fart",
       "extra": "Take a video",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno se bajará los pantalones mientras quien acepta el reto intenta encender su pedo",
+          "extra": "Graba un video"
+        },
+        "pt": {
+          "title": "O jogador da vez abaixará a calça enquantquem aceita o desafio tenta acender o peido",
+          "extra": "Faça um vídeo"
+        }
+      }
     },
     {
       "title": "Current player will give dare acceptor a wedgie",
       "extra": "Try to get them off the ground",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le hará un calzón chino a quien acepta el reto",
+          "extra": "Intenta levantarlos del suelo"
+        },
+        "pt": {
+          "title": "O jogador da vez dará um cuecão aquem aceita o desafio",
+          "extra": "Tente tirá-los do chão"
+        }
+      }
     },
     {
       "title": "Both players compare armpit hair length and texture",
       "extra": "Also, style each other's armpit hair creatively",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparan la longitud y la textura del vello de las axilas",
+          "extra": "Además, peinen el vello de las axilas de forma creativa"
+        },
+        "pt": {
+          "title": "Ambos os jogadores comparam o comprimento e a textura dos pelos das axilas",
+          "extra": "Além disso, modele os pelos das axilas um do outro de forma criativa"
+        }
+      }
     },
     {
       "title": "Current player will receive a playful spanking from dare acceptor",
       "extra": "Also, add silly sound effects with each spank",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá una juguetona nalgada por parte de quien acepta el reto",
+          "extra": "Además, agrega efectos de sonido tontos con cada azote"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá palmadas de brincadeira de quem aceita o desafio",
+          "extra": "Além disso, adicione efeitos sonoros bobos a cada palmada"
+        }
+      }
     },
     {
       "title": "Current player will moon dare acceptor",
       "extra": "Write something rude on their butt",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le muestra el trasero a quien acepta el reto",
+          "extra": "Escribe algo grosero en su trasero"
+        },
+        "pt": {
+          "title": "O jogador da vez mostra a bunda para quem aceita o desafio",
+          "extra": "Escreva algo rude na bunda deles"
+        }
+      }
     },
     {
       "title": "Current player will dare acceptor to smell their feet",
       "extra": "Also, describe the scent like a wine connoisseur",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno desafía a quien acepta el reto a olerle los pies",
+          "extra": "Además, describe el aroma como un experto en vinos"
+        },
+        "pt": {
+          "title": "O jogador da vez desafia quem aceita o desafio a cheirar seus pés",
+          "extra": "Além disso, descreva o perfume como um conhecedor de vinhos"
+        }
+      }
     },
     {
       "title": "Current player will receive a raspberry on their stomach from dare acceptor",
       "extra": "Do it shirtless",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá una pedorreta en el estómago de quien acepta el reto",
+          "extra": "Hazlo sin camisa"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá uma framboesa no estômago de quem aceita o desafio",
+          "extra": "Faça isso sem camisa"
+        }
+      }
     },
     {
       "title": "Current player will give a \"noogie\" to dare acceptor",
       "extra": "Also, get lots of armpit germs on them",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno dará un «noogie» al que lo acepte",
+          "extra": "Además, tienen muchos gérmenes en las axilas"
+        },
+        "pt": {
+          "title": "O jogador da vez dará um “noogie” aquem aceita o desafio",
+          "extra": "Além disso, coloque muitos germes nas axilas"
+        }
+      }
     },
     {
       "title": "Both players play 'strip rock paper scissors' removing one item per loss",
       "extra": "Also, make dramatic reveals with each removal",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan a «pelar piedra, papel y tijera», eliminando un objeto por cada derrota.",
+          "extra": "Además, haz revelaciones dramáticas con cada eliminación"
+        },
+        "pt": {
+          "title": "Ambos os jogadores jogam “strip rock, papel e tesoura”, removendo um item por derrota.",
+          "extra": "Além disso, faça revelações dramáticas a cada remoção"
+        }
+      }
     },
     {
       "title": "Current player will compare nipple size with dare acceptor",
       "extra": "Also, both players get one flick",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno comparará el tamaño del pezón con el de quien acepta el reto",
+          "extra": "Además, ambos jugadores reciben un pellizco"
+        },
+        "pt": {
+          "title": "O jogador da vez comparará o tamanho do mamilo com quem aceita o desafio",
+          "extra": "Além disso, ambos os jogadores recebem um toque"
+        }
+      }
     },
     {
       "title": "Both players go streaking around the room together",
       "extra": "Go streaking outside to the mailbox and back",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores recorren la sala juntos.",
+          "extra": "Sal corriendo al buzón y viceversa"
+        },
+        "pt": {
+          "title": "Os dois jogadores percorrem a sala juntos",
+          "extra": "Vá correndo até a caixa de correio e volte"
+        }
+      }
     },
     {
       "title": "Current player will receive a 'swirly' from dare acceptor",
       "extra": "Also, make exaggerated gagging sounds",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá un “swirly” de quien acepta el reto",
+          "extra": "Además, haga sonidos de náuseas exagerados"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá um 'swirly' de quem aceita o desafio",
+          "extra": "Além disso, faça sons exagerados de engasgos"
+        }
+      }
     },
     {
       "title": "Current player will spank dare acceptor on the bare butt",
       "extra": "Use a long wooden spoon",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno golpeará al que acepte el desafío en el trasero desnudo",
+          "extra": "Usa una cuchara larga de madera"
+        },
+        "pt": {
+          "title": "O jogador da vez dará uma surra na bunda nua de quem aceita o desafio",
+          "extra": "Use uma colher longa de pau"
+        }
+      }
     },
     {
       "title": "Both players play 'truth or dare' with only embarrassing childhood stories",
       "extra": "Also, act out the most embarrassing story",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan a «verdad o atrevimiento» con solo historias infantiles embarazosas",
+          "extra": "Además, representa la historia más embarazosa"
+        },
+        "pt": {
+          "title": "Ambos os jogadores jogam “verdade ou desafio” com apenas histórias de infância embaraçosas",
+          "extra": "Além disso, encene a história mais embaraçosa"
+        }
+      }
     },
     {
       "title": "Current player will compare butt cheek firmness with dare acceptor",
       "extra": "Also, rate them like judging a baking contest",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno comparará la firmeza de las nalgas con la de quien acepta el reto",
+          "extra": "Además, califícalos como si fueras juez en un concurso de repostería"
+        },
+        "pt": {
+          "title": "O jogador da vez comparará a firmeza da nádega com quem aceita o desafio",
+          "extra": "Além disso, avalie-os como julgadores de um concurso de panificação"
+        }
+      }
     },
     {
       "title": "Both players compare genital size and shape openly",
       "extra": "Also, give each other's genitals silly nicknames",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparan abiertamente el tamaño y la forma de los genitales",
+          "extra": "Además, póngales apodos tontos a los genitales"
+        },
+        "pt": {
+          "title": "Ambos os jogadores comparam o tamanho e a forma genital abertamente",
+          "extra": "Além disso, dê aos órgãos genitais uns dos outros apelidos bobos"
+        }
+      }
     },
     {
       "title": "From the knee, move your hand incrementally more intimate, asking \"Nervous?\" until they say yes.",
       "extra": "Use your lips instead of your hand",
-      "spicyness": 95
+      "spicyness": 95,
+      "translations": {
+        "es": {
+          "title": "Desde la rodilla, mueve la mano de forma cada vez más íntima y pregunta: «¿Nervioso?» hasta que digan que sí.",
+          "extra": "Usa los labios en lugar de la mano"
+        },
+        "pt": {
+          "title": "Do joelho, mova sua mão cada vez mais intimamente, perguntando “Nervoso?” até que eles digam sim.",
+          "extra": "Use seus lábios em vez de sua mão"
+        }
+      }
     }
   ]
 }
