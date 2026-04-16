@@ -712,6 +712,10 @@ lerna-debug.log*
 # Dependencies
 node_modules/
 **/node_modules/
+test-results/
+**/test-results/
+playwright-report/
+**/playwright-report/
 
 # Runtime data
 pids
