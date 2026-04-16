@@ -451,6 +451,15 @@ function buildOnboardingPrompt(room, player) {
     firstDefaults
   };
 }
+function queueOnboardingPrompt(room, player) {
+  const prompt = buildOnboardingPrompt(room, player);
+  for (const dare of room.dareMenu) {
+    for (const target of prompt.players) {
+      setConsent(room, player.id, target.id, dare.id, !!prompt.firstDefaults[target.id], { touched: false });
+    }
+  }
+  addPrompt(room, player.id, prompt);
+}
 function defaultForNewPlayerByHistory(room, player, newPlayer, dareId) {
   const sameGender = room.players.filter(p => p.id !== player.id && p.id !== newPlayer.id && p.gender === newPlayer.gender);
   let total = 0;
@@ -770,7 +779,7 @@ io.on('connection', (socket) => {
     if (room.state === 'main' && room.turn?.order) {
       const insertAt = Math.min(room.turn.order.length, (room.turn.index || 0) + 1);
       room.turn.order.splice(insertAt, 0, player.id);
-      addPrompt(room, player.id, buildOnboardingPrompt(room, player));
+      queueOnboardingPrompt(room, player);
       queueExistingPlayerNewJoinPrompts(room, player);
     }
     attach(room, player);
@@ -874,7 +883,7 @@ io.on('connection', (socket) => {
     room.paused = false;
     room.turn = { order: room.players.map(p => p.id), index: 0 };
     setChooseMode(room);
-    for (const player of room.players) addPrompt(room, player.id, buildOnboardingPrompt(room, player));
+    for (const player of room.players) queueOnboardingPrompt(room, player);
     const g = ensureGame(room.code);
     g.theme = key;
     if (!g.started) {

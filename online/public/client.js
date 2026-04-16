@@ -866,45 +866,49 @@ function wireProfile(){
 }
 function wirePromptControls(){
   const prompt = state.room?.me?.pendingPrompts?.[0];
-  if (!prompt) return;
-  const ps = promptState(prompt);
-  if (prompt.type === 'onboarding') {
-    const cur = prompt.dares[ps.step];
-    $$('[data-onboard-player]').forEach(cb => cb.addEventListener('change', () => {
-      ps.selections[cur.id] ||= {};
-      ps.selections[cur.id][cb.dataset.onboardPlayer] = cb.checked;
-    }));
-    $('#onboard-prev')?.addEventListener('click', () => { ps.step = Math.max(0, ps.step - 1); render(); });
-    $('#onboard-next')?.addEventListener('click', () => {
-      if (ps.step < prompt.dares.length - 1) {
-        ps.step++;
-        render();
-        return;
-      }
-      const entries = [];
-      for (const d of prompt.dares) {
-        const vals = ps.selections[d.id] || {};
-        for (const p of prompt.players) entries.push({ dareId:d.id, targetId:p.id, value:!!vals[p.id] });
-      }
-      socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, entries });
-      delete local.prompt[prompt.id];
-    });
+  if (prompt) {
+    const ps = promptState(prompt);
+    if (prompt.type === 'onboarding') {
+      const cur = prompt.dares[ps.step];
+      $$('[data-onboard-player]').forEach(cb => cb.addEventListener('change', () => {
+        ps.selections[cur.id] ||= {};
+        ps.selections[cur.id][cb.dataset.onboardPlayer] = cb.checked;
+      }));
+      $('#onboard-prev')?.addEventListener('click', () => { ps.step = Math.max(0, ps.step - 1); render(); });
+      $('#onboard-next')?.addEventListener('click', () => {
+        if (ps.step < prompt.dares.length - 1) {
+          ps.step++;
+          render();
+          return;
+        }
+        const entries = [];
+        for (const d of prompt.dares) {
+          const vals = ps.selections[d.id] || {};
+          for (const p of prompt.players) entries.push({ dareId:d.id, targetId:p.id, value:!!vals[p.id] });
+        }
+        socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, entries });
+        delete local.prompt[prompt.id];
+      });
+    }
+    if (prompt.type === 'new-player') {
+      $$('[data-new-player-dare]').forEach(cb => cb.addEventListener('change', () => { ps.values[cb.dataset.newPlayerDare] = cb.checked; }));
+      $('#submit-new-player')?.addEventListener('click', () => {
+        socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, targetId:prompt.player.id, values:ps.values });
+        delete local.prompt[prompt.id];
+      });
+    }
+    if (prompt.type === 'new-dare') {
+      $$('[data-new-dare-player]').forEach(cb => cb.addEventListener('change', () => { ps.values[cb.dataset.newDarePlayer] = cb.checked; }));
+      $('#submit-new-dare')?.addEventListener('click', () => {
+        socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, dareId:prompt.dare.id, values:ps.values });
+        delete local.prompt[prompt.id];
+      });
+    }
   }
-  if (prompt.type === 'new-player') {
-    $$('[data-new-player-dare]').forEach(cb => cb.addEventListener('change', () => { ps.values[cb.dataset.newPlayerDare] = cb.checked; }));
-    $('#submit-new-player')?.addEventListener('click', () => {
-      socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, targetId:prompt.player.id, values:ps.values });
-      delete local.prompt[prompt.id];
-    });
-  }
-  if (prompt.type === 'new-dare') {
-    $$('[data-new-dare-player]').forEach(cb => cb.addEventListener('change', () => { ps.values[cb.dataset.newDarePlayer] = cb.checked; }));
-    $('#submit-new-dare')?.addEventListener('click', () => {
-      socket.emit('consent:promptSubmit', { promptId:prompt.id, type:prompt.type, dareId:prompt.dare.id, values:ps.values });
-      delete local.prompt[prompt.id];
-    });
-  }
-  $$('input[name="dare-response"]').forEach(r => r.addEventListener('change', () => sendDareResponse(false)));
+  $$('input[name="dare-response"]').forEach(r => r.addEventListener('change', () => {
+    const yes = $('input[name="dare-response"]:checked')?.value === 'yes';
+    socket.emit('consent:update', { targetId:activeId(), dareId:state.room.turn.selectedDareId, value:yes });
+  }));
   $('#send-dare-response')?.addEventListener('click', () => sendDareResponse(true));
   $$('[data-person-dare]').forEach(cb => cb.addEventListener('change', () => sendPersonResponses(false)));
   $('#send-person-response')?.addEventListener('click', () => sendPersonResponses(true));
