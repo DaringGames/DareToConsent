@@ -179,13 +179,37 @@ button.narrow{ width:auto; }
 .list-item span:first-child{ min-width:0; }
 .list-item small{ white-space:nowrap; }
 .choice-big{
-  display:block;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
   margin:10px 0;
   padding:16px;
   background:var(--surface-2);
   border-color:var(--border-2);
-  font-weight:800;
   text-align:left;
+}
+.choice-title{
+  display:block;
+  font-size:1.2rem;
+  font-weight:850;
+}
+.choice-desc{
+  display:block;
+  color:var(--muted);
+  font-size:.92rem;
+  font-weight:600;
+}
+.waiting-panel{
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.edit-instruction{
+  font-weight:750;
+}
+#pass-turn{
+  margin-top:14px;
 }
 .check-list,.radio-stack{
   display:flex;

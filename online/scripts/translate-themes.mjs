@@ -11,7 +11,20 @@ const profile = process.env.AWS_PROFILE || 'worst-prod';
 const region = process.env.AWS_REGION || 'us-west-2';
 const targets = [
   ['es', 'es'],
-  ['pt', 'pt']
+  ['pt', 'pt'],
+  ['zh', 'zh'],
+  ['tl', 'tl'],
+  ['vi', 'vi'],
+  ['ar', 'ar'],
+  ['fr', 'fr'],
+  ['ko', 'ko'],
+  ['ru', 'ru'],
+  ['ht', 'ht'],
+  ['hi', 'hi'],
+  ['de', 'de'],
+  ['nl', 'nl'],
+  ['pl', 'pl'],
+  ['it', 'it']
 ];
 
 function translate(text, target) {

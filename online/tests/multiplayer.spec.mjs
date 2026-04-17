@@ -7,7 +7,15 @@ async function dismissAgeGate(page) {
 
 async function createRoom(page, name) {
   await page.goto('/');
+  await expect(page.locator('#create-name')).toHaveCount(0);
+  await page.locator('#choose-create').click();
+  await expect(page.locator('#create-name')).toBeVisible();
   await page.locator('#create-name').fill(name);
+  await page.locator('input[name="create-gender"][value="female"]').check();
+  await page.locator('#create-language').selectOption('es');
+  await expect(page.locator('#create-name')).toHaveValue(name);
+  await expect(page.locator('input[name="create-gender"][value="female"]')).toBeChecked();
+  await page.locator('#create-language').selectOption('en');
   await page.getByRole('button', { name: 'Create', exact: true }).click();
   await dismissAgeGate(page);
   await expect(page.getByRole('heading', { name: /Room:/ })).toBeVisible();
@@ -18,6 +26,7 @@ async function createRoom(page, name) {
 
 async function joinRoom(page, code, name) {
   await page.goto(`/#${code}`);
+  await page.locator('#choose-join').click();
   await page.locator('#join-name').fill(name);
   await page.getByRole('button', { name: 'Join', exact: true }).click();
   await dismissAgeGate(page);
@@ -67,6 +76,8 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
   await alice.locator('[data-mode="dare"]').click();
   await expect(alice.locator('[data-select-dare]:not([disabled])').first()).toBeVisible();
   await alice.locator('[data-select-dare]:not([disabled])').first().click();
+  await expect(alice.getByRole('heading', { name: 'Waiting for responses' })).toBeVisible();
+  await expect(alice.getByText('Click a player to edit')).toHaveCount(0);
 
   await expect(casey.getByRole('button', { name: 'Send Now' })).toBeVisible();
   await casey.getByLabel('No thanks').check();
@@ -82,6 +93,10 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
   await alice.getByRole('button', { name: 'We did it' }).click();
 
   await waitForTurnMode(bob);
+  await alice.locator('[data-edit-player]').first().click();
+  await expect(alice.locator('.edit-instruction')).toContainText('What dares do you consent to for');
+  await alice.goBack();
+  await expect(alice.getByText('Click a player to edit')).toBeVisible();
 
   await aliceContext.close();
   await bobContext.close();

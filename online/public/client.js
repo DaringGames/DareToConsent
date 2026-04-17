@@ -13,7 +13,25 @@ const COLOR_HEX = {
   LtPink:'#ffc4dd', Yellow:'#ffd166', DkGreen:'#1f6f43'
 };
 const GENDERS = ['male', 'female', 'nonbinary'];
-const LANGS = ['en', 'es', 'pt'];
+const LANGS = ['en', 'es', 'pt', 'zh', 'tl', 'vi', 'ar', 'fr', 'ko', 'ru', 'ht', 'hi', 'de', 'nl', 'pl', 'it'];
+const LANGUAGE_NAMES = {
+  en:'English',
+  es:'Español',
+  pt:'Português',
+  zh:'中文',
+  tl:'Tagalog',
+  vi:'Tiếng Việt',
+  ar:'العربية',
+  fr:'Français',
+  ko:'한국어',
+  ru:'Русский',
+  ht:'Kreyòl Ayisyen',
+  hi:'हिन्दी',
+  de:'Deutsch',
+  nl:'Nederlands',
+  pl:'Polski',
+  it:'Italiano'
+};
 const SESSION_KEY = 'dtc.session';
 const UI_KEY = 'dtc.ui';
 const PAGE_SIZE = 4;
@@ -22,8 +40,12 @@ const I18N = {
   en: {
     title:'Dare to Consent',
     tagline:'Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?',
+    joinHost:'Join {name}\'s game',
     joinGame:'Join Game',
     createGame:'Create Game',
+    gameCode:'Game code',
+    setupProfile:'Set up your profile',
+    profileHelp:'These choices help prefill consent. You can change consent details once you are in the game.',
     room:'Room',
     players:'Players',
     startGame:'Start Game',
@@ -41,6 +63,7 @@ const I18N = {
     portuguese:'Portuguese',
     join:'Join',
     create:'Create',
+    or:'or',
     theme:'Theme',
     changeName:'Change name',
     chooseColor:'Choose your color',
@@ -51,10 +74,17 @@ const I18N = {
     yourTurn:'It is your turn',
     chooseDareMode:'Choose a dare and see who will do it with you',
     choosePlayerMode:'Choose a person and see what dares they will do with you',
+    chooseDareModeTitle:'Choose a Dare',
+    chooseDareModeDesc:'See who will do it with you',
+    choosePlayerModeTitle:'Choose a Person',
+    choosePlayerModeDesc:'See what dares they will do with you',
     chooseDare:'Choose a dare',
     choosePlayer:'Choose a player',
     waitingChoose:'Waiting for {name} to choose',
     waitingRespond:'Waiting for {name} to respond',
+    waitingResponsesTitle:'Waiting for responses',
+    waitingOn:'Waiting on',
+    collectingResponses:'Collecting responses',
     waitingPerform:'Waiting for {a} and {b} to do: {dare}',
     waitingAdd:'Waiting for {name} to add a new dare',
     consentPlayers:'Click a player to edit which dares you consent to do with them:',
@@ -63,6 +93,10 @@ const I18N = {
     dareCount:'{count} players consent',
     oneDare:'consents to 1 dare',
     onePlayer:'1 player consents',
+    playerEditSummary:'{name} consents to {count} dares. What dares do you consent to for {name}?',
+    playerEditSummaryOne:'{name} consents to 1 dare. What dares do you consent to for {name}?',
+    dareEditSummary:'{count} players consent "{dare}". What players do you consent to do this dare with?',
+    dareEditSummaryOne:'1 player consents "{dare}". What players do you consent to do this dare with?',
     back:'Back',
     save:'Save',
     submit:'Submit',
@@ -81,7 +115,7 @@ const I18N = {
     addDareTitle:'You get to write a new dare',
     newDare:'New dare',
     addToMenu:'Add to Menu',
-    examples:'Choose one of these',
+    examples:'Here are some ideas:',
     milder:'Show milder dares',
     spicier:'Show spicier dares',
     onboardingTitle:'Set your dare preferences',
@@ -102,8 +136,12 @@ const I18N = {
   es: {
     title:'Dare to Consent',
     tagline:'¿Jugarías a la botella si solo eligiera personas que QUIEREN besarse?',
+    joinHost:'Unirse al juego de {name}',
     joinGame:'Unirse al juego',
     createGame:'Crear juego',
+    gameCode:'Código del juego',
+    setupProfile:'Configura tu perfil',
+    profileHelp:'Estas opciones ayudan a prellenar el consentimiento. Puedes cambiar los detalles de consentimiento cuando estés dentro del juego.',
     room:'Sala',
     players:'Jugadores',
     startGame:'Empezar juego',
@@ -121,6 +159,7 @@ const I18N = {
     portuguese:'Portugués',
     join:'Unirse',
     create:'Crear',
+    or:'o',
     theme:'Tema',
     changeName:'Cambiar nombre',
     chooseColor:'Elige tu color',
@@ -131,10 +170,17 @@ const I18N = {
     yourTurn:'Es tu turno',
     chooseDareMode:'Elige un reto y mira quién lo hará contigo',
     choosePlayerMode:'Elige una persona y mira qué retos hará contigo',
+    chooseDareModeTitle:'Elige un reto',
+    chooseDareModeDesc:'Mira quién lo hará contigo',
+    choosePlayerModeTitle:'Elige una persona',
+    choosePlayerModeDesc:'Mira qué retos hará contigo',
     chooseDare:'Elige un reto',
     choosePlayer:'Elige un jugador',
     waitingChoose:'Esperando a que {name} elija',
     waitingRespond:'Esperando la respuesta de {name}',
+    waitingResponsesTitle:'Esperando respuestas',
+    waitingOn:'Esperando a',
+    collectingResponses:'Recopilando respuestas',
     waitingPerform:'Esperando a que {a} y {b} hagan: {dare}',
     waitingAdd:'Esperando a que {name} agregue un nuevo reto',
     consentPlayers:'Toca un jugador para editar qué retos aceptas hacer con esa persona:',
@@ -143,6 +189,10 @@ const I18N = {
     dareCount:'{count} jugadores aceptan',
     oneDare:'acepta 1 reto',
     onePlayer:'1 jugador acepta',
+    playerEditSummary:'{name} acepta {count} retos. ¿Qué retos aceptas hacer con {name}?',
+    playerEditSummaryOne:'{name} acepta 1 reto. ¿Qué retos aceptas hacer con {name}?',
+    dareEditSummary:'{count} jugadores aceptan "{dare}". ¿Con qué jugadores aceptas hacer este reto?',
+    dareEditSummaryOne:'1 jugador acepta "{dare}". ¿Con qué jugadores aceptas hacer este reto?',
     back:'Atrás',
     save:'Guardar',
     submit:'Enviar',
@@ -161,7 +211,7 @@ const I18N = {
     addDareTitle:'Puedes escribir un nuevo reto',
     newDare:'Nuevo reto',
     addToMenu:'Agregar al menú',
-    examples:'Elige uno de estos',
+    examples:'Aquí tienes algunas ideas:',
     milder:'Mostrar retos más suaves',
     spicier:'Mostrar retos más picantes',
     onboardingTitle:'Configura tus preferencias',
@@ -182,8 +232,12 @@ const I18N = {
   pt: {
     title:'Dare to Consent',
     tagline:'Você jogaria Verdade ou Consequência se ele só escolhesse pessoas que QUEREM se beijar?',
+    joinHost:'Entrar no jogo de {name}',
     joinGame:'Entrar no jogo',
     createGame:'Criar jogo',
+    gameCode:'Código do jogo',
+    setupProfile:'Configure seu perfil',
+    profileHelp:'Essas escolhas ajudam a preencher o consentimento. Você pode mudar os detalhes de consentimento depois de entrar no jogo.',
     room:'Sala',
     players:'Jogadores',
     startGame:'Começar jogo',
@@ -201,6 +255,7 @@ const I18N = {
     portuguese:'Português',
     join:'Entrar',
     create:'Criar',
+    or:'ou',
     theme:'Tema',
     changeName:'Mudar nome',
     chooseColor:'Escolha sua cor',
@@ -211,10 +266,17 @@ const I18N = {
     yourTurn:'É a sua vez',
     chooseDareMode:'Escolha um desafio e veja quem fará com você',
     choosePlayerMode:'Escolha uma pessoa e veja quais desafios ela fará com você',
+    chooseDareModeTitle:'Escolha um desafio',
+    chooseDareModeDesc:'Veja quem fará com você',
+    choosePlayerModeTitle:'Escolha uma pessoa',
+    choosePlayerModeDesc:'Veja quais desafios ela fará com você',
     chooseDare:'Escolha um desafio',
     choosePlayer:'Escolha um jogador',
     waitingChoose:'Aguardando {name} escolher',
     waitingRespond:'Aguardando resposta de {name}',
+    waitingResponsesTitle:'Aguardando respostas',
+    waitingOn:'Aguardando',
+    collectingResponses:'Coletando respostas',
     waitingPerform:'Aguardando {a} e {b} fazerem: {dare}',
     waitingAdd:'Aguardando {name} adicionar um novo desafio',
     consentPlayers:'Toque em um jogador para editar quais desafios você aceita fazer com essa pessoa:',
@@ -223,6 +285,10 @@ const I18N = {
     dareCount:'{count} jogadores aceitam',
     oneDare:'aceita 1 desafio',
     onePlayer:'1 jogador aceita',
+    playerEditSummary:'{name} aceita {count} desafios. Quais desafios você aceita fazer com {name}?',
+    playerEditSummaryOne:'{name} aceita 1 desafio. Quais desafios você aceita fazer com {name}?',
+    dareEditSummary:'{count} jogadores aceitam "{dare}". Com quais jogadores você aceita fazer este desafio?',
+    dareEditSummaryOne:'1 jogador aceita "{dare}". Com quais jogadores você aceita fazer este desafio?',
     back:'Voltar',
     save:'Salvar',
     submit:'Enviar',
@@ -241,7 +307,7 @@ const I18N = {
     addDareTitle:'Você pode escrever um novo desafio',
     newDare:'Novo desafio',
     addToMenu:'Adicionar ao menu',
-    examples:'Escolha um destes',
+    examples:'Aqui estão algumas ideias:',
     milder:'Mostrar desafios mais leves',
     spicier:'Mostrar desafios mais picantes',
     onboardingTitle:'Defina suas preferências',
@@ -261,6 +327,32 @@ const I18N = {
   }
 };
 
+Object.assign(I18N, {
+  zh: { ...I18N.en,
+    tagline:'如果转瓶子只会选到真正想亲吻彼此的人，你会玩吗？', joinHost:'加入{name}的游戏', joinGame:'加入游戏', createGame:'创建游戏', gameCode:'游戏代码', setupProfile:'设置你的资料', profileHelp:'这些选择会用来预填同意设置。进入游戏后你仍然可以更改具体同意内容。', room:'房间', players:'玩家', startGame:'开始游戏', resumeGame:'继续游戏', waitingForPlayers:'等待至少3名玩家', yourName:'你的名字', yourGender:'你的性别', prefer:'你偏好和以下性别的玩家做挑战', male:'男性', female:'女性', nonbinary:'非二元/其他', language:'语言', join:'加入', create:'创建', or:'或', theme:'主题', changeName:'更改名字', chooseColor:'选择你的颜色', useSelfie:'使用自拍', addPlayers:'添加玩家', leaveGame:'离开游戏', share:'分享此链接', yourTurn:'轮到你了', chooseDareModeTitle:'选择挑战', chooseDareModeDesc:'看看谁愿意和你一起做', choosePlayerModeTitle:'选择玩家', choosePlayerModeDesc:'看看对方愿意和你做哪些挑战', chooseDare:'选择挑战', choosePlayer:'选择玩家', waitingChoose:'等待{name}选择', waitingRespond:'等待{name}回应', waitingResponsesTitle:'等待回应', waitingOn:'等待', collectingResponses:'正在收集回应', waitingPerform:'等待{a}和{b}完成：{dare}', waitingAdd:'等待{name}添加新挑战', consentPlayers:'点击玩家，编辑你愿意和对方做哪些挑战：', consentDares:'点击挑战，编辑你愿意和哪些玩家做这个挑战：', consentCount:'同意{count}个挑战', dareCount:'{count}名玩家同意', oneDare:'同意1个挑战', onePlayer:'1名玩家同意', playerEditSummary:'{name}同意{count}个挑战。你愿意和{name}做哪些挑战？', playerEditSummaryOne:'{name}同意1个挑战。你愿意和{name}做哪些挑战？', dareEditSummary:'{count}名玩家同意“{dare}”。你愿意和哪些玩家做这个挑战？', dareEditSummaryOne:'1名玩家同意“{dare}”。你愿意和哪些玩家做这个挑战？', back:'返回', save:'保存', submit:'提交', sendNow:'立即发送', yesPlease:'愿意', noThanks:'不了，谢谢', sendingIn:'{seconds}秒后发送', selectedDare:'{name}选择了“{dare}”', chosenYou:'{name}想看看你愿意和他们做哪些挑战', activeOptionsPlayers:'选择和谁做这个挑战，或跳过', activeOptionsDares:'选择和{name}做哪个挑战，或跳过', pass:'跳过', weDidIt:'我们完成了', noOptions:'当前没有匹配。你可以跳过。', areYouSure:'你之前说过不想和这个人做这个挑战。继续吗？', addDareTitle:'你可以写一个新挑战', newDare:'新挑战', addToMenu:'添加到菜单', examples:'这里有一些灵感：', milder:'显示更温和的挑战', spicier:'显示更刺激的挑战', onboardingTitle:'设置你的挑战偏好', onboardingHelp:'针对这个挑战，选择你愿意和谁一起做。', joinedTitle:'{name}加入了！', joinedHelp:'选择你愿意和这名玩家做哪些挑战。', newDareTitle:'已添加新挑战', newDareHelp:'你愿意和这些人做这个挑战：', mature:'成人内容', matureBody:'本游戏仅适合18岁及以上成人。', adult:'我已满18岁', under:'我未成年', ok:'确定', cancel:'取消', loading:'加载中', uploadFailed:'自拍上传失败。请尝试较小的照片。'
+  },
+  tl: { ...I18N.en,
+    tagline:'Maglalaro ka ba ng Spin-the-Bottle kung pipili lang ito ng mga taong GUSTONG humalik sa isa\'t isa?', joinHost:'Sumali sa laro ni {name}', joinGame:'Sumali sa Laro', createGame:'Gumawa ng Laro', gameCode:'Code ng laro', setupProfile:'Ayusin ang iyong profile', profileHelp:'Ginagamit ang mga sagot na ito para punan ang paunang consent. Maaari mo pa itong baguhin sa loob ng laro.', room:'Kuwarto', players:'Mga manlalaro', startGame:'Simulan ang Laro', resumeGame:'Ipagpatuloy ang Laro', waitingForPlayers:'Naghihintay ng hindi bababa sa 3 manlalaro', yourName:'Pangalan mo', yourGender:'Kasarian mo', prefer:'Mas gusto mong gumawa ng dare kasama ang mga manlalarong', male:'lalaki', female:'babae', nonbinary:'nonbinary/iba pa', language:'Wika', join:'Sumali', create:'Gumawa', or:'o', theme:'Tema', changeName:'Palitan ang pangalan', chooseColor:'Piliin ang kulay mo', useSelfie:'Gumamit ng selfie', addPlayers:'Magdagdag ng Manlalaro', leaveGame:'Umalis sa laro', share:'Ibahagi ang link na ito', yourTurn:'Ikaw na', chooseDareModeTitle:'Pumili ng Dare', chooseDareModeDesc:'Tingnan kung sino ang gagawa nito kasama ka', choosePlayerModeTitle:'Pumili ng Tao', choosePlayerModeDesc:'Tingnan kung aling dares ang gagawin nila kasama ka', chooseDare:'Pumili ng dare', choosePlayer:'Pumili ng manlalaro', waitingChoose:'Naghihintay kay {name} na pumili', waitingRespond:'Naghihintay sa sagot ni {name}', waitingResponsesTitle:'Naghihintay ng mga sagot', waitingOn:'Naghihintay kina', collectingResponses:'Kinokolekta ang mga sagot', waitingPerform:'Naghihintay kina {a} at {b} na gawin: {dare}', waitingAdd:'Naghihintay kay {name} na magdagdag ng bagong dare', consentPlayers:'Pindutin ang manlalaro para baguhin kung aling dares ang payag kang gawin kasama sila:', consentDares:'Pindutin ang dare para baguhin kung sinong mga manlalaro ang payag kang gawin ito kasama:', consentCount:'pumapayag sa {count} dares', dareCount:'{count} manlalaro ang pumapayag', oneDare:'pumapayag sa 1 dare', onePlayer:'1 manlalaro ang pumapayag', playerEditSummary:'Pumapayag si {name} sa {count} dares. Aling dares ang payag mong gawin kasama si {name}?', playerEditSummaryOne:'Pumapayag si {name} sa 1 dare. Aling dares ang payag mong gawin kasama si {name}?', dareEditSummary:'{count} manlalaro ang pumapayag sa "{dare}". Sinong mga manlalaro ang payag mong gawin ang dare na ito kasama?', dareEditSummaryOne:'1 manlalaro ang pumapayag sa "{dare}". Sinong mga manlalaro ang payag mong gawin ang dare na ito kasama?', back:'Bumalik', save:'I-save', submit:'Isumite', sendNow:'Ipadala Ngayon', yesPlease:'Oo, gusto ko', noThanks:'Hindi, salamat', sendingIn:'Ipapadala sa {seconds}', selectedDare:'Pinili ni {name} ang "{dare}"', chosenYou:'Gustong makita ni {name} kung aling dares ang gagawin mo kasama siya', activeOptionsPlayers:'Piliin kung sino ang gagawa ng dare na ito kasama mo, o pumasa', activeOptionsDares:'Piliin kung aling dare ang gagawin kasama si {name}, o pumasa', pass:'Pumasa', weDidIt:'Nagawa namin', noOptions:'Walang tugma ngayon. Maaari kang pumasa.', areYouSure:'Dati mong sinabi na ayaw mo sa dare na ito kasama ang taong ito. Ituloy?', addDareTitle:'Maaari kang magsulat ng bagong dare', newDare:'Bagong dare', addToMenu:'Idagdag sa Menu', examples:'Narito ang ilang ideya:', milder:'Magpakita ng mas banayad na dares', spicier:'Magpakita ng mas maanghang na dares', onboardingTitle:'Itakda ang iyong dare preferences', onboardingHelp:'Para sa dare na ito, piliin kung sino ang gagawin mo ito kasama.', joinedTitle:'Sumali si {name}!', joinedHelp:'Piliin kung aling dares ang payag kang gawin kasama ang manlalarong ito.', newDareTitle:'May bagong dare na idinagdag', newDareHelp:'Payag kang gawin ang dare na ito kasama ang:', mature:'Pang-adultong nilalaman', matureBody:'Ang larong ito ay para sa mga nasa edad 18 pataas.', adult:'18+ ako', under:'Masyado pa akong bata', ok:'OK', cancel:'Kanselahin', loading:'Naglo-load', uploadFailed:'Nabigo ang pag-upload ng selfie. Subukan ang mas maliit na larawan.'
+  },
+  vi: { ...I18N.en,
+    tagline:'Bạn có chơi Xoay Chai nếu nó chỉ chọn những người MUỐN hôn nhau không?', joinHost:'Tham gia trò chơi của {name}', joinGame:'Tham gia trò chơi', createGame:'Tạo trò chơi', gameCode:'Mã trò chơi', setupProfile:'Thiết lập hồ sơ', profileHelp:'Các lựa chọn này giúp điền sẵn phần đồng ý. Bạn vẫn có thể đổi chi tiết đồng ý sau khi vào trò chơi.', room:'Phòng', players:'Người chơi', startGame:'Bắt đầu', resumeGame:'Tiếp tục', waitingForPlayers:'Đang chờ ít nhất 3 người chơi', yourName:'Tên của bạn', yourGender:'Giới tính của bạn', prefer:'Bạn thích làm thử thách với người chơi là', male:'nam', female:'nữ', nonbinary:'phi nhị nguyên/khác', language:'Ngôn ngữ', join:'Tham gia', create:'Tạo', or:'hoặc', theme:'Chủ đề', changeName:'Đổi tên', chooseColor:'Chọn màu của bạn', useSelfie:'Dùng ảnh selfie', addPlayers:'Thêm người chơi', leaveGame:'Rời trò chơi', share:'Chia sẻ liên kết này', yourTurn:'Đến lượt bạn', chooseDareModeTitle:'Chọn thử thách', chooseDareModeDesc:'Xem ai sẽ làm cùng bạn', choosePlayerModeTitle:'Chọn một người', choosePlayerModeDesc:'Xem họ sẽ làm thử thách nào cùng bạn', chooseDare:'Chọn thử thách', choosePlayer:'Chọn người chơi', waitingChoose:'Đang chờ {name} chọn', waitingRespond:'Đang chờ {name} trả lời', waitingResponsesTitle:'Đang chờ phản hồi', waitingOn:'Đang chờ', collectingResponses:'Đang thu phản hồi', waitingPerform:'Đang chờ {a} và {b} thực hiện: {dare}', waitingAdd:'Đang chờ {name} thêm thử thách mới', consentPlayers:'Nhấn vào người chơi để chỉnh các thử thách bạn đồng ý làm với họ:', consentDares:'Nhấn vào thử thách để chỉnh những người bạn đồng ý làm thử thách này cùng:', consentCount:'đồng ý {count} thử thách', dareCount:'{count} người chơi đồng ý', oneDare:'đồng ý 1 thử thách', onePlayer:'1 người chơi đồng ý', playerEditSummary:'{name} đồng ý {count} thử thách. Bạn đồng ý làm thử thách nào với {name}?', playerEditSummaryOne:'{name} đồng ý 1 thử thách. Bạn đồng ý làm thử thách nào với {name}?', dareEditSummary:'{count} người chơi đồng ý "{dare}". Bạn đồng ý làm thử thách này với những người nào?', dareEditSummaryOne:'1 người chơi đồng ý "{dare}". Bạn đồng ý làm thử thách này với những người nào?', back:'Quay lại', save:'Lưu', submit:'Gửi', sendNow:'Gửi ngay', yesPlease:'Có', noThanks:'Không, cảm ơn', sendingIn:'Gửi sau {seconds}', selectedDare:'{name} đã chọn "{dare}"', chosenYou:'{name} muốn xem bạn sẽ làm thử thách nào cùng họ', activeOptionsPlayers:'Chọn người làm thử thách này cùng bạn, hoặc bỏ qua', activeOptionsDares:'Chọn thử thách làm với {name}, hoặc bỏ qua', pass:'Bỏ qua', weDidIt:'Chúng tôi đã làm', noOptions:'Hiện không có lựa chọn phù hợp. Bạn có thể bỏ qua.', areYouSure:'Trước đó bạn nói không muốn làm thử thách này với người này. Tiếp tục?', addDareTitle:'Bạn được viết thử thách mới', newDare:'Thử thách mới', addToMenu:'Thêm vào menu', examples:'Một vài ý tưởng:', milder:'Hiển thị thử thách nhẹ hơn', spicier:'Hiển thị thử thách táo bạo hơn', onboardingTitle:'Đặt tùy chọn thử thách', onboardingHelp:'Với thử thách này, chọn người bạn sẽ làm cùng.', joinedTitle:'{name} đã tham gia!', joinedHelp:'Chọn thử thách bạn đồng ý làm với người chơi này.', newDareTitle:'Đã thêm thử thách mới', newDareHelp:'Bạn đồng ý làm thử thách này với:', mature:'Nội dung người lớn', matureBody:'Trò chơi này dành cho người từ 18 tuổi trở lên.', adult:'Tôi từ 18 tuổi', under:'Tôi chưa đủ tuổi', ok:'OK', cancel:'Hủy', loading:'Đang tải', uploadFailed:'Tải ảnh selfie thất bại. Hãy thử ảnh nhỏ hơn.'
+  },
+  fr: { ...I18N.en,
+    tagline:'Jouerais-tu à la bouteille si elle ne choisissait que des personnes qui VEULENT s’embrasser ?', joinHost:'Rejoindre la partie de {name}', joinGame:'Rejoindre la partie', createGame:'Créer une partie', gameCode:'Code de la partie', setupProfile:'Configure ton profil', profileHelp:'Ces choix servent à préremplir le consentement. Tu pourras modifier les détails une fois dans la partie.', room:'Salon', players:'Joueurs', startGame:'Commencer', resumeGame:'Reprendre', waitingForPlayers:'En attente d’au moins 3 joueurs', yourName:'Ton nom', yourGender:'Ton genre', prefer:'Tu préfères faire des défis avec des joueurs qui sont', male:'homme', female:'femme', nonbinary:'non binaire/autre', language:'Langue', join:'Rejoindre', create:'Créer', or:'ou', theme:'Thème', changeName:'Changer de nom', chooseColor:'Choisis ta couleur', useSelfie:'Utiliser un selfie', addPlayers:'Ajouter des joueurs', leaveGame:'Quitter la partie', share:'Partager ce lien', yourTurn:'C’est ton tour', chooseDareModeTitle:'Choisir un défi', chooseDareModeDesc:'Voir qui le fera avec toi', choosePlayerModeTitle:'Choisir une personne', choosePlayerModeDesc:'Voir quels défis elle fera avec toi', chooseDare:'Choisis un défi', choosePlayer:'Choisis un joueur', waitingChoose:'En attente du choix de {name}', waitingRespond:'En attente de la réponse de {name}', waitingResponsesTitle:'En attente des réponses', waitingOn:'En attente de', collectingResponses:'Réponses en cours', waitingPerform:'En attente que {a} et {b} fassent : {dare}', waitingAdd:'En attente que {name} ajoute un nouveau défi', consentPlayers:'Clique sur un joueur pour modifier les défis que tu acceptes de faire avec cette personne :', consentDares:'Clique sur un défi pour modifier avec quels joueurs tu acceptes de le faire :', consentCount:'accepte {count} défis', dareCount:'{count} joueurs acceptent', oneDare:'accepte 1 défi', onePlayer:'1 joueur accepte', playerEditSummary:'{name} accepte {count} défis. Quels défis acceptes-tu de faire avec {name} ?', playerEditSummaryOne:'{name} accepte 1 défi. Quels défis acceptes-tu de faire avec {name} ?', dareEditSummary:'{count} joueurs acceptent « {dare} ». Avec quels joueurs acceptes-tu de faire ce défi ?', dareEditSummaryOne:'1 joueur accepte « {dare} ». Avec quels joueurs acceptes-tu de faire ce défi ?', back:'Retour', save:'Enregistrer', submit:'Envoyer', sendNow:'Envoyer maintenant', yesPlease:'Oui, volontiers', noThanks:'Non merci', sendingIn:'Envoi dans {seconds}', selectedDare:'{name} a choisi « {dare} »', chosenYou:'{name} veut voir quels défis tu feras avec lui/elle', activeOptionsPlayers:'Choisis avec qui faire ce défi, ou passe', activeOptionsDares:'Choisis quel défi faire avec {name}, ou passe', pass:'Passer', weDidIt:'On l’a fait', noOptions:'Aucune correspondance pour le moment. Tu peux passer.', areYouSure:'Tu avais dit ne pas vouloir faire ce défi avec cette personne. Continuer ?', addDareTitle:'Tu peux écrire un nouveau défi', newDare:'Nouveau défi', addToMenu:'Ajouter au menu', examples:'Voici quelques idées :', milder:'Afficher des défis plus doux', spicier:'Afficher des défis plus osés', onboardingTitle:'Définis tes préférences de défis', onboardingHelp:'Pour ce défi, choisis avec qui tu le ferais.', joinedTitle:'{name} a rejoint !', joinedHelp:'Choisis les défis que tu acceptes de faire avec ce joueur.', newDareTitle:'Un nouveau défi a été ajouté', newDareHelp:'Tu acceptes ce défi avec :', mature:'Contenu adulte', matureBody:'Ce jeu est destiné aux adultes de 18 ans ou plus.', adult:'J’ai 18 ans ou plus', under:'Je suis trop jeune', ok:'OK', cancel:'Annuler', loading:'Chargement', uploadFailed:'Échec du téléchargement du selfie. Essaie une photo plus petite.'
+  },
+  de: { ...I18N.en,
+    tagline:'Würdest du Flaschendrehen spielen, wenn nur Menschen gewählt werden, die einander küssen WOLLEN?', joinHost:'Dem Spiel von {name} beitreten', joinGame:'Spiel beitreten', createGame:'Spiel erstellen', gameCode:'Spielcode', setupProfile:'Profil einrichten', profileHelp:'Diese Angaben füllen die Zustimmung vor. Du kannst Details später im Spiel ändern.', room:'Raum', players:'Spieler', startGame:'Spiel starten', resumeGame:'Spiel fortsetzen', waitingForPlayers:'Warte auf mindestens 3 Spieler', yourName:'Dein Name', yourGender:'Dein Geschlecht', prefer:'Du bevorzugst Mutproben mit Spielern, die sind', male:'männlich', female:'weiblich', nonbinary:'nichtbinär/andere', language:'Sprache', join:'Beitreten', create:'Erstellen', or:'oder', theme:'Thema', changeName:'Namen ändern', chooseColor:'Wähle deine Farbe', useSelfie:'Selfie verwenden', addPlayers:'Spieler hinzufügen', leaveGame:'Spiel verlassen', share:'Diesen Link teilen', yourTurn:'Du bist dran', chooseDareModeTitle:'Mutprobe wählen', chooseDareModeDesc:'Sieh, wer sie mit dir macht', choosePlayerModeTitle:'Person wählen', choosePlayerModeDesc:'Sieh, welche Mutproben sie mit dir macht', chooseDare:'Mutprobe wählen', choosePlayer:'Spieler wählen', waitingChoose:'Warte darauf, dass {name} wählt', waitingRespond:'Warte auf Antwort von {name}', waitingResponsesTitle:'Warte auf Antworten', waitingOn:'Warte auf', collectingResponses:'Sammle Antworten', waitingPerform:'Warte darauf, dass {a} und {b} ausführen: {dare}', waitingAdd:'Warte darauf, dass {name} eine neue Mutprobe hinzufügt', consentPlayers:'Tippe auf einen Spieler, um zu bearbeiten, welche Mutproben du mit dieser Person machen willst:', consentDares:'Tippe auf eine Mutprobe, um zu bearbeiten, mit welchen Spielern du sie machen willst:', consentCount:'stimmt {count} Mutproben zu', dareCount:'{count} Spieler stimmen zu', oneDare:'stimmt 1 Mutprobe zu', onePlayer:'1 Spieler stimmt zu', playerEditSummary:'{name} stimmt {count} Mutproben zu. Welchen Mutproben stimmst du für {name} zu?', playerEditSummaryOne:'{name} stimmt 1 Mutprobe zu. Welchen Mutproben stimmst du für {name} zu?', dareEditSummary:'{count} Spieler stimmen „{dare}“ zu. Mit welchen Spielern willst du diese Mutprobe machen?', dareEditSummaryOne:'1 Spieler stimmt „{dare}“ zu. Mit welchen Spielern willst du diese Mutprobe machen?', back:'Zurück', save:'Speichern', submit:'Absenden', sendNow:'Jetzt senden', yesPlease:'Ja bitte', noThanks:'Nein danke', sendingIn:'Senden in {seconds}', selectedDare:'{name} hat „{dare}“ gewählt', chosenYou:'{name} möchte sehen, welche Mutproben du mit ihm/ihr machst', activeOptionsPlayers:'Wähle, mit wem du diese Mutprobe machst, oder passe', activeOptionsDares:'Wähle, welche Mutprobe du mit {name} machst, oder passe', pass:'Passen', weDidIt:'Wir haben es gemacht', noOptions:'Aktuell keine Treffer. Du kannst passen.', areYouSure:'Du hast vorher gesagt, dass du diese Mutprobe mit dieser Person nicht möchtest. Fortfahren?', addDareTitle:'Du darfst eine neue Mutprobe schreiben', newDare:'Neue Mutprobe', addToMenu:'Zum Menü hinzufügen', examples:'Hier sind ein paar Ideen:', milder:'Mildere Mutproben anzeigen', spicier:'Pikantere Mutproben anzeigen', onboardingTitle:'Lege deine Mutproben-Vorlieben fest', onboardingHelp:'Wähle für diese Mutprobe, mit wem du sie machen würdest.', joinedTitle:'{name} ist beigetreten!', joinedHelp:'Wähle, welche Mutproben du mit diesem Spieler machen willst.', newDareTitle:'Eine neue Mutprobe wurde hinzugefügt', newDareHelp:'Du stimmst dieser Mutprobe zu mit:', mature:'Inhalte für Erwachsene', matureBody:'Dieses Spiel ist für Erwachsene ab 18 Jahren gedacht.', adult:'Ich bin 18+', under:'Ich bin zu jung', ok:'OK', cancel:'Abbrechen', loading:'Lädt', uploadFailed:'Selfie-Upload fehlgeschlagen. Versuche ein kleineres Foto.'
+  },
+  ar: { ...I18N.en, tagline:'هل ستلعب لعبة تدوير الزجاجة إذا كانت تختار فقط أشخاصا يريدون تقبيل بعضهم؟', joinGame:'انضم إلى اللعبة', createGame:'أنشئ لعبة', gameCode:'رمز اللعبة', setupProfile:'إعداد ملفك', profileHelp:'تساعد هذه الاختيارات على ملء الموافقة مبدئيا. يمكنك تغيير التفاصيل بعد دخول اللعبة.', room:'الغرفة', players:'اللاعبون', startGame:'ابدأ اللعبة', waitingForPlayers:'بانتظار 3 لاعبين على الأقل', yourName:'اسمك', yourGender:'جنسك', prefer:'تفضل أداء التحديات مع لاعبين هم', male:'ذكر', female:'أنثى', nonbinary:'غير ثنائي/آخر', language:'اللغة', join:'انضم', create:'أنشئ', or:'أو', theme:'السمة', yourTurn:'حان دورك', chooseDareModeTitle:'اختر تحديا', chooseDareModeDesc:'اعرف من سيقوم به معك', choosePlayerModeTitle:'اختر شخصا', choosePlayerModeDesc:'اعرف أي تحديات سيقوم بها معك', consentPlayers:'اضغط على لاعب لتعديل التحديات التي توافق على القيام بها معه:', consentDares:'اضغط على تحد لتعديل اللاعبين الذين توافق على القيام به معهم:', playerEditSummary:'{name} يوافق على {count} تحديات. ما التحديات التي توافق عليها مع {name}؟', playerEditSummaryOne:'{name} يوافق على تحد واحد. ما التحديات التي توافق عليها مع {name}؟', dareEditSummary:'{count} لاعبين يوافقون على "{dare}". مع أي لاعبين توافق على هذا التحدي؟', dareEditSummaryOne:'لاعب واحد يوافق على "{dare}". مع أي لاعبين توافق على هذا التحدي؟', back:'رجوع', save:'حفظ', submit:'إرسال', sendNow:'أرسل الآن', yesPlease:'نعم من فضلك', noThanks:'لا شكرا', pass:'تجاوز', weDidIt:'فعلناها', examples:'إليك بعض الأفكار:', milder:'أظهر تحديات ألطف', spicier:'أظهر تحديات أكثر جرأة', ok:'حسنا', cancel:'إلغاء' },
+  ko: { ...I18N.en, tagline:'서로 키스하고 싶어 하는 사람만 고르는 병 돌리기라면 하시겠어요?', joinGame:'게임 참여', createGame:'게임 만들기', gameCode:'게임 코드', setupProfile:'프로필 설정', profileHelp:'이 선택은 동의 설정을 미리 채우는 데 사용됩니다. 게임에 들어간 뒤에도 세부 동의를 바꿀 수 있습니다.', room:'방', players:'플레이어', startGame:'게임 시작', waitingForPlayers:'최소 3명의 플레이어를 기다리는 중', yourName:'이름', yourGender:'성별', prefer:'함께 도전하고 싶은 플레이어의 성별', male:'남성', female:'여성', nonbinary:'논바이너리/기타', language:'언어', join:'참여', create:'만들기', or:'또는', theme:'테마', yourTurn:'당신 차례입니다', chooseDareModeTitle:'도전 선택', chooseDareModeDesc:'누가 함께할지 보기', choosePlayerModeTitle:'사람 선택', choosePlayerModeDesc:'상대가 어떤 도전을 함께할지 보기', consentPlayers:'플레이어를 눌러 그 사람과 함께할 도전을 편집하세요:', consentDares:'도전을 눌러 함께할 플레이어를 편집하세요:', playerEditSummary:'{name}은(는) {count}개 도전에 동의합니다. {name}과 어떤 도전에 동의하나요?', playerEditSummaryOne:'{name}은(는) 1개 도전에 동의합니다. {name}과 어떤 도전에 동의하나요?', dareEditSummary:'{count}명의 플레이어가 "{dare}"에 동의합니다. 이 도전을 누구와 하겠습니까?', dareEditSummaryOne:'1명의 플레이어가 "{dare}"에 동의합니다. 이 도전을 누구와 하겠습니까?', back:'뒤로', save:'저장', submit:'제출', sendNow:'지금 보내기', yesPlease:'좋아요', noThanks:'아니요', pass:'패스', weDidIt:'완료했어요', examples:'아이디어:', milder:'더 순한 도전 보기', spicier:'더 매운 도전 보기', ok:'확인', cancel:'취소' },
+  ru: { ...I18N.en, tagline:'Вы бы сыграли в бутылочку, если бы она выбирала только тех, кто ХОЧЕТ поцеловать друг друга?', joinGame:'Присоединиться', createGame:'Создать игру', gameCode:'Код игры', setupProfile:'Настройте профиль', profileHelp:'Эти ответы используются для предварительного согласия. Позже их можно изменить.', room:'Комната', players:'Игроки', startGame:'Начать игру', waitingForPlayers:'Ожидание минимум 3 игроков', yourName:'Ваше имя', yourGender:'Ваш пол', prefer:'Вы предпочитаете испытания с игроками, которые', male:'мужчины', female:'женщины', nonbinary:'небинарные/другое', language:'Язык', join:'Войти', create:'Создать', or:'или', theme:'Тема', yourTurn:'Ваш ход', chooseDareModeTitle:'Выбрать испытание', chooseDareModeDesc:'Посмотреть, кто сделает его с вами', choosePlayerModeTitle:'Выбрать человека', choosePlayerModeDesc:'Посмотреть, какие испытания он сделает с вами', consentPlayers:'Нажмите игрока, чтобы изменить, какие испытания вы согласны делать с ним:', consentDares:'Нажмите испытание, чтобы изменить, с кем вы согласны его делать:', playerEditSummary:'{name} согласен на {count} испытаний. На какие испытания вы согласны с {name}?', playerEditSummaryOne:'{name} согласен на 1 испытание. На какие испытания вы согласны с {name}?', dareEditSummary:'{count} игроков согласны на «{dare}». С какими игроками вы согласны сделать это испытание?', dareEditSummaryOne:'1 игрок согласен на «{dare}». С какими игроками вы согласны сделать это испытание?', back:'Назад', save:'Сохранить', submit:'Отправить', sendNow:'Отправить сейчас', yesPlease:'Да', noThanks:'Нет, спасибо', pass:'Пас', weDidIt:'Мы сделали это', examples:'Вот несколько идей:', milder:'Показать мягче', spicier:'Показать острее', ok:'OK', cancel:'Отмена' },
+  ht: { ...I18N.en, tagline:'Èske ou ta jwe vire boutèy si li chwazi sèlman moun ki VLE bo youn lòt?', joinGame:'Antre nan jwèt', createGame:'Kreye jwèt', gameCode:'Kòd jwèt', setupProfile:'Mete pwofil ou', profileHelp:'Chwa sa yo ede ranpli konsantman an davans. Ou ka chanje detay yo nan jwèt la.', room:'Chanm', players:'Jwè yo', startGame:'Kòmanse jwèt', waitingForPlayers:'Ap tann omwen 3 jwè', yourName:'Non ou', yourGender:'Sèks ou', prefer:'Ou prefere fè defi ak jwè ki se', male:'gason', female:'fi', nonbinary:'nonbinè/lòt', language:'Lang', join:'Antre', create:'Kreye', or:'oswa', theme:'Tèm', yourTurn:'Se tou pa ou', chooseDareModeTitle:'Chwazi yon defi', chooseDareModeDesc:'Gade kiyès k ap fè li avè ou', choosePlayerModeTitle:'Chwazi yon moun', choosePlayerModeDesc:'Gade ki defi li ap fè avè ou', consentPlayers:'Klike sou yon jwè pou chanje ki defi ou dakò fè avè li:', consentDares:'Klike sou yon defi pou chanje ak ki jwè ou dakò fè li:', playerEditSummary:'{name} dakò ak {count} defi. Ki defi ou dakò fè ak {name}?', playerEditSummaryOne:'{name} dakò ak 1 defi. Ki defi ou dakò fè ak {name}?', dareEditSummary:'{count} jwè dakò ak "{dare}". Ak ki jwè ou dakò fè defi sa a?', dareEditSummaryOne:'1 jwè dakò ak "{dare}". Ak ki jwè ou dakò fè defi sa a?', back:'Retounen', save:'Sove', submit:'Voye', sendNow:'Voye kounye a', yesPlease:'Wi tanpri', noThanks:'Non mèsi', pass:'Pase', weDidIt:'Nou fè li', examples:'Men kèk lide:', milder:'Montre defi pi dou', spicier:'Montre defi pi cho', ok:'OK', cancel:'Anile' },
+  hi: { ...I18N.en, tagline:'क्या आप स्पिन-द-बॉटल खेलेंगे अगर यह केवल उन लोगों को चुने जो सच में एक-दूसरे को चूमना चाहते हैं?', joinGame:'गेम में शामिल हों', createGame:'गेम बनाएं', gameCode:'गेम कोड', setupProfile:'अपनी प्रोफाइल सेट करें', profileHelp:'ये विकल्प सहमति को पहले से भरने में मदद करते हैं। गेम में आने के बाद आप इन्हें बदल सकते हैं।', room:'कमरा', players:'खिलाड़ी', startGame:'गेम शुरू करें', waitingForPlayers:'कम से कम 3 खिलाड़ियों की प्रतीक्षा', yourName:'आपका नाम', yourGender:'आपका जेंडर', prefer:'आप इन खिलाड़ियों के साथ डेयर पसंद करते हैं', male:'पुरुष', female:'महिला', nonbinary:'नॉनबाइनरी/अन्य', language:'भाषा', join:'शामिल हों', create:'बनाएं', or:'या', theme:'थीम', yourTurn:'आपकी बारी है', chooseDareModeTitle:'डेयर चुनें', chooseDareModeDesc:'देखें कौन आपके साथ करेगा', choosePlayerModeTitle:'व्यक्ति चुनें', choosePlayerModeDesc:'देखें वे आपके साथ कौन से डेयर करेंगे', consentPlayers:'किस खिलाड़ी के साथ कौन से डेयर करने हैं, बदलने के लिए खिलाड़ी पर क्लिक करें:', consentDares:'किसके साथ यह डेयर करना है, बदलने के लिए डेयर पर क्लिक करें:', playerEditSummary:'{name} {count} डेयर के लिए सहमत है। आप {name} के साथ कौन से डेयर करना चाहते हैं?', playerEditSummaryOne:'{name} 1 डेयर के लिए सहमत है। आप {name} के साथ कौन से डेयर करना चाहते हैं?', dareEditSummary:'{count} खिलाड़ी "{dare}" के लिए सहमत हैं। आप यह डेयर किन खिलाड़ियों के साथ करना चाहते हैं?', dareEditSummaryOne:'1 खिलाड़ी "{dare}" के लिए सहमत है। आप यह डेयर किन खिलाड़ियों के साथ करना चाहते हैं?', back:'वापस', save:'सेव करें', submit:'भेजें', sendNow:'अभी भेजें', yesPlease:'हाँ', noThanks:'नहीं धन्यवाद', pass:'पास', weDidIt:'हमने कर लिया', examples:'कुछ आइडिया:', milder:'हल्के डेयर दिखाएं', spicier:'ज़्यादा मसालेदार डेयर दिखाएं', ok:'ठीक है', cancel:'रद्द करें' },
+  nl: { ...I18N.en, tagline:'Zou je flesje draaien spelen als het alleen mensen kiest die elkaar WILLEN kussen?', joinGame:'Meedoen', createGame:'Spel maken', gameCode:'Spelcode', setupProfile:'Stel je profiel in', profileHelp:'Deze keuzes vullen toestemming vooraf in. Je kunt details later wijzigen.', room:'Kamer', players:'Spelers', startGame:'Start spel', waitingForPlayers:'Wachten op minstens 3 spelers', yourName:'Je naam', yourGender:'Je gender', prefer:'Je doet liever opdrachten met spelers die zijn', male:'man', female:'vrouw', nonbinary:'non-binair/anders', language:'Taal', join:'Meedoen', create:'Maken', or:'of', theme:'Thema', yourTurn:'Jij bent aan de beurt', chooseDareModeTitle:'Kies een opdracht', chooseDareModeDesc:'Zie wie hem met jou wil doen', choosePlayerModeTitle:'Kies een persoon', choosePlayerModeDesc:'Zie welke opdrachten die met jou wil doen', consentPlayers:'Klik een speler om te bewerken welke opdrachten je met die persoon wilt doen:', consentDares:'Klik een opdracht om te bewerken met welke spelers je die wilt doen:', playerEditSummary:'{name} stemt in met {count} opdrachten. Met welke opdrachten stem jij in voor {name}?', playerEditSummaryOne:'{name} stemt in met 1 opdracht. Met welke opdrachten stem jij in voor {name}?', dareEditSummary:'{count} spelers stemmen in met "{dare}". Met welke spelers wil jij deze opdracht doen?', dareEditSummaryOne:'1 speler stemt in met "{dare}". Met welke spelers wil jij deze opdracht doen?', back:'Terug', save:'Opslaan', submit:'Verzenden', sendNow:'Nu verzenden', yesPlease:'Ja graag', noThanks:'Nee bedankt', pass:'Passen', weDidIt:'We hebben het gedaan', examples:'Hier zijn wat ideeën:', milder:'Mildere opdrachten tonen', spicier:'Pittigere opdrachten tonen', ok:'OK', cancel:'Annuleren' },
+  pl: { ...I18N.en, tagline:'Czy zagrasz w butelkę, jeśli wybiera tylko osoby, które CHCĄ się pocałować?', joinGame:'Dołącz do gry', createGame:'Utwórz grę', gameCode:'Kod gry', setupProfile:'Ustaw profil', profileHelp:'Te wybory wstępnie uzupełniają zgody. Możesz je później zmienić.', room:'Pokój', players:'Gracze', startGame:'Rozpocznij grę', waitingForPlayers:'Czekamy na co najmniej 3 graczy', yourName:'Twoje imię', yourGender:'Twoja płeć', prefer:'Wolisz wyzwania z graczami, którzy są', male:'mężczyzna', female:'kobieta', nonbinary:'niebinarna/inna', language:'Język', join:'Dołącz', create:'Utwórz', or:'albo', theme:'Motyw', yourTurn:'Twoja kolej', chooseDareModeTitle:'Wybierz wyzwanie', chooseDareModeDesc:'Zobacz, kto zrobi je z tobą', choosePlayerModeTitle:'Wybierz osobę', choosePlayerModeDesc:'Zobacz, jakie wyzwania zrobi z tobą', consentPlayers:'Kliknij gracza, aby zmienić, jakie wyzwania zgadzasz się robić z tą osobą:', consentDares:'Kliknij wyzwanie, aby zmienić, z kim zgadzasz się je zrobić:', playerEditSummary:'{name} zgadza się na {count} wyzwań. Na jakie wyzwania zgadzasz się z {name}?', playerEditSummaryOne:'{name} zgadza się na 1 wyzwanie. Na jakie wyzwania zgadzasz się z {name}?', dareEditSummary:'{count} graczy zgadza się na „{dare}”. Z którymi graczami zgadzasz się zrobić to wyzwanie?', dareEditSummaryOne:'1 gracz zgadza się na „{dare}”. Z którymi graczami zgadzasz się zrobić to wyzwanie?', back:'Wstecz', save:'Zapisz', submit:'Wyślij', sendNow:'Wyślij teraz', yesPlease:'Tak', noThanks:'Nie, dziękuję', pass:'Pas', weDidIt:'Zrobiliśmy to', examples:'Kilka pomysłów:', milder:'Pokaż łagodniejsze', spicier:'Pokaż ostrzejsze', ok:'OK', cancel:'Anuluj' },
+  it: { ...I18N.en, tagline:'Giocheresti al gioco della bottiglia se scegliesse solo persone che VOGLIONO baciarsi?', joinGame:'Unisciti al gioco', createGame:'Crea gioco', gameCode:'Codice gioco', setupProfile:'Configura il profilo', profileHelp:'Queste scelte precompilano il consenso. Puoi modificarle più tardi nel gioco.', room:'Stanza', players:'Giocatori', startGame:'Inizia gioco', waitingForPlayers:'In attesa di almeno 3 giocatori', yourName:'Il tuo nome', yourGender:'Il tuo genere', prefer:'Preferisci fare sfide con giocatori che sono', male:'uomo', female:'donna', nonbinary:'non binario/altro', language:'Lingua', join:'Entra', create:'Crea', or:'oppure', theme:'Tema', yourTurn:'È il tuo turno', chooseDareModeTitle:'Scegli una sfida', chooseDareModeDesc:'Vedi chi la farà con te', choosePlayerModeTitle:'Scegli una persona', choosePlayerModeDesc:'Vedi quali sfide farà con te', consentPlayers:'Tocca un giocatore per modificare quali sfide accetti di fare con quella persona:', consentDares:'Tocca una sfida per modificare con quali giocatori accetti di farla:', playerEditSummary:'{name} accetta {count} sfide. Quali sfide accetti di fare con {name}?', playerEditSummaryOne:'{name} accetta 1 sfida. Quali sfide accetti di fare con {name}?', dareEditSummary:'{count} giocatori accettano "{dare}". Con quali giocatori accetti di fare questa sfida?', dareEditSummaryOne:'1 giocatore accetta "{dare}". Con quali giocatori accetti di fare questa sfida?', back:'Indietro', save:'Salva', submit:'Invia', sendNow:'Invia ora', yesPlease:'Sì, volentieri', noThanks:'No grazie', pass:'Passa', weDidIt:'L’abbiamo fatto', examples:'Ecco alcune idee:', milder:'Mostra sfide più leggere', spicier:'Mostra sfide più piccanti', ok:'OK', cancel:'Annulla' }
+});
+
 let THEMES = null;
 let selectedTheme = 'Sensual';
 let peekedRoom = null;
@@ -275,7 +367,7 @@ function browserLanguage(){
   return 'en';
 }
 let state = { room:null, me:{ name:'', id:null, language:browserLanguage(), gender:'nonbinary', preferredGenders:[...GENDERS] } };
-let local = { edit:null, prompt:{}, exampleOffsets:{} };
+let local = { edit:null, prompt:{}, exampleOffsets:{}, landingMode:null, pendingJoinCode:'' };
 
 function lang(){ return state.me.language || loadSession()?.language || 'en'; }
 function t(key, vars={}){
@@ -300,6 +392,36 @@ function saveSession(part){ try { localStorage.setItem(SESSION_KEY, JSON.stringi
 function clearSession(){ try { localStorage.removeItem(SESSION_KEY); } catch {} }
 function loadUI(){ try { return JSON.parse(localStorage.getItem(UI_KEY) || 'null'); } catch { return null; } }
 function saveUI(part){ try { localStorage.setItem(UI_KEY, JSON.stringify({ ...(loadUI() || {}), ...part })); } catch {} }
+function pushLocalHistory(kind){ try { history.pushState({ dtcLocal:kind }, '', location.href); } catch {} }
+function clearLocalBack(){
+  const prompt = state.room?.me?.pendingPrompts?.[0];
+  if (prompt?.type === 'onboarding') {
+    const ps = promptState(prompt);
+    if ((ps.step || 0) > 0) {
+      ps.step--;
+      render();
+      return true;
+    }
+  }
+  if (local.edit) {
+    local.edit = null;
+    render();
+    return true;
+  }
+  if (local.landingMode) {
+    local.landingMode = null;
+    render();
+    return true;
+  }
+  return false;
+}
+function requestLocalBack(){
+  if (history.state?.dtcLocal) {
+    history.back();
+    return;
+  }
+  clearLocalBack();
+}
 function meId(){ return state.me?.id || null; }
 function mePlayer(){ return state.room?.players?.find(p => p.id === meId()) || null; }
 function player(id){ return state.room?.players?.find(p => p.id === id) || null; }
@@ -314,6 +436,12 @@ function secondsLeft(){
 function countText(n, kind){
   if (kind === 'dare') return n === 1 ? t('oneDare') : t('consentCount', { count:n });
   return n === 1 ? t('onePlayer') : t('dareCount', { count:n });
+}
+function playerEditSummary(name, count){
+  return count === 1 ? t('playerEditSummaryOne', { name }) : t('playerEditSummary', { name, count });
+}
+function dareEditSummary(title, count){
+  return count === 1 ? t('dareEditSummaryOne', { dare:title }) : t('dareEditSummary', { dare:title, count });
 }
 function avatarHtml(p, small=false){
   if (p?.avatarUrl) return `<span class="avatar ${small?'small':''}"><img src="${escapeAttr(p.avatarUrl)}" alt=""></span>`;
@@ -383,9 +511,7 @@ function genderFields(prefix, selected='nonbinary', prefs=GENDERS){
 function languageSelect(id, value=lang()){
   return `<label class="field-label" for="${id}">${t('language')}</label>
   <select id="${id}">
-    <option value="en" ${value==='en'?'selected':''}>${t('english')}</option>
-    <option value="es" ${value==='es'?'selected':''}>${t('spanish')}</option>
-    <option value="pt" ${value==='pt'?'selected':''}>${t('portuguese')}</option>
+    ${LANGS.map(code => `<option value="${code}" ${value===code?'selected':''}>${escapeHtml(LANGUAGE_NAMES[code] || code)}</option>`).join('')}
   </select>`;
 }
 function collectProfile(prefix){
@@ -395,35 +521,59 @@ function collectProfile(prefix){
   const language = $(`#${prefix}-language`)?.value || lang();
   return { name, gender, preferredGenders: preferredGenders.length ? preferredGenders : [...GENDERS], language };
 }
+function collectProfileDraft(prefix){
+  const name = sanitizeInput($(`#${prefix}-name`)?.value || '', 30);
+  const gender = $(`input[name="${prefix}-gender"]:checked`)?.value || 'nonbinary';
+  const preferredGenders = $$(`input[name="${prefix}-pref"]:checked`).map(x => x.value);
+  const language = $(`#${prefix}-language`)?.value || lang();
+  return { name, gender, preferredGenders: preferredGenders.length ? preferredGenders : [...GENDERS], language };
+}
+
+function profileSetupView(mode, codeInHash, sess, subtitle){
+  const prefix = mode === 'create' ? 'create' : 'join';
+  const code = local.pendingJoinCode || codeInHash || sess.code || '';
+  return `
+    <section class="card landing">
+      <button class="secondary narrow" id="landing-back">${t('back')}</button>
+      <h1>${t('setupProfile')}</h1>
+      <p>${escapeHtml(subtitle)}</p>
+      <div class="panel">
+        <h3>${mode === 'create' ? t('createGame') : t('joinGame')}</h3>
+        ${mode === 'join' ? `<label class="field-label" for="join-code">${t('gameCode')}</label><input id="join-code" placeholder="three-words-like-this" value="${escapeAttr(code)}" maxlength="64">` : ''}
+        <input id="${prefix}-name" placeholder="${t('yourName')}" value="${escapeAttr(sess.name || '')}" maxlength="30">
+        ${genderFields(prefix, sess.gender || 'nonbinary', sess.preferredGenders || GENDERS)}
+        ${languageSelect(`${prefix}-language`, sess.language || lang())}
+        <p><small>${t('profileHelp')}</small></p>
+        <button class="primary" id="${prefix}-btn">${mode === 'create' ? t('create') : t('join')}</button>
+      </div>
+    </section>`;
+}
 
 function titleView(){
   const codeInHash = location.hash?.slice(1) || '';
   const sess = loadSession() || {};
   const hostName = peekedRoom ? peekedRoom.players?.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
-  const subtitle = codeInHash && hostName ? `Join ${escapeHtml(hostName)}'s game` : t('tagline');
+  const subtitle = codeInHash && hostName ? t('joinHost', { name:hostName }) : t('tagline');
+  if (local.landingMode) return profileSetupView(local.landingMode, codeInHash, sess, subtitle);
+  const quickCode = local.pendingJoinCode || codeInHash || '';
   return `
     <section class="card landing">
       <h1>${t('title')}</h1>
-      <p>${subtitle}</p>
+      <p>${escapeHtml(subtitle)}</p>
       <div class="grid-landing${codeInHash ? ' single' : ''}">
         <div class="panel">
           <h3>${t('joinGame')}</h3>
-          <input id="join-code" placeholder="three-words-like-this" value="${escapeAttr(codeInHash)}" maxlength="64">
-          <input id="join-name" placeholder="${t('yourName')}" value="${escapeAttr(sess.name || '')}" maxlength="30">
-          ${genderFields('join', sess.gender || 'nonbinary', sess.preferredGenders || GENDERS)}
-          ${languageSelect('join-language', sess.language || lang())}
-          <button class="primary" id="join-btn">${t('join')}</button>
+          <label class="field-label" for="quick-join-code">${t('gameCode')}</label>
+          <input id="quick-join-code" placeholder="three-words-like-this" value="${escapeAttr(quickCode)}" maxlength="64">
+          <button class="primary" id="choose-join">${t('join')}</button>
         </div>
-        ${codeInHash ? '' : `<div class="or">or</div>
+        ${codeInHash ? '' : `<div class="or">${t('or')}</div>
         <div class="panel">
           <h3>${t('createGame')}</h3>
           <select id="create-theme">
             ${(THEMES ? Object.keys(THEMES) : ['Sensual']).map(k => `<option value="${escapeAttr(k)}" ${k===selectedTheme?'selected':''}>${t('theme')}: ${escapeHtml(THEMES?.[k]?.name || k)}</option>`).join('')}
           </select>
-          <input id="create-name" placeholder="${t('yourName')}" value="${escapeAttr(sess.name || '')}" maxlength="30">
-          ${genderFields('create', sess.gender || 'nonbinary', sess.preferredGenders || GENDERS)}
-          ${languageSelect('create-language', sess.language || lang())}
-          <button class="primary" id="create-btn">${t('create')}</button>
+          <button class="primary" id="choose-create">${t('create')}</button>
         </div>`}
       </div>
     </section>`;
@@ -528,7 +678,7 @@ function editPanel(){
     return `
       <section class="panel">
         <button class="secondary narrow" id="back-edit">${t('back')}</button>
-        <h3>${escapeHtml(p.name)} ${countText(count, 'dare')}</h3>
+        <p class="edit-instruction">${escapeHtml(playerEditSummary(p.name, count))}</p>
         <div class="check-list">${r.dareMenu.map(d => `
           <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
         `).join('')}</div>
@@ -540,11 +690,36 @@ function editPanel(){
   return `
     <section class="panel">
       <button class="secondary narrow" id="back-edit">${t('back')}</button>
-      <h3>${countText(count, 'player')} "${escapeHtml(d.title)}"</h3>
+      <p class="edit-instruction">${escapeHtml(dareEditSummary(d.title, count))}</p>
       <div class="check-list">${r.players.filter(p => p.id !== meId() && p.connected !== false).map(p => `
         <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${namePill(p)}</label>
       `).join('')}</div>
     </section>`;
+}
+function activeWaitingPanel(){
+  const r = state.room;
+  const turn = r.turn;
+  if (turn.phase === 'dareRespond') {
+    const d = dare(turn.selectedDareId);
+    const waiting = r.players.filter(p => p.id !== meId() && p.connected !== false && !Object.prototype.hasOwnProperty.call(turn.responses || {}, p.id));
+    return `
+      <div class="panel waiting-panel">
+        <h3>${t('waitingResponsesTitle')}</h3>
+        <p><b>${escapeHtml(d?.title || '')}</b></p>
+        <p>${escapeHtml(waiting.length ? `${t('waitingOn')}:` : t('collectingResponses'))}</p>
+        ${waiting.length ? `<div class="players">${waiting.map(namePill).join('')}</div>` : ''}
+      </div>`;
+  }
+  if (turn.phase === 'personRespond') {
+    const p = player(turn.selectedPlayerId);
+    return `
+      <div class="panel waiting-panel">
+        <h3>${t('waitingResponsesTitle')}</h3>
+        <p>${escapeHtml(t('waitingRespond', { name:p?.name || 'Player' }))}</p>
+        ${p ? `<div class="players">${namePill(p)}</div>` : ''}
+      </div>`;
+  }
+  return '';
 }
 function activeBody(){
   const r = state.room;
@@ -553,8 +728,8 @@ function activeBody(){
   if (!isActive()) return editPanel();
   if (turn.phase === 'chooseMode') return `
     <div class="panel">
-      <button class="choice-big" data-mode="dare">${t('chooseDareMode')}</button>
-      <button class="choice-big" data-mode="player">${t('choosePlayerMode')}</button>
+      <button class="choice-big" data-mode="dare"><span class="choice-title">${t('chooseDareModeTitle')}</span><span class="choice-desc">${t('chooseDareModeDesc')}</span></button>
+      <button class="choice-big" data-mode="player"><span class="choice-title">${t('choosePlayerModeTitle')}</span><span class="choice-desc">${t('choosePlayerModeDesc')}</span></button>
     </div>`;
   if (turn.phase === 'chooseDare') return `
     <div class="panel">
@@ -593,6 +768,7 @@ function activeBody(){
         <button class="danger" id="pass-turn">${t('pass')}</button>
       </div>`;
   }
+  if (turn.phase === 'dareRespond' || turn.phase === 'personRespond') return activeWaitingPanel();
   if (turn.phase === 'performing') {
     const d = dare(turn.performing?.dareId);
     const p = player(turn.performing?.partnerId);
@@ -747,6 +923,8 @@ function renderExamples(){
 function render(){
   const root = $('#app');
   const r = state.room;
+  document.documentElement.lang = lang();
+  document.documentElement.dir = lang() === 'ar' ? 'rtl' : 'ltr';
   root.innerHTML = !r ? titleView() : (r.state === 'lobby' ? lobbyView() : mainView());
   try {
     const h2 = root.querySelector('h2');
@@ -759,20 +937,50 @@ function render(){
 }
 
 function wire(){
-  $('#join-language')?.addEventListener('change', e => { state.me.language = e.target.value; saveSession({ language:e.target.value }); render(); });
-  $('#create-language')?.addEventListener('change', e => { state.me.language = e.target.value; saveSession({ language:e.target.value }); render(); });
+  $('#join-language')?.addEventListener('change', e => {
+    const draft = collectProfileDraft('join');
+    state.me.language = e.target.value;
+    saveSession(draft);
+    render();
+  });
+  $('#create-language')?.addEventListener('change', e => {
+    const draft = collectProfileDraft('create');
+    state.me.language = e.target.value;
+    saveSession(draft);
+    render();
+  });
   $('#create-theme')?.addEventListener('change', e => selectedTheme = e.target.value || 'Sensual');
+  $('#choose-join')?.addEventListener('click', () => {
+    local.pendingJoinCode = sanitizeInput($('#quick-join-code')?.value || location.hash?.slice(1) || '', 64).toLowerCase();
+    pushLocalHistory('profile');
+    local.landingMode = 'join';
+    render();
+  });
+  $('#choose-create')?.addEventListener('click', () => {
+    pushLocalHistory('profile');
+    local.landingMode = 'create';
+    render();
+  });
+  $('#landing-back')?.addEventListener('click', requestLocalBack);
   $('#join-btn')?.addEventListener('click', doJoin);
   $('#create-btn')?.addEventListener('click', doCreate);
+  $('#quick-join-code')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      local.pendingJoinCode = sanitizeInput($('#quick-join-code')?.value || '', 64).toLowerCase();
+      pushLocalHistory('profile');
+      local.landingMode = 'join';
+      render();
+    }
+  });
   $('#join-code')?.addEventListener('keydown', e => { if (e.key === 'Enter') doJoin(); });
   $('#join-name')?.addEventListener('keydown', e => { if (e.key === 'Enter') doJoin(); });
   $('#create-name')?.addEventListener('keydown', e => { if (e.key === 'Enter') doCreate(); });
   $('#start-game')?.addEventListener('click', () => socket.emit('theme:finalize', { theme:selectedTheme || 'Sensual' }));
   $('#resume-game')?.addEventListener('click', () => socket.emit('game:resume'));
   wireProfile();
-  $$('[data-edit-player]').forEach(b => b.addEventListener('click', () => { local.edit = { type:'player', id:b.dataset.editPlayer }; render(); }));
-  $$('[data-edit-dare]').forEach(b => b.addEventListener('click', () => { local.edit = { type:'dare', id:b.dataset.editDare }; render(); }));
-  $('#back-edit')?.addEventListener('click', () => { local.edit = null; render(); });
+  $$('[data-edit-player]').forEach(b => b.addEventListener('click', () => { pushLocalHistory('edit'); local.edit = { type:'player', id:b.dataset.editPlayer }; render(); }));
+  $$('[data-edit-dare]').forEach(b => b.addEventListener('click', () => { pushLocalHistory('edit'); local.edit = { type:'dare', id:b.dataset.editDare }; render(); }));
+  $('#back-edit')?.addEventListener('click', requestLocalBack);
   $$('[data-consent-target][data-consent-dare]').forEach(cb => cb.addEventListener('change', () => {
     socket.emit('consent:update', { targetId:cb.dataset.consentTarget, dareId:cb.dataset.consentDare, value:cb.checked });
   }));
@@ -797,6 +1005,14 @@ function wire(){
     if (title) socket.emit('menu:addDare', { title });
   });
   $('#examples')?.addEventListener('click', e => {
+    if (e.target.closest('#examples-prev')) {
+      shiftExamples(-PAGE_SIZE);
+      return;
+    }
+    if (e.target.closest('#examples-next')) {
+      shiftExamples(PAGE_SIZE);
+      return;
+    }
     const b = e.target.closest('[data-example-title]');
     if (b && $('#new-dare')) $('#new-dare').value = b.dataset.exampleTitle || '';
   });
@@ -869,6 +1085,8 @@ function wireProfile(){
     socket.emit('room:leave');
     state.room = null;
     state.me.id = null;
+    local.landingMode = null;
+    local.pendingJoinCode = '';
     clearSession();
     history.replaceState(null, '', '#');
     render();
@@ -884,9 +1102,10 @@ function wirePromptControls(){
         ps.selections[cur.id] ||= {};
         ps.selections[cur.id][cb.dataset.onboardPlayer] = cb.checked;
       }));
-      $('#onboard-prev')?.addEventListener('click', () => { ps.step = Math.max(0, ps.step - 1); render(); });
+      $('#onboard-prev')?.addEventListener('click', requestLocalBack);
       $('#onboard-next')?.addEventListener('click', () => {
         if (ps.step < prompt.dares.length - 1) {
+          pushLocalHistory('onboarding');
           ps.step++;
           render();
           return;
@@ -997,11 +1216,12 @@ function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' 
     const host = ensureOverlayRoot();
     const overlay = document.createElement('div');
     overlay.className = 'overlay show';
-    overlay.innerHTML = `<div class="modal card"><h3>${escapeHtml(title)}</h3><p></p><div class="row modal-buttons"><button class="btn-cancel">${escapeHtml(cancelText)}</button><button class="primary btn-ok">${escapeHtml(confirmText)}</button></div></div>`;
+    const cancel = cancelText ? `<button class="btn-cancel">${escapeHtml(cancelText)}</button>` : '';
+    overlay.innerHTML = `<div class="modal card"><h3>${escapeHtml(title)}</h3><p></p><div class="row modal-buttons">${cancel}<button class="primary btn-ok">${escapeHtml(confirmText)}</button></div></div>`;
     overlay.querySelector('p').textContent = message || '';
     host.appendChild(overlay);
     const close = val => { overlay.remove(); resolve(val); };
-    overlay.querySelector('.btn-cancel').addEventListener('click', () => close(false));
+    overlay.querySelector('.btn-cancel')?.addEventListener('click', () => close(false));
     overlay.querySelector('.btn-ok').addEventListener('click', () => close(true));
   });
 }
@@ -1058,15 +1278,18 @@ socket.on('room:peek:result', result => {
   render();
 });
 socket.on('room:error', ({ code, message }) => {
+  const leaveHome = code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED';
   if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
     state.room = null;
     state.me.id = null;
     peekedRoom = null;
+    local.landingMode = null;
+    local.pendingJoinCode = '';
     clearSession();
     try { history.replaceState(null, '', '#'); } catch {}
     render();
   }
-  showConfirm(message || 'Error', { confirmText:t('ok'), cancelText:t('cancel') });
+  showConfirm(message || 'Error', { confirmText:t('ok'), cancelText:leaveHome ? null : t('cancel') });
 });
 socket.on('connect', () => {
   const s = loadSession();
@@ -1077,6 +1300,9 @@ socket.on('connect', () => {
 window.addEventListener('hashchange', () => {
   const code = location.hash?.slice(1) || '';
   if (!state.room && code) socket.emit('room:peek', { code });
+});
+window.addEventListener('popstate', () => {
+  clearLocalBack();
 });
 setInterval(() => {
   if (state.room?.turn?.timerEndsAt && state.room.turn.timerEndsAt > Date.now()) render();
