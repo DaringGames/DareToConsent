@@ -13,6 +13,45 @@
         "pt": {
           "title": "Comece uma frase para o outro jogador terminar",
           "extra": "Além disso, faça a frase rimar"
+        },
+        "zh": {
+          "title": "开始一句话让其他玩家完成"
+        },
+        "tl": {
+          "title": "Magsimula ng isang pangungusap para matapos ang ibang manlalaro"
+        },
+        "vi": {
+          "title": "Bắt đầu một câu để người chơi khác kết thúc"
+        },
+        "ar": {
+          "title": "ابدأ جملة للاعب الآخر لإنهائها"
+        },
+        "fr": {
+          "title": "Commencez une phrase pour que l'autre joueur la termine"
+        },
+        "ko": {
+          "title": "다른 플레이어가 끝낼 수 있도록 문장을 시작하세요"
+        },
+        "ru": {
+          "title": "Начните предложение, чтобы другой игрок закончил"
+        },
+        "ht": {
+          "title": "Kòmanse yon fraz pou lòt jwè a fini"
+        },
+        "hi": {
+          "title": "दूसरे खिलाड़ी को खत्म करने के लिए एक वाक्य शुरू करें"
+        },
+        "de": {
+          "title": "Beginne einen Satz, damit der andere Spieler ihn beenden kann"
+        },
+        "nl": {
+          "title": "Begin een zin zodat de andere speler deze kan afmaken"
+        },
+        "pl": {
+          "title": "Rozpocznij zdanie, aby drugi gracz zakończył"
+        },
+        "it": {
+          "title": "Inizia una frase da far finire all'altro giocatore"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Finja que você é uma imagem espelhada do outro jogador",
           "extra": "... enquanto o outro jogador dança"
+        },
+        "zh": {
+          "title": "假装你是另一个玩家的镜像"
+        },
+        "tl": {
+          "title": "Manganging ikaw ay isang salamin na imahe ng ibang manlalaro"
+        },
+        "vi": {
+          "title": "Giả vờ bạn là hình ảnh phản chiếu của người chơi khác"
+        },
+        "ar": {
+          "title": "تظاهر بأنك صورة معكوسة للاعب الآخر"
+        },
+        "fr": {
+          "title": "Imaginez que vous êtes l'image miroir de l'autre joueur"
+        },
+        "ko": {
+          "title": "당신이 다른 플레이어의 거울 이미지인 척하세요"
+        },
+        "ru": {
+          "title": "Представьте, что вы являетесь зеркальным отражением другого игрока"
+        },
+        "ht": {
+          "title": "Pretann ou se yon imaj glas nan lòt jwè a"
+        },
+        "hi": {
+          "title": "दिखाओ कि आप दूसरे खिलाड़ी की दर्पण छवि हैं"
+        },
+        "de": {
+          "title": "Tu so, als wärst du ein Spiegelbild des anderen Spielers"
+        },
+        "nl": {
+          "title": "Doe alsof je een spiegelbeeld bent van de andere speler"
+        },
+        "pl": {
+          "title": "Udawaj, że jesteś lustrzanym obrazem drugiego gracza"
+        },
+        "it": {
+          "title": "Fai finta di essere l'immagine speculare dell'altro giocatore"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Se revezam adicionando palavras para criar uma frase boba.",
           "extra": "Faça a frase rimar"
+        },
+        "zh": {
+          "title": "轮流添加单词来创造一个愚蠢的句子"
+        },
+        "tl": {
+          "title": "Magpalit na magdagdag ng mga salita upang lumikha ng isang hangal na pangungus"
+        },
+        "vi": {
+          "title": "Thay phiên nhau thêm các từ để tạo ra một câu ngớ ngẩn cùng nhau"
+        },
+        "ar": {
+          "title": "تناوبوا على إضافة الكلمات لإنشاء جملة سخيفة معًا"
+        },
+        "fr": {
+          "title": "Ajoutez des mots à tour de rôle pour créer ensemble une phrase stupide"
+        },
+        "ko": {
+          "title": "번갈아 가며 단어를 추가하여 함께 우스꽝스러운 문장을 만드세요"
+        },
+        "ru": {
+          "title": "По очереди складывайте слова, чтобы составить глупое предложение"
+        },
+        "ht": {
+          "title": "Pran vire ajoute mo yo kreye yon fraz fouti ansanm"
+        },
+        "hi": {
+          "title": "एक साथ मूर्खतापूर्ण वाक्य बनाने के लिए शब्दों को जोड़कर बारी-बारी से लें"
+        },
+        "de": {
+          "title": "Füge abwechselnd Wörter hinzu, um einen dummen Satz zu bilden"
+        },
+        "nl": {
+          "title": "Voeg om de beurt woorden toe om samen een domme zin te maken"
+        },
+        "pl": {
+          "title": "Na zmianę dodawaj słowa, aby stworzyć razem głupie zdanie"
+        },
+        "it": {
+          "title": "A turno aggiungete parole per creare insieme una frase stupida"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Cantem juntos um dueto de uma música popular",
           "extra": "Improvise novas letras para a música"
+        },
+        "zh": {
+          "title": "一起唱一首流行歌曲的二重唱"
+        },
+        "tl": {
+          "title": "Kumanta ng isang duet ng isang tanyag na kanta nang magkasama"
+        },
+        "vi": {
+          "title": "Cùng nhau hát một bản song ca của một bài hát nổi tiếng"
+        },
+        "ar": {
+          "title": "غنوا دويتو من أغنية شعبية معًا"
+        },
+        "fr": {
+          "title": "Chantez ensemble un duo d'une chanson populaire"
+        },
+        "ko": {
+          "title": "인기 곡의 듀엣을 함께 부르세요"
+        },
+        "ru": {
+          "title": "Спойте вместе дуэтом популярную песню"
+        },
+        "ht": {
+          "title": "Chante yon duet nan yon chante popilè ansanm"
+        },
+        "hi": {
+          "title": "एक साथ एक लोकप्रिय गीत का युगल गीत गाइए"
+        },
+        "de": {
+          "title": "Singen Sie gemeinsam ein Duett eines beliebten Liedes"
+        },
+        "nl": {
+          "title": "Zing samen een duet van een populair lied"
+        },
+        "pl": {
+          "title": "Zaśpiewaj razem duet popularnej piosenki"
+        },
+        "it": {
+          "title": "Cantate insieme un duetto di una canzone popolare"
         }
       }
     },
@@ -75,6 +231,45 @@
         "pt": {
           "title": "Desenhe um retrato um do outro sem olhar para o papel",
           "extra": "Use sua mão não dominante para desenhar"
+        },
+        "zh": {
+          "title": "不看纸就画对方的肖像"
+        },
+        "tl": {
+          "title": "Gumuhit ng isang larawan ng bawat isa nang hindi tinitingnan ang papel"
+        },
+        "vi": {
+          "title": "Vẽ một bức chân dung của nhau mà không cần nhìn vào giấy"
+        },
+        "ar": {
+          "title": "ارسم صورة لبعضكما البعض دون النظر إلى الورقة"
+        },
+        "fr": {
+          "title": "Dessinez un portrait l'un de l'autre sans regarder le papier"
+        },
+        "ko": {
+          "title": "종이를 보지 않고 서로의 초상화를 그립니다."
+        },
+        "ru": {
+          "title": "Нарисуйте портрет друг друга, не глядя на бумагу"
+        },
+        "ht": {
+          "title": "Trase yon pòtrè youn ak lòt san yo pa gade nan papye a"
+        },
+        "hi": {
+          "title": "कागज को देखे बिना एक-दूसरे का चित्र बनाएं"
+        },
+        "de": {
+          "title": "Zeichne ein Porträt voneinander, ohne auf das Papier zu schauen"
+        },
+        "nl": {
+          "title": "Maak een portret van elkaar zonder naar het papier te kijken"
+        },
+        "pl": {
+          "title": "Narysuj sobie portret, nie patrząc na papier"
+        },
+        "it": {
+          "title": "Disegna un ritratto l'uno dell'altro senza guardare il foglio"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "Crie um conto juntos, cada um adicionando uma frase por vez",
           "extra": "Faça disso uma história de aventura e fantasia"
+        },
+        "zh": {
+          "title": "一起创作一个短篇小说，每个故事一次添加一句话"
+        },
+        "tl": {
+          "title": "Lumikha ng isang maikling kwento nang magkasama, ang bawat isa ay nagdaragdag ng isang pangungusap"
+        },
+        "vi": {
+          "title": "Tạo một câu chuyện ngắn cùng nhau, mỗi câu thêm một câu tại một thời điểm"
+        },
+        "ar": {
+          "title": "قم بإنشاء قصة قصيرة معًا، كل منها يضيف جملة واحدة في كل مرة"
+        },
+        "fr": {
+          "title": "Créez une histoire courte ensemble, en ajoutant chacune une phrase à la fois"
+        },
+        "ko": {
+          "title": "한 번에 한 문장씩 추가해서 함께 단편 소설을 만들어 보세요"
+        },
+        "ru": {
+          "title": "Создайте небольшой рассказ вместе, добавляя в каждое предложение по одному предложению за раз"
+        },
+        "ht": {
+          "title": "Kreye yon istwa kout ansanm, chak ajoute yon sèl fraz nan yon moman"
+        },
+        "hi": {
+          "title": "एक साथ एक छोटी कहानी बनाएं, प्रत्येक में एक समय में एक वाक्य जोड़ा जाए"
+        },
+        "de": {
+          "title": "Erstelle gemeinsam eine Kurzgeschichte und füge jeweils einen Satz hinzu"
+        },
+        "nl": {
+          "title": "Maak samen een kort verhaal, waarbij elk een zin tegelijk wordt toegevoegd"
+        },
+        "pl": {
+          "title": "Stwórz razem krótką historię, dodając każde zdanie na raz"
+        },
+        "it": {
+          "title": "Create insieme una breve storia, aggiungendo ciascuno una frase alla volta"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "Faça uma pequena cena de improvisação com personagens que vocês dois conhecem",
           "extra": "Troque de personagem no meio da cena"
+        },
+        "zh": {
+          "title": "以你们都认识的角色表演一个简短的即兴场景"
+        },
+        "tl": {
+          "title": "Magsagawa ng isang maikling eksena sa improv bilang mga character na alam mong pareho"
+        },
+        "vi": {
+          "title": "Thực hiện một cảnh ngẫu hứng ngắn như các nhân vật mà cả hai bạn đều biết"
+        },
+        "ar": {
+          "title": "قم بأداء مشهد ارتجالي قصير كشخصيات تعرفها كلاكما"
+        },
+        "fr": {
+          "title": "Réalisez une courte scène d'improvisation en incarnant des personnages que vous connaissez tous les deux"
+        },
+        "ko": {
+          "title": "둘 다 아는 캐릭터로 짧은 즉흥 장면을 연주하세요."
+        },
+        "ru": {
+          "title": "Исполните короткую импровизационную сцену в роли знакомых вам персонажей"
+        },
+        "ht": {
+          "title": "Fè yon sèn improv kout kòm karaktè ou tou de konnen"
+        },
+        "hi": {
+          "title": "उन पात्रों के रूप में एक छोटा कामचलाऊ दृश्य करें जिन्हें आप दोनों जानते हैं"
+        },
+        "de": {
+          "title": "Führe eine kurze Improvisationsszene mit Charakteren auf, die ihr beide kennt"
+        },
+        "nl": {
+          "title": "Voer een korte improvisatiescène uit als personages die jullie beiden kennen"
+        },
+        "pl": {
+          "title": "Wykonaj krótką scenę improwizacyjną jako postacie, które oboje znasz"
+        },
+        "it": {
+          "title": "Esegui una breve scena di improvvisazione nei panni di personaggi che conoscete entrambi"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "Escrevam juntos um haicai sobre o momento atual",
           "extra": "Faça disso um haicai levemente sensual"
+        },
+        "zh": {
+          "title": "一起写一首关于当下时刻的Haiku"
+        },
+        "tl": {
+          "title": "Magsulat ng isang haiku nang magkasama tungkol sa kasalukuyang sandali"
+        },
+        "vi": {
+          "title": "Viết haiku cùng nhau về khoảnh khắc hiện tại"
+        },
+        "ar": {
+          "title": "اكتب الهايكو معًا عن اللحظة الحالية"
+        },
+        "fr": {
+          "title": "Écrivez ensemble un haïku sur le moment présent"
+        },
+        "ko": {
+          "title": "현재 순간에 대해 함께 하이쿠를 써보세요"
+        },
+        "ru": {
+          "title": "Напишите вместе хайку о текущем моменте"
+        },
+        "ht": {
+          "title": "Ekri yon haiku ansanm sou moman aktyèl la"
+        },
+        "hi": {
+          "title": "वर्तमान क्षण के बारे में एक साथ हाइकु लिखें"
+        },
+        "de": {
+          "title": "Schreiben Sie gemeinsam ein Haiku über den aktuellen Moment"
+        },
+        "nl": {
+          "title": "Schrijf samen een haiku over het huidige moment"
+        },
+        "pl": {
+          "title": "Napisz razem haiku o aktualnej chwili"
+        },
+        "it": {
+          "title": "Scrivete insieme un haiku sul momento attuale"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "Encenem juntos uma cena de filme famosa",
           "extra": "Adicione seu próprio toque criativo ao final"
+        },
+        "zh": {
+          "title": "一起表演一个著名的电影场景"
+        },
+        "tl": {
+          "title": "Gumawa ng isang sikat na eksena ng pelikula nang magkasama"
+        },
+        "vi": {
+          "title": "Cùng nhau thực hiện một cảnh phim nổi tiếng"
+        },
+        "ar": {
+          "title": "قم بتمثيل مشهد فيلم مشهور معًا"
+        },
+        "fr": {
+          "title": "Reconstituez ensemble une scène de film célèbre"
+        },
+        "ko": {
+          "title": "유명한 영화 장면을 함께 연기하세요"
+        },
+        "ru": {
+          "title": "Вместе сыграйте знаменитую сцену из фильма"
+        },
+        "ht": {
+          "title": "Aji soti yon sèn fim pi popilè ansanm"
+        },
+        "hi": {
+          "title": "एक साथ एक प्रसिद्ध फ़िल्म दृश्य का अभिनय करें"
+        },
+        "de": {
+          "title": "Spielt gemeinsam eine berühmte Filmszene nach"
+        },
+        "nl": {
+          "title": "Speel samen een beroemde filmscène na"
+        },
+        "pl": {
+          "title": "Zagraj razem słynną scenę filmową"
+        },
+        "it": {
+          "title": "Recitate insieme una famosa scena di un film"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "Crie uma rotina de dança para uma música de sua escolha",
           "extra": "Incorpore um mergulho ou uma elevação na dança"
+        },
+        "zh": {
+          "title": "根据自己选择的歌曲创建舞蹈套路"
+        },
+        "tl": {
+          "title": "Lumikha ng isang gawain ng sayaw sa isang kanta na iyong pinili"
+        },
+        "vi": {
+          "title": "Tạo thói quen nhảy theo một bài hát bạn chọn"
+        },
+        "ar": {
+          "title": "قم بإنشاء روتين رقص لأغنية من اختيارك"
+        },
+        "fr": {
+          "title": "Créez une routine de danse sur une chanson de votre choix"
+        },
+        "ko": {
+          "title": "원하는 노래에 맞춰 댄스 루틴을 만드세요"
+        },
+        "ru": {
+          "title": "Создайте танцевальную программу под песню по вашему выбору"
+        },
+        "ht": {
+          "title": "Kreye yon woutin dans nan yon chante nan chwa ou"
+        },
+        "hi": {
+          "title": "अपनी पसंद के गाने के लिए डांस रूटीन बनाएं"
+        },
+        "de": {
+          "title": "Erstelle eine Tanzroutine zu einem Song deiner Wahl"
+        },
+        "nl": {
+          "title": "Creëer een dansroutine op een nummer naar keuze"
+        },
+        "pl": {
+          "title": "Stwórz rutynę taneczną do wybranej piosenki"
+        },
+        "it": {
+          "title": "Crea una routine di danza su una canzone a tua scelta"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "Sussurrem uma fantasia secreta um para o outro",
           "extra": "Realize a fantasia apenas com gestos"
+        },
+        "zh": {
+          "title": "互相低声说一个秘密的幻想"
+        },
+        "tl": {
+          "title": "Bumulong ang isang lihim na pantasya sa bawat isa"
+        },
+        "vi": {
+          "title": "Thì thầm một ảo tưởng bí mật với nhau"
+        },
+        "ar": {
+          "title": "اهمس خيالًا سريًا لبعضكما البعض"
+        },
+        "fr": {
+          "title": "Murmure-toi un fantasme secret"
+        },
+        "ko": {
+          "title": "서로에게 비밀 판타지를 속삭여보세요"
+        },
+        "ru": {
+          "title": "Шепчите друг другу тайную фантазию"
+        },
+        "ht": {
+          "title": "Chiuche yon fantezi sekrè youn ak lòt"
+        },
+        "hi": {
+          "title": "एक दूसरे के लिए एक गुप्त कल्पना फुसफुसाएं"
+        },
+        "de": {
+          "title": "Flüstern Sie einander eine geheime Fantasie zu"
+        },
+        "nl": {
+          "title": "Fluister elkaar een geheime fantasie toe"
+        },
+        "pl": {
+          "title": "Szeptajcie sobie sekretną fantazję"
+        },
+        "it": {
+          "title": "Sussurratevi una fantasia segreta"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "Interprete uma cena romântica de restaurante juntos",
           "extra": "Inclua alimentar um ao outro com sobremesa"
+        },
+        "zh": {
+          "title": "一起扮演浪漫的餐厅场景"
+        },
+        "tl": {
+          "title": "Magkasama ang isang romantikong eksena ng restawran"
+        },
+        "vi": {
+          "title": "Cùng nhau đóng vai một cảnh nhà hàng lãng mạn"
+        },
+        "ar": {
+          "title": "لعب الأدوار في مشهد مطعم رومانسي معًا"
+        },
+        "fr": {
+          "title": "Jouez ensemble à une scène de restaurant romantique"
+        },
+        "ko": {
+          "title": "로맨틱한 레스토랑 씬을 함께 연기하세요"
+        },
+        "ru": {
+          "title": "Сыграйте вместе романтическую ресторанную сцену"
+        },
+        "ht": {
+          "title": "Roleplay yon sèn restoran amoure ansanm"
+        },
+        "hi": {
+          "title": "एक रोमांटिक रेस्तरां दृश्य को एक साथ रोल प्ले करें"
+        },
+        "de": {
+          "title": "Spielen Sie gemeinsam eine romantische Restaurantszene"
+        },
+        "nl": {
+          "title": "Speel samen een romantische restaurantscène na"
+        },
+        "pl": {
+          "title": "Odtwórz razem romantyczną scenę restauracyjną"
+        },
+        "it": {
+          "title": "Interpreta insieme una scena romantica in un ristorante"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "Crie um poema sensual juntos, alternando linhas",
           "extra": "Sussurrem o poema um para o outro intimamente"
+        },
+        "zh": {
+          "title": "一起创作一首感性的诗歌，台词交替"
+        },
+        "tl": {
+          "title": "Lumikha ng isang senswal na tula nang magkasama, magkakail"
+        },
+        "vi": {
+          "title": "Tạo một bài thơ gợi cảm cùng nhau, xen kẽ các dòng"
+        },
+        "ar": {
+          "title": "قم بإنشاء قصيدة حسية معًا بخطوط متناوبة"
+        },
+        "fr": {
+          "title": "Créez ensemble un poème sensuel en alternant les lignes"
+        },
+        "ko": {
+          "title": "선을 번갈아 가며 감각적인 시를 함께 만들어보세요"
+        },
+        "ru": {
+          "title": "Создайте чувственное стихотворение вместе, чередуя строки"
+        },
+        "ht": {
+          "title": "Kreye yon powèm sensual ansanm, altène liy"
+        },
+        "hi": {
+          "title": "बारी-बारी से एक कामुक कविता एक साथ बनाएं"
+        },
+        "de": {
+          "title": "Erstellen Sie gemeinsam ein sinnliches Gedicht, das die Zeilen abwechselt"
+        },
+        "nl": {
+          "title": "Maak samen een sensueel gedicht, afwisselend regels"
+        },
+        "pl": {
+          "title": "Twórz razem zmysłowy wiersz, naprzemiennie liniami"
+        },
+        "it": {
+          "title": "Crea insieme una poesia sensuale, alternando i versi"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "Improvise uma dança lenta ao som de uma música que só você pode ouvir",
           "extra": "Dançam lentamente juntos"
+        },
+        "zh": {
+          "title": "根据只有你能听见的音乐即兴跳慢舞"
+        },
+        "tl": {
+          "title": "Mag-improvise ng mabagal na sayaw sa musika lamang na maririnig mo"
+        },
+        "vi": {
+          "title": "Ứng biến một điệu nhảy chậm theo âm nhạc mà chỉ bạn mới có thể nghe được"
+        },
+        "ar": {
+          "title": "ارتجل رقصة بطيئة على أنغام الموسيقى التي لا يسمعها أحد سواك"
+        },
+        "fr": {
+          "title": "Improvisez une danse lente sur de la musique que vous êtes le seul à pouvoir entendre"
+        },
+        "ko": {
+          "title": "자신만 들을 수 있는 음악에 맞춰 즉흥적으로 슬로우 댄스를 춰보세요"
+        },
+        "ru": {
+          "title": "Импровизируйте медленный танец под музыку, которую слышите только вы"
+        },
+        "ht": {
+          "title": "Improvise yon dans ralanti nan mizik sèlman ou ka tande"
+        },
+        "hi": {
+          "title": "संगीत में धीमे नृत्य को सुधारें, केवल आप सुन सकते हैं"
+        },
+        "de": {
+          "title": "Improvisiere einen langsamen Tanz zu Musik, die nur du hören kannst"
+        },
+        "nl": {
+          "title": "Improviseer een langzame dans op muziek die alleen jij kunt horen"
+        },
+        "pl": {
+          "title": "Improwizuj powolny taniec do muzyki, którą tylko możesz usłyszeć"
+        },
+        "it": {
+          "title": "Improvvisa una danza lenta al ritmo di una musica che solo tu puoi sentire"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "Represente uma cena quente de um romance",
           "extra": "Adicione seu próprio diálogo criativo"
+        },
+        "zh": {
+          "title": "表演一部爱情小说中的热闹场景"
+        },
+        "tl": {
+          "title": "Gumawa ng isang mahusay na eksena mula sa isang romansikong nobelang"
+        },
+        "vi": {
+          "title": "Diễn xuất một cảnh hấp dẫn từ một cuốn tiểu thuyết lãng mạn"
+        },
+        "ar": {
+          "title": "قم بتمثيل مشهد مثير من رواية رومانسية"
+        },
+        "fr": {
+          "title": "Rejoue une scène torride tirée d'un roman d'amour"
+        },
+        "ko": {
+          "title": "로맨스 소설의 짜릿한 장면을 연기하세요"
+        },
+        "ru": {
+          "title": "Проведите яркую сцену из любовного романа"
+        },
+        "ht": {
+          "title": "Aji soti yon sèn vapè soti nan yon roman romans"
+        },
+        "hi": {
+          "title": "एक रोमांस उपन्यास से एक भाप से भरा दृश्य पेश करें"
+        },
+        "de": {
+          "title": "Schaue eine dampfende Szene aus einem Liebesroman nach"
+        },
+        "nl": {
+          "title": "Speel een spannende scène na uit een romantische roman"
+        },
+        "pl": {
+          "title": "Odtwórz parną scenę z powieści romantycznej"
+        },
+        "it": {
+          "title": "Recita una scena bollente di un romanzo rosa"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "Colabore com uma história de fantasia sobre estar preso em uma ilha deserta",
           "extra": "Torne-o cada vez mais romântico e sensual"
+        },
+        "zh": {
+          "title": "合作一个关于被困在荒岛上的奇幻故事"
+        },
+        "tl": {
+          "title": "Makipagtulungan ang isang kwento ng pantasya tungkol sa pagkawala sa isang isla ng disyerto"
+        },
+        "vi": {
+          "title": "Cộng tác một câu chuyện giả tưởng về việc bị mắc kẹt trên một hòn đảo sa mạc"
+        },
+        "ar": {
+          "title": "شارك في قصة خيالية عن تقطعت بك السبل في جزيرة صحراوية"
+        },
+        "fr": {
+          "title": "Collaborez pour une histoire fantastique sur le fait d'être bloqué sur une île déserte"
+        },
+        "ko": {
+          "title": "무인도에서 고립된 이야기를 담은 판타지 스토리를 함께 만들어 보세요"
+        },
+        "ru": {
+          "title": "Совместно расскажите фантастическую историю о том, как вы оказались на необитаемом острове"
+        },
+        "ht": {
+          "title": "Kolabore yon istwa fantezi sou ke yo te blode sou yon zile dezè"
+        },
+        "hi": {
+          "title": "एक रेगिस्तानी द्वीप पर फंसे होने के बारे में एक काल्पनिक कहानी का सहयोग करें"
+        },
+        "de": {
+          "title": "Arbeite zusammen an einer Fantasy-Geschichte darüber, wie du auf einer einsamen Insel gestrandet bist"
+        },
+        "nl": {
+          "title": "Werk samen aan een fantasieverhaal over gestrand zijn op een onbewoond eiland"
+        },
+        "pl": {
+          "title": "Stwórz fantastyczną historię o utknięciu na bezludnej wyspie"
+        },
+        "it": {
+          "title": "Collabora a una storia fantastica sull'essere bloccati su un'isola deserta"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "Roleplay de uma conversa de sexo por telefone com alguém tentando ligar para o suporte técnico",
           "extra": "Torne isso cada vez mais explícito"
+        },
+        "zh": {
+          "title": "与试图致电技术支持的人进行电话性交谈"
+        },
+        "tl": {
+          "title": "I-play ang isang pag-uusap sa sex sa telepono sa isang taong nagsisikap na tumawag sa tech"
+        },
+        "vi": {
+          "title": "Nhập vai trò chuyện tình dục qua điện thoại với ai đó đang cố gắng gọi bộ phận hỗ trợ kỹ thuật"
+        },
+        "ar": {
+          "title": "لعب الأدوار: محادثة جنسية هاتفية مع شخص يحاول الاتصال بالدعم الفني"
+        },
+        "fr": {
+          "title": "Jouez le rôle d'une conversation sexuelle au téléphone avec quelqu'un qui essaie d'appeler le support technique"
+        },
+        "ko": {
+          "title": "기술 지원팀에 전화하려는 사람과 전화 섹스 대화를 나누는 역할극"
+        },
+        "ru": {
+          "title": "Ролевая игра: секс по телефону с кем-то, кто пытается позвонить в службу технической поддержки"
+        },
+        "ht": {
+          "title": "Roleplay yon konvèsasyon sèks telefòn ak yon moun ap eseye rele sipò teknoloji"
+        },
+        "hi": {
+          "title": "तकनीकी सहायता को कॉल करने की कोशिश कर रहे किसी व्यक्ति के साथ फोन सेक्स वार्तालाप की भूमिका निभाएं"
+        },
+        "de": {
+          "title": "Spielen Sie ein Telefonsex-Gespräch mit jemandem, der versucht, den technischen Support anzurufen"
+        },
+        "nl": {
+          "title": "Rollenspel: een telefoongesprek met iemand die de technische ondersteuning probeert te bellen"
+        },
+        "pl": {
+          "title": "Odtwórz rozmowę seksualną przez telefon z kimś, kto próbuje zadzwonić do pomocy technicznej"
+        },
+        "it": {
+          "title": "Riproduci una conversazione sessuale telefonica con qualcuno che cerca di chiamare il supporto tecnico"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "Crie uma rotina de dança sensual juntos",
           "extra": "Incorpore contato corporal e movimentos próximos"
+        },
+        "zh": {
+          "title": "一起创作感性的舞蹈套路"
+        },
+        "tl": {
+          "title": "Lumikha ng isang sensual dance na gawain nang magkasama"
+        },
+        "vi": {
+          "title": "Tạo một thói quen khiêu vũ gợi cảm cùng nhau"
+        },
+        "ar": {
+          "title": "قم بإنشاء روتين رقص حسي معًا"
+        },
+        "fr": {
+          "title": "Créez ensemble une routine de danse sensuelle"
+        },
+        "ko": {
+          "title": "함께 감각적인 댄스 루틴을 만들어보세요"
+        },
+        "ru": {
+          "title": "Создайте чувственную танцевальную программу вместе"
+        },
+        "ht": {
+          "title": "Kreye yon woutin dans sensual ansanm"
+        },
+        "hi": {
+          "title": "एक साथ एक कामुक डांस रूटीन बनाएं"
+        },
+        "de": {
+          "title": "Kreieren Sie gemeinsam eine sinnliche Tanzroutine"
+        },
+        "nl": {
+          "title": "Creëer samen een sensuele dansroutine"
+        },
+        "pl": {
+          "title": "Stwórz razem zmysłową rutynę tańca"
+        },
+        "it": {
+          "title": "Create insieme una routine di danza sensuale"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "Crie uma rotina sensual de strip-tease juntos",
           "extra": "Incorpore adereços e movimentos criativos"
+        },
+        "zh": {
+          "title": "一起创建性感的脱衣舞套路"
+        },
+        "tl": {
+          "title": "Lumikha ng isang sensual striptease na gawain nang magkasama"
+        },
+        "vi": {
+          "title": "Tạo thói quen thoát y gợi cảm cùng nhau"
+        },
+        "ar": {
+          "title": "قم بإنشاء روتين تعري حسي معًا"
+        },
+        "fr": {
+          "title": "Créez ensemble une routine de strip-tease sensuelle"
+        },
+        "ko": {
+          "title": "함께 감각적인 스트립쇼 루틴을 만들어보세요"
+        },
+        "ru": {
+          "title": "Создайте чувственный стриптиз вместе"
+        },
+        "ht": {
+          "title": "Kreye yon woutin striptease sensual ansanm"
+        },
+        "hi": {
+          "title": "एक साथ कामुक स्ट्रिपटीज़ रूटीन बनाएं"
+        },
+        "de": {
+          "title": "Kreieren Sie gemeinsam eine sinnliche Striptease-Routine"
+        },
+        "nl": {
+          "title": "Creëer samen een sensuele stripteaseoutine"
+        },
+        "pl": {
+          "title": "Stwórz razem zmysłową rutynę striptizu"
+        },
+        "it": {
+          "title": "Create insieme una sensuale routine di striptease"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "Roleplay: a fantasia de ser pego em um momento de paixão",
           "extra": "Torne a cena cada vez mais intensa e criativa"
+        },
+        "zh": {
+          "title": "角色扮演是被困在激情时刻的幻想"
+        },
+        "tl": {
+          "title": "Ang pagpapareplay ay isang pantasya ng mahuli sa isang masigasig na sandali"
+        },
+        "vi": {
+          "title": "Nhạc vai một ảo tưởng về việc bị cuốn vào khoảnh khắc đam mê"
+        },
+        "ar": {
+          "title": "لعب الأدوار: خيال الوقوع في لحظة عاطفية"
+        },
+        "fr": {
+          "title": "Le jeu de rôle : le fantasme d'être pris dans un moment passionné"
+        },
+        "ko": {
+          "title": "롤플레잉: 열정적인 순간에 사로잡히는 판타지"
+        },
+        "ru": {
+          "title": "Ролевая игра, фантазия о том, как вы попадаете в страстный момент"
+        },
+        "ht": {
+          "title": "Roleplay yon fantezi nan ke yo te kenbe nan yon moman pasyone"
+        },
+        "hi": {
+          "title": "रोलप्ले: एक भावुक पल में फंसने की कल्पना"
+        },
+        "de": {
+          "title": "Rollenspiel, eine Fantasie, in einem leidenschaftlichen Moment gefangen zu werden."
+        },
+        "nl": {
+          "title": "Rollenspel: een fantasie om gevangen te worden in een hartstochtelijk moment"
+        },
+        "pl": {
+          "title": "Odgrywanie roli to fantazja bycia złapanym w namiętnym momencie"
+        },
+        "it": {
+          "title": "Roleplay: la fantasia di essere catturati in un momento appassionato"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "RPG encenando uma cena pornográfica softcore juntos",
           "extra": "Adicione seus próprios toques criativos e diálogos"
+        },
+        "zh": {
+          "title": "一起扮演软核色情场景的角色扮演"
+        },
+        "tl": {
+          "title": "Ang role na gumaganap ng isang softcore porn na eksena nang magkasama"
+        },
+        "vi": {
+          "title": "Nhạc vai diễn cùng nhau trong một cảnh khiêu dâm softcore"
+        },
+        "ar": {
+          "title": "تمثيل الأدوار في مشهد إباحي ناعم معًا"
+        },
+        "fr": {
+          "title": "Jeu de rôle mettant en scène une scène pornographique softcore ensemble"
+        },
+        "ko": {
+          "title": "소프트 코어 포르노를 함께 연기하는 롤플레이"
+        },
+        "ru": {
+          "title": "Ролевая игра вместе разыгрываем сцену софткорного порно"
+        },
+        "ht": {
+          "title": "Roleplay aji soti yon sèn pònografi softcore ansanm"
+        },
+        "hi": {
+          "title": "एक सॉफ्टकोर पोर्न दृश्य को एक साथ पेश करने वाली रोलप्ले"
+        },
+        "de": {
+          "title": "Rollenspiel, das gemeinsam eine Softcore-Pornoszene nachspielt"
+        },
+        "nl": {
+          "title": "Rollenspel waarin je samen een softcore pornoscène speelt"
+        },
+        "pl": {
+          "title": "Rola odgrywająca razem softcore porno"
+        },
+        "it": {
+          "title": "Gioco di ruolo recitando insieme una scena porno softcore"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "Um jogador executa uma dança erótica criativa para o outro jogador",
           "extra": "Inclua toques guiados durante a dança erótica"
+        },
+        "zh": {
+          "title": "一位玩家为另一位玩家表演创意圈舞"
+        },
+        "tl": {
+          "title": "Ang isang manlalaro ay gumaganap ng malikhaing lapdance para sa ibang manlalaro"
+        },
+        "vi": {
+          "title": "Một người chơi thực hiện một điệu nhảy lapdance sáng tạo cho người chơi kia"
+        },
+        "ar": {
+          "title": "يقوم أحد اللاعبين بأداء رقصة إبداعية للاعب الآخر"
+        },
+        "fr": {
+          "title": "Un joueur exécute un lapdance créatif pour l'autre joueur"
+        },
+        "ko": {
+          "title": "한 플레이어가 다른 플레이어를 위해 창의적인 랩댄스를 선보입니다."
+        },
+        "ru": {
+          "title": "Один игрок исполняет творческий танец на коленях для другого игрока"
+        },
+        "ht": {
+          "title": "Yon jwè fè yon lapdance kreyatif pou lòt jwè a"
+        },
+        "hi": {
+          "title": "एक खिलाड़ी दूसरे खिलाड़ी के लिए रचनात्मक लैपडांस करता है"
+        },
+        "de": {
+          "title": "Ein Spieler führt einen kreativen Lapdance für den anderen Spieler durch"
+        },
+        "nl": {
+          "title": "De ene speler voert een creatieve lapdance uit voor de andere speler"
+        },
+        "pl": {
+          "title": "Jeden gracz wykonuje kreatywny lapdance dla drugiego gracza"
+        },
+        "it": {
+          "title": "Un giocatore esegue una lapdance creativa per l'altro giocatore"
         }
       }
     }

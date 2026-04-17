@@ -13,6 +13,45 @@
         "pt": {
           "title": "Ambos os jogadores escolhem um tempero/molho suave a gosto",
           "extra": "Escolha algo picante ou nojento"
+        },
+        "zh": {
+          "title": "两位玩家都选择了温和的香料/酱汁来品尝"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay pumipili ng banayad na pampalasa/sarsa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều chọn một loại gia điện/nước sốt nhẹ để nếm thử"
+        },
+        "ar": {
+          "title": "يختار كلا اللاعبين توابل/صلصة خفيفة حسب الرغبة"
+        },
+        "fr": {
+          "title": "Les deux joueurs choisissent une épice ou une sauce douce au goût"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 부드러운 향신료/소스를 선택하여 맛보십시오."
+        },
+        "ru": {
+          "title": "Оба игрока выбирают мягкую специю/соус по вкусу"
+        },
+        "ht": {
+          "title": "Tou de jwè chwazi yon epik/sòs twò grav nan gou"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी स्वाद के लिए हल्का मसाला/सॉस चुनते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler wählen ein mildes Gewürz/eine milde Sauce zum Abschmecken"
+        },
+        "nl": {
+          "title": "Beide spelers kiezen naar smaak een milde kruiden/saus"
+        },
+        "pl": {
+          "title": "Obaj gracze wybierają łagodną przypraw/sos do smaku"
+        },
+        "it": {
+          "title": "Entrambi i giocatori scelgono una spezia/salsa delicata a piacere"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Ambos provam uma comida aleatória da geladeira",
           "extra": "Escolha um para o outro"
+        },
+        "zh": {
+          "title": "两人都会随机品尝冰箱里的食物"
+        },
+        "tl": {
+          "title": "Parehong tinatasa ang isang random na pagkain mula sa refrigerator"
+        },
+        "vi": {
+          "title": "Cả hai nếm một món ăn ngẫu nhiên từ tủ lạnh"
+        },
+        "ar": {
+          "title": "كلاهما يتذوق طعامًا عشوائيًا من الثلاجة"
+        },
+        "fr": {
+          "title": "Les deux goûtent un aliment au hasard sorti du réfrigérateur"
+        },
+        "ko": {
+          "title": "둘 다 냉장고에서 무작위로 가져온 음식을 맛봅니다."
+        },
+        "ru": {
+          "title": "Оба пробуют случайную еду из холодильника"
+        },
+        "ht": {
+          "title": "Tou de gou yon manje o aza soti nan frijidè a"
+        },
+        "hi": {
+          "title": "दोनों फ्रिज से बेतरतीब भोजन का स्वाद लेते हैं"
+        },
+        "de": {
+          "title": "Beide probieren ein zufälliges Essen aus dem Kühlschrank"
+        },
+        "nl": {
+          "title": "Beiden proeven een willekeurig gerecht uit de koelkast"
+        },
+        "pl": {
+          "title": "Obaj smakują przypadkowego jedzenia z lodówki"
+        },
+        "it": {
+          "title": "Entrambi assaggiano un cibo a caso dal frigo"
         }
       }
     }
@@ -39,12 +117,51 @@
       "spicyness": 1,
       "translations": {
         "es": {
-          "title": "Quien acepta el reto se atreve a elegir un condimento para que lo pruebe el jugador en turno",
+          "title": "Quien acepta el reto elige un condimento para que lo pruebe el jugador en turno",
           "extra": "Hazlo con los ojos vendados"
         },
         "pt": {
           "title": "Quem aceita o desafio escolhe um condimento para o jogador da vez provar",
           "extra": "Faça isso com os olhos vendados"
+        },
+        "zh": {
+          "title": "另一位玩家选择调味品供当前玩家品尝"
+        },
+        "tl": {
+          "title": "Pinipili ng kabilang manlalaro ng isang pampalasa para sa kasalukuyang manlalaro upang tikman"
+        },
+        "vi": {
+          "title": "người chơi kia chọn gia vị cho người chơi hiện tại nếm thử"
+        },
+        "ar": {
+          "title": "يختار اللاعب الآخر التوابل للاعب الحالي لتذوقها"
+        },
+        "fr": {
+          "title": "l'autre joueur choisit un condiment à déguster par le joueur actuel"
+        },
+        "ko": {
+          "title": "상대 플레이어는 현재 플레이어가 맛볼 수 있는 조미료를 선택합니다."
+        },
+        "ru": {
+          "title": "другой игрок выбирает приправу для нынешнего игрока по вкусу"
+        },
+        "ht": {
+          "title": "lòt jwè a chwazi yon kondiman pou jwè aktyèl yo gou"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के स्वाद के लिए एक मसाला चुनता है"
+        },
+        "de": {
+          "title": "der andere Spieler wählt ein Gewürz aus, das der aktuelle Spieler probieren kann"
+        },
+        "nl": {
+          "title": "andere speler kiest een smaakmaker die de huidige speler kan proeven"
+        },
+        "pl": {
+          "title": "drugi gracz wybiera przyprawę dla obecnego gracza do smaku"
+        },
+        "it": {
+          "title": "l'altro giocatore sceglie un condimento da far assaggiare al giocatore attuale"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Ambos os jogadores provam uma colher de mostarda",
           "extra": "Mantenha-o na boca por 10 segundos"
+        },
+        "zh": {
+          "title": "两位玩家都尝到了一勺芥末酱"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ang tinatasa ng kutsara ng mustasa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi nếm một thìa mù tạt"
+        },
+        "ar": {
+          "title": "يتذوق كلا اللاعبين ملعقة من الخردل"
+        },
+        "fr": {
+          "title": "Les deux joueurs goûtent une cuillerée de moutarde"
+        },
+        "ko": {
+          "title": "두 선수 모두 겨자 한 숟가락을 맛본다"
+        },
+        "ru": {
+          "title": "Оба игрока пробуют по ложке горчицы"
+        },
+        "ht": {
+          "title": "Tou de jwè gou yon kiyè moutad"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक चम्मच सरसों का स्वाद लेते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler probieren einen Löffel Senf"
+        },
+        "nl": {
+          "title": "Beide spelers proeven een lepel mosterd"
+        },
+        "pl": {
+          "title": "Obaj gracze smakują łyżkę musztardy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori assaggiano un cucchiaio di senape"
         }
       }
     },
@@ -69,12 +225,51 @@
       "spicyness": 8,
       "translations": {
         "es": {
-          "title": "Los feeds del jugador en turno se atreven a aceptar una fruta",
+          "title": "El jugador en turno le da a quien acepta el reto una fruta",
           "extra": "Usa solo tu boca para expulsarlo"
         },
         "pt": {
           "title": "O jogador da vez alimenta quem aceita o desafio com um pedaço de fruta",
           "extra": "Use apenas sua boca para passá-la"
+        },
+        "zh": {
+          "title": "当前玩家给勇气另一位玩家喂一块水果"
+        },
+        "tl": {
+          "title": "Nagpapakita ng kasalukuyang manlalaro ang dare receptor ng isang piraso ng prutas"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại cho ăn dám nhận một miếng trái cây"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يغذي الجرأة على قبول قطعة من الفاكهة"
+        },
+        "fr": {
+          "title": "Les joueurs actuels osent accepter un fruit"
+        },
+        "ko": {
+          "title": "현재 플레이어는 감히 과일 한 조각을 받아들입니다"
+        },
+        "ru": {
+          "title": "Текущие ленты игроков осмеливаются принять кусок фрукта"
+        },
+        "ht": {
+          "title": "Aktyèl jwè alimante lòt jwè a yon moso nan fwi"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को फल का एक टुकड़ा खिलाता है"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler traut sich, ein Stück Obst anzunehmen"
+        },
+        "nl": {
+          "title": "De huidige speler geeft de andere speler een stuk fruit"
+        },
+        "pl": {
+          "title": "Obecny gracz podaje drugi gracz kawałek owocu"
+        },
+        "it": {
+          "title": "Il giocatore attuale dà da mangiare a l'altro giocatore un frutto"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "Ambos os jogadores tomam uma dose de suco de picles",
           "extra": "Persiga-o com algo doce"
+        },
+        "zh": {
+          "title": "两位玩家都喝了泡菜汁"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay kumukuha ng picle juice"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều uống nước ép dưa chua"
+        },
+        "ar": {
+          "title": "يأخذ كلا اللاعبين جرعة من عصير المخلل"
+        },
+        "fr": {
+          "title": "Les deux joueurs prennent un verre de jus de cornichon"
+        },
+        "ko": {
+          "title": "두 선수 모두 피클 주스를 한 잔"
+        },
+        "ru": {
+          "title": "Оба игрока пьют рюмку маринованного сока"
+        },
+        "ht": {
+          "title": "Tou de jwè yo pran yon piki nan ji marinad"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अचार के रस का एक शॉट लेते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler nehmen einen Schuss Gurkensaft"
+        },
+        "nl": {
+          "title": "Beide spelers nemen een scheutje augurkensap"
+        },
+        "pl": {
+          "title": "Obaj gracze biorą kieliszek soku z marynowanych"
+        },
+        "it": {
+          "title": "Entrambi i giocatori bevono un bicchierino di succo di sottaceti"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "Quem aceita o desafio coloca chantilly no nariz do jogador da vez",
           "extra": "Lamba com sua língua"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家将鲜奶油涂在当前玩家的鼻子上"
+        },
+        "tl": {
+          "title": "Naglalagay ng kabilang manlalaro ng whipped cream sa ilong ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia đặt kem đánh bông lên mũi của người chơi hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر يضع الكريمة المخفوقة على أنف اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur met de la crème fouettée sur le nez du joueur actuel"
+        },
+        "ko": {
+          "title": "현재 플레이어의 코에 휘핑 크림을 바르는 데어 액셉터"
+        },
+        "ru": {
+          "title": "другой игрок наносит взбитые сливки текущему игроку"
+        },
+        "ht": {
+          "title": "lòt jwè a mete fwi krèm sou nen jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी की नाक पर व्हीप्ड क्रीम डालता है"
+        },
+        "de": {
+          "title": "der andere Spieler gibt dem aktuellen Spieler Schlagsahne auf die Nase"
+        },
+        "nl": {
+          "title": "andere speler smeert slagroom op de neus van de huidige speler"
+        },
+        "pl": {
+          "title": "drugi gracz nakłada bitą śmietanę na nos obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore mette la panna montata sul naso del giocatore attuale"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "O jogador da vez coloca xarope de chocolate no dedo de quem aceita o desafio",
           "extra": "Chupe-o para limpar"
+        },
+        "zh": {
+          "title": "现任玩家将巧克力糖浆放在另一位玩家的手指上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay naglalagay ng chocolate syrup sa daliri ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đặt xi-rô sô cô la vào ngón tay của người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يضع شراب الشوكولاتة على إصبع اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel met du sirop de chocolat sur le doigt de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 상대 플레이어의 손가락에 초콜릿 시럽을 넣습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок наносит шоколадный сироп на палец другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete siwo chokola sou dwèt lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की उंगली पर चॉकलेट सिरप डालता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler legt Schokoladensirup auf den Finger des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler legt chocoladesiroop op de vinger van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nakłada syrop czekoladowy na palec drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale mette lo sciroppo di cioccolato sul dito di l'altro giocatore"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "Ambos os jogadores compartilham um chip picante",
           "extra": "Passe de boca em boca"
+        },
+        "zh": {
+          "title": "两位玩家共用一个辣筹码"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbabahagi ng isang"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chia sẻ một con chip cay"
+        },
+        "ar": {
+          "title": "يشترك كلا اللاعبين في شريحة حارة"
+        },
+        "fr": {
+          "title": "Les deux joueurs partagent une puce épicée"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 매운 칩을 공유합니다"
+        },
+        "ru": {
+          "title": "У обоих игроков есть пикантная фишка"
+        },
+        "ht": {
+          "title": "Tou de jwè pataje yon chip pikant"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक मसालेदार चिप साझा करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler teilen sich einen würzigen Chip"
+        },
+        "nl": {
+          "title": "Beide spelers delen een pittige chip"
+        },
+        "pl": {
+          "title": "Obaj gracze dzielą pikantny żeton"
+        },
+        "it": {
+          "title": "Entrambi i giocatori condividono una patatina piccante"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "O jogador da vez desenha um bigode de ketchup nquem aceita o desafio",
           "extra": "Lamba-o lentamente"
+        },
+        "zh": {
+          "title": "当前玩家在另一位玩家身上画一个番茄酱胡子"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gumuhit ng bigote ng ketchup sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại vẽ ria mép sốt cà chua trên máy chấp nhận dare"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يرسم شارب الكاتشب على اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel dessine une moustache au ketchup sur un l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터에 케첩 콧수염을 그립니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок рисует усы кетчупа на другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè trase yon moustach ketchup sou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी पर एक केचप मूंछ खींचता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler zeichnet einen Ketchup-Schnurrbart auf der andere Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler tekent een ketchupsnor op een andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz rysuje wąsy ketchupowe na drugi graczze odwagi"
+        },
+        "it": {
+          "title": "Il giocatore attuale disegna baffi da ketchup su l'altro giocatore"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "Quem aceita o desafio coloca mel nos lábios do jogador da vez",
           "extra": "Beije isso"
+        },
+        "zh": {
+          "title": "另一位玩家将蜂蜜放在当前玩家的嘴唇上"
+        },
+        "tl": {
+          "title": "Naglalagay ng kabilang manlalaro ng honey sa labi ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia đưa mật ong lên môi người chơi hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر يضع العسل على شفاه اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur met du miel sur les lèvres du joueur actuel"
+        },
+        "ko": {
+          "title": "현재 플레이어의 입술에 꿀을 바르는 데어 어셉터"
+        },
+        "ru": {
+          "title": "другой игрок наносит мёд текущему игроку"
+        },
+        "ht": {
+          "title": "lòt jwè a mete siwo myèl sou bouch jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के होंठों पर शहद डालता है"
+        },
+        "de": {
+          "title": "der andere Spieler bringt Honig auf die Lippen des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "andere speler legt honing op de lippen van de huidige speler"
+        },
+        "pl": {
+          "title": "drugi gracz nakłada miód na usta obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore mette il miele sulle labbra del giocatore attuale"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "Ambos os jogadores tomam uma dose de molho picante",
           "extra": "Faça isso enquanto mantém contato visual"
+        },
+        "zh": {
+          "title": "两位玩家都喝了辣酱"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay kumukuha ng mainit na sarsa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều uống nước sốt nóng"
+        },
+        "ar": {
+          "title": "يأخذ كلا اللاعبين جرعة من الصلصة الحارة"
+        },
+        "fr": {
+          "title": "Les deux joueurs prennent un verre de sauce piquante"
+        },
+        "ko": {
+          "title": "두 선수 모두 핫소스를 한 잔"
+        },
+        "ru": {
+          "title": "Оба игрока делают рюмку острого соуса"
+        },
+        "ht": {
+          "title": "Tou de jwè pran yon piki nan sòs cho"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी हॉट सॉस का शॉट लेते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler nehmen einen Schuss scharfe Soße"
+        },
+        "nl": {
+          "title": "Beide spelers nemen een shot hete saus"
+        },
+        "pl": {
+          "title": "Obaj gracze robią kieliszek ostrego sosu"
+        },
+        "it": {
+          "title": "Entrambi i giocatori bevono un bicchierino di salsa piccante"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "O jogador da vez coloca brincos de ketchup nquem aceita o desafio",
           "extra": "Lamba-os um por um"
+        },
+        "zh": {
+          "title": "现任玩家将番茄酱耳环戴在另一位玩家身上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay naglalagay ng ketchup hikaw sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đeo bông tai sốt cà chua lên người chơi kia dare"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يضع أقراط الكاتشب على اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel met des boucles d'oreilles en ketchup sur un l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터에 케첩 귀걸이를 달고 있습니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок надевает серьги с кетчупом на другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete zanno ketchup sou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी पर केचप इयररिंग्स डालता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler legt Ketchup-Ohrringe auf der andere Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler zet ketchupoorbellen op de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz kładzie kolczyki z keczupem na drugi graczze odwagi"
+        },
+        "it": {
+          "title": "Il giocatore attuale mette orecchini di ketchup su l'altro giocatore"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "Quem aceita o desafio alimenta o jogador da vez com uma colher de wasabi",
           "extra": "Faça isso enquanto sussurra algo sexy"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家给当前玩家喂一勺芥末"
+        },
+        "tl": {
+          "title": "Pinapakain ng kabilang manlalaro ang kasalukuyang manlalaro ng isang kutsara ng wasabi"
+        },
+        "vi": {
+          "title": "người chơi kia cho người chơi hiện tại ăn một thìa wasabi"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الآخر بإطعام اللاعب الحالي ملعقة من الوسابي"
+        },
+        "fr": {
+          "title": "l'autre joueur donne au joueur actuel une cuillerée de wasabi"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어에게 와사비 한 스푼을 먹입니다."
+        },
+        "ru": {
+          "title": "другой игрок кормит текущего игрока ложкой васаби"
+        },
+        "ht": {
+          "title": "lòt jwè a manje jwè aktyèl yon kiyè nan wasabi"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी को एक चम्मच वसाबी खिलाता है"
+        },
+        "de": {
+          "title": "der andere Spieler füttert den aktuellen Spieler mit einem Löffel Wasabi"
+        },
+        "nl": {
+          "title": "andere speler geeft de huidige speler een lepel wasabi"
+        },
+        "pl": {
+          "title": "drugi gracz karmi obecnego gracza łyżką wasabi"
+        },
+        "it": {
+          "title": "l'altro giocatore dà al giocatore attuale un cucchiaio di wasabi"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "Ambos os jogadores compartilham um pedaço de gengibre",
           "extra": "Passe-o para frente e para trás com a boca"
+        },
+        "zh": {
+          "title": "两位玩家共用一块生姜"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbabahagi ng isang piraso"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chia sẻ một miếng gừng"
+        },
+        "ar": {
+          "title": "يتشارك كلا اللاعبين قطعة من الزنجبيل"
+        },
+        "fr": {
+          "title": "Les deux joueurs partagent un morceau de gingembre"
+        },
+        "ko": {
+          "title": "두 선수 모두 생강 한 조각을 나눠 먹는다"
+        },
+        "ru": {
+          "title": "Оба игрока делят кусочек имбиря"
+        },
+        "ht": {
+          "title": "Tou de jwè pataje yon moso jenjanm"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अदरक का एक टुकड़ा साझा करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler teilen sich ein Stück Ingwer"
+        },
+        "nl": {
+          "title": "Beide spelers delen een stukje gember"
+        },
+        "pl": {
+          "title": "Obaj gracze dzielą kawałek imbiru"
+        },
+        "it": {
+          "title": "Entrambi i giocatori condividono un pezzetto di zenzero"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "O jogador da vez coloca calda de chocolate no pescoço de quem aceita o desafio",
           "extra": "Lamba-o enquanto faz uma massagem no pescoço"
+        },
+        "zh": {
+          "title": "现任玩家将巧克力酱放在另一位玩家的脖子上"
+        },
+        "tl": {
+          "title": "Naglalagay ng kasalukuyang manlalaro ang tsokolate sauce sa leeg ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đặt nước sốt sô cô la lên cổ người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يضع صلصة الشوكولاتة على رقبة اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel met de la sauce au chocolat sur le cou de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 상대 플레이어의 목에 초콜릿 소스를 뿌립니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок наносит шоколадный соус на шею акцептанта"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete sòs chokola sou kou lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की गर्दन पर चॉकलेट सॉस डालता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler legt der andere Spieler Schokoladensauce auf den Hals"
+        },
+        "nl": {
+          "title": "De huidige speler legt chocoladesaus op de nek van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nakłada sos czekoladowy na szyję drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale mette la salsa al cioccolato sul collo di l'altro giocatore"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "Quem aceita o desafio coloca um tomate cereja na boca do jogador da vez",
           "extra": "Morda ao meio e compartilhe"
+        },
+        "zh": {
+          "title": "另一位玩家将樱桃番茄放入当前玩家的嘴里"
+        },
+        "tl": {
+          "title": "Naglalagay ng kabilang manlalaro ng cherry tomato sa bibig ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia đưa một quả cà chua cherry vào miệng người chơi hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر يضع طماطم كرزية في فم اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur met une tomate cerise dans la bouche du joueur actuel"
+        },
+        "ko": {
+          "title": "현재 플레이어의 입에 체리 토마토를 넣는 데어 어셉터"
+        },
+        "ru": {
+          "title": "другой игрок кладет томат черри в рот текущему игроку"
+        },
+        "ht": {
+          "title": "lòt jwè a mete yon tomat Cherry nan bouch jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के मुंह में एक चेरी टमाटर डालता है"
+        },
+        "de": {
+          "title": "der andere Spieler legt dem aktuellen Spieler eine Kirschtomate in den Mund"
+        },
+        "nl": {
+          "title": "andere speler stopt een cherrytomaat in de mond van de huidige speler"
+        },
+        "pl": {
+          "title": "drugi gracz wkłada pomidora koktajlowego do ust obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore mette un pomodorino nella bocca del giocatore attuale"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "Ambos os jogadores tomam uma colher de chá de canela na boca",
           "extra": "Toque nos narizes até engolir"
+        },
+        "zh": {
+          "title": "两位玩家都把一茶匙肉桂放进嘴里"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay kumukuha ng isang kutsarita ng kanela sa bibig"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều uống một muỗng cà phê quế trong miệng"
+        },
+        "ar": {
+          "title": "يأخذ كلا اللاعبين ملعقة صغيرة من القرفة في الفم"
+        },
+        "fr": {
+          "title": "Les deux joueurs prennent une cuillère à café de cannelle dans la bouche"
+        },
+        "ko": {
+          "title": "두 선수 모두 시나몬 한 티스푼을 입에 넣습니다."
+        },
+        "ru": {
+          "title": "Оба игрока берут чайную ложку корицы в рот"
+        },
+        "ht": {
+          "title": "Tou de jwè yo pran yon ti kiyè kannèl nan bouch la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी मुंह में एक चम्मच दालचीनी लेते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler nehmen einen Teelöffel Zimt in den Mund"
+        },
+        "nl": {
+          "title": "Beide spelers nemen een theelepel kaneel in de mond"
+        },
+        "pl": {
+          "title": "Obaj gracze biorą łyżeczkę cynamonu do ust"
+        },
+        "it": {
+          "title": "Entrambi i giocatori prendono un cucchiaino di cannella in bocca"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "O jogador da vez coloca chantilly no ombro de quem aceita o desafio",
           "extra": "Lamba-o enquanto faz uma massagem nos ombros"
+        },
+        "zh": {
+          "title": "现任玩家将鲜奶油放在另一位玩家的肩膀上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay naglalagay ng whipped cream sa balikat ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Cầu thủ hiện tại đặt kem đánh bông lên vai người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يضع الكريمة المخفوقة على كتف اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel met de la crème fouettée sur l'épaule de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 상대 플레이어의 어깨에 휘핑 크림을 얹고 있습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок наносит взбитые сливки на плечо другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete fwi krèm sou zepòl lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के कंधे पर व्हीप्ड क्रीम डालता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler legt Schlagsahne auf die Schulter des anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler legt slagroom op de schouder van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nakłada bitą śmietanę na ramieniu drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale mette della panna montata sulla spalla di l'altro giocatore"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "Quem aceita o desafio derrama uma bebida gelada no peito do jogador da vez",
           "extra": "Lamba-o do estômago"
+        },
+        "zh": {
+          "title": "另一位玩家将一杯冷饮倒入当前玩家的胸口"
+        },
+        "tl": {
+          "title": "Nagbuhos ang kabilang manlalaro ng malamig na inumin sa dibdib ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia rót đồ uống lạnh xuống ngực của người chơi hiện tại"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الآخر بصب مشروب بارد على صدر اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur verse une boisson fraîche dans la poitrine du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터가 현재 플레이어의 가슴에 차가운 음료를 부어줍니다."
+        },
+        "ru": {
+          "title": "другой игрок наливает холодный напиток в грудь текущего игрока"
+        },
+        "ht": {
+          "title": "lòt jwè a vide yon bwè frèt desann pwatrin jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के सीने के नीचे एक कोल्ड ड्रिंक डालता है"
+        },
+        "de": {
+          "title": "der andere Spieler gießt ein kaltes Getränk über die Brust des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "andere speler giet een koud drankje over de borst van de huidige speler"
+        },
+        "pl": {
+          "title": "drugi gracz wlewa zimny napój do klatki piersiowej obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore versa una bevanda fredda nel petto del giocatore attuale"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "O jogador da vez coloca xarope de chocolate na clavícula de quem aceita o desafio",
           "extra": "Lamba-o enquanto sussurra bobagens"
+        },
+        "zh": {
+          "title": "现任玩家将巧克力糖浆放在另一位玩家的锁骨上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay naglalagay ng chocolate syrup sa collarbone ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đặt xi-rô sô cô la vào xương đòn của người nhận táo"
+        },
+        "ar": {
+          "title": "يضع اللاعب الحالي شراب الشوكولاتة على ترقوة اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel met du sirop de chocolat sur la clavicule de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터의 쇄골에 초콜릿 시럽을 뿌립니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок наносит шоколадный сироп на ключицу другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete siwo chokola sou bay kolarbone lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के कॉलरबोन पर चॉकलेट सिरप डालता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler legt Schokoladensirup auf das Schlüsselbein von der andere Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler legt chocoladesiroop op het sleutelbeen van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nakłada syrop czekoladowy na obojczyk drugi gracz"
+        },
+        "it": {
+          "title": "L'attuale giocatore mette lo sciroppo di cioccolato sulla clavicola di l'altro giocatore"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "Quem aceita o desafio alimenta o jogador da vez com uma colher de rábano",
           "extra": "Faça isso enquanto está sentado no colo deles"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家给当前玩家喂一勺辣根"
+        },
+        "tl": {
+          "title": "Pinapakain ng kabilang manlalaro ang kasalukuyang manlalaro ng kutsara ng malungg"
+        },
+        "vi": {
+          "title": "người chơi kia cho người chơi hiện tại ăn một thìa cải ngựa"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الآخر بإطعام اللاعب الحالي ملعقة من الفجل الحار"
+        },
+        "fr": {
+          "title": "l'autre joueur donne au joueur actuel une cuillerée de raifort"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어에게 한 숟가락의 와사비를 먹입니다"
+        },
+        "ru": {
+          "title": "другой игрок кормит текущего игрока ложкой хрена"
+        },
+        "ht": {
+          "title": "lòt jwè a alimante jwè aktyèl yon kiyè nan Horserad"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी को एक चम्मच हॉर्सरैडिश खिलाता है"
+        },
+        "de": {
+          "title": "der andere Spieler füttert den aktuellen Spieler mit einem Löffel Meerrettich"
+        },
+        "nl": {
+          "title": "andere speler geeft de huidige speler een lepel mierikswortel"
+        },
+        "pl": {
+          "title": "drugi gracz karmi obecnego gracza łyżką chrzanu"
+        },
+        "it": {
+          "title": "l'altro giocatore dà al giocatore attuale un cucchiaio di rafano"
         }
       }
     },
@@ -345,6 +1203,45 @@
         "pt": {
           "title": "Ambos os jogadores tomam uma dose de vinagre",
           "extra": "Beije imediatamente depois para compartilhar o sabor"
+        },
+        "zh": {
+          "title": "两位玩家都开了一枪"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay kumukuha ng suka"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều uống giấm"
+        },
+        "ar": {
+          "title": "يأخذ كلا اللاعبين جرعة من الخل"
+        },
+        "fr": {
+          "title": "Les deux joueurs prennent un verre de vinaigre"
+        },
+        "ko": {
+          "title": "두 선수 모두 식초 한 잔을 마셔요"
+        },
+        "ru": {
+          "title": "Оба игрока делают рюмку уксуса"
+        },
+        "ht": {
+          "title": "Tou de jwè pran yon piki nan vinèg"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी सिरका का एक शॉट लेते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler nehmen einen Schuss Essig"
+        },
+        "nl": {
+          "title": "Beide spelers nemen een scheutje azijn"
+        },
+        "pl": {
+          "title": "Obaj gracze robią kieliszek octu"
+        },
+        "it": {
+          "title": "Entrambi i giocatori bevono un bicchierino di aceto"
         }
       }
     },
@@ -360,6 +1257,45 @@
         "pt": {
           "title": "O jogador da vez coloca molho de caramelo no pulso de quem aceita o desafio",
           "extra": "Lamba-o lentamente enquanto mantém contato visual"
+        },
+        "zh": {
+          "title": "现任玩家将焦糖酱放在另一位玩家的手腕上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay naglalagay ng caramel sauce sa pulso ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đặt sốt caramel lên cổ tay của người chơi kia"
+        },
+        "ar": {
+          "title": "يضع اللاعب الحالي صلصة الكراميل على معصم اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel met de la sauce au caramel sur le poignet de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 어셉터의 손목에 캐러멜 소스를 뿌립니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок наносит карамельный соус на запястье другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete sòs karamèl sou ponyèt lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की कलाई पर कारमेल सॉस डालता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler legt Karamellsauce auf das Handgelenk des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler legt karamelsaus op de pols van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nakłada sos karmelowy na nadgarstek drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale mette la salsa al caramello sul polso di l'altro giocatore"
         }
       }
     },
@@ -375,6 +1311,45 @@
         "pt": {
           "title": "Quem aceita o desafio coloca uma menta na boca do jogador da vez",
           "extra": "Beijo francês para compartilhar o frescor"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家在当前玩家的嘴里放了薄荷糖"
+        },
+        "tl": {
+          "title": "Naglalagay ng kabilang manlalaro ng mint sa bibig ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia Dare đặt bạc hà vào miệng người chơi hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر يضع النعناع في فم اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur met une menthe dans la bouche du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 입에 박하를 넣습니다."
+        },
+        "ru": {
+          "title": "другой игрок кладет мяту в рот текущему игроку"
+        },
+        "ht": {
+          "title": "lòt jwè a mete yon rekòt pye mant nan bouch jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के मुंह में एक टकसाल डालता है"
+        },
+        "de": {
+          "title": "der andere Spieler legt dem aktuellen Spieler eine Münze in den Mund"
+        },
+        "nl": {
+          "title": "andere speler legt een munt in de mond van de huidige speler"
+        },
+        "pl": {
+          "title": "drugi gracz wkłada mennicę do ust obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore mette una zecca in bocca al giocatore attuale"
         }
       }
     },
@@ -390,6 +1365,45 @@
         "pt": {
           "title": "O jogador da vez derrama vinho sobre o peito nu de quem aceita o desafio",
           "extra": "Beba diretamente de sua pele"
+        },
+        "zh": {
+          "title": "现任玩家将酒倒在冒险另一位玩家裸露的胸前"
+        },
+        "tl": {
+          "title": "Nagbubuhos ng alak ang kasalukuyang manlalaro sa hubad na dibdib ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đổ rượu lên ngực trần của người chơi kia dũng cảm"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يصب النبيذ على الصدر العاري لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel verse du vin sur la poitrine nue de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터의 맨 가슴에 와인을 붓습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок наливает вино на голую грудь другой игрок"
+        },
+        "ht": {
+          "title": "Jwè aktyèl vide diven sou pwatrin bare lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के नंगे सीने पर शराब डालता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler gießt Wein über die nackte Brust des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler giet wijn over de blote borst van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz wlewa wino na nagą klatkę piersiową drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale versa del vino sul petto nudo di l'altro giocatore"
         }
       }
     },
@@ -405,6 +1419,45 @@
         "pt": {
           "title": "Quem aceita o desafio lambe o molho picante do mamilo do jogador da vez",
           "extra": "Massageie o outro mamilo enquanto lambe"
+        },
+        "zh": {
+          "title": "另一位玩家从当前玩家的乳头上舔出辣酱"
+        },
+        "tl": {
+          "title": "Inilaan ng kabilang manlalaro ang mainit na sarsa sa utong ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia liếm nước sốt nóng trên núm vú của người chơi hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر يلعق الصلصة الحارة من حلمة اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur lèche la sauce piquante sur la tétine du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터가 현재 플레이어의 젖꼭지에 묻은 매운 소스를 핥습니다."
+        },
+        "ru": {
+          "title": "другой игрок слизывает острый соус с соска текущего игрока"
+        },
+        "ht": {
+          "title": "lòt jwè a licks sòs cho koupe pwent tete jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के निप्पल से गर्म सॉस चाटता है"
+        },
+        "de": {
+          "title": "der andere Spieler leckt scharfe Soße von der Brustwarze des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "andere speler likt hete saus van de tepel van de huidige speler"
+        },
+        "pl": {
+          "title": "drugi gracz liże ostry sos z sutka obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore lecca la salsa piccante dal capezzolo del giocatore attuale"
         }
       }
     },
@@ -420,6 +1473,45 @@
         "pt": {
           "title": "O jogador da vez lambe mel da parte interna da coxa de quem aceita o desafio",
           "extra": "Pergunte periodicamente “Nervoso?” e aproxime-se de áreas íntimas até que eles digam sim."
+        },
+        "zh": {
+          "title": "当前玩家从另一位玩家的大腿内侧舔蜂蜜"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay inilaan ang honey mula sa panloob na hita ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Cầu thủ hiện tại liếm mật ong khỏi đùi trong của người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يلعق العسل من الفخذ الداخلي لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel lèche le miel de l'intérieur de la cuisse de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 상대 플레이어의 허벅지 안쪽 허벅지에서 꿀을 핥습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок слизывает мед с внутренней поверхности бедра другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè licks siwo myèl koupe bay dare kwis enteryè lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की आंतरिक जांघ से शहद चाटता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler leckt Honig vom inneren Oberschenkel des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler likt honing van de binnenkant van de dij van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz liże miód z wewnętrznego uda drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale lecca del miele dalla parte interna della coscia di l'altro giocatore"
         }
       }
     }

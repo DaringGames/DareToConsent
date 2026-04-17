@@ -13,6 +13,45 @@
         "pt": {
           "title": "Jogue um pedaço de comida na boca do outro jogador",
           "extra": "Se cair no chão, o lançador tem que comê-lo"
+        },
+        "zh": {
+          "title": "向其他玩家的嘴里扔一块食物"
+        },
+        "tl": {
+          "title": "Maglagay ng isang piraso ng pagkain sa bibig ng ibang manlalaro"
+        },
+        "vi": {
+          "title": "Ném một miếng thức ăn vào miệng của người chơi khác"
+        },
+        "ar": {
+          "title": "ضع قطعة من الطعام في فم اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Lance un morceau de nourriture dans la bouche de l'autre joueur"
+        },
+        "ko": {
+          "title": "다른 플레이어의 입에 음식 한 조각을 던지세요"
+        },
+        "ru": {
+          "title": "Бросьте кусок еды в рот другому игроку"
+        },
+        "ht": {
+          "title": "Tose yon moso manje nan bouch lòt jwè a"
+        },
+        "hi": {
+          "title": "दूसरे खिलाड़ी के मुंह में खाने का एक टुकड़ा डालें"
+        },
+        "de": {
+          "title": "Wirf ein Stück Essen in den Mund des anderen Spielers"
+        },
+        "nl": {
+          "title": "Gooi een stuk voedsel in de mond van de andere speler"
+        },
+        "pl": {
+          "title": "Wrzuć kawałek jedzenia do ust drugiego gracza"
+        },
+        "it": {
+          "title": "Lancia un pezzo di cibo nella bocca dell'altro giocatore"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Equilibre um copo de água na cabeça um do outro",
           "extra": "... Faça uma xícara de leite ou refrigerante"
+        },
+        "zh": {
+          "title": "在对方的头上平衡一杯水"
+        },
+        "tl": {
+          "title": "Balansehin ang isang tasa ng tubig sa ulo ng bawat isa"
+        },
+        "vi": {
+          "title": "Cân bằng một cốc nước trên đầu của nhau"
+        },
+        "ar": {
+          "title": "قم بموازنة كوب من الماء على رأس بعضكما البعض"
+        },
+        "fr": {
+          "title": "Équilibrez une tasse d'eau sur la tête de l'autre"
+        },
+        "ko": {
+          "title": "한 컵의 물을 서로의 머리에 대고 균형을 잡으세요"
+        },
+        "ru": {
+          "title": "Балансируйте чашку воды на голове друг друга"
+        },
+        "ht": {
+          "title": "Balanse yon tas dlo sou tèt youn ak lòt"
+        },
+        "hi": {
+          "title": "एक दूसरे के सिर पर एक कप पानी संतुलित करें"
+        },
+        "de": {
+          "title": "Balancieren Sie sich gegenseitig eine Tasse Wasser auf den Kopf"
+        },
+        "nl": {
+          "title": "Breng een kopje water op elkaars hoofd in evenwicht"
+        },
+        "pl": {
+          "title": "Zrównoważyć filiżankę wody na głowie nawzajem"
+        },
+        "it": {
+          "title": "Bilanciate una tazza d'acqua sulla testa dell'altro"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Os jogadores jogam um ovo para frente e para trás em distâncias crescentes",
           "extra": "Ambos os jogadores jogam ovos simultaneamente"
+        },
+        "zh": {
+          "title": "玩家在越来越远的距离内来回投掷彩蛋"
+        },
+        "tl": {
+          "title": "Nagtatapon ng mga manlalaro ang itlog pabalik-pabalik sa pagtaas ng distansya"
+        },
+        "vi": {
+          "title": "Người chơi ném một quả trứng qua lại ở khoảng cách ngày càng tăng"
+        },
+        "ar": {
+          "title": "يقوم اللاعبون برمي البيضة ذهابًا وإيابًا على مسافات متزايدة"
+        },
+        "fr": {
+          "title": "Les joueurs lancent un œuf d'avant en arrière à des distances croissantes"
+        },
+        "ko": {
+          "title": "플레이어는 거리를 늘리면서 달걀을 앞뒤로 던집니다."
+        },
+        "ru": {
+          "title": "Игроки бросают яйцо взад и вперед на все большем расстоянии"
+        },
+        "ht": {
+          "title": "Jwè yo toss yon ze retounen ak lide nan distans ogmante"
+        },
+        "hi": {
+          "title": "खिलाड़ी बढ़ती दूरी पर एक अंडा आगे-पीछे उछालते हैं"
+        },
+        "de": {
+          "title": "Die Spieler werfen ein Ei mit zunehmender Entfernung hin und her"
+        },
+        "nl": {
+          "title": "Spelers gooien op steeds grotere afstanden een ei heen en weer"
+        },
+        "pl": {
+          "title": "Gracze rzucają jajko w przód iw tył na coraz większych dystansach"
+        },
+        "it": {
+          "title": "I giocatori lanciano un uovo avanti e indietro a distanze crescenti"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "O jogador da vez faz uma queda de confiança e quem aceita o desafio o segura",
           "extra": "Faça a queda sobre um piso duro"
+        },
+        "zh": {
+          "title": "当前玩家的信任度下降了胆量另一位玩家抓住了他们"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay bumagsak ng tiwala at nakakakuha sila ng manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sụp đổ lòng tin và người chơi kia bắt được họ"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يسقط الثقة ويتجرأ اللاعب الآخر على الإمساك به"
+        },
+        "fr": {
+          "title": "Le joueur actuel perd sa confiance et l'autre joueur le rattrape"
+        },
+        "ko": {
+          "title": "현재 플레이어는 신뢰가 떨어지고 상대 플레이어가 그들을 붙잡습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок теряет доверие и осмеливается его поймать"
+        },
+        "ht": {
+          "title": "Aktyèl jwè fè yon tonbe konfyans ak lòt jwè a kaptire yo"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी एक ट्रस्ट फॉल करता है और दूसरा खिलाड़ी उन्हें पकड़ता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler fällt ein Vertrauen und der der andere Spieler fängt ihn"
+        },
+        "nl": {
+          "title": "De huidige speler doet een vertrouwensval en durft de andere speler ze te pakken"
+        },
+        "pl": {
+          "title": "Obecny gracz spada zaufanie, a drugi gracz łapie go"
+        },
+        "it": {
+          "title": "Il giocatore attuale perde la fiducia e osa accettarlo lo coglie"
         }
       }
     },
@@ -75,6 +231,45 @@
         "pt": {
           "title": "Ambos os jogadores se equilibram em um pé enquanto estão de mãos dadas",
           "extra": "Feche os olhos enquanto se equilibra"
+        },
+        "zh": {
+          "title": "两位玩家手牵手时用一只脚保持平衡"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbabalanse sa isang paa habang hawak"
+        },
+        "vi": {
+          "title": "Cả hai người chơi giữ thăng bằng trên một chân trong khi nắm tay"
+        },
+        "ar": {
+          "title": "يتوازن كلا اللاعبين على قدم واحدة أثناء إمساك اليدين"
+        },
+        "fr": {
+          "title": "Les deux joueurs sont en équilibre sur un pied tout en se tenant la main"
+        },
+        "ko": {
+          "title": "두 선수 모두 손을 잡고 한 발로 균형을 잡습니다."
+        },
+        "ru": {
+          "title": "Оба игрока балансируют на одной ноге, держась за руки"
+        },
+        "ht": {
+          "title": "Tou de jwè yo balanse sou yon sèl pye pandan y ap kenbe men"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी हाथ पकड़ते हुए एक पैर पर संतुलन बनाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler balancieren auf einem Fuß und halten dabei die Hände."
+        },
+        "nl": {
+          "title": "Beide spelers balanceren op één voet terwijl ze elkaars hand vasthouden"
+        },
+        "pl": {
+          "title": "Obaj gracze balansują na jednej nodze trzymając się za ręce"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si bilanciano su un piede mentre si tengono per mano"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "Os jogadores passam uma vela acesa entre eles sem apagá-la",
           "extra": "Passe apenas com a boca"
+        },
+        "zh": {
+          "title": "玩家在不吹灭的情况下在他们之间传递一支点燃的蜡烛"
+        },
+        "tl": {
+          "title": "Ipinapasa ng mga manlalaro ang isang naiilaw na kandila sa pagitan nila nang hindi ito"
+        },
+        "vi": {
+          "title": "Người chơi truyền một ngọn nến thắp sáng giữa họ mà không thổi tắt"
+        },
+        "ar": {
+          "title": "يمرر اللاعبون شمعة مضاءة بينهم دون تفجيرها"
+        },
+        "fr": {
+          "title": "Les joueurs passent une bougie allumée entre eux sans l'éteindre"
+        },
+        "ko": {
+          "title": "플레이어는 불이 켜진 촛불을 끄지 않고 사이로 건네줍니다."
+        },
+        "ru": {
+          "title": "Игроки пропускают между собой зажженную свечу, не задувая ее"
+        },
+        "ht": {
+          "title": "Jwè yo pase yon chandèl limen ant yo san yo pa mouche li soti"
+        },
+        "hi": {
+          "title": "खिलाड़ी बिना उड़ाए उनके बीच एक जली हुई मोमबत्ती पास करते हैं"
+        },
+        "de": {
+          "title": "Die Spieler reichen eine brennende Kerze zwischen sich her, ohne sie auszublasen"
+        },
+        "nl": {
+          "title": "Spelers geven een brandende kaars tussen hen door zonder deze uit te blazen"
+        },
+        "pl": {
+          "title": "Gracze przekazują między sobą zapaloną świecę, nie zdmuchając jej"
+        },
+        "it": {
+          "title": "I giocatori passano una candela accesa tra di loro senza spegnerla"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "O jogador da vez usa uma venda nos olhos e quem aceita o desafio o guia por uma pista de obstáculos",
           "extra": "Guia usando apenas sussurros"
+        },
+        "zh": {
+          "title": "当前玩家戴着眼罩，勇气另一位玩家引导他们穿过障碍物路线"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay nagsusuot ng blindfold at ginagabayan sila ng tagapangatanggap sa isang balakid na kurso"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại đeo bịt mắt và người chơi kia hướng dẫn họ vượt qua một chướng ngại vật"
+        },
+        "ar": {
+          "title": "يرتدي اللاعب الحالي عصابة العينين ويوجهه اللاعب الآخر الجريء عبر مسار عقبة"
+        },
+        "fr": {
+          "title": "Le joueur actuel porte un bandeau sur les yeux et un l'autre joueur le guide à travers une course d'obstacles"
+        },
+        "ko": {
+          "title": "현재 플레이어는 눈가리개를 착용하고 상대 플레이어가 장애물 코스를 통과하도록 안내합니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок носит повязку на глаза, а другой игрок помогает ему преодолеть полосу препятствий"
+        },
+        "ht": {
+          "title": "Aktyèl jwè mete yon blindfold ak lòt jwè a gid yo atravè yon kou obstak"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी आंखों पर पट्टी पहनता है और दूसरा खिलाड़ी एक बाधा कोर्स के माध्यम से उनका मार्गदर्शन करता है"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler trägt eine Augenbinde und der der andere Spieler führt ihn durch einen Hindernisparcours"
+        },
+        "nl": {
+          "title": "De huidige speler draagt een blinddoek en een andere speler begeleidt hen door een hindernisbaan"
+        },
+        "pl": {
+          "title": "Obecny gracz nosi opaskę na oczy, a drugi gracz prowadzi go przez tor przeszkód"
+        },
+        "it": {
+          "title": "Il giocatore attuale indossa una benda sugli occhi e chi accetta la sfida lo guida attraverso un percorso a ostacoli"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "Ambos os jogadores tentam comer uma comida bagunçada sem usar as mãos",
           "extra": "Alimente um ao outro com comida"
+        },
+        "zh": {
+          "title": "两位玩家都尽量不用手吃掉一团乱七八糟的食物"
+        },
+        "tl": {
+          "title": "Sinusubukan ng parehong mga manlalaro na kumain ng isang malulong na pagkain nang hindi gumagamit ng"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều cố gắng ăn một món ăn lộn xộn mà không cần sử dụng tay"
+        },
+        "ar": {
+          "title": "يحاول كلا اللاعبين تناول طعام فوضوي دون استخدام اليدين"
+        },
+        "fr": {
+          "title": "Les deux joueurs essaient de manger un aliment salissant sans utiliser leurs mains"
+        },
+        "ko": {
+          "title": "두 선수 모두 손을 사용하지 않고 지저분한 음식을 먹으려 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока пытаются съесть грязную пищу, не используя руки"
+        },
+        "ht": {
+          "title": "Tou de jwè yo eseye manje yon manje sal san yo pa itilize men"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी बिना हाथों का इस्तेमाल किए गन्दा खाना खाने की कोशिश करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler versuchen, ein unordentliches Essen zu essen, ohne die Hände zu benutzen"
+        },
+        "nl": {
+          "title": "Beide spelers proberen een rommelig gerecht te eten zonder hun handen te gebruiken"
+        },
+        "pl": {
+          "title": "Obaj gracze próbują jeść niechlujne jedzenie bez użycia rąk"
+        },
+        "it": {
+          "title": "Entrambi i giocatori cercano di mangiare un cibo disordinato senza usare le mani"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "Os jogadores jogam um jogo de “batata quente” com um cubo de gelo",
           "extra": "Use apenas as mãos nuas"
+        },
+        "zh": {
+          "title": "玩家用冰块玩 “火锅” 游戏"
+        },
+        "tl": {
+          "title": "Naglalaro ang mga manlalaro ng isang laro ng 'hot patatas' na may ice cube"
+        },
+        "vi": {
+          "title": "Người chơi chơi trò “khoai tây nóng” với một viên đá"
+        },
+        "ar": {
+          "title": "يلعب اللاعبون لعبة «البطاطس الساخنة» مع مكعب ثلج"
+        },
+        "fr": {
+          "title": "Les joueurs jouent à une partie de « patate chaude » avec un glaçon"
+        },
+        "ko": {
+          "title": "플레이어들은 아이스 큐브로 '핫 포테이토' 게임을 합니다."
+        },
+        "ru": {
+          "title": "Игроки играют в «горячую картошку» с кубиком льда"
+        },
+        "ht": {
+          "title": "Jwè yo jwe yon jwèt nan 'pòmdetè cho' ak yon kib glas"
+        },
+        "hi": {
+          "title": "खिलाड़ी आइस क्यूब के साथ 'हॉट पोटैटो' का खेल खेलते हैं"
+        },
+        "de": {
+          "title": "Die Spieler spielen eine Partie „heiße Kartoffel“ mit einem Eiswürfel"
+        },
+        "nl": {
+          "title": "Spelers spelen een spelletje 'hot potato' met een ijsblokje"
+        },
+        "pl": {
+          "title": "Gracze grają w „gorące ziemniaki” z kostką lodu"
+        },
+        "it": {
+          "title": "I giocatori giocano una partita a «patata bollente» con un cubetto di ghiaccio"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "O jogador da vez e quem aceita o desafio trocam camisetas pelo resto do jogo",
           "extra": "Troque as calças também"
+        },
+        "zh": {
+          "title": "当前玩家和敢于接受游戏的玩家在游戏的其余部分互换 T 恤"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro at kabilang manlalaro ay nagpapalit ng mga shirt para sa natitirang bahagi ng laro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại và người chơi kia đổi áo cho phần còn lại của trò chơi"
+        },
+        "ar": {
+          "title": "يتبادل اللاعب الحالي واللاعب الآخر الجريء القمصان لبقية اللعبة"
+        },
+        "fr": {
+          "title": "Le joueur actuel et l'autre joueur échangent leurs maillots pour le reste de la partie"
+        },
+        "ko": {
+          "title": "현재 플레이어와 데어 액셉터가 셔츠를 교체하면 게임이 끝날 때까지 사용할 수 있습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок и дерзкий другой игрок обмениваются футболками на оставшуюся часть игры"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ak lòt jwè a swap chemiz pou rès la nan jwèt la"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी और दूसरा खिलाड़ी खेल के बाकी हिस्सों के लिए शर्ट स्वैप करते हैं"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler und anderen Spieler tauschen für den Rest des Spiels ihre Shirts"
+        },
+        "nl": {
+          "title": "Huidige speler en andere speler ruilen shirts voor de rest van het spel"
+        },
+        "pl": {
+          "title": "Obecny gracz i drugi gracz zamieniają koszulki na resztę gry"
+        },
+        "it": {
+          "title": "Il giocatore attuale e il giocatore che accetta la sfida si scambiano le maglie per il resto della partita"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "Ambos os jogadores sussurram um segredo um para o outro",
           "extra": "Sussurre enquanto mantém contato visual"
+        },
+        "zh": {
+          "title": "两位玩家互相低声说了一个秘密"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbubulong ng isang lihim sa bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ thì thầm một bí mật với nhau"
+        },
+        "ar": {
+          "title": "يهمس كلا اللاعبين بسر لبعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se chuchotent un secret"
+        },
+        "ko": {
+          "title": "두 플레이어는 서로에게 비밀을 속삭입니다."
+        },
+        "ru": {
+          "title": "Оба игрока шепчут друг другу секрет"
+        },
+        "ht": {
+          "title": "Tou de jwè chichouche yon sekrè youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को एक रहस्य सुनाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler flüstern sich ein Geheimnis zu"
+        },
+        "nl": {
+          "title": "Beide spelers fluisteren elkaar een geheim toe"
+        },
+        "pl": {
+          "title": "Obaj gracze szepczą sobie sekret"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si sussurrano un segreto"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "Os jogadores competem em uma competição inicial",
           "extra": "Primeiro a piscar tem que remover um item de roupa"
+        },
+        "zh": {
+          "title": "玩家参加凝视比赛"
+        },
+        "tl": {
+          "title": "Ang mga manlalaro ay nakikipagkumpitensya sa isang pag"
+        },
+        "vi": {
+          "title": "Người chơi cạnh tranh trong một cuộc thi nhìn chằm chằm"
+        },
+        "ar": {
+          "title": "يتنافس اللاعبون في مسابقة التحديق"
+        },
+        "fr": {
+          "title": "Les joueurs s'affrontent dans un concours de étoiles"
+        },
+        "ko": {
+          "title": "응시 콘테스트에서 경쟁하는 플레이어들"
+        },
+        "ru": {
+          "title": "Игроки соревнуются в стартовом состязании"
+        },
+        "ht": {
+          "title": "Jwè yo fè konpetisyon nan yon konkou fikse"
+        },
+        "hi": {
+          "title": "खिलाड़ी एक घूरने वाली प्रतियोगिता में प्रतिस्पर्धा करते हैं"
+        },
+        "de": {
+          "title": "Die Spieler nehmen an einem Startwettbewerb teil"
+        },
+        "nl": {
+          "title": "Spelers nemen deel aan een staring-wedstrijd"
+        },
+        "pl": {
+          "title": "Gracze rywalizują w konkursie wpatrywania się"
+        },
+        "it": {
+          "title": "I giocatori si sfidano in una gara a stelle"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "Quem aceita o desafio examina as fotos do jogador da vez em seu telefone",
           "extra": "Publique uma foto aleatória nas redes sociais"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家在手机上浏览当前玩家的照片"
+        },
+        "tl": {
+          "title": "Tinitingnan ng kabilang manlalaro ang mga larawan ng kasalukuyang manlalaro sa kanilang telepono"
+        },
+        "vi": {
+          "title": "người chơi kia Dare xem qua ảnh của người chơi hiện tại trên điện thoại của họ"
+        },
+        "ar": {
+          "title": "يبحث اللاعب الآخر في صور اللاعب الحالي على هاتفه"
+        },
+        "fr": {
+          "title": "l'autre joueur consulte les photos du joueur actuel sur son téléphone"
+        },
+        "ko": {
+          "title": "상대 플레이어가 휴대폰에서 현재 플레이어의 사진을 살펴봅니다."
+        },
+        "ru": {
+          "title": "другой игрок просматривает фотографии текущего игрока на своем телефоне"
+        },
+        "ht": {
+          "title": "lòt jwè a sanble nan foto jwè aktyèl la sou telefòn yo"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी अपने फोन पर वर्तमान खिलाड़ी की तस्वीरों को देखता है"
+        },
+        "de": {
+          "title": "der andere Spieler schaut sich die Fotos der aktuellen Spieler auf ihrem Handy an"
+        },
+        "nl": {
+          "title": "andere speler bekijkt de foto's van de huidige speler op zijn telefoon"
+        },
+        "pl": {
+          "title": "drugi gracz przegląda zdjęcia obecnego gracza w telefonie"
+        },
+        "it": {
+          "title": "l'altro giocatore esamina le foto del giocatore attuale sul proprio telefono"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "Lance uma moeda para determinar qual jogador deve remover uma peça de roupa",
           "extra": "Aumente as apostas para dois itens de vestuário"
+        },
+        "zh": {
+          "title": "掷硬币以确定哪个玩家必须移除衣物"
+        },
+        "tl": {
+          "title": "Lumipat ang isang barya upang matukoy kung aling manlalaro ang kailangang alisin ang isang item ng damit"
+        },
+        "vi": {
+          "title": "Lật đồng xu để xác định người chơi nào phải loại bỏ một vật phẩm quần áo"
+        },
+        "ar": {
+          "title": "اقلب عملة معدنية لتحديد اللاعب الذي يجب عليه إزالة قطعة ملابس"
+        },
+        "fr": {
+          "title": "Lancez une pièce pour déterminer quel joueur doit retirer un vêtement"
+        },
+        "ko": {
+          "title": "동전을 던져 어떤 플레이어가 옷을 벗어야 하는지 결정하세요."
+        },
+        "ru": {
+          "title": "Подбросьте монету, чтобы определить, какой игрок должен снять предмет одежды"
+        },
+        "ht": {
+          "title": "Baskile yon pyès monnen pou detèmine ki jwè gen yo retire yon atik rad"
+        },
+        "hi": {
+          "title": "यह निर्धारित करने के लिए कि किस खिलाड़ी को कपड़ों की वस्तु को हटाना है, एक सिक्का पलटें"
+        },
+        "de": {
+          "title": "Wirf eine Münze, um zu bestimmen, welcher Spieler ein Kleidungsstück ausziehen muss"
+        },
+        "nl": {
+          "title": "Draai een munt om om te bepalen welke speler een kledingstuk moet verwijderen"
+        },
+        "pl": {
+          "title": "Odwróć monetę, aby określić, który gracz musi zdjąć ubranie"
+        },
+        "it": {
+          "title": "Lancia una moneta per determinare quale giocatore deve rimuovere un capo di abbigliamento"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "O jogador da vez está com os olhos vendados e adivinha parte do corpo cheirando",
           "extra": "Determine por degustação"
+        },
+        "zh": {
+          "title": "当前玩家被蒙住眼睛通过闻起来猜出身体部位"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay nakababit at hinulaan ang bahagi ng katawan sa pamamagitan ng amoy"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại bị bịt mắt và đoán phần cơ thể bằng cách ngửi"
+        },
+        "ar": {
+          "title": "اللاعب الحالي معصوب العينين ويخمن جزء الجسم بالرائحة"
+        },
+        "fr": {
+          "title": "Le joueur actuel a les yeux bandés et devine une partie de son corps en sentant"
+        },
+        "ko": {
+          "title": "현재 플레이어는 눈을 가리고 냄새를 맡아 신체 부위를 추측합니다."
+        },
+        "ru": {
+          "title": "Нынешнему игроку завязывают глаза, и он угадывает часть тела по запаху"
+        },
+        "ht": {
+          "title": "Aktyèl jwè se blindfolded ak devine pati kò pa pran sant"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी आंखों पर पट्टी बांधे हुए है और सूंघकर शरीर के अंग का अनुमान लगाता है"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler hat die Augen verbunden und errät durch Riechen einen Körperteil"
+        },
+        "nl": {
+          "title": "De huidige speler is geblinddoekt en raadt lichaamsdeel door te ruiken"
+        },
+        "pl": {
+          "title": "Obecny gracz ma zawiązane oczy i odgaduje część ciała poprzez wąchanie"
+        },
+        "it": {
+          "title": "Il giocatore attuale è bendato e indovina una parte del corpo annusando"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "Ambos os jogadores compartilham uma bebida do mesmo copo sem as mãos",
           "extra": "Use apenas bocas para passar o copo"
+        },
+        "zh": {
+          "title": "两位玩家在没有双手的情况下共用同一个杯子里的饮料"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbabahagi ng inumin mula sa parehong baso nang walang"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chia sẻ đồ uống từ cùng một ly mà không cần tay"
+        },
+        "ar": {
+          "title": "يتشارك كلا اللاعبين مشروبًا من نفس الكوب بدون أيدي"
+        },
+        "fr": {
+          "title": "Les deux joueurs partagent un verre dans le même verre sans les mains"
+        },
+        "ko": {
+          "title": "두 선수는 손을 사용하지 않고 같은 잔으로 음료를 나눕니다."
+        },
+        "ru": {
+          "title": "Оба игрока пьют напиток из одного бокала без рук"
+        },
+        "ht": {
+          "title": "Tou de jwè pataje yon bwè soti nan vè a menm san yo pa men"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी बिना हाथों के एक ही ग्लास से ड्रिंक शेयर करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler teilen sich ein Getränk aus demselben Glas ohne Hände"
+        },
+        "nl": {
+          "title": "Beide spelers drinken zonder handen uit hetzelfde glas"
+        },
+        "pl": {
+          "title": "Obaj gracze dzielą drinka z tej samej szklanki bez rąk"
+        },
+        "it": {
+          "title": "Entrambi i giocatori condividono un drink dallo stesso bicchiere senza mani"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "O jogador da vez faz uma massagem aquem aceita o desafio com um objeto perigoso (por exemplo, gelo)",
           "extra": "Em vez disso, use um telefone vibratório"
+        },
+        "zh": {
+          "title": "当前玩家用危险物体（例如冰）给勇气另一位玩家按摩"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay nagbibigay sa kabilang manlalaro ng masahe na may mapanganib na bagay (hal., yelo)"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại xoa bóp cho người chơi kia với một vật có rủi ro (ví dụ: đá)"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الحالي بتدليك اللاعب الآخر بجسم محفوف بالمخاطر (مثل الثلج)"
+        },
+        "fr": {
+          "title": "Le joueur actuel fait un massage à l'autre joueur avec un objet risqué (de la glace, par exemple)"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 어셉터에게 위험한 물체 (예: 얼음) 로 마사지를 합니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок делает другой игрок массаж опасным предметом (например, льдом)"
+        },
+        "ht": {
+          "title": "Jwè aktyèl lòt jwè a yon masaj ak yon objè ki riske (egzanp, glas)"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को एक जोखिम भरी वस्तु (जैसे, बर्फ) के साथ मालिश देता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler massiert den Wagnisnehmer mit einem riskanten Objekt (z. B. Eis)"
+        },
+        "nl": {
+          "title": "De huidige speler geeft de andere speler een massage met een riskant voorwerp (bijvoorbeeld ijs)"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz masaż ryzykownym przedmiotem (np. lodem)"
+        },
+        "it": {
+          "title": "Il giocatore attuale fa un massaggio a l'altro giocatore con un oggetto rischioso (ad esempio ghiaccio)"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "Ambos os jogadores desenham na pele um do outro com um marcador lavável",
           "extra": "Desenhe em áreas íntimas"
+        },
+        "zh": {
+          "title": "两位玩家都用可水洗的记号笔在对方的皮肤上画画"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumuhit sa balat ng bawat isa gamit ang maaaring hugasan na marker"
+        },
+        "vi": {
+          "title": "Cả hai người chơi vẽ trên da của nhau bằng bút đánh dấu có thể giặt được"
+        },
+        "ar": {
+          "title": "يرسم كلا اللاعبين على جلد بعضهما البعض بعلامة قابلة للغسل"
+        },
+        "fr": {
+          "title": "Les deux joueurs dessinent sur la peau de l'autre avec un marqueur lavable"
+        },
+        "ko": {
+          "title": "두 선수 모두 세탁 가능한 마커로 서로의 피부에 그림을 그립니다."
+        },
+        "ru": {
+          "title": "Оба игрока рисуют на коже друг друга моющимся маркером"
+        },
+        "ht": {
+          "title": "Tou de jwè trase sou po youn ak lòt la ak makè lave"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी वॉशेबल मार्कर के साथ एक-दूसरे की त्वचा पर चित्र बनाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler zeichnen sich gegenseitig mit einem abwaschbaren Marker auf die Haut"
+        },
+        "nl": {
+          "title": "Beide spelers tekenen op elkaars huid met een wasbare stift"
+        },
+        "pl": {
+          "title": "Obaj gracze rysują na skórze zmywalnym markerem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori disegnano sulla pelle dell'altro con un pennarello lavabile"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "O jogador da vez e quem aceita o desafio se beijam através de uma folha de papel",
           "extra": "Ignore o papel"
+        },
+        "zh": {
+          "title": "现任玩家和另一位玩家通过一张纸接吻"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro at kabilang manlalaro ng lakas-loob na halik sa pamamagitan ng isang piraso"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại và người chơi kia hôn qua một mảnh giấy"
+        },
+        "ar": {
+          "title": "اللاعب الحالي واللاعب الآخر يتبادلان القبلات من خلال قطعة من الورق"
+        },
+        "fr": {
+          "title": "Le joueur actuel et l'autre joueur s'embrassent à travers une feuille de papier"
+        },
+        "ko": {
+          "title": "현재 플레이어와 데어 어셉터가 종이 한 장을 통해 키스하고 있습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок и другой игрок целуются сквозь лист бумаги"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ak lòt jwè a bo atravè yon moso papye"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी और दूसरा खिलाड़ी कागज के एक टुकड़े के माध्यम से चूमते हैं"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler und der andere Spieler küssen sich durch ein Blatt Papier"
+        },
+        "nl": {
+          "title": "Huidige speler en andere speler kussen elkaar door een vel papier"
+        },
+        "pl": {
+          "title": "Obecny gracz i drugi gracz całują się przez kartkę papieru"
+        },
+        "it": {
+          "title": "Il giocatore attuale e il giocatore che accetta la sfida si baciano attraverso un pezzo di carta"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "Ambos os jogadores tiram uma selfie em uma posição comprometedora",
           "extra": "Defina-o como papel de parede do telefone por um dia"
+        },
+        "zh": {
+          "title": "两位玩家都以妥协的姿势拍了张自拍照"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay kumukuha ng isang selfie sa isang kompromesyong"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chụp ảnh tự sướng ở vị trí thỏa hiệp"
+        },
+        "ar": {
+          "title": "يلتقط كلا اللاعبين صورة سيلفي في وضع مساوم"
+        },
+        "fr": {
+          "title": "Les deux joueurs prennent un selfie dans une position compromettante"
+        },
+        "ko": {
+          "title": "두 선수 모두 타협적인 자세로 셀카를 찍습니다"
+        },
+        "ru": {
+          "title": "Оба игрока делают селфи в компрометирующей позе"
+        },
+        "ht": {
+          "title": "Tou de jwè yo pran yon selfie nan yon pozisyon konpwomèt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी समझौता करने की स्थिति में सेल्फी लेते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen ein Selfie in einer kompromittierenden Position"
+        },
+        "nl": {
+          "title": "Beide spelers maken een selfie in een compromitterende positie"
+        },
+        "pl": {
+          "title": "Obaj gracze robią selfie w kompromitującej pozycji"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si scattano un selfie in una posizione compromettente"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "Ambos os jogadores correm nus até a caixa de correio e voltam",
           "extra": "Faça uma dança de 30 segundos na caixa de correio"
+        },
+        "zh": {
+          "title": "两名玩家都赤身裸体地走到邮箱外面然后回来"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay hubad sa labas sa mailbox at pabalik"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ khỏa thân bên ngoài hộp thư và trở lại"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يتسلقان عاريين خارج صندوق البريد والعكس."
+        },
+        "fr": {
+          "title": "Les deux joueurs sortent nus de la boîte aux lettres et en reviennent"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 알몸으로 우편함으로 들어갔다가 돌아옵니다."
+        },
+        "ru": {
+          "title": "Оба игрока обнажены на улицу, к почтовому ящику и обратно"
+        },
+        "ht": {
+          "title": "Tou de jwè yo streak toutouni deyò nan bwat la ak tounen"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी मेलबॉक्स के बाहर नग्न होकर वापस लौटते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler laufen nackt nach draußen zum Briefkasten und zurück"
+        },
+        "nl": {
+          "title": "Beide spelers rennen naakt naar buiten, naar de brievenbus en terug"
+        },
+        "pl": {
+          "title": "Obaj gracze przesuwają się nago na zewnątrz do skrzynki pocztowej iz powrotem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori escono nudi all'esterno verso la cassetta postale e viceversa"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "Quem aceita o desafio pode dar uma surra no jogador da vez na bunda nua",
           "extra": "Use um objeto doméstico para dar palmadas"
+        },
+        "zh": {
+          "title": "另一位玩家可以用裸露的屁股打当前玩家"
+        },
+        "tl": {
+          "title": "Nakakakuha ng kabilang manlalaro ang kasalukuyang manlalaro sa hubad na puwit"
+        },
+        "vi": {
+          "title": "người chơi kia được đánh đòn người chơi hiện tại trên mông trần"
+        },
+        "ar": {
+          "title": "يحصل اللاعب الآخر على ضرب اللاعب الحالي على مؤخرته العارية"
+        },
+        "fr": {
+          "title": "l'autre joueur peut donner une fessée au joueur actuel sur les fesses nues"
+        },
+        "ko": {
+          "title": "데어 어셉터가 현재 플레이어의 엉덩이를 때릴 수 있습니다."
+        },
+        "ru": {
+          "title": "другой игрок получает возможность отшлепать текущего игрока по голой заднице"
+        },
+        "ht": {
+          "title": "lòt jwè a vin nan spank aktyèl jwè sou bou a bare"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी को नंगे बट पर वर्तमान खिलाड़ी को स्पैंक करने के लिए मिलता है"
+        },
+        "de": {
+          "title": "der andere Spieler darf den aktuellen Spieler auf den nackten Hintern versohlen"
+        },
+        "nl": {
+          "title": "andere speler mag de huidige speler op zijn blote kont slaan"
+        },
+        "pl": {
+          "title": "drugi gracz dostaje klapsy obecnemu graczowi po gołym tyłku"
+        },
+        "it": {
+          "title": "l'altro giocatore arriva a sculacciare il giocatore attuale sul sedere nudo"
         }
       }
     },
@@ -345,6 +1203,45 @@
         "pt": {
           "title": "O jogador da vez recebe uma dança no colo de quem aceita o desafio",
           "extra": "Adicionar toque guiado"
+        },
+        "zh": {
+          "title": "当前玩家从另一位玩家处获得一圈跳舞"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay tumatanggap ng isang lapdance mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại nhận được một lapdance từ người chơi kia"
+        },
+        "ar": {
+          "title": "يتلقى اللاعب الحالي رقصة من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel reçoit un lapdance de la part de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터로부터 랩댄스를 받음"
+        },
+        "ru": {
+          "title": "Текущий игрок получает танец на коленях от другой игрок"
+        },
+        "ht": {
+          "title": "Jwè aktyèl resevwa yon lapdance soti nan ase lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी को दूसरा खिलाड़ी से एक लैपडांस मिलता है"
+        },
+        "de": {
+          "title": "Aktueller Spieler erhält einen Lapdance von der andere Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt een lapdance van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzymuje lapdance od drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceve una lapdance da l'altro giocatore"
         }
       }
     },
@@ -360,6 +1257,45 @@
         "pt": {
           "title": "O jogador da vez está com os olhos vendados enquantquem aceita o desafio toca seu corpo como quiser",
           "extra": "Explore seu corpo com as mãos e a boca"
+        },
+        "zh": {
+          "title": "当前玩家被蒙住眼睛，而另一位玩家随心所欲地触摸自己的身体"
+        },
+        "tl": {
+          "title": "Nakabit ang kasalukuyang manlalaro habang hinawakan ng kabilang manlalaro ang kanilang katawan gayon man gusto nila"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại bị bịt mắt trong khi người chơi kia chạm vào cơ thể của họ theo cách họ thích"
+        },
+        "ar": {
+          "title": "اللاعب الحالي معصوب العينين بينما يلمس متلقي الجرأة جسده كيفما يحلو له"
+        },
+        "fr": {
+          "title": "Le joueur actuel a les yeux bandés alors que l'autre joueur touche son corps comme il le souhaite"
+        },
+        "ko": {
+          "title": "현재 플레이어는 눈을 가리고 감히 받아들이는 사람이 원하는대로 몸을 만집니다."
+        },
+        "ru": {
+          "title": "Нынешнему игроку завязывают глаза, а другой игрок осмеливается прикасаться к его телу так, как ему нравится"
+        },
+        "ht": {
+          "title": "Aktyèl jwè se blindfolded pandan y ap lòt jwè a manyen kò yo sepandan yo renmen"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी आंखों पर पट्टी बांधे हुए है, जबकि दूसरा खिलाड़ी उनके शरीर को छूता है जैसे वे पसंद करते हैं"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler hat die Augen verbunden, während der andere Spieler seinen Körper nach Belieben berührt"
+        },
+        "nl": {
+          "title": "De huidige speler wordt geblinddoekt terwijl de andere speler zijn lichaam aanraakt zoals hij wil"
+        },
+        "pl": {
+          "title": "Obecny gracz ma zawiązane oczy, podczas gdy drugi gracz dotyka jego ciała, jak tylko chce"
+        },
+        "it": {
+          "title": "Il giocatore attuale è bendato mentre chi accetta la sfida si tocca il corpo come preferisce"
         }
       }
     }

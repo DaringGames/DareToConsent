@@ -13,6 +13,45 @@
         "pt": {
           "title": "Ambos os jogadores revelam uma esperança, sonho ou falha",
           "extra": "Faça disso algo secreto ou embaraçoso"
+        },
+        "zh": {
+          "title": "两位玩家都透露了希望、梦想或缺陷"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagsiwalat ng pag-asa, pangarap, o depekto"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều tiết lộ một hy vọng, giấc mơ hoặc lỗ hổng"
+        },
+        "ar": {
+          "title": "يكشف كلا اللاعبين عن أمل أو حلم أو عيب"
+        },
+        "fr": {
+          "title": "Les deux joueurs dévoilent un espoir, un rêve ou une faille"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 희망, 꿈 또는 결함을 공개합니다."
+        },
+        "ru": {
+          "title": "Оба игрока раскрывают надежду, мечту или недостаток"
+        },
+        "ht": {
+          "title": "Tou de jwè divilge yon espwa, rèv, oswa defo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी आशा, सपने या दोष का खुलासा करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler offenbaren eine Hoffnung, einen Traum oder einen Fehler"
+        },
+        "nl": {
+          "title": "Beide spelers onthullen een hoop, droom of fout"
+        },
+        "pl": {
+          "title": "Obaj gracze ujawniają nadzieję, marzenie lub wadę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori rivelano una speranza, un sogno o un difetto"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Mantenha contato visual por dez segundos",
           "extra": "Além disso, tente sincronizar sua respiração"
+        },
+        "zh": {
+          "title": "保持眼神交流十秒钟"
+        },
+        "tl": {
+          "title": "Panatilihin ang contact sa mata sa loob ng sampung segundo"
+        },
+        "vi": {
+          "title": "Duy trì giao tiếp bằng mắt trong mười giây"
+        },
+        "ar": {
+          "title": "حافظ على التواصل البصري لمدة عشر ثوانٍ"
+        },
+        "fr": {
+          "title": "Maintenez le contact visuel pendant dix secondes"
+        },
+        "ko": {
+          "title": "10초 동안 눈을 마주 치세요"
+        },
+        "ru": {
+          "title": "Поддерживайте зрительный контакт в течение десяти секунд"
+        },
+        "ht": {
+          "title": "Kenbe kontak je pou dis segonn"
+        },
+        "hi": {
+          "title": "दस सेकंड के लिए आंखों का संपर्क बनाए रखें"
+        },
+        "de": {
+          "title": "Halten Sie den Augenkontakt zehn Sekunden lang aufrecht"
+        },
+        "nl": {
+          "title": "Houd gedurende tien seconden oogcontact"
+        },
+        "pl": {
+          "title": "Utrzymuj kontakt wzrokowy przez dziesięć sekund"
+        },
+        "it": {
+          "title": "Mantieni il contatto visivo per dieci secondi"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Compartilhe algo que você nunca contou a ninguém antes",
           "extra": "Faça disso um segredo ou fantasia sexual"
+        },
+        "zh": {
+          "title": "分享你以前从未告诉过任何人的事情"
+        },
+        "tl": {
+          "title": "Ibahagi ang isang bagay na hindi mo pa sinabi sa sinuman dati"
+        },
+        "vi": {
+          "title": "Chia sẻ điều gì đó bạn chưa bao giờ nói với ai trước đây"
+        },
+        "ar": {
+          "title": "شارك شيئًا لم تخبر به أي شخص من قبل"
+        },
+        "fr": {
+          "title": "Partagez quelque chose que vous n'avez jamais dit à personne"
+        },
+        "ko": {
+          "title": "이전에 아무에게도 말하지 않은 내용을 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь тем, о чем вы еще никому не рассказывали"
+        },
+        "ht": {
+          "title": "Pataje yon bagay ou pa janm te di nenpòt moun anvan"
+        },
+        "hi": {
+          "title": "कुछ ऐसा शेयर करें जो आपने पहले कभी किसी को नहीं बताया हो"
+        },
+        "de": {
+          "title": "Teile etwas, das du noch nie jemandem erzählt hast"
+        },
+        "nl": {
+          "title": "Deel iets dat je nog nooit aan iemand hebt verteld"
+        },
+        "pl": {
+          "title": "Podziel się czymś, czego nigdy nikomu nie powiedziałeś"
+        },
+        "it": {
+          "title": "Condividi qualcosa che non hai mai detto a nessuno prima"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Dê um ao outro uma massagem suave nas mãos",
           "extra": "Use loção perfumada e torne-a sensual"
+        },
+        "zh": {
+          "title": "互相温柔地进行手部按摩"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng banayad na masahe sa kamay"
+        },
+        "vi": {
+          "title": "Xoa bóp tay nhẹ nhàng cho nhau"
+        },
+        "ar": {
+          "title": "امنح بعضكما البعض تدليكًا لطيفًا لليدين"
+        },
+        "fr": {
+          "title": "Faites-vous un doux massage des mains"
+        },
+        "ko": {
+          "title": "서로에게 부드러운 손 마사지를 해주세요"
+        },
+        "ru": {
+          "title": "Сделайте друг другу легкий массаж рук"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt yon masaj men dou"
+        },
+        "hi": {
+          "title": "एक-दूसरे को हल्के हाथों की मालिश दें"
+        },
+        "de": {
+          "title": "Geben Sie sich gegenseitig eine sanfte Handmassage"
+        },
+        "nl": {
+          "title": "Geef elkaar een zachte handmassage"
+        },
+        "pl": {
+          "title": "Daj sobie nawzajem delikatny masaż dłoni"
+        },
+        "it": {
+          "title": "Fatevi un leggero massaggio alle mani"
         }
       }
     },
@@ -75,6 +231,45 @@
         "pt": {
           "title": "Revele sua primeira paixão ou experiência romântica",
           "extra": "Compartilhe detalhes sobre o que o tornou empolgante"
+        },
+        "zh": {
+          "title": "透露你的初恋或浪漫经历"
+        },
+        "tl": {
+          "title": "Ibunyag ang iyong unang crush o romantikong karanasan"
+        },
+        "vi": {
+          "title": "Tiết lộ tình yêu đầu tiên hoặc trải nghiệm lãng mạn của bạn"
+        },
+        "ar": {
+          "title": "افصح عن أول تجربة معجبة بك أو رومانسية"
+        },
+        "fr": {
+          "title": "Divulguez votre premier coup de cœur ou votre première expérience romantique"
+        },
+        "ko": {
+          "title": "첫 호감이나 로맨틱한 경험을 공개하세요"
+        },
+        "ru": {
+          "title": "Расскажите о своей первой любви или романтических впечатлениях"
+        },
+        "ht": {
+          "title": "Divilge premye eksperyans kraze oswa amoure ou"
+        },
+        "hi": {
+          "title": "अपने पहले क्रश या रोमांटिक अनुभव का खुलासा करें"
+        },
+        "de": {
+          "title": "Enthülle deinen ersten Schwarm oder dein romantisches Erlebnis"
+        },
+        "nl": {
+          "title": "Onthul je eerste verliefdheid of romantische ervaring"
+        },
+        "pl": {
+          "title": "Ujawnij swoją pierwszą sympatię lub romantyczne doświadczenie"
+        },
+        "it": {
+          "title": "Rivela la tua prima cotta o esperienza romantica"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "Troque massagens nos ombros por um minuto cada",
           "extra": "Retire as camisas e use óleo de massagem"
+        },
+        "zh": {
+          "title": "每次将肩部按摩换成一分钟"
+        },
+        "tl": {
+          "title": "Palitan ang mga massage ng balikat nang isang minuto bawat isa"
+        },
+        "vi": {
+          "title": "Trao đổi massage vai trong một phút mỗi lần"
+        },
+        "ar": {
+          "title": "تبادل تدليك الكتف لمدة دقيقة واحدة لكل منهما"
+        },
+        "fr": {
+          "title": "Échangez les massages des épaules pendant une minute chacun"
+        },
+        "ko": {
+          "title": "어깨 마사지를 각각 1분씩 교환하세요"
+        },
+        "ru": {
+          "title": "Обменный массаж плеч по одной минуте каждый"
+        },
+        "ht": {
+          "title": "Echanj masaj zepòl pou yon minit chak"
+        },
+        "hi": {
+          "title": "एक मिनट के लिए कंधे की मालिश का आदान-प्रदान करें"
+        },
+        "de": {
+          "title": "Tauschen Sie die Schultermassagen für jeweils eine Minute aus"
+        },
+        "nl": {
+          "title": "Wissel schoudermassages uit gedurende elk een minuut"
+        },
+        "pl": {
+          "title": "Wymieniaj masaż ramion przez jedną minutę"
+        },
+        "it": {
+          "title": "Sostituisci i massaggi alle spalle per un minuto ciascuno"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "Compartilhe seu momento mais embaraçoso",
           "extra": "Faça disso algo relacionado sexualmente"
+        },
+        "zh": {
+          "title": "分享你最尴尬的时刻"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong pinaka nakakahiyang sandali"
+        },
+        "vi": {
+          "title": "Chia sẻ khoảnh khắc xấu hổ nhất của bạn"
+        },
+        "ar": {
+          "title": "شارك أكثر اللحظات إحراجًا"
+        },
+        "fr": {
+          "title": "Racontez votre moment le plus embarrassant"
+        },
+        "ko": {
+          "title": "가장 창피했던 순간을 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своим самым неловким моментом"
+        },
+        "ht": {
+          "title": "Pataje moman ki pi anbarasan ou"
+        },
+        "hi": {
+          "title": "अपने सबसे शर्मनाक पल को शेयर करें"
+        },
+        "de": {
+          "title": "Teile deinen peinlichsten Moment"
+        },
+        "nl": {
+          "title": "Deel je meest gênante moment"
+        },
+        "pl": {
+          "title": "Podziel się najbardziej żenującą chwilą"
+        },
+        "it": {
+          "title": "Condividi il tuo momento più imbarazzante"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "Abracem um ao outro com força por 30 segundos",
           "extra": "Adicione um toque suave e elogios sussurrantes"
+        },
+        "zh": {
+          "title": "紧紧地拥抱对方 30 秒钟"
+        },
+        "tl": {
+          "title": "Yakapin ang bawat isa nang mahigpit sa loob ng 30"
+        },
+        "vi": {
+          "title": "Ôm chặt nhau trong 30 giây"
+        },
+        "ar": {
+          "title": "عانقوا بعضكم البعض بإحكام لمدة 30 ثانية"
+        },
+        "fr": {
+          "title": "Serrez-vous fort dans vos bras pendant 30 secondes"
+        },
+        "ko": {
+          "title": "30초 동안 서로 꽉 안아주세요"
+        },
+        "ru": {
+          "title": "Крепко обнимайте друг друга в течение 30 секунд"
+        },
+        "ht": {
+          "title": "Anbrase youn ak lòt byen sere pou 30 segonn"
+        },
+        "hi": {
+          "title": "30 सेकंड के लिए एक-दूसरे को कसकर गले लगाओ"
+        },
+        "de": {
+          "title": "Umarmen Sie sich 30 Sekunden lang fest"
+        },
+        "nl": {
+          "title": "Omhels elkaar 30 seconden stevig"
+        },
+        "pl": {
+          "title": "Przytulaj się mocno przez 30 sekund"
+        },
+        "it": {
+          "title": "Abbracciatevi forte per 30 secondi"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "Compartilhe uma fantasia sexual na qual você nunca atuou",
           "extra": "Descreva-o em detalhes vívidos"
+        },
+        "zh": {
+          "title": "分享你从未演过的性幻想"
+        },
+        "tl": {
+          "title": "Magbahagi ng isang sekswal na pantasya na hindi mo kailanman kumilos"
+        },
+        "vi": {
+          "title": "Chia sẻ một tưởng tượng tình dục mà bạn chưa bao giờ hành động"
+        },
+        "ar": {
+          "title": "شارك خيالًا جنسيًا لم تتصرف وفقًا له من قبل"
+        },
+        "fr": {
+          "title": "Partagez un fantasme sexuel que vous n'avez jamais réalisé"
+        },
+        "ko": {
+          "title": "한 번도 행동한 적 없는 성적 판타지를 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь сексуальной фантазией, в которой вы никогда не снимались"
+        },
+        "ht": {
+          "title": "Pataje yon fantezi seksyèl ou pa janm te aji sou"
+        },
+        "hi": {
+          "title": "एक यौन कल्पना साझा करें जिस पर आपने कभी कार्रवाई नहीं की है"
+        },
+        "de": {
+          "title": "Teile eine sexuelle Fantasie, auf die du noch nie reagiert hast"
+        },
+        "nl": {
+          "title": "Deel een seksuele fantasie waar je nog nooit naar hebt gehandeld"
+        },
+        "pl": {
+          "title": "Podziel się fantazją seksualną, na której nigdy nie działałeś"
+        },
+        "it": {
+          "title": "Condividi una fantasia sessuale su cui non hai mai agito"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "Faça uma massagem nos pés um no outro",
           "extra": "Inclua beijos nos pés"
+        },
+        "zh": {
+          "title": "互相做足部按摩"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng masahe sa paa"
+        },
+        "vi": {
+          "title": "Xoa bóp chân cho nhau"
+        },
+        "ar": {
+          "title": "قم بتدليك القدم لبعضكما البعض"
+        },
+        "fr": {
+          "title": "Faites-vous un massage des pieds"
+        },
+        "ko": {
+          "title": "서로 발 마사지를 해줘"
+        },
+        "ru": {
+          "title": "Сделайте друг другу массаж ног"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt yon masaj pye"
+        },
+        "hi": {
+          "title": "एक दूसरे को पैरों की मालिश दें"
+        },
+        "de": {
+          "title": "Geben Sie sich gegenseitig eine Fußmassage"
+        },
+        "nl": {
+          "title": "Elkaar een voetmassage geven"
+        },
+        "pl": {
+          "title": "Dajcie sobie nawzajem masaż stóp"
+        },
+        "it": {
+          "title": "Fatevi un massaggio ai piedi"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "Divulgue o que mais te excita",
           "extra": "Seja específico sobre as sensações físicas"
+        },
+        "zh": {
+          "title": "揭露最让你兴奋的原因"
+        },
+        "tl": {
+          "title": "Ibunyag kung ano ang pinaka-pinapayagan ka"
+        },
+        "vi": {
+          "title": "Tiết lộ những gì khiến bạn thích thú nhất"
+        },
+        "ar": {
+          "title": "افصح عن أكثر ما يثيرك"
+        },
+        "fr": {
+          "title": "Divulguez ce qui vous excite le plus"
+        },
+        "ko": {
+          "title": "당신을 가장 흥분시키는 것을 공개하세요"
+        },
+        "ru": {
+          "title": "Раскройте, что вас больше всего волнует"
+        },
+        "ht": {
+          "title": "Divilge sa ki vire ou sou pi plis"
+        },
+        "hi": {
+          "title": "खुलासा करें कि आपको सबसे ज्यादा क्या पसंद है"
+        },
+        "de": {
+          "title": "Enthülle, was dich am meisten anmacht"
+        },
+        "nl": {
+          "title": "Vertel wat je het meest opwindt"
+        },
+        "pl": {
+          "title": "Ujawnij, co najbardziej Cię podnieca"
+        },
+        "it": {
+          "title": "Spiega cosa ti eccita di più"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "Dancem lentamente juntos para uma música",
           "extra": "Com as mãos nas bundas"
+        },
+        "zh": {
+          "title": "一起慢舞唱一首歌"
+        },
+        "tl": {
+          "title": "Mabagal na sayaw nang magkasama para sa isang kanta"
+        },
+        "vi": {
+          "title": "Nhảy chậm cùng nhau cho một bài hát"
+        },
+        "ar": {
+          "title": "الرقص البطيء معًا لأغنية واحدة"
+        },
+        "fr": {
+          "title": "Dansez lentement ensemble pour une chanson"
+        },
+        "ko": {
+          "title": "한 곡을 위해 함께 슬로우 댄스를 즐기세요"
+        },
+        "ru": {
+          "title": "Медленный танец вместе под одну песню"
+        },
+        "ht": {
+          "title": "Ralanti dans ansanm pou yon sèl chante"
+        },
+        "hi": {
+          "title": "एक गाने के लिए एक साथ स्लो डांस"
+        },
+        "de": {
+          "title": "Tanzen Sie langsam zusammen für ein Lied"
+        },
+        "nl": {
+          "title": "Dans langzaam samen voor één nummer"
+        },
+        "pl": {
+          "title": "Powolny taniec razem na jedną piosenkę"
+        },
+        "it": {
+          "title": "Ballate lentamente insieme per una canzone"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "Compartilhe seu tipo favorito de beijo",
           "extra": "Demonstre isso nas mãos um do outro"
+        },
+        "zh": {
+          "title": "分享你最喜欢的亲吻类型"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong paboritong uri ng halik"
+        },
+        "vi": {
+          "title": "Chia sẻ kiểu nụ hôn yêu thích của bạn"
+        },
+        "ar": {
+          "title": "شارك نوع القبلة المفضل لديك"
+        },
+        "fr": {
+          "title": "Partagez votre type de baiser préféré"
+        },
+        "ko": {
+          "title": "좋아하는 키스 유형을 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своим любимым типом поцелуя"
+        },
+        "ht": {
+          "title": "Pataje kalite bo pi renmen ou"
+        },
+        "hi": {
+          "title": "अपने पसंदीदा प्रकार के चुंबन को साझा करें"
+        },
+        "de": {
+          "title": "Teile deine Lieblingsart von Kuss"
+        },
+        "nl": {
+          "title": "Deel je favoriete soort kus"
+        },
+        "pl": {
+          "title": "Podziel się swoim ulubionym rodzajem pocałunku"
+        },
+        "it": {
+          "title": "Condividi il tuo tipo di bacio preferito"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "Dê um ao outro uma massagem no couro cabeludo",
           "extra": "Inclua um puxão suave do cabelo, se desejar"
+        },
+        "zh": {
+          "title": "互相按摩头皮"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng masahe sa anit"
+        },
+        "vi": {
+          "title": "Massage da đầu cho nhau"
+        },
+        "ar": {
+          "title": "قم بتدليك فروة الرأس لبعضكما البعض"
+        },
+        "fr": {
+          "title": "Faites-vous un massage du cuir chevelu"
+        },
+        "ko": {
+          "title": "서로에게 두피 마사지를 해줘"
+        },
+        "ru": {
+          "title": "Сделайте друг другу массаж кожи головы"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt yon masaj po tèt"
+        },
+        "hi": {
+          "title": "एक-दूसरे को स्कैल्प मसाज दें"
+        },
+        "de": {
+          "title": "Geben Sie sich gegenseitig eine Kopfmassage"
+        },
+        "nl": {
+          "title": "Geef elkaar een hoofdhuidmassage"
+        },
+        "pl": {
+          "title": "Daj sobie nawzajem masaż skóry głowy"
+        },
+        "it": {
+          "title": "Fatevi un massaggio al cuoio capelluto"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "Compartilhe sua experiência sexual mais aventureira",
           "extra": "Inclua todos os detalhes interessantes"
+        },
+        "zh": {
+          "title": "分享你最冒险的性经历"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong pinaka-nakakatakbo na sekswal na karanasan"
+        },
+        "vi": {
+          "title": "Chia sẻ trải nghiệm tình dục mạo hiểm nhất của bạn"
+        },
+        "ar": {
+          "title": "شارك تجربتك الجنسية الأكثر مغامرة"
+        },
+        "fr": {
+          "title": "Partagez votre expérience sexuelle la plus aventureuse"
+        },
+        "ko": {
+          "title": "가장 모험적인 성적 경험을 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своим самым смелым сексуальным опытом"
+        },
+        "ht": {
+          "title": "Pataje eksperyans seksyèl ki pi avantur ou"
+        },
+        "hi": {
+          "title": "अपने सबसे साहसी यौन अनुभव को साझा करें"
+        },
+        "de": {
+          "title": "Teilen Sie Ihre abenteuerlichste sexuelle Erfahrung"
+        },
+        "nl": {
+          "title": "Deel je meest avontuurlijke seksuele ervaring"
+        },
+        "pl": {
+          "title": "Podziel się swoim najbardziej odważnym doświadczeniem seksualnym"
+        },
+        "it": {
+          "title": "Condividi la tua esperienza sessuale più avventurosa"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "Abracem em pé e balançam juntos",
           "extra": "Adicione uma moagem suave uma contra a outra"
+        },
+        "zh": {
+          "title": "站立时拥抱，一起摇摆"
+        },
+        "tl": {
+          "title": "Yakapin habang nakatayo at magkakasama"
+        },
+        "vi": {
+          "title": "Ôm trong khi đứng và lắc lư cùng nhau"
+        },
+        "ar": {
+          "title": "احتضن أثناء الوقوف والتأرجح معًا"
+        },
+        "fr": {
+          "title": "Embrassez-vous debout et balancez-vous ensemble"
+        },
+        "ko": {
+          "title": "서서 포옹하고 함께 흔들어보세요"
+        },
+        "ru": {
+          "title": "Обнимайтесь стоя и покачивайтесь вместе"
+        },
+        "ht": {
+          "title": "Anbrase pandan y ap kanpe ak souse ansanm"
+        },
+        "hi": {
+          "title": "खड़े होकर गले लगाओ और एक साथ बोलो"
+        },
+        "de": {
+          "title": "Umarmen Sie sich im Stehen und schwanken Sie gemeinsam"
+        },
+        "nl": {
+          "title": "Omarm elkaar terwijl je staat en zwaai samen"
+        },
+        "pl": {
+          "title": "Obciskaj się stojąc i kołyszcie się razem"
+        },
+        "it": {
+          "title": "Abbracciati stando in piedi e ondeggiando insieme"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "Divulgue o que vocês acham mais atraente um no outro",
           "extra": "Seja específico sobre as características físicas"
+        },
+        "zh": {
+          "title": "透露你认为彼此最有吸引力的东西"
+        },
+        "tl": {
+          "title": "Ibunyag kung ano ang pinaka-kaakit-akit mo tungkol sa bawat isa"
+        },
+        "vi": {
+          "title": "Tiết lộ những gì bạn thấy hấp dẫn nhất ở nhau"
+        },
+        "ar": {
+          "title": "افصح عما تجده أكثر جاذبية في بعضكما البعض"
+        },
+        "fr": {
+          "title": "Divulguez ce que vous trouvez le plus attrayant l'un chez l'autre"
+        },
+        "ko": {
+          "title": "서로에 대해 가장 매력적이라고 생각하는 점을 공개하세요"
+        },
+        "ru": {
+          "title": "Расскажите друг о друге, что вас больше всего привлекает"
+        },
+        "ht": {
+          "title": "Divilge sa ou jwenn pi atire sou youn ak lòt"
+        },
+        "hi": {
+          "title": "आपको एक-दूसरे के बारे में सबसे आकर्षक क्या लगता है, इसका खुलासा करें"
+        },
+        "de": {
+          "title": "Teilen Sie mit, was Sie aneinander am attraktivsten finden"
+        },
+        "nl": {
+          "title": "Vertel wat je het aantrekkelijkst vindt aan elkaar"
+        },
+        "pl": {
+          "title": "Ujawnij, co uważasz za najbardziej atrakcyjne w sobie nawzajem"
+        },
+        "it": {
+          "title": "Rivela ciò che ritieni più attraente l'uno dell'altro"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "Beije um ao outro na boca por 10 segundos",
           "extra": "Adicione a língua e torne-a apaixonada"
+        },
+        "zh": {
+          "title": "在嘴唇上互相亲吻 10 秒钟"
+        },
+        "tl": {
+          "title": "Halikan ang bawat isa sa labi sa loob ng 10 segundo"
+        },
+        "vi": {
+          "title": "Hôn nhau trên môi trong 10 giây"
+        },
+        "ar": {
+          "title": "قبّل بعضكما البعض على الشفاه لمدة 10 ثوانٍ"
+        },
+        "fr": {
+          "title": "Embrassez-vous sur les lèvres pendant 10 secondes"
+        },
+        "ko": {
+          "title": "10 초 동안 서로 입술에 키스하십시오"
+        },
+        "ru": {
+          "title": "Целуйте друг друга в губы в течение 10 секунд"
+        },
+        "ht": {
+          "title": "Bo youn ak lòt sou bouch yo pou 10 segonn"
+        },
+        "hi": {
+          "title": "10 सेकंड के लिए होंठों पर एक दूसरे को चूमो"
+        },
+        "de": {
+          "title": "Küssen Sie sich 10 Sekunden lang auf die Lippen"
+        },
+        "nl": {
+          "title": "Kus elkaar gedurende 10 seconden op de lippen"
+        },
+        "pl": {
+          "title": "Całujcie się nawzajem w usta przez 10 sekund"
+        },
+        "it": {
+          "title": "Baciatevi sulle labbra per 10 secondi"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "Compartilhe seu desejo sexual mais selvagem",
           "extra": "Sem limites - seja completamente honesto"
+        },
+        "zh": {
+          "title": "分享你最疯狂的性欲"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong pinakamataas na sekswal na pagnanasa"
+        },
+        "vi": {
+          "title": "Chia sẻ ham muốn tình dục hoang dã nhất của bạn"
+        },
+        "ar": {
+          "title": "شاركي رغبتك الجنسية الأكثر جموحًا"
+        },
+        "fr": {
+          "title": "Partagez votre désir sexuel le plus fou"
+        },
+        "ko": {
+          "title": "당신의 가장 거친 성적 욕망을 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своим самым смелым сексуальным желанием"
+        },
+        "ht": {
+          "title": "Pataje dezi seksyèl sovaj ou"
+        },
+        "hi": {
+          "title": "अपनी बेतहाशा यौन इच्छा को साझा करें"
+        },
+        "de": {
+          "title": "Teile dein wildestes sexuelles Verlangen"
+        },
+        "nl": {
+          "title": "Deel je stoutste seksuele begeerte"
+        },
+        "pl": {
+          "title": "Podziel się swoim najdzikszym pożądaniem seksualnym"
+        },
+        "it": {
+          "title": "Condividi il tuo desiderio sessuale più selvaggio"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "Beije enquanto está sentado cara a cara",
           "extra": "Deixe as mãos explorarem os corpos umas das outras"
+        },
+        "zh": {
+          "title": "面对面坐着亲密接触"
+        },
+        "tl": {
+          "title": "Lumabas habang nakaupo nang harapan"
+        },
+        "vi": {
+          "title": "Làm tình trong khi ngồi đối mặt"
+        },
+        "ar": {
+          "title": "مارس الرياضة أثناء الجلوس وجهًا لوجه"
+        },
+        "fr": {
+          "title": "Fais-toi asseoir face à face"
+        },
+        "ko": {
+          "title": "얼굴을 맞대고 앉아 대화를 나누세요"
+        },
+        "ru": {
+          "title": "Поцельтесь, сидя лицом к лицу"
+        },
+        "ht": {
+          "title": "Fè deyò pandan y ap chita fas-a-fas"
+        },
+        "hi": {
+          "title": "आमने-सामने बैठकर मेकअप करें"
+        },
+        "de": {
+          "title": "Machen Sie aus, während Sie von Angesicht zu Angesicht sitzen"
+        },
+        "nl": {
+          "title": "Lekker zoenen terwijl je oog in oog zit"
+        },
+        "pl": {
+          "title": "Poczuj się siedząc twarzą w twarz"
+        },
+        "it": {
+          "title": "Distenditi mentre sei seduto faccia a faccia"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "Beije o pescoço e as clavículas um do outro",
           "extra": "Adicione mordidas e sucções suaves"
+        },
+        "zh": {
+          "title": "亲吻对方的脖子和锁骨"
+        },
+        "tl": {
+          "title": "Halikan ang mga leeg at collarbone ng bawat isa"
+        },
+        "vi": {
+          "title": "Hôn cổ và xương đòn của nhau"
+        },
+        "ar": {
+          "title": "قبّلوا أعناق بعضهم البعض وعظام الترقوة"
+        },
+        "fr": {
+          "title": "Embrasse-toi le cou et les clavicules"
+        },
+        "ko": {
+          "title": "서로의 목과 쇄골에 키스하기"
+        },
+        "ru": {
+          "title": "Целуйте друг друга в шею и ключицы"
+        },
+        "ht": {
+          "title": "Bo kou chak lòt yo ak kolarbone"
+        },
+        "hi": {
+          "title": "एक दूसरे की गर्दन और कॉलरबोन को चूमो"
+        },
+        "de": {
+          "title": "Küsst euch gegenseitig Hals und Schlüsselbein"
+        },
+        "nl": {
+          "title": "Kus elkaars nek en sleutelbeenderen"
+        },
+        "pl": {
+          "title": "Całujcie sobie nawzajem szyje i obojczyki"
+        },
+        "it": {
+          "title": "Baciatevi il collo e le clavicole"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "Compartilhe seu cenário sexual ideal",
           "extra": "Descreva como se estivesse dirigindo um filme"
+        },
+        "zh": {
+          "title": "分享你理想的性爱场景"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong mainam na sekswal na sitwas"
+        },
+        "vi": {
+          "title": "Chia sẻ kịch bản tình dục lý tưởng của bạn"
+        },
+        "ar": {
+          "title": "شارك السيناريو الجنسي المثالي"
+        },
+        "fr": {
+          "title": "Partagez votre scénario sexuel idéal"
+        },
+        "ko": {
+          "title": "이상적인 성적 시나리오를 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своим идеальным сексуальным сценарием"
+        },
+        "ht": {
+          "title": "Pataje senaryo seksyèl ideyal ou"
+        },
+        "hi": {
+          "title": "अपना आदर्श यौन परिदृश्य शेयर करें"
+        },
+        "de": {
+          "title": "Teilen Sie Ihr ideales sexuelles Szenario"
+        },
+        "nl": {
+          "title": "Deel je ideale seksuele scenario"
+        },
+        "pl": {
+          "title": "Podziel się swoim idealnym scenariuszem seksualnym"
+        },
+        "it": {
+          "title": "Condividi il tuo scenario sessuale ideale"
         }
       }
     },
@@ -345,6 +1203,45 @@
         "pt": {
           "title": "Beije com um jogador cruzando o outro",
           "extra": "Adicione trituração e exploração corporal"
+        },
+        "zh": {
+          "title": "让一个玩家跨越另一个玩家"
+        },
+        "tl": {
+          "title": "Lumabas kasama ang isang manlalaro na naglalakbay sa isa pa"
+        },
+        "vi": {
+          "title": "Làm tình với một người chơi nằm ngang qua người kia"
+        },
+        "ar": {
+          "title": "استمتع باللعب مع لاعب واحد متداخلاً مع الآخر"
+        },
+        "fr": {
+          "title": "Combattez avec un joueur à cheval sur l'autre"
+        },
+        "ko": {
+          "title": "한 플레이어가 다른 플레이어에 모여 경쟁하세요"
+        },
+        "ru": {
+          "title": "Поцелуй, когда один игрок сидит рядом с другим"
+        },
+        "ht": {
+          "title": "Fè soti ak yon sèl jwè straddling lòt la"
+        },
+        "hi": {
+          "title": "एक खिलाड़ी के साथ दूसरे को स्ट्रैडलिंग करके बाहर निकलें"
+        },
+        "de": {
+          "title": "Machen Sie mit einem Spieler zusammen, der den anderen überspannt"
+        },
+        "nl": {
+          "title": "Doe alsof de ene speler tegenover de andere staat"
+        },
+        "pl": {
+          "title": "Poczuj się z jednym graczem na drugim"
+        },
+        "it": {
+          "title": "Fai amicizia con un giocatore a cavallo dell'altro"
         }
       }
     },
@@ -360,6 +1257,45 @@
         "pt": {
           "title": "Revele sua parte mais sensível do corpo",
           "extra": "Permita que a outra pessoa toque suavemente"
+        },
+        "zh": {
+          "title": "透露你最敏感的身体部位"
+        },
+        "tl": {
+          "title": "Ibunyag ang iyong pinaka-sensitibong bahagi ng katawan"
+        },
+        "vi": {
+          "title": "Tiết lộ phần cơ thể nhạy cảm nhất của bạn"
+        },
+        "ar": {
+          "title": "افصح عن الجزء الأكثر حساسية من جسمك"
+        },
+        "fr": {
+          "title": "Dévoilez votre partie du corps la plus sensible"
+        },
+        "ko": {
+          "title": "가장 민감한 신체 부위를 공개하세요"
+        },
+        "ru": {
+          "title": "Раскройте самую чувствительную часть тела"
+        },
+        "ht": {
+          "title": "Divilge pati kò ki pi sansib ou"
+        },
+        "hi": {
+          "title": "अपने सबसे संवेदनशील शरीर के अंग का खुलासा करें"
+        },
+        "de": {
+          "title": "Enthülle deinen empfindlichsten Körperteil"
+        },
+        "nl": {
+          "title": "Onthul je meest gevoelige lichaamsdeel"
+        },
+        "pl": {
+          "title": "Ujawnij swoją najbardziej wrażliwą część ciała"
+        },
+        "it": {
+          "title": "Rivela la parte del tuo corpo più sensibile"
         }
       }
     },
@@ -375,6 +1311,45 @@
         "pt": {
           "title": "Ambos os jogadores mostram brevemente uma parte íntima do corpo",
           "extra": "Mantenha-o exposto pelo resto do jogo"
+        },
+        "zh": {
+          "title": "两位玩家都短暂地闪过一个亲密的身体部位"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nag-flash ng isang matalik na bahagi ng"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chớp một phần thân mật trong thời gian ngắn"
+        },
+        "ar": {
+          "title": "يضيء كلا اللاعبين جزءًا حميمًا من الجسم لفترة وجيزة"
+        },
+        "fr": {
+          "title": "Les deux joueurs montrent brièvement une partie intime du corps"
+        },
+        "ko": {
+          "title": "두 선수 모두 친밀한 신체 부위를 짧게 깜박입니다."
+        },
+        "ru": {
+          "title": "Оба игрока ненадолго мелькают интимной частью тела."
+        },
+        "ht": {
+          "title": "Tou de jwè flash yon pati kò entim yon ti tan"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक अंतरंग शरीर के अंग को संक्षेप में फ्लैश करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler lassen kurz ein intimes Körperteil aufblitzen."
+        },
+        "nl": {
+          "title": "Beide spelers laten kort een intiem lichaamsdeel zien"
+        },
+        "pl": {
+          "title": "Obaj gracze krótko flashują intymną częścią ciała"
+        },
+        "it": {
+          "title": "Entrambi i giocatori mostrano brevemente una parte intima del corpo"
         }
       }
     },
@@ -390,6 +1365,45 @@
         "pt": {
           "title": "Compartilhe sua posição sexual favorita",
           "extra": "Demonstre que está totalmente vestido"
+        },
+        "zh": {
+          "title": "分享你最喜欢的性爱姿势"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong paboritong sekswal na posisyon"
+        },
+        "vi": {
+          "title": "Chia sẻ tư thế tình dục yêu thích của bạn"
+        },
+        "ar": {
+          "title": "شارك وضعك الجنسي المفضل"
+        },
+        "fr": {
+          "title": "Partagez votre position sexuelle préférée"
+        },
+        "ko": {
+          "title": "좋아하는 성적 위치를 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своей любимой сексуальной позицией"
+        },
+        "ht": {
+          "title": "Pataje pozisyon seksyèl pi renmen ou"
+        },
+        "hi": {
+          "title": "अपनी पसंदीदा यौन स्थिति साझा करें"
+        },
+        "de": {
+          "title": "Teilen Sie Ihre sexuelle Lieblingsposition"
+        },
+        "nl": {
+          "title": "Deel je favoriete seksuele positie"
+        },
+        "pl": {
+          "title": "Podziel się swoją ulubioną pozycją seksualną"
+        },
+        "it": {
+          "title": "Condividi la tua posizione sessuale preferita"
         }
       }
     },
@@ -405,6 +1419,45 @@
         "pt": {
           "title": "Bata debaixo de um cobertor com o toque permitido",
           "extra": "Remova a roupa até o nível de conforto"
+        },
+        "zh": {
+          "title": "在允许触摸的情况下在毯子下亲吻"
+        },
+        "tl": {
+          "title": "Gumawa sa ilalim ng kumot na may pinapayagan ang paghawak"
+        },
+        "vi": {
+          "title": "Làm đẹp dưới chăn với phép chạm vào"
+        },
+        "ar": {
+          "title": "اخرج تحت بطانية مع السماح باللمس"
+        },
+        "fr": {
+          "title": "Faites-vous maquiller sous une couverture en vous laissant toucher"
+        },
+        "ko": {
+          "title": "담요 아래에서 만져도 돼요"
+        },
+        "ru": {
+          "title": "Поцелуйтесь под одеялом, прикосновения разрешены"
+        },
+        "ht": {
+          "title": "Fè soti anba yon dra ak manyen pèmèt"
+        },
+        "hi": {
+          "title": "स्पर्श करने की अनुमति के साथ कंबल के नीचे मेकअप करें"
+        },
+        "de": {
+          "title": "Unter einer Decke rummachen, Berühren ist erlaubt"
+        },
+        "nl": {
+          "title": "Onder een deken zoenen, aanraken is toegestaan."
+        },
+        "pl": {
+          "title": "Rozbieraj się pod kocem z dozwolonym dotykiem"
+        },
+        "it": {
+          "title": "Uscire sotto una coperta con il tocco consentito"
         }
       }
     },
@@ -420,6 +1473,45 @@
         "pt": {
           "title": "Revele sua fantasia sexual definitiva",
           "extra": "Sem limites - seja completamente explícito"
+        },
+        "zh": {
+          "title": "透露你的终极性幻想"
+        },
+        "tl": {
+          "title": "Ibunyag ang iyong pangwakas na pantasiya"
+        },
+        "vi": {
+          "title": "Tiết lộ trí tưởng tượng tình dục cuối cùng của bạn"
+        },
+        "ar": {
+          "title": "افصح عن خيالك الجنسي المطلق"
+        },
+        "fr": {
+          "title": "Révélez votre fantasme sexuel ultime"
+        },
+        "ko": {
+          "title": "궁극의 성적 판타지를 공개하세요"
+        },
+        "ru": {
+          "title": "Раскройте свои самые яркие сексуальные фантазии"
+        },
+        "ht": {
+          "title": "Divilge ultim fantezi seksyèl ou"
+        },
+        "hi": {
+          "title": "अपनी परम यौन कल्पना का खुलासा करें"
+        },
+        "de": {
+          "title": "Enthülle deine ultimative sexuelle Fantasie"
+        },
+        "nl": {
+          "title": "Onthul je ultieme seksuele fantasie"
+        },
+        "pl": {
+          "title": "Ujawnij swoją ostateczną fantazję seksualną"
+        },
+        "it": {
+          "title": "Rivela la tua fantasia sessuale definitiva"
         }
       }
     },
@@ -435,6 +1527,45 @@
         "pt": {
           "title": "Faça um ao outro uma massagem de corpo inteiro com óleo",
           "extra": "Inclua áreas íntimas"
+        },
+        "zh": {
+          "title": "用精油互相进行全身按摩"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng isang buong masahe sa katawan na may langis"
+        },
+        "vi": {
+          "title": "Cho nhau massage toàn thân bằng dầu"
+        },
+        "ar": {
+          "title": "امنحي بعضكما البعض تدليكًا لكامل الجسم بالزيت"
+        },
+        "fr": {
+          "title": "Faites-vous un massage complet du corps avec de l'huile"
+        },
+        "ko": {
+          "title": "서로에게 오일로 전신 마사지를 해주세요"
+        },
+        "ru": {
+          "title": "Сделайте друг другу массаж всего тела с маслом"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt yon masaj kò plen ak lwil oliv"
+        },
+        "hi": {
+          "title": "एक दूसरे को तेल से पूरे शरीर की मालिश दें"
+        },
+        "de": {
+          "title": "Gönnen Sie sich gegenseitig eine Ganzkörpermassage mit Öl"
+        },
+        "nl": {
+          "title": "Geef elkaar een volledige lichaamsmassage met olie"
+        },
+        "pl": {
+          "title": "Daj sobie nawzajem masaż całego ciała olejem"
+        },
+        "it": {
+          "title": "Fatevi un massaggio completo con olio"
         }
       }
     },
@@ -450,6 +1581,45 @@
         "pt": {
           "title": "Compartilhe sua experiência de orgasmo mais intensa",
           "extra": "Descreva-o em detalhes explícitos"
+        },
+        "zh": {
+          "title": "分享你最激烈的性高潮体验"
+        },
+        "tl": {
+          "title": "Ibahagi ang iyong pinaka matinding karanasan sa orgasm"
+        },
+        "vi": {
+          "title": "Chia sẻ trải nghiệm cực khoái mãnh liệt nhất của bạn"
+        },
+        "ar": {
+          "title": "شارك تجربة النشوة الجنسية الأكثر كثافة"
+        },
+        "fr": {
+          "title": "Partagez votre expérience d'orgasme la plus intense"
+        },
+        "ko": {
+          "title": "가장 강렬한 오르가즘 경험을 공유하세요"
+        },
+        "ru": {
+          "title": "Поделитесь своим самым интенсивным опытом оргазма"
+        },
+        "ht": {
+          "title": "Pataje eksperyans orgasme ki pi entans ou"
+        },
+        "hi": {
+          "title": "अपने सबसे तीव्र संभोग अनुभव को साझा करें"
+        },
+        "de": {
+          "title": "Teile dein intensivstes Orgasmus-Erlebnis"
+        },
+        "nl": {
+          "title": "Deel je meest intense orgasme-ervaring"
+        },
+        "pl": {
+          "title": "Podziel się swoim najbardziej intensywnym doświadczeniem orgazmu"
+        },
+        "it": {
+          "title": "Condividi la tua esperienza di orgasmo più intensa"
         }
       }
     },
@@ -465,6 +1635,45 @@
         "pt": {
           "title": "Sete minutos no céu - faça o que quiser em um armário",
           "extra": "Busque o prazer mútuo e o clímax"
+        },
+        "zh": {
+          "title": "在天堂待七分钟 —— 在壁橱里随心所欲"
+        },
+        "tl": {
+          "title": "Pitong minuto sa langit - gawin ang anumang gusto mo sa isang aparador"
+        },
+        "vi": {
+          "title": "Bảy phút trên thiên đường - làm bất cứ điều gì bạn muốn trong tủ quần áo"
+        },
+        "ar": {
+          "title": "سبع دقائق في الجنة - افعل ما تريد في خزانة"
+        },
+        "fr": {
+          "title": "Sept minutes au paradis, fais ce que tu veux dans un placard"
+        },
+        "ko": {
+          "title": "천국에서의 7분 - 옷장에서 원하는 건 뭐든 하세요"
+        },
+        "ru": {
+          "title": "Семь минут в раю — делайте в шкафу все, что захотите"
+        },
+        "ht": {
+          "title": "Sèt minit nan syèl la - fè tou sa ou vle nan yon klozèt"
+        },
+        "hi": {
+          "title": "स्वर्ग में सात मिनट - एक कोठरी में जो चाहो करो"
+        },
+        "de": {
+          "title": "Sieben Minuten im Himmel — mach was du willst in einem Schrank"
+        },
+        "nl": {
+          "title": "Zeven minuten in de hemel - doe wat je wilt in een kast"
+        },
+        "pl": {
+          "title": "Siedem minut w niebie - rób co chcesz w szafie"
+        },
+        "it": {
+          "title": "Sette minuti in paradiso: fai quello che vuoi in un armadio"
         }
       }
     }

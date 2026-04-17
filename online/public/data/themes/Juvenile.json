@@ -13,6 +13,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem caretas um para o outro",
           "extra": "Além disso, faça ruídos imaturos"
+        },
+        "zh": {
+          "title": "两位玩家互相做傻脸"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng mga hangal na mukha sa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều tạo ra những khuôn mặt ngớ ngẩn với nhau"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يصنعون وجوهًا سخيفة لبعضهم البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se font des grimaces"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로 우스꽝스러운 표정을 짓습니다."
+        },
+        "ru": {
+          "title": "Оба игрока глупо смотрят друг на друга"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè fas sibtilè youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे पर मूर्खतापूर्ण चेहरे बनाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler werfen sich gegenseitig dumme Gesichter an"
+        },
+        "nl": {
+          "title": "Beide spelers trekken domme gezichten naar elkaar."
+        },
+        "pl": {
+          "title": "Obaj gracze robią sobie głupie twarze"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si fanno smorfie stupide"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Ambos os jogadores olham para o nariz um do outro",
           "extra": "Além disso, descreva melecas como um ávido arqueólogo"
+        },
+        "zh": {
+          "title": "两个玩家互相抬头看着对方的鼻子"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay tumitingin sa ilong ng bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ nhìn lên mũi của nhau"
+        },
+        "ar": {
+          "title": "يبحث كلا اللاعبين عن أنوف بعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs regardent le nez de l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 코를 올려다본다"
+        },
+        "ru": {
+          "title": "Оба игрока смотрят друг другу в нос"
+        },
+        "ht": {
+          "title": "Tou de jwè gade moute nen youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की नाक ऊपर देखते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler schauen sich gegenseitig in die Nase"
+        },
+        "nl": {
+          "title": "Beide spelers kijken elkaar in de neus"
+        },
+        "pl": {
+          "title": "Obaj gracze patrzą sobie nawzajem w nos"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si guardano nel naso"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Ambos os jogadores emitem sons de peido nas axilas um para o outro",
           "extra": "Tente fazer peidos reais também."
+        },
+        "zh": {
+          "title": "两个玩家互相发出腋下放屁的声音"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng tunog ng kilikili sa bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi phát ra âm thanh rắm nách với nhau"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يصدران أصوات ضرطة الإبط على بعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs émettent des sons de pet aux aisselles"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로 겨드랑이 방귀 소리를 냅니다."
+        },
+        "ru": {
+          "title": "Оба игрока издают пердящие звуки подмышек друг на друга"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè son anbabra fart nan youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे पर कांख, पाद की आवाजें निकालते हैं।"
+        },
+        "de": {
+          "title": "Beide Spieler geben sich gegenseitig Furzgeräusche in der Achselhöhle an"
+        },
+        "nl": {
+          "title": "Beide spelers maken okselscheetgeluiden naar elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze wydają na siebie dźwięki pierdzenia pod pachami"
+        },
+        "it": {
+          "title": "Entrambi i giocatori emettono suoni di scoreggia con le ascelle"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Quem aceita o desafio cheirará os peidos do jogador da vez",
           "extra": "Além disso, descreva o que você acha que eles comeram"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会嗅探当前玩家的屁声"
+        },
+        "tl": {
+          "title": "Susuhin ng kabilang manlalaro ang mga farts ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ ngửi rắm rắm của người chơi hiện tại"
+        },
+        "ar": {
+          "title": "سوف يقوم اللاعب الآخر بشم ضرطة اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur va renifler les pets du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 방귀 냄새를 맡을 수 있습니다"
+        },
+        "ru": {
+          "title": "другой игрок будет нюхать пуки текущего игрока"
+        },
+        "ht": {
+          "title": "lòt jwè a pral sniff farts jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के farts को सूँघेगा"
+        },
+        "de": {
+          "title": "der andere Spieler schnüffelt an den Fürzen des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "andere speler zal de scheten van de huidige speler opsnuiven"
+        },
+        "pl": {
+          "title": "drugi gracz powącha pierdy obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore annuserà le scoregge del giocatore attuale"
         }
       }
     },
@@ -75,6 +231,45 @@
         "pt": {
           "title": "Ambos os jogadores tentam arrotar todo o alfabeto",
           "extra": "Além disso, arrotem os nomes uns dos outros"
+        },
+        "zh": {
+          "title": "两位玩家都试图在整个 ABC 上打嗝"
+        },
+        "tl": {
+          "title": "Sinusubukan ng parehong mga manlalaro na burupin ang buong ABC"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều cố gắng ợ hơi toàn bộ ABC"
+        },
+        "ar": {
+          "title": "يحاول كلا اللاعبين تجشؤ الحروف الأبجدية بأكملها."
+        },
+        "fr": {
+          "title": "Les deux joueurs tentent de roter l'intégralité de l'ABC"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 ABC 전체를 버핑하려고 시도합니다."
+        },
+        "ru": {
+          "title": "Оба игрока пытаются отрыгнуть всю азбуку"
+        },
+        "ht": {
+          "title": "Tou de jwè yo eseye burp ABC yo tout antye"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी पूरे ABC को डकारने का प्रयास करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler versuchen, das gesamte ABC rülpsen zu lassen"
+        },
+        "nl": {
+          "title": "Beide spelers proberen het hele ABC te laten boeren"
+        },
+        "pl": {
+          "title": "Obaj gracze próbują zerwać całe ABC"
+        },
+        "it": {
+          "title": "Entrambi i giocatori tentano di ruttare l'intero ABC"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "Quem pode fazer a caminhada mais boba?",
           "extra": "Além disso, adicione efeitos sonoros ridículos à caminhada"
+        },
+        "zh": {
+          "title": "谁能走更愚蠢的路？"
+        },
+        "tl": {
+          "title": "Sino ang maaaring gumawa ng sillier walk?"
+        },
+        "vi": {
+          "title": "Ai có thể đi bộ ngớ ngẩn hơn?"
+        },
+        "ar": {
+          "title": "من يستطيع القيام بالمشي الأكثر سخافة؟"
+        },
+        "fr": {
+          "title": "Qui peut faire la plus stupide marche ?"
+        },
+        "ko": {
+          "title": "누가 더 실리 워크를 할 수 있을까요?"
+        },
+        "ru": {
+          "title": "Кто может ходить глупее?"
+        },
+        "ht": {
+          "title": "Ki moun ki ka fè mache sillier la?"
+        },
+        "hi": {
+          "title": "सिलियर वॉक कौन कर सकता है?"
+        },
+        "de": {
+          "title": "Wer kann den dümmeren Spaziergang machen?"
+        },
+        "nl": {
+          "title": "Wie kan de gekkere wandeling maken?"
+        },
+        "pl": {
+          "title": "Kto może zrobić głupszy spacer?"
+        },
+        "it": {
+          "title": "Chi sa fare la camminata più stupida?"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "Ambos os jogadores comparam coleções de fiapos para umbigo",
           "extra": "Além disso, negocie e exiba as melhores peças"
+        },
+        "zh": {
+          "title": "两位玩家都比较了肚脐绒毛的收藏"
+        },
+        "tl": {
+          "title": "Inihambing ng parehong mga manlalaro ang mga koleksyon ng buto"
+        },
+        "vi": {
+          "title": "Cả hai người chơi so sánh các bộ sưu tập xơ vải rốn"
+        },
+        "ar": {
+          "title": "يقارن كلا اللاعبين مجموعات الوبر على زر البطن"
+        },
+        "fr": {
+          "title": "Les deux joueurs comparent leurs collections de peluches pour nombril"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 배꼽 린트 컬렉션을 비교합니다"
+        },
+        "ru": {
+          "title": "Оба игрока сравнивают коллекции ворса для пупка"
+        },
+        "ht": {
+          "title": "Tou de jwè konpare koleksyon lint bouton vant"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी बेली बटन लिंट कलेक्शन की तुलना करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler vergleichen Bauchnabelfussel-Kollektionen"
+        },
+        "nl": {
+          "title": "Beide spelers vergelijken collecties navelpluisjes"
+        },
+        "pl": {
+          "title": "Obaj gracze porównują kolekcje kłaczków"
+        },
+        "it": {
+          "title": "Entrambi i giocatori confrontano le collezioni di pelucchi per ombelico"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "O jogador da vez abaixará a calça enquantquem aceita o desafio tenta acender o peido",
           "extra": "Faça um vídeo"
+        },
+        "zh": {
+          "title": "当前玩家会拉下裤子，而胆量另一位玩家则试图点燃他们的屁股"
+        },
+        "tl": {
+          "title": "Ibababa ng kasalukuyang manlalaro ang kanilang pantalon habang nagtatangkang maglakas-loob na tinatanggap na iwanag ang kanilang"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ kéo quần xuống trong khi người chơi kia cố gắng giảm xì hơi của họ"
+        },
+        "ar": {
+          "title": "سيخلع اللاعب الحالي بنطاله بينما يحاول اللاعب الآخر إشعال ضرطته"
+        },
+        "fr": {
+          "title": "Le joueur actuel baissera son pantalon pendant que l'autre joueur tentera d'allumer son pet"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어가 방귀에 불을 붙이려고 할 때 바지를 내려 놓습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок расстегнет штаны, а другой игрок попытается зажечь пердящий"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap rale desann pantalon yo pandan y ap lòt jwè a tantativ limyè fart yo"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी अपनी पैंट नीचे खींच लेगा, जबकि दूसरा खिलाड़ी अपने पाद को हल्का करने का प्रयास करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler zieht seine Hose herunter, während der Wagnisder andere Spieler versucht, seinen Furz anzuzünden"
+        },
+        "nl": {
+          "title": "De huidige speler trekt zijn broek naar beneden terwijl de andere speler probeert zijn scheet aan te steken"
+        },
+        "pl": {
+          "title": "Obecny gracz ściągnie spodnie, podczas gdy drugi gracz próbuje zapalić pierd"
+        },
+        "it": {
+          "title": "Il giocatore attuale si abbasserà i pantaloni mentre chi accetta la sfida tenta di accendersi la scoreggia"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "O jogador da vez dará um cuecão aquem aceita o desafio",
           "extra": "Tente tirá-los do chão"
+        },
+        "zh": {
+          "title": "当前玩家会给冒险另一位玩家一个楔子"
+        },
+        "tl": {
+          "title": "Bibigyan ng kasalukuyang manlalaro ang kabilang manlalaro ng isang wedgie"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ cho người chơi kia một wedgie"
+        },
+        "ar": {
+          "title": "اللاعب الحالي سيعطي اللاعب الآخر إسفين"
+        },
+        "fr": {
+          "title": "Le joueur actuel va donner un wedgie à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어에게 웨지를 줄 것입니다"
+        },
+        "ru": {
+          "title": "Текущий игрок подарит акцептанту клин"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap lòt jwè a yon wedgie"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को एक वेजी देगा"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler gibt der andere Spieler ein Wedgie"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler een wedgie geven"
+        },
+        "pl": {
+          "title": "Obecny gracz da drugi gracz wedgie"
+        },
+        "it": {
+          "title": "Il giocatore attuale regalerà a l'altro giocatore un wedgie"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "Ambos os jogadores comparam o comprimento e a textura dos pelos das axilas",
           "extra": "Além disso, modele os pelos das axilas um do outro de forma criativa"
+        },
+        "zh": {
+          "title": "两位玩家都比较了腋毛的长度和质地"
+        },
+        "tl": {
+          "title": "Inihambing ng parehong mga manlalaro ang haba at pagkakayari ng buhok"
+        },
+        "vi": {
+          "title": "Cả hai người chơi so sánh chiều dài và kết cấu lông nách"
+        },
+        "ar": {
+          "title": "يقارن كلا اللاعبين طول شعر الإبط وملمسه"
+        },
+        "fr": {
+          "title": "Les deux joueurs comparent la longueur et la texture des poils des aisselles"
+        },
+        "ko": {
+          "title": "두 선수 모두 겨드랑이 털 길이와 질감을 비교합니다."
+        },
+        "ru": {
+          "title": "Оба игрока сравнивают длину и текстуру волос в подмышках."
+        },
+        "ht": {
+          "title": "Tou de jwè yo konpare longè cheve anbabra ak teksti"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कांख के बालों की लंबाई और बनावट की तुलना करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler vergleichen die Länge und Textur der Achselhaare"
+        },
+        "nl": {
+          "title": "Beide spelers vergelijken de lengte en textuur van het okselhaar"
+        },
+        "pl": {
+          "title": "Obaj gracze porównują długość i teksturę włosów pod pachami"
+        },
+        "it": {
+          "title": "Entrambi i giocatori confrontano la lunghezza e la consistenza dei peli delle ascelle"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "O jogador da vez receberá palmadas de brincadeira de quem aceita o desafio",
           "extra": "Além disso, adicione efeitos sonoros bobos a cada palmada"
+        },
+        "zh": {
+          "title": "当前玩家将受到另一位玩家的好玩的打屁股"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay makakatanggap ng isang mapaglarong spanking mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhận được một cú đánh đòn vui tươi từ người chơi kia dare"
+        },
+        "ar": {
+          "title": "سيتلقى اللاعب الحالي ضربة مرحة من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel recevra une fessée ludique de la part de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어로부터 장난기 넘치는 스팽킹을 받게 됩니다."
+        },
+        "ru": {
+          "title": "Текущий игрок получит игривую порку от другой игрок"
+        },
+        "ht": {
+          "title": "Jwè aktyèl yo pral resevwa yon spanking ludik soti nan ase lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी को दूसरा खिलाड़ी से एक चंचल स्पैंकिंग मिलेगी"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird von der andere Spieler spielerisch verprügelt"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt een speelse spanking van andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzyma zabawny klapsy od drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceverà una divertente sculacciata da l'altro giocatore"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "O jogador da vez mostra a bunda para quem aceita o desafio",
           "extra": "Escreva algo rude na bunda deles"
+        },
+        "zh": {
+          "title": "当前玩家将接受月球大冒险"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magkakasunod na mag"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại will moon người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي سيقبل بطاقة القمر"
+        },
+        "fr": {
+          "title": "Le joueur actuel acceptera le défi lunaire"
+        },
+        "ko": {
+          "title": "현재 플레이어 윌 문 데어 어셉터"
+        },
+        "ru": {
+          "title": "Текущий игрок примет лунную дару"
+        },
+        "ht": {
+          "title": "Aktyèl jwè pral lalin lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी विल मून दूसरा खिलाड़ी"
+        },
+        "de": {
+          "title": "Aktueller Spieler will moon der andere Spieler"
+        },
+        "nl": {
+          "title": "Huidige speler Will Moon andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz będzie akceptował odwagę"
+        },
+        "it": {
+          "title": "Giocatore attuale will moon l'altro giocatore"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "O jogador da vez desafia quem aceita o desafio a cheirar seus pés",
           "extra": "Além disso, descreva o perfume como um conhecedor de vinhos"
+        },
+        "zh": {
+          "title": "当前玩家另一位玩家闻一闻自己的脚的味道"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay maglakas-loob na tanggapin na amoy ang kanilang"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ dám chấp nhận ngửi chân"
+        },
+        "ar": {
+          "title": "سيتجرأ اللاعب الحالي المتلقي على شم رائحة أقدامه"
+        },
+        "fr": {
+          "title": "Le joueur actuel osera l'autre joueur de sentir ses pieds"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어가 발 냄새를 맡을 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок осмелится другой игрок почувствовать запах своих ног"
+        },
+        "ht": {
+          "title": "Aktyèl jwè yo pral bay dadi lòt jwè a yo pran sant pye yo"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को अपने पैरों को सूंघने की हिम्मत करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird es wagen, den der andere Spieler an seinen Füßen zu riechen"
+        },
+        "nl": {
+          "title": "De huidige speler durft de andere speler aan zijn voeten te ruiken"
+        },
+        "pl": {
+          "title": "Obecny gracz odważy się drugi gracz poczuć wąchanie stóp"
+        },
+        "it": {
+          "title": "Il giocatore attuale oserà accettare l'odore dei propri piedi"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "O jogador da vez receberá uma framboesa no estômago de quem aceita o desafio",
           "extra": "Faça isso sem camisa"
+        },
+        "zh": {
+          "title": "当前玩家的肚子上会收到一颗来自另一位玩家的覆盆子"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay makakatanggap ng raspberry sa kanilang tiyan mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhận được một quả mâm xôi trên bụng của họ từ người chơi kia dare"
+        },
+        "ar": {
+          "title": "سيتلقى اللاعب الحالي التوت على بطنه من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel recevra une framboise sur le ventre de la part de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어로부터 배에 라즈베리를 받게 됩니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок получит малину на живот от другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap resevwa yon Franbwaz sou vant yo soti nan ase lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी से अपने पेट पर एक रास्पबेरी प्राप्त करेंगे"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler erhält von der andere Spieler eine Himbeere auf den Bauch"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt van andere speler een framboos op zijn buik"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzyma malinę na brzuchu od drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceverà un lampone sulla pancia da l'altro giocatore"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "O jogador da vez dará um “noogie” aquem aceita o desafio",
           "extra": "Além disso, coloque muitos germes nas axilas"
+        },
+        "zh": {
+          "title": "当前玩家会给 Dare 另一位玩家一个 “noogie”"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magbibigay ng isang “noogie” upang kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ tặng một “noogie” cho người chơi kia"
+        },
+        "ar": {
+          "title": "سيعطي اللاعب الحالي «noogie» لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel donnera un « noogie » à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어에게 “누기”를 줄 것입니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок подарит «новичку» на смелость другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap bay yon “noogie” pou bay moun kap lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को “नोगी” देगा"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler gibt einen „Noogie“, um den der andere Spieler zu wagen"
+        },
+        "nl": {
+          "title": "De huidige speler zal een „noogie” geven aan de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz da „noogie” drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale darà un «noogie» a l'altro giocatore"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "Ambos os jogadores jogam “strip rock, papel e tesoura”, removendo um item por derrota.",
           "extra": "Além disso, faça revelações dramáticas a cada remoção"
+        },
+        "zh": {
+          "title": "两位玩家都在玩 “strip rock paper scissors” 每次输掉一件物品"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay naglalaro ng 'strip rock paper scissors' na nag-aalis ng isang item bawat pagkawala"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chơi 'strip rock paperscissors' loại bỏ một vật phẩm cho mỗi lần thua"
+        },
+        "ar": {
+          "title": "يلعب كلا اللاعبين لعبة «مقص ورق ستريب روك» لإزالة عنصر واحد لكل خسارة"
+        },
+        "fr": {
+          "title": "Les deux joueurs jouent à des « ciseaux à papier de strip-rock » en retirant un objet par défaite"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 '스트립 락 페이퍼 가위'를 플레이하며 패배할 때마다 아이템 하나를 제거합니다."
+        },
+        "ru": {
+          "title": "Оба игрока играют в «ножницы для разрезания каменной бумаги», удаляя по одному предмету за проигрыш"
+        },
+        "ht": {
+          "title": "Tou de jwè jwe 'teren macho papye wòch' retire yon sèl atik pou chak pèt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी प्रति नुकसान एक आइटम हटाते हुए 'स्ट्रिप रॉक पेपर कैंची' खेलते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler spielen „Strip Rock Paper Scissors“ und entfernen pro Verlust einen Gegenstand"
+        },
+        "nl": {
+          "title": "Beide spelers spelen 'strip rock paper scissors' en verwijderen één item per verlies"
+        },
+        "pl": {
+          "title": "Obaj gracze grają w „nożyczki do papieru ze striptizem”, usuwając jeden przedmiot na przegraną"
+        },
+        "it": {
+          "title": "Entrambi i giocatori giocano a «strip rock paper scissors» rimuovendo un oggetto per sconfitta"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "O jogador da vez comparará o tamanho do mamilo com quem aceita o desafio",
           "extra": "Além disso, ambos os jogadores recebem um toque"
+        },
+        "zh": {
+          "title": "当前玩家会将乳头大小与胆量另一位玩家进行比较"
+        },
+        "tl": {
+          "title": "Ihahambing ng kasalukuyang manlalaro ang laki ng utong sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ so sánh kích thước núm vú với bộ nhận dare"
+        },
+        "ar": {
+          "title": "سيقارن اللاعب الحالي حجم الحلمة مع اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel comparera la taille du mamelon à celle de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터와 젖꼭지 크기를 비교할 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок сравнит размер соска с другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap konpare gwosè pwent tete ak lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी निप्पल के आकार की तुलना दूसरा खिलाड़ी से करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler vergleicht die Brustwarzengröße mit dem anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler zal de tepelgrootte vergelijken met de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz porówna rozmiar sutka z drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale confronterà la dimensione del capezzolo con quella di l'altro giocatore"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "Os dois jogadores percorrem a sala juntos",
           "extra": "Vá correndo até a caixa de correio e volte"
+        },
+        "zh": {
+          "title": "两个玩家一起在房间里闲逛"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay naglalakbay sa silid nang magkasama"
+        },
+        "vi": {
+          "title": "Cả hai người chơi cùng nhau đi vòng quanh phòng"
+        },
+        "ar": {
+          "title": "يتجول كلا اللاعبين في جميع أنحاء الغرفة معًا"
+        },
+        "fr": {
+          "title": "Les deux joueurs font le tour de la pièce ensemble"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 함께 방을 이리저리 돌아다닙니다."
+        },
+        "ru": {
+          "title": "Оба игрока вместе бегают по комнате"
+        },
+        "ht": {
+          "title": "Tou de jwè ale streaking alantou sal la ansanm"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक साथ कमरे के चारों ओर घूमते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler laufen zusammen durch den Raum."
+        },
+        "nl": {
+          "title": "Beide spelers rennen samen door de kamer"
+        },
+        "pl": {
+          "title": "Obaj gracze razem poruszają się po pokoju"
+        },
+        "it": {
+          "title": "Entrambi i giocatori vanno in giro per la stanza insieme"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "O jogador da vez receberá um 'swirly' de quem aceita o desafio",
           "extra": "Além disso, faça sons exagerados de engasgos"
+        },
+        "zh": {
+          "title": "当前玩家将收到来自勇气另一位玩家的 “漩涡”"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay makakatanggap ng isang 'swirly' mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhận được một 'xoáy' từ người chơi kia dare"
+        },
+        "ar": {
+          "title": "سيحصل اللاعب الحالي على «دوامة» من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel recevra un « tourbillon » de la part de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어로부터 'Swirly' 아이템을 받게 됩니다."
+        },
+        "ru": {
+          "title": "Текущий игрок получит «вихрь» от другой игрок другой игрок"
+        },
+        "ht": {
+          "title": "Jwè aktyèl yo pral resevwa yon 'swirly' soti nan lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी को दूसरा खिलाड़ी से एक 'swirly' प्राप्त होगा"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler erhält von der andere Spieler einen „Swirly“"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt een 'swirly' van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzyma „wirly” od drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceverà un 'swirly' da l'altro giocatore"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "O jogador da vez dará uma surra na bunda nua de quem aceita o desafio",
           "extra": "Use uma colher longa de pau"
+        },
+        "zh": {
+          "title": "当前玩家会用裸露的屁股打另一位玩家的屁股"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magpapakita ng kabilang manlalaro sa hubad na puwit"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ đánh đòn người chơi kia vào mông trần"
+        },
+        "ar": {
+          "title": "سيضرب اللاعب الحالي اللاعب الآخر على مؤخرته العارية"
+        },
+        "fr": {
+          "title": "Le joueur actuel va donner une fessée à l'autre joueur sur les fesses nues"
+        },
+        "ko": {
+          "title": "현재 플레이어는 베어 액셉터를 맨 엉덩이에 때릴 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок будет шлепать другой игрок по голой заднице"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap spank lòt jwè a sou bou a bare"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी नंगे बट पर दूसरा खिलाड़ी को थप्पड़ मारेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird der andere Spieler auf den nackten Hintern versohlen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler op zijn blote kont slaan"
+        },
+        "pl": {
+          "title": "Obecny gracz rzuci klapsy drugi gracz na gołym tyłku"
+        },
+        "it": {
+          "title": "Il giocatore attuale sculaccerà il l'altro giocatore sul sedere nudo"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "Ambos os jogadores jogam “verdade ou desafio” com apenas histórias de infância embaraçosas",
           "extra": "Além disso, encene a história mais embaraçosa"
+        },
+        "zh": {
+          "title": "两位玩家都在玩 “真心话大冒险”，只有令人尴尬的童年故事"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay naglalaro ng 'katotohanan o tapa' na may mga nakakahiyang kwento"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều chơi 'sự thật hay dare' chỉ với những câu chuyện thời thơ ấu đáng xấu hổ"
+        },
+        "ar": {
+          "title": "يلعب كلا اللاعبين لعبة «الحقيقة أو الجرأة» بقصص الطفولة المحرجة فقط"
+        },
+        "fr": {
+          "title": "Les deux joueurs jouent « la vérité ou le défi » avec seulement des histoires d'enfance embarrassantes"
+        },
+        "ko": {
+          "title": "두 선수 모두 당혹스러운 어린 시절 이야기만 담은 '트루스 오어 데어' 플레이를 펼친다."
+        },
+        "ru": {
+          "title": "Оба игрока играют в «правду или дело», используя только смущающие детские истории"
+        },
+        "ht": {
+          "title": "Tou de jwè yo jwe 'verite oswa dare' ak sèlman istwa anbarasan anfans"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी केवल शर्मनाक बचपन की कहानियों के साथ 'सच या साहसी खेलते हैं'"
+        },
+        "de": {
+          "title": "Beide Spieler spielen „Wahrheit oder Pflicht“ mit nur peinlichen Kindheitsgeschichten"
+        },
+        "nl": {
+          "title": "Beide spelers spelen 'truth or dare' met enkel gênante jeugdverhalen"
+        },
+        "pl": {
+          "title": "Obaj gracze grają w „prawdę lub śmiałość” tylko z żenującymi historiami z dzieciństwa"
+        },
+        "it": {
+          "title": "Entrambi i giocatori giocano a «verità o coraggio» con solo storie imbarazzanti sull'infanzia"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "O jogador da vez comparará a firmeza da nádega com quem aceita o desafio",
           "extra": "Além disso, avalie-os como julgadores de um concurso de panificação"
+        },
+        "zh": {
+          "title": "当前玩家会将臀部脸颊的硬度与另一位玩家进行比较"
+        },
+        "tl": {
+          "title": "Ihahambing ng kasalukuyang manlalaro ang katigasan ng pisngi sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ so sánh độ săn chắc của má mông với bộ chấp nhận dare"
+        },
+        "ar": {
+          "title": "سيقارن اللاعب الحالي صلابة المؤخر والخدود مع اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel comparera la fermeté des fesses à celle de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 엉덩이 볼의 탄력과 데어 어셉터를 비교할 것입니다"
+        },
+        "ru": {
+          "title": "Текущий игрок сравнит упругость ягодиц с другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap konpare bou fèmisite chòt ak lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के साथ बट चीक फर्मनेस की तुलना करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler vergleicht die Festigkeit der Po-Bange mit der von der andere Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler zal de stevigheid van de billen vergelijken met de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz porówna jędrność policzka z drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale confronterà la fermezza del sedere con quella di dare"
         }
       }
     },
@@ -345,6 +1203,45 @@
         "pt": {
           "title": "Ambos os jogadores comparam o tamanho e a forma genital abertamente",
           "extra": "Além disso, dê aos órgãos genitais uns dos outros apelidos bobos"
+        },
+        "zh": {
+          "title": "两位玩家都公开比较了生殖器的大小和形状"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay naghahambing ng laki at hugis"
+        },
+        "vi": {
+          "title": "Cả hai người chơi so sánh kích thước và hình dạng bộ phận sinh dục một cách công khai"
+        },
+        "ar": {
+          "title": "يقارن كلا اللاعبين حجم الأعضاء التناسلية وشكلها بشكل مفتوح."
+        },
+        "fr": {
+          "title": "Les deux joueurs comparent ouvertement la taille et la forme de leurs parties génitales"
+        },
+        "ko": {
+          "title": "두 선수 모두 생식기 크기와 모양을 공개적으로 비교합니다"
+        },
+        "ru": {
+          "title": "Оба игрока открыто сравнивают размер и форму гениталий"
+        },
+        "ht": {
+          "title": "Tou de jwè konpare gwosè jenital ak fòm ouvètman"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी जननांग के आकार और आकृति की खुलकर तुलना करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler vergleichen offen Genitalgröße und -form"
+        },
+        "nl": {
+          "title": "Beide spelers vergelijken de grootte en vorm van de geslachtsorganen openlijk"
+        },
+        "pl": {
+          "title": "Obaj gracze otwarcie porównują rozmiar i kształt narządów płciowych"
+        },
+        "it": {
+          "title": "Entrambi i giocatori confrontano apertamente le dimensioni e la forma dei genitali"
         }
       }
     },
@@ -360,6 +1257,45 @@
         "pt": {
           "title": "Do joelho, mova sua mão cada vez mais intimamente, perguntando “Nervoso?” até que eles digam sim.",
           "extra": "Use seus lábios em vez de sua mão"
+        },
+        "zh": {
+          "title": "从膝盖开始，逐渐亲密地移动你的手，问 “紧张？”直到他们说 “是”。"
+        },
+        "tl": {
+          "title": "Mula sa tuhod, ilipat ang iyong kamay nang mas matalik, nagtatanong sa “Nerbiyos?” hanggang sa sabihin nila na oo."
+        },
+        "vi": {
+          "title": "Từ đầu gối, di chuyển bàn tay của bạn từng bước thân mật hơn, hỏi “Lo lắng?” Cho đến khi họ nói có."
+        },
+        "ar": {
+          "title": "من الركبة، حرك يدك بشكل أكثر حميمية تدريجيًا، واسأل «متوتر؟» حتى يقولون نعم."
+        },
+        "fr": {
+          "title": "À partir du genou, déplacez votre main de plus en plus intimement, en demandant « Nerveux ? » jusqu'à ce qu'ils disent oui."
+        },
+        "ko": {
+          "title": "무릎에서 손을 점점 더 친밀하게 움직여 “긴장 되니?” 라고 묻습니다.그들이 그렇다고 대답하기 전까진 말이에요"
+        },
+        "ru": {
+          "title": "От колена постепенно двигайте рукой ближе, спрашивая: «Нервничаете?» пока они не скажут «да»."
+        },
+        "ht": {
+          "title": "Soti nan jenou an, deplase men ou incremental plis entim, mande “Nève?” jiskaske yo di wi."
+        },
+        "hi": {
+          "title": "घुटने से, अपने हाथ को और अधिक अंतरंग रूप से घुमाते हुए, “नर्वस?” पूछते हुए जब तक वे हाँ न कहें।"
+        },
+        "de": {
+          "title": "Bewegen Sie Ihre Hand vom Knie aus schrittweise intimer und fragen Sie: „Nervös?“ bis sie ja sagen."
+        },
+        "nl": {
+          "title": "Beweeg vanaf de knie je hand stapsgewijs intiemer en vraag „Zenuwachtig?” tot ze ja zeggen."
+        },
+        "pl": {
+          "title": "Od kolana poruszaj ręką stopniowo bardziej intymnie, pytając „Nerwowy?” Dopóki nie powiedzą tak."
+        },
+        "it": {
+          "title": "Dal ginocchio, muovi la mano in modo incrementale più intimo, chiedendo «Nervoso?» finché non dicono di sì."
         }
       }
     }

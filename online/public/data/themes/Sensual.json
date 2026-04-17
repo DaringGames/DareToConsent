@@ -13,6 +13,45 @@
         "pt": {
           "title": "Ambos os jogadores piscam um para o outro flertando",
           "extra": "Além disso, elogie a aparência um do outro"
+        },
+        "zh": {
+          "title": "两位玩家轻描淡写地互相眨眼"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagalit sa bawat isa nang nakakaakit"
+        },
+        "vi": {
+          "title": "Cả hai người chơi nháy mắt với nhau tán tỉnh"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يغمزون لبعضهم البعض بغزل"
+        },
+        "fr": {
+          "title": "Les deux joueurs se font des clins d'œil coquettes"
+        },
+        "ko": {
+          "title": "두 선수 모두 허둥지둥거리며 서로 윙크합니다."
+        },
+        "ru": {
+          "title": "Оба игрока кокетливо подмигивают друг другу"
+        },
+        "ht": {
+          "title": "Tou de jwè yo wink youn ak lòt flirtatiously"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को चुलबुली करते हुए देखते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler zwinkern sich kokett zu."
+        },
+        "nl": {
+          "title": "Beide spelers knipogen flirterig naar elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze flirtowo mrugają do siebie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si strizzano l'occhio all'altro in modo civettuolo"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Ambos os jogadores tiram os sapatos (mantenha-os sem sapatos)",
           "extra": "Além disso, joguem futebol um com o outro"
+        },
+        "zh": {
+          "title": "两位玩家都脱掉鞋子（让他们脱下）"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nag-aalis ng sapatos (panatilihin silang"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ cởi giày (giữ chúng ra)"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يخلعون الأحذية (ابعدوها)"
+        },
+        "fr": {
+          "title": "Les deux joueurs enlèvent leurs chaussures (ne les chaussez pas)"
+        },
+        "ko": {
+          "title": "두 선수 모두 신발을 벗습니다 (벗으세요)"
+        },
+        "ru": {
+          "title": "Оба игрока снимают обувь (держите ее подальше)"
+        },
+        "ht": {
+          "title": "Tou de jwè wete soulye (kenbe yo koupe)"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी जूते उतारते हैं (उन्हें बंद रखते हैं)"
+        },
+        "de": {
+          "title": "Beide Spieler ziehen Schuhe aus (ziehen Sie sie aus)"
+        },
+        "nl": {
+          "title": "Beide spelers trekken schoenen uit (hou ze uit)"
+        },
+        "pl": {
+          "title": "Obaj gracze zdejmują buty (trzymaj je z dala)"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si tolgono le scarpe (tienile lontane)"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Troque elogios",
           "extra": "Faça-os elogios sensuais"
+        },
+        "zh": {
+          "title": "交换赞美"
+        },
+        "tl": {
+          "title": "Palitan ng mga papuri"
+        },
+        "vi": {
+          "title": "Trao đổi lời khen"
+        },
+        "ar": {
+          "title": "تبادل المجاملات"
+        },
+        "fr": {
+          "title": "Échangez des compliments"
+        },
+        "ko": {
+          "title": "칭찬을 교환하세요"
+        },
+        "ru": {
+          "title": "Обменивайтесь комплиментами"
+        },
+        "ht": {
+          "title": "Echanj konpliman"
+        },
+        "hi": {
+          "title": "तारीफों का आदान-प्रदान करें"
+        },
+        "de": {
+          "title": "Tauschen Sie Komplimente aus"
+        },
+        "nl": {
+          "title": "Complimenten uitwisselen"
+        },
+        "pl": {
+          "title": "Wymieniaj komplementy"
+        },
+        "it": {
+          "title": "Scambia complimenti"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Trace um coração na palma da outra",
           "extra": "Trace seu nome na barriga nua deles"
+        },
+        "zh": {
+          "title": "在对方的手掌上追踪一颗心"
+        },
+        "tl": {
+          "title": "Subaybayan ang isang puso sa palad ng isa"
+        },
+        "vi": {
+          "title": "Vẽ một trái tim trên lòng bàn tay của người kia"
+        },
+        "ar": {
+          "title": "ارسم قلبًا على كف الآخر"
+        },
+        "fr": {
+          "title": "Tracez un cœur sur la paume de l'autre"
+        },
+        "ko": {
+          "title": "상대방의 손바닥에 있는 하트 모양 따라하기"
+        },
+        "ru": {
+          "title": "Нарисуйте сердечко на ладони другого"
+        },
+        "ht": {
+          "title": "Trace yon kè sou palmis lòt la"
+        },
+        "hi": {
+          "title": "दूसरे की हथेली पर एक दिल का पता लगाओ"
+        },
+        "de": {
+          "title": "Zeichne ein Herz auf der Handfläche des anderen"
+        },
+        "nl": {
+          "title": "Trek een hart op de handpalm van de ander"
+        },
+        "pl": {
+          "title": "Śledź serce na dłoni drugiej osoby"
+        },
+        "it": {
+          "title": "Traccia un cuore sul palmo dell'altro"
         }
       }
     },
@@ -76,6 +232,45 @@
         "pt": {
           "title": "O jogador da vez fará uma massagem nos ombros de quem aceita o desafio",
           "extra": "Continue com um longo abraço"
+        },
+        "zh": {
+          "title": "当前玩家会给勇气另一位玩家做肩部按摩"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay bibigyan ang kabilang manlalaro ng masahe sa balikat"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ cho người chơi kia massage vai"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي بتدليك الكتف لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel fera un massage des épaules à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터에게 어깨 마사지를 줄 것입니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок сделает другой игрок массаж плеч"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap lòt jwè a yon masaj zepòl"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी डेयर एक्सेप्टर को कंधे की मालिश देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird dem anderen Spieler eine Schultermassage geben"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler een schoudermassage geven"
+        },
+        "pl": {
+          "title": "Obecny gracz da drugi gracz masaż ramion"
+        },
+        "it": {
+          "title": "Il giocatore attuale farà un massaggio alla spalla di l'altro giocatore"
         }
       }
     },
@@ -91,6 +286,45 @@
         "pt": {
           "title": "Beijos no banho nas bochechas um do outro",
           "extra": "Estenda os beijos até o pescoço"
+        },
+        "zh": {
+          "title": "亲吻对方的脸颊"
+        },
+        "tl": {
+          "title": "Mga halik sa shower sa pisngi ng bawat isa"
+        },
+        "vi": {
+          "title": "Những nụ hôn tắm trên má của nhau"
+        },
+        "ar": {
+          "title": "قبلات الاستحمام على خدود بعضهم البعض"
+        },
+        "fr": {
+          "title": "Douche de baisers sur les joues"
+        },
+        "ko": {
+          "title": "서로의 뺨에 샤워 키스"
+        },
+        "ru": {
+          "title": "Душевые поцелуи в щеки друг друга"
+        },
+        "ht": {
+          "title": "Bo douch sou chèf youn ak lòt"
+        },
+        "hi": {
+          "title": "एक दूसरे के गालों पर शावर चुंबन"
+        },
+        "de": {
+          "title": "Duschküsse auf die Wangen des anderen"
+        },
+        "nl": {
+          "title": "Douchekusjes op elkaars wangen"
+        },
+        "pl": {
+          "title": "Pocałunki pod prysznicem na policzkach"
+        },
+        "it": {
+          "title": "Baci da doccia sulle guance"
         }
       }
     },
@@ -106,6 +340,45 @@
         "pt": {
           "title": "O jogador da vez fará uma massagem nas costas de quem aceita o desafio",
           "extra": "Tire a roupa até o nível de conforto e use óleo de massagem"
+        },
+        "zh": {
+          "title": "当前玩家会给勇气另一位玩家做背部按摩"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay bibigyan ang kabilang manlalaro ng back massage"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ mát-xa lưng cho người nhận dũng cảm"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي بتدليك الظهر لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel fera un massage du dos à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터에게 등 마사지를 줄 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок сделает другой игрок массаж спины"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap lòt jwè a yon masaj tounen"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी डेयर एक्सेप्टर को बैक मसाज देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird dem anderen Spieler eine Rückenmassage geben"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler een rugmassage geven"
+        },
+        "pl": {
+          "title": "Obecny gracz da drugi gracz Dare masaż pleców"
+        },
+        "it": {
+          "title": "Il giocatore attuale farà un massaggio alla schiena a l'altro giocatore"
         }
       }
     },
@@ -122,6 +395,45 @@
         "pt": {
           "title": "Ambos os jogadores dançam lentamente",
           "extra": "Deixe as mãos vagarem para baixo"
+        },
+        "zh": {
+          "title": "两位选手都在慢舞"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro na mabagal na sum"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ nhảy chậm"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يرقصون ببطء"
+        },
+        "fr": {
+          "title": "Les deux joueurs dansent lentement"
+        },
+        "ko": {
+          "title": "두 선수 모두 슬로우 댄스"
+        },
+        "ru": {
+          "title": "Оба игрока в медленном дэнсе"
+        },
+        "ht": {
+          "title": "Tou de jwè ralanti-dans"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी स्लो-डांस करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler tanzen langsam"
+        },
+        "nl": {
+          "title": "Beide spelers dansen langzaam"
+        },
+        "pl": {
+          "title": "Obaj gracze wolno tańczą"
+        },
+        "it": {
+          "title": "Entrambi i giocatori ballano lentamente"
         }
       }
     },
@@ -138,6 +450,45 @@
         "pt": {
           "title": "Beijo na boca",
           "extra": "Adicione um pouco de jogo de língua"
+        },
+        "zh": {
+          "title": "在嘴唇上亲吻"
+        },
+        "tl": {
+          "title": "Halik sa labi"
+        },
+        "vi": {
+          "title": "Hôn lên môi"
+        },
+        "ar": {
+          "title": "قبلة على الشفاه"
+        },
+        "fr": {
+          "title": "Un baiser sur les lèvres"
+        },
+        "ko": {
+          "title": "입술에 키스하기"
+        },
+        "ru": {
+          "title": "Поцелуй в губы"
+        },
+        "ht": {
+          "title": "Bo sou bouch yo"
+        },
+        "hi": {
+          "title": "होंठों पर चुम्बन"
+        },
+        "de": {
+          "title": "Kuss auf die Lippen"
+        },
+        "nl": {
+          "title": "Kus op de lippen"
+        },
+        "pl": {
+          "title": "Pocałunek w usta"
+        },
+        "it": {
+          "title": "Bacio sulle labbra"
         }
       }
     },
@@ -154,6 +505,45 @@
         "pt": {
           "title": "Ambos os jogadores mostram brevemente uma parte íntima do corpo",
           "extra": "Mantenha essa parte exposta pelo resto do jogo"
+        },
+        "zh": {
+          "title": "两位玩家都短暂地露出了亲密的身体部位"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ang maikling nag-flash ng isang matalik na bahagi"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chớp một thời gian ngắn một phần cơ thể thân mật"
+        },
+        "ar": {
+          "title": "يظهر كلا اللاعبين لفترة وجيزة جزءًا حميمًا من الجسم"
+        },
+        "fr": {
+          "title": "Les deux joueurs montrent brièvement une partie intime du corps"
+        },
+        "ko": {
+          "title": "두 선수 모두 친밀한 신체 부위를 잠깐 깜박거립니다."
+        },
+        "ru": {
+          "title": "Оба игрока ненадолго мелькают интимной частью тела."
+        },
+        "ht": {
+          "title": "Tou de jwè yon ti tan flash yon pati kò entim"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक अंतरंग शरीर के अंग को संक्षेप में फ्लैश करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler lassen kurz ein intimes Körperteil aufblitzen"
+        },
+        "nl": {
+          "title": "Beide spelers laten kort een intiem lichaamsdeel zien"
+        },
+        "pl": {
+          "title": "Obaj gracze krótko flashują intymną częścią ciała"
+        },
+        "it": {
+          "title": "Entrambi i giocatori mostrano brevemente una parte intima del corpo"
         }
       }
     },
@@ -169,6 +559,45 @@
         "pt": {
           "title": "O jogador da vez removerá uma peça de roupa de quem aceita o desafio",
           "extra": "toque o que é revelado"
+        },
+        "zh": {
+          "title": "当前玩家将从冒险另一位玩家身上移除一件衣服"
+        },
+        "tl": {
+          "title": "Aalisin ng kasalukuyang manlalaro ang isang item ng damit mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ loại bỏ một vật phẩm quần áo khỏi người chơi kia dare"
+        },
+        "ar": {
+          "title": "سيزيل اللاعب الحالي قطعة ملابس من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel va retirer un vêtement de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터에서 의상 아이템을 제거할 것입니다"
+        },
+        "ru": {
+          "title": "Текущий игрок удалит предмет одежды из другого игрока"
+        },
+        "ht": {
+          "title": "Jwè aktyèl yo pral retire yon atik rad ki soti nan lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी से कपड़ों की एक वस्तु निकाल देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler entfernt ein Kleidungsstück aus dem anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler zal een kledingstuk van de andere speler verwijderen"
+        },
+        "pl": {
+          "title": "Obecny gracz usunie ubranie z drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale rimuoverà un capo di abbigliamento da l'altro giocatore"
         }
       }
     },
@@ -185,22 +614,100 @@
         "pt": {
           "title": "Toque a bunda um do outro sobre as roupas",
           "extra": "e debaixo da roupa"
+        },
+        "zh": {
+          "title": "在衣服上互相触摸对方的屁股"
+        },
+        "tl": {
+          "title": "Hawakan ang puwit ng bawat isa sa mga damit"
+        },
+        "vi": {
+          "title": "Chạm vào mông của nhau trên quần áo"
+        },
+        "ar": {
+          "title": "لمسوا مؤخرة بعضكم البعض على الملابس"
+        },
+        "fr": {
+          "title": "Touchez-vous les fesses de l'autre par-dessus les vêtements"
+        },
+        "ko": {
+          "title": "옷 위에 서로의 엉덩이를 만지십시오."
+        },
+        "ru": {
+          "title": "Прикоснитесь друг другу к одежде"
+        },
+        "ht": {
+          "title": "Manyen bou youn ak lòt sou rad"
+        },
+        "hi": {
+          "title": "कपड़ों के ऊपर एक दूसरे के बट को छूएं"
+        },
+        "de": {
+          "title": "Berühren Sie den Hintern des anderen über der Kleidung"
+        },
+        "nl": {
+          "title": "Elkaars kont over kleding aanraken"
+        },
+        "pl": {
+          "title": "Dotknij się nawzajem tyłka nad ubraniami"
+        },
+        "it": {
+          "title": "Toccatevi il sedere l'un l'altro sui vestiti"
         }
       }
     },
     {
-      "title": "Current player will receive a srip tease from dare acceptor",
+      "title": "Current player will receive a strip tease from dare acceptor",
       "extra": "Make it a lap dance with guided touching",
       "spicyness": 50,
       "comment": "Rescore suggested: 50-59 -> 70-79 (lap dance) — Flag for possible removal or reordering.",
       "translations": {
         "es": {
-          "title": "El jugador en turno recibirá un strip-tease de quien acepta el reto.",
+          "title": "El jugador en turno recibirá un striptease de quien acepta el reto",
           "extra": "Conviértelo en un baile erótico con toques guiados"
         },
         "pt": {
-          "title": "O jogador da vez receberá um strip-tease de quem aceita o desafio",
+          "title": "O jogador da vez receberá um striptease de quem aceita o desafio",
           "extra": "Faça disso uma dança erótica com toque guiado"
+        },
+        "zh": {
+          "title": "当前玩家会收到另一位玩家的脱衣舞表演"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay makakatanggap ng striptease mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhận một màn striptease từ người chơi kia"
+        },
+        "ar": {
+          "title": "سيحصل اللاعب الحالي على رقصة تعرية من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel recevra un strip-tease de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어에게서 스트립 티즈를 받습니다."
+        },
+        "ru": {
+          "title": "Текущий игрок получит стриптиз от другого игрока"
+        },
+        "ht": {
+          "title": "Jwè aktyèl la ap resevwa yon striptease nan men lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी को दूसरे खिलाड़ी से स्ट्रिपटीज़ मिलेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler erhält einen Striptease vom anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt een striptease van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzyma striptiz od drugiego gracza"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceverà uno striptease dall'altro giocatore"
         }
       }
     },
@@ -217,6 +724,45 @@
         "pt": {
           "title": "Toque o peito um do outro sobre as roupas",
           "extra": "e debaixo da roupa"
+        },
+        "zh": {
+          "title": "在衣服上互相触摸胸部"
+        },
+        "tl": {
+          "title": "Hawakan ang dibdib ng bawat isa sa mga damit"
+        },
+        "vi": {
+          "title": "Chạm vào ngực của nhau trên quần áo"
+        },
+        "ar": {
+          "title": "لمسوا صدر بعضكم البعض فوق الملابس"
+        },
+        "fr": {
+          "title": "Touchez-vous la poitrine de l'autre par-dessus les vêtements"
+        },
+        "ko": {
+          "title": "옷 위에 서로의 가슴을 만지십시오."
+        },
+        "ru": {
+          "title": "Прикоснитесь к одежде грудью друг друга"
+        },
+        "ht": {
+          "title": "Manyen pwatrin youn ak lòt sou rad"
+        },
+        "hi": {
+          "title": "कपड़ों के ऊपर एक दूसरे की छाती को स्पर्श करें"
+        },
+        "de": {
+          "title": "Berühren Sie die Brust des anderen über der Kleidung"
+        },
+        "nl": {
+          "title": "Elkaars borst over kleding aanraken"
+        },
+        "pl": {
+          "title": "Dotknij się nawzajem klatki piersiowej nad ubraniami"
+        },
+        "it": {
+          "title": "Toccatevi il petto sopra i vestiti"
         }
       }
     },
@@ -232,6 +778,45 @@
         "pt": {
           "title": "Ambos os jogadores se beijam enquanto um jogador se senta no colo do outro",
           "extra": "Deixe as mãos vagarem"
+        },
+        "zh": {
+          "title": "当一个玩家坐在对方的圈子里时，两名选手都亲密接触"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakaupo habang ang isang manlalaro ay nakaupo sa lupa ng isa pa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều chơi trong khi một người ngồi trong lòng người kia"
+        },
+        "ar": {
+          "title": "يخرج كلا اللاعبين بينما يجلس أحد اللاعبين في حضن الآخر"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'affrontent tandis qu'un joueur est assis sur les genoux de l'autre"
+        },
+        "ko": {
+          "title": "한 선수가 다른 선수의 무릎에 앉는 동안 두 선수 모두 사이좋게 지냅니다."
+        },
+        "ru": {
+          "title": "Оба игрока цекуются, а один сидит на коленях у другого"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè soti pandan y ap yon sèl jwè chita nan lap lòt la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी बाहर निकलते हैं जबकि एक खिलाड़ी दूसरे की गोद में बैठता है"
+        },
+        "de": {
+          "title": "Beide Spieler knutschen, während ein Spieler auf dem Schoß des anderen sitzt"
+        },
+        "nl": {
+          "title": "Beide spelers zoenen terwijl de ene speler op de schoot van de andere zit"
+        },
+        "pl": {
+          "title": "Obaj gracze całują się, podczas gdy jeden gracz siedzi na kolanach drugiego"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si baciano mentre un giocatore è seduto in grembo all'altro"
         }
       }
     },
@@ -247,6 +832,45 @@
         "pt": {
           "title": "Ambos os jogadores vestem roupas íntimas e se beijam debaixo de um cobertor.",
           "extra": "Deixe as mãos vagarem"
+        },
+        "zh": {
+          "title": "两名选手都脱下内衣在毯子下亲密接触"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay naglalabas ng damit na panloob at naglalabas sa ilalim"
+        },
+        "vi": {
+          "title": "Cả hai người chơi lột đồ lót và làm tình dưới chăn"
+        },
+        "ar": {
+          "title": "يرتدي كلا اللاعبين الملابس الداخلية ويتجولون تحت البطانية."
+        },
+        "fr": {
+          "title": "Les deux joueurs se déshabillent et s'emmitouflent sous une couverture"
+        },
+        "ko": {
+          "title": "두 선수 모두 속옷을 벗고 담요 아래에서 운동합니다."
+        },
+        "ru": {
+          "title": "Оба игрока раздеваются до нижнего белья и цекуются под одеялом"
+        },
+        "ht": {
+          "title": "Tou de jwè dezabiye nan kilòt ak fè soti anba yon dra"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अंडरवियर पहनते हैं और कंबल के नीचे बाहर निकलते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler ziehen sich Unterwäsche aus und knutschen unter einer Decke"
+        },
+        "nl": {
+          "title": "Beide spelers strippen zich uit tot ondergoed en zoenen onder een deken"
+        },
+        "pl": {
+          "title": "Obaj gracze rozbierają się do bielizny i rozbierają się pod kocem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si spogliano in mutande e si scopano sotto una coperta"
         }
       }
     },
@@ -262,6 +886,45 @@
         "pt": {
           "title": "Ambos os jogadores beijam o peito nu um do outro",
           "extra": "Adicione lamber e chupar"
+        },
+        "zh": {
+          "title": "两位玩家互相亲吻对方的裸露胸部"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay hinalikan ang hubad na dibdib"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ hôn ngực trần của nhau"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتقبيل الصدر العاري لبعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'embrassent la poitrine nue"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 맨 가슴에 키스합니다"
+        },
+        "ru": {
+          "title": "Оба игрока целуют друг друга в голую грудь"
+        },
+        "ht": {
+          "title": "Tou de jwè bo pwatrin bare youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक दूसरे के नंगे सीने को चूमते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler küssen sich gegenseitig auf die nackte Brust"
+        },
+        "nl": {
+          "title": "Beide spelers kussen elkaars blote borst"
+        },
+        "pl": {
+          "title": "Obaj gracze całują się nawzajem w nagą klatkę piersiową"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si baciano a petto nudo"
         }
       }
     },
@@ -277,6 +940,45 @@
         "pt": {
           "title": "Ambos os jogadores tocam os órgãos genitais um do outro sobre as roupas",
           "extra": "e debaixo da roupa"
+        },
+        "zh": {
+          "title": "两位玩家在衣服上互相触摸对方的生殖器"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay hinawakan ang maselang bahagi ng bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chạm vào bộ phận sinh dục của nhau trên quần áo"
+        },
+        "ar": {
+          "title": "يلمس كلا اللاعبين الأعضاء التناسلية لبعضهما البعض على الملابس"
+        },
+        "fr": {
+          "title": "Les deux joueurs se touchent les parties génitales par-dessus leurs vêtements"
+        },
+        "ko": {
+          "title": "두 선수 모두 옷 위에서 서로의 성기를 만집니다."
+        },
+        "ru": {
+          "title": "Оба игрока прикасаются к гениталиям друг друга поверх одежды"
+        },
+        "ht": {
+          "title": "Tou de jwè manyen jenital youn ak lòt yo sou rad"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कपड़ों के ऊपर एक-दूसरे के जननांगों को छूते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler berühren sich gegenseitig an den Genitalien über der Kleidung"
+        },
+        "nl": {
+          "title": "Beide spelers raken elkaars geslachtsdelen aan boven kleding"
+        },
+        "pl": {
+          "title": "Obaj gracze dotykają nawzajem genitaliów nad ubraniem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si toccano i genitali sopra i vestiti"
         }
       }
     },
@@ -292,6 +994,45 @@
         "pt": {
           "title": "O jogador da vez usa um brinquedo vibratório nquem aceita o desafio",
           "extra": "Busque um clímax"
+        },
+        "zh": {
+          "title": "当前玩家在冒险接受器上使用振动玩具"
+        },
+        "tl": {
+          "title": "Gumagamit ang kasalukuyang manlalaro ng isang vibrating na laruan sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sử dụng đồ chơi rung trên bộ chấp nhận dare"
+        },
+        "ar": {
+          "title": "يستخدم اللاعب الحالي لعبة تهتز على اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel utilise un jouet vibrant sur un l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터에 진동 장난감을 사용하고 있습니다."
+        },
+        "ru": {
+          "title": "Текущий игрок использует вибрирующую игрушку на другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè sèvi ak yon jwèt vibre sou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी पर एक वाइब्रेटिंग टॉय का उपयोग करता है"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler benutzt ein vibrierendes Spielzeug auf dem anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler gebruikt een vibrerend speeltje op de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz używa wibrującej zabawki na drugi graczze odwagi"
+        },
+        "it": {
+          "title": "Il giocatore attuale usa un giocattolo vibrante su l'altro giocatore"
         }
       }
     },
@@ -307,6 +1048,45 @@
         "pt": {
           "title": "O jogador da vez simula sexo com roupa com quem aceita o desafio",
           "extra": "Busque um clímax"
+        },
+        "zh": {
+          "title": "当前玩家将使用冒险另一位玩家干掉驼峰"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay tuyo ang hump gamit ang kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ khô bướu với bộ chấp nhận dare"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي بتجفيف الحدبة باستخدام اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel fera une bosse sèche avec un l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터로 고개를 말릴 수 있습니다."
+        },
+        "ru": {
+          "title": "Текущий игрок высушит горб с помощью другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè pral sèk hump ak lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के साथ कूबड़ सुखाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird mit dem anderen Spieler einen trockenen Buckel bekommen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de bult opdrogen met een andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz wyschnie garb z drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale farà una gobba asciutta con l'altro giocatore"
         }
       }
     },
@@ -322,6 +1102,45 @@
         "pt": {
           "title": "O jogador da vez receberá sexo oral de quem aceita o desafio",
           "extra": "Busque um clímax"
+        },
+        "zh": {
+          "title": "当前玩家将接受另一位玩家的口交"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay makakatanggap ng oral sex mula sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhận được quan hệ tình dục bằng miệng từ người chơi kia"
+        },
+        "ar": {
+          "title": "سيتلقى اللاعب الحالي الجنس الفموي من اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel recevra un rapport sexuel oral de la part de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터로부터 오럴 섹스를 받게 됩니다."
+        },
+        "ru": {
+          "title": "Текущий игрок получит оральный секс от другой игрок"
+        },
+        "ht": {
+          "title": "Jwè aktyèl yo pral resevwa sèks oral soti nan lòt jwè a a ozade"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी से ओरल सेक्स प्राप्त करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler erhält Oralsex vom anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt orale seks van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzyma seks oralny od drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceverà sesso orale dal giocatore che accetta le sfide"
         }
       }
     },
@@ -337,6 +1156,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem sexo com penetração um com o outro",
           "extra": "Busque o clímax"
+        },
+        "zh": {
+          "title": "两位玩家互相进行了穿透性行为"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakikipagtalik sa bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi có quan hệ tình dục thâm nhập với nhau"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يمارسان الجنس الاختراقي مع بعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs ont des relations sexuelles pénétrantes l'un avec l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로 관통적인 섹스를 하고 있습니다."
+        },
+        "ru": {
+          "title": "Оба игрока занимаются проникновенным сексом друг с другом"
+        },
+        "ht": {
+          "title": "Tou de jwè yo gen sèks penetratif youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे के साथ मर्मज्ञ सेक्स करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler haben penetrativen Sex miteinander"
+        },
+        "nl": {
+          "title": "Beide spelers hebben penetrerende seks met elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze uprawiają ze sobą penetracyjny seks"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno sesso penetrativo tra loro"
         }
       }
     }

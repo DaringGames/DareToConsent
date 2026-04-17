@@ -13,6 +13,45 @@
         "pt": {
           "title": "Ambos os jogadores apertam as mãos um do outro",
           "extra": "... calorosamente, usando as mãos e o contato visual"
+        },
+        "zh": {
+          "title": "两位玩家互相握手"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ay nakikipagkamay sa bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ bắt tay nhau"
+        },
+        "ar": {
+          "title": "يتصافح كلا اللاعبين مع بعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se serrent la main"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로 악수하고 있습니다."
+        },
+        "ru": {
+          "title": "Оба игрока пожимают друг другу руки"
+        },
+        "ht": {
+          "title": "Tou de jwè souke men youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे से हाथ मिलाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler geben sich gegenseitig die Hand"
+        },
+        "nl": {
+          "title": "Beide spelers schudden elkaar de hand"
+        },
+        "pl": {
+          "title": "Obaj gracze ściskają sobie dłonie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si stringono la mano"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "Dê um abraço lateral um no outro",
           "extra": "Além disso, segure 20 segundos e sincronize a respiração"
+        },
+        "zh": {
+          "title": "给对方一个侧面拥抱"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng side-yakap"
+        },
+        "vi": {
+          "title": "Ôm nhau một bên"
+        },
+        "ar": {
+          "title": "أعطوا بعضكم البعض عناقًا جانبيًا"
+        },
+        "fr": {
+          "title": "Faites-vous un câlin"
+        },
+        "ko": {
+          "title": "서로 옆으로 안아주세요"
+        },
+        "ru": {
+          "title": "Обними друг друга"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt yon anbrase bò"
+        },
+        "hi": {
+          "title": "एक दूसरे को साइड-हग दें"
+        },
+        "de": {
+          "title": "Umarmen Sie sich gegenseitig"
+        },
+        "nl": {
+          "title": "Elkaar een knuffel geven"
+        },
+        "pl": {
+          "title": "Przytulajcie się nawzajem"
+        },
+        "it": {
+          "title": "Abbracciatevi l'un l'altro"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Ambos os jogadores dão um ao outro um leve high-five",
           "extra": "Além disso, faça um high-five persistente com contato visual"
+        },
+        "zh": {
+          "title": "两位玩家互相温和地击掌"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbibigay sa bawat isa ng isang banayad"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ trao cho nhau một cú high five nhẹ nhàng"
+        },
+        "ar": {
+          "title": "يمنح كلا اللاعبين بعضهما البعض درجة عالية لطيفة"
+        },
+        "fr": {
+          "title": "Les deux joueurs se donnent un léger high five"
+        },
+        "ko": {
+          "title": "두 선수는 서로에게 부드러운 하이파이브를 건네줍니다."
+        },
+        "ru": {
+          "title": "Оба игрока дают друг другу нежную пятерку"
+        },
+        "ht": {
+          "title": "Tou de jwè yo bay youn ak lòt yon dou wo-senk"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को एक सौम्य हाई-फाइव देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler geben sich gegenseitig ein sanftes High-Five"
+        },
+        "nl": {
+          "title": "Beide spelers geven elkaar een zachte high-five"
+        },
+        "pl": {
+          "title": "Obaj gracze dają sobie nawzajem delikatną piątkę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si danno un leggero cinque"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Ambos os jogadores ficam de mãos dadas por 10 segundos",
           "extra": "Além disso, entrelace os dedos e sincronize três respirações"
+        },
+        "zh": {
+          "title": "两位玩家手牵手 10 秒"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay humahawak ng mga kamay"
+        },
+        "vi": {
+          "title": "Cả hai người chơi nắm tay nhau trong 10 giây"
+        },
+        "ar": {
+          "title": "يمسك كلا اللاعبين أيديهم لمدة 10 ثوانٍ"
+        },
+        "fr": {
+          "title": "Les deux joueurs se tiennent la main pendant 10 secondes"
+        },
+        "ko": {
+          "title": "두 선수 모두 10초 동안 손을 잡습니다."
+        },
+        "ru": {
+          "title": "Оба игрока держатся за руки в течение 10 секунд"
+        },
+        "ht": {
+          "title": "Tou de jwè yo kenbe men pou 10 segonn"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी 10 सेकंड के लिए हाथ पकड़ते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler halten die Hände 10 Sekunden lang"
+        },
+        "nl": {
+          "title": "Beide spelers houden hun hand gedurende 10 seconden vast"
+        },
+        "pl": {
+          "title": "Obaj gracze trzymają się za ręce przez 10 sekund"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si tengono per mano per 10 secondi"
         }
       }
     },
@@ -75,6 +231,45 @@
         "pt": {
           "title": "O jogador da vez aperta rapidamente o ombro de quem aceita o desafio",
           "extra": "Além disso, adicione uma massagem suave no pescoço"
+        },
+        "zh": {
+          "title": "现任玩家快速挤压勇气另一位玩家的肩膀"
+        },
+        "tl": {
+          "title": "Binibigyan ng kasalukuyang manlalaro ang kabilang manlalaro ng mabilis na pag-click"
+        },
+        "vi": {
+          "title": "Cầu thủ hiện tại bóp vai nhanh chóng cho người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي يمنح اللاعب الآخر ضغطًا سريعًا على الكتف"
+        },
+        "fr": {
+          "title": "Le joueur actuel serre rapidement l'épaule de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터에게 어깨를 빠르게 쥐어짜는 모습을 보여줍니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок быстро сжимает плечо акцептанта"
+        },
+        "ht": {
+          "title": "Aktyèl jwè lòt jwè a yon rapid zepòl peze"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को एक त्वरित कंधे का दबाव देता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler drückt dem anderen Spieler schnell die Schulter"
+        },
+        "nl": {
+          "title": "De huidige speler geeft de andere speler een snelle schouderdruk"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz szybkie ściśnięcie ramienia"
+        },
+        "it": {
+          "title": "Il giocatore attuale dà una rapida compressione alla spalla di l'altro giocatore"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "Sente-se lado a lado com os ombros se tocando por 30 segundos",
           "extra": "Além disso, ambos colocaram um braço em volta do outro jogador"
+        },
+        "zh": {
+          "title": "并排坐着，肩部触摸 30 秒"
+        },
+        "tl": {
+          "title": "Umupo sa tabi na may hawak ang mga balikat sa loob ng 30 segundo"
+        },
+        "vi": {
+          "title": "Ngồi cạnh nhau với vai chạm vào trong 30 giây"
+        },
+        "ar": {
+          "title": "اجلس جنبًا إلى جنب مع لمس الكتفين لمدة 30 ثانية"
+        },
+        "fr": {
+          "title": "Asseyez-vous côte à côte, les épaules se touchant pendant 30 secondes"
+        },
+        "ko": {
+          "title": "어깨를 만지고 30 초 동안 나란히 앉으십시오."
+        },
+        "ru": {
+          "title": "Сидите бок о бок, соприкасаясь плечами в течение 30 секунд"
+        },
+        "ht": {
+          "title": "Chita kòt a kòt ak zepòl manyen pou 30 segonn"
+        },
+        "hi": {
+          "title": "कंधे से कंधा मिलाकर 30 सेकंड तक बैठें"
+        },
+        "de": {
+          "title": "Setzen Sie sich 30 Sekunden lang Seite an Seite, wobei sich die Schultern berühren"
+        },
+        "nl": {
+          "title": "Ga 30 seconden naast elkaar zitten met de schouders tegen elkaar"
+        },
+        "pl": {
+          "title": "Usiądź obok siebie, dotykając ramion przez 30 sekund"
+        },
+        "it": {
+          "title": "Siediti fianco a fianco con le spalle che si toccano per 30 secondi"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "O jogador da vez dá aquem aceita o desafio uma simples massagem nas mãos (uma mão)",
           "extra": "Além disso, massageie as duas mãos lentamente"
+        },
+        "zh": {
+          "title": "当前玩家给勇气另一位玩家一个简单的手部按摩（一只手）"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay nagbibigay sa kabilang manlalaro ng isang simpleng masahe sa hand (isang kamay"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại cho người chơi kia dare một mát-xa tay đơn giản (một tay)"
+        },
+        "ar": {
+          "title": "يمنح اللاعب الحالي اللاعب الآخر تدليكًا بسيطًا لليد (يد واحدة)"
+        },
+        "fr": {
+          "title": "Le joueur actuel fait un simple massage des mains (une main) à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터에게 간단한 손 마사지를 제공합니다 (한 손)."
+        },
+        "ru": {
+          "title": "Нынешний игрок делает другой игрок простой массаж рук (одной рукой)"
+        },
+        "ht": {
+          "title": "Aktyèl jwè lòt jwè a yon masaj men senp (yon sèl men)"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी डेयर एक्सेप्टर को एक साधारण हाथ की मालिश (एक हाथ) देता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler gibt dem anderen Spieler eine einfache Handmassage (eine Hand)"
+        },
+        "nl": {
+          "title": "Huidige speler geeft andere speler een eenvoudige handmassage (één hand)"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz prosty masaż dłoni (jedna ręka)"
+        },
+        "it": {
+          "title": "Il giocatore attuale fa a l'altro giocatore un semplice massaggio alla mano (una mano)"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "Troque um abraço frontal por 10 segundos",
           "extra": "Além disso, balançam lentamente juntos"
+        },
+        "zh": {
+          "title": "在 10 秒内交换正面拥抱"
+        },
+        "tl": {
+          "title": "Magpalitan ng yakap sa harap sa loob ng 10 segundo"
+        },
+        "vi": {
+          "title": "Trao đổi một cái ôm trước trong 10 giây"
+        },
+        "ar": {
+          "title": "استبدل العناق الأمامي لمدة 10 ثوانٍ"
+        },
+        "fr": {
+          "title": "Échangez un câlin frontal pendant 10 secondes"
+        },
+        "ko": {
+          "title": "10초 동안 앞 포옹을 교환하세요"
+        },
+        "ru": {
+          "title": "Обменяйтесь передними объятиями в течение 10 секунд"
+        },
+        "ht": {
+          "title": "Echanj yon anbrase devan pou 10 segonn"
+        },
+        "hi": {
+          "title": "10 सेकंड के लिए फ्रंट हग एक्सचेंज करें"
+        },
+        "de": {
+          "title": "Tausche eine vordere Umarmung für 10 Sekunden aus"
+        },
+        "nl": {
+          "title": "Ruil een voorknuffel in voor 10 seconden"
+        },
+        "pl": {
+          "title": "Wymień uścisk z przodu na 10 sekund"
+        },
+        "it": {
+          "title": "Scambia un abbraccio frontale per 10 secondi"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "Sente-se frente a frente com os joelhos se tocando por 20 segundos.",
           "extra": "Além disso, mantenha contato visual suave"
+        },
+        "zh": {
+          "title": "面对面坐着，膝盖触摸 20 秒钟"
+        },
+        "tl": {
+          "title": "Umupo na nakaharap sa bawat isa na may hawak ng mga tuhod nang 20 segundo"
+        },
+        "vi": {
+          "title": "Ngồi đối mặt với nhau với đầu gối chạm vào nhau trong 20 giây"
+        },
+        "ar": {
+          "title": "اجلسوا في مواجهة بعضكم البعض مع لمس الركبتين لمدة 20 ثانية"
+        },
+        "fr": {
+          "title": "Asseyez-vous l'un en face de l'autre, les genoux se touchant pendant 20 secondes"
+        },
+        "ko": {
+          "title": "20 초 동안 무릎을 만지고 서로 마주 앉으십시오."
+        },
+        "ru": {
+          "title": "Сидите лицом друг к другу, соприкасаясь коленями в течение 20 секунд"
+        },
+        "ht": {
+          "title": "Chita fè fas youn ak lòt ak jenou manyen pou 20 segonn"
+        },
+        "hi": {
+          "title": "20 सेकंड के लिए घुटनों को छूते हुए एक-दूसरे की ओर मुंह करके बैठें"
+        },
+        "de": {
+          "title": "Setzen Sie sich 20 Sekunden lang mit sich berührenden Knien gegenüber"
+        },
+        "nl": {
+          "title": "Blijf 20 seconden tegenover elkaar zitten met de knieën tegen elkaar"
+        },
+        "pl": {
+          "title": "Usiądź naprzeciwko siebie, dotykając kolan przez 20 sekund"
+        },
+        "it": {
+          "title": "Siediti uno di fronte all'altro con le ginocchia che si toccano per 20 secondi"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "O jogador da vez dá aquem aceita o desafio uma massagem suave no couro cabeludo",
           "extra": "Além disso, inclua uma massagem lenta nas têmporas"
+        },
+        "zh": {
+          "title": "现任玩家对勇气另一位玩家进行温和的头皮按摩"
+        },
+        "tl": {
+          "title": "Binibigyan ng kasalukuyang manlalaro ang kabilang manlalaro ng banayad na mas"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại cho người nhận dám massage da đầu nhẹ nhàng"
+        },
+        "ar": {
+          "title": "يمنح اللاعب الحالي اللاعب الآخر تدليكًا لطيفًا لفروة الرأس"
+        },
+        "fr": {
+          "title": "Le joueur actuel fait un doux massage du cuir chevelu à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 어셉터에게 부드러운 두피 마사지를 제공합니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок делает другой игрок нежный массаж кожи головы"
+        },
+        "ht": {
+          "title": "Aktyèl jwè lòt jwè a yon masaj po tèt dou"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी डेयर एक्सेप्टर को एक सौम्य स्कैल्प मसाज देता है"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler gibt der andere Spieler eine sanfte Kopfhautmassage"
+        },
+        "nl": {
+          "title": "De huidige speler geeft andere speler een zachte hoofdhuidmassage"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz delikatny masaż skóry głowy"
+        },
+        "it": {
+          "title": "Il giocatore attuale fa a l'altro giocatore un leggero massaggio al cuoio capelluto"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "Ambos os jogadores dão leves arranhões nas costas um do outro sobre as roupas",
           "extra": "Além disso, desenhe linhas lentas na parte de trás"
+        },
+        "zh": {
+          "title": "两位玩家互相在衣服上留下轻微的背部划痕"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbibigay sa bawat isa ng liwanag na gasgas"
+        },
+        "vi": {
+          "title": "Cả hai người chơi cho nhau những vết trầy xước nhẹ trên quần áo"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يعطيان بعضهما البعض خدوشًا خفيفة على الملابس"
+        },
+        "fr": {
+          "title": "Les deux joueurs se font de légères égratignures sur le dos de leurs vêtements"
+        },
+        "ko": {
+          "title": "두 선수 모두 옷에 등을 가볍게 긁습니다."
+        },
+        "ru": {
+          "title": "Оба игрока оставляют друг другу легкие царапины на одежде"
+        },
+        "ht": {
+          "title": "Tou de jwè yo bay youn ak lòt limyè tounen reyur sou rad"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को कपड़ों पर हल्की पीठ की खरोंच देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler geben sich gegenseitig leichte Rückenkratzer über der Kleidung."
+        },
+        "nl": {
+          "title": "Beide spelers geven elkaar lichte rugkrasjes op kleding"
+        },
+        "pl": {
+          "title": "Obaj gracze dają sobie nawzajem lekkie zadrapania pleców na ubraniach"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si scambiano leggeri graffi sulla schiena sui vestiti"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "Sente-se de costas e respirem juntos por cinco respirações lentas",
           "extra": "Além disso, estenda a mão para trás e segure as mãos atrás de você"
+        },
+        "zh": {
+          "title": "背靠背坐着一起呼吸进行五次慢呼吸"
+        },
+        "tl": {
+          "title": "Umupo pabalik-pabalik at huminga nang magkasama para sa limang mabagal na paghinga"
+        },
+        "vi": {
+          "title": "Ngồi sau lưng và thở cùng nhau trong năm hơi thở chậm"
+        },
+        "ar": {
+          "title": "اجلسوا بشكل متتالي وتنفسوا معًا لخمسة أنفاس بطيئة"
+        },
+        "fr": {
+          "title": "Asseyez-vous dos à dos et respirez ensemble pendant cinq respirations lentes"
+        },
+        "ko": {
+          "title": "등을 맞대고 앉아 함께 숨을 쉬며 다섯 번 천천히 숨을 쉬세요"
+        },
+        "ru": {
+          "title": "Сядьте спиной к спине и дышите вместе в течение пяти медленных вдохов"
+        },
+        "ht": {
+          "title": "Chita tounen-a-tounen epi respire ansanm pou senk souf ralanti"
+        },
+        "hi": {
+          "title": "बैक-टू-बैक बैठें और पांच धीमी सांसों के लिए एक साथ सांस लें"
+        },
+        "de": {
+          "title": "Setzen Sie sich Rücken an Rücken und atmen Sie zusammen für fünf langsame Atemzüge."
+        },
+        "nl": {
+          "title": "Ga rug aan rug zitten en adem samen gedurende vijf keer langzaam"
+        },
+        "pl": {
+          "title": "Usiądź plecami do tyłu i oddychaj razem przez pięć powolnych oddechów"
+        },
+        "it": {
+          "title": "Siediti schiena contro schiena e respira insieme per cinque respiri lenti"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "O jogador da vez oferece aquem aceita o desafio uma massagem por cima da roupa nos ombros e na parte superior das costas",
           "extra": "Estenda também a massagem para a região lombar."
+        },
+        "zh": {
+          "title": "现任玩家给勇气另一位玩家进行衣服肩部和上背部按摩"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay nagbibigay sa kabilang manlalaro ng overwear balikat at masahe sa itaas na likod"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại cho người chơi kia massage vai và lưng trên"
+        },
+        "ar": {
+          "title": "يمنح اللاعب الحالي اللاعب الآخر تدليكًا فوق الملابس للكتف والجزء العلوي من الظهر"
+        },
+        "fr": {
+          "title": "Le joueur actuel fait un massage des épaules et du haut du dos à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터에게 옷을 입은 어깨와 등 위쪽 마사지를 제공합니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок делает другой игрок массаж плеч и верхней части спины"
+        },
+        "ht": {
+          "title": "Aktyèl jwè lòt jwè a yon sou-rad zepòl ak anwo-tounen masaj"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी डेयर एक्सेप्टर को ओवर-क्लॉथ शोल्डर और अपर-बैक मसाज देता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler gibt dem anderen Spieler eine Schulter- und Rückenmassage über der Kleidung"
+        },
+        "nl": {
+          "title": "De huidige speler geeft de andere speler een schouder- en bovenrugmassage over de kleren"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz masaż ramion i górnej części pleców"
+        },
+        "it": {
+          "title": "Il giocatore attuale fa un massaggio alle spalle e alla parte superiore della schiena sopra i vestiti"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "Ambos os jogadores traçam formas suaves nos antebraços um do outro",
           "extra": "Além disso, trace lentamente do pulso ao cotovelo"
+        },
+        "zh": {
+          "title": "两位玩家在对方的前臂上描绘出柔和的形状"
+        },
+        "tl": {
+          "title": "Sinusubaybayan ng parehong mga manlalaro ang banayad na mga hugis sa mga braso ng"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều theo dõi các hình dạng nhẹ nhàng trên cẳng tay của nhau"
+        },
+        "ar": {
+          "title": "يتتبع كلا اللاعبين أشكالًا لطيفة على ساعدي بعضهما البعض."
+        },
+        "fr": {
+          "title": "Les deux joueurs tracent des formes douces sur les avant-bras de l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 팔뚝에서 부드러운 몸매를 그리며"
+        },
+        "ru": {
+          "title": "Оба игрока рисуют нежные фигуры на предплечьях друг друга"
+        },
+        "ht": {
+          "title": "Tou de jwè yo trase fòm dou sou avanbra youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे के अग्र-भुजाओं पर कोमल आकृतियों का पता लगाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler zeichnen sanfte Formen an den Unterarmen des jeweils anderen nach"
+        },
+        "nl": {
+          "title": "Beide spelers tekenen zachte vormen op elkaars onderarmen"
+        },
+        "pl": {
+          "title": "Obaj gracze śledzą delikatne kształty na przedramionach"
+        },
+        "it": {
+          "title": "Entrambi i giocatori tracciano forme delicate sugli avambracci l'uno dell'altro"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "Sente-se perto, com as coxas se tocando e encoste-se uma na outra.",
           "extra": "Além disso, envolva um braço em volta do outro"
+        },
+        "zh": {
+          "title": "坐得很近，大腿接触，互相倾斜"
+        },
+        "tl": {
+          "title": "Umupo malapit na may hawakan ng mga hita at humutol sa bawat isa"
+        },
+        "vi": {
+          "title": "Ngồi sát đùi chạm vào nhau và dựa vào nhau"
+        },
+        "ar": {
+          "title": "اجلس قريبًا مع ملامسة الفخذين واتكئ على بعضهما البعض"
+        },
+        "fr": {
+          "title": "Asseyez-vous bien, les cuisses se touchant et penchez-vous l'une contre l'autre"
+        },
+        "ko": {
+          "title": "허벅지를 만지고 서로 기대어 앉으십시오."
+        },
+        "ru": {
+          "title": "Сядьте близко, соприкасаясь бедрами, и наклонитесь друг к другу"
+        },
+        "ht": {
+          "title": "Chita fèmen ak kwis manyen ak panche nan chak lòt"
+        },
+        "hi": {
+          "title": "जांघों को छूते हुए एक दूसरे के करीब बैठें और झुक जाएं"
+        },
+        "de": {
+          "title": "Setzen Sie sich mit berührenden Oberschenkeln eng zusammen und lehnen Sie sich ineinander."
+        },
+        "nl": {
+          "title": "Ga dicht zitten met de dijen tegen elkaar en leun tegen elkaar"
+        },
+        "pl": {
+          "title": "Usiądź blisko, dotykając ud i pochyl się o siebie"
+        },
+        "it": {
+          "title": "Siediti vicino con le cosce che si toccano e appoggiati l'una all'altra"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "O jogador da vez massageia os pés de quem aceita o desafio nas meias",
           "extra": "Além disso, esfregue as panturrilhas"
+        },
+        "zh": {
+          "title": "现任玩家用脚在袜子上给勇气另一位玩家擦脚"
+        },
+        "tl": {
+          "title": "Binibigyan ng kasalukuyang manlalaro ang kabilang manlalaro ng paa sa medyas"
+        },
+        "vi": {
+          "title": "Cầu thủ hiện tại cho người chơi kia chà chân qua tất"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الحالي بفرك القدم لاللاعب الآخر من خلال الجوارب"
+        },
+        "fr": {
+          "title": "Le joueur actuel fait un massage des pieds à l'autre joueur avec des chaussettes"
+        },
+        "ko": {
+          "title": "현재 플레이어가 데어 액셉터에게 양말을 발로 문지릅니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок протирает носки другой игрок ступни"
+        },
+        "ht": {
+          "title": "Aktyèl jwè lòt jwè a yon pye fwote nan chosèt"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को मोज़े के माध्यम से एक पैर रगड़ने देता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler massiert den der andere Spieler mit dem Fuß durch die Socken"
+        },
+        "nl": {
+          "title": "De huidige speler geeft de andere speler een voetmassage door sokken"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz pocieranie stopy przez skarpetki"
+        },
+        "it": {
+          "title": "Il giocatore attuale massaggia i piedi attraverso i calzini"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "Coloque a testa na testa por 20 segundos",
           "extra": "Além disso, esfregue suavemente os narizes"
+        },
+        "zh": {
+          "title": "将额头放在额头上 20 秒"
+        },
+        "tl": {
+          "title": "Ilagay ang noo sa noo sa loob ng 20 segundo"
+        },
+        "vi": {
+          "title": "Đặt trán lên trán trong 20 giây"
+        },
+        "ar": {
+          "title": "ضع الجبين على الجبهة لمدة 20 ثانية"
+        },
+        "fr": {
+          "title": "Placer front contre front pendant 20 secondes"
+        },
+        "ko": {
+          "title": "이마와 이마에 20초 동안 대십시오."
+        },
+        "ru": {
+          "title": "Положите лоб ко лбу на 20 секунд"
+        },
+        "ht": {
+          "title": "Mete fwon nan fwon pou 20 segonn"
+        },
+        "hi": {
+          "title": "20 सेकंड के लिए माथे को माथे पर रखें"
+        },
+        "de": {
+          "title": "Lege die Stirn für 20 Sekunden an die Stirn"
+        },
+        "nl": {
+          "title": "Plaats het voorhoofd gedurende 20 seconden tegen het voorhoofd"
+        },
+        "pl": {
+          "title": "Umieść czoło na czole na 20 sekund"
+        },
+        "it": {
+          "title": "Posizionare la fronte contro la fronte per 20 secondi"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "Sente-se com um jogador entre as pernas do outro voltado para frente; o jogador externo envolve os braços em volta da cintura",
           "extra": "Além disso, apoie o queixo no ombro do outro"
+        },
+        "zh": {
+          "title": "坐在另一位玩家的双腿之间，朝前；外侧玩家双臂环绕腰部"
+        },
+        "tl": {
+          "title": "Umupo kasama ang isang manlalaro sa pagitan ng mga binti ng isa pa na nakaharap sa pasulong; binabalot ng panlabas na manlalaro"
+        },
+        "vi": {
+          "title": "Ngồi với một người chơi giữa hai chân của người kia hướng về phía trước; người chơi bên ngoài quấn hai tay quanh eo"
+        },
+        "ar": {
+          "title": "اجلس مع أحد اللاعبين بين أرجل الآخر متجهًا للأمام؛ يقوم اللاعب الخارجي بلف الذراعين حول الخصر"
+        },
+        "fr": {
+          "title": "Asseyez-vous avec un joueur entre les jambes de l'autre, face vers l'avant ; le joueur extérieur enroule les bras autour de la taille"
+        },
+        "ko": {
+          "title": "한 선수는 다른 선수의 다리 사이가 앞을 향하도록 앉습니다. 바깥쪽 선수는 허리에 팔을 감습니다."
+        },
+        "ru": {
+          "title": "Сядьте, положив одного игрока между ног другого лицом вперед; внешний игрок обхватывает талию руками"
+        },
+        "ht": {
+          "title": "Chita ak yon sèl jwè ant janm lòt la fè fas a pi devan; jwè deyò vlope bra alantou ren"
+        },
+        "hi": {
+          "title": "एक खिलाड़ी को दूसरे के पैरों के बीच आगे की ओर करके बैठें; बाहरी खिलाड़ी कमर के चारों ओर हाथ लपेटता है"
+        },
+        "de": {
+          "title": "Setze dich mit einem Spieler zwischen die Beine des anderen, der nach vorne zeigt; der äußere Spieler legt die Arme um die Taille"
+        },
+        "nl": {
+          "title": "Zit met de ene speler tussen de benen van de andere naar voren gericht; de buitenste speler slaat de armen om de taille"
+        },
+        "pl": {
+          "title": "Usiądź z jednym graczem między nogami drugiego skierowanym do przodu; gracz zewnętrzny owija ręce wokół talii"
+        },
+        "it": {
+          "title": "Siediti con un giocatore tra le gambe dell'altro rivolte in avanti; lo strato esterno avvolge le braccia intorno alla vita"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "O jogador da vez dá aquem aceita o desafio uma massagem nas costas sobre as roupas por 1 minuto",
           "extra": "Além disso, inclua a parte superior dos braços"
+        },
+        "zh": {
+          "title": "当前玩家在衣服上给勇气另一位玩家全身背部按摩 1 分钟"
+        },
+        "tl": {
+          "title": "Binibigyan ng kasalukuyang manlalaro ang kabilang manlalaro ng buong masahe sa mga damit sa loob ng 1 minuto"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại mát-xa lưng toàn bộ quần áo cho người nhận trong 1 phút"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الحالي بتدليك الظهر بالكامل على الملابس لاللاعب الآخر لمدة دقيقة واحدة"
+        },
+        "fr": {
+          "title": "Le joueur actuel donne à l'autre joueur un massage complet du dos par-dessus ses vêtements pendant 1 minute"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터에게 1분 동안 옷 위에 등을 완전히 마사지합니다."
+        },
+        "ru": {
+          "title": "Текущий игрок делает другой игрок массаж всей спины поверх одежды в течение 1 минуты"
+        },
+        "ht": {
+          "title": "Aktyèl jwè lòt jwè a yon plen tounen masaj sou rad pou 1 minit"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को 1 मिनट के लिए कपड़ों पर पूरी पीठ की मालिश देता है"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler gibt dem anderen Spieler eine Minute lang eine vollständige Rückenmassage über der Kleidung"
+        },
+        "nl": {
+          "title": "Huidige speler geeft andere speler een volledige rugmassage over kleding gedurende 1 minuut"
+        },
+        "pl": {
+          "title": "Obecny gracz daje drugi gracz masaż całego pleców na ubraniach przez 1 minutę"
+        },
+        "it": {
+          "title": "Il giocatore attuale fa un massaggio completo alla schiena sui vestiti per 1 minuto"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "Deite-se de lado, um de frente para o outro, e abrace por 30 segundos.",
           "extra": "Além disso, toque na testa enquanto respiramos juntos"
+        },
+        "zh": {
+          "title": "两侧面对面躺着，拥抱 30 秒"
+        },
+        "tl": {
+          "title": "Humaga sa iyong mga gilid na nakaharap sa bawat isa at yakapin sa loob ng 30 segundo"
+        },
+        "vi": {
+          "title": "Nằm nghiêng về phía nhau và ôm nhau trong 30 giây"
+        },
+        "ar": {
+          "title": "استلقي على جانبيك في مواجهة بعضكما واحتضن لمدة 30 ثانية."
+        },
+        "fr": {
+          "title": "Allongez-vous sur le côté face à face et étreignez pendant 30 secondes"
+        },
+        "ko": {
+          "title": "옆으로 서로 마주 보고 누워 30초 동안 포옹합니다."
+        },
+        "ru": {
+          "title": "Лягте на бок лицом друг к другу и обнимайтесь 30 секунд"
+        },
+        "ht": {
+          "title": "Kouche sou kote ou fè fas youn ak lòt epi anbrase pou 30 segonn"
+        },
+        "hi": {
+          "title": "एक दूसरे के सामने अपनी तरफ झुकें और 30 सेकंड के लिए गले लगाओ"
+        },
+        "de": {
+          "title": "Legen Sie sich auf die einander zugewandten Seiten und umarmen Sie sich 30 Sekunden lang."
+        },
+        "nl": {
+          "title": "Ga op je zij liggen, tegenover elkaar en omhels elkaar gedurende 30 seconden."
+        },
+        "pl": {
+          "title": "Połóż się po bokach naprzeciw siebie i obejmij przez 30 sekund"
+        },
+        "it": {
+          "title": "Sdraiati sui fianchi uno di fronte all'altro e abbracciati per 30 secondi"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "Quem aceita o desafio descansa a cabeça no colo do jogador da vez; o jogador da vez acaricia suavemente o cabelo",
           "extra": "Além disso, inclua uma leve massagem no templo"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家的头部停在当前玩家的腿上；当前玩家轻轻地抚摸头发"
+        },
+        "tl": {
+          "title": "Ang kabilang manlalaro ay naglalagay sa ulo ng kasalukuyang manlalaro; ang kasalukuyang manlalaro ay dahan-dahang"
+        },
+        "vi": {
+          "title": "người chơi kia Dare tựa đầu vào lòng người chơi hiện tại; cầu thủ hiện tại nhẹ nhàng vuốt tóc"
+        },
+        "ar": {
+          "title": "اللاعب الآخر يضع رأسه في حضن اللاعب الحالي؛ يقوم اللاعب الحالي بتمشيط الشعر بلطف"
+        },
+        "fr": {
+          "title": "l'autre joueur pose la tête sur les genoux du joueur en cours ; le joueur actuel caresse doucement les cheveux"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 무릎에 머리를 대고, 현재 플레이어는 머리를 부드럽게 쓰다듬습니다."
+        },
+        "ru": {
+          "title": "другой игрок упирается головой в колени текущего игрока; текущий игрок мягко поглаживает волосы"
+        },
+        "ht": {
+          "title": "lòt jwè a repoze tèt nan lap jwè aktyèl la; jwè aktyèl dousman kou cheve"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी की गोद में सिर रखता है; वर्तमान खिलाड़ी धीरे से बालों को स्ट्रोक करता है"
+        },
+        "de": {
+          "title": "Der andere Spieler legt den Kopf auf den Schoß des aktuellen Spielers; der aktuelle Spieler streichelt sanft über das Haar"
+        },
+        "nl": {
+          "title": "De andere speler rust met het hoofd op de schoot van de huidige speler; de huidige speler strijkt zachtjes over het haar"
+        },
+        "pl": {
+          "title": "drugi gracz opiera głowę na kolanach obecnego gracza; obecny gracz delikatnie głaskuje włosy"
+        },
+        "it": {
+          "title": "L'accettatore del coraggio poggia la testa sulle ginocchia del giocatore attuale; il giocatore attuale accarezza delicatamente i capelli"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "Coloque uma colher nas laterais por 1 minuto",
           "extra": "Além disso, a mão externa do jogador sobre a barriga interna do jogador por baixo da camisa"
+        },
+        "zh": {
+          "title": "用勺子将勺子放在两边 1 分钟"
+        },
+        "tl": {
+          "title": "Kutsara sa iyong mga gilid sa loob ng 1 minuto"
+        },
+        "vi": {
+          "title": "Muỗng hai bên trong 1 phút"
+        },
+        "ar": {
+          "title": "ضعي الملعقة على جانبيك لمدة دقيقة"
+        },
+        "fr": {
+          "title": "Déposer sur les côtés pendant 1 minute"
+        },
+        "ko": {
+          "title": "1분간 옆으로 숟가락으로 떠주세요"
+        },
+        "ru": {
+          "title": "Ложкой по бокам на 1 минуту"
+        },
+        "ht": {
+          "title": "Kiyè sou kote ou pou 1 minit"
+        },
+        "hi": {
+          "title": "1 मिनट के लिए अपनी तरफ से चम्मच रखें"
+        },
+        "de": {
+          "title": "1 Minute lang auf die Seiten löffeln"
+        },
+        "nl": {
+          "title": "Lepel 1 minuut op je zij"
+        },
+        "pl": {
+          "title": "Łyżka na boki przez 1 minutę"
+        },
+        "it": {
+          "title": "Cucchiaio sui fianchi per 1 minuto"
         }
       }
     },
@@ -345,6 +1203,45 @@
         "pt": {
           "title": "Sente-se no chão com uma entre as pernas da outra voltada para a mesma direção; aconchegue-se e feche",
           "extra": "Além disso, mãos na barriga, embaixo da camisa"
+        },
+        "zh": {
+          "title": "坐在地板上，两腿之间的一条朝着同一个方向；紧紧拥抱"
+        },
+        "tl": {
+          "title": "Umupo sa sahig na may isa sa pagitan ng mga binti ng isa na nakaharap sa parehong direksyon; mag-ikap nang malapit"
+        },
+        "vi": {
+          "title": "Ngồi trên sàn với một chân giữa hai chân của người kia hướng về cùng một hướng; âu yếm sát"
+        },
+        "ar": {
+          "title": "اجلس على الأرض بحيث تكون إحداهما بين أرجل الأخرى في نفس الاتجاه؛ واحتضن قريبًا"
+        },
+        "fr": {
+          "title": "Asseyez-vous sur le sol, l'une des jambes de l'autre étant orientée dans la même direction ; blottissez-vous"
+        },
+        "ko": {
+          "title": "한쪽 다리 사이가 같은 방향을 향하도록 바닥에 앉고 꼭 껴안으세요."
+        },
+        "ru": {
+          "title": "Сядьте на пол так, чтобы одна из ног другой была обращена в одну сторону; обнимайтесь близко"
+        },
+        "ht": {
+          "title": "Chita sou planche a ak youn ant janm lòt la fè fas a menm direksyon an; cuddle fèmen"
+        },
+        "hi": {
+          "title": "फर्श पर एक दूसरे के पैरों के बीच एक ही दिशा की ओर करके बैठें; करीब से गले लगाओ"
+        },
+        "de": {
+          "title": "Setzen Sie sich auf den Boden, sodass eines zwischen den Beinen des anderen in die gleiche Richtung zeigt; kuscheln Sie eng zusammen"
+        },
+        "nl": {
+          "title": "Ga op de grond zitten met de ene tussen de benen van de andere in dezelfde richting gericht; knuffel dicht"
+        },
+        "pl": {
+          "title": "Usiądź na podłodze z jedną między nogami drugiej skierowaną w tym samym kierunku; przytul się blisko"
+        },
+        "it": {
+          "title": "Siediti sul pavimento con una delle gambe dell'altra rivolta nella stessa direzione; coccolati"
         }
       }
     },
@@ -360,6 +1257,45 @@
         "pt": {
           "title": "Deite-se lado a lado de frente um para o outro e abraçe-se em contato com o corpo inteiro (vestido)",
           "extra": "Além disso, entrelace as pernas levemente"
+        },
+        "zh": {
+          "title": "面朝并排躺着，全身接触（穿着衣服）拥抱"
+        },
+        "tl": {
+          "title": "Humiga magkatabi na nakaharap sa bawat isa at kumakot gamit ang pakikipag-ugnay sa buong katawan (nakasuot)"
+        },
+        "vi": {
+          "title": "Nằm cạnh nhau và âu yếm với sự tiếp xúc toàn thân (mặc quần áo)"
+        },
+        "ar": {
+          "title": "استلقي جنبًا إلى جنب في مواجهة بعضكما البعض واحتضن مع ملامسة الجسم بالكامل (بالملابس)"
+        },
+        "fr": {
+          "title": "Allongez-vous côte à côte l'un en face de l'autre et blottissez-vous en contact avec tout le corps (habillés)"
+        },
+        "ko": {
+          "title": "나란히 누워 서로 마주 보며 몸을 맞대고 껴안습니다 (옷 입음)"
+        },
+        "ru": {
+          "title": "Лягте бок о бок лицом друг к другу и обнимайтесь всем телом (в одежде)"
+        },
+        "ht": {
+          "title": "Kouche kòt a kòt fè fas youn ak lòt ak cuddle ak kontak plen-kò (abiye)"
+        },
+        "hi": {
+          "title": "एक दूसरे के सामने कंधे से कंधा मिलाकर लेटें और पूरे शरीर के संपर्क (कपड़े पहने हुए) के साथ गले लगाएँ"
+        },
+        "de": {
+          "title": "Liegen Sie sich nebeneinander gegenüber und kuscheln Sie mit Ganzkörperkontakt (bekleidet)"
+        },
+        "nl": {
+          "title": "Ga naast elkaar liggen en knuffel met het hele lichaam contact (gekleed)"
+        },
+        "pl": {
+          "title": "Połóż się obok siebie i przytulaj się do kontaktu całego ciała (ubrany)"
+        },
+        "it": {
+          "title": "Sdraiati fianco a fianco uno di fronte all'altro e coccolati con il contatto con tutto il corpo (vestiti)"
         }
       }
     },
@@ -375,6 +1311,45 @@
         "pt": {
           "title": "Sente-se em uma cadeira com quem aceita o desafio de lado no colo do jogador da vez para um abraço",
           "extra": "Além disso, passe as costas por baixo da camisa"
+        },
+        "zh": {
+          "title": "坐在椅子上，让胆量另一位玩家侧身坐在当前玩家的腿上拥抱"
+        },
+        "tl": {
+          "title": "Umupo sa isang upuan na may kabilang manlalaro sa tabi sa tubig ng kasalukuyang manlalaro para sa pag-ikot"
+        },
+        "vi": {
+          "title": "Ngồi trên ghế với bộ chấp nhận táo bạo nằm nghiêng trên đùi người chơi hiện tại để âu yếm"
+        },
+        "ar": {
+          "title": "اجلس على كرسي مع اللاعب الآخر جانبيًا في حضن اللاعب الحالي للاحتضان"
+        },
+        "fr": {
+          "title": "Asseyez-vous sur une chaise avec un l'autre joueur sur le côté sur les genoux du joueur actuel pour un câlin"
+        },
+        "ko": {
+          "title": "현재 플레이어의 무릎에 데어 액셉터를 옆으로 대고 의자에 앉아 포옹을 해보세요."
+        },
+        "ru": {
+          "title": "Сядьте в кресло с боковым другой игрок на коленях текущего игрока и обнимайтесь"
+        },
+        "ht": {
+          "title": "Chita nan yon chèz ak lòt jwè a bòt sou lap jwè aktyèl la pou yon cuddle"
+        },
+        "hi": {
+          "title": "एक कुर्सी पर बैठें जिसमें दूसरा खिलाड़ी बग़ल में एक कुडल के लिए वर्तमान खिलाड़ी की गोद में हों"
+        },
+        "de": {
+          "title": "Setz dich zum Kuscheln auf einen Stuhl mit dem anderen Spieler seitlich auf den Schoß des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "Ga op een stoel zitten met de andere speler zijwaarts op de schoot van de huidige speler voor een knuffel"
+        },
+        "pl": {
+          "title": "Usiądź na krześle z drugi gracz bokiem na kolanach obecnego gracza, aby się przytulić"
+        },
+        "it": {
+          "title": "Siediti su una sedia con il l'altro giocatore di lato sulle ginocchia del giocatore attuale per coccolarti"
         }
       }
     },
@@ -390,6 +1365,45 @@
         "pt": {
           "title": "Deite-se cara a cara; quem aceita o desafio coloca uma perna sobre os quadris do jogador da vez e se aconchega",
           "extra": "Além disso, brinque com o cabelo um do outro"
+        },
+        "zh": {
+          "title": "面对面躺着；另一位玩家用一条腿遮住当前玩家的臀部然后近距离拥抱"
+        },
+        "tl": {
+          "title": "Humiga nang harap-harap; nagtatapon ng lakas-loob na tagapangatanggap ang isang binti sa mga balakang ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "Nằm mặt đối mặt; người chơi kia treo một chân lên hông của người chơi hiện tại và ôm sát"
+        },
+        "ar": {
+          "title": "استلقي وجهًا لوجه؛ اللاعب الآخر يلف ساق واحدة فوق فخذي اللاعب الحالي ويحتضن قريبًا"
+        },
+        "fr": {
+          "title": "Allongez-vous face à face ; l'autre joueur pose une jambe sur les hanches du joueur actuel et se blottit contre lui"
+        },
+        "ko": {
+          "title": "얼굴을 맞대고 눕습니다. 상대 플레이어는 현재 플레이어의 엉덩이를 한쪽 다리로 감싸고 꼭 껴안습니다."
+        },
+        "ru": {
+          "title": "Ложитесь лицом к лицу; дерзкий другой игрок накидывает одну ногу на бедра текущего игрока и прижимается к себе"
+        },
+        "ht": {
+          "title": "Kouche fas-a-fas; lòt jwè a drapes yon sèl janm sou ranch jwè aktyèl la ak cuddle fèmen"
+        },
+        "hi": {
+          "title": "आमने-सामने लेट जाएं; दूसरा खिलाड़ी वर्तमान खिलाड़ी के कूल्हों पर एक पैर लपेटता है और करीब से गले लगाता है"
+        },
+        "de": {
+          "title": "Liege von Angesicht zu Angesicht; der der andere Spieler legt ein Bein über die Hüfte des aktuellen Spielers und kuschelt eng zusammen"
+        },
+        "nl": {
+          "title": "Ga oog in oog liggen; andere speler drapeert één been over de heupen van de huidige speler en knuffelt dicht"
+        },
+        "pl": {
+          "title": "Połóż się twarzą w twarz; drugi gracz zakłada jedną nogę na biodrach obecnego gracza i przytulaj się blisko"
+        },
+        "it": {
+          "title": "Sdraiati faccia a faccia; chi accetta la sfida avvolge una gamba sui fianchi del giocatore attuale e si stringe"
         }
       }
     },
@@ -405,6 +1419,45 @@
         "pt": {
           "title": "Straddle cuddle: quem aceita o desafio se senta no colo do jogador da vez para um abraço apertado",
           "extra": "Acaricie as costas um do outro por baixo da camisa"
+        },
+        "zh": {
+          "title": "跨式拥抱：另一位玩家坐在当前玩家的腿上近距离拥抱"
+        },
+        "tl": {
+          "title": "Straddle cuddle: nakaupo ang kabilang manlalaro sa tubig ng kasalukuyang manlalaro para sa malapit na yakap"
+        },
+        "vi": {
+          "title": "Sự âu yếm giữa người chơi: người chơi kia ngồi trên đùi người chơi hiện tại để ôm sát"
+        },
+        "ar": {
+          "title": "عناق متدرج: يجلس اللاعب الآخر بعيدًا عن حضن اللاعب الحالي من أجل عناق وثيق"
+        },
+        "fr": {
+          "title": "Câlin à cheval : un l'autre joueur s'assoit sur les genoux du joueur actuel pour un câlin rapproché"
+        },
+        "ko": {
+          "title": "스트래들 커들: 데어 어셉터가 현재 플레이어의 무릎 위에 앉아 밀착 포옹을 합니다."
+        },
+        "ru": {
+          "title": "Straddle cuddle: другой игрок сидит на коленях текущего игрока и крепко обнимается"
+        },
+        "ht": {
+          "title": "Straddle cuddle: lòt jwè a chita astride lap jwè aktyèl la pou yon akolad fèmen"
+        },
+        "hi": {
+          "title": "straddle cuddle: हिम्मत दूसरा खिलाड़ी एक करीबी गले लगाने के लिए वर्तमान खिलाड़ी की गोद में बैठता है"
+        },
+        "de": {
+          "title": "Straddle Cuddle: der andere Spieler sitzt rittlings auf dem Schoß des aktuellen Spielers und umarmt sich fest"
+        },
+        "nl": {
+          "title": "Straddle cuddle: andere speler zit schrijlings op de schoot van de huidige speler voor een stevige knuffel"
+        },
+        "pl": {
+          "title": "Przytulanie na straddle: drugi gracz siedzi na kolanach obecnego gracza, aby się ściśle przytulić"
+        },
+        "it": {
+          "title": "Coccole a cavallo: chi accetta la sfida si siede sulle ginocchia del giocatore attuale per un abbraccio ravvicinato"
         }
       }
     },
@@ -420,6 +1473,45 @@
         "pt": {
           "title": "Deite-se de peito a peito com uma pessoa por cima",
           "extra": "Também sincronize a respiração"
+        },
+        "zh": {
+          "title": "胸对胸躺着，一个人站在上面"
+        },
+        "tl": {
+          "title": "Humiga sa dibdib sa dibdib kasama ang isang tao sa itaas"
+        },
+        "vi": {
+          "title": "Nằm ngang ngực với một người ở trên"
+        },
+        "ar": {
+          "title": "استلقي من الصدر إلى الصدر مع وجود شخص واحد في الأعلى"
+        },
+        "fr": {
+          "title": "Allongez-vous poitrine contre poitrine avec une personne au-dessus"
+        },
+        "ko": {
+          "title": "한 사람을 위에 얹고 가슴을 맞대고 누워"
+        },
+        "ru": {
+          "title": "Лягте от груди к груди с одним человеком сверху"
+        },
+        "ht": {
+          "title": "Kouche bwatè-a-pwatrin ak yon sèl moun sou tèt"
+        },
+        "hi": {
+          "title": "ऊपर एक व्यक्ति के साथ छाती से छाती तक लेटें"
+        },
+        "de": {
+          "title": "Legen Sie sich Brust an Brust mit einer Person darauf"
+        },
+        "nl": {
+          "title": "Ga van borst tot borst liggen met één persoon bovenop"
+        },
+        "pl": {
+          "title": "Połóż się od piersi do klatki piersiowej z jedną osobą na górze"
+        },
+        "it": {
+          "title": "Sdraiati petto a petto con una persona sopra"
         }
       }
     },
@@ -435,6 +1527,45 @@
         "pt": {
           "title": "Coloque bem debaixo de um cobertor com as pernas entrelaçadas",
           "extra": "A mão externa do jogador repousa sobre o peito interno do jogador"
+        },
+        "zh": {
+          "title": "用勺子紧紧地放在毯子下面，双腿缠绕"
+        },
+        "tl": {
+          "title": "Kutsara nang mahigpit sa ilalim ng isang kumot na may mga binti na nakabalit"
+        },
+        "vi": {
+          "title": "Thìa chặt dưới chăn với hai chân quấn"
+        },
+        "ar": {
+          "title": "ضع الملعقة بإحكام تحت بطانية مع تشابك الساقين"
+        },
+        "fr": {
+          "title": "Répartir fermement sous une couverture avec les jambes entrelacées"
+        },
+        "ko": {
+          "title": "다리가 얽힌 상태에서 담요 아래에 단단히 숟가락으로 담습니다."
+        },
+        "ru": {
+          "title": "Плотно уложите ложкой под одеялом с переплетенными ножками"
+        },
+        "ht": {
+          "title": "Kiyè byen sere anba yon dra ak janm entwined"
+        },
+        "hi": {
+          "title": "पैरों को उलझाए हुए कंबल के नीचे कसकर चम्मच"
+        },
+        "de": {
+          "title": "Mit verschlungenen Beinen fest unter einer Decke löffeln."
+        },
+        "nl": {
+          "title": "Lepel stevig onder een deken met verstrengelde poten"
+        },
+        "pl": {
+          "title": "Łyżka ciasno pod koc ze splecionymi nogami"
+        },
+        "it": {
+          "title": "Cucchiai bene sotto una coperta con le gambe intrecciate"
         }
       }
     }

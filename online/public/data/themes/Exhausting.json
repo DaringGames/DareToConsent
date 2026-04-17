@@ -13,6 +13,45 @@
         "pt": {
           "title": "Ambos os jogadores se esticam o mais alto que podem.",
           "extra": "... enquanto pulam o mais alto que podem"
+        },
+        "zh": {
+          "title": "两位球员都尽可能地伸展身体"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay umaabot hangga't maaari"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều kéo dài càng cao càng tốt"
+        },
+        "ar": {
+          "title": "يمتد كلا اللاعبين إلى أعلى مستوى ممكن"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'étirent aussi haut que possible"
+        },
+        "ko": {
+          "title": "두 선수 모두 최대한 높이 스트레칭합니다"
+        },
+        "ru": {
+          "title": "Оба игрока растягиваются так высоко, как только могут."
+        },
+        "ht": {
+          "title": "Tou de jwè yo detire osi wo ke yo kapab"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी जितना हो सके उतना ऊपर तक स्ट्रेच करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler strecken sich so hoch wie möglich"
+        },
+        "nl": {
+          "title": "Beide spelers strekken zich zo hoog mogelijk uit"
+        },
+        "pl": {
+          "title": "Obaj gracze rozciągają się tak wysoko, jak tylko mogą"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si allungano il più in alto possibile"
         }
       }
     },
@@ -28,6 +67,45 @@
         "pt": {
           "title": "O jogador maior tentará pegar o menor",
           "extra": "... e carregue-os pela sala"
+        },
+        "zh": {
+          "title": "较大的玩家会尝试选择较小的玩家"
+        },
+        "tl": {
+          "title": "Susubukan ng mas malaking manlalaro na kunin ang mas maliit"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn sẽ cố gắng nhặt cái nhỏ hơn"
+        },
+        "ar": {
+          "title": "سيحاول اللاعب الأكبر التقاط الأصغر"
+        },
+        "fr": {
+          "title": "Le plus gros joueur essaiera de prendre le plus petit"
+        },
+        "ko": {
+          "title": "덩치가 큰 플레이어는 작은 플레이어를 집으려 할 것입니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок попытается забрать меньшего"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo pral eseye ranmase pi piti a"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे को लेने की कोशिश करेगा"
+        },
+        "de": {
+          "title": "Der größere Spieler wird versuchen, den kleineren aufzusuchen."
+        },
+        "nl": {
+          "title": "De grotere speler zal proberen de kleinere op te pakken"
+        },
+        "pl": {
+          "title": "Większy gracz spróbuje podnieść mniejszego"
+        },
+        "it": {
+          "title": "Il giocatore più grande cercherà di raccogliere il più piccolo"
         }
       }
     }
@@ -45,6 +123,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem dez polichinelos juntos",
           "extra": "Dê cinco cumprimentos após cada macaco"
+        },
+        "zh": {
+          "title": "两位玩家一起做十次跳千斤顶"
+        },
+        "tl": {
+          "title": "Ang parehong manlalaro ay gumagawa ng sampung jumping jack nang magkasama"
+        },
+        "vi": {
+          "title": "Cả hai người chơi cùng nhau nhảy mười cú nhảy"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بعشرة رافعات للقفز معًا"
+        },
+        "fr": {
+          "title": "Les deux joueurs font dix sauts d'obstacles ensemble"
+        },
+        "ko": {
+          "title": "두 선수 모두 10개의 점핑 잭을 함께 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока вместе делают по десять прыжков"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè dis krik sote ansanm"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक साथ दस जंपिंग जैक करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen zusammen zehn Hampelmänner"
+        },
+        "nl": {
+          "title": "Beide spelers doen samen tien jumping jacks"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują razem dziesięć skoków"
+        },
+        "it": {
+          "title": "Entrambi i giocatori eseguono dieci jumping jack insieme"
         }
       }
     },
@@ -60,6 +177,45 @@
         "pt": {
           "title": "Luta de braço por trinta segundos",
           "extra": "Troque de mãos e lute de braço por mais trinta segundos"
+        },
+        "zh": {
+          "title": "手臂搏斗三十秒"
+        },
+        "tl": {
+          "title": "Arm-wrestle sa loob ng tatlumpung segundo"
+        },
+        "vi": {
+          "title": "Đấu vật cánh tay trong ba mươi giây"
+        },
+        "ar": {
+          "title": "مصارعة الذراع لمدة ثلاثين ثانية"
+        },
+        "fr": {
+          "title": "Bras de fer pendant trente secondes"
+        },
+        "ko": {
+          "title": "30초 동안 팔씨름"
+        },
+        "ru": {
+          "title": "Армрестлинг в течение тридцати секунд"
+        },
+        "ht": {
+          "title": "Bra-wrestle pou trant segonn"
+        },
+        "hi": {
+          "title": "तीस सेकंड के लिए आर्म-रेसल"
+        },
+        "de": {
+          "title": "Dreißig Sekunden lang Armdrücken"
+        },
+        "nl": {
+          "title": "Dertig seconden lang armworstelen"
+        },
+        "pl": {
+          "title": "Walka w ramieniu przez trzydzieści sekund"
+        },
+        "it": {
+          "title": "Lotta a braccio di ferro per trenta secondi"
         }
       }
     },
@@ -75,6 +231,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem flexões lado a lado",
           "extra": "Faça flexões de frente uma para a outra, perto o suficiente para tocar o nariz"
+        },
+        "zh": {
+          "title": "两位玩家并肩做俯卧撑"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng mga push-up nang magkatabi"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều chống đẩy cạnh nhau"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين الضغط جنبًا إلى جنب"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des push-ups côte à côte"
+        },
+        "ko": {
+          "title": "두 선수 모두 나란히 팔굽혀펴기를 합니다"
+        },
+        "ru": {
+          "title": "Оба игрока отжимаются бок о бок"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè pouse-ups kòt a kòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कंधे से कंधा मिलाकर पुश-अप्स करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen Liegestütze nebeneinander"
+        },
+        "nl": {
+          "title": "Beide spelers doen push-ups naast elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują pompki obok siebie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno flessioni fianco a fianco"
         }
       }
     },
@@ -90,6 +285,45 @@
         "pt": {
           "title": "O jogador maior dá ao jogador menor um passeio de carona pela sala.",
           "extra": "O jogador menor deve se segurar com as pernas enroladas"
+        },
+        "zh": {
+          "title": "较大的玩家让较小的玩家在房间里搭便车"
+        },
+        "tl": {
+          "title": "Binibigyan ng mas malaking manlalaro ang mas maliit na manlalaro ng piggyback ride sa paligid ng silid"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn cho người chơi nhỏ hơn một chuyến đi vòng quanh phòng"
+        },
+        "ar": {
+          "title": "يمنح اللاعب الأكبر اللاعب الأصغر جولة على الظهر في جميع أنحاء الغرفة."
+        },
+        "fr": {
+          "title": "Le joueur le plus grand fait faire le tour de la pièce au plus petit"
+        },
+        "ko": {
+          "title": "플레이어가 클수록 작은 플레이어가 피기백을 타고 방 주변을 돌아다닐 수 있습니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок дает возможность маленьким игрокам путешествовать по комнате на контрейлере"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo bay jwè a pi piti yon woulib piggyback alantou sal la"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को कमरे के चारों ओर एक पिग्गीबैक राइड देता है"
+        },
+        "de": {
+          "title": "Der größere Spieler fährt mit dem kleineren im Huckepack durch den Raum."
+        },
+        "nl": {
+          "title": "De grotere speler geeft de kleinere speler een ritje op de rug door de kamer"
+        },
+        "pl": {
+          "title": "Większy gracz daje mniejszemu graczowi przejażdżkę po pokoju"
+        },
+        "it": {
+          "title": "Il giocatore più grande fa fare a quello più piccolo un giro a dorso di maialino per la stanza"
         }
       }
     },
@@ -105,6 +339,45 @@
         "pt": {
           "title": "Ambos os jogadores mantêm uma posição de agachamento consecutivo por um minuto",
           "extra": "Entrelace os braços enquanto se agacha"
+        },
+        "zh": {
+          "title": "两位选手连续保持深蹲姿势一分钟"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay may posisyon ng squat back-to-back sa loob ng isang minuto"
+        },
+        "vi": {
+          "title": "Cả hai người chơi giữ tư thế ngồi xổm sau lưng trong một phút"
+        },
+        "ar": {
+          "title": "يحتفظ كلا اللاعبين بوضع القرفصاء بالتتابع لمدة دقيقة واحدة"
+        },
+        "fr": {
+          "title": "Les deux joueurs restent accroupis dos à dos pendant une minute"
+        },
+        "ko": {
+          "title": "두 선수 모두 1분 동안 연속으로 쪼그리고 앉은 자세를 유지합니다."
+        },
+        "ru": {
+          "title": "Оба игрока удерживают положение на корточках спиной к спине в течение одной минуты"
+        },
+        "ht": {
+          "title": "Tou de jwè yo kenbe yon pozisyon koupi tounen-a-tounen pou yon minit"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक मिनट के लिए बैक-टू-बैक स्क्वाट पोजीशन में रहते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler halten eine Minute lang Rücken an Rücken eine Kniebeuge"
+        },
+        "nl": {
+          "title": "Beide spelers houden een minuut back-to-back een squatpositie vast"
+        },
+        "pl": {
+          "title": "Obaj gracze utrzymują pozycję przysiadową od tyłu do tyłu przez jedną minutę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori mantengono una posizione accovacciata schiena contro schiena per un minuto"
         }
       }
     },
@@ -120,6 +393,45 @@
         "pt": {
           "title": "O jogador maior levanta o jogador menor no transporte de um bombeiro",
           "extra": "Carregue-os pela sala duas vezes"
+        },
+        "zh": {
+          "title": "体型较大的玩家在消防员的随身物中举起较小的玩家"
+        },
+        "tl": {
+          "title": "Itinaas ng mas malaking manlalaro ang mas maliit na manlalaro sa isang fireman's carrier"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn nâng người chơi nhỏ hơn trong xe của lính cứu hỏa"
+        },
+        "ar": {
+          "title": "اللاعب الأكبر يرفع اللاعب الأصغر في حقيبة رجل إطفاء"
+        },
+        "fr": {
+          "title": "Le plus grand joueur soulève le plus petit dans une cabine de pompier"
+        },
+        "ko": {
+          "title": "큰 플레이어는 작은 플레이어를 소방관의 캐리로 들어 올립니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок поднимает меньшего игрока в переноске пожарного"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo leve jwè a ki pi piti nan pote yon ponpye a"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को फायरमैन के कैरी में उठाता है"
+        },
+        "de": {
+          "title": "Der größere Spieler hebt den kleineren Spieler beim Tragen eines Feuerwehrmanns hoch"
+        },
+        "nl": {
+          "title": "De grotere speler tilt de kleinere speler op in een brandweerwagen"
+        },
+        "pl": {
+          "title": "Większy gracz podnosi mniejszego gracza w bagażniku strażaka"
+        },
+        "it": {
+          "title": "Il giocatore più grande solleva il giocatore più piccolo nella borsa di un pompiere"
         }
       }
     },
@@ -135,6 +447,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem exercícios de espelho - um conduz, o outro copia",
           "extra": "Mantenha contato visual durante os exercícios"
+        },
+        "zh": {
+          "title": "两位选手都做镜像练习 —— 一个领先，另一个复制"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng mga ehersisyo sa salamin - ang isa ay nangunguna"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thực hiện các bài tập gương - một người dẫn đầu, người kia sao chép"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين المرآة - أحدهما يقود والآخر ينسخ"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des exercices en miroir : l'un mène, l'autre copie"
+        },
+        "ko": {
+          "title": "두 선수 모두 미러 연습을 합니다. 한 명은 리드하고 다른 한 명은 카피하죠."
+        },
+        "ru": {
+          "title": "Оба игрока выполняют зеркальные упражнения — один ведет, другой копирует"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè egzèsis glas - yon sèl mennen, kopi yo lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी मिरर एक्सरसाइज करते हैं - एक लीड, दूसरी कॉपी"
+        },
+        "de": {
+          "title": "Beide Spieler machen Spiegelübungen — einer führt, der andere kopiert"
+        },
+        "nl": {
+          "title": "Beide spelers doen spiegeloefeningen - de ene leidt, de andere kopieert"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują ćwiczenia lustrzane - jeden prowadzi, drugi kopiuje"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno esercizi speculari: uno conduce, l'altro copia"
         }
       }
     },
@@ -150,6 +501,45 @@
         "pt": {
           "title": "O jogador maior segura o jogador menor em uma bolsa de noiva por trinta segundos",
           "extra": "Gire três vezes enquanto segura"
+        },
+        "zh": {
+          "title": "较大的玩家将较小的玩家放在新娘的背包里待三十秒钟"
+        },
+        "tl": {
+          "title": "Ang mas malaking manlalaro ay hawak ang mas maliit na manlalaro sa isang kasal na dalawa ng tatlumpung"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn giữ người chơi nhỏ hơn trong hộp đựng cô dâu trong ba mươi giây"
+        },
+        "ar": {
+          "title": "يحمل اللاعب الأكبر اللاعب الأصغر في حقيبة الزفاف لمدة ثلاثين ثانية"
+        },
+        "fr": {
+          "title": "Le plus grand joueur tient le plus petit joueur dans une valise nuptiale pendant trente secondes"
+        },
+        "ko": {
+          "title": "덩치가 큰 플레이어는 몸집이 작은 선수를 브라이덜 캐리에 30초 동안 안고 있습니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок удерживает маленького игрока в свадебном переноске в течение тридцати секунд"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo kenbe jwè a ki pi piti nan yon Bridal pote pou trant segonn"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को तीस सेकंड के लिए ब्राइडल कैरी में रखता है"
+        },
+        "de": {
+          "title": "Der größere Spieler hält den kleineren Spieler dreißig Sekunden lang in einer Brauttrage fest."
+        },
+        "nl": {
+          "title": "De grotere speler houdt de kleinere speler dertig seconden lang in een bruidsdraagtas."
+        },
+        "pl": {
+          "title": "Większy gracz trzyma mniejszego gracza w nosie ślubnym przez trzydzieści sekund"
+        },
+        "it": {
+          "title": "Il giocatore più grande tiene il giocatore più piccolo in una borsa da sposa per trenta secondi"
         }
       }
     },
@@ -165,6 +555,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem abdominais em parceria, segurando os pulsos um do outro",
           "extra": "Adicione um high-five na parte superior de cada flexão"
+        },
+        "zh": {
+          "title": "两位选手搭档仰卧起坐，握住对方的手腕"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng kasosyo na sit-up, na hawak ang mga pulso ng bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều ngồi dậy đối tác, giữ cổ tay của nhau"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين الجلوس مع الشريك، ويمسكون معصمي بعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des redressements assis en couple, en se tenant les poignets l'un de l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 손목을 잡고 윗몸 일으키기를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока делают приседания партнеров, держа друг друга за запястья"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè patnè chita-ups, kenbe ponyèt youn ak lòt la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की कलाई पकड़कर पार्टनर सिट-अप्स करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen Partner-Sit-Ups und halten sich gegenseitig an den Handgelenken"
+        },
+        "nl": {
+          "title": "Beide spelers doen partnersit-ups, waarbij ze elkaars polsen vasthouden"
+        },
+        "pl": {
+          "title": "Obaj gracze robią przysiady partnerskie, trzymając się nawzajem za nadgarstki"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno sit-up in coppia, tenendosi i polsi l'un l'altro"
         }
       }
     },
@@ -180,6 +609,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem uma corrida de carrinho de mão pela sala",
           "extra": "O jogador de carrinho de mão deve usar apenas uma mão"
+        },
+        "zh": {
+          "title": "两位玩家都在房间里进行独轮车比赛"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng karera sa buong silid"
+        },
+        "vi": {
+          "title": "Cả hai người chơi thực hiện một cuộc đua xe cút kít trên khắp phòng"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بسباق عربة يدوية عبر الغرفة"
+        },
+        "fr": {
+          "title": "Les deux joueurs font une course de brouettes à travers la pièce"
+        },
+        "ko": {
+          "title": "두 선수 모두 방을 가로질러 손수레 경주를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока мчатся на тачках по комнате"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè yon ras brouèt atravè sal la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी पूरे कमरे में व्हीलबारो रेस करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler rennen ein Schubkarrenrennen durch den Raum"
+        },
+        "nl": {
+          "title": "Beide spelers doen een kruiwagenrace door de kamer"
+        },
+        "pl": {
+          "title": "Obaj gracze biorą udział w wyścigu taczek po całym pokoju"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno una corsa con la carriola attraverso la stanza"
         }
       }
     },
@@ -195,6 +663,45 @@
         "pt": {
           "title": "O jogador maior dá ao jogador menor um passeio de ombro pela sala",
           "extra": "O jogador menor deve se segurar apenas com as coxas"
+        },
+        "zh": {
+          "title": "较大的玩家让较小的玩家肩骑在房间里四处走动"
+        },
+        "tl": {
+          "title": "Binibigyan ng mas malaking manlalaro ang mas maliit na manlalaro ng isang sumakay sa balikat"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn cho người chơi nhỏ hơn đi ngang vai xung quanh phòng"
+        },
+        "ar": {
+          "title": "يمنح اللاعب الأكبر اللاعب الأصغر جولة على الكتف في جميع أنحاء الغرفة"
+        },
+        "fr": {
+          "title": "Le joueur le plus grand fait faire le tour de la pièce au plus petit"
+        },
+        "ko": {
+          "title": "플레이어가 클수록 체구가 작은 플레이어가 방을 어깨에 메고 다닐 수 있습니다."
+        },
+        "ru": {
+          "title": "Игрок большего размера позволяет маленьким игрокам перемещаться по комнате"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo bay jwè a ki pi piti yon woulib zepòl alantou sal la"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को कमरे के चारों ओर कंधे की सवारी देता है"
+        },
+        "de": {
+          "title": "Der größere Spieler gibt dem kleineren Spieler einen Schulterritt durch den Raum"
+        },
+        "nl": {
+          "title": "De grotere speler geeft de kleinere speler een schouderrit door de kamer"
+        },
+        "pl": {
+          "title": "Większy gracz daje mniejszemu graczowi przejażdżkę ramieniem po pokoju"
+        },
+        "it": {
+          "title": "Il giocatore più grande dà al giocatore più piccolo un giro in spalla per la stanza"
         }
       }
     },
@@ -210,6 +717,45 @@
         "pt": {
           "title": "O jogador maior gira o jogador menor em seus braços como uma dança",
           "extra": "Gire mais rápido e mergulhe no final"
+        },
+        "zh": {
+          "title": "体型较大的玩家会像跳舞一样在怀里旋转较小的玩家"
+        },
+        "tl": {
+          "title": "Piniikot ng mas malaking manlalaro ang mas maliit na manlalaro sa kanilang mga braso tulad ng"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn xoay người chơi nhỏ hơn trong vòng tay của họ như một điệu nhảy"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الأكبر بتدوير اللاعب الأصغر بين ذراعيه مثل الرقص"
+        },
+        "fr": {
+          "title": "Le plus grand joueur fait tourner le plus petit dans ses bras comme une danse"
+        },
+        "ko": {
+          "title": "덩치가 큰 플레이어는 작은 선수를 팔에 안고 춤을 추듯 돌립니다."
+        },
+        "ru": {
+          "title": "Крупный игрок крутит маленького игрока на руках, как в танце."
+        },
+        "ht": {
+          "title": "Jwè a pi gwo vire jwè a ki pi piti nan bra yo tankou yon dans"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को अपनी बाहों में नृत्य की तरह घुमाता है"
+        },
+        "de": {
+          "title": "Der größere Spieler dreht den kleineren Spieler in seinen Armen wie bei einem Tanz"
+        },
+        "nl": {
+          "title": "De grotere speler draait de kleinere speler in zijn armen als een dans"
+        },
+        "pl": {
+          "title": "Większy gracz obraca mniejszego gracza w ramionach jak taniec"
+        },
+        "it": {
+          "title": "Il giocatore più grande fa girare il giocatore più piccolo tra le loro braccia come una danza"
         }
       }
     },
@@ -225,6 +771,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem flexões em parceria - uma em cima da outra",
           "extra": "O melhor jogador deve manter contato com as costas do jogador inferior"
+        },
+        "zh": {
+          "title": "两位玩家都会搭档俯卧撑 —— 一个在另一个上面"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng kasosyo na push-up - isa sa ibabaw ng isa pa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thực hiện động tác chống đẩy đối tác - người này chồng lên người kia"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين الضغط مع الشريك - أحدهما فوق الآخر"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des push-ups en partenariat, l'un au-dessus de l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 파트너 팔 굽혀 펴기를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока делают партнерские отжимания — одно поверх другого"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè patnè pouse-ups - youn sou tèt lòt la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी पार्टनर पुश-अप्स करते हैं - एक दूसरे के ऊपर"
+        },
+        "de": {
+          "title": "Beide Spieler machen Partner-Liegestütze — einer übereinander"
+        },
+        "nl": {
+          "title": "Beide spelers doen partner-push-ups - de een boven op de ander"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują pompki partnerskie - jedna na drugiej"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno flessioni in coppia, una sopra l'altra"
         }
       }
     },
@@ -240,6 +825,45 @@
         "pt": {
           "title": "O jogador maior segura o jogador menor contra a parede em um abraço de pé",
           "extra": "Levante as pernas do jogador menor do chão"
+        },
+        "zh": {
+          "title": "身材较大的玩家站着拥抱时将小玩家抱在墙上"
+        },
+        "tl": {
+          "title": "Hawak ng mas malaking manlalaro ang mas maliit na manlalaro sa isang pader sa isang nakatayo na yakap"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn giữ người chơi nhỏ hơn dựa vào tường trong vòng tay đứng"
+        },
+        "ar": {
+          "title": "يحمل اللاعب الأكبر اللاعب الأصغر على الحائط في حضن واقف"
+        },
+        "fr": {
+          "title": "Le plus grand joueur tient le plus petit joueur contre un mur en l'embrassant"
+        },
+        "ko": {
+          "title": "몸집이 큰 플레이어는 작은 플레이어를 벽에 대고 서 있는 포옹을 합니다."
+        },
+        "ru": {
+          "title": "Крупный игрок прижимает маленького игрока к стене в объятиях стоя"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo kenbe jwè a ki pi piti kont yon miray nan yon anbrase kanpe"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को एक दीवार के सामने खड़े आलिंगन में रखता है"
+        },
+        "de": {
+          "title": "Der größere Spieler hält den kleineren Spieler in einer stehenden Umarmung gegen eine Wand"
+        },
+        "nl": {
+          "title": "De grotere speler houdt de kleinere speler in een staande omhelzing tegen een muur"
+        },
+        "pl": {
+          "title": "Większy gracz trzyma mniejszego gracza przy ścianie w stojącym uścisku"
+        },
+        "it": {
+          "title": "Il giocatore più grande tiene il giocatore più piccolo contro un muro in un abbraccio eretto"
         }
       }
     },
@@ -255,6 +879,45 @@
         "pt": {
           "title": "Ambos os jogadores se abraçam e giram em círculos até ficarem tontos.",
           "extra": "Caiam juntos e fiquem abraçados por dez segundos"
+        },
+        "zh": {
+          "title": "两位玩家互相缠住双臂然后围成一圈旋转直到头晕"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbabalot ng mga braso sa bawat isa at umiikot sa mga bilog hanggang sa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi quấn tay quanh nhau và quay vòng tròn cho đến khi chóng mặt"
+        },
+        "ar": {
+          "title": "يلف كلا اللاعبين أذرعهم حول بعضهم البعض ويدورون في دوائر حتى بالدوار"
+        },
+        "fr": {
+          "title": "Les deux joueurs enroulent leurs bras l'un autour de l'autre et tournent en rond jusqu'à avoir le vertige"
+        },
+        "ko": {
+          "title": "두 선수는 서로 팔을 감싸고 현기증이 날 때까지 원을 그리며 회전합니다."
+        },
+        "ru": {
+          "title": "Оба игрока обхватывают друг друга и вращаются по кругу до головокружения"
+        },
+        "ht": {
+          "title": "Tou de jwè vlope bra alantou youn ak lòt epi vire nan ti sèk jiskaske vèrtijin"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे के चारों ओर हाथ लपेटते हैं और चक्कर आने तक हलकों में घूमते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler legen die Arme umeinander und drehen sich im Kreis, bis ihnen schwindelig wird."
+        },
+        "nl": {
+          "title": "Beide spelers slaan hun armen om elkaar heen en draaien in cirkels tot ze duizelig worden"
+        },
+        "pl": {
+          "title": "Obaj gracze owijają ramiona wokół siebie i kręcą się w kółko, aż do zawrotów głowy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si abbracciano e girano in cerchio fino alle vertigini"
         }
       }
     },
@@ -270,6 +933,45 @@
         "pt": {
           "title": "O jogador maior carrega o jogador menor em um berço e carrega pela sala",
           "extra": "Balance-os suavemente como um bebê por trinta segundos"
+        },
+        "zh": {
+          "title": "较大的玩家将较小的玩家放在摇篮里随身携带在房间里"
+        },
+        "tl": {
+          "title": "Ang mas malaking manlalaro ay nagdadala ng mas maliit na manlalaro sa isang duyan na dalhin sa paligid"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn mang người chơi nhỏ hơn trong một cái nôi mang theo xung quanh phòng"
+        },
+        "ar": {
+          "title": "اللاعب الأكبر يحمل اللاعب الأصغر في مهد محمول في جميع أنحاء الغرفة"
+        },
+        "fr": {
+          "title": "Le plus grand joueur transporte le plus petit joueur dans un berceau et le transporte dans la pièce."
+        },
+        "ko": {
+          "title": "덩치가 큰 플레이어는 작은 플레이어를 거치대에 태워 실내를 돌아다닙니다."
+        },
+        "ru": {
+          "title": "Крупный игрок переносит маленького игрока в колыбели, переносите его по комнате."
+        },
+        "ht": {
+          "title": "Jwè a pi gwo pote jwè a ki pi piti nan yon bèso pote alantou sal la"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को कमरे के चारों ओर एक क्रैडल कैरी में ले जाता है"
+        },
+        "de": {
+          "title": "Der größere Spieler trägt den kleineren Spieler in einer Wiege und trägt ihn durch den Raum."
+        },
+        "nl": {
+          "title": "De grotere speler draagt de kleinere speler in een wieg en draagt de kamer rond"
+        },
+        "pl": {
+          "title": "Większy gracz nosi mniejszego gracza w kołysku, nosząc po pokoju"
+        },
+        "it": {
+          "title": "Il giocatore più grande trasporta il giocatore più piccolo in una culla, porta in giro per la stanza"
         }
       }
     },
@@ -285,6 +987,45 @@
         "pt": {
           "title": "O jogador maior prende o jogador menor no chão em um porão de luta livre",
           "extra": "Mantenha o pino por trinta segundos"
+        },
+        "zh": {
+          "title": "体型较大的玩家在摔跤格中将较小的选手固定在地板上"
+        },
+        "tl": {
+          "title": "Ang mas malaking manlalaro ay naka-pin ang mas maliit na manlalaro sa sahig sa isang hawak ng wrestling"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn ghim người chơi nhỏ hơn xuống sàn trong một cú đấu vật"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الأكبر بتثبيت اللاعب الأصغر على الأرض في قبضة المصارعة"
+        },
+        "fr": {
+          "title": "Le plus grand joueur épingle le plus petit joueur au sol dans une prise de catch"
+        },
+        "ko": {
+          "title": "몸집이 큰 선수는 몸집이 작은 선수를 바닥에 고정시켜 레슬링 홀드를 합니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок прижимает маленького игрока к полу в трюме для борьбы"
+        },
+        "ht": {
+          "title": "Pi gwo jwè broch jwè a pi piti nan etaj la nan yon lit kenbe"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी रेसलिंग होल्ड में छोटे खिलाड़ी को फर्श पर पिन करता है"
+        },
+        "de": {
+          "title": "Der größere Spieler drückt den kleineren Spieler in einem Wrestling-Hold auf den Boden"
+        },
+        "nl": {
+          "title": "De grotere speler zet de kleinere speler in een worstelruim op de grond"
+        },
+        "pl": {
+          "title": "Większy gracz przypina mniejszego gracza do podłogi w zapaśnictwie"
+        },
+        "it": {
+          "title": "Il giocatore più grande blocca il giocatore più piccolo a terra in una presa di wrestling"
         }
       }
     },
@@ -300,6 +1041,45 @@
         "pt": {
           "title": "Ambos os jogadores praticam ioga em parceria - um levanta o outro em uma pose apoiada",
           "extra": "Mantenha a postura por um minuto com contato corporal completo"
+        },
+        "zh": {
+          "title": "两位选手都做搭档瑜伽——一个人用支撑的姿势抬起另一个"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng partner yoga - itinataas ng isa ang isa sa isang suportadong pose"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều tập yoga đối tác - một người nâng người kia trong tư thế được hỗ trợ"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بممارسة اليوجا الشريكة - أحدهما يرفع الآخر في وضع مدعوم"
+        },
+        "fr": {
+          "title": "Les deux joueurs font du yoga en couple : l'un soulève l'autre dans une pose soutenue"
+        },
+        "ko": {
+          "title": "두 선수 모두 파트너 요가를 합니다. 한 선수는 받쳐주는 자세로 다른 한 명을 들어 올립니다."
+        },
+        "ru": {
+          "title": "Оба игрока занимаются партнерской йогой — один поднимает другого в опорной позе"
+        },
+        "ht": {
+          "title": "Tou de jwè fè patnè yoga - yon sèl leve lòt la nan yon poze sipòte"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी पार्टनर योगा करते हैं - एक दूसरे को सपोर्टेड पोज़ में उठाता है"
+        },
+        "de": {
+          "title": "Beide Spieler machen Partneryoga — einer hebt den anderen in einer unterstützten Pose"
+        },
+        "nl": {
+          "title": "Beide spelers doen partneryoga - de ene tilt de andere op in een ondersteunde houding"
+        },
+        "pl": {
+          "title": "Obaj gracze uprawiają jogę partnerską - jeden podnosi drugiego w podpartej pozie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno yoga in coppia: uno solleva l'altro in una posa sostenuta"
         }
       }
     },
@@ -315,6 +1095,45 @@
         "pt": {
           "title": "O jogador maior segura o jogador menor pressionando o corpo inteiro contra a parede",
           "extra": "Jogador menor tenta escapar por 1 minuto"
+        },
+        "zh": {
+          "title": "较大的玩家将较小的玩家全身按压在墙上"
+        },
+        "tl": {
+          "title": "Ang mas malaking manlalaro ay hawak ang mas maliit na manlalaro sa isang buong katawan na pindutin laban sa"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn giữ người chơi nhỏ hơn trong một cú ấn toàn thân vào tường"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الأكبر بحمل اللاعب الأصغر بضغطة كاملة على الحائط"
+        },
+        "fr": {
+          "title": "Le joueur le plus grand tient le joueur le plus petit en appuyant sur tout le corps contre le mur."
+        },
+        "ko": {
+          "title": "큰 플레이어는 작은 플레이어를 벽에 대고 몸 전체를 눌러 잡습니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок удерживает маленького игрока, прижимая все тело к стене"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo kenbe jwè a ki pi piti nan yon laprès kò plen kont miray la"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को दीवार के खिलाफ फुल बॉडी प्रेस में रखता है"
+        },
+        "de": {
+          "title": "Der größere Spieler hält den kleineren Spieler in einem Ganzkörperdruck gegen die Wand"
+        },
+        "nl": {
+          "title": "De grotere speler houdt de kleinere speler met zijn hele lichaam tegen de muur gedrukt"
+        },
+        "pl": {
+          "title": "Większy gracz trzyma mniejszego gracza w całym ciele przyciśniętym do ściany"
+        },
+        "it": {
+          "title": "Il giocatore più grande tiene il giocatore più piccolo premendo tutto il corpo contro il muro"
         }
       }
     },
@@ -330,6 +1149,45 @@
         "pt": {
           "title": "O jogador maior fica em cima do jogador menor cara a cara",
           "extra": "O jogador menor tenta escapar por 1 minuto"
+        },
+        "zh": {
+          "title": "较大的玩家面对面躺在较小的玩家之上"
+        },
+        "tl": {
+          "title": "Ang mas malaking manlalaro ay nasa ibabaw ng mas maliit na manlalaro nang harapan"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn nằm trên đầu người chơi nhỏ hơn đối mặt"
+        },
+        "ar": {
+          "title": "يقع اللاعب الأكبر فوق اللاعب الأصغر وجهًا لوجه"
+        },
+        "fr": {
+          "title": "Le plus gros joueur se trouve face à face au-dessus du plus petit joueur"
+        },
+        "ko": {
+          "title": "큰 플레이어는 작은 플레이어 위에 얼굴을 맞대고 눕습니다."
+        },
+        "ru": {
+          "title": "Крупный игрок лежит лицом к лицу с меньшим."
+        },
+        "ht": {
+          "title": "Jwè a pi gwo bay manti sou tèt jwè a pi piti fas-a-fas"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी के ऊपर आमने-सामने होता है"
+        },
+        "de": {
+          "title": "Der größere Spieler liegt von Angesicht zu Angesicht über dem kleineren Spieler"
+        },
+        "nl": {
+          "title": "De grotere speler ligt tegenover de kleinere speler van aangezicht tot aangezicht"
+        },
+        "pl": {
+          "title": "Większy gracz leży na mniejszym graczu twarzą w twarz"
+        },
+        "it": {
+          "title": "Il giocatore più grande si trova faccia a faccia sopra il giocatore più piccolo"
         }
       }
     },
@@ -345,6 +1203,45 @@
         "pt": {
           "title": "Ambos os jogadores fazem uma partida de luta livre por dois minutos",
           "extra": "Tire a roupa íntima primeiro"
+        },
+        "zh": {
+          "title": "两位选手都进行了两分钟的摔跤比赛"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng isang laban sa pakikipagtulungan"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ chơi một trận đấu vật trong hai phút"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بمباراة مصارعة لمدة دقيقتين."
+        },
+        "fr": {
+          "title": "Les deux joueurs font un match de catch pendant deux minutes"
+        },
+        "ko": {
+          "title": "두 선수 모두 2분 동안 레슬링 경기를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока играют в рестлинг-поединке по две минуты"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè yon match lit pou de minit"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी दो मिनट के लिए कुश्ती मैच करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler führen zwei Minuten lang ein Wrestling-Match durch"
+        },
+        "nl": {
+          "title": "Beide spelers doen twee minuten lang een worstelwedstrijd"
+        },
+        "pl": {
+          "title": "Obaj gracze rozgrywają mecz zapaśniczy przez dwie minuty"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno una partita di wrestling per due minuti"
         }
       }
     }
