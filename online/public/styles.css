@@ -208,6 +208,18 @@ button.narrow{ width:auto; }
 .edit-instruction{
   font-weight:750;
 }
+.edit-panel-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.edit-panel-header .avatar{
+  width:56px;
+  height:56px;
+  font-size:1.2rem;
+}
 #pass-turn{
   margin-top:14px;
 }

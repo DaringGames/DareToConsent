@@ -119,6 +119,10 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
     completeOnboarding(casey)
   ]);
 
+  await bob.locator('[data-edit-player]').first().click();
+  await expect(bob.locator('.edit-panel-header .avatar')).toBeVisible();
+  await bob.locator('#back-edit').click();
+
   await waitForTurnMode(alice);
   await alice.locator('[data-mode="dare"]').click();
   await expect(alice.locator('[data-select-dare]:not([disabled])').first()).toBeVisible();

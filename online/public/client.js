@@ -699,7 +699,10 @@ function editPanel(){
     const count = r.me?.counts?.players?.find(c => c.playerId === p.id)?.count || 0;
     return `
       <section class="panel">
-        <button class="secondary narrow" id="back-edit">${t('back')}</button>
+        <div class="edit-panel-header">
+          <button class="secondary narrow" id="back-edit">${t('back')}</button>
+          ${avatarHtml(p)}
+        </div>
         <p class="edit-instruction">${escapeHtml(playerEditSummary(p.name, count))}</p>
         <div class="check-list">${r.dareMenu.map(d => `
           <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
