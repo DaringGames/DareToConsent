@@ -139,7 +139,7 @@ const I18N = {
     ok:'OK',
     cancel:'Cancel',
     loading:'Loading',
-    uploadFailed:'Selfie upload failed. Please try a smaller photo.'
+    uploadFailed:'Selfie upload failed. Please try a JPG, PNG, WebP, or HEIC photo.'
   },
   es: {
     title:'Dare to Consent',
@@ -242,7 +242,7 @@ const I18N = {
     ok:'OK',
     cancel:'Cancelar',
     loading:'Cargando',
-    uploadFailed:'No se pudo subir la selfie. Prueba con una foto más pequeña.'
+    uploadFailed:'No se pudo subir la selfie. Prueba con una foto JPG, PNG, WebP o HEIC.'
   },
   pt: {
     title:'Dare to Consent',
@@ -345,13 +345,13 @@ const I18N = {
     ok:'OK',
     cancel:'Cancelar',
     loading:'Carregando',
-    uploadFailed:'Falha ao enviar a selfie. Tente uma foto menor.'
+    uploadFailed:'Falha ao enviar a selfie. Tente uma foto JPG, PNG, WebP ou HEIC.'
   }
 };
 
 Object.assign(I18N, {
   zh: { ...I18N.en,
-    tagline:'如果转瓶子只会选到真正想亲吻彼此的人，你会玩吗？', joinHost:'加入{name}的游戏', joinGame:'加入游戏', createGame:'创建游戏', gameCode:'游戏代码', setupProfile:'设置你的资料', profileHelp:'这些选择会用来预填同意设置。进入游戏后你仍然可以更改具体同意内容。', room:'房间', players:'玩家', startGame:'开始游戏', resumeGame:'继续游戏', waitingForPlayers:'等待至少3名玩家', yourName:'你的名字', yourGender:'你的性别', prefer:'你偏好和以下性别的玩家做挑战', male:'男性', female:'女性', nonbinary:'非二元/其他', language:'语言', join:'加入', create:'创建', or:'或', theme:'主题', changeName:'更改名字', chooseColor:'选择你的颜色', useSelfie:'使用自拍', addPlayers:'添加玩家', leaveGame:'离开游戏', share:'分享此链接', yourTurn:'轮到你了', chooseDareModeTitle:'选择挑战', chooseDareModeDesc:'看看谁愿意和你一起做', choosePlayerModeTitle:'选择玩家', choosePlayerModeDesc:'看看对方愿意和你做哪些挑战', chooseDare:'选择挑战', choosePlayer:'选择玩家', waitingChoose:'等待{name}选择', waitingRespond:'等待{name}回应', waitingResponsesTitle:'等待回应', waitingOn:'等待', collectingResponses:'正在收集回应', waitingPerform:'等待{a}和{b}完成：{dare}', waitingAdd:'等待{name}添加新挑战', consentPlayers:'点击玩家，编辑你愿意和对方做哪些挑战：', consentDares:'点击挑战，编辑你愿意和哪些玩家做这个挑战：', consentCount:'同意{count}个挑战', dareCount:'{count}名玩家同意', oneDare:'同意1个挑战', onePlayer:'1名玩家同意', playerEditSummary:'{name}同意{count}个挑战。你愿意和{name}做哪些挑战？', playerEditSummaryOne:'{name}同意1个挑战。你愿意和{name}做哪些挑战？', dareEditSummary:'{count}名玩家同意“{dare}”。你愿意和哪些玩家做这个挑战？', dareEditSummaryOne:'1名玩家同意“{dare}”。你愿意和哪些玩家做这个挑战？', back:'返回', save:'保存', submit:'提交', sendNow:'立即发送', yesPlease:'愿意', noThanks:'不了，谢谢', sendingIn:'{seconds}秒后发送', selectedDare:'{name}选择了“{dare}”', chosenYou:'{name}选择了你做挑战！你同意：', activeOptionsPlayers:'选择和谁做这个挑战，或跳过', activeOptionsDares:'选择和{name}做哪个挑战，或跳过', pass:'跳过', weDidIt:'我们完成了', noOptions:'当前没有匹配。你可以跳过。', areYouSure:'你之前说过不想和这个人做这个挑战。继续吗？', addDareTitle:'你可以写一个新挑战', newDare:'新挑战', addToMenu:'添加到菜单', examples:'这里有一些灵感：', milder:'❄️ 显示更温和的挑战', spicier:'🌶️ 显示更刺激的挑战', onboardingTitle:'设置你的挑战偏好', onboardingDareTitle:'挑战 #{number}：{dare}', onboardingHelp:'你同意和以下玩家做这个挑战：', joinedTitle:'{name}加入了！', joinedHelp:'选择你愿意和这名玩家做哪些挑战。', newDareTitle:'已添加新挑战', newDareHelp:'你愿意和这些人做这个挑战：', mature:'成人内容', matureBody:'本游戏仅适合18岁及以上成人。', adult:'我已满18岁', under:'我未成年', ok:'确定', cancel:'取消', loading:'加载中', uploadFailed:'自拍上传失败。请尝试较小的照片。'
+    tagline:'如果转瓶子只会选到真正想亲吻彼此的人，你会玩吗？', joinHost:'加入{name}的游戏', joinGame:'加入游戏', createGame:'创建游戏', gameCode:'游戏代码', setupProfile:'设置你的资料', profileHelp:'这些选择会用来预填同意设置。进入游戏后你仍然可以更改具体同意内容。', room:'房间', players:'玩家', startGame:'开始游戏', resumeGame:'继续游戏', waitingForPlayers:'等待至少3名玩家', yourName:'你的名字', yourGender:'你的性别', prefer:'你偏好和以下性别的玩家做挑战', male:'男性', female:'女性', nonbinary:'非二元/其他', language:'语言', join:'加入', create:'创建', or:'或', theme:'主题', changeName:'更改名字', chooseColor:'选择你的颜色', useSelfie:'使用自拍', addPlayers:'添加玩家', leaveGame:'离开游戏', share:'分享此链接', yourTurn:'轮到你了', chooseDareModeTitle:'选择挑战', chooseDareModeDesc:'看看谁愿意和你一起做', choosePlayerModeTitle:'选择玩家', choosePlayerModeDesc:'看看对方愿意和你做哪些挑战', chooseDare:'选择挑战', choosePlayer:'选择玩家', waitingChoose:'等待{name}选择', waitingRespond:'等待{name}回应', waitingResponsesTitle:'等待回应', waitingOn:'等待', collectingResponses:'正在收集回应', waitingPerform:'等待{a}和{b}完成：{dare}', waitingAdd:'等待{name}添加新挑战', consentPlayers:'点击玩家，编辑你愿意和对方做哪些挑战：', consentDares:'点击挑战，编辑你愿意和哪些玩家做这个挑战：', consentCount:'同意{count}个挑战', dareCount:'{count}名玩家同意', oneDare:'同意1个挑战', onePlayer:'1名玩家同意', playerEditSummary:'{name}同意{count}个挑战。你愿意和{name}做哪些挑战？', playerEditSummaryOne:'{name}同意1个挑战。你愿意和{name}做哪些挑战？', dareEditSummary:'{count}名玩家同意“{dare}”。你愿意和哪些玩家做这个挑战？', dareEditSummaryOne:'1名玩家同意“{dare}”。你愿意和哪些玩家做这个挑战？', back:'返回', save:'保存', submit:'提交', sendNow:'立即发送', yesPlease:'愿意', noThanks:'不了，谢谢', sendingIn:'{seconds}秒后发送', selectedDare:'{name}选择了“{dare}”', chosenYou:'{name}选择了你做挑战！你同意：', activeOptionsPlayers:'选择和谁做这个挑战，或跳过', activeOptionsDares:'选择和{name}做哪个挑战，或跳过', pass:'跳过', weDidIt:'我们完成了', noOptions:'当前没有匹配。你可以跳过。', areYouSure:'你之前说过不想和这个人做这个挑战。继续吗？', addDareTitle:'你可以写一个新挑战', newDare:'新挑战', addToMenu:'添加到菜单', examples:'这里有一些灵感：', milder:'❄️ 显示更温和的挑战', spicier:'🌶️ 显示更刺激的挑战', onboardingTitle:'设置你的挑战偏好', onboardingDareTitle:'挑战 #{number}：{dare}', onboardingHelp:'你同意和以下玩家做这个挑战：', joinedTitle:'{name}加入了！', joinedHelp:'选择你愿意和这名玩家做哪些挑战。', newDareTitle:'已添加新挑战', newDareHelp:'你愿意和这些人做这个挑战：', mature:'成人内容', matureBody:'本游戏仅适合18岁及以上成人。', adult:'我已满18岁', under:'我未成年', ok:'确定', cancel:'取消', loading:'加载中', uploadFailed:'自拍上传失败。请尝试使用 JPG、PNG、WebP 或 HEIC 照片。'
   },
   tl: { ...I18N.en,
     tagline:'Maglalaro ka ba ng Spin-the-Bottle kung pipili lang ito ng mga taong GUSTONG humalik sa isa\'t isa?', joinHost:'Sumali sa laro ni {name}', joinGame:'Sumali sa Laro', createGame:'Gumawa ng Laro', gameCode:'Code ng laro', setupProfile:'Ayusin ang iyong profile', profileHelp:'Ginagamit ang mga sagot na ito para punan ang paunang consent. Maaari mo pa itong baguhin sa loob ng laro.', room:'Kuwarto', players:'Mga manlalaro', startGame:'Simulan ang Laro', resumeGame:'Ipagpatuloy ang Laro', waitingForPlayers:'Naghihintay ng hindi bababa sa 3 manlalaro', yourName:'Pangalan mo', yourGender:'Kasarian mo', prefer:'Mas gusto mong gumawa ng dare kasama ang mga manlalarong', male:'lalaki', female:'babae', nonbinary:'nonbinary/iba pa', language:'Wika', join:'Sumali', create:'Gumawa', or:'o', theme:'Tema', changeName:'Palitan ang pangalan', chooseColor:'Piliin ang kulay mo', useSelfie:'Gumamit ng selfie', addPlayers:'Magdagdag ng Manlalaro', leaveGame:'Umalis sa laro', share:'Ibahagi ang link na ito', yourTurn:'Ikaw na', chooseDareModeTitle:'Pumili ng Dare', chooseDareModeDesc:'Tingnan kung sino ang gagawa nito kasama ka', choosePlayerModeTitle:'Pumili ng Tao', choosePlayerModeDesc:'Tingnan kung aling dares ang gagawin nila kasama ka', chooseDare:'Pumili ng dare', choosePlayer:'Pumili ng manlalaro', waitingChoose:'Naghihintay kay {name} na pumili', waitingRespond:'Naghihintay sa sagot ni {name}', waitingResponsesTitle:'Naghihintay ng mga sagot', waitingOn:'Naghihintay kina', collectingResponses:'Kinokolekta ang mga sagot', waitingPerform:'Naghihintay kina {a} at {b} na gawin: {dare}', waitingAdd:'Naghihintay kay {name} na magdagdag ng bagong dare', consentPlayers:'Pindutin ang manlalaro para baguhin kung aling dares ang payag kang gawin kasama sila:', consentDares:'Pindutin ang dare para baguhin kung sinong mga manlalaro ang payag kang gawin ito kasama:', consentCount:'pumapayag sa {count} dares', dareCount:'{count} manlalaro ang pumapayag', oneDare:'pumapayag sa 1 dare', onePlayer:'1 manlalaro ang pumapayag', playerEditSummary:'Pumapayag si {name} sa {count} dares. Aling dares ang payag mong gawin kasama si {name}?', playerEditSummaryOne:'Pumapayag si {name} sa 1 dare. Aling dares ang payag mong gawin kasama si {name}?', dareEditSummary:'{count} manlalaro ang pumapayag sa "{dare}". Sinong mga manlalaro ang payag mong gawin ang dare na ito kasama?', dareEditSummaryOne:'1 manlalaro ang pumapayag sa "{dare}". Sinong mga manlalaro ang payag mong gawin ang dare na ito kasama?', back:'Bumalik', save:'I-save', submit:'Isumite', sendNow:'Ipadala Ngayon', yesPlease:'Oo, gusto ko', noThanks:'Hindi, salamat', sendingIn:'Ipapadala sa {seconds}', selectedDare:'Pinili ni {name} ang "{dare}"', chosenYou:'Pinili ka ni {name} para sa dare! Payag ka sa:', activeOptionsPlayers:'Piliin kung sino ang gagawa ng dare na ito kasama mo, o pumasa', activeOptionsDares:'Piliin kung aling dare ang gagawin kasama si {name}, o pumasa', pass:'Pumasa', weDidIt:'Nagawa namin', noOptions:'Walang tugma ngayon. Maaari kang pumasa.', areYouSure:'Dati mong sinabi na ayaw mo sa dare na ito kasama ang taong ito. Ituloy?', addDareTitle:'Maaari kang magsulat ng bagong dare', newDare:'Bagong dare', addToMenu:'Idagdag sa Menu', examples:'Narito ang ilang ideya:', milder:'❄️ Magpakita ng mas banayad na dares', spicier:'🌶️ Magpakita ng mas maanghang na dares', onboardingTitle:'Itakda ang iyong dare preferences', onboardingDareTitle:'Dare #{number}: {dare}', onboardingHelp:'Payag ka sa dare na ito kasama ang:', joinedTitle:'Sumali si {name}!', joinedHelp:'Piliin kung aling dares ang payag kang gawin kasama ang manlalarong ito.', newDareTitle:'May bagong dare na idinagdag', newDareHelp:'Payag kang gawin ang dare na ito kasama ang:', mature:'Pang-adultong nilalaman', matureBody:'Ang larong ito ay para sa mga nasa edad 18 pataas.', adult:'18+ ako', under:'Masyado pa akong bata', ok:'OK', cancel:'Kanselahin', loading:'Naglo-load', uploadFailed:'Nabigo ang pag-upload ng selfie. Subukan ang mas maliit na larawan.'
@@ -1193,22 +1193,26 @@ async function uploadSelfie(file){
     showConfirm(t('uploadFailed'), { confirmText:t('ok'), cancelText:t('cancel') });
   }
 }
-function loadImageSource(file){
-  return new Promise((resolve, reject) => {
-    if (!file?.type?.startsWith('image/')) return reject(new Error('not an image'));
-    if (window.createImageBitmap) {
+async function loadImageSource(file, converted=false){
+  const imageLike = file?.type?.startsWith('image/') || /\.(heic|heif)$/i.test(file?.name || '');
+  if (!imageLike) throw new Error('not an image');
+  if (window.createImageBitmap) {
+    try {
       const options = { imageOrientation:'from-image' };
       if (file.size > 1_500_000) {
         options.resizeWidth = SELFIE_WORK_MAX_DIM;
         options.resizeQuality = 'high';
       }
-      createImageBitmap(file, options)
-        .then(bitmap => resolve(downsampleImageSource({ source:bitmap, width:bitmap.width, height:bitmap.height, cleanup:() => bitmap.close?.() })))
-        .catch(() => loadImageElement(file).then(resolve, reject));
-      return;
-    }
-    loadImageElement(file).then(resolve, reject);
-  });
+      const bitmap = await createImageBitmap(file, options);
+      return downsampleImageSource({ source:bitmap, width:bitmap.width, height:bitmap.height, cleanup:() => bitmap.close?.() });
+    } catch {}
+  }
+  try {
+    return await loadImageElement(file);
+  } catch (e) {
+    if (!converted) return loadImageSource(await convertHeicToJpeg(file), true);
+    throw e;
+  }
 }
 function loadImageElement(file){
   return new Promise((resolve, reject) => {
@@ -1248,6 +1252,26 @@ function cropImageToDataUrl(img, crop, size=160){
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(img.source, crop.sx, crop.sy, crop.side, crop.side, 0, 0, size, size);
   return canvas.toDataURL('image/jpeg', 0.72);
+}
+let heic2anyLoader = null;
+function loadHeic2Any(){
+  if (window.heic2any) return Promise.resolve(window.heic2any);
+  heic2anyLoader ||= new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = '/lib/heic2any.min.js';
+    script.async = true;
+    script.onload = () => window.heic2any ? resolve(window.heic2any) : reject(new Error('heic converter unavailable'));
+    script.onerror = () => reject(new Error('heic converter failed to load'));
+    document.head.appendChild(script);
+  });
+  return heic2anyLoader;
+}
+async function convertHeicToJpeg(file){
+  const heic2any = await loadHeic2Any();
+  const converted = await heic2any({ blob:file, toType:'image/jpeg', quality:0.82 });
+  const blob = Array.isArray(converted) ? converted[0] : converted;
+  if (!(blob instanceof Blob)) throw new Error('heic conversion failed');
+  return new File([blob], `${(file.name || 'selfie').replace(/\.[^.]*$/, '')}.jpg`, { type:'image/jpeg' });
 }
 function cropFromControls(img, controls){
   const zoom = Number(controls.zoom?.value || 1);
