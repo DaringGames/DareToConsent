@@ -35,6 +35,7 @@ const LANGUAGE_NAMES = {
 const SESSION_KEY = 'dtc.session';
 const UI_KEY = 'dtc.ui';
 const PAGE_SIZE = 4;
+const SELFIE_WORK_MAX_DIM = 1600;
 
 const I18N = {
   en: {
@@ -1196,8 +1197,13 @@ function loadImageSource(file){
   return new Promise((resolve, reject) => {
     if (!file?.type?.startsWith('image/')) return reject(new Error('not an image'));
     if (window.createImageBitmap) {
-      createImageBitmap(file, { imageOrientation:'from-image' })
-        .then(bitmap => resolve({ source:bitmap, width:bitmap.width, height:bitmap.height, cleanup:() => bitmap.close?.() }))
+      const options = { imageOrientation:'from-image' };
+      if (file.size > 1_500_000) {
+        options.resizeWidth = SELFIE_WORK_MAX_DIM;
+        options.resizeQuality = 'high';
+      }
+      createImageBitmap(file, options)
+        .then(bitmap => resolve(downsampleImageSource({ source:bitmap, width:bitmap.width, height:bitmap.height, cleanup:() => bitmap.close?.() })))
         .catch(() => loadImageElement(file).then(resolve, reject));
       return;
     }
@@ -1209,11 +1215,27 @@ function loadImageElement(file){
     const img = new Image();
     const url = URL.createObjectURL(file);
     img.onload = () => {
-      resolve({ source:img, width:img.naturalWidth || img.width, height:img.naturalHeight || img.height, cleanup:() => URL.revokeObjectURL(url) });
+      resolve(downsampleImageSource({ source:img, width:img.naturalWidth || img.width, height:img.naturalHeight || img.height, cleanup:() => URL.revokeObjectURL(url) }));
     };
     img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('image decode failed')); };
     img.src = url;
   });
+}
+function downsampleImageSource(img, maxDim=SELFIE_WORK_MAX_DIM){
+  const maxSide = Math.max(img.width, img.height);
+  if (maxSide <= maxDim) return img;
+  const scale = maxDim / maxSide;
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(img.width * scale));
+  canvas.height = Math.max(1, Math.round(img.height * scale));
+  const ctx = canvas.getContext('2d', { alpha:false });
+  ctx.fillStyle = '#111827';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(img.source, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+  img.cleanup?.();
+  return { source:canvas, width:canvas.width, height:canvas.height, cleanup:() => {} };
 }
 function cropImageToDataUrl(img, crop, size=160){
   const canvas = document.createElement('canvas');

@@ -1,7 +1,9 @@
 import { expect, test } from '@playwright/test';
-import { fileURLToPath } from 'url';
-
-const avatarFixture = fileURLToPath(new URL('../public/apple-touch-icon.png', import.meta.url));
+const largeAvatarFixture = {
+  name: 'large-selfie.svg',
+  mimeType: 'image/svg+xml',
+  buffer: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="4200" height="2800"><rect width="4200" height="2800" fill="#223047"/><circle cx="2100" cy="1200" r="620" fill="#f6c39f"/><circle cx="1880" cy="1060" r="70" fill="#1f2937"/><circle cx="2320" cy="1060" r="70" fill="#1f2937"/><path d="M1760 1530 Q2100 1840 2440 1530" fill="none" stroke="#7f1d1d" stroke-width="80" stroke-linecap="round"/></svg>')
+};
 
 async function dismissAgeGate(page) {
   await expect(page.getByText('This game is intended for adults 18 years or older.')).toBeVisible();
@@ -29,7 +31,7 @@ async function createRoom(page, name) {
 
 async function uploadTinyAvatar(page) {
   await page.getByRole('button', { name: /Alice/ }).click();
-  await page.locator('#selfie-input').setInputFiles(avatarFixture);
+  await page.locator('#selfie-input').setInputFiles(largeAvatarFixture);
   await expect(page.locator('.selfie-modal')).toBeVisible();
   await page.locator('#selfie-zoom').evaluate(el => {
     el.value = '1.5';
