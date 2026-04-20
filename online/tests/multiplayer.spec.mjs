@@ -36,6 +36,8 @@ async function joinRoom(page, code, name) {
 async function completeOnboarding(page) {
   const next = page.locator('#onboard-next');
   await expect(next).toBeVisible();
+  await expect(page.getByRole('heading', { name: /^Dare #1:/ })).toBeVisible();
+  await expect(page.getByText('You consent to this dare with:')).toBeVisible();
   for (let i = 0; i < 20; i++) {
     if (await next.count() === 0) return;
     await next.click();

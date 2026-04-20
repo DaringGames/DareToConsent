@@ -262,6 +262,12 @@ button.narrow{ width:auto; }
   font-weight:800;
 }
 .examples-nav{ display:flex; gap:8px; margin-top:8px; }
+.spice-rating{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-weight:850;
+}
 input:focus-visible,select:focus-visible,button:focus-visible{
   outline:2px solid var(--accent);
   outline-offset:2px;

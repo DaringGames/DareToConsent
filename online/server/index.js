@@ -599,7 +599,9 @@ function finalizePersonResponses(room) {
   emitRoom(room);
 }
 function eligibleAddCount(room) {
-  return Math.min(room.dareMenu.length, 1 + Math.floor((room.completedSinceDareAdded || 0) / 2));
+  const completedWithoutNewDare = room.completedSinceDareAdded || 0;
+  const expandedEligibility = 2 + Math.floor(Math.max(0, completedWithoutNewDare - 1) / 2);
+  return Math.min(room.dareMenu.length, expandedEligibility);
 }
 function updateStateForConnectedCount(room) {
   const connectedCount = connectedPlayers(room).length;
@@ -965,6 +967,7 @@ io.on('connection', (socket) => {
     if (sendNow || Object.keys(room.turn.responses).length >= expected) {
       finalizeDareResponses(room);
     } else {
+      scheduleTurnTimer(room, 5000, () => finalizeDareResponses(room));
       touch(room);
       emitRoom(room);
     }
