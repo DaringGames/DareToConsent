@@ -262,6 +262,12 @@ button.narrow{ width:auto; }
   border-radius:50%;
   border:1px solid var(--border-2);
   background:#111827;
+  cursor:grab;
+  touch-action:none;
+  user-select:none;
+}
+.selfie-modal .selfie-canvas.dragging{
+  cursor:grabbing;
 }
 .selfie-modal input[type="range"]{
   width:100%;

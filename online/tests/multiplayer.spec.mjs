@@ -33,6 +33,21 @@ async function uploadTinyAvatar(page) {
   await page.getByRole('button', { name: /Alice/ }).click();
   await page.locator('#selfie-input').setInputFiles(largeAvatarFixture);
   await expect(page.locator('.selfie-modal')).toBeVisible();
+  const canvas = page.locator('.selfie-canvas');
+  const box = await canvas.boundingBox();
+  expect(box).toBeTruthy();
+  const beforeDrag = Number(await page.locator('#selfie-x').inputValue());
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width / 2 + 36, box.y + box.height / 2 + 18);
+  await page.mouse.up();
+  const afterDrag = Number(await page.locator('#selfie-x').inputValue());
+  expect(afterDrag).not.toBe(beforeDrag);
+  const beforeWheel = Number(await page.locator('#selfie-zoom').inputValue());
+  await canvas.hover();
+  await page.mouse.wheel(0, -180);
+  const afterWheel = Number(await page.locator('#selfie-zoom').inputValue());
+  expect(afterWheel).toBeGreaterThan(beforeWheel);
   await page.locator('#selfie-zoom').evaluate(el => {
     el.value = '1.5';
     el.dispatchEvent(new Event('input', { bubbles:true }));

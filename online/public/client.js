@@ -1286,6 +1286,12 @@ function cropFromControls(img, controls){
     side
   };
 }
+function clampCropValue(value, min, max){
+  return Math.min(max, Math.max(min, value));
+}
+function setRangeValue(input, value){
+  input.value = String(clampCropValue(value, Number(input.min), Number(input.max)));
+}
 async function showSelfieCropper(file){
   const img = await loadImageSource(file);
   return new Promise(resolve => {
@@ -1312,6 +1318,41 @@ async function showSelfieCropper(file){
     const canvas = overlay.querySelector('canvas');
     const ctx = canvas.getContext('2d', { alpha:false });
     const controls = { zoom:overlay.querySelector('#selfie-zoom'), x:overlay.querySelector('#selfie-x'), y:overlay.querySelector('#selfie-y') };
+    const activePointers = new Map();
+    let gestureStart = null;
+    const pointFromEvent = event => ({ id:event.pointerId, x:event.clientX, y:event.clientY });
+    const midpoint = points => ({
+      x:(points[0].x + points[1].x) / 2,
+      y:(points[0].y + points[1].y) / 2
+    });
+    const distance = points => Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+    const cropCenter = crop => ({ x:crop.sx + crop.side / 2, y:crop.sy + crop.side / 2 });
+    const updateCenterControls = (centerX, centerY) => {
+      setRangeValue(controls.x, (centerX / img.width) * 100);
+      setRangeValue(controls.y, (centerY / img.height) * 100);
+    };
+    const startGesture = () => {
+      const points = [...activePointers.values()];
+      const crop = cropFromControls(img, controls);
+      const center = cropCenter(crop);
+      if (points.length >= 2) {
+        const firstTwo = points.slice(0, 2);
+        gestureStart = {
+          type:'pinch',
+          points:firstTwo,
+          midpoint:midpoint(firstTwo),
+          distance:Math.max(1, distance(firstTwo)),
+          center,
+          side:crop.side,
+          zoom:Number(controls.zoom.value)
+        };
+      } else if (points.length === 1) {
+        gestureStart = { type:'drag', point:points[0], center, side:crop.side };
+      } else {
+        gestureStart = null;
+      }
+      canvas.classList.toggle('dragging', !!gestureStart);
+    };
     const draw = () => {
       const crop = cropFromControls(img, controls);
       ctx.fillStyle = '#111827';
@@ -1320,12 +1361,64 @@ async function showSelfieCropper(file){
       ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(img.source, crop.sx, crop.sy, crop.side, crop.side, 0, 0, canvas.width, canvas.height);
     };
+    const updateGesture = () => {
+      if (!gestureStart) return;
+      const rect = canvas.getBoundingClientRect();
+      const points = [...activePointers.values()];
+      if (gestureStart.type === 'pinch' && points.length >= 2) {
+        const firstTwo = points.slice(0, 2);
+        const currentMidpoint = midpoint(firstTwo);
+        const zoomScale = distance(firstTwo) / gestureStart.distance;
+        setRangeValue(controls.zoom, gestureStart.zoom * zoomScale);
+        const dx = currentMidpoint.x - gestureStart.midpoint.x;
+        const dy = currentMidpoint.y - gestureStart.midpoint.y;
+        updateCenterControls(
+          gestureStart.center.x - (dx / rect.width) * gestureStart.side,
+          gestureStart.center.y - (dy / rect.height) * gestureStart.side
+        );
+        draw();
+      } else if (gestureStart.type === 'drag' && points.length === 1) {
+        const dx = points[0].x - gestureStart.point.x;
+        const dy = points[0].y - gestureStart.point.y;
+        updateCenterControls(
+          gestureStart.center.x - (dx / rect.width) * gestureStart.side,
+          gestureStart.center.y - (dy / rect.height) * gestureStart.side
+        );
+        draw();
+      }
+    };
     const close = value => {
       overlay.remove();
       img.cleanup?.();
       resolve(value);
     };
     Object.values(controls).forEach(input => input.addEventListener('input', draw));
+    canvas.addEventListener('pointerdown', event => {
+      event.preventDefault();
+      canvas.setPointerCapture?.(event.pointerId);
+      activePointers.set(event.pointerId, pointFromEvent(event));
+      startGesture();
+    });
+    canvas.addEventListener('pointermove', event => {
+      if (!activePointers.has(event.pointerId)) return;
+      event.preventDefault();
+      activePointers.set(event.pointerId, pointFromEvent(event));
+      updateGesture();
+    });
+    const endPointer = event => {
+      activePointers.delete(event.pointerId);
+      try { canvas.releasePointerCapture?.(event.pointerId); } catch {}
+      startGesture();
+    };
+    canvas.addEventListener('pointerup', endPointer);
+    canvas.addEventListener('pointercancel', endPointer);
+    canvas.addEventListener('lostpointercapture', endPointer);
+    canvas.addEventListener('wheel', event => {
+      event.preventDefault();
+      const factor = event.deltaY < 0 ? 1.08 : 0.92;
+      setRangeValue(controls.zoom, Number(controls.zoom.value) * factor);
+      draw();
+    }, { passive:false });
     overlay.querySelector('.btn-cancel').addEventListener('click', () => close(null));
     overlay.querySelector('.btn-ok').addEventListener('click', () => close(cropImageToDataUrl(img, cropFromControls(img, controls))));
     draw();
