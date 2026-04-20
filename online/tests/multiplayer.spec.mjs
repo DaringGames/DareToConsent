@@ -1,4 +1,7 @@
 import { expect, test } from '@playwright/test';
+import { fileURLToPath } from 'url';
+
+const avatarFixture = fileURLToPath(new URL('../public/apple-touch-icon.png', import.meta.url));
 
 async function dismissAgeGate(page) {
   await expect(page.getByText('This game is intended for adults 18 years or older.')).toBeVisible();
@@ -24,19 +27,19 @@ async function createRoom(page, name) {
   return hash;
 }
 
-async function uploadTinyAvatar(page, code) {
-  const result = await page.evaluate(async roomCode => {
-    const session = JSON.parse(localStorage.getItem('dtc.session') || '{}');
-    const image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/p9sAAAAASUVORK5CYII=';
-    const res = await fetch('/api/avatar', {
-      method:'POST',
-      headers:{ 'Content-Type':'application/json' },
-      body:JSON.stringify({ code:roomCode, playerId:session.playerId, image })
-    });
-    return res.json();
-  }, code);
-  expect(result.ok).toBeTruthy();
-  expect(result.url).toContain('/avatar-cache/');
+async function uploadTinyAvatar(page) {
+  await page.getByRole('button', { name: /Alice/ }).click();
+  await page.locator('#selfie-input').setInputFiles(avatarFixture);
+  await expect(page.locator('.selfie-modal')).toBeVisible();
+  await page.locator('#selfie-zoom').evaluate(el => {
+    el.value = '1.5';
+    el.dispatchEvent(new Event('input', { bubbles:true }));
+  });
+  await page.locator('#selfie-x').evaluate(el => {
+    el.value = '45';
+    el.dispatchEvent(new Event('input', { bubbles:true }));
+  });
+  await page.getByRole('button', { name: 'Use Photo' }).click();
   await expect(page.locator('.profile-toggle .avatar img')).toHaveAttribute('src', /avatar-cache/);
 }
 
@@ -84,7 +87,7 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
   const casey = await caseyContext.newPage();
 
   const code = await createRoom(alice, 'Alice');
-  await uploadTinyAvatar(alice, code);
+  await uploadTinyAvatar(alice);
   await joinRoom(bob, code, 'Bob');
   await joinRoom(casey, code, 'Casey');
 

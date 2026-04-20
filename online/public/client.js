@@ -1243,7 +1243,7 @@ function cropFromControls(img, controls){
 async function showSelfieCropper(file){
   const img = await loadImageSource(file);
   return new Promise(resolve => {
-    const host = overlayRoot();
+    const host = ensureOverlayRoot();
     const overlay = document.createElement('div');
     overlay.className = 'overlay show';
     overlay.innerHTML = `
