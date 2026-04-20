@@ -729,6 +729,7 @@ build/
 tmp/
 temp/
 .cache/
+online/.avatar-cache/
 .parcel-cache
 .eslintcache
 

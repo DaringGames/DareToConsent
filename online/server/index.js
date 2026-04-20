@@ -31,6 +31,9 @@ const S3_REGION = process.env.AWS_REGION || process.env.S3_REGION || 'us-west-2'
 const AVATAR_BUCKET = process.env.DTC_AVATAR_BUCKET || process.env.S3_BUCKET || 'worstinworld-assets-prod';
 const AVATAR_PREFIX = (process.env.DTC_AVATAR_PREFIX || 'img/dtc-selfies').replace(/^\/+|\/+$/g, '');
 const AVATAR_BASE_URL = (process.env.DTC_AVATAR_BASE_URL || `https://${AVATAR_BUCKET}.s3.${S3_REGION}.amazonaws.com`).replace(/\/+$/g, '');
+const AVATAR_STORAGE = (process.env.DTC_AVATAR_STORAGE || '').toLowerCase();
+const AVATAR_LOCAL_ROUTE = '/avatar-cache';
+const AVATAR_LOCAL_DIR = process.env.DTC_AVATAR_LOCAL_DIR || path.join(__dirname, '../.avatar-cache');
 const AVATAR_TTL_MS = 8 * 60 * 60 * 1000;
 const AVATAR_SWEEP_MS = 30 * 60 * 1000;
 
@@ -107,6 +110,27 @@ function getSes() {
 function getS3() {
   if (!s3Client) s3Client = new S3Client({ region: S3_REGION });
   return s3Client;
+}
+function isLocalHostname(hostname) {
+  const h = String(hostname || '').toLowerCase();
+  return h === 'localhost' || h === '127.0.0.1' || h === '::1' || h.startsWith('192.168.') || h.startsWith('10.') || /^172\.(1[6-9]|2\d|3[01])\./.test(h);
+}
+function useLocalAvatarStorage(req) {
+  if (AVATAR_STORAGE === 'local') return true;
+  if (AVATAR_STORAGE === 's3') return false;
+  return isLocalHostname(req.hostname);
+}
+function localAvatarPathFromUrl(url) {
+  if (!url || !String(url).startsWith(`${AVATAR_LOCAL_ROUTE}/`)) return null;
+  const rel = String(url).slice(AVATAR_LOCAL_ROUTE.length + 1);
+  const resolved = path.resolve(AVATAR_LOCAL_DIR, rel);
+  const root = path.resolve(AVATAR_LOCAL_DIR);
+  return resolved.startsWith(root + path.sep) ? resolved : null;
+}
+async function deleteLocalAvatarUrl(url) {
+  const fp = localAvatarPathFromUrl(url);
+  if (!fp) return;
+  try { await fs.promises.rm(fp, { force: true }); } catch {}
 }
 
 let lastEmailStatus = {
@@ -342,12 +366,38 @@ function purgeRoomAvatars(room) {
   const keys = [];
   const base = `${AVATAR_BASE_URL}/`;
   for (const p of room?.players || []) {
-    if (!p.avatarUrl || !p.avatarUrl.startsWith(base)) continue;
-    keys.push(p.avatarUrl.slice(base.length));
+    if (!p.avatarUrl) continue;
+    if (p.avatarUrl.startsWith(base)) {
+      keys.push(p.avatarUrl.slice(base.length));
+    } else {
+      deleteLocalAvatarUrl(p.avatarUrl);
+    }
   }
   deleteS3Keys(keys);
 }
+async function sweepExpiredLocalAvatars() {
+  const cutoff = Date.now() - AVATAR_TTL_MS;
+  const walk = async dir => {
+    let entries = [];
+    try { entries = await fs.promises.readdir(dir, { withFileTypes: true }); } catch { return; }
+    await Promise.all(entries.map(async entry => {
+      const fp = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        await walk(fp);
+        try { await fs.promises.rmdir(fp); } catch {}
+        return;
+      }
+      try {
+        const st = await fs.promises.stat(fp);
+        if (st.mtimeMs < cutoff) await fs.promises.rm(fp, { force: true });
+      } catch {}
+    }));
+  };
+  await walk(AVATAR_LOCAL_DIR);
+}
 async function sweepExpiredAvatars() {
+  await sweepExpiredLocalAvatars();
+  if (AVATAR_STORAGE === 'local') return;
   const cutoff = Date.now() - AVATAR_TTL_MS;
   let ContinuationToken;
   try {
@@ -662,7 +712,19 @@ app.use((req, _res, next) => {
   try { stats.visitors.add(getReqIp(req)); } catch {}
   next();
 });
+app.use((req, res, next) => {
+  if (req.path === '/client.js' || req.path === '/styles.css') {
+    res.setHeader('Cache-Control', 'no-store');
+  }
+  next();
+});
 app.use(express.json({ limit: '350kb' }));
+fs.mkdirSync(AVATAR_LOCAL_DIR, { recursive: true });
+app.use(AVATAR_LOCAL_ROUTE, express.static(AVATAR_LOCAL_DIR, {
+  setHeaders(res) {
+    res.setHeader('Cache-Control', 'private, max-age=28800');
+  }
+}));
 app.use(express.static(path.join(__dirname, '../public')));
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
@@ -700,18 +762,33 @@ app.post('/api/avatar', async (req, res) => {
   const isWebp = body.subarray(0, 4).toString() === 'RIFF' && body.subarray(8, 12).toString() === 'WEBP';
   if (!isJpeg && !isPng && !isWebp) return res.status(400).json({ ok: false, error: 'bad_image' });
   const contentType = isPng ? 'image/png' : isWebp ? 'image/webp' : 'image/jpeg';
-  const key = `${AVATAR_PREFIX}/${room.code}/${player.id}-${Date.now().toString(36)}-${shortId()}.${contentType.split('/')[1]}`;
+  const extName = contentType.split('/')[1];
+  const fileName = `${player.id}-${Date.now().toString(36)}-${shortId()}.${extName}`;
+  const previousUrl = player.avatarUrl;
   try {
-    await getS3().send(new PutObjectCommand({
-      Bucket: AVATAR_BUCKET,
-      Key: key,
-      Body: body,
-      ContentType: contentType,
-      CacheControl: 'private, max-age=28800',
-      Metadata: { room: room.code, player: player.id, expires: String(Date.now() + 8 * 60 * 60 * 1000) }
-    }));
-    const url = `${AVATAR_BASE_URL}/${key}`;
+    let url;
+    if (useLocalAvatarStorage(req)) {
+      const dir = path.join(AVATAR_LOCAL_DIR, room.code);
+      await fs.promises.mkdir(dir, { recursive: true });
+      await fs.promises.writeFile(path.join(dir, fileName), body);
+      url = `${AVATAR_LOCAL_ROUTE}/${room.code}/${fileName}`;
+    } else {
+      const key = `${AVATAR_PREFIX}/${room.code}/${fileName}`;
+      await getS3().send(new PutObjectCommand({
+        Bucket: AVATAR_BUCKET,
+        Key: key,
+        Body: body,
+        ContentType: contentType,
+        CacheControl: 'private, max-age=28800',
+        Metadata: { room: room.code, player: player.id, expires: String(Date.now() + 8 * 60 * 60 * 1000) }
+      }));
+      url = `${AVATAR_BASE_URL}/${key}`;
+    }
     player.avatarUrl = url;
+    if (previousUrl && previousUrl !== url) {
+      if (previousUrl.startsWith(AVATAR_LOCAL_ROUTE)) await deleteLocalAvatarUrl(previousUrl);
+      else if (previousUrl.startsWith(`${AVATAR_BASE_URL}/`)) deleteS3Keys([previousUrl.slice(AVATAR_BASE_URL.length + 1)]);
+    }
     touch(room);
     await emitRoom(room);
     res.json({ ok: true, url });

@@ -68,6 +68,12 @@ const I18N = {
     changeName:'Change name',
     chooseColor:'Choose your color',
     useSelfie:'Use selfie',
+    adjustSelfie:'Adjust your selfie',
+    selfieHelp:'Move and zoom the photo so your face is centered.',
+    usePhoto:'Use Photo',
+    zoom:'Zoom',
+    horizontal:'Horizontal',
+    vertical:'Vertical',
     addPlayers:'Add Players',
     leaveGame:'Leave game',
     share:'Share this link',
@@ -165,6 +171,12 @@ const I18N = {
     changeName:'Cambiar nombre',
     chooseColor:'Elige tu color',
     useSelfie:'Usar selfie',
+    adjustSelfie:'Ajusta tu selfie',
+    selfieHelp:'Mueve y amplía la foto para centrar tu cara.',
+    usePhoto:'Usar foto',
+    zoom:'Zoom',
+    horizontal:'Horizontal',
+    vertical:'Vertical',
     addPlayers:'Agregar jugadores',
     leaveGame:'Salir del juego',
     share:'Comparte este enlace',
@@ -262,6 +274,12 @@ const I18N = {
     changeName:'Mudar nome',
     chooseColor:'Escolha sua cor',
     useSelfie:'Usar selfie',
+    adjustSelfie:'Ajuste sua selfie',
+    selfieHelp:'Mova e amplie a foto para centralizar seu rosto.',
+    usePhoto:'Usar foto',
+    zoom:'Zoom',
+    horizontal:'Horizontal',
+    vertical:'Vertical',
     addPlayers:'Adicionar jogadores',
     leaveGame:'Sair do jogo',
     share:'Compartilhe este link',
@@ -1080,7 +1098,10 @@ function wireProfile(){
     socket.emit('player:update', { language:e.target.value });
     render();
   });
-  $('#selfie-input')?.addEventListener('change', e => uploadSelfie(e.target.files?.[0]));
+  $('#selfie-input')?.addEventListener('change', async e => {
+    await uploadSelfie(e.target.files?.[0]);
+    e.target.value = '';
+  });
   $('#add-players')?.addEventListener('click', () => showInviteOverlay(`${location.origin}/#${state.room.code}`));
   $('#leave-game')?.addEventListener('click', async () => {
     if (!await showConfirm('Leave this game?', { confirmText:t('leaveGame'), cancelText:t('cancel') })) return;
@@ -1156,7 +1177,8 @@ function sendPersonResponses(sendNow){
 async function uploadSelfie(file){
   if (!file || !state.room || !meId()) return;
   try {
-    const dataUrl = await resizeImage(file, 112);
+    const dataUrl = await showSelfieCropper(file);
+    if (!dataUrl) return;
     const res = await fetch('/api/avatar', {
       method:'POST',
       headers:{ 'Content-Type':'application/json' },
@@ -1170,28 +1192,97 @@ async function uploadSelfie(file){
     showConfirm(t('uploadFailed'), { confirmText:t('ok'), cancelText:t('cancel') });
   }
 }
-function resizeImage(file, size){
+function loadImageSource(file){
+  return new Promise((resolve, reject) => {
+    if (!file?.type?.startsWith('image/')) return reject(new Error('not an image'));
+    if (window.createImageBitmap) {
+      createImageBitmap(file, { imageOrientation:'from-image' })
+        .then(bitmap => resolve({ source:bitmap, width:bitmap.width, height:bitmap.height, cleanup:() => bitmap.close?.() }))
+        .catch(() => loadImageElement(file).then(resolve, reject));
+      return;
+    }
+    loadImageElement(file).then(resolve, reject);
+  });
+}
+function loadImageElement(file){
   return new Promise((resolve, reject) => {
     const img = new Image();
     const url = URL.createObjectURL(file);
     img.onload = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = size;
-        canvas.height = size;
-        const ctx = canvas.getContext('2d');
-        const side = Math.min(img.width, img.height);
-        const sx = (img.width - side) / 2;
-        const sy = (img.height - side) / 2;
-        ctx.drawImage(img, sx, sy, side, side, 0, 0, size, size);
-        URL.revokeObjectURL(url);
-        resolve(canvas.toDataURL('image/jpeg', 0.76));
-      } catch (e) {
-        reject(e);
-      }
+      resolve({ source:img, width:img.naturalWidth || img.width, height:img.naturalHeight || img.height, cleanup:() => URL.revokeObjectURL(url) });
     };
-    img.onerror = reject;
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('image decode failed')); };
     img.src = url;
+  });
+}
+function cropImageToDataUrl(img, crop, size=160){
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d', { alpha:false });
+  ctx.fillStyle = '#111827';
+  ctx.fillRect(0, 0, size, size);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(img.source, crop.sx, crop.sy, crop.side, crop.side, 0, 0, size, size);
+  return canvas.toDataURL('image/jpeg', 0.72);
+}
+function cropFromControls(img, controls){
+  const zoom = Number(controls.zoom?.value || 1);
+  const side = Math.max(1, Math.min(img.width, img.height) / zoom);
+  const cx = (Number(controls.x?.value || 50) / 100) * img.width;
+  const cy = (Number(controls.y?.value || 50) / 100) * img.height;
+  const maxX = Math.max(0, img.width - side);
+  const maxY = Math.max(0, img.height - side);
+  return {
+    sx:Math.min(maxX, Math.max(0, cx - side / 2)),
+    sy:Math.min(maxY, Math.max(0, cy - side / 2)),
+    side
+  };
+}
+async function showSelfieCropper(file){
+  const img = await loadImageSource(file);
+  return new Promise(resolve => {
+    const host = overlayRoot();
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay show';
+    overlay.innerHTML = `
+      <div class="modal card selfie-modal">
+        <h3>${escapeHtml(t('adjustSelfie'))}</h3>
+        <p>${escapeHtml(t('selfieHelp'))}</p>
+        <canvas class="selfie-canvas" width="240" height="240" aria-label="${escapeAttr(t('adjustSelfie'))}"></canvas>
+        <label class="field-label" for="selfie-zoom">${escapeHtml(t('zoom'))}</label>
+        <input id="selfie-zoom" type="range" min="1" max="4" step="0.01" value="1">
+        <label class="field-label" for="selfie-x">${escapeHtml(t('horizontal'))}</label>
+        <input id="selfie-x" type="range" min="0" max="100" step="1" value="50">
+        <label class="field-label" for="selfie-y">${escapeHtml(t('vertical'))}</label>
+        <input id="selfie-y" type="range" min="0" max="100" step="1" value="50">
+        <div class="row modal-buttons">
+          <button class="btn-cancel">${escapeHtml(t('cancel'))}</button>
+          <button class="primary btn-ok">${escapeHtml(t('usePhoto'))}</button>
+        </div>
+      </div>`;
+    host.appendChild(overlay);
+    const canvas = overlay.querySelector('canvas');
+    const ctx = canvas.getContext('2d', { alpha:false });
+    const controls = { zoom:overlay.querySelector('#selfie-zoom'), x:overlay.querySelector('#selfie-x'), y:overlay.querySelector('#selfie-y') };
+    const draw = () => {
+      const crop = cropFromControls(img, controls);
+      ctx.fillStyle = '#111827';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(img.source, crop.sx, crop.sy, crop.side, crop.side, 0, 0, canvas.width, canvas.height);
+    };
+    const close = value => {
+      overlay.remove();
+      img.cleanup?.();
+      resolve(value);
+    };
+    Object.values(controls).forEach(input => input.addEventListener('input', draw));
+    overlay.querySelector('.btn-cancel').addEventListener('click', () => close(null));
+    overlay.querySelector('.btn-ok').addEventListener('click', () => close(cropImageToDataUrl(img, cropFromControls(img, controls))));
+    draw();
   });
 }
 

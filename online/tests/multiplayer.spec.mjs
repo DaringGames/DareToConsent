@@ -24,6 +24,22 @@ async function createRoom(page, name) {
   return hash;
 }
 
+async function uploadTinyAvatar(page, code) {
+  const result = await page.evaluate(async roomCode => {
+    const session = JSON.parse(localStorage.getItem('dtc.session') || '{}');
+    const image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/p9sAAAAASUVORK5CYII=';
+    const res = await fetch('/api/avatar', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body:JSON.stringify({ code:roomCode, playerId:session.playerId, image })
+    });
+    return res.json();
+  }, code);
+  expect(result.ok).toBeTruthy();
+  expect(result.url).toContain('/avatar-cache/');
+  await expect(page.locator('.profile-toggle .avatar img')).toHaveAttribute('src', /avatar-cache/);
+}
+
 async function joinRoom(page, code, name) {
   await page.goto(`/#${code}`);
   await page.locator('#choose-join').click();
@@ -51,6 +67,14 @@ async function waitForTurnMode(page) {
   await expect(page.locator('[data-mode="player"]')).toBeVisible();
 }
 
+async function submitNewDareConsentIfShown(page) {
+  const submit = page.locator('#submit-new-dare');
+  try {
+    await expect(submit).toBeVisible({ timeout: 3000 });
+    await submit.click();
+  } catch {}
+}
+
 test('three isolated browser sessions can play a consent-flow turn', async ({ browser }) => {
   const aliceContext = await browser.newContext({ locale: 'en-US' });
   const bobContext = await browser.newContext({ locale: 'en-US' });
@@ -60,6 +84,7 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
   const casey = await caseyContext.newPage();
 
   const code = await createRoom(alice, 'Alice');
+  await uploadTinyAvatar(alice, code);
   await joinRoom(bob, code, 'Bob');
   await joinRoom(casey, code, 'Casey');
 
@@ -93,6 +118,17 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
 
   await expect(alice.getByRole('button', { name: 'We did it' })).toBeVisible();
   await alice.getByRole('button', { name: 'We did it' }).click();
+  await expect(alice.locator('#new-dare')).toBeVisible();
+  await expect(alice.locator('.spice-rating').first()).toContainText('🌶️');
+  await expect(alice.locator('#examples-prev')).toContainText('❄️');
+  await expect(alice.locator('#examples-next')).toContainText('🌶️');
+  await alice.locator('#new-dare').fill('Share a favorite compliment');
+  await alice.locator('#add-dare').click();
+  await Promise.all([
+    submitNewDareConsentIfShown(alice),
+    submitNewDareConsentIfShown(bob),
+    submitNewDareConsentIfShown(casey)
+  ]);
 
   await waitForTurnMode(bob);
   await alice.locator('[data-edit-player]').first().click();

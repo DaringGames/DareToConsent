@@ -254,6 +254,19 @@ button.narrow{ width:auto; }
   background:var(--surface-1);
 }
 .modal-buttons{ justify-content:flex-end; margin-top:12px; }
+.selfie-modal .selfie-canvas{
+  width:min(240px, 72vw);
+  height:min(240px, 72vw);
+  display:block;
+  margin:12px auto;
+  border-radius:50%;
+  border:1px solid var(--border-2);
+  background:#111827;
+}
+.selfie-modal input[type="range"]{
+  width:100%;
+  margin:6px 0 12px;
+}
 .qr{ display:flex; justify-content:center; margin:8px 0; }
 .or-section{
   margin:14px 0 8px;
