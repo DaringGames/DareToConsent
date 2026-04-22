@@ -1,6 +1,7 @@
 ## Handoff - online flame UI, presence recovery, and git audit
 
 Recent prompts
+- Latest prompt: deploy the current online build to production on `daretoconsent.com`; refresh AWS SSO if needed and follow `CheatSheetAWS.txt`.
 - Latest prompt: localhost stopped responding during testing and the user asked for server logs and a debug pass.
 - Latest prompt: incidental touches on other devices were still causing full-screen dialogs like `performing`, `adding`, and choose-person flows to reanimate, and some first taps were being swallowed so actions only worked on the second press.
 - Latest prompt: verify the DareToConsent.com usage-summary emails still work after the recent online-flow refactor.
@@ -31,6 +32,9 @@ Recent prompts
 - Latest bug: checking/unchecking boxes inside blocking dialogs caused the dialog itself to appear to animate back into place, because room-state rerenders were remounting the overlay DOM.
 
 What changed
+- `deploy/deploy.sh`
+  - Fixed a deploy-script startup bug: ANSI color variables were referenced during the SSM-loading step before they were defined, which caused `set -u` to abort the deploy immediately with `YEL: unbound variable`.
+  - Moved the color-variable initialization to the top of the script so production deploys work with `set -euo pipefail`.
 - `online/server/index.js`
   - Fixed a server crash in the daily digest path. Root cause: `maybeSendDigest()` kicked off `sendDigest()` without awaiting it, so expired AWS SSO credentials from SES produced an unhandled rejection that terminated Node.
   - `sendDigest()` now logs SES failures and returns `null` instead of rethrowing.
@@ -116,6 +120,10 @@ What changed
   - Blocking takeovers are now rendered into a stable `#blocking-root` keyed by prompt/turn identity, instead of being embedded inside the main app render. This keeps checkbox/radio changes and room-state refreshes from remounting the dialog and replaying its visual entrance.
 
 Checks run
+- Refreshed AWS SSO for profile `worst-prod` with `aws --profile worst-prod sso login`.
+- Ran `./deploy/deploy.sh` successfully against `daretoconsent.com`.
+- Verified production health: `curl https://daretoconsent.com/health` -> `{"ok":true}`.
+- Verified production HTML is serving the current cache-busted assets: `/styles.css?v=20260421-flame-ui8` and `/client.js?v=20260421-flame-ui8`.
 - Pulled the crashed server output; failure was:
   - `CredentialsProviderError: The SSO session associated with this profile has expired`
   - thrown from `sendDigest(...)` in `online/server/index.js`
