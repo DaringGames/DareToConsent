@@ -19,7 +19,7 @@ try { dotenv.config({ path: path.join(__dirname, '../../.env'), quiet: true }); 
 const nano = customAlphabet('abcdefghijklmnopqrstuvwxyz', 10);
 const shortId = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 8);
 const GENDERS = ['male', 'female', 'nonbinary'];
-const LANGUAGES = ['en', 'es', 'pt'];
+const LANGUAGES = ['en', 'es', 'pt', 'zh', 'tl', 'vi', 'ar', 'fr', 'ko', 'ru', 'ht', 'hi', 'de', 'nl', 'pl', 'it'];
 const COLORS = [
   'Purple','Red','White','Brown','Grey','DkBlue','Silver','Green','Orange','Lavender','DkRed','Black','Blue','Pink','LtBlue','LtPink','Yellow','DkGreen'
 ];
@@ -197,13 +197,14 @@ async function sendDigest({ to=null, subj=null } = {}) {
     return resp?.MessageId || null;
   } catch (e) {
     lastEmailStatus = { at: Date.now(), ok: false, messageId: null, error: String(e?.name || e?.message || e), to: toAddr, from: DIGEST_FROM, region: SES_REGION, sourceArn: SES_SOURCE_ARN };
-    throw e;
+    console.error('[digest] sendDigest failed', e);
+    return null;
   }
 }
-function maybeSendDigest() {
+async function maybeSendDigest() {
   try {
     const today = new Date().toISOString().slice(0,10);
-    if (stats.lastDigestDay !== today && stats.successSinceLastSend) sendDigest();
+    if (stats.lastDigestDay !== today && stats.successSinceLastSend) await sendDigest();
   } catch (e) {
     console.error('[digest] maybeSendDigest error', e);
   }
@@ -256,6 +257,10 @@ function sanitizeGender(v) {
 function sanitizeLanguage(v) {
   return LANGUAGES.includes(v) ? v : 'en';
 }
+function sanitizeLanguageCode(v) {
+  const code = String(v || '').trim().toLowerCase();
+  return LANGUAGES.includes(code) ? code : null;
+}
 function sanitizePrefs(v) {
   const arr = Array.isArray(v) ? v : [];
   const out = arr.filter(x => GENDERS.includes(x));
@@ -265,10 +270,51 @@ function resolveThemeKey(name) {
   const n = String(name || '').trim().toLowerCase();
   return Object.keys(THEMES || {}).find(k => k.toLowerCase() === n) || null;
 }
-function serverSeedForTheme(key) {
+function sanitizeDareTranslations(baseTitle, baseExtra, rawTranslations) {
+  const out = {};
+  const titleEn = sanitizeText(baseTitle, 160);
+  const extraEn = sanitizeText(baseExtra, 180);
+  if (titleEn || extraEn) {
+    out.en = {};
+    if (titleEn) out.en.title = titleEn;
+    if (extraEn) out.en.extra = extraEn;
+  }
+  for (const [rawCode, copy] of Object.entries(rawTranslations || {})) {
+    const code = sanitizeLanguageCode(rawCode);
+    if (!code) continue;
+    const title = sanitizeText(copy?.title, 160);
+    const extra = sanitizeText(copy?.extra, 180);
+    if (!title && !extra) continue;
+    out[code] ||= {};
+    if (title) out[code].title = title;
+    if (extra) out[code].extra = extra;
+  }
+  return out;
+}
+function buildThemeDareRecord(room, entry, { section, index, createdBy=null } = {}) {
+  const translations = sanitizeDareTranslations(entry?.title, entry?.extra, entry?.translations);
+  const menuLanguage = room?.menuLanguage || 'en';
+  const menuCopy = translations[menuLanguage] || translations.en || {};
+  const sourceLang = translations[menuLanguage]?.title ? menuLanguage : 'en';
+  return {
+    id: shortId(),
+    title: sanitizeText(menuCopy.title, 160),
+    extra: sanitizeText(menuCopy.extra, 180),
+    translations,
+    createdBy,
+    createdAt: Date.now(),
+    sourceLang,
+    themeRef: section ? { theme: room?.chosenTheme || null, section, index } : null
+  };
+}
+function serverSeedForTheme(room, key) {
   const t = THEMES?.[key];
   if (!t || !Array.isArray(t.starts)) return [];
-  return t.starts.map(s => ({ title: s.title, extra: s.extra, spicyness: s.spicyness }));
+  return t.starts.map((s, index) => ({ ...buildThemeDareRecord(room, s, { section:'starts', index }), spicyness: s.spicyness }));
+}
+function themeEntry(key, section, index) {
+  const list = THEMES?.[key]?.[section];
+  return Array.isArray(list) ? list[index] || null : null;
 }
 function pickWord() {
   return words[Math.floor(Math.random() * words.length)];
@@ -297,6 +343,9 @@ function publicPlayer(p) {
 
 const rooms = new Map();
 const pendingDisconnects = new Map();
+const DISCONNECT_GRACE_MS = 5000;
+const PRESENCE_IDLE_MS = 30000;
+const PRESENCE_CONFIRM_MS = 30000;
 
 function createRoom() {
   let code;
@@ -311,6 +360,7 @@ function createRoom() {
     paused: false,
     players: [],
     chosenTheme: null,
+    menuLanguage: 'en',
     dareMenu: [],
     turn: null,
     settings: {},
@@ -318,7 +368,9 @@ function createRoom() {
     consentTouched: {},
     pendingPrompts: {},
     completedSinceDareAdded: 0,
-    _turnTimer: null
+    _turnTimer: null,
+    _presence: null,
+    _presenceTimer: null
   };
   rooms.set(code, room);
   return room;
@@ -442,6 +494,9 @@ function genderDefault(player, target) {
 }
 function playerName(room, id) {
   return room.players.find(p => p.id === id)?.name || 'Player';
+}
+function playerById(room, id) {
+  return room?.players.find(p => p.id === id) || null;
 }
 function activeId(room) {
   return room.turn?.order?.[room.turn.index] || null;
@@ -581,6 +636,213 @@ function clearTurnTimer(room) {
   if (room?._turnTimer) clearTimeout(room._turnTimer);
   if (room) room._turnTimer = null;
 }
+function clearPresenceTimer(room) {
+  if (room?._presenceTimer) clearTimeout(room._presenceTimer);
+  if (room) room._presenceTimer = null;
+}
+function clearPresence(room) {
+  clearPresenceTimer(room);
+  if (room) room._presence = null;
+}
+function blockingTargets(room) {
+  if (!room?.turn || room.state !== 'main') return [];
+  const phase = room.turn.phase;
+  if (phase === 'awaitingOnboarding') return onboardingPendingIds(room);
+  if (['chooseMode', 'chooseDare', 'choosePlayer', 'choosePartner', 'chooseDareForPlayer'].includes(phase)) {
+    return activeId(room) ? [activeId(room)] : [];
+  }
+  if (phase === 'adding' && room.turn.addingBy) return [room.turn.addingBy];
+  return [];
+}
+function blockingContextKey(room, targetId) {
+  if (!room?.turn || !targetId) return null;
+  const phase = room.turn.phase;
+  if (phase === 'awaitingOnboarding') {
+    return ['awaitingOnboarding', [...onboardingPendingIds(room)].sort().join(',')].join('|');
+  }
+  if (phase === 'chooseMode') return ['chooseMode', activeId(room) || ''].join('|');
+  if (phase === 'chooseDare') return ['chooseDare', activeId(room) || ''].join('|');
+  if (phase === 'choosePlayer') return ['choosePlayer', activeId(room) || ''].join('|');
+  if (phase === 'choosePartner') return ['choosePartner', activeId(room) || '', room.turn.selectedDareId || ''].join('|');
+  if (phase === 'chooseDareForPlayer') return ['chooseDareForPlayer', activeId(room) || '', room.turn.selectedPlayerId || ''].join('|');
+  if (phase === 'adding') return ['adding', room.turn.addingBy || ''].join('|');
+  return [phase, targetId].join('|');
+}
+function choosePresenceTarget(room, currentId=null) {
+  const blocked = blockingTargets(room)
+    .map(id => playerById(room, id))
+    .filter(Boolean);
+  if (!blocked.length) return null;
+  if (currentId && blocked.some(player => player.id === currentId)) return currentId;
+  blocked.sort((a, b) => {
+    if ((a.connected === false) !== (b.connected === false)) return a.connected === false ? -1 : 1;
+    const aLast = a.lastInteractionAt || 0;
+    const bLast = b.lastInteractionAt || 0;
+    if (aLast !== bLast) return aLast - bLast;
+    return (a.id || '').localeCompare(b.id || '');
+  });
+  return blocked[0]?.id || null;
+}
+function schedulePresenceSync(room, ms) {
+  clearPresenceTimer(room);
+  room._presenceTimer = setTimeout(() => {
+    room._presenceTimer = null;
+    if (!rooms.has(room.code)) return;
+    if (syncPresence(room)) {
+      touch(room);
+      emitRoom(room);
+    }
+  }, Math.max(0, ms | 0));
+}
+function startPresenceIdle(room, targetId, blockKey, ms=PRESENCE_IDLE_MS) {
+  room._presence = {
+    targetId,
+    blockKey,
+    stage: 'idle',
+    promptId: shortId(),
+    countdownEndsAt: Date.now() + ms
+  };
+  schedulePresenceSync(room, ms);
+}
+function startPresenceSelf(room, targetId, blockKey, ms=PRESENCE_CONFIRM_MS) {
+  room._presence = {
+    targetId,
+    blockKey,
+    stage: 'self',
+    promptId: shortId(),
+    countdownEndsAt: Date.now() + ms
+  };
+  schedulePresenceSync(room, ms);
+}
+function startPresencePeer(room, targetId, blockKey) {
+  clearPresenceTimer(room);
+  room._presence = {
+    targetId,
+    blockKey,
+    stage: 'peer',
+    promptId: shortId(),
+    countdownEndsAt: null
+  };
+}
+function syncPresence(room) {
+  if (!room) return false;
+  const targetId = choosePresenceTarget(room, room._presence?.targetId || null);
+  if (!targetId) {
+    const had = !!room._presence;
+    clearPresence(room);
+    return had;
+  }
+  const target = playerById(room, targetId);
+  if (!target) {
+    const had = !!room._presence;
+    clearPresence(room);
+    return had;
+  }
+  const now = Date.now();
+  const blockKey = blockingContextKey(room, targetId);
+  let changed = false;
+  if (!room._presence || room._presence.targetId !== targetId || room._presence.blockKey !== blockKey) {
+    clearPresence(room);
+    startPresenceIdle(room, targetId, blockKey, PRESENCE_IDLE_MS);
+    changed = true;
+  }
+  const presence = room._presence;
+  if (!presence) return changed;
+  if (presence.stage === 'idle') {
+    const endsAt = presence.countdownEndsAt || (now + PRESENCE_IDLE_MS);
+    if (now >= endsAt) {
+      if (target.connected === false) startPresencePeer(room, targetId, blockKey);
+      else startPresenceSelf(room, targetId, blockKey);
+      return true;
+    }
+    schedulePresenceSync(room, endsAt - now);
+    return changed;
+  }
+  if (presence.stage === 'self') {
+    if (target.connected === false || now >= (presence.countdownEndsAt || 0)) {
+      startPresencePeer(room, targetId, blockKey);
+      return true;
+    }
+    schedulePresenceSync(room, (presence.countdownEndsAt || 0) - now);
+    return changed;
+  }
+  if (presence.stage === 'peer' && !blockingTargets(room).includes(targetId)) {
+    clearPresence(room);
+    return true;
+  }
+  return changed;
+}
+function notePlayerActivity(room, playerId) {
+  const player = playerById(room, playerId);
+  if (!player) return false;
+  player.lastInteractionAt = Date.now();
+  let changed = false;
+  if (room._presence?.targetId === playerId) {
+    clearPresence(room);
+    changed = true;
+  }
+  return syncPresence(room) || changed;
+}
+function viewerPresencePrompt(room, viewerId) {
+  const presence = room?._presence;
+  if (!presence || !viewerId) return null;
+  const target = playerById(room, presence.targetId);
+  if (!target || !blockingTargets(room).includes(target.id)) return null;
+  if (presence.stage === 'self' && viewerId === target.id && target.connected !== false) {
+    return {
+      type: 'self',
+      promptId: presence.promptId,
+      targetId: target.id,
+      targetName: target.name || 'Player',
+      countdownEndsAt: presence.countdownEndsAt || null
+    };
+  }
+  if (presence.stage === 'peer' && viewerId !== target.id) {
+    return {
+      type: 'peer',
+      promptId: presence.promptId,
+      targetId: target.id,
+      targetName: target.name || 'Player'
+    };
+  }
+  return null;
+}
+async function ejectPlayerSockets(roomCode, playerId, payload) {
+  const sockets = await io.in(roomCode).fetchSockets();
+  await Promise.all(sockets
+    .filter(s => s.data?.playerId === playerId)
+    .map(async s => {
+      s.emit('room:error', payload);
+      try { await s.leave(roomCode); } catch {}
+      try { s.data = { roomCode:null, playerId:null }; } catch {}
+    }));
+}
+function removePlayerFromRoom(room, removedId) {
+  if (!room || !removedId) return false;
+  const pending = pendingDisconnects.get(removedId);
+  if (pending) {
+    clearTimeout(pending);
+    pendingDisconnects.delete(removedId);
+  }
+  const exists = room.players.some(p => p.id === removedId);
+  if (!exists) return false;
+  room.players = room.players.filter(p => p.id !== removedId);
+  delete room.pendingPrompts[removedId];
+  if (room.hostId === removedId) room.hostId = room.players[0]?.id || null;
+  if (room.turn?.order) {
+    const oldIdx = room.turn.order.indexOf(removedId);
+    const wasActive = activeId(room) === removedId;
+    room.turn.order = room.turn.order.filter(id => id !== removedId);
+    if (oldIdx >= 0 && oldIdx < room.turn.index) room.turn.index--;
+    if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
+    if (wasActive) setChooseMode(room);
+  }
+  syncOnboardingGate(room);
+  if (room._presence?.targetId === removedId) clearPresence(room);
+  updateStateForConnectedCount(room);
+  syncPresence(room);
+  return true;
+}
 function scheduleTurnTimer(room, ms, fn) {
   clearTurnTimer(room);
   if (room.turn) room.turn.timerEndsAt = Date.now() + ms;
@@ -588,6 +850,29 @@ function scheduleTurnTimer(room, ms, fn) {
     room._turnTimer = null;
     try { fn(); } catch (e) { console.error('turn timer failed', e); }
   }, ms);
+}
+function onboardingPendingIds(room) {
+  return (room?.players || [])
+    .filter(player => (room.pendingPrompts[player.id] || []).some(prompt => prompt.type === 'onboarding'))
+    .map(player => player.id);
+}
+function syncOnboardingGate(room) {
+  if (!room?.turn) return;
+  const pendingSetupIds = onboardingPendingIds(room);
+  room.turn.pendingSetupIds = pendingSetupIds;
+  if (pendingSetupIds.length) {
+    clearTurnTimer(room);
+    room.turn.phase = 'awaitingOnboarding';
+    room.turn.mode = null;
+    room.turn.selectedDareId = null;
+    room.turn.selectedPlayerId = null;
+    room.turn.responses = {};
+    room.turn.performing = null;
+    room.turn.timerEndsAt = null;
+    return;
+  }
+  if (room.turn.phase === 'awaitingOnboarding') room.turn.phase = 'chooseMode';
+  syncPresence(room);
 }
 function setChooseMode(room) {
   clearTurnTimer(room);
@@ -600,9 +885,12 @@ function setChooseMode(room) {
     selectedPlayerId: null,
     responses: {},
     performing: null,
-    timerEndsAt: null
+    timerEndsAt: null,
+    pendingSetupIds: []
   };
   if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
+  syncOnboardingGate(room);
+  syncPresence(room);
 }
 function advanceTurn(room) {
   clearTurnTimer(room);
@@ -616,21 +904,61 @@ function advanceTurn(room) {
     selectedPlayerId: null,
     responses: {},
     performing: null,
-    timerEndsAt: null
+    timerEndsAt: null,
+    pendingSetupIds: []
   };
+  syncOnboardingGate(room);
+  syncPresence(room);
+}
+function scheduleNextDareResponseTimer(room) {
+  if (!room || room.turn?.phase !== 'dareRespond') return;
+  const active = activeId(room);
+  const pendingIds = connectedPlayers(room)
+    .filter(player => player.id !== active && !Object.prototype.hasOwnProperty.call(room.turn.responses || {}, player.id))
+    .map(player => player.id);
+  if (!pendingIds.length) {
+    finalizeDareResponses(room);
+    return;
+  }
+  const deadlines = pendingIds
+    .map(id => room.turn.responseDeadlines?.[id])
+    .filter(deadline => Number.isFinite(deadline));
+  if (!deadlines.length) return;
+  const nextDeadline = Math.min(...deadlines);
+  scheduleTurnTimer(room, Math.max(0, nextDeadline - Date.now()), () => finalizeDareResponses(room));
+}
+function resetDareResponseDeadline(room, playerId, ms=5000) {
+  if (!room || room.turn?.phase !== 'dareRespond' || !playerId) return;
+  room.turn.responseDeadlines ||= {};
+  room.turn.responseDeadlines[playerId] = Date.now() + ms;
+  scheduleNextDareResponseTimer(room);
 }
 function finalizeDareResponses(room) {
   if (!room || room.turn?.phase !== 'dareRespond') return;
   const active = activeId(room);
   const dareId = room.turn.selectedDareId;
+  const now = Date.now();
   for (const p of connectedPlayers(room)) {
     if (p.id === active) continue;
     if (Object.prototype.hasOwnProperty.call(room.turn.responses || {}, p.id)) continue;
+    const deadline = room.turn.responseDeadlines?.[p.id];
+    if (Number.isFinite(deadline) && deadline > now) continue;
     const val = getConsent(room, p.id, active, dareId);
     room.turn.responses[p.id] = val;
+    if (room.turn.responseDeadlines) delete room.turn.responseDeadlines[p.id];
+  }
+  const pendingIds = connectedPlayers(room)
+    .filter(player => player.id !== active && !Object.prototype.hasOwnProperty.call(room.turn.responses || {}, player.id))
+    .map(player => player.id);
+  if (pendingIds.length) {
+    scheduleNextDareResponseTimer(room);
+    touch(room);
+    emitRoom(room);
+    return;
   }
   room.turn.phase = 'choosePartner';
   room.turn.timerEndsAt = null;
+  delete room.turn.responseDeadlines;
   clearTurnTimer(room);
   touch(room);
   emitRoom(room);
@@ -656,9 +984,13 @@ function eligibleAddCount(room) {
 function updateStateForConnectedCount(room) {
   const connectedCount = connectedPlayers(room).length;
   if (room.state === 'main' && connectedCount < 3) {
+    const blockedId = choosePresenceTarget(room, room._presence?.targetId || null);
+    const blockedPlayer = blockedId ? playerById(room, blockedId) : null;
+    if (blockedPlayer?.connected === false) return false;
     room.state = 'lobby';
     room.paused = true;
     clearTurnTimer(room);
+    clearPresence(room);
     return true;
   }
   return false;
@@ -667,6 +999,12 @@ function safeTurnForViewer(room, viewerId) {
   if (!room.turn) return null;
   const turn = { ...room.turn };
   const active = activeId(room);
+  if (turn.phase === 'dareRespond') {
+    if (viewerId && viewerId !== active) {
+      turn.timerEndsAt = turn.responseDeadlines?.[viewerId] || null;
+    }
+    delete turn.responseDeadlines;
+  }
   if (viewerId !== active && turn.phase !== 'performing') {
     if (turn.phase === 'choosePartner' || turn.phase === 'chooseDareForPlayer') {
       turn.responses = {};
@@ -678,27 +1016,40 @@ async function emitRoom(room) {
   const sockets = await io.in(room.code).fetchSockets();
   for (const s of sockets) {
     const pid = s.data?.playerId || null;
-    const pub = {
-      id: room.id,
-      code: room.code,
-      state: room.state,
-      paused: room.paused,
-      players: room.players.map(publicPlayer),
-      chosenTheme: room.chosenTheme,
-      dareMenu: room.dareMenu.map(d => ({ id: d.id, title: d.title, extra: d.extra, createdBy: d.createdBy || null, sourceLang: d.sourceLang || 'en', createdAt: d.createdAt })),
-      turn: safeTurnForViewer(room, pid),
-      createdAt: room.createdAt,
-      hostId: room.hostId,
-      completedSinceDareAdded: room.completedSinceDareAdded || 0,
-      me: pid ? {
-        id: pid,
-        counts: viewerCounts(room, pid),
-        consent: viewerConsent(room, pid),
-        pendingPrompts: room.pendingPrompts[pid] || []
-      } : null
-    };
-    s.emit('room:state', pub);
+    s.emit('room:state', publicRoomState(room, pid));
   }
+}
+function publicRoomState(room, pid) {
+  return {
+    id: room.id,
+    code: room.code,
+    state: room.state,
+    paused: room.paused,
+    players: room.players.map(publicPlayer),
+    chosenTheme: room.chosenTheme,
+    menuLanguage: room.menuLanguage || 'en',
+    dareMenu: room.dareMenu.map(d => ({
+      id: d.id,
+      title: d.title,
+      extra: d.extra,
+      translations: d.translations || null,
+      createdBy: d.createdBy || null,
+      sourceLang: d.sourceLang || 'en',
+      createdAt: d.createdAt,
+      themeRef: d.themeRef || null
+    })),
+    turn: safeTurnForViewer(room, pid),
+    createdAt: room.createdAt,
+    hostId: room.hostId,
+    completedSinceDareAdded: room.completedSinceDareAdded || 0,
+    me: pid ? {
+      id: pid,
+      counts: viewerCounts(room, pid),
+      consent: viewerConsent(room, pid),
+      pendingPrompts: room.pendingPrompts[pid] || [],
+      presencePrompt: viewerPresencePrompt(room, pid)
+    } : null
+  };
 }
 
 const app = express();
@@ -809,6 +1160,7 @@ io.on('connection', (socket) => {
     return room?.players.find(p => p.id === joinInfo.playerId) || null;
   }
   function makePlayer(room, payload) {
+    const now = Date.now();
     const player = {
       id: nano(),
       name: sanitizeText(payload?.name, 30) || 'Player',
@@ -817,7 +1169,8 @@ io.on('connection', (socket) => {
       gender: sanitizeGender(payload?.gender),
       preferredGenders: sanitizePrefs(payload?.preferredGenders),
       language: sanitizeLanguage(payload?.language),
-      connected: true
+      connected: true,
+      lastInteractionAt: now
     };
     player.color = nextColor(room);
     return player;
@@ -836,6 +1189,7 @@ io.on('connection', (socket) => {
     const player = makePlayer(room, { name, gender, preferredGenders, language });
     room.players.push(player);
     room.hostId = player.id;
+    room.menuLanguage = player.language || 'en';
     const wanted = resolveThemeKey(theme);
     const fallback = resolveThemeKey('Sensual') || Object.keys(THEMES || {})[0] || null;
     room.settings.preferredTheme = wanted || fallback;
@@ -843,6 +1197,7 @@ io.on('connection', (socket) => {
     attach(room, player);
     stats.attemptedStarts++;
     logEvent(room.code, 'create', `Room created by ${player.name}`);
+    syncPresence(room);
     touch(room);
     emitRoom(room);
   });
@@ -863,6 +1218,7 @@ io.on('connection', (socket) => {
     }
     attach(room, player);
     logEvent(room.code, 'join', `${player.name} joined the room`);
+    syncPresence(room);
     touch(room);
     emitRoom(room);
   });
@@ -871,25 +1227,12 @@ io.on('connection', (socket) => {
     const room = currentRoom();
     if (!room) return;
     const removedId = joinInfo.playerId;
-    const pending = pendingDisconnects.get(removedId);
-    if (pending) { clearTimeout(pending); pendingDisconnects.delete(removedId); }
     const who = playerName(room, removedId);
-    room.players = room.players.filter(p => p.id !== removedId);
-    delete room.pendingPrompts[removedId];
-    if (room.hostId === removedId) room.hostId = room.players[0]?.id || null;
-    if (room.turn?.order) {
-      const oldIdx = room.turn.order.indexOf(removedId);
-      const wasActive = activeId(room) === removedId;
-      room.turn.order = room.turn.order.filter(id => id !== removedId);
-      if (oldIdx >= 0 && oldIdx < room.turn.index) room.turn.index--;
-      if (room.turn.index >= room.turn.order.length) room.turn.index = 0;
-      if (wasActive) setChooseMode(room);
-    }
+    removePlayerFromRoom(room, removedId);
     socket.leave(room.code);
     socket.data = { roomCode: null, playerId: null };
     joinInfo = { roomCode: null, playerId: null };
     logEvent(room.code, 'leave', `${who} left the room`);
-    updateStateForConnectedCount(room);
     touch(room);
     emitRoom(room);
   });
@@ -897,7 +1240,9 @@ io.on('connection', (socket) => {
   socket.on('room:peek', ({ code }) => {
     if (!rateLimitAllow(getClientIp(socket), 'room:peek', 180, 60*1000)) return;
     const safeCode = sanitizeText(code, 64).toLowerCase();
-    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) return socket.emit('room:peek:result', { ok: false });
+    if (purgeIfExpired(safeCode) || !rooms.has(safeCode)) {
+      return socket.emit('room:peek:result', { ok: false, code: 'NO_SUCH_ROOM', message: 'No such game (it may have expired).' });
+    }
     const room = rooms.get(safeCode);
     socket.emit('room:peek:result', {
       ok: true,
@@ -906,7 +1251,8 @@ io.on('connection', (socket) => {
         state: room.state,
         players: room.players.map(publicPlayer),
         hostId: room.hostId,
-        chosenTheme: room.chosenTheme
+        chosenTheme: room.chosenTheme,
+        menuLanguage: room.menuLanguage || 'en'
       }
     });
   });
@@ -920,6 +1266,7 @@ io.on('connection', (socket) => {
     const t = pendingDisconnects.get(playerId);
     if (t) { clearTimeout(t); pendingDisconnects.delete(playerId); }
     player.connected = true;
+    notePlayerActivity(room, player.id);
     attach(room, player);
     touch(room);
     emitRoom(room);
@@ -929,6 +1276,7 @@ io.on('connection', (socket) => {
     const room = currentRoom();
     const player = currentPlayer(room);
     if (!room || !player) return;
+    notePlayerActivity(room, player.id);
     if (!rateLimitAllow(getClientIp(socket), 'player:update', 60, 60*1000)) return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
     if (typeof name === 'string') player.name = sanitizeText(name, 30) || player.name;
     if (typeof color === 'string') {
@@ -948,21 +1296,24 @@ io.on('connection', (socket) => {
   socket.on('theme:finalize', ({ theme }) => {
     const room = currentRoom();
     if (!room || room.state !== 'lobby') return;
+    notePlayerActivity(room, joinInfo.playerId);
     if (!rateLimitAllow(getClientIp(socket), 'theme:finalize', 10, 60*1000)) return emitError(socket, 'Rate limit exceeded. Please wait a bit and try again.', 'RATE_LIMIT');
     if (connectedPlayers(room).length < 3) return;
     let key = resolveThemeKey(room.settings.preferredTheme) || resolveThemeKey(room.chosenTheme) || resolveThemeKey(theme) || resolveThemeKey('Sensual') || Object.keys(THEMES || {})[0];
-    let seed = serverSeedForTheme(key);
+    room.chosenTheme = key;
+    let seed = serverSeedForTheme(room, key);
     if (!seed.length) {
       key = resolveThemeKey('Sensual') || key;
-      seed = serverSeedForTheme(key);
+      room.chosenTheme = key;
+      seed = serverSeedForTheme(room, key);
     }
-    room.chosenTheme = key;
-    room.dareMenu = seed.slice(0, MAX_DARES).map(d => ({ id: shortId(), title: sanitizeText(d.title, 160), extra: sanitizeText(d.extra, 180), createdAt: Date.now(), sourceLang: 'en' }));
+    room.dareMenu = seed.slice(0, MAX_DARES);
     room.state = 'main';
     room.paused = false;
     room.turn = { order: room.players.map(p => p.id), index: 0 };
     setChooseMode(room);
     for (const player of room.players) queueOnboardingPrompt(room, player);
+    syncOnboardingGate(room);
     const g = ensureGame(room.code);
     g.theme = key;
     if (!g.started) {
@@ -978,8 +1329,10 @@ io.on('connection', (socket) => {
   socket.on('game:resume', () => {
     const room = currentRoom();
     if (!room || connectedPlayers(room).length < 3) return;
+    notePlayerActivity(room, joinInfo.playerId);
     room.state = 'main';
     room.paused = false;
+    syncPresence(room);
     touch(room);
     emitRoom(room);
   });
@@ -988,12 +1341,14 @@ io.on('connection', (socket) => {
     const room = currentRoom();
     const player = currentPlayer(room);
     if (!room || !player) return;
+    notePlayerActivity(room, player.id);
     const prompt = (room.pendingPrompts[player.id] || []).find(p => p.id === promptId);
     if (!prompt || (type && prompt.type !== type)) return;
     if (prompt.type === 'onboarding') applyOnboarding(room, player.id, entries);
     if (prompt.type === 'new-player') applyNewPlayerPrompt(room, player.id, targetId || prompt.player?.id, values || {});
     if (prompt.type === 'new-dare') applyNewDarePrompt(room, player.id, dareId || prompt.dare?.id, values || {});
     removePrompt(room, player.id, prompt.id);
+    if (prompt.type === 'onboarding') syncOnboardingGate(room);
     touch(room);
     emitRoom(room);
   });
@@ -1002,8 +1357,12 @@ io.on('connection', (socket) => {
     const room = currentRoom();
     const player = currentPlayer(room);
     if (!room || !player || !findDare(room, dareId)) return;
+    notePlayerActivity(room, player.id);
     if (!room.players.some(p => p.id === targetId && p.id !== player.id)) return;
     setConsent(room, player.id, targetId, dareId, !!value, { touched: true });
+    if (room.turn?.phase === 'dareRespond' && player.id !== activeId(room) && dareId === room.turn.selectedDareId && targetId === activeId(room)) {
+      resetDareResponseDeadline(room, player.id);
+    }
     touch(room);
     emitRoom(room);
   });
@@ -1011,6 +1370,7 @@ io.on('connection', (socket) => {
   socket.on('turn:chooseMode', ({ mode }) => {
     const room = currentRoom();
     if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId || room.turn?.phase !== 'chooseMode') return;
+    notePlayerActivity(room, joinInfo.playerId);
     if (!['dare', 'player'].includes(mode)) return;
     room.turn.phase = mode === 'dare' ? 'chooseDare' : 'choosePlayer';
     room.turn.mode = mode;
@@ -1018,15 +1378,36 @@ io.on('connection', (socket) => {
     emitRoom(room);
   });
 
+  socket.on('turn:backToMode', () => {
+    const room = currentRoom();
+    if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId) return;
+    notePlayerActivity(room, joinInfo.playerId);
+    if (!['chooseDare', 'choosePlayer'].includes(room.turn?.phase)) return;
+    room.turn.phase = 'chooseMode';
+    room.turn.mode = null;
+    room.turn.selectedDareId = null;
+    room.turn.selectedPlayerId = null;
+    room.turn.responses = {};
+    room.turn.timerEndsAt = null;
+    touch(room);
+    emitRoom(room);
+  });
+
   socket.on('turn:selectDare', ({ dareId }) => {
     const room = currentRoom();
     if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId || room.turn?.phase !== 'chooseDare') return;
+    notePlayerActivity(room, joinInfo.playerId);
     if (!findDare(room, dareId)) return;
     room.turn.phase = 'dareRespond';
     room.turn.selectedDareId = dareId;
     room.turn.selectedPlayerId = null;
     room.turn.responses = {};
-    scheduleTurnTimer(room, 5000, () => finalizeDareResponses(room));
+    room.turn.responseDeadlines = {};
+    for (const player of connectedPlayers(room)) {
+      if (player.id === joinInfo.playerId) continue;
+      room.turn.responseDeadlines[player.id] = Date.now() + 5000;
+    }
+    scheduleNextDareResponseTimer(room);
     logEvent(room.code, 'select-dare', `${playerName(room, joinInfo.playerId)} chose ${findDare(room, dareId)?.title || 'a dare'}`);
     touch(room);
     emitRoom(room);
@@ -1035,16 +1416,24 @@ io.on('connection', (socket) => {
   socket.on('turn:submitDareResponse', ({ dareId, value, sendNow }) => {
     const room = currentRoom();
     if (!room || room.turn?.phase !== 'dareRespond') return;
+    notePlayerActivity(room, joinInfo.playerId);
     const active = activeId(room);
     const playerId = joinInfo.playerId;
     if (playerId === active || dareId !== room.turn.selectedDareId) return;
     setConsent(room, playerId, active, dareId, !!value, { touched: true });
+    if (!sendNow) {
+      resetDareResponseDeadline(room, playerId);
+      touch(room);
+      emitRoom(room);
+      return;
+    }
     room.turn.responses[playerId] = !!value;
+    if (room.turn.responseDeadlines) delete room.turn.responseDeadlines[playerId];
     const expected = connectedPlayers(room).filter(p => p.id !== active).length;
     if (sendNow || Object.keys(room.turn.responses).length >= expected) {
       finalizeDareResponses(room);
     } else {
-      scheduleTurnTimer(room, 5000, () => finalizeDareResponses(room));
+      scheduleNextDareResponseTimer(room);
       touch(room);
       emitRoom(room);
     }
@@ -1053,6 +1442,7 @@ io.on('connection', (socket) => {
   socket.on('turn:selectPlayer', ({ playerId }) => {
     const room = currentRoom();
     if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId || room.turn?.phase !== 'choosePlayer') return;
+    notePlayerActivity(room, joinInfo.playerId);
     const target = room.players.find(p => p.id === playerId && p.id !== joinInfo.playerId && p.connected !== false);
     if (!target) return;
     room.turn.phase = 'personRespond';
@@ -1069,6 +1459,7 @@ io.on('connection', (socket) => {
   socket.on('turn:submitPersonResponses', ({ entries, sendNow }) => {
     const room = currentRoom();
     if (!room || room.turn?.phase !== 'personRespond') return;
+    notePlayerActivity(room, joinInfo.playerId);
     const active = activeId(room);
     if (joinInfo.playerId !== room.turn.selectedPlayerId) return;
     for (const e of Array.isArray(entries) ? entries : []) {
@@ -1088,6 +1479,7 @@ io.on('connection', (socket) => {
   socket.on('turn:choosePartner', ({ playerId }) => {
     const room = currentRoom();
     if (!room || room.turn?.phase !== 'choosePartner' || activeId(room) !== joinInfo.playerId) return;
+    notePlayerActivity(room, joinInfo.playerId);
     if (!room.turn.responses?.[playerId]) return;
     const dareId = room.turn.selectedDareId;
     setConsent(room, joinInfo.playerId, playerId, dareId, true, { touched: true });
@@ -1100,6 +1492,7 @@ io.on('connection', (socket) => {
   socket.on('turn:chooseDareForPlayer', ({ dareId }) => {
     const room = currentRoom();
     if (!room || room.turn?.phase !== 'chooseDareForPlayer' || activeId(room) !== joinInfo.playerId) return;
+    notePlayerActivity(room, joinInfo.playerId);
     if (!room.turn.responses?.[dareId]) return;
     const partnerId = room.turn.selectedPlayerId;
     setConsent(room, joinInfo.playerId, partnerId, dareId, true, { touched: true });
@@ -1111,7 +1504,11 @@ io.on('connection', (socket) => {
 
   socket.on('turn:pass', () => {
     const room = currentRoom();
-    if (!room || room.state !== 'main' || activeId(room) !== joinInfo.playerId) return;
+    if (!room || room.state !== 'main') return;
+    notePlayerActivity(room, joinInfo.playerId);
+    const performing = room.turn?.phase === 'performing' ? room.turn.performing : null;
+    const isPerformingParticipant = performing && [performing.activeId, performing.partnerId].includes(joinInfo.playerId);
+    if (!isPerformingParticipant && activeId(room) !== joinInfo.playerId) return;
     logEvent(room.code, 'pass', `${playerName(room, joinInfo.playerId)} passed`);
     advanceTurn(room);
     touch(room);
@@ -1120,7 +1517,12 @@ io.on('connection', (socket) => {
 
   socket.on('turn:complete', () => {
     const room = currentRoom();
-    if (!room || room.turn?.phase !== 'performing' || activeId(room) !== joinInfo.playerId) return;
+    if (!room || room.turn?.phase !== 'performing') return;
+    notePlayerActivity(room, joinInfo.playerId);
+    const performing = room.turn.performing || {};
+    const activePerformerId = performing.activeId;
+    const partnerId = performing.partnerId;
+    if (![activePerformerId, partnerId].includes(joinInfo.playerId)) return;
     const dareId = room.turn.performing?.dareId;
     const idx = dareIndex(room, dareId);
     const thresholdStart = Math.max(0, room.dareMenu.length - eligibleAddCount(room));
@@ -1128,7 +1530,7 @@ io.on('connection', (socket) => {
     if (idx >= thresholdStart) {
       clearTurnTimer(room);
       room.turn.phase = 'adding';
-      room.turn.addingBy = joinInfo.playerId;
+      room.turn.addingBy = activePerformerId;
       room.turn.timerEndsAt = null;
     } else {
       room.completedSinceDareAdded = (room.completedSinceDareAdded || 0) + 1;
@@ -1138,19 +1540,78 @@ io.on('connection', (socket) => {
     emitRoom(room);
   });
 
-  socket.on('menu:addDare', ({ title }) => {
+  socket.on('menu:addDare', ({ title, exampleIndex }) => {
     const room = currentRoom();
     const player = currentPlayer(room);
     if (!room || !player || room.turn?.phase !== 'adding' || room.turn?.addingBy !== player.id) return;
+    notePlayerActivity(room, player.id);
     const titleSafe = sanitizeText(title, 160);
     if (!titleSafe || room.dareMenu.length >= MAX_DARES) return;
     const previous = room.dareMenu[room.dareMenu.length - 1]?.id || null;
-    const dare = { id: shortId(), title: titleSafe, extra: '', createdBy: player.id, createdAt: Date.now(), sourceLang: player.language || 'en' };
+    const example = Number.isInteger(exampleIndex) ? themeEntry(room.chosenTheme, 'examples', exampleIndex) : null;
+    const dare = example
+      ? buildThemeDareRecord(room, example, { section:'examples', index: exampleIndex, createdBy: player.id })
+      : {
+          id: shortId(),
+          title: titleSafe,
+          extra: '',
+          translations: null,
+          createdBy: player.id,
+          createdAt: Date.now(),
+          sourceLang: player.language || 'en',
+          themeRef: null
+        };
     room.dareMenu.push(dare);
     room.completedSinceDareAdded = 0;
     queueNewDarePrompts(room, dare, previous);
-    logEvent(room.code, 'add-dare', `${player.name} added dare: ${titleSafe}`);
+    logEvent(room.code, 'add-dare', `${player.name} added dare: ${dare.title}`);
     advanceTurn(room);
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('ui:activity', () => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player) return;
+    const before = JSON.stringify(viewerPresencePrompt(room, player.id));
+    const changed = notePlayerActivity(room, player.id);
+    const after = JSON.stringify(viewerPresencePrompt(room, player.id));
+    touch(room);
+    if (changed && before !== after) socket.emit('room:state', publicRoomState(room, player.id));
+  });
+
+  socket.on('presence:selfConfirm', ({ promptId, targetId }) => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player || player.id !== targetId) return;
+    const presence = room._presence;
+    if (!presence || presence.promptId !== promptId || presence.targetId !== targetId || presence.stage !== 'self') return;
+    notePlayerActivity(room, player.id);
+    touch(room);
+    emitRoom(room);
+  });
+
+  socket.on('presence:peerResponse', async ({ promptId, targetId, stillPlaying }) => {
+    const room = currentRoom();
+    const player = currentPlayer(room);
+    if (!room || !player || player.id === targetId) return;
+    const presence = room._presence;
+    if (!presence || presence.promptId !== promptId || presence.targetId !== targetId || presence.stage !== 'peer') return;
+    if (stillPlaying) {
+      const target = playerById(room, targetId);
+      const blockKey = blockingContextKey(room, targetId);
+      if (target?.connected === false) startPresenceIdle(room, targetId, blockKey, PRESENCE_IDLE_MS);
+      else startPresenceSelf(room, targetId, blockKey, PRESENCE_CONFIRM_MS);
+      touch(room);
+      emitRoom(room);
+      return;
+    }
+    removePlayerFromRoom(room, targetId);
+    await ejectPlayerSockets(room.code, targetId, {
+      code: 'PLAYER_REMOVED',
+      message: 'You were removed from the game for not responding.'
+    });
     touch(room);
     emitRoom(room);
   });
@@ -1167,11 +1628,12 @@ io.on('connection', (socket) => {
       if (player) {
         player.connected = false;
         updateStateForConnectedCount(room);
+        syncPresence(room);
         touch(room);
         emitRoom(room);
       }
       pendingDisconnects.delete(playerId);
-    }, 2000);
+    }, DISCONNECT_GRACE_MS);
     pendingDisconnects.set(playerId, t);
   });
 });

@@ -1,27 +1,169 @@
-## Handoff - online dependency and server exposure cleanup
+## Handoff - online flame UI, presence recovery, and git audit
 
 Recent prompts
-- User asked to review the old AI-built `online` folder before major changes.
-- User clarified that in-room player hacking is not a realistic concern, but dependency updates and internet/AWS-hosting exposure are important.
+- Latest prompt: localhost stopped responding during testing and the user asked for server logs and a debug pass.
+- Latest prompt: incidental touches on other devices were still causing full-screen dialogs like `performing`, `adding`, and choose-person flows to reanimate, and some first taps were being swallowed so actions only worked on the second press.
+- Latest prompt: verify the DareToConsent.com usage-summary emails still work after the recent online-flow refactor.
+- Latest prompt: the new `Are you still there?` text still needed translation coverage, removed players needed to be forced back to profile setup without a manual refresh, Firefox still was not showing the spice/snowflake icons, and one built-in dare needed to be renamed to “Each player removes a clothing item from the other player” with translations.
+- User asked for a mobile-first visual overhaul of `online/` to match the supplied flame/neon mockups while keeping gameplay flow intact unless explicitly changed.
+- User then requested follow-up changes: more ethereal vertical flames, splash blurb with a hyperlink to the printable card game, create above join, thicker share-link text, direct room-link join into profile setup, dimmer flames across full-screen prompts, hold turn 1 until all players finish onboarding consent, back navigation from choose-player/choose-dare, fix repeated slide-in on live consent overlays, keep gender options on one line, remove the profile-help sentence, and improve high-spice gradients.
+- Most recent prompt: high-spice example dares still looked too similar, especially around `68` vs `98`.
+- Follow-up bug: when one player finishes onboarding consent, the remaining players still configuring consent see their takeover screen slide in again.
+- Latest prompt: tint the background flames so the orange reads more like the app’s neon pink highlight color.
+- Latest prompt: dim the background further and add a dedicated “time to do a dare” screen for the chosen partner that stays visible until the active player resolves the dare.
+- Latest bug: during `dareRespond`, changing the yes/no choice was closing the confirmation dialog instead of keeping it open and resetting the timer.
+- Latest bug: shared prompts like “A new dare has been added” were re-running their slide-in animation on other devices whenever one player dismissed the prompt or refreshed.
+- Latest bug: the splash blurb starting with “Gather your most uninhibited friends...” was still falling back to English in non-English languages.
+- Latest bug: the mature-content warning dialog had lost its internal padding because generic overlay modals were inheriting the zero-padding `.card` layout.
+- Latest bug: the `new-dare` takeover still reanimated on refresh/rerender because some tabs were still on old assets and the non-animated prompt rule needed to be stronger.
+- Latest bug: changing consent from the selected-dare confirmation prompt still was not reliably resetting the 5-second timer.
+- Latest fixes: create-from-splash still showed the splash tagline on the profile setup screen, and join-from-splash advanced to profile setup before checking whether the room code existed.
+- Latest change: on the performing screen, either participant can now press `We did it` or `Pass`, but only the active player should receive the add-dare follow-up when the dare qualifies.
+- Latest fix: the selected-dare confirmation now tracks per-player deadlines, so changing your response only resets your own 5-second timer instead of everyone else’s.
+- Latest prompt: several languages were still missing translations for newer UI copy and needed to stop falling back to English.
+- Latest prompt: on Firefox, the snowflake/chili emoji in the choose-a-dare example controls were not rendering even though they still appeared in Chrome.
+- Latest prompt: keep each room’s dare menu in a single canonical language (the language used when the game was created), but display translated dare text to viewers when a built-in translation exists; example-based newly added dares should land in the room’s menu language, while handwritten dares stay as written.
+- Latest bug: the `I am 18+` button started mixing fonts because the Firefox emoji workaround was applying emoji presentation to all controls instead of only the dare-example controls.
+- Latest prompt: restore more tolerant absent-player handling, specifically a 5 second disconnect grace and a recoverable “are you still there / is X still playing?” flow for blocked turns.
+- Latest prompt: audit git history to confirm whether anything besides the intentionally removed extra-challenge mechanic may have been accidentally dropped during the major online refactor.
+- Latest bug: after a long idle wait in the lobby, players were getting the new `Are you still there?` prompt immediately on game start; interaction timers needed to reset when the blocking UI state changed.
+- Latest bug: the `Are you still there?` countdown text said `Sending in X`, and the whole underlying page was re-rendering every second while countdown overlays were visible.
+- Latest bug: checking/unchecking boxes inside blocking dialogs caused the dialog itself to appear to animate back into place, because room-state rerenders were remounting the overlay DOM.
 
 What changed
-- Updated all direct online dependencies to current latest versions:
-  - `@aws-sdk/client-ses@3.1030.0`
-  - `dotenv@17.4.2`
-  - `express@5.2.1`
-  - `nanoid@5.1.7`
-  - `socket.io@4.8.3`
-- Removed the side-effecting `GET /admin/send-digest-now` endpoint.
-- Admin endpoints now require `x-admin-token`; token-in-query auth was removed.
-- Reworked dotenv loading to use explicit quiet config instead of `node -r dotenv/config`, avoiding dotenv 17 startup banner noise.
+- `online/server/index.js`
+  - Fixed a server crash in the daily digest path. Root cause: `maybeSendDigest()` kicked off `sendDigest()` without awaiting it, so expired AWS SSO credentials from SES produced an unhandled rejection that terminated Node.
+  - `sendDigest()` now logs SES failures and returns `null` instead of rethrowing.
+  - `maybeSendDigest()` is now `async` and awaits `sendDigest()`, keeping digest failures contained to logging and `lastEmailStatus`.
+- `online/public/client.js`
+  - `ui:activity` no longer causes room-wide rerenders from incidental touches; blocking dialogs now stay mounted and do not replay their entrance on unrelated local or remote input.
+  - Added translated copy for the full absent-player prompt flow (`stillThereTitle`, `stillThereHelp`, `secondsToRespond`, peer prompt/actions) across the supported languages.
+  - Removed players are now forced out of the active room immediately, their local session is cleared, and the client returns to profile setup for the current room link without needing a refresh.
+  - Replaced the spice/snowflake emoji dependency in the dare example controls with inline SVG glyphs, which avoids Firefox emoji rendering failures.
+- `online/public/styles.css`
+  - Dare example controls now style the inline SVG hot/cool glyphs instead of relying on platform emoji fonts.
+- `online/public/data/themes/Sensual.json`
+  - Renamed the built-in dare from “Current player will remove a clothing item from dare acceptor” to “Each player removes a clothing item from the other player” and updated its translations.
+- `online/server/index.js`
+  - Non-responsive-player removal now ejects that player’s active sockets from the room and emits a `PLAYER_REMOVED` error so the client can immediately reset back to profile setup.
+  - `ui:activity` now only emits a fresh room state back to the touching player when their visible presence prompt actually changed.
+- `online/public/styles.css`
+  - Flame backgrounds are now visible, dimmer, more vertical, and reused across the fullscreen takeover screens.
+  - Setup screen keeps gender/preference choices on one horizontal line and no longer shows the profile-help text.
+  - Share-link text is heavier to match the rest of the UI.
+  - Live consent overlays no longer replay the slide-in animation every timer tick.
+  - Spice example cards now use a wider hue/stop/lightness range so higher spiciness values diverge visually instead of flattening out.
+  - Flame layers now have a magenta/violet tint pass plus hue rotation so the flame background reads neon pink instead of orange.
+  - Flame/background intensity was reduced again with darker overlays and lower brightness/saturation so the background sits further behind the UI.
+  - Added dedicated styling for the full-screen performing state panel.
+  - Restored padding and basic spacing for generic `.overlay .modal` dialogs so the mature-content warning and other small confirm/prompt modals render correctly again.
+  - Strengthened the non-animated prompt override for `.live-overlay-card` with `!important` plus `transform:none` so shared prompt takeovers do not slide in again on rerender.
+  - Expanded the global font stack to include platform emoji fonts for fallback.
+  - Narrowed the Firefox emoji workaround so only the dare-example controls use forced emoji presentation; generic buttons like `I am 18+` now use the normal app font again.
+- `online/public/index.html`
+  - Cache-bust version bumped to `20260421-flame-ui8` so refreshed tabs definitely pick up the latest landing-flow fix.
+- `online/public/client.js`
+  - Added a full-screen performing panel for the selected partner: “Time to do a dare with {name}” plus the dare text and player pills, shown until the active player clicks `We did it` or `Pass`.
+  - The active player’s own performing screen now uses the same title/body layout.
+  - During `dareRespond`, changing the yes/no radio now updates consent only; it no longer submits the player response and closes the prompt.
+  - Shared takeover prompts for `new-player` and `new-dare` now use the stable non-reanimating overlay card variant, so room updates do not replay the slide-in on devices that still have the prompt open.
+  - Added localized `splashBlurbLead`, `freePrintCardGame`, and `splashBlurbTail` strings for every supported language so the splash blurb no longer falls back to English.
+  - Added client-side localized theme names so the theme picker shows translated labels while keeping the underlying theme keys unchanged.
+  - Added an explicit locale override pass to fill in the remaining missing translations for newer splash/setup/performing/consent strings across all supported languages.
+  - Added client-side dare-title localization so room dares, overlays, consent editors, and performing screens display the viewer’s translated dare text when the dare carries translations.
+  - Example-picker selections now preserve the underlying theme example index so adding a stock example from another UI language still creates the canonical menu entry in the room’s menu language on the server.
+  - Create-profile setup no longer shows the splash tagline/subtitle.
+  - Join-from-splash now validates the three-word game code with `room:peek` before opening profile setup, and keeps the user on the landing screen if the room does not exist.
+  - The chosen partner’s performing screen now includes `We did it` and `Pass`, matching the active player’s controls.
+- `online/server/index.js`
+  - `consent:update` now resets the `dareRespond` countdown for any consent change made by a non-active player while the selected-dare prompt is open, instead of relying on narrower field matching.
+  - `room:peek` now returns `code/message` on missing rooms so splash-screen join validation can fail immediately before profile setup.
+  - `turn:complete` and `turn:pass` now allow either performing participant to resolve the dare, while `turn:complete` still assigns any add-dare follow-up to `turn.performing.activeId`.
+  - Reworked `dareRespond` timing to maintain per-player `responseDeadlines`, expose each viewer only their own deadline, and only auto-resolve players whose personal deadline has expired.
+  - Expanded server-supported player languages to match the client language list instead of silently coercing most users back to English.
+  - Added `room.menuLanguage`, set from the language used when the room is created.
+  - Seed/theme dares now carry translation maps plus stable theme references, and their canonical `title` is stored in the room’s menu language.
+  - Example-based user-added dares now round-trip by theme example index, so they are added to the menu in the room’s menu language while still carrying per-language translations for display.
+  - Handwritten dares still store exactly what the player typed and do not attempt automatic translation.
+  - Added a new blocked-player presence monitor: 5 second disconnect grace, 30 second idle detection, target-only “are you still there?” prompt, peer “is X still playing?” prompt, and removal hooks for blocked players.
+  - Fixed a bug in the new presence flow: onboarding blockers were initially excluded once they disconnected, which caused the room to pause to lobby before the peer prompt could appear. Pending onboarding now includes disconnected players, and low-player pause is deferred while the room is explicitly blocked on a disconnected player.
+  - Fixed a second bug in the presence flow: timers now reset on blocker/UI context changes, so a long wait in the lobby does not carry stale idle time into onboarding or other newly-blocking screens.
+- `online/tests/multiplayer.spec.mjs`
+  - Extended the multiplayer flow to assert that the chosen partner sees the performing takeover screen before the active player completes the dare.
+  - Added assertions that the `Send Now` button remains visible after toggling the dare-response radio, so the prompt stays open until explicit submit or timeout.
+  - Updated the multiplayer flow so the chosen partner clicks `We did it`, and verified the add-dare prompt still appears only for the active player.
+- `online/public/client.js`
+  - Splash screen now uses the new text blurb and links the printable card game repo.
+  - Create Game appears above Join Game.
+  - Room hash links skip the three-word entry screen and go straight to profile setup.
+  - Consent dashboard headings now read `Manage Player Consent` and `Manage Dare Consent`, with fallback translations populated for supported languages.
+  - Active players can back out of `Choose a Dare` / `Choose a Player` to the initial mode chooser.
+  - Added `awaitingOnboarding` turn UI and waiting copy: `Waiting for {names} to configure consent`.
+  - Startup onboarding overlays now use the non-reanimating takeover card variant, so other players finishing setup no longer retrigger the slide-in animation for people still configuring consent.
+- `online/server/index.js`
+  - Added onboarding gating so the first active turn stays blocked until all connected players have finished initial consent setup.
+  - Added `turn:backToMode` so the active player can back out of the choose-dare / choose-player screens.
+  - The onboarding gate is now applied immediately when the game starts, not only after the first onboarding submission.
+- `online/scripts/smoke-flow.mjs`
+  - Added socket-connect waiting to remove the room-create race.
+  - Smoke flow now waits on state transitions instead of relying on fixed sleeps and handles the add-dare phase.
+- `online/tests/multiplayer.spec.mjs`
+  - Join flow updated for direct room-link profile setup.
+  - Dashboard heading assertion updated for the new consent heading copy.
+  - Added presence overlays and throttled `ui:activity` reporting so blocked-player recovery survives refreshes and follows actual UI interaction instead of just socket liveness.
+  - Presence overlays now say `{seconds} seconds to respond` instead of reusing the send-timer copy.
+  - Countdown ticks now update the overlay text nodes in place rather than calling a full `render()` every second, which stops the background page from visibly refreshing under blocking dialogs.
+  - Blocking takeovers are now rendered into a stable `#blocking-root` keyed by prompt/turn identity, instead of being embedded inside the main app render. This keeps checkbox/radio changes and room-state refreshes from remounting the dialog and replaying its visual entrance.
 
 Checks run
-- `node --check server/index.js`
-- `node --check public/client.js`
-- `npm audit --omit=dev` reports 0 vulnerabilities.
-- `npm outdated` reports no outdated packages.
-- Smoke-tested `PORT=3101 node server/index.js` and `npm start`; `/health` returned `{"ok":true}`.
+- Pulled the crashed server output; failure was:
+  - `CredentialsProviderError: The SSO session associated with this profile has expired`
+  - thrown from `sendDigest(...)` in `online/server/index.js`
+- Ran `node --check online/server/index.js` after the digest crash fix.
+- Restarted the dev server and confirmed `curl http://localhost:3101/health` returns `{"ok":true}`.
+- Ran `node --check online/public/client.js` and `node --check online/server/index.js` after the dialog-activity / removed-player changes.
+- Ran `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` after updating the multiplayer spec for SVG spice icons.
+- Inspected the digest email code path in `online/server/index.js`; SES wiring, `maybeSendDigest()`, and the `theme:finalize` success counter path are still present. No live email send was performed.
+- `node --check online/public/client.js`
+- `node --check online/server/index.js`
+- `node --check online/scripts/smoke-flow.mjs`
+- `node --check online/tests/multiplayer.spec.mjs`
+- `SMOKE_URL=http://localhost:3101 npm run smoke`
+- `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player`
+- Re-ran `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` after the onboarding overlay animation fix.
+- Ran `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` again after the dimmer background / performing-screen change.
+- Ran `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` again after the dare-response prompt-close fix.
+- Ran `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` again after the shared-prompt animation fix.
+- Ran `node --check online/public/client.js` after adding localized splash blurb strings.
+- Ran `node --check online/public/client.js` again after adding localized theme names.
+- Ran `node --check online/public/client.js` again after filling the remaining locale gaps.
+- Ran `node --check online/public/client.js` and `node --check online/server/index.js` after the room-language / translated-dare data-model change.
+- Ran a locale diff audit against `I18N.en`; remaining same-as-English strings are only intentional identical labels like the app title and some unchanged `Zoom`/`OK` strings.
+- Sanity-checked the updated `.overlay .modal` CSS after the mature-content dialog padding fix.
+- Confirmed the stronger `.live-overlay-card` override and `flame-ui7` asset version are being served.
+- Ran `node --check online/server/index.js` after broadening the `dareRespond` timer-reset guard.
+- Ran `node --check online/public/client.js && node --check online/server/index.js` after the create/join landing-flow fix.
+- Ran `node --check online/public/client.js && node --check online/server/index.js && node --check online/tests/multiplayer.spec.mjs` and `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` after the partner-resolve performing change.
+- Ran `node --check online/server/index.js`, a targeted socket.io timer verification confirming Bob’s `timerEndsAt` changed while Casey’s stayed unchanged, and `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` after the per-player `dareRespond` timer rewrite.
+- Ran `node --check online/public/client.js` and `node --check online/server/index.js` after the new presence-recovery wiring.
+- Ran `SMOKE_URL=http://localhost:3101 npm run smoke`.
+- Ran `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player`.
+- Ran a targeted socket.io script confirming that, in a live room, an onboarding player left idle for ~30 seconds receives the self-only presence prompt.
+- Ran a targeted socket.io script confirming that, in a live 3-player room, if the last onboarding player disconnects, the room stays in `main` and the other players receive the peer prompt instead of immediately falling back to lobby.
+- Ran a targeted socket.io script confirming that a 30+ second idle wait in the lobby does not trigger an immediate presence prompt when the game first enters onboarding.
+- Ran `node --check online/public/client.js` and `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` after the countdown wording/tick update.
+- Ran `node --check online/public/client.js` and `PORT=3101 PLAYWRIGHT_BASE_URL=http://localhost:3101 npm run test:multi-player` after moving the blocking overlays into their own stable root.
+
+Git audit result
+- The one clear gameplay safeguard that was removed in the `ef22a3c` -> `51dbb2a` overhaul was absent-player recovery. Old code had `scheduleAbsentPrompt`, `scheduleReaskIfStillAbsent`, and `socket.on('absent:response')`; those were removed during the turn-flow rewrite.
+- I did not find another equally strong accidental removal in git. The other notable deletions in that range look intentional or replaced:
+  - extra-challenge UI/logic was intentionally removed
+  - old `turn:submit` was replaced by the split turn events
+  - quick refresh / resume survived
+  - pause / resume on low connected count survived
+
+Current local server
+- The updated app is currently being served at `http://localhost:3101`.
 
 Notes
-- Express is now 5.x. The app's current simple routes passed the smoke test, but deeper behavior should still be watched during the upcoming overhaul.
-- `git status` still shows unrelated/untracked items that predated this task: `env.example`, `handoff.md`, and `original assets/GameNight/`.
+- Existing unrelated/untracked items remain in the repo, including `env.example`, `original assets/GameNight/`, `original assets/ui ideas/`, and new generated assets under `online/public/assets/`.
