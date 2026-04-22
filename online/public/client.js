@@ -41,6 +41,9 @@ const I18N = {
   en: {
     title:'Dare to Consent',
     tagline:'Would you play Spin-the-Bottle if it only chose people who WANT to kiss each other?',
+    splashBlurbLead:'Gather your most uninhibited friends to play the',
+    freePrintCardGame:'free-to-print card game',
+    splashBlurbTail:'or play online:',
     joinHost:'Join {name}\'s game',
     joinGame:'Join Game',
     createGame:'Create Game',
@@ -93,9 +96,14 @@ const I18N = {
     waitingOn:'Waiting on',
     collectingResponses:'Collecting responses',
     waitingPerform:'Waiting for {a} and {b} to do: {dare}',
+    performDareTitle:'Time to do a dare',
+    performDareWith:'Time to do a dare with {name}',
     waitingAdd:'Waiting for {name} to add a new dare',
+    waitingConsentSetup:'Waiting for {names} to configure consent',
     consentPlayers:'Click a player to edit which dares you consent to do with them:',
     consentDares:'Click a dare to edit which players you consent to do the dare with:',
+    managePlayerConsent:'Manage Player Consent',
+    manageDareConsent:'Manage Dare Consent',
     consentCount:'consents to {count} dares',
     dareCount:'{count} players consent',
     oneDare:'consents to 1 dare',
@@ -132,6 +140,14 @@ const I18N = {
     joinedHelp:'Choose which dares you consent to do with this player.',
     newDareTitle:'A new dare has been added',
     newDareHelp:'You consent to this dare with:',
+    stillThereTitle:'Are you still there?',
+    stillThereHelp:'We are waiting on you. Tap below if you are still playing.',
+    stillHere:'I\'m still here',
+    secondsToRespond:'{seconds} seconds to respond',
+    stillTherePeer:'Is {name} still playing?',
+    stillTherePeerHelp:'If they are still playing, we will keep waiting. If not, we will remove them from this game.',
+    yesKeepWaiting:'Yes, keep waiting',
+    noRemovePlayer:'No, remove them',
     mature:'Mature content',
     matureBody:'This game is intended for adults 18 years or older.',
     adult:'I am 18+',
@@ -375,9 +391,840 @@ Object.assign(I18N, {
   it: { ...I18N.en, tagline:'Giocheresti al gioco della bottiglia se scegliesse solo persone che VOGLIONO baciarsi?', joinGame:'Unisciti al gioco', createGame:'Crea gioco', gameCode:'Codice gioco', setupProfile:'Configura il profilo', profileHelp:'Queste scelte precompilano il consenso. Puoi modificarle più tardi nel gioco.', room:'Stanza', players:'Giocatori', startGame:'Inizia gioco', waitingForPlayers:'In attesa di almeno 3 giocatori', yourName:'Il tuo nome', yourGender:'Il tuo genere', prefer:'Preferisci fare sfide con giocatori che sono', male:'uomo', female:'donna', nonbinary:'non binario/altro', language:'Lingua', join:'Entra', create:'Crea', or:'oppure', theme:'Tema', yourTurn:'È il tuo turno', chooseDareModeTitle:'Scegli una sfida', chooseDareModeDesc:'Vedi chi la farà con te', choosePlayerModeTitle:'Scegli una persona', choosePlayerModeDesc:'Vedi quali sfide farà con te', consentPlayers:'Tocca un giocatore per modificare quali sfide accetti di fare con quella persona:', consentDares:'Tocca una sfida per modificare con quali giocatori accetti di farla:', playerEditSummary:'{name} accetta {count} sfide. Quali sfide accetti di fare con {name}?', playerEditSummaryOne:'{name} accetta 1 sfida. Quali sfide accetti di fare con {name}?', dareEditSummary:'{count} giocatori accettano "{dare}". Con quali giocatori accetti di fare questa sfida?', dareEditSummaryOne:'1 giocatore accetta "{dare}". Con quali giocatori accetti di fare questa sfida?', back:'Indietro', save:'Salva', submit:'Invia', sendNow:'Invia ora', yesPlease:'Sì, volentieri', noThanks:'No grazie', pass:'Passa', weDidIt:'L’abbiamo fatto', examples:'Ecco alcune idee:', milder:'❄️ Mostra sfide più leggere', spicier:'🌶️ Mostra sfide più piccanti', ok:'OK', cancel:'Annulla' }
 });
 
+Object.entries({
+  en:['Manage Player Consent', 'Manage Dare Consent'],
+  es:['Gestionar consentimiento de jugadores', 'Gestionar consentimiento de retos'],
+  pt:['Gerenciar consentimento de jogadores', 'Gerenciar consentimento de desafios'],
+  zh:['管理玩家同意', '管理挑战同意'],
+  tl:['Pamahalaan ang Consent ng Manlalaro', 'Pamahalaan ang Consent sa Dare'],
+  vi:['Quản lý đồng ý của người chơi', 'Quản lý đồng ý thử thách'],
+  ar:['إدارة موافقة اللاعبين', 'إدارة موافقة التحديات'],
+  fr:['Gérer le consentement des joueurs', 'Gérer le consentement des défis'],
+  ko:['플레이어 동의 관리', '도전 동의 관리'],
+  ru:['Управление согласием игроков', 'Управление согласием на испытания'],
+  ht:['Jere konsantman jwè yo', 'Jere konsantman defi yo'],
+  hi:['खिलाड़ी सहमति प्रबंधित करें', 'डेयर सहमति प्रबंधित करें'],
+  de:['Spielerzustimmung verwalten', 'Mutproben-Zustimmung verwalten'],
+  nl:['Spelerstoestemming beheren', 'Opdrachttoestemming beheren'],
+  pl:['Zarządzaj zgodą graczy', 'Zarządzaj zgodą na wyzwania'],
+  it:['Gestisci consenso giocatori', 'Gestisci consenso sfide']
+}).forEach(([code, [managePlayerConsent, manageDareConsent]]) => {
+  I18N[code] ||= { ...I18N.en };
+  Object.assign(I18N[code], { managePlayerConsent, manageDareConsent });
+});
+
+Object.entries({
+  en:['Gather your most uninhibited friends to play the', 'free-to-print card game', 'or play online:'],
+  es:['Reúne a tus amistades más desinhibidas para jugar el', 'juego de cartas para imprimir gratis', 'o jugar en línea:'],
+  pt:['Junte seus amigos mais desinibidos para jogar o', 'jogo de cartas grátis para imprimir', 'ou jogar online:'],
+  zh:['叫上你最放得开的朋友，一起来玩这款', '可免费下载打印的卡牌游戏', '或在线游玩：'],
+  tl:['Tipunin ang pinaka-walang-prenong mga kaibigan mo para laruin ang', 'libreng mai-print na card game', 'o maglaro online:'],
+  vi:['Rủ những người bạn táo bạo nhất của bạn để chơi', 'trò chơi thẻ bài in miễn phí', 'hoặc chơi trực tuyến:'],
+  ar:['اجمع أكثر أصدقائك تحررا للعب', 'لعبة البطاقات المجانية القابلة للطباعة', 'أو العب عبر الإنترنت:'],
+  fr:['Rassemble tes amis les plus décomplexés pour jouer au', 'jeu de cartes à imprimer gratuitement', 'ou jouer en ligne :'],
+  ko:['가장 거리낌 없는 친구들을 모아', '무료로 인쇄할 수 있는 카드 게임', '을 하거나 온라인으로 플레이하세요:'],
+  ru:['Соберите самых раскрепощённых друзей, чтобы сыграть в', 'бесплатную карточную игру для печати', 'или играть онлайн:'],
+  ht:['Rasanble zanmi ou ki pi san wont pou jwe', 'jwèt kat gratis pou enprime a', 'oswa jwe sou entènèt:'],
+  hi:['अपने सबसे बेफिक्र दोस्तों को इकट्ठा करें और खेलें', 'मुफ्त प्रिंट-करने-योग्य कार्ड गेम', 'या ऑनलाइन खेलें:'],
+  de:['Hol dir deine ungehemmtesten Freunde dazu, das', 'kostenlos ausdruckbare Kartenspiel', 'zu spielen oder online zu spielen:'],
+  nl:['Verzamel je meest ongeremde vrienden om het', 'gratis uit te printen kaartspel', 'te spelen of online te spelen:'],
+  pl:['Zbierz swoich najbardziej bez zahamowań znajomych, aby zagrać w', 'darmową grę karcianą do wydrukowania', 'lub zagrać online:'],
+  it:['Riunisci i tuoi amici più disinibiti per giocare al', 'gioco di carte gratuito da stampare', 'o giocare online:']
+}).forEach(([code, [splashBlurbLead, freePrintCardGame, splashBlurbTail]]) => {
+  I18N[code] ||= { ...I18N.en };
+  Object.assign(I18N[code], { splashBlurbLead, freePrintCardGame, splashBlurbTail });
+});
+
+Object.entries({
+  es:{
+    zoom:'Acercar',
+    horizontal:'Horizontal',
+    vertical:'Vertical',
+    performDareTitle:'Es hora de hacer un reto',
+    performDareWith:'Es hora de hacer un reto con {name}',
+    waitingConsentSetup:'Esperando a que {names} configuren el consentimiento',
+    ok:'Aceptar'
+  },
+  pt:{
+    zoom:'Aproximar',
+    horizontal:'Horizontal',
+    vertical:'Vertical',
+    performDareTitle:'É hora de cumprir um desafio',
+    performDareWith:'É hora de cumprir um desafio com {name}',
+    waitingConsentSetup:'Aguardando {names} configurarem o consentimento',
+    ok:'OK'
+  },
+  zh:{
+    english:'英语',
+    spanish:'西班牙语',
+    portuguese:'葡萄牙语',
+    adjustSelfie:'调整自拍',
+    selfieHelp:'移动并缩放照片，让你的脸位于中央。',
+    usePhoto:'使用照片',
+    zoom:'缩放',
+    horizontal:'水平',
+    vertical:'垂直',
+    chooseDareMode:'选择一个挑战，看看谁会和你一起做',
+    choosePlayerMode:'选择一个人，看看对方愿意和你做哪些挑战',
+    performDareTitle:'该去完成一个挑战了',
+    performDareWith:'该和{name}一起完成一个挑战了',
+    waitingConsentSetup:'等待{names}完成同意设置'
+  },
+  tl:{
+    english:'Ingles',
+    spanish:'Espanyol',
+    portuguese:'Portuges',
+    adjustSelfie:'Ayusin ang iyong selfie',
+    selfieHelp:'Igalaw at i-zoom ang larawan para nakagitna ang mukha mo.',
+    usePhoto:'Gamitin ang Larawan',
+    zoom:'Zoom',
+    horizontal:'Pahalang',
+    vertical:'Patayo',
+    chooseDareMode:'Pumili ng dare at tingnan kung sino ang gagawa nito kasama mo',
+    choosePlayerMode:'Pumili ng tao at tingnan kung aling mga dare ang gagawin nila kasama mo',
+    performDareTitle:'Panahon na para gumawa ng dare',
+    performDareWith:'Panahon na para gumawa ng dare kasama si {name}',
+    waitingConsentSetup:'Naghihintay kina {names} na mag-set up ng consent',
+    onboardingDareTitle:'Dare #{number}: {dare}',
+    ok:'Sige'
+  },
+  vi:{
+    english:'Tiếng Anh',
+    spanish:'Tiếng Tây Ban Nha',
+    portuguese:'Tiếng Bồ Đào Nha',
+    adjustSelfie:'Chỉnh ảnh selfie',
+    selfieHelp:'Di chuyển và phóng to ảnh để khuôn mặt bạn nằm giữa.',
+    usePhoto:'Dùng ảnh này',
+    zoom:'Thu phóng',
+    horizontal:'Ngang',
+    vertical:'Dọc',
+    chooseDareMode:'Chọn một thử thách và xem ai sẽ làm cùng bạn',
+    choosePlayerMode:'Chọn một người và xem họ sẽ làm những thử thách nào với bạn',
+    performDareTitle:'Đến lúc thực hiện thử thách',
+    performDareWith:'Đến lúc thực hiện thử thách với {name}',
+    waitingConsentSetup:'Đang chờ {names} thiết lập đồng ý',
+    ok:'Đồng ý'
+  },
+  fr:{
+    english:'Anglais',
+    spanish:'Espagnol',
+    portuguese:'Portugais',
+    adjustSelfie:'Ajuste ton selfie',
+    selfieHelp:'Déplace et zoome la photo pour centrer ton visage.',
+    usePhoto:'Utiliser la photo',
+    zoom:'Zoom',
+    horizontal:'Horizontal',
+    vertical:'Vertical',
+    chooseDareMode:'Choisis un défi et vois qui le fera avec toi',
+    choosePlayerMode:'Choisis une personne et vois quels défis elle fera avec toi',
+    performDareTitle:'C’est le moment de faire un défi',
+    performDareWith:'C’est le moment de faire un défi avec {name}',
+    waitingConsentSetup:'En attente que {names} configurent leur consentement',
+    ok:'D’accord'
+  },
+  de:{
+    english:'Englisch',
+    spanish:'Spanisch',
+    portuguese:'Portugiesisch',
+    adjustSelfie:'Passe dein Selfie an',
+    selfieHelp:'Verschiebe und vergrößere das Foto, damit dein Gesicht zentriert ist.',
+    usePhoto:'Foto verwenden',
+    zoom:'Zoom',
+    horizontal:'Horizontal',
+    vertical:'Vertikal',
+    chooseDareMode:'Wähle eine Mutprobe und sieh, wer sie mit dir macht',
+    choosePlayerMode:'Wähle eine Person und sieh, welche Mutproben sie mit dir macht',
+    performDareTitle:'Zeit für eine Mutprobe',
+    performDareWith:'Zeit für eine Mutprobe mit {name}',
+    waitingConsentSetup:'Warte darauf, dass {names} ihre Zustimmung festlegen',
+    ok:'OK'
+  },
+  ar:{
+    joinHost:'انضم إلى لعبة {name}',
+    resumeGame:'استئناف اللعبة',
+    english:'الإنجليزية',
+    spanish:'الإسبانية',
+    portuguese:'البرتغالية',
+    changeName:'غيّر الاسم',
+    chooseColor:'اختر لونك',
+    useSelfie:'استخدم صورة سيلفي',
+    adjustSelfie:'اضبط صورة السيلفي',
+    selfieHelp:'حرّك الصورة وكبّرها حتى يصبح وجهك في المنتصف.',
+    usePhoto:'استخدم الصورة',
+    zoom:'تكبير',
+    horizontal:'أفقي',
+    vertical:'عمودي',
+    addPlayers:'أضف لاعبين',
+    leaveGame:'غادر اللعبة',
+    share:'شارك هذا الرابط',
+    chooseDareMode:'اختر تحديا واعرف من سيفعله معك',
+    choosePlayerMode:'اختر شخصا واعرف ما التحديات التي سيفعلها معك',
+    chooseDare:'اختر تحديا',
+    choosePlayer:'اختر لاعبا',
+    waitingChoose:'بانتظار {name} ليختار',
+    waitingRespond:'بانتظار رد {name}',
+    waitingResponsesTitle:'بانتظار الردود',
+    waitingOn:'بانتظار',
+    collectingResponses:'جارٍ جمع الردود',
+    waitingPerform:'بانتظار {a} و{b} لتنفيذ: {dare}',
+    performDareTitle:'حان وقت تنفيذ تحد',
+    performDareWith:'حان وقت تنفيذ تحد مع {name}',
+    waitingAdd:'بانتظار {name} لإضافة تحد جديد',
+    waitingConsentSetup:'بانتظار {names} لإعداد الموافقات',
+    consentCount:'يوافق على {count} تحديات',
+    dareCount:'{count} لاعبين يوافقون',
+    oneDare:'يوافق على تحد واحد',
+    onePlayer:'لاعب واحد يوافق',
+    sendingIn:'سيتم الإرسال خلال {seconds}',
+    selectedDare:'اختار {name} "{dare}"',
+    chosenYou:'اختارك {name} لتحد! أنت توافق على:',
+    activeOptionsPlayers:'اختر من سيقوم بهذا التحدي معك، أو تجاوز',
+    activeOptionsDares:'اختر أي تحد ستقوم به مع {name}، أو تجاوز',
+    noOptions:'لا توجد تطابقات حاليا. يمكنك التجاوز.',
+    areYouSure:'سبق أن قلت إنك لا تريد هذا التحدي مع هذا الشخص. هل تريد المتابعة؟',
+    addDareTitle:'يمكنك كتابة تحد جديد',
+    newDare:'تحد جديد',
+    addToMenu:'أضف إلى القائمة',
+    onboardingTitle:'حدد تفضيلات التحديات',
+    onboardingDareTitle:'التحدي #{number}: {dare}',
+    onboardingHelp:'أنت توافق على هذا التحدي مع:',
+    joinedTitle:'انضم {name}!',
+    joinedHelp:'اختر التحديات التي توافق على القيام بها مع هذا اللاعب.',
+    newDareTitle:'تمت إضافة تحد جديد',
+    newDareHelp:'أنت توافق على هذا التحدي مع:',
+    mature:'محتوى للبالغين',
+    matureBody:'هذه اللعبة مخصصة للبالغين بعمر 18 سنة أو أكثر.',
+    adult:'عمري 18+',
+    under:'أنا أصغر من ذلك',
+    loading:'جارٍ التحميل',
+    uploadFailed:'فشل رفع صورة السيلفي. جرّب صورة بصيغة JPG أو PNG أو WebP أو HEIC.'
+  },
+  ko:{
+    joinHost:'{name}님의 게임에 참여',
+    resumeGame:'게임 계속하기',
+    english:'영어',
+    spanish:'스페인어',
+    portuguese:'포르투갈어',
+    changeName:'이름 변경',
+    chooseColor:'색상 선택',
+    useSelfie:'셀피 사용',
+    adjustSelfie:'셀피 조정',
+    selfieHelp:'얼굴이 가운데 오도록 사진을 움직이고 확대하세요.',
+    usePhoto:'이 사진 사용',
+    zoom:'확대',
+    horizontal:'가로',
+    vertical:'세로',
+    addPlayers:'플레이어 추가',
+    leaveGame:'게임 나가기',
+    share:'이 링크 공유',
+    chooseDareMode:'도전을 고르고 누가 함께할지 확인하세요',
+    choosePlayerMode:'사람을 고르고 그 사람이 어떤 도전을 함께할지 확인하세요',
+    chooseDare:'도전 고르기',
+    choosePlayer:'플레이어 고르기',
+    waitingChoose:'{name}님이 고르는 중',
+    waitingRespond:'{name}님의 응답을 기다리는 중',
+    waitingResponsesTitle:'응답을 기다리는 중',
+    waitingOn:'기다리는 중',
+    collectingResponses:'응답 수집 중',
+    waitingPerform:'{a}님과 {b}님이 다음을 수행하는 중: {dare}',
+    performDareTitle:'이제 도전을 할 시간입니다',
+    performDareWith:'이제 {name}님과 도전을 할 시간입니다',
+    waitingAdd:'{name}님이 새 도전을 추가하는 중',
+    waitingConsentSetup:'{names}님이 동의를 설정하는 중',
+    consentCount:'{count}개 도전에 동의함',
+    dareCount:'{count}명의 플레이어가 동의함',
+    oneDare:'1개 도전에 동의함',
+    onePlayer:'1명의 플레이어가 동의함',
+    sendingIn:'{seconds}초 후 전송',
+    selectedDare:'{name}님이 "{dare}"을(를) 선택했습니다',
+    chosenYou:'{name}님이 당신을 도전에 선택했습니다! 다음에 동의하나요:',
+    activeOptionsPlayers:'이 도전을 누구와 할지 고르거나 패스하세요',
+    activeOptionsDares:'{name}님과 어떤 도전을 할지 고르거나 패스하세요',
+    noOptions:'현재 가능한 조합이 없습니다. 패스할 수 있습니다.',
+    areYouSure:'이전에 이 사람과 이 도전을 원하지 않는다고 했습니다. 계속할까요?',
+    addDareTitle:'새 도전을 작성할 수 있습니다',
+    newDare:'새 도전',
+    addToMenu:'메뉴에 추가',
+    onboardingTitle:'도전 선호 설정',
+    onboardingDareTitle:'도전 #{number}: {dare}',
+    onboardingHelp:'다음 사람들과 이 도전에 동의합니다:',
+    joinedTitle:'{name}님이 참가했습니다!',
+    joinedHelp:'이 플레이어와 어떤 도전을 할지 고르세요.',
+    newDareTitle:'새 도전이 추가되었습니다',
+    newDareHelp:'다음 사람들과 이 도전에 동의합니다:',
+    mature:'성인용 콘텐츠',
+    matureBody:'이 게임은 18세 이상 성인용입니다.',
+    adult:'저는 18세 이상입니다',
+    under:'저는 너무 어립니다',
+    loading:'불러오는 중',
+    uploadFailed:'셀피 업로드에 실패했습니다. JPG, PNG, WebP 또는 HEIC 사진을 사용해 주세요.'
+  },
+  ru:{
+    joinHost:'Присоединиться к игре {name}',
+    resumeGame:'Продолжить игру',
+    english:'Английский',
+    spanish:'Испанский',
+    portuguese:'Португальский',
+    changeName:'Изменить имя',
+    chooseColor:'Выберите цвет',
+    useSelfie:'Использовать селфи',
+    adjustSelfie:'Настройте селфи',
+    selfieHelp:'Переместите и увеличьте фото так, чтобы лицо было по центру.',
+    usePhoto:'Использовать фото',
+    zoom:'Масштаб',
+    horizontal:'По горизонтали',
+    vertical:'По вертикали',
+    addPlayers:'Добавить игроков',
+    leaveGame:'Выйти из игры',
+    share:'Поделиться ссылкой',
+    chooseDareMode:'Выберите испытание и посмотрите, кто сделает его с вами',
+    choosePlayerMode:'Выберите человека и посмотрите, какие испытания он сделает с вами',
+    chooseDare:'Выбрать испытание',
+    choosePlayer:'Выбрать игрока',
+    waitingChoose:'Ждём, пока {name} выберет',
+    waitingRespond:'Ждём ответа от {name}',
+    waitingResponsesTitle:'Ждём ответов',
+    waitingOn:'Ждём',
+    collectingResponses:'Собираем ответы',
+    waitingPerform:'Ждём, пока {a} и {b} выполнят: {dare}',
+    performDareTitle:'Пора выполнить испытание',
+    performDareWith:'Пора выполнить испытание с {name}',
+    waitingAdd:'Ждём, пока {name} добавит новое испытание',
+    waitingConsentSetup:'Ждём, пока {names} настроят согласие',
+    consentCount:'согласен на {count} испытаний',
+    dareCount:'{count} игроков согласны',
+    oneDare:'согласен на 1 испытание',
+    onePlayer:'1 игрок согласен',
+    sendingIn:'Отправка через {seconds}',
+    selectedDare:'{name} выбрал(а) "{dare}"',
+    chosenYou:'{name} выбрал(а) вас для испытания! Вы согласны на:',
+    activeOptionsPlayers:'Выберите, с кем выполнить это испытание, или пасуйте',
+    activeOptionsDares:'Выберите, какое испытание выполнить с {name}, или пасуйте',
+    noOptions:'Сейчас нет совпадений. Можно пасовать.',
+    areYouSure:'Раньше вы говорили, что не хотите это испытание с этим человеком. Продолжить?',
+    addDareTitle:'Теперь вы можете написать новое испытание',
+    newDare:'Новое испытание',
+    addToMenu:'Добавить в список',
+    onboardingTitle:'Настройте предпочтения по испытаниям',
+    onboardingDareTitle:'Испытание #{number}: {dare}',
+    onboardingHelp:'Вы согласны на это испытание с:',
+    joinedTitle:'{name} присоединился(-ась)!',
+    joinedHelp:'Выберите, на какие испытания вы согласны с этим игроком.',
+    newDareTitle:'Добавлено новое испытание',
+    newDareHelp:'Вы согласны на это испытание с:',
+    mature:'Контент для взрослых',
+    matureBody:'Эта игра предназначена только для взрослых 18 лет и старше.',
+    adult:'Мне 18+',
+    under:'Я слишком молод(а)',
+    ok:'ОК',
+    loading:'Загрузка',
+    uploadFailed:'Не удалось загрузить селфи. Попробуйте фото JPG, PNG, WebP или HEIC.'
+  },
+  ht:{
+    joinHost:'Antre nan jwèt {name}',
+    resumeGame:'Reprann jwèt la',
+    english:'Angle',
+    spanish:'Panyòl',
+    portuguese:'Pòtigè',
+    changeName:'Chanje non',
+    chooseColor:'Chwazi koulè ou',
+    useSelfie:'Sèvi ak selfie',
+    adjustSelfie:'Ajiste selfie ou',
+    selfieHelp:'Deplase epi agrandi foto a pou figi ou rete nan mitan.',
+    usePhoto:'Sèvi ak foto a',
+    zoom:'Zoom',
+    horizontal:'Orizontal',
+    vertical:'Vètikal',
+    addPlayers:'Ajoute jwè',
+    leaveGame:'Kite jwèt la',
+    share:'Pataje lyen sa a',
+    chooseDareMode:'Chwazi yon defi epi gade kiyès ki pral fè li avè ou',
+    choosePlayerMode:'Chwazi yon moun epi gade ki defi yo pral fè avè ou',
+    chooseDare:'Chwazi yon defi',
+    choosePlayer:'Chwazi yon jwè',
+    waitingChoose:'Ap tann {name} pou chwazi',
+    waitingRespond:'Ap tann repons {name}',
+    waitingResponsesTitle:'Ap tann repons yo',
+    waitingOn:'Ap tann',
+    collectingResponses:'Ap ranmase repons yo',
+    waitingPerform:'Ap tann {a} ak {b} fè: {dare}',
+    performDareTitle:'Lè pou fè yon defi',
+    performDareWith:'Lè pou fè yon defi ak {name}',
+    waitingAdd:'Ap tann {name} ajoute yon nouvo defi',
+    waitingConsentSetup:'Ap tann {names} mete konsantman yo',
+    consentCount:'dakò ak {count} defi',
+    dareCount:'{count} jwè dakò',
+    oneDare:'dakò ak 1 defi',
+    onePlayer:'1 jwè dakò',
+    sendingIn:'Ap voye nan {seconds}',
+    selectedDare:'{name} chwazi "{dare}"',
+    chosenYou:'{name} chwazi ou pou yon defi! Ou dakò ak:',
+    activeOptionsPlayers:'Chwazi kiyès pou fè defi sa a avè ou, oswa pase',
+    activeOptionsDares:'Chwazi ki defi pou fè ak {name}, oswa pase',
+    noOptions:'Pa gen okenn matche kounye a. Ou ka pase.',
+    areYouSure:'Ou te deja di ou pa t vle defi sa a ak moun sa a. Kontinye?',
+    addDareTitle:'Ou ka ekri yon nouvo defi',
+    newDare:'Nouvo defi',
+    addToMenu:'Ajoute nan meni an',
+    onboardingTitle:'Mete preferans defi ou yo',
+    onboardingDareTitle:'Defi #{number}: {dare}',
+    onboardingHelp:'Ou dakò ak defi sa a ak:',
+    joinedTitle:'{name} antre!',
+    joinedHelp:'Chwazi ki defi ou dakò fè ak jwè sa a.',
+    newDareTitle:'Yo ajoute yon nouvo defi',
+    newDareHelp:'Ou dakò ak defi sa a ak:',
+    mature:'Kontni granmoun',
+    matureBody:'Jwèt sa a fèt pou granmoun 18 an oswa plis.',
+    adult:'Mwen gen 18+',
+    under:'Mwen twò jèn',
+    ok:'Dakò',
+    loading:'Ap chaje',
+    uploadFailed:'Telechajman selfie a echwe. Eseye yon foto JPG, PNG, WebP oswa HEIC.'
+  },
+  hi:{
+    joinHost:'{name} के गेम में शामिल हों',
+    resumeGame:'गेम जारी रखें',
+    english:'अंग्रेज़ी',
+    spanish:'स्पेनिश',
+    portuguese:'पुर्तगाली',
+    changeName:'नाम बदलें',
+    chooseColor:'अपना रंग चुनें',
+    useSelfie:'सेल्फी इस्तेमाल करें',
+    adjustSelfie:'अपनी सेल्फी ठीक करें',
+    selfieHelp:'फोटो को खिसकाएँ और ज़ूम करें ताकि आपका चेहरा बीच में रहे.',
+    usePhoto:'फोटो इस्तेमाल करें',
+    zoom:'ज़ूम',
+    horizontal:'क्षैतिज',
+    vertical:'लंबवत',
+    addPlayers:'खिलाड़ी जोड़ें',
+    leaveGame:'गेम छोड़ें',
+    share:'यह लिंक साझा करें',
+    chooseDareMode:'कोई डेयर चुनें और देखें कौन इसे आपके साथ करेगा',
+    choosePlayerMode:'किसी व्यक्ति को चुनें और देखें वे आपके साथ कौन से डेयर करेंगे',
+    chooseDare:'डेयर चुनें',
+    choosePlayer:'खिलाड़ी चुनें',
+    waitingChoose:'{name} के चुनने की प्रतीक्षा',
+    waitingRespond:'{name} के जवाब की प्रतीक्षा',
+    waitingResponsesTitle:'जवाबों की प्रतीक्षा',
+    waitingOn:'प्रतीक्षा में',
+    collectingResponses:'जवाब इकट्ठा किए जा रहे हैं',
+    waitingPerform:'{a} और {b} के यह करने की प्रतीक्षा: {dare}',
+    performDareTitle:'अब डेयर करने का समय है',
+    performDareWith:'अब {name} के साथ डेयर करने का समय है',
+    waitingAdd:'{name} के नया डेयर जोड़ने की प्रतीक्षा',
+    waitingConsentSetup:'{names} के सहमति सेट करने की प्रतीक्षा',
+    consentCount:'{count} डेयर के लिए सहमत',
+    dareCount:'{count} खिलाड़ी सहमत हैं',
+    oneDare:'1 डेयर के लिए सहमत',
+    onePlayer:'1 खिलाड़ी सहमत है',
+    sendingIn:'{seconds} में भेजा जाएगा',
+    selectedDare:'{name} ने "{dare}" चुना है',
+    chosenYou:'{name} ने आपको डेयर के लिए चुना! आप इन पर सहमत हैं:',
+    activeOptionsPlayers:'चुनें यह डेयर किसके साथ करना है, या पास करें',
+    activeOptionsDares:'चुनें {name} के साथ कौन सा डेयर करना है, या पास करें',
+    noOptions:'अभी कोई मेल नहीं है. आप पास कर सकते हैं.',
+    areYouSure:'आपने पहले कहा था कि आप इस व्यक्ति के साथ यह डेयर नहीं चाहते. जारी रखें?',
+    addDareTitle:'अब आप नया डेयर लिख सकते हैं',
+    newDare:'नया डेयर',
+    addToMenu:'मेन्यू में जोड़ें',
+    onboardingTitle:'अपनी डेयर पसंद सेट करें',
+    onboardingDareTitle:'डेयर #{number}: {dare}',
+    onboardingHelp:'आप इस डेयर के लिए इनके साथ सहमत हैं:',
+    joinedTitle:'{name} जुड़ गया/गई!',
+    joinedHelp:'चुनें आप इस खिलाड़ी के साथ कौन से डेयर करने के लिए सहमत हैं.',
+    newDareTitle:'नया डेयर जोड़ा गया है',
+    newDareHelp:'आप इस डेयर के लिए इनके साथ सहमत हैं:',
+    mature:'वयस्क सामग्री',
+    matureBody:'यह गेम 18 वर्ष या उससे अधिक उम्र के वयस्कों के लिए है.',
+    adult:'मैं 18+ हूँ',
+    under:'मैं बहुत छोटा/छोटी हूँ',
+    loading:'लोड हो रहा है',
+    uploadFailed:'सेल्फी अपलोड विफल रहा. कृपया JPG, PNG, WebP, या HEIC फोटो आज़माएँ.'
+  },
+  nl:{
+    joinHost:'Word lid van het spel van {name}',
+    resumeGame:'Spel hervatten',
+    english:'Engels',
+    spanish:'Spaans',
+    portuguese:'Portugees',
+    changeName:'Naam wijzigen',
+    chooseColor:'Kies je kleur',
+    useSelfie:'Selfie gebruiken',
+    adjustSelfie:'Pas je selfie aan',
+    selfieHelp:'Verplaats en zoom de foto zodat je gezicht in het midden staat.',
+    usePhoto:'Foto gebruiken',
+    zoom:'Zoomen',
+    horizontal:'Horizontaal',
+    vertical:'Verticaal',
+    addPlayers:'Spelers toevoegen',
+    leaveGame:'Spel verlaten',
+    share:'Deel deze link',
+    chooseDareMode:'Kies een opdracht en zie wie hem met je doet',
+    choosePlayerMode:'Kies een persoon en zie welke opdrachten die met je doet',
+    chooseDare:'Kies een opdracht',
+    choosePlayer:'Kies een speler',
+    waitingChoose:'Wachten tot {name} kiest',
+    waitingRespond:'Wachten op antwoord van {name}',
+    waitingResponsesTitle:'Wachten op reacties',
+    waitingOn:'Wachten op',
+    collectingResponses:'Reacties verzamelen',
+    waitingPerform:'Wachten tot {a} en {b} dit doen: {dare}',
+    performDareTitle:'Tijd om een opdracht te doen',
+    performDareWith:'Tijd om een opdracht te doen met {name}',
+    waitingAdd:'Wachten tot {name} een nieuwe opdracht toevoegt',
+    waitingConsentSetup:'Wachten tot {names} toestemming instellen',
+    consentCount:'stemt in met {count} opdrachten',
+    dareCount:'{count} spelers stemmen in',
+    oneDare:'stemt in met 1 opdracht',
+    onePlayer:'1 speler stemt in',
+    sendingIn:'Verzenden over {seconds}',
+    selectedDare:'{name} heeft "{dare}" gekozen',
+    chosenYou:'{name} koos jou voor een opdracht! Je stemt in met:',
+    activeOptionsPlayers:'Kies met wie je deze opdracht doet, of pas',
+    activeOptionsDares:'Kies welke opdracht je met {name} doet, of pas',
+    noOptions:'Er zijn nu geen matches. Je kunt passen.',
+    areYouSure:'Je zei eerder dat je deze opdracht niet met deze persoon wilde. Doorgaan?',
+    addDareTitle:'Je mag een nieuwe opdracht schrijven',
+    newDare:'Nieuwe opdracht',
+    addToMenu:'Aan menu toevoegen',
+    onboardingTitle:'Stel je voorkeuren voor opdrachten in',
+    onboardingDareTitle:'Opdracht #{number}: {dare}',
+    onboardingHelp:'Je stemt in met deze opdracht met:',
+    joinedTitle:'{name} is aangesloten!',
+    joinedHelp:'Kies welke opdrachten je met deze speler wilt doen.',
+    newDareTitle:'Er is een nieuwe opdracht toegevoegd',
+    newDareHelp:'Je stemt in met deze opdracht met:',
+    mature:'Volwassen inhoud',
+    matureBody:'Dit spel is bedoeld voor volwassenen van 18 jaar en ouder.',
+    adult:'Ik ben 18+',
+    under:'Ik ben te jong',
+    ok:'OK',
+    loading:'Laden',
+    uploadFailed:'Selfie uploaden mislukt. Probeer een JPG-, PNG-, WebP- of HEIC-foto.'
+  },
+  pl:{
+    joinHost:'Dołącz do gry {name}',
+    resumeGame:'Wznów grę',
+    english:'Angielski',
+    spanish:'Hiszpański',
+    portuguese:'Portugalski',
+    changeName:'Zmień imię',
+    chooseColor:'Wybierz kolor',
+    useSelfie:'Użyj selfie',
+    adjustSelfie:'Dopasuj selfie',
+    selfieHelp:'Przesuń i przybliż zdjęcie, aby twarz była na środku.',
+    usePhoto:'Użyj zdjęcia',
+    zoom:'Powiększenie',
+    horizontal:'Poziomo',
+    vertical:'Pionowo',
+    addPlayers:'Dodaj graczy',
+    leaveGame:'Opuść grę',
+    share:'Udostępnij ten link',
+    chooseDareMode:'Wybierz wyzwanie i zobacz, kto zrobi je z tobą',
+    choosePlayerMode:'Wybierz osobę i zobacz, jakie wyzwania zrobi z tobą',
+    chooseDare:'Wybierz wyzwanie',
+    choosePlayer:'Wybierz gracza',
+    waitingChoose:'Czekamy, aż {name} wybierze',
+    waitingRespond:'Czekamy na odpowiedź od {name}',
+    waitingResponsesTitle:'Czekamy na odpowiedzi',
+    waitingOn:'Czekamy na',
+    collectingResponses:'Zbieranie odpowiedzi',
+    waitingPerform:'Czekamy, aż {a} i {b} zrobią: {dare}',
+    performDareTitle:'Czas zrobić wyzwanie',
+    performDareWith:'Czas zrobić wyzwanie z {name}',
+    waitingAdd:'Czekamy, aż {name} doda nowe wyzwanie',
+    waitingConsentSetup:'Czekamy, aż {names} ustawią zgodę',
+    consentCount:'zgadza się na {count} wyzwań',
+    dareCount:'{count} graczy się zgadza',
+    oneDare:'zgadza się na 1 wyzwanie',
+    onePlayer:'1 gracz się zgadza',
+    sendingIn:'Wysyłanie za {seconds}',
+    selectedDare:'{name} wybrał(a) "{dare}"',
+    chosenYou:'{name} wybrał(a) cię do wyzwania! Zgadzasz się na:',
+    activeOptionsPlayers:'Wybierz, z kim zrobić to wyzwanie, albo spasuj',
+    activeOptionsDares:'Wybierz, jakie wyzwanie zrobić z {name}, albo spasuj',
+    noOptions:'Brak aktualnych dopasowań. Możesz spasować.',
+    areYouSure:'Wcześniej było powiedziane, że nie chcesz tego wyzwania z tą osobą. Kontynuować?',
+    addDareTitle:'Możesz napisać nowe wyzwanie',
+    newDare:'Nowe wyzwanie',
+    addToMenu:'Dodaj do menu',
+    onboardingTitle:'Ustaw preferencje wyzwań',
+    onboardingDareTitle:'Wyzwanie #{number}: {dare}',
+    onboardingHelp:'Zgadzasz się na to wyzwanie z:',
+    joinedTitle:'{name} dołączył(a)!',
+    joinedHelp:'Wybierz, na które wyzwania zgadzasz się z tym graczem.',
+    newDareTitle:'Dodano nowe wyzwanie',
+    newDareHelp:'Zgadzasz się na to wyzwanie z:',
+    mature:'Treści dla dorosłych',
+    matureBody:'Ta gra jest przeznaczona dla dorosłych w wieku 18 lat lub starszych.',
+    adult:'Mam 18+',
+    under:'Jestem za młody/za młoda',
+    ok:'OK',
+    loading:'Ładowanie',
+    uploadFailed:'Przesyłanie selfie nie powiodło się. Spróbuj zdjęcia JPG, PNG, WebP lub HEIC.'
+  },
+  it:{
+    joinHost:'Unisciti alla partita di {name}',
+    resumeGame:'Riprendi la partita',
+    english:'Inglese',
+    spanish:'Spagnolo',
+    portuguese:'Portoghese',
+    changeName:'Cambia nome',
+    chooseColor:'Scegli il tuo colore',
+    useSelfie:'Usa selfie',
+    adjustSelfie:'Regola il selfie',
+    selfieHelp:'Sposta e ingrandisci la foto in modo che il tuo viso sia al centro.',
+    usePhoto:'Usa foto',
+    zoom:'Zoom',
+    horizontal:'Orizzontale',
+    vertical:'Verticale',
+    addPlayers:'Aggiungi giocatori',
+    leaveGame:'Lascia la partita',
+    share:'Condividi questo link',
+    chooseDareMode:'Scegli una sfida e vedi chi la farà con te',
+    choosePlayerMode:'Scegli una persona e vedi quali sfide farà con te',
+    chooseDare:'Scegli una sfida',
+    choosePlayer:'Scegli un giocatore',
+    waitingChoose:'In attesa che {name} scelga',
+    waitingRespond:'In attesa della risposta di {name}',
+    waitingResponsesTitle:'In attesa delle risposte',
+    waitingOn:'In attesa di',
+    collectingResponses:'Raccolta risposte',
+    waitingPerform:'In attesa che {a} e {b} facciano: {dare}',
+    performDareTitle:'È il momento di fare una sfida',
+    performDareWith:'È il momento di fare una sfida con {name}',
+    waitingAdd:'In attesa che {name} aggiunga una nuova sfida',
+    waitingConsentSetup:'In attesa che {names} configurino il consenso',
+    consentCount:'accetta {count} sfide',
+    dareCount:'{count} giocatori accettano',
+    oneDare:'accetta 1 sfida',
+    onePlayer:'1 giocatore accetta',
+    sendingIn:'Invio tra {seconds}',
+    selectedDare:'{name} ha scelto "{dare}"',
+    chosenYou:'{name} ha scelto te per una sfida! Accetti:',
+    activeOptionsPlayers:'Scegli con chi fare questa sfida, oppure passa',
+    activeOptionsDares:'Scegli quale sfida fare con {name}, oppure passa',
+    noOptions:'Al momento non ci sono abbinamenti. Puoi passare.',
+    areYouSure:'Avevi detto che non volevi questa sfida con questa persona. Continuare?',
+    addDareTitle:'Puoi scrivere una nuova sfida',
+    newDare:'Nuova sfida',
+    addToMenu:'Aggiungi al menu',
+    onboardingTitle:'Imposta le tue preferenze per le sfide',
+    onboardingDareTitle:'Sfida #{number}: {dare}',
+    onboardingHelp:'Accetti questa sfida con:',
+    joinedTitle:'{name} si è unito/a!',
+    joinedHelp:'Scegli quali sfide accetti di fare con questo giocatore.',
+    newDareTitle:'È stata aggiunta una nuova sfida',
+    newDareHelp:'Accetti questa sfida con:',
+    mature:'Contenuti per adulti',
+    matureBody:'Questo gioco è destinato ad adulti dai 18 anni in su.',
+    adult:'Ho 18+',
+    under:'Sono troppo giovane',
+    ok:'OK',
+    loading:'Caricamento',
+    uploadFailed:'Caricamento selfie non riuscito. Prova con una foto JPG, PNG, WebP o HEIC.'
+  }
+}).forEach(([code, overrides]) => {
+  I18N[code] ||= { ...I18N.en };
+  Object.assign(I18N[code], overrides);
+});
+
+const THEME_NAME_I18N = {
+  en:{ Awkward:'Awkward', Creative:'Creative', Cuddly:'Cuddly', Daring:'Daring', Disgusting:'Disgusting', Exhausting:'Exhausting', Humiliating:'Humiliating', Inedible:'Inedible', Intimate:'Intimate', Juvenile:'Juvenile', Kinky:'Kinky', Messy:'Messy', Risky:'Risky', Sensual:'Sensual', Wacky:'Wacky' },
+  es:{ Awkward:'Incómodo', Creative:'Creativo', Cuddly:'Cariñoso', Daring:'Atrevido', Disgusting:'Asqueroso', Exhausting:'Agotador', Humiliating:'Humillante', Inedible:'Incomible', Intimate:'Íntimo', Juvenile:'Juvenil', Kinky:'Kinky', Messy:'Desordenado', Risky:'Arriesgado', Sensual:'Sensual', Wacky:'Alocado' },
+  pt:{ Awkward:'Constrangedor', Creative:'Criativo', Cuddly:'Carinhoso', Daring:'Ousado', Disgusting:'Nojento', Exhausting:'Cansativo', Humiliating:'Humilhante', Inedible:'Intragável', Intimate:'Íntimo', Juvenile:'Juvenil', Kinky:'Kinky', Messy:'Bagunçado', Risky:'Arriscado', Sensual:'Sensual', Wacky:'Maluco' },
+  zh:{ Awkward:'尴尬', Creative:'创意', Cuddly:'亲昵', Daring:'大胆', Disgusting:'恶心', Exhausting:'累人', Humiliating:'羞辱', Inedible:'难以下咽', Intimate:'亲密', Juvenile:'幼稚', Kinky:'癖好', Messy:'凌乱', Risky:'冒险', Sensual:'感官', Wacky:'古怪' },
+  tl:{ Awkward:'Ilang', Creative:'Malikhain', Cuddly:'Mahilig yumakap', Daring:'Matapang', Disgusting:'Kadiri', Exhausting:'Nakakapagod', Humiliating:'Nakakahiya', Inedible:'Hindi nakakain', Intimate:'Matalik', Juvenile:'Pambata', Kinky:'Kinky', Messy:'Magulo', Risky:'Mapanganib', Sensual:'Sensuwal', Wacky:'Loko-loko' },
+  vi:{ Awkward:'Ngượng ngùng', Creative:'Sáng tạo', Cuddly:'Âu yếm', Daring:'Táo bạo', Disgusting:'Ghê tởm', Exhausting:'Kiệt sức', Humiliating:'Nhục nhã', Inedible:'Không ăn được', Intimate:'Thân mật', Juvenile:'Trẻ con', Kinky:'Kinky', Messy:'Lộn xộn', Risky:'Mạo hiểm', Sensual:'Gợi cảm', Wacky:'Quái chiêu' },
+  ar:{ Awkward:'محرج', Creative:'إبداعي', Cuddly:'حنون', Daring:'جريء', Disgusting:'مقرف', Exhausting:'مرهق', Humiliating:'مهين', Inedible:'غير صالح للأكل', Intimate:'حميمي', Juvenile:'طفولي', Kinky:'كينكي', Messy:'فوضوي', Risky:'محفوف بالمخاطر', Sensual:'حسي', Wacky:'غريب' },
+  fr:{ Awkward:'Malaise', Creative:'Créatif', Cuddly:'Câlin', Daring:'Audacieux', Disgusting:'Dégoûtant', Exhausting:'Épuisant', Humiliating:'Humiliant', Inedible:'Immangeable', Intimate:'Intime', Juvenile:'Juvénile', Kinky:'Kinky', Messy:'Bordélique', Risky:'Risqué', Sensual:'Sensuel', Wacky:'Déjanté' },
+  ko:{ Awkward:'어색함', Creative:'창의적', Cuddly:'포근함', Daring:'대담함', Disgusting:'역겨움', Exhausting:'고됨', Humiliating:'굴욕적', Inedible:'먹기 힘든', Intimate:'친밀함', Juvenile:'유치함', Kinky:'페티시', Messy:'지저분함', Risky:'위험함', Sensual:'관능적', Wacky:'엉뚱함' },
+  ru:{ Awkward:'Неловкий', Creative:'Творческий', Cuddly:'Ласковый', Daring:'Смелый', Disgusting:'Отвратительный', Exhausting:'Изматывающий', Humiliating:'Унизительный', Inedible:'Несъедобный', Intimate:'Интимный', Juvenile:'Детский', Kinky:'Фетиш', Messy:'Неряшливый', Risky:'Рискованный', Sensual:'Чувственный', Wacky:'Чудаковатый' },
+  ht:{ Awkward:'Anbarasan', Creative:'Kreyatif', Cuddly:'Toudous', Daring:'Odasye', Disgusting:'Degoutan', Exhausting:'Fatigan', Humiliating:'Imilyan', Inedible:'Pa manjab', Intimate:'Entim', Juvenile:'Timoun', Kinky:'Kinky', Messy:'Sal', Risky:'Ris', Sensual:'Sansyèl', Wacky:'Foufou' },
+  hi:{ Awkward:'अटपटा', Creative:'रचनात्मक', Cuddly:'प्यारा', Daring:'साहसी', Disgusting:'घिनौना', Exhausting:'थकाने वाला', Humiliating:'अपमानजनक', Inedible:'अखाद्य', Intimate:'अंतरंग', Juvenile:'बचकाना', Kinky:'किंकी', Messy:'बिखरा हुआ', Risky:'जोखिम भरा', Sensual:'कामुक', Wacky:'सनकी' },
+  de:{ Awkward:'Peinlich', Creative:'Kreativ', Cuddly:'Kuschelig', Daring:'Wagemutig', Disgusting:'Eklig', Exhausting:'Erschöpfend', Humiliating:'Demütigend', Inedible:'Ungenießbar', Intimate:'Intim', Juvenile:'Kindisch', Kinky:'Kinky', Messy:'Chaotisch', Risky:'Riskant', Sensual:'Sinnlich', Wacky:'Schräg' },
+  nl:{ Awkward:'Ongemakkelijk', Creative:'Creatief', Cuddly:'Knuffelig', Daring:'Gedurfd', Disgusting:'Walgelijk', Exhausting:'Uitputtend', Humiliating:'Vernederend', Inedible:'Oneetbaar', Intimate:'Intiem', Juvenile:'Kinderachtig', Kinky:'Kinky', Messy:'Rommelig', Risky:'Riskant', Sensual:'Sensueel', Wacky:'Mallotig' },
+  pl:{ Awkward:'Niezręczny', Creative:'Kreatywny', Cuddly:'Przytulaśny', Daring:'Odważny', Disgusting:'Obrzydliwy', Exhausting:'Wyczerpujący', Humiliating:'Upokarzający', Inedible:'Niejadalny', Intimate:'Intymny', Juvenile:'Niedojrzały', Kinky:'Kinky', Messy:'Bałaganiarski', Risky:'Ryzykowny', Sensual:'Zmysłowy', Wacky:'Odjechany' },
+  it:{ Awkward:'Imbarazzante', Creative:'Creativo', Cuddly:'Coccoloso', Daring:'Audace', Disgusting:'Disgustoso', Exhausting:'Sfiancante', Humiliating:'Umiliante', Inedible:'Immangiabile', Intimate:'Intimo', Juvenile:'Infantile', Kinky:'Kinky', Messy:'Disordinato', Risky:'Rischioso', Sensual:'Sensuale', Wacky:'Strambo' }
+};
+
+Object.values(I18N).forEach(locale => {
+  if (!locale.splashBlurbLead) locale.splashBlurbLead = I18N.en.splashBlurbLead;
+  if (!locale.freePrintCardGame) locale.freePrintCardGame = I18N.en.freePrintCardGame;
+  if (!locale.splashBlurbTail) locale.splashBlurbTail = I18N.en.splashBlurbTail;
+  if (!locale.waitingConsentSetup) locale.waitingConsentSetup = I18N.en.waitingConsentSetup;
+  if (!locale.performDareTitle) locale.performDareTitle = I18N.en.performDareTitle;
+  if (!locale.performDareWith) locale.performDareWith = I18N.en.performDareWith;
+  if (!locale.stillThereTitle) locale.stillThereTitle = I18N.en.stillThereTitle;
+  if (!locale.stillThereHelp) locale.stillThereHelp = I18N.en.stillThereHelp;
+  if (!locale.stillHere) locale.stillHere = I18N.en.stillHere;
+  if (!locale.secondsToRespond) locale.secondsToRespond = I18N.en.secondsToRespond;
+  if (!locale.stillTherePeer) locale.stillTherePeer = I18N.en.stillTherePeer;
+  if (!locale.stillTherePeerHelp) locale.stillTherePeerHelp = I18N.en.stillTherePeerHelp;
+  if (!locale.yesKeepWaiting) locale.yesKeepWaiting = I18N.en.yesKeepWaiting;
+  if (!locale.noRemovePlayer) locale.noRemovePlayer = I18N.en.noRemovePlayer;
+});
 let THEMES = null;
 let selectedTheme = 'Sensual';
 let peekedRoom = null;
+let lastUiActivitySentAt = 0;
+let uiActivityBound = false;
+const PRESENCE_I18N = {
+  es: {
+    stillThereTitle:'¿Sigues ahí?',
+    stillThereHelp:'Te estamos esperando. Toca abajo si sigues jugando.',
+    stillHere:'Sigo aquí',
+    secondsToRespond:'{seconds} segundos para responder',
+    stillTherePeer:'¿{name} sigue jugando?',
+    stillTherePeerHelp:'Si sigue jugando, seguiremos esperando. Si no, la quitaremos de esta partida.',
+    yesKeepWaiting:'Sí, sigamos esperando',
+    noRemovePlayer:'No, quitarla'
+  },
+  pt: {
+    stillThereTitle:'Você ainda está aí?',
+    stillThereHelp:'Estamos esperando por você. Toque abaixo se ainda estiver jogando.',
+    stillHere:'Ainda estou aqui',
+    secondsToRespond:'{seconds} segundos para responder',
+    stillTherePeer:'{name} ainda está jogando?',
+    stillTherePeerHelp:'Se ainda estiver jogando, continuaremos esperando. Caso contrário, vamos removê-la desta partida.',
+    yesKeepWaiting:'Sim, continuar esperando',
+    noRemovePlayer:'Não, remover'
+  },
+  zh: {
+    stillThereTitle:'你还在吗？',
+    stillThereHelp:'大家正在等你。如果你还在玩，请点下面。',
+    stillHere:'我还在',
+    secondsToRespond:'还有 {seconds} 秒可回应',
+    stillTherePeer:'{name} 还在玩吗？',
+    stillTherePeerHelp:'如果她还在玩，我们会继续等；如果没有，我们会把她移出本局。',
+    yesKeepWaiting:'是，继续等待',
+    noRemovePlayer:'不，移除她'
+  },
+  tl: {
+    stillThereTitle:'Nandiyan ka pa ba?',
+    stillThereHelp:'Hinihintay ka namin. Pindutin ito kung naglalaro ka pa.',
+    stillHere:'Nandito pa ako',
+    secondsToRespond:'{seconds} segundo para sumagot',
+    stillTherePeer:'Naglalaro pa ba si {name}?',
+    stillTherePeerHelp:'Kung naglalaro pa siya, maghihintay pa kami. Kung hindi, aalisin namin siya sa larong ito.',
+    yesKeepWaiting:'Oo, maghintay pa',
+    noRemovePlayer:'Hindi, alisin siya'
+  },
+  vi: {
+    stillThereTitle:'Bạn vẫn ở đó chứ?',
+    stillThereHelp:'Mọi người đang chờ bạn. Hãy chạm bên dưới nếu bạn vẫn đang chơi.',
+    stillHere:'Tôi vẫn ở đây',
+    secondsToRespond:'Còn {seconds} giây để trả lời',
+    stillTherePeer:'{name} còn đang chơi không?',
+    stillTherePeerHelp:'Nếu vẫn còn chơi, chúng tôi sẽ tiếp tục chờ. Nếu không, chúng tôi sẽ xóa họ khỏi ván này.',
+    yesKeepWaiting:'Có, tiếp tục chờ',
+    noRemovePlayer:'Không, xóa họ'
+  },
+  ar: {
+    stillThereTitle:'هل ما زلت هنا؟',
+    stillThereHelp:'نحن ننتظرك. اضغط أدناه إذا كنت ما زلت تلعب.',
+    stillHere:'ما زلت هنا',
+    secondsToRespond:'لديك {seconds} ثانية للرد',
+    stillTherePeer:'هل ما زالت {name} تلعب؟',
+    stillTherePeerHelp:'إذا كانت ما زالت تلعب فسوف نواصل الانتظار، وإذا لم تكن كذلك فسنزيلها من هذه اللعبة.',
+    yesKeepWaiting:'نعم، واصلوا الانتظار',
+    noRemovePlayer:'لا، أزيلوها'
+  },
+  fr: {
+    stillThereTitle:'Tu es toujours là ?',
+    stillThereHelp:'On t’attend. Appuie ci-dessous si tu joues toujours.',
+    stillHere:'Je suis toujours là',
+    secondsToRespond:'{seconds} secondes pour répondre',
+    stillTherePeer:'Est-ce que {name} joue toujours ?',
+    stillTherePeerHelp:'Si elle joue toujours, on continue d’attendre. Sinon, on la retire de cette partie.',
+    yesKeepWaiting:'Oui, continuer à attendre',
+    noRemovePlayer:'Non, la retirer'
+  },
+  ko: {
+    stillThereTitle:'아직 거기 있나요?',
+    stillThereHelp:'모두가 당신을 기다리고 있습니다. 아직 플레이 중이면 아래를 누르세요.',
+    stillHere:'저 아직 있어요',
+    secondsToRespond:'응답까지 {seconds}초',
+    stillTherePeer:'{name}님이 아직 플레이 중인가요?',
+    stillTherePeerHelp:'아직 플레이 중이면 계속 기다리고, 아니면 이 게임에서 제거합니다.',
+    yesKeepWaiting:'네, 계속 기다리기',
+    noRemovePlayer:'아니요, 제거하기'
+  },
+  ru: {
+    stillThereTitle:'Ты ещё здесь?',
+    stillThereHelp:'Мы тебя ждём. Нажми ниже, если ты всё ещё играешь.',
+    stillHere:'Я всё ещё здесь',
+    secondsToRespond:'{seconds} сек. на ответ',
+    stillTherePeer:'{name} всё ещё играет?',
+    stillTherePeerHelp:'Если она всё ещё играет, мы продолжим ждать. Если нет, мы удалим её из этой игры.',
+    yesKeepWaiting:'Да, подождать ещё',
+    noRemovePlayer:'Нет, удалить её'
+  },
+  ht: {
+    stillThereTitle:'Ou toujou la?',
+    stillThereHelp:'N ap tann ou. Tape anba a si ou toujou ap jwe.',
+    stillHere:'Mwen toujou la',
+    secondsToRespond:'{seconds} segonn pou reponn',
+    stillTherePeer:'Èske {name} toujou ap jwe?',
+    stillTherePeerHelp:'Si li toujou ap jwe, n ap kontinye tann. Si se pa sa, n ap retire li nan jwèt sa a.',
+    yesKeepWaiting:'Wi, kontinye tann',
+    noRemovePlayer:'Non, retire li'
+  },
+  hi: {
+    stillThereTitle:'क्या आप अभी भी वहाँ हैं?',
+    stillThereHelp:'हम आपका इंतज़ार कर रहे हैं। अगर आप अभी भी खेल रहे हैं तो नीचे दबाएँ।',
+    stillHere:'मैं अभी भी यहाँ हूँ',
+    secondsToRespond:'जवाब देने के लिए {seconds} सेकंड',
+    stillTherePeer:'क्या {name} अभी भी खेल रही है?',
+    stillTherePeerHelp:'अगर वह अभी भी खेल रही है, तो हम इंतज़ार जारी रखेंगे। नहीं तो हम उसे इस गेम से हटा देंगे।',
+    yesKeepWaiting:'हाँ, इंतज़ार जारी रखें',
+    noRemovePlayer:'नहीं, उसे हटाएँ'
+  },
+  de: {
+    stillThereTitle:'Bist du noch da?',
+    stillThereHelp:'Wir warten auf dich. Tippe unten, wenn du noch mitspielst.',
+    stillHere:'Ich bin noch da',
+    secondsToRespond:'{seconds} Sekunden zum Antworten',
+    stillTherePeer:'Spielt {name} noch mit?',
+    stillTherePeerHelp:'Wenn sie noch mitspielt, warten wir weiter. Andernfalls entfernen wir sie aus diesem Spiel.',
+    yesKeepWaiting:'Ja, weiter warten',
+    noRemovePlayer:'Nein, entfernen'
+  },
+  nl: {
+    stillThereTitle:'Ben je er nog?',
+    stillThereHelp:'We wachten op je. Tik hieronder als je nog meespeelt.',
+    stillHere:'Ik ben er nog',
+    secondsToRespond:'Nog {seconds} seconden om te reageren',
+    stillTherePeer:'Speelt {name} nog mee?',
+    stillTherePeerHelp:'Als ze nog meespeelt, wachten we verder. Zo niet, dan verwijderen we haar uit dit spel.',
+    yesKeepWaiting:'Ja, blijf wachten',
+    noRemovePlayer:'Nee, verwijder haar'
+  },
+  pl: {
+    stillThereTitle:'Czy nadal tam jesteś?',
+    stillThereHelp:'Czekamy na Ciebie. Kliknij poniżej, jeśli nadal grasz.',
+    stillHere:'Nadal tu jestem',
+    secondsToRespond:'{seconds} s na odpowiedź',
+    stillTherePeer:'Czy {name} nadal gra?',
+    stillTherePeerHelp:'Jeśli nadal gra, będziemy dalej czekać. Jeśli nie, usuniemy ją z tej gry.',
+    yesKeepWaiting:'Tak, czekajmy dalej',
+    noRemovePlayer:'Nie, usuń ją'
+  },
+  it: {
+    stillThereTitle:'Ci sei ancora?',
+    stillThereHelp:'Ti stiamo aspettando. Tocca qui sotto se stai ancora giocando.',
+    stillHere:'Ci sono ancora',
+    secondsToRespond:'{seconds} secondi per rispondere',
+    stillTherePeer:'{name} sta ancora giocando?',
+    stillTherePeerHelp:'Se sta ancora giocando continueremo ad aspettare. Altrimenti la rimuoveremo da questa partita.',
+    yesKeepWaiting:'Sì, continuiamo ad aspettare',
+    noRemovePlayer:'No, rimuovila'
+  }
+};
+Object.entries(PRESENCE_I18N).forEach(([code, strings]) => {
+  I18N[code] ||= { ...I18N.en };
+  Object.assign(I18N[code], strings);
+});
 function browserLanguage(){
   try {
     const langs = Array.isArray(navigator.languages) && navigator.languages.length ? navigator.languages : [navigator.language];
@@ -389,12 +1236,15 @@ function browserLanguage(){
   return 'en';
 }
 let state = { room:null, me:{ name:'', id:null, language:browserLanguage(), gender:'nonbinary', preferredGenders:[...GENDERS] } };
-let local = { edit:null, prompt:{}, exampleOffsets:{}, landingMode:null, pendingJoinCode:'' };
+let local = { edit:null, prompt:{}, exampleOffsets:{}, landingMode:null, pendingJoinCode:'', pendingPeekAction:null, pendingExample:null, takeoverPanelKey:'' };
 
 function lang(){ return state.me.language || loadSession()?.language || 'en'; }
 function t(key, vars={}){
   const s = (I18N[lang()]?.[key] || I18N.en[key] || key).toString();
   return s.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
+}
+function themeDisplayName(key){
+  return THEME_NAME_I18N[lang()]?.[key] || THEMES?.[key]?.name || key;
 }
 function escapeHtml(s){
   return String(s == null ? '' : s).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
@@ -430,6 +1280,10 @@ function clearLocalBack(){
     render();
     return true;
   }
+  if (isActive() && ['chooseDare', 'choosePlayer'].includes(state.room?.turn?.phase)) {
+    socket.emit('turn:backToMode');
+    return true;
+  }
   if (local.landingMode) {
     local.landingMode = null;
     render();
@@ -448,12 +1302,55 @@ function meId(){ return state.me?.id || null; }
 function mePlayer(){ return state.room?.players?.find(p => p.id === meId()) || null; }
 function player(id){ return state.room?.players?.find(p => p.id === id) || null; }
 function dare(id){ return state.room?.dareMenu?.find(d => d.id === id) || null; }
+function resolveDareRecord(value){
+  if (!value) return null;
+  if (typeof value === 'string') return dare(value);
+  if (value.id) return dare(value.id) || value;
+  return value;
+}
+function dareTitleText(value){
+  const d = resolveDareRecord(value);
+  if (!d) return '';
+  return d.translations?.[lang()]?.title || d.title || '';
+}
+function dareExtraText(value){
+  const d = resolveDareRecord(value);
+  if (!d) return '';
+  return d.translations?.[lang()]?.extra || d.extra || '';
+}
 function activeId(){ return state.room?.turn?.order?.[state.room?.turn?.index] || null; }
 function activePlayer(){ return player(activeId()); }
+function pendingSetupPlayers(){ return (state.room?.turn?.pendingSetupIds || []).map(id => player(id)).filter(Boolean); }
 function isActive(){ return !!meId() && meId() === activeId(); }
 function secondsLeft(){
   const end = state.room?.turn?.timerEndsAt || 0;
   return Math.max(0, Math.ceil((end - Date.now()) / 1000));
+}
+function promptSecondsLeft(endsAt){
+  return Math.max(0, Math.ceil(((endsAt || 0) - Date.now()) / 1000));
+}
+function renderPresenceCountdown(endsAt){
+  return t('secondsToRespond', { seconds:promptSecondsLeft(endsAt) });
+}
+function renderTurnCountdown(){
+  return t('sendingIn', { seconds:secondsLeft() });
+}
+function stripLeadingIconLabel(text){
+  return String(text || '').replace(/^[^\p{L}\p{N}]+/u, '').trim();
+}
+function spiceGlyph(kind){
+  if (kind === 'cool') {
+    return `<span class="spice-glyph spice-glyph-cool" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2 13.8 6.3 18 4.9 15.7 9l4.3 1-4.3 1 2.3 4.1-4.2-1.4L12 18l-1.8-4.3L6 15.1 8.3 11 4 10l4.3-1L6 4.9l4.2 1.4L12 2Z" fill="#8cf3ff" stroke="#dcfcff" stroke-width="1.2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.2" fill="#effcff"/></svg></span>`;
+  }
+  return `<span class="spice-glyph spice-glyph-hot" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M14.8 2.7c.4 2.4-.8 3.7-2 4.9-1.1 1.1-2.1 2.1-2.1 4 0 1.2.5 2.1 1.2 2.8-3-.4-5.1-2.8-5.1-5.8 0-2.5 1.4-4.7 3.4-5.9-.2 1.5.2 2.6 1 3.5.8-1.4 2.1-2.3 3.6-3.5ZM13.1 9.1c2.3 1.2 3.9 3.5 3.9 6.1 0 3.8-3.1 6.8-7 6.8s-7-3-7-6.8c0-2.5 1.4-4.8 3.6-6 0 2.5 1.8 4.5 4.3 5 1.6.3 3.4-.2 4.6-1.4.9-.9 1.5-2.2 1.5-3.7.9.9 1.5 2.2 1.5 3.7 0 2.8-2.1 5.2-4.8 5.7 1.1-.9 1.8-2.2 1.8-3.7 0-1-.3-2-1-2.7-.1.3-.3.5-.5.7-.8.8-2 .9-3 .4-1.2-.6-2-1.8-1.9-3.1-1.6 1.1-2.6 2.9-2.6 4.9 0 3.2 2.6 5.8 5.9 5.8s5.9-2.6 5.9-5.8c0-2.7-1.8-5-4.2-5.7Z" fill="#ff59b1" stroke="#ffd0f0" stroke-width="1" stroke-linejoin="round"/></svg></span>`;
+}
+function takeoverPanelClass(key){
+  const animate = local.takeoverPanelKey !== key;
+  local.takeoverPanelKey = key;
+  return `panel takeover-panel${animate ? ' panel-animate' : ''}`;
+}
+function clearTakeoverPanelKey(){
+  local.takeoverPanelKey = '';
 }
 function countText(n, kind){
   if (kind === 'dare') return n === 1 ? t('oneDare') : t('consentCount', { count:n });
@@ -511,10 +1408,14 @@ function examplesListForTheme(theme){
   const tData = THEMES?.[theme];
   const room = state.room;
   const taken = new Set((room?.dareMenu || []).map(d => (d.title || '').trim().toLowerCase()));
+  const takenThemeExamples = new Set((room?.dareMenu || [])
+    .filter(d => d?.themeRef?.theme === theme && d?.themeRef?.section === 'examples')
+    .map(d => `${d.themeRef.section}:${d.themeRef.index}`));
   const raw = Array.isArray(tData?.examples) ? tData.examples : [];
   return raw
-    .filter(ex => !taken.has((ex?.title || '').trim().toLowerCase()))
-    .map((ex, i) => ({ ...localizedExample(ex), __idx:i, sp: typeof ex.spicyness === 'number' ? ex.spicyness : 0 }))
+    .map((ex, index) => ({ ex, index }))
+    .filter(({ ex, index }) => !takenThemeExamples.has(`examples:${index}`) && !taken.has((ex?.title || '').trim().toLowerCase()))
+    .map(({ ex, index }) => ({ ...localizedExample(ex), __idx:index, sp: typeof ex.spicyness === 'number' ? ex.spicyness : 0 }))
     .sort((a,b) => (a.sp - b.sp) || (a.__idx - b.__idx));
 }
 
@@ -550,22 +1451,32 @@ function collectProfileDraft(prefix){
   const language = $(`#${prefix}-language`)?.value || lang();
   return { name, gender, preferredGenders: preferredGenders.length ? preferredGenders : [...GENDERS], language };
 }
+function requestJoinProfile(rawCode){
+  const code = sanitizeInput(rawCode || '', 64).toLowerCase();
+  const input = $('#quick-join-code');
+  if (!code) {
+    input?.reportValidity?.();
+    return;
+  }
+  local.pendingJoinCode = code;
+  local.pendingPeekAction = 'join';
+  socket.emit('room:peek', { code });
+}
 
 function profileSetupView(mode, codeInHash, sess, subtitle){
   const prefix = mode === 'create' ? 'create' : 'join';
   const code = local.pendingJoinCode || codeInHash || sess.code || '';
   return `
-    <section class="card landing">
+    <section class="card landing setup-screen">
       <button class="secondary narrow" id="landing-back">${t('back')}</button>
       <h1>${t('setupProfile')}</h1>
-      <p>${escapeHtml(subtitle)}</p>
+      ${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ''}
       <div class="panel">
         <h3>${mode === 'create' ? t('createGame') : t('joinGame')}</h3>
         ${mode === 'join' ? `<label class="field-label" for="join-code">${t('gameCode')}</label><input id="join-code" placeholder="three-words-like-this" value="${escapeAttr(code)}" maxlength="64">` : ''}
         <input id="${prefix}-name" placeholder="${t('yourName')}" value="${escapeAttr(sess.name || '')}" maxlength="30">
         ${genderFields(prefix, sess.gender || 'nonbinary', sess.preferredGenders || GENDERS)}
         ${languageSelect(`${prefix}-language`, sess.language || lang())}
-        <p><small>${t('profileHelp')}</small></p>
         <button class="primary" id="${prefix}-btn">${mode === 'create' ? t('create') : t('join')}</button>
       </div>
     </section>`;
@@ -575,28 +1486,31 @@ function titleView(){
   const codeInHash = location.hash?.slice(1) || '';
   const sess = loadSession() || {};
   const hostName = peekedRoom ? peekedRoom.players?.find(p => p.id === peekedRoom.hostId)?.name || 'the host' : '';
-  const subtitle = codeInHash && hostName ? t('joinHost', { name:hostName }) : t('tagline');
-  if (local.landingMode) return profileSetupView(local.landingMode, codeInHash, sess, subtitle);
+  const joinSubtitle = hostName ? t('joinHost', { name:hostName }) : '';
+  if (local.landingMode === 'create') return profileSetupView('create', codeInHash, sess, '');
+  if (local.landingMode === 'join') return profileSetupView('join', codeInHash, sess, joinSubtitle);
+  if (codeInHash) return profileSetupView('join', codeInHash, sess, joinSubtitle);
   const quickCode = local.pendingJoinCode || codeInHash || '';
   return `
     <section class="card landing">
       <h1>${t('title')}</h1>
-      <p>${escapeHtml(subtitle)}</p>
+      <p>${escapeHtml(t('tagline'))}</p>
+      <p class="landing-blurb">${escapeHtml(t('splashBlurbLead'))} <a href="https://github.com/DaringGames/DareToConsent/" target="_blank" rel="noopener noreferrer">${escapeHtml(t('freePrintCardGame'))}</a> ${escapeHtml(t('splashBlurbTail'))}</p>
       <div class="grid-landing${codeInHash ? ' single' : ''}">
+        ${codeInHash ? '' : `<div class="panel">
+          <h3>${t('createGame')}</h3>
+          <select id="create-theme">
+            ${(THEMES ? Object.keys(THEMES) : ['Sensual']).map(k => `<option value="${escapeAttr(k)}" ${k===selectedTheme?'selected':''}>${t('theme')}: ${escapeHtml(themeDisplayName(k))}</option>`).join('')}
+          </select>
+          <button class="primary" id="choose-create">${t('create')}</button>
+        </div>
+        <div class="or">${t('or')}</div>`}
         <div class="panel">
           <h3>${t('joinGame')}</h3>
           <label class="field-label" for="quick-join-code">${t('gameCode')}</label>
-          <input id="quick-join-code" placeholder="three-words-like-this" value="${escapeAttr(quickCode)}" maxlength="64">
+          <input id="quick-join-code" placeholder="three-words-like-this" value="${escapeAttr(quickCode)}" maxlength="64" required>
           <button class="primary" id="choose-join">${t('join')}</button>
         </div>
-        ${codeInHash ? '' : `<div class="or">${t('or')}</div>
-        <div class="panel">
-          <h3>${t('createGame')}</h3>
-          <select id="create-theme">
-            ${(THEMES ? Object.keys(THEMES) : ['Sensual']).map(k => `<option value="${escapeAttr(k)}" ${k===selectedTheme?'selected':''}>${t('theme')}: ${escapeHtml(THEMES?.[k]?.name || k)}</option>`).join('')}
-          </select>
-          <button class="primary" id="choose-create">${t('create')}</button>
-        </div>`}
       </div>
     </section>`;
 }
@@ -629,8 +1543,9 @@ function lobbyView(){
   const url = `${location.origin}/#${r.code}`;
   const connectedCount = (r.players || []).filter(p => p.connected !== false).length;
   const canProceed = connectedCount >= 3;
+  const actionLabel = canProceed ? (r.paused ? t('resumeGame') : t('startGame')) : `<span class="spinner" aria-hidden="true"></span><span>${t('waitingForPlayers')}</span>`;
   return `
-    <section class="card">
+    <section class="card lobby-screen">
       <div class="row between">
         <h2>${t('room')}: ${escapeHtml(r.code)}</h2>
         ${profileMenuHtml(r)}
@@ -639,7 +1554,7 @@ function lobbyView(){
       <small>${t('share')}: <a href="${url}">${url}</a></small>
       <h3>${t('players')}</h3>
       <div class="players">${r.players.map(namePill).join('')}</div>
-      <button class="primary" id="${r.paused ? 'resume-game' : 'start-game'}" ${canProceed ? '' : 'disabled'}>${canProceed ? (r.paused ? t('resumeGame') : t('startGame')) : t('waitingForPlayers')}</button>
+      <button class="primary waiting-action" id="${r.paused ? 'resume-game' : 'start-game'}" ${canProceed ? '' : 'disabled'}>${actionLabel}</button>
     </section>`;
 }
 function statusText(){
@@ -647,12 +1562,16 @@ function statusText(){
   const turn = r?.turn;
   const act = activePlayer();
   if (!turn) return '';
+  if (turn.phase === 'awaitingOnboarding') {
+    const names = pendingSetupPlayers().map(p => p.name).join(', ') || 'players';
+    return t('waitingConsentSetup', { names });
+  }
   if (turn.phase === 'adding') return turn.addingBy === meId() ? t('addDareTitle') : t('waitingAdd', { name: player(turn.addingBy)?.name || 'Player' });
   if (turn.phase === 'performing') {
     const a = player(turn.performing?.activeId);
     const b = player(turn.performing?.partnerId);
     const d = dare(turn.performing?.dareId);
-    return t('waitingPerform', { a:a?.name || 'Player', b:b?.name || 'Player', dare:d?.title || '' });
+    return t('waitingPerform', { a:a?.name || 'Player', b:b?.name || 'Player', dare:dareTitleText(d) });
   }
   if (isActive()) {
     if (turn.phase === 'chooseMode') return t('yourTurn');
@@ -663,7 +1582,7 @@ function statusText(){
     if (turn.phase === 'choosePartner') return t('activeOptionsPlayers');
     if (turn.phase === 'chooseDareForPlayer') return t('activeOptionsDares', { name: player(turn.selectedPlayerId)?.name || 'Player' });
   }
-  if (turn.phase === 'dareRespond') return t('selectedDare', { name:act?.name || 'Player', dare:dare(turn.selectedDareId)?.title || '' });
+  if (turn.phase === 'dareRespond') return t('selectedDare', { name:act?.name || 'Player', dare:dareTitleText(turn.selectedDareId) });
   if (turn.phase === 'personRespond') return t('waitingRespond', { name:player(turn.selectedPlayerId)?.name || 'Player' });
   return t('waitingChoose', { name:act?.name || 'Player' });
 }
@@ -672,19 +1591,19 @@ function defaultDashboard(){
   const counts = r.me?.counts || { players:[], dares:[] };
   const others = r.players.filter(p => p.id !== meId() && p.connected !== false);
   return `
-    <div class="split">
+    <div class="split consent-dashboard">
       <section>
-        <h3>${t('consentPlayers')}</h3>
+        <h3>${t('managePlayerConsent')}</h3>
         <div class="list">${others.map(p => {
           const count = counts.players.find(c => c.playerId === p.id)?.count || 0;
           return `<button class="list-item" data-edit-player="${p.id}">${namePill(p)} <small>${countText(count, 'dare')}</small></button>`;
         }).join('') || `<p><small>${t('waitingForPlayers')}</small></p>`}</div>
       </section>
       <section>
-        <h3>${t('consentDares')}</h3>
+        <h3>${t('manageDareConsent')}</h3>
         <div class="list">${r.dareMenu.map(d => {
           const count = counts.dares.find(c => c.dareId === d.id)?.count || 0;
-          return `<button class="list-item" data-edit-dare="${d.id}"><span>${escapeHtml(d.title)}</span> <small>${countText(count, 'player')}</small></button>`;
+          return `<button class="list-item" data-edit-dare="${d.id}"><span>${escapeHtml(dareTitleText(d))}</span> <small>${countText(count, 'player')}</small></button>`;
         }).join('')}</div>
       </section>
     </div>`;
@@ -692,30 +1611,33 @@ function defaultDashboard(){
 function editPanel(){
   const r = state.room;
   const edit = local.edit;
-  if (!edit) return defaultDashboard();
+  if (!edit) {
+    clearTakeoverPanelKey();
+    return defaultDashboard();
+  }
   if (edit.type === 'player') {
     const p = player(edit.id);
-    if (!p) { local.edit = null; return defaultDashboard(); }
+    if (!p) { local.edit = null; clearTakeoverPanelKey(); return defaultDashboard(); }
     const count = r.me?.counts?.players?.find(c => c.playerId === p.id)?.count || 0;
     return `
-      <section class="panel">
+      <section class="${takeoverPanelClass(`edit-player:${p.id}`)}">
         <div class="edit-panel-header">
           <button class="secondary narrow" id="back-edit">${t('back')}</button>
           ${avatarHtml(p)}
         </div>
         <p class="edit-instruction">${escapeHtml(playerEditSummary(p.name, count))}</p>
         <div class="check-list">${r.dareMenu.map(d => `
-          <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
+          <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${escapeHtml(dareTitleText(d))}</label>
         `).join('')}</div>
       </section>`;
   }
   const d = dare(edit.id);
-  if (!d) { local.edit = null; return defaultDashboard(); }
+  if (!d) { local.edit = null; clearTakeoverPanelKey(); return defaultDashboard(); }
   const count = r.me?.counts?.dares?.find(c => c.dareId === d.id)?.count || 0;
   return `
-    <section class="panel">
+    <section class="${takeoverPanelClass(`edit-dare:${d.id}`)}">
       <button class="secondary narrow" id="back-edit">${t('back')}</button>
-      <p class="edit-instruction">${escapeHtml(dareEditSummary(d.title, count))}</p>
+      <p class="edit-instruction">${escapeHtml(dareEditSummary(dareTitleText(d), count))}</p>
       <div class="check-list">${r.players.filter(p => p.id !== meId() && p.connected !== false).map(p => `
         <label><input type="checkbox" data-consent-target="${p.id}" data-consent-dare="${d.id}" ${r.me?.consent?.[p.id]?.[d.id]?'checked':''}> ${namePill(p)}</label>
       `).join('')}</div>
@@ -724,13 +1646,22 @@ function editPanel(){
 function activeWaitingPanel(){
   const r = state.room;
   const turn = r.turn;
+  if (turn.phase === 'awaitingOnboarding') {
+    const waiting = pendingSetupPlayers();
+    const names = waiting.map(p => p.name).join(', ') || 'players';
+    return `
+      <div class="${takeoverPanelClass(`awaitingOnboarding:${(turn.pendingSetupIds || []).join(',')}`)} waiting-panel">
+        <h3>${escapeHtml(t('waitingConsentSetup', { names }))}</h3>
+        ${waiting.length ? `<div class="players">${waiting.map(namePill).join('')}</div>` : ''}
+      </div>`;
+  }
   if (turn.phase === 'dareRespond') {
     const d = dare(turn.selectedDareId);
     const waiting = r.players.filter(p => p.id !== meId() && p.connected !== false && !Object.prototype.hasOwnProperty.call(turn.responses || {}, p.id));
     return `
       <div class="panel waiting-panel">
         <h3>${t('waitingResponsesTitle')}</h3>
-        <p><b>${escapeHtml(d?.title || '')}</b></p>
+        <p><b>${escapeHtml(dareTitleText(d))}</b></p>
         <p>${escapeHtml(waiting.length ? `${t('waitingOn')}:` : t('collectingResponses'))}</p>
         ${waiting.length ? `<div class="players">${waiting.map(namePill).join('')}</div>` : ''}
       </div>`;
@@ -750,22 +1681,37 @@ function activeBody(){
   const r = state.room;
   const turn = r.turn;
   const counts = r.me?.counts || { players:[], dares:[] };
+  if (turn.phase === 'awaitingOnboarding') return activeWaitingPanel();
+  if (turn.phase === 'performing' && turn.performing?.partnerId === meId() && !isActive()) {
+    const d = dare(turn.performing?.dareId);
+    const act = player(turn.performing?.activeId);
+    return `
+      <div class="${takeoverPanelClass(`performing:${turn.performing?.activeId}:${turn.performing?.partnerId}:${turn.performing?.dareId}`)} performing-panel">
+        <h3>${escapeHtml(t('performDareWith', { name: act?.name || 'Player' }))}</h3>
+        <p class="performing-dare"><b>${escapeHtml(dareTitleText(d))}</b></p>
+        <div class="players">${[act, mePlayer()].filter(Boolean).map(namePill).join('')}</div>
+        <button class="primary" id="complete-turn">${t('weDidIt')}</button>
+        <button class="danger" id="pass-turn">${t('pass')}</button>
+      </div>`;
+  }
   if (!isActive()) return editPanel();
   if (turn.phase === 'chooseMode') return `
-    <div class="panel">
+    <div class="${takeoverPanelClass(`chooseMode:${activeId()}`)} turn-mode-panel">
       <button class="choice-big" data-mode="dare"><span class="choice-title">${t('chooseDareModeTitle')}</span><span class="choice-desc">${t('chooseDareModeDesc')}</span></button>
       <button class="choice-big" data-mode="player"><span class="choice-title">${t('choosePlayerModeTitle')}</span><span class="choice-desc">${t('choosePlayerModeDesc')}</span></button>
     </div>`;
   if (turn.phase === 'chooseDare') return `
-    <div class="panel">
+    <div class="${takeoverPanelClass(`chooseDare:${activeId()}`)}">
+      <button class="secondary narrow" id="back-turn-mode">${t('back')}</button>
       <h3>${t('chooseDare')}</h3>
       <div class="list">${r.dareMenu.map(d => {
         const count = counts.dares.find(c => c.dareId === d.id)?.count || 0;
-        return `<button class="list-item ${count===0?'disabled':''}" data-select-dare="${d.id}" ${count===0?'disabled':''}><span>${escapeHtml(d.title)}</span><small>${countText(count, 'player')}</small></button>`;
+        return `<button class="list-item ${count===0?'disabled':''}" data-select-dare="${d.id}" ${count===0?'disabled':''}><span>${escapeHtml(dareTitleText(d))}</span><small>${countText(count, 'player')}</small></button>`;
       }).join('')}</div>
     </div>`;
   if (turn.phase === 'choosePlayer') return `
-    <div class="panel">
+    <div class="${takeoverPanelClass(`choosePlayer:${activeId()}`)}">
+      <button class="secondary narrow" id="back-turn-mode">${t('back')}</button>
       <h3>${t('choosePlayer')}</h3>
       <div class="list">${r.players.filter(p => p.id !== meId() && p.connected !== false).map(p => {
         const count = counts.players.find(c => c.playerId === p.id)?.count || 0;
@@ -776,9 +1722,9 @@ function activeBody(){
     const d = dare(turn.selectedDareId);
     const yes = Object.entries(turn.responses || {}).filter(([,v]) => !!v).map(([id]) => player(id)).filter(Boolean);
     return `
-      <div class="panel">
+      <div class="${takeoverPanelClass(`choosePartner:${turn.selectedDareId}`)} final-choice-panel">
         <h3>${t('activeOptionsPlayers')}</h3>
-        <p><b>${escapeHtml(d?.title || '')}</b></p>
+        <p><b>${escapeHtml(dareTitleText(d))}</b></p>
         <div class="list">${yes.map(p => `<button class="list-item" data-choose-partner="${p.id}">${namePill(p)}</button>`).join('') || `<p>${t('noOptions')}</p>`}</div>
         <button class="danger" id="pass-turn">${t('pass')}</button>
       </div>`;
@@ -787,9 +1733,9 @@ function activeBody(){
     const p = player(turn.selectedPlayerId);
     const yes = r.dareMenu.filter(d => turn.responses?.[d.id]);
     return `
-      <div class="panel">
+      <div class="${takeoverPanelClass(`chooseDareForPlayer:${turn.selectedPlayerId}`)} final-choice-panel">
         <h3>${t('activeOptionsDares', { name:p?.name || 'Player' })}</h3>
-        <div class="list">${yes.map(d => `<button class="list-item" data-choose-dare-final="${d.id}"><span>${escapeHtml(d.title)}</span></button>`).join('') || `<p>${t('noOptions')}</p>`}</div>
+        <div class="list">${yes.map(d => `<button class="list-item" data-choose-dare-final="${d.id}"><span>${escapeHtml(dareTitleText(d))}</span></button>`).join('') || `<p>${t('noOptions')}</p>`}</div>
         <button class="danger" id="pass-turn">${t('pass')}</button>
       </div>`;
   }
@@ -798,8 +1744,9 @@ function activeBody(){
     const d = dare(turn.performing?.dareId);
     const p = player(turn.performing?.partnerId);
     return `
-      <div class="panel">
-        <h3>${escapeHtml(d?.title || '')}</h3>
+      <div class="${takeoverPanelClass(`performing:${turn.performing?.activeId}:${turn.performing?.partnerId}:${turn.performing?.dareId}`)} performing-panel">
+        <h3>${escapeHtml(t('performDareWith', { name: p?.name || 'Player' }))}</h3>
+        <p class="performing-dare"><b>${escapeHtml(dareTitleText(d))}</b></p>
         <p>${namePill(mePlayer())} ${namePill(p)}</p>
         <button class="primary" id="complete-turn">${t('weDidIt')}</button>
         <button class="danger" id="pass-turn">${t('pass')}</button>
@@ -807,7 +1754,7 @@ function activeBody(){
   }
   if (turn.phase === 'adding' && turn.addingBy === meId()) {
     return `
-      <div class="panel">
+      <div class="${takeoverPanelClass(`adding:${turn.addingBy}:${state.room?.chosenTheme || ''}`)} add-dare-panel">
         <h3>${t('addDareTitle')}</h3>
         <input id="new-dare" placeholder="${t('newDare')}" maxlength="160">
         <button class="primary" id="add-dare">${t('addToMenu')}</button>
@@ -815,6 +1762,7 @@ function activeBody(){
         <div id="examples"></div>
       </div>`;
   }
+  clearTakeoverPanelKey();
   return editPanel();
 }
 function mainView(){
@@ -826,8 +1774,7 @@ function mainView(){
         ${profileMenuHtml(r)}
       </div>
       ${activeBody()}
-    </section>
-    ${overlayHtml()}`;
+    </section>`;
 }
 
 function promptState(prompt){
@@ -836,16 +1783,56 @@ function promptState(prompt){
 }
 function overlayHtml(){
   const r = state.room;
+  const presence = r?.me?.presencePrompt;
+  if (presence) return `<div class="blocking takeover-blocking">${presenceOverlay(presence)}</div>`;
   const prompt = r?.me?.pendingPrompts?.[0];
-  if (prompt) return `<div class="blocking">${promptOverlay(prompt)}</div>`;
+  if (prompt) return `<div class="blocking takeover-blocking">${promptOverlay(prompt)}</div>`;
   const turn = r?.turn;
   if (turn?.phase === 'dareRespond' && !isActive() && !Object.prototype.hasOwnProperty.call(turn.responses || {}, meId())) {
-    return `<div class="blocking">${dareResponseOverlay(turn)}</div>`;
+    return `<div class="blocking takeover-blocking">${dareResponseOverlay(turn)}</div>`;
   }
   if (turn?.phase === 'personRespond' && turn.selectedPlayerId === meId()) {
-    return `<div class="blocking">${personResponseOverlay(turn)}</div>`;
+    return `<div class="blocking takeover-blocking">${personResponseOverlay(turn)}</div>`;
   }
   return '';
+}
+function blockingOverlayKey(){
+  const r = state.room;
+  const presence = r?.me?.presencePrompt;
+  if (presence) return `presence:${presence.type}:${presence.promptId}`;
+  const prompt = r?.me?.pendingPrompts?.[0];
+  if (prompt) {
+    const step = prompt.type === 'onboarding' ? (promptState(prompt).step ?? 0) : 0;
+    return `prompt:${prompt.type}:${prompt.id}:${step}`;
+  }
+  const turn = r?.turn;
+  if (turn?.phase === 'dareRespond' && !isActive() && !Object.prototype.hasOwnProperty.call(turn.responses || {}, meId())) {
+    return `turn:dareRespond:${turn.selectedDareId}:${meId()}`;
+  }
+  if (turn?.phase === 'personRespond' && turn.selectedPlayerId === meId()) {
+    return `turn:personRespond:${turn.selectedPlayerId}:${activeId()}`;
+  }
+  return '';
+}
+function presenceOverlay(prompt){
+  if (prompt.type === 'self') {
+    return `
+      <div class="modal-card live-overlay-card presence-card">
+        <h3>${t('stillThereTitle')}</h3>
+        <p>${t('stillThereHelp')}</p>
+        <button class="primary" id="presence-self-confirm">${t('stillHere')}</button>
+        <small data-countdown="presence">${renderPresenceCountdown(prompt.countdownEndsAt)}</small>
+      </div>`;
+  }
+  return `
+    <div class="modal-card live-overlay-card presence-card">
+      <h3>${t('stillTherePeer', { name:prompt.targetName || 'Player' })}</h3>
+      <p>${t('stillTherePeerHelp')}</p>
+      <div class="row">
+        <button class="primary" data-presence-peer="yes">${t('yesKeepWaiting')}</button>
+        <button class="danger" data-presence-peer="no">${t('noRemovePlayer')}</button>
+      </div>
+    </div>`;
 }
 function promptOverlay(prompt){
   if (prompt.type === 'onboarding') return onboardingOverlay(prompt);
@@ -862,8 +1849,8 @@ function onboardingOverlay(prompt){
   const prev = prompt.dares[ps.step - 1];
   ps.selections[cur.id] ||= prev ? { ...(ps.selections[prev.id] || {}) } : { ...(prompt.firstDefaults || {}) };
   return `
-    <div class="modal-card">
-      <h3>${escapeHtml(t('onboardingDareTitle', { number:ps.step + 1, dare:cur.title }))}</h3>
+    <div class="modal-card live-overlay-card">
+      <h3>${escapeHtml(t('onboardingDareTitle', { number:ps.step + 1, dare:dareTitleText(cur) || cur.title || '' }))}</h3>
       <p>${escapeHtml(t('onboardingHelp'))}</p>
       <div class="check-list">${(prompt.players || []).map(p => `
         <label><input type="checkbox" data-onboard-player="${p.id}" ${ps.selections[cur.id]?.[p.id]?'checked':''}> ${namePill(p)}</label>
@@ -878,11 +1865,11 @@ function newPlayerOverlay(prompt){
   const ps = promptState(prompt);
   ps.values ||= { ...(prompt.defaults || {}) };
   return `
-    <div class="modal-card">
+    <div class="modal-card live-overlay-card">
       <h3>${t('joinedTitle', { name:prompt.player?.name || 'Player' })}</h3>
       <p>${t('joinedHelp')}</p>
       <div class="check-list">${(prompt.dares || []).map(d => `
-        <label><input type="checkbox" data-new-player-dare="${d.id}" ${ps.values[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
+        <label><input type="checkbox" data-new-player-dare="${d.id}" ${ps.values[d.id]?'checked':''}> ${escapeHtml(dareTitleText(d) || d.title || '')}</label>
       `).join('')}</div>
       <button class="primary" id="submit-new-player">${t('submit')}</button>
     </div>`;
@@ -891,9 +1878,9 @@ function newDareOverlay(prompt){
   const ps = promptState(prompt);
   ps.values ||= { ...(prompt.defaults || {}) };
   return `
-    <div class="modal-card">
+    <div class="modal-card live-overlay-card">
       <h3>${t('newDareTitle')}</h3>
-      <p><b>${escapeHtml(prompt.dare?.title || '')}</b></p>
+      <p><b>${escapeHtml(dareTitleText(prompt.dare) || prompt.dare?.title || '')}</b></p>
       <p>${t('newDareHelp')}</p>
       <div class="check-list">${(prompt.players || []).map(p => `
         <label><input type="checkbox" data-new-dare-player="${p.id}" ${ps.values[p.id]?'checked':''}> ${namePill(p)}</label>
@@ -906,26 +1893,26 @@ function dareResponseOverlay(turn){
   const act = activePlayer();
   const current = !!state.room?.me?.consent?.[act?.id]?.[d?.id];
   return `
-    <div class="modal-card">
-      <h3>${t('selectedDare', { name:act?.name || 'Player', dare:d?.title || '' })}</h3>
+    <div class="modal-card live-overlay-card">
+      <h3>${t('selectedDare', { name:act?.name || 'Player', dare:dareTitleText(d) })}</h3>
       <div class="radio-stack">
         <label><input type="radio" name="dare-response" value="yes" ${current?'checked':''}> ${t('yesPlease')}</label>
         <label><input type="radio" name="dare-response" value="no" ${!current?'checked':''}> ${t('noThanks')}</label>
       </div>
       <button class="primary" id="send-dare-response">${t('sendNow')}</button>
-      <small>${t('sendingIn', { seconds:secondsLeft() })}</small>
+      <small data-countdown="turn">${renderTurnCountdown()}</small>
     </div>`;
 }
 function personResponseOverlay(turn){
   const act = activePlayer();
   return `
-    <div class="modal-card">
+    <div class="modal-card live-overlay-card">
       <h3>${t('chosenYou', { name:act?.name || 'Player' })}</h3>
       <div class="check-list">${state.room.dareMenu.map(d => `
-        <label><input type="checkbox" data-person-dare="${d.id}" ${turn.responses?.[d.id]?'checked':''}> ${escapeHtml(d.title)}</label>
+        <label><input type="checkbox" data-person-dare="${d.id}" ${turn.responses?.[d.id]?'checked':''}> ${escapeHtml(dareTitleText(d))}</label>
       `).join('')}</div>
       <button class="primary" id="send-person-response">${t('sendNow')}</button>
-      <small>${t('sendingIn', { seconds:secondsLeft() })}</small>
+      <small data-countdown="turn">${renderTurnCountdown()}</small>
     </div>`;
 }
 
@@ -936,12 +1923,44 @@ function renderExamples(){
   const list = examplesListForTheme(theme);
   const offset = local.exampleOffsets[theme] || 0;
   const page = list.slice(offset, offset + PAGE_SIZE);
+  const milderLabel = stripLeadingIconLabel(t('milder'));
+  const spicierLabel = stripLeadingIconLabel(t('spicier'));
   el.innerHTML = `
-    <div class="list">${page.map(ex => `<button class="list-item" data-example-title="${escapeAttr(ex.title)}"><span>${escapeHtml(ex.title)}</span><small class="spice-rating"><span aria-hidden="true">🌶️</span>${ex.sp}</small></button>`).join('')}</div>
+    <div class="list">${page.map(ex => `<button class="list-item spice-item" style="${spiceStyle(ex.sp)}" data-example-title="${escapeAttr(ex.title)}" data-example-index="${ex.__idx}"><span>${escapeHtml(ex.title)}</span><small class="spice-rating">${spiceGlyph('hot')}${ex.sp}</small></button>`).join('')}</div>
     <div class="examples-nav">
-      <button id="examples-prev" ${offset <= 0 ? 'disabled' : ''}>${t('milder')}</button>
-      <button id="examples-next" ${(offset + PAGE_SIZE) >= list.length ? 'disabled' : ''}>${t('spicier')}</button>
+      <button id="examples-prev" ${offset <= 0 ? 'disabled' : ''}>${spiceGlyph('cool')}<span>${escapeHtml(milderLabel)}</span></button>
+      <button id="examples-next" ${(offset + PAGE_SIZE) >= list.length ? 'disabled' : ''}>${spiceGlyph('hot')}<span>${escapeHtml(spicierLabel)}</span></button>
     </div>`;
+}
+
+function spiceStyle(spice){
+  const value = Math.max(0, Math.min(100, Number(spice) || 0));
+  const heat = value / 100;
+  const intensity = Math.pow(heat, 1.25);
+  const coolHue = 198 - intensity * 32;
+  const mainHue = 228 + intensity * 102;
+  const hotHue = 314 + intensity * 64;
+  const glow = 0.34 + intensity * 0.86;
+  const coolAlpha = Math.max(0.02, 0.34 - intensity * 0.42);
+  const mainAlpha = 0.22 + intensity * 0.36;
+  const hotAlpha = 0.1 + intensity * 0.64;
+  const edgeAlpha = 0.42 + intensity * 0.5;
+  const coolStop = 34 - intensity * 18;
+  const hotStart = 72 - intensity * 26;
+  const mainLight = 40 + intensity * 10;
+  const hotLight = 52 + intensity * 10;
+  return `--spice-cool-hue:${coolHue.toFixed(1)};--spice-main-hue:${mainHue.toFixed(1)};--spice-hot-hue:${hotHue.toFixed(1)};--spice-glow:${glow.toFixed(3)};--spice-cool-alpha:${coolAlpha.toFixed(3)};--spice-main-alpha:${mainAlpha.toFixed(3)};--spice-hot-alpha:${hotAlpha.toFixed(3)};--spice-edge-alpha:${edgeAlpha.toFixed(3)};--spice-cool-stop:${coolStop.toFixed(1)}%;--spice-hot-start:${hotStart.toFixed(1)}%;--spice-main-light:${mainLight.toFixed(1)}%;--spice-hot-light:${hotLight.toFixed(1)}%`;
+}
+
+function currentViewName(){
+  const r = state.room;
+  if (!r) return local.landingMode ? 'profile' : 'landing';
+  if (r.state === 'lobby') return 'lobby';
+  const phase = r.turn?.phase || 'dashboard';
+  if (['awaitingOnboarding', 'chooseMode', 'chooseDare', 'choosePlayer', 'choosePartner', 'chooseDareForPlayer', 'performing'].includes(phase)) return 'turn';
+  if (phase === 'adding') return 'add-dare';
+  if (local.edit) return 'edit-consent';
+  return 'main';
 }
 
 function render(){
@@ -949,12 +1968,15 @@ function render(){
   const r = state.room;
   document.documentElement.lang = lang();
   document.documentElement.dir = lang() === 'ar' ? 'rtl' : 'ltr';
+  document.body.dataset.view = currentViewName();
+  if (!r || r.state === 'lobby') clearTakeoverPanelKey();
   root.innerHTML = !r ? titleView() : (r.state === 'lobby' ? lobbyView() : mainView());
   try {
     const h2 = root.querySelector('h2');
     const status = h2?.textContent?.trim() || '';
     document.title = `${t('title')}${status ? ' - ' + status : ''}`;
   } catch {}
+  renderBlockingOverlay();
   wire();
   if (r?.state === 'lobby') renderQr();
   if (r?.state === 'main') renderExamples();
@@ -974,12 +1996,7 @@ function wire(){
     render();
   });
   $('#create-theme')?.addEventListener('change', e => selectedTheme = e.target.value || 'Sensual');
-  $('#choose-join')?.addEventListener('click', () => {
-    local.pendingJoinCode = sanitizeInput($('#quick-join-code')?.value || location.hash?.slice(1) || '', 64).toLowerCase();
-    pushLocalHistory('profile');
-    local.landingMode = 'join';
-    render();
-  });
+  $('#choose-join')?.addEventListener('click', () => requestJoinProfile($('#quick-join-code')?.value || location.hash?.slice(1) || ''));
   $('#choose-create')?.addEventListener('click', () => {
     pushLocalHistory('profile');
     local.landingMode = 'create';
@@ -990,10 +2007,7 @@ function wire(){
   $('#create-btn')?.addEventListener('click', doCreate);
   $('#quick-join-code')?.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
-      local.pendingJoinCode = sanitizeInput($('#quick-join-code')?.value || '', 64).toLowerCase();
-      pushLocalHistory('profile');
-      local.landingMode = 'join';
-      render();
+      requestJoinProfile($('#quick-join-code')?.value || '');
     }
   });
   $('#join-code')?.addEventListener('keydown', e => { if (e.key === 'Enter') doJoin(); });
@@ -1008,7 +2022,11 @@ function wire(){
   $$('[data-consent-target][data-consent-dare]').forEach(cb => cb.addEventListener('change', () => {
     socket.emit('consent:update', { targetId:cb.dataset.consentTarget, dareId:cb.dataset.consentDare, value:cb.checked });
   }));
-  $$('[data-mode]').forEach(b => b.addEventListener('click', () => socket.emit('turn:chooseMode', { mode:b.dataset.mode })));
+  $$('[data-mode]').forEach(b => b.addEventListener('click', () => {
+    pushLocalHistory('turn-mode');
+    socket.emit('turn:chooseMode', { mode:b.dataset.mode });
+  }));
+  $('#back-turn-mode')?.addEventListener('click', requestLocalBack);
   $$('[data-select-dare]').forEach(b => b.addEventListener('click', () => socket.emit('turn:selectDare', { dareId:b.dataset.selectDare })));
   $$('[data-select-player]').forEach(b => b.addEventListener('click', () => socket.emit('turn:selectPlayer', { playerId:b.dataset.selectPlayer })));
   $$('[data-choose-partner]').forEach(b => b.addEventListener('click', async () => {
@@ -1024,9 +2042,15 @@ function wire(){
   }));
   $('#pass-turn')?.addEventListener('click', () => socket.emit('turn:pass'));
   $('#complete-turn')?.addEventListener('click', () => socket.emit('turn:complete'));
+  $('#new-dare')?.addEventListener('input', e => {
+    if (local.pendingExample && e.target.value !== local.pendingExample.displayTitle) local.pendingExample = null;
+  });
   $('#add-dare')?.addEventListener('click', () => {
     const title = sanitizeInput($('#new-dare')?.value || '', 160);
-    if (title) socket.emit('menu:addDare', { title });
+    if (!title) return;
+    const useExample = local.pendingExample && title === local.pendingExample.displayTitle;
+    socket.emit('menu:addDare', useExample ? { title, exampleIndex:local.pendingExample.index } : { title });
+    local.pendingExample = null;
   });
   $('#examples')?.addEventListener('click', e => {
     if (e.target.closest('#examples-prev')) {
@@ -1038,7 +2062,15 @@ function wire(){
       return;
     }
     const b = e.target.closest('[data-example-title]');
-    if (b && $('#new-dare')) $('#new-dare').value = b.dataset.exampleTitle || '';
+    if (b && $('#new-dare')) {
+      const displayTitle = b.dataset.exampleTitle || '';
+      $('#new-dare').value = displayTitle;
+      local.pendingExample = {
+        theme: state.room?.chosenTheme || selectedTheme,
+        index: Number(b.dataset.exampleIndex),
+        displayTitle
+      };
+    }
   });
   $('#examples-prev')?.addEventListener('click', () => shiftExamples(-PAGE_SIZE));
   $('#examples-next')?.addEventListener('click', () => shiftExamples(PAGE_SIZE));
@@ -1120,6 +2152,23 @@ function wireProfile(){
   });
 }
 function wirePromptControls(){
+  const presence = state.room?.me?.presencePrompt;
+  if (presence?.type === 'self') {
+    $('#presence-self-confirm')?.addEventListener('click', () => {
+      emitUiActivity(true);
+      socket.emit('presence:selfConfirm', { promptId:presence.promptId, targetId:presence.targetId });
+    });
+  }
+  $$('[data-presence-peer]').forEach(button => button.addEventListener('click', () => {
+    const prompt = state.room?.me?.presencePrompt;
+    if (!prompt || prompt.type !== 'peer') return;
+    emitUiActivity(true);
+    socket.emit('presence:peerResponse', {
+      promptId: prompt.promptId,
+      targetId: prompt.targetId,
+      stillPlaying: button.dataset.presencePeer === 'yes'
+    });
+  }));
   const prompt = state.room?.me?.pendingPrompts?.[0];
   if (prompt) {
     const ps = promptState(prompt);
@@ -1164,11 +2213,37 @@ function wirePromptControls(){
   $$('input[name="dare-response"]').forEach(r => r.addEventListener('change', () => {
     const yes = $('input[name="dare-response"]:checked')?.value === 'yes';
     socket.emit('consent:update', { targetId:activeId(), dareId:state.room.turn.selectedDareId, value:yes });
-    sendDareResponse(false);
   }));
   $('#send-dare-response')?.addEventListener('click', () => sendDareResponse(true));
   $$('[data-person-dare]').forEach(cb => cb.addEventListener('change', () => sendPersonResponses(false)));
   $('#send-person-response')?.addEventListener('click', () => sendPersonResponses(true));
+}
+function emitUiActivity(force=false){
+  if (!state.room || !meId()) return;
+  const now = Date.now();
+  if (!force && (now - lastUiActivitySentAt) < 4000) return;
+  lastUiActivitySentAt = now;
+  socket.emit('ui:activity');
+}
+function bindUiActivity(){
+  if (uiActivityBound) return;
+  uiActivityBound = true;
+  const ping = () => emitUiActivity(false);
+  ['pointerdown', 'keydown', 'input', 'touchstart'].forEach(type => {
+    window.addEventListener(type, ping, { passive:true });
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') emitUiActivity(true);
+  });
+  window.addEventListener('focus', () => emitUiActivity(true));
+}
+function refreshCountdownLabels(){
+  $$('[data-countdown="turn"]').forEach(el => {
+    el.textContent = renderTurnCountdown();
+  });
+  $$('[data-countdown="presence"]').forEach(el => {
+    el.textContent = renderPresenceCountdown(state.room?.me?.presencePrompt?.countdownEndsAt || 0);
+  });
 }
 function sendDareResponse(sendNow){
   const yes = $('input[name="dare-response"]:checked')?.value === 'yes';
@@ -1447,6 +2522,30 @@ function ensureOverlayRoot(){
   }
   return root;
 }
+function ensureBlockingRoot(){
+  let root = document.getElementById('blocking-root');
+  if (!root) {
+    root = document.createElement('div');
+    root.id = 'blocking-root';
+    document.body.appendChild(root);
+  }
+  return root;
+}
+function renderBlockingOverlay(){
+  const host = ensureBlockingRoot();
+  const key = blockingOverlayKey();
+  if (!key) {
+    host.innerHTML = '';
+    host.dataset.overlayKey = '';
+    return;
+  }
+  if (host.dataset.overlayKey === key) {
+    refreshCountdownLabels();
+    return;
+  }
+  host.dataset.overlayKey = key;
+  host.innerHTML = overlayHtml();
+}
 function showConfirm(message, { title='', confirmText='OK', cancelText='Cancel' }={}){
   return new Promise(resolve => {
     const host = ensureOverlayRoot();
@@ -1484,8 +2583,8 @@ function showInviteOverlay(url){
   return new Promise(resolve => {
     const host = ensureOverlayRoot();
     const overlay = document.createElement('div');
-    overlay.className = 'overlay show';
-    overlay.innerHTML = `<div class="modal card"><h3>${t('addPlayers')}</h3><div class="qr"><div id="invite-qr"></div></div><p><a href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(url)}</a></p><button class="primary btn-ok">${t('ok')}</button></div>`;
+    overlay.className = 'overlay show invite-takeover';
+    overlay.innerHTML = `<div class="modal card invite-modal"><h3>${t('addPlayers')}</h3><div class="qr"><div id="invite-qr"></div></div><p><a href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(url)}</a></p><button class="primary btn-ok">${t('ok')}</button></div>`;
     host.appendChild(overlay);
     import('/lib/qrcode-wrapper.js').then(m => { const fn = m.renderQRCode || m.default; if (fn) fn(overlay.querySelector('#invite-qr'), url, { size:220 }); }).catch(()=>{});
     overlay.querySelector('.btn-ok').addEventListener('click', () => { overlay.remove(); resolve(true); });
@@ -1510,11 +2609,22 @@ socket.on('player:you', ({ playerId }) => {
   saveSession({ playerId, code:state.room?.code, name:state.me.name, language:state.me.language, gender:state.me.gender, preferredGenders:state.me.preferredGenders });
 });
 socket.on('room:peek:result', result => {
+  const wasPendingJoinLookup = local.pendingPeekAction === 'join';
+  local.pendingPeekAction = null;
   peekedRoom = result.ok ? result.state : null;
+  if (wasPendingJoinLookup) {
+    if (result.ok) {
+      pushLocalHistory('profile');
+      local.landingMode = 'join';
+    } else {
+      showConfirm(result.message || 'Error', { confirmText:t('ok'), cancelText:null });
+    }
+  }
   render();
 });
 socket.on('room:error', ({ code, message }) => {
-  const leaveHome = code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED';
+  const roomCode = location.hash?.slice(1) || '';
+  const leaveHome = code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED' || code === 'PLAYER_REMOVED';
   if (code === 'NO_SUCH_ROOM' || code === 'ROOM_EXPIRED') {
     state.room = null;
     state.me.id = null;
@@ -1523,6 +2633,16 @@ socket.on('room:error', ({ code, message }) => {
     local.pendingJoinCode = '';
     clearSession();
     try { history.replaceState(null, '', '#'); } catch {}
+    render();
+  }
+  if (code === 'PLAYER_REMOVED') {
+    state.room = null;
+    state.me.id = null;
+    local.edit = null;
+    local.landingMode = 'join';
+    local.pendingJoinCode = roomCode;
+    saveSession({ playerId:null, code:roomCode });
+    if (roomCode) socket.emit('room:peek', { code: roomCode });
     render();
   }
   showConfirm(message || 'Error', { confirmText:t('ok'), cancelText:leaveHome ? null : t('cancel') });
@@ -1541,7 +2661,15 @@ window.addEventListener('popstate', () => {
   clearLocalBack();
 });
 setInterval(() => {
-  if (state.room?.turn?.timerEndsAt && state.room.turn.timerEndsAt > Date.now()) render();
+  const turnEndsAt = state.room?.turn?.timerEndsAt || 0;
+  const presenceEndsAt = state.room?.me?.presencePrompt?.countdownEndsAt || 0;
+  const nextEnd = Math.max(turnEndsAt, presenceEndsAt);
+  if (!nextEnd) return;
+  if (nextEnd > Date.now()) {
+    refreshCountdownLabels();
+    return;
+  }
+  render();
 }, 1000);
 
 function hydrate(){
@@ -1558,6 +2686,7 @@ function hydrate(){
   local.exampleOffsets = ui.exampleOffsets || {};
 }
 hydrate();
+bindUiActivity();
 render();
 loadThemes();
 if (location.hash?.slice(1)) socket.emit('room:peek', { code:location.hash.slice(1) });

@@ -62,7 +62,7 @@ async function uploadTinyAvatar(page) {
 
 async function joinRoom(page, code, name) {
   await page.goto(`/#${code}`);
-  await page.locator('#choose-join').click();
+  await expect(page.locator('#join-name')).toBeVisible();
   await page.locator('#join-name').fill(name);
   await page.getByRole('button', { name: 'Join', exact: true }).click();
   await dismissAgeGate(page);
@@ -132,20 +132,27 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
 
   await expect(casey.getByRole('button', { name: 'Send Now' })).toBeVisible();
   await casey.getByLabel('No thanks').check();
+  await expect(casey.getByRole('button', { name: 'Send Now' })).toBeVisible();
 
   await expect(bob.getByRole('button', { name: 'Send Now' })).toBeVisible();
   await bob.getByLabel('Yes please').check();
+  await expect(bob.getByRole('button', { name: 'Send Now' })).toBeVisible();
   await bob.getByRole('button', { name: 'Send Now' }).click();
 
   await expect(alice.locator('[data-choose-partner]').first()).toBeVisible();
   await alice.locator('[data-choose-partner]').first().click();
 
-  await expect(alice.getByRole('button', { name: 'We did it' })).toBeVisible();
-  await alice.getByRole('button', { name: 'We did it' }).click();
+  await expect(bob.getByRole('heading', { name: 'Time to do a dare with Alice' })).toBeVisible();
+  await expect(bob.locator('.performing-dare')).toBeVisible();
+  await expect(bob.getByRole('button', { name: 'We did it' })).toBeVisible();
+  await expect(bob.getByRole('button', { name: 'Pass' })).toBeVisible();
+  await bob.getByRole('button', { name: 'We did it' }).click();
   await expect(alice.locator('#new-dare')).toBeVisible();
-  await expect(alice.locator('.spice-rating').first()).toContainText('🌶️');
-  await expect(alice.locator('#examples-prev')).toContainText('❄️');
-  await expect(alice.locator('#examples-next')).toContainText('🌶️');
+  await expect(alice.locator('.spice-rating .spice-glyph-hot').first()).toBeVisible();
+  await expect(alice.locator('#examples-prev .spice-glyph-cool')).toBeVisible();
+  await expect(alice.locator('#examples-next .spice-glyph-hot')).toBeVisible();
+  await expect(alice.locator('#examples-prev')).toContainText('milder');
+  await expect(alice.locator('#examples-next')).toContainText('spicier');
   await alice.locator('#new-dare').fill('Share a favorite compliment');
   await alice.locator('#add-dare').click();
   await Promise.all([
@@ -158,7 +165,7 @@ test('three isolated browser sessions can play a consent-flow turn', async ({ br
   await alice.locator('[data-edit-player]').first().click();
   await expect(alice.locator('.edit-instruction')).toContainText('What dares do you consent to for');
   await alice.goBack();
-  await expect(alice.getByText('Click a player to edit')).toBeVisible();
+  await expect(alice.getByRole('heading', { name: 'Manage Player Consent' })).toBeVisible();
 
   await aliceContext.close();
   await bobContext.close();

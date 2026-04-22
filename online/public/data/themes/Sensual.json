@@ -548,56 +548,56 @@
       }
     },
     {
-      "title": "Current player will remove a clothing item from dare acceptor",
+      "title": "Each player removes a clothing item from the other player",
       "extra": "touch what is revealed",
       "spicyness": 42,
       "translations": {
         "es": {
-          "title": "El jugador en turno quitará una prenda de vestir de quien acepta el reto",
+          "title": "Cada jugador quitará una prenda de vestir al otro jugador",
           "extra": "toca lo que se revela"
         },
         "pt": {
-          "title": "O jogador da vez removerá uma peça de roupa de quem aceita o desafio",
+          "title": "Cada jogador remove uma peça de roupa do outro jogador",
           "extra": "toque o que é revelado"
         },
         "zh": {
-          "title": "当前玩家将从冒险另一位玩家身上移除一件衣服"
+          "title": "每位玩家都从另一位玩家身上脱下一件衣物"
         },
         "tl": {
-          "title": "Aalisin ng kasalukuyang manlalaro ang isang item ng damit mula sa kabilang manlalaro"
+          "title": "Bawat manlalaro ay mag-aalis ng isang piraso ng damit mula sa kabilang manlalaro"
         },
         "vi": {
-          "title": "Người chơi hiện tại sẽ loại bỏ một vật phẩm quần áo khỏi người chơi kia dare"
+          "title": "Mỗi người chơi sẽ cởi một món quần áo của người chơi kia"
         },
         "ar": {
-          "title": "سيزيل اللاعب الحالي قطعة ملابس من اللاعب الآخر"
+          "title": "يقوم كل لاعب بإزالة قطعة ملابس من اللاعب الآخر"
         },
         "fr": {
-          "title": "Le joueur actuel va retirer un vêtement de l'autre joueur"
+          "title": "Chaque joueur retire un vêtement à l'autre joueur"
         },
         "ko": {
-          "title": "현재 플레이어는 데어 액셉터에서 의상 아이템을 제거할 것입니다"
+          "title": "각 플레이어가 상대 플레이어의 옷 한 벌을 벗깁니다"
         },
         "ru": {
-          "title": "Текущий игрок удалит предмет одежды из другого игрока"
+          "title": "Каждый игрок снимает с другого игрока предмет одежды"
         },
         "ht": {
-          "title": "Jwè aktyèl yo pral retire yon atik rad ki soti nan lòt jwè a"
+          "title": "Chak jwè retire yon moso rad sou lòt jwè a"
         },
         "hi": {
-          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी से कपड़ों की एक वस्तु निकाल देगा"
+          "title": "हर खिलाड़ी दूसरे खिलाड़ी के कपड़ों की एक चीज उतारेगा"
         },
         "de": {
-          "title": "Der aktuelle Spieler entfernt ein Kleidungsstück aus dem anderen Spieler"
+          "title": "Jeder Spieler entfernt ein Kleidungsstück vom anderen Spieler"
         },
         "nl": {
-          "title": "De huidige speler zal een kledingstuk van de andere speler verwijderen"
+          "title": "Elke speler verwijdert een kledingstuk van de andere speler"
         },
         "pl": {
-          "title": "Obecny gracz usunie ubranie z drugi gracz"
+          "title": "Każdy gracz zdejmuje z drugiego gracza jedną część garderoby"
         },
         "it": {
-          "title": "Il giocatore attuale rimuoverà un capo di abbigliamento da l'altro giocatore"
+          "title": "Ogni giocatore toglie un capo di abbigliamento all'altro giocatore"
         }
       }
     },
