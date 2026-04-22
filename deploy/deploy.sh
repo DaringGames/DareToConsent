@@ -33,6 +33,8 @@
 #   APP_DIR=/opt/daretoconsent
 set -euo pipefail
 
+YEL=$'\033[33m'; GRN=$'\033[32m'; RED=$'\033[31m'; NC=$'\033[0m'
+
 # Load .env (local machine) for non-committed values
 if [[ -f ".env" ]]; then
   set -o allexport
@@ -97,8 +99,6 @@ if [[ -z "$REMOTE" || -z "$DOMAIN" ]]; then
   echo "Hint: set DEFAULT_REMOTE and DEFAULT_DOMAIN in .env to omit arguments."
   exit 1
 fi
-
-YEL=$'\033[33m'; GRN=$'\033[32m'; RED=$'\033[31m'; NC=$'\033[0m'
 
 # Make sure the remote base directory exists and is writable by the ssh user before rsync
 echo "${YEL}==> Ensuring ${APP_DIR} exists and is owned by the SSH user on ${REMOTE}${NC}"

@@ -4,14 +4,25 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "start": "PORT=3001 node -r dotenv/config server/index.js",
-    "dev": "PORT=3001 node -r dotenv/config server/index.js"
+    "start": "PORT=3001 node server/index.js",
+    "dev": "PORT=3001 node server/index.js",
+    "smoke": "node scripts/smoke-flow.mjs",
+    "manual:browsers": "node scripts/open-multiplayer-browsers.mjs",
+    "test:multi-player": "playwright test",
+    "translate:themes": "node scripts/translate-themes.mjs",
+    "s3:lifecycle": "bash scripts/configure-avatar-lifecycle.sh"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1030.0",
     "@aws-sdk/client-ses": "^3.0.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "heic2any": "^0.0.4",
     "nanoid": "^5.0.7",
     "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "socket.io-client": "^4.8.3"
   }
 }

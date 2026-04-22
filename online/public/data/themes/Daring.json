@@ -4,144 +4,1516 @@
     {
       "title": "Both players wink at each other dramatically",
       "extra": "Also, compliment each other",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se guiñan un ojo dramáticamente",
+          "extra": "Además, felicítense"
+        },
+        "pt": {
+          "title": "Ambos os jogadores piscam um para o outro dramaticamente.",
+          "extra": "Além disso, elogiem um ao outro"
+        },
+        "zh": {
+          "title": "两位玩家互相戏剧性地眨了眨眼"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagalaw nang malaki sa bawat"
+        },
+        "vi": {
+          "title": "Cả hai người chơi nháy mắt với nhau một cách đáng kể"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يغمزون لبعضهم البعض بشكل كبير"
+        },
+        "fr": {
+          "title": "Les deux joueurs se font un clin d'œil spectaculaire"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로에게 극적으로 윙크합니다."
+        },
+        "ru": {
+          "title": "Оба игрока резко подмигивают друг другу"
+        },
+        "ht": {
+          "title": "Tou de jwè yo wink youn ak lòt dramatikman"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी नाटकीय रूप से एक-दूसरे पर पलक झपकते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler zwinkern sich dramatisch zu"
+        },
+        "nl": {
+          "title": "Beide spelers knipogen dramatisch naar elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze dramatycznie mrugają do siebie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si strizzano l'occhio in modo drammatico"
+        }
+      }
     },
     {
       "title": "Both players take off their shoes",
       "extra": "Also, invent a wacky handshake with your feet",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se quitan los zapatos",
+          "extra": "Además, inventa un extraño apretón de manos con los pies"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tiram os sapatos",
+          "extra": "Além disso, invente um aperto de mão maluco com os pés"
+        },
+        "zh": {
+          "title": "两位选手都脱下鞋子"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay inalis ang kanilang sapatos"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều cởi giày"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يخلعون أحذيتهم"
+        },
+        "fr": {
+          "title": "Les deux joueurs enlèvent leurs chaussures"
+        },
+        "ko": {
+          "title": "두 선수 모두 신발을 벗습니다."
+        },
+        "ru": {
+          "title": "Оба игрока снимают обувь"
+        },
+        "ht": {
+          "title": "Tou de jwè wete soulye yo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अपने जूते उतार देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler ziehen ihre Schuhe aus"
+        },
+        "nl": {
+          "title": "Beide spelers trekken hun schoenen uit"
+        },
+        "pl": {
+          "title": "Obaj gracze zdejmują buty"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si tolgono le scarpe"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players give each other a gentle high-five",
       "extra": "Also, make it a lingering high-five with eye contact",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores chocan los cinco suavemente",
+          "extra": "Además, choca los cinco de forma persistente con el contacto visual"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dão um ao outro um leve high-five",
+          "extra": "Além disso, faça um high-five persistente com contato visual"
+        },
+        "zh": {
+          "title": "两位玩家互相温和地击掌"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbibigay sa bawat isa ng isang banayad"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ trao cho nhau một cú high five nhẹ nhàng"
+        },
+        "ar": {
+          "title": "يمنح كلا اللاعبين بعضهما البعض درجة عالية لطيفة"
+        },
+        "fr": {
+          "title": "Les deux joueurs se donnent un léger high five"
+        },
+        "ko": {
+          "title": "두 선수는 서로에게 부드러운 하이파이브를 건네줍니다."
+        },
+        "ru": {
+          "title": "Оба игрока дают друг другу нежную пятерку"
+        },
+        "ht": {
+          "title": "Tou de jwè yo bay youn ak lòt yon dou wo-senk"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को एक सौम्य हाई-फाइव देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler geben sich gegenseitig ein sanftes High-Five"
+        },
+        "nl": {
+          "title": "Beide spelers geven elkaar een zachte high-five"
+        },
+        "pl": {
+          "title": "Obaj gracze dają sobie nawzajem delikatną piątkę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si danno un leggero cinque"
+        }
+      }
     },
     {
       "title": "Both players hold hands for 10 seconds",
       "extra": "Also, interlace fingers and sync three breaths",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se dan la mano durante 10 segundos",
+          "extra": "Además, entrelaza los dedos y sincroniza tres respiraciones"
+        },
+        "pt": {
+          "title": "Ambos os jogadores ficam de mãos dadas por 10 segundos",
+          "extra": "Além disso, entrelace os dedos e sincronize três respirações"
+        },
+        "zh": {
+          "title": "两位玩家手牵手 10 秒"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay humahawak ng mga kamay"
+        },
+        "vi": {
+          "title": "Cả hai người chơi nắm tay nhau trong 10 giây"
+        },
+        "ar": {
+          "title": "يمسك كلا اللاعبين أيديهم لمدة 10 ثوانٍ"
+        },
+        "fr": {
+          "title": "Les deux joueurs se tiennent la main pendant 10 secondes"
+        },
+        "ko": {
+          "title": "두 선수 모두 10초 동안 손을 잡습니다."
+        },
+        "ru": {
+          "title": "Оба игрока держатся за руки в течение 10 секунд"
+        },
+        "ht": {
+          "title": "Tou de jwè yo kenbe men pou 10 segonn"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी 10 सेकंड के लिए हाथ पकड़ते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler halten die Hände 10 Sekunden lang"
+        },
+        "nl": {
+          "title": "Beide spelers houden hun hand gedurende 10 seconden vast"
+        },
+        "pl": {
+          "title": "Obaj gracze trzymają się za ręce przez 10 sekund"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si tengono per mano per 10 secondi"
+        }
+      }
     },
     {
       "title": "Both players do ten jumping jacks together",
       "extra": "High-five after each jumping jack",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen diez saltos de tijera juntos.",
+          "extra": "Choca los cinco después de cada salto"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem dez polichinelos juntos",
+          "extra": "Dê cinco cumprimentos após cada macaco"
+        },
+        "zh": {
+          "title": "两位玩家一起做十次跳千斤顶"
+        },
+        "tl": {
+          "title": "Ang parehong manlalaro ay gumagawa ng sampung jumping jack nang magkasama"
+        },
+        "vi": {
+          "title": "Cả hai người chơi cùng nhau nhảy mười cú nhảy"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بعشرة رافعات للقفز معًا"
+        },
+        "fr": {
+          "title": "Les deux joueurs font dix sauts d'obstacles ensemble"
+        },
+        "ko": {
+          "title": "두 선수 모두 10개의 점핑 잭을 함께 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока вместе делают по десять прыжков"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè dis krik sote ansanm"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक साथ दस जंपिंग जैक करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen zusammen zehn Hampelmänner"
+        },
+        "nl": {
+          "title": "Beide spelers doen samen tien jumping jacks"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują razem dziesięć skoków"
+        },
+        "it": {
+          "title": "Entrambi i giocatori eseguono dieci jumping jack insieme"
+        }
+      }
     },
     {
       "title": "Both players sniff each other's armpits",
       "extra": "Take a deep inhale and describe the smell",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se huelen las axilas",
+          "extra": "Inhale profundamente y describa el olor"
+        },
+        "pt": {
+          "title": "Ambos os jogadores cheiram as axilas um do outro",
+          "extra": "Inspire profundamente e descreva o cheiro"
+        },
+        "zh": {
+          "title": "两个玩家都在嗅对方的腋下"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay humihinto ang mga kilikili ng bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đánh hơi nách của nhau"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بشم الإبطين لبعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se reniflent les aisselles"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 겨드랑이 냄새를 맡는다"
+        },
+        "ru": {
+          "title": "Оба игрока нюхают друг друга подмышками"
+        },
+        "ht": {
+          "title": "Tou de jwè soufle anbabra youn ak lòt la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की कांख सूँघते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler schnüffeln sich gegenseitig an den Achseln"
+        },
+        "nl": {
+          "title": "Beide spelers snuiven aan elkaars oksels"
+        },
+        "pl": {
+          "title": "Obaj gracze wąchają sobie nawzajem pachy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si annusano a vicenda le ascelle"
+        }
+      }
     },
     {
       "title": "Both players do push-ups side by side",
       "extra": "Do push-ups facing each other, close enough to touch noses",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen flexiones uno al lado del otro",
+          "extra": "Haga flexiones una frente a la otra, lo suficientemente cerca como para tocarse la nariz"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem flexões lado a lado",
+          "extra": "Faça flexões de frente uma para a outra, perto o suficiente para tocar o nariz"
+        },
+        "zh": {
+          "title": "两位玩家并肩做俯卧撑"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng mga push-up nang magkatabi"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều chống đẩy cạnh nhau"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين الضغط جنبًا إلى جنب"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des push-ups côte à côte"
+        },
+        "ko": {
+          "title": "두 선수 모두 나란히 팔굽혀펴기를 합니다"
+        },
+        "ru": {
+          "title": "Оба игрока отжимаются бок о бок"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè pouse-ups kòt a kòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कंधे से कंधा मिलाकर पुश-अप्स करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen Liegestütze nebeneinander"
+        },
+        "nl": {
+          "title": "Beide spelers doen push-ups naast elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują pompki obok siebie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno flessioni fianco a fianco"
+        }
+      }
     },
     {
       "title": "Both players give each other awkward compliments",
       "extra": "Make them overly dramatic and cheesy",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se hacen elogios incómodos",
+          "extra": "Hazlos demasiado dramáticos y cursis"
+        },
+        "pt": {
+          "title": "Ambos os jogadores trocam elogios estranhos.",
+          "extra": "Torne-os excessivamente dramáticos e extravagantes"
+        },
+        "zh": {
+          "title": "两位玩家都尴尬地互相夸奖"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbibigay sa bawat isa na"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ dành cho nhau những lời khen ngợi khó xử"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يمنحون بعضهم البعض تحيات محرجة."
+        },
+        "fr": {
+          "title": "Les deux joueurs se font des compliments maladroits"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로에게 어색한 칭찬을 전합니다."
+        },
+        "ru": {
+          "title": "Оба игрока делают друг другу неловкие комплименты"
+        },
+        "ht": {
+          "title": "Tou de jwè yo bay youn ak lòt konpliman gòch"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को अजीब तारीफ देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen sich gegenseitig unangenehme Komplimente"
+        },
+        "nl": {
+          "title": "Beide spelers geven elkaar lastige complimenten"
+        },
+        "pl": {
+          "title": "Obaj gracze dają sobie niezręczne komplementy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si scambiano complimenti imbarazzanti"
+        }
+      }
     },
     {
       "title": "Both players admit a secret crush on someone in the room",
       "extra": "Also, describe what you find attractive about them",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores admiten que están enamorados en secreto por alguien en la sala",
+          "extra": "Además, describe lo que te parece atractivo de ellos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores admitem uma paixão secreta por alguém na sala",
+          "extra": "Além disso, descreva o que você acha atraente neles"
+        },
+        "zh": {
+          "title": "两位玩家都承认暗中暗恋了房间里的人"
+        },
+        "tl": {
+          "title": "Pinag-amin ng parehong mga manlalaro ang isang lihim na pagkasira sa isang tao sa sili"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thừa nhận một người bí mật yêu ai đó trong phòng"
+        },
+        "ar": {
+          "title": "يعترف كلا اللاعبين بإعجابهم السري بشخص ما في الغرفة."
+        },
+        "fr": {
+          "title": "Les deux joueurs avouent avoir un béguin secret pour quelqu'un dans la pièce"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 방에 있는 누군가에게 은밀하게 호감을 느낀다고 인정합니다."
+        },
+        "ru": {
+          "title": "Оба игрока признаются, что тайно влюблены в кого-то из присутствующих"
+        },
+        "ht": {
+          "title": "Tou de jwè yo admèt yon kraze sekrè sou yon moun nan sal la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कमरे में किसी पर एक गुप्त क्रश स्वीकार करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler geben zu, heimlich in jemanden im Raum verknallt zu sein"
+        },
+        "nl": {
+          "title": "Beide spelers geven toe dat ze stiekem verliefd zijn op iemand in de kamer"
+        },
+        "pl": {
+          "title": "Obaj gracze przyznają się do sekretnego zakochania się w kimś w pokoju"
+        },
+        "it": {
+          "title": "Entrambi i giocatori ammettono di avere una cotta segreta per qualcuno nella stanza"
+        }
+      }
     },
     {
       "title": "Both players do partner sit-ups, holding each other's wrists",
       "extra": "Add a high-five at the top of each sit-up",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen sentadillas en pareja, cogiéndose las muñecas",
+          "extra": "Choca los cinco en la parte superior de cada sentadilla"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem abdominais em parceria, segurando os pulsos um do outro",
+          "extra": "Adicione um high-five na parte superior de cada flexão"
+        },
+        "zh": {
+          "title": "两位选手搭档仰卧起坐，握住对方的手腕"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng kasosyo na sit-up, na hawak ang mga pulso ng bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều ngồi dậy đối tác, giữ cổ tay của nhau"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين الجلوس مع الشريك، ويمسكون معصمي بعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des redressements assis en couple, en se tenant les poignets l'un de l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 손목을 잡고 윗몸 일으키기를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока делают приседания партнеров, держа друг друга за запястья"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè patnè chita-ups, kenbe ponyèt youn ak lòt la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की कलाई पकड़कर पार्टनर सिट-अप्स करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler machen Partner-Sit-Ups und halten sich gegenseitig an den Handgelenken"
+        },
+        "nl": {
+          "title": "Beide spelers doen partnersit-ups, waarbij ze elkaars polsen vasthouden"
+        },
+        "pl": {
+          "title": "Obaj gracze robią przysiady partnerskie, trzymając się nawzajem za nadgarstki"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno sit-up in coppia, tenendosi i polsi l'un l'altro"
+        }
+      }
     },
     {
       "title": "Whisper a secret fantasy to each other",
       "extra": "Act out the fantasy with gestures only",
-      "spicyness": 29
+      "spicyness": 29,
+      "translations": {
+        "es": {
+          "title": "Susurra una fantasía secreta el uno al otro",
+          "extra": "Representa la fantasía solo con gestos"
+        },
+        "pt": {
+          "title": "Sussurrem uma fantasia secreta um para o outro",
+          "extra": "Realize a fantasia apenas com gestos"
+        },
+        "zh": {
+          "title": "互相低声说一个秘密的幻想"
+        },
+        "tl": {
+          "title": "Bumulong ang isang lihim na pantasya sa bawat isa"
+        },
+        "vi": {
+          "title": "Thì thầm một ảo tưởng bí mật với nhau"
+        },
+        "ar": {
+          "title": "اهمس خيالًا سريًا لبعضكما البعض"
+        },
+        "fr": {
+          "title": "Murmure-toi un fantasme secret"
+        },
+        "ko": {
+          "title": "서로에게 비밀 판타지를 속삭여보세요"
+        },
+        "ru": {
+          "title": "Шепчите друг другу тайную фантазию"
+        },
+        "ht": {
+          "title": "Chiuche yon fantezi sekrè youn ak lòt"
+        },
+        "hi": {
+          "title": "एक दूसरे के लिए एक गुप्त कल्पना फुसफुसाएं"
+        },
+        "de": {
+          "title": "Flüstern Sie einander eine geheime Fantasie zu"
+        },
+        "nl": {
+          "title": "Fluister elkaar een geheime fantasie toe"
+        },
+        "pl": {
+          "title": "Szeptajcie sobie sekretną fantazję"
+        },
+        "it": {
+          "title": "Sussurratevi una fantasia segreta"
+        }
+      }
     },
     {
       "title": "Roleplay a romantic restaurant scene together",
       "extra": "Include feeding each other dessert",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Jueguen juntos una escena romántica en un restaurante",
+          "extra": "Incluya alimentarse unos a otros con postre"
+        },
+        "pt": {
+          "title": "Interprete uma cena romântica de restaurante juntos",
+          "extra": "Inclua alimentar um ao outro com sobremesa"
+        },
+        "zh": {
+          "title": "一起扮演浪漫的餐厅场景"
+        },
+        "tl": {
+          "title": "Magkasama ang isang romantikong eksena ng restawran"
+        },
+        "vi": {
+          "title": "Cùng nhau đóng vai một cảnh nhà hàng lãng mạn"
+        },
+        "ar": {
+          "title": "لعب الأدوار في مشهد مطعم رومانسي معًا"
+        },
+        "fr": {
+          "title": "Jouez ensemble à une scène de restaurant romantique"
+        },
+        "ko": {
+          "title": "로맨틱한 레스토랑 씬을 함께 연기하세요"
+        },
+        "ru": {
+          "title": "Сыграйте вместе романтическую ресторанную сцену"
+        },
+        "ht": {
+          "title": "Roleplay yon sèn restoran amoure ansanm"
+        },
+        "hi": {
+          "title": "एक रोमांटिक रेस्तरां दृश्य को एक साथ रोल प्ले करें"
+        },
+        "de": {
+          "title": "Spielen Sie gemeinsam eine romantische Restaurantszene"
+        },
+        "nl": {
+          "title": "Speel samen een romantische restaurantscène na"
+        },
+        "pl": {
+          "title": "Odtwórz razem romantyczną scenę restauracyjną"
+        },
+        "it": {
+          "title": "Interpreta insieme una scena romantica in un ristorante"
+        }
+      }
     },
     {
       "title": "Both players do mirror exercises - one leads, the other copies",
       "extra": "Maintain eye contact throughout the exercises",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen ejercicios de espejo: uno lidera y el otro copia",
+          "extra": "Mantenga el contacto visual durante los ejercicios"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem exercícios de espelho - um conduz, o outro copia",
+          "extra": "Mantenha contato visual durante os exercícios"
+        },
+        "zh": {
+          "title": "两位选手都做镜像练习 —— 一个领先，另一个复制"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng mga ehersisyo sa salamin - ang isa ay nangunguna"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thực hiện các bài tập gương - một người dẫn đầu, người kia sao chép"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين المرآة - أحدهما يقود والآخر ينسخ"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des exercices en miroir : l'un mène, l'autre copie"
+        },
+        "ko": {
+          "title": "두 선수 모두 미러 연습을 합니다. 한 명은 리드하고 다른 한 명은 카피하죠."
+        },
+        "ru": {
+          "title": "Оба игрока выполняют зеркальные упражнения — один ведет, другой копирует"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè egzèsis glas - yon sèl mennen, kopi yo lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी मिरर एक्सरसाइज करते हैं - एक लीड, दूसरी कॉपी"
+        },
+        "de": {
+          "title": "Beide Spieler machen Spiegelübungen — einer führt, der andere kopiert"
+        },
+        "nl": {
+          "title": "Beide spelers doen spiegeloefeningen - de ene leidt, de andere kopieert"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują ćwiczenia lustrzane - jeden prowadzi, drugi kopiuje"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno esercizi speculari: uno conduce, l'altro copia"
+        }
+      }
     },
     {
       "title": "Both players try to speak in a foreign accent badly",
       "extra": "Also, have a full conversation in the accent",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan hablar mal con acento extranjero",
+          "extra": "Además, mantén una conversación completa con el acento"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam falar mal com sotaque estrangeiro",
+          "extra": "Além disso, tenha uma conversa completa com sotaque"
+        },
+        "zh": {
+          "title": "两位玩家都试图用外国口音说话不好"
+        },
+        "tl": {
+          "title": "Sinusubukan ng parehong manlalaro na magsalita nang masama sa isang banyagang accent"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều cố gắng nói bằng giọng nước ngoài tệ"
+        },
+        "ar": {
+          "title": "يحاول كلا اللاعبين التحدث بلكنة أجنبية بشكل سيء."
+        },
+        "fr": {
+          "title": "Les deux joueurs essaient mal de parler avec un accent étranger"
+        },
+        "ko": {
+          "title": "두 선수 모두 외국 억양으로 말을 심하게 시도합니다."
+        },
+        "ru": {
+          "title": "Оба игрока плохо стараются говорить с иностранным акцентом"
+        },
+        "ht": {
+          "title": "Tou de jwè yo eseye pale nan yon aksan etranje move"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी विदेशी लहजे में बुरी तरह बोलने की कोशिश करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler versuchen schlecht mit ausländischem Akzent zu sprechen"
+        },
+        "nl": {
+          "title": "Beide spelers proberen slecht met een buitenlands accent te spreken"
+        },
+        "pl": {
+          "title": "Obaj gracze próbują źle mówić obcym akcentem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori cercano male di parlare con un accento straniero"
+        }
+      }
     },
     {
       "title": "Both players share a mouthful of water and spit it back",
       "extra": "Swirl it around before spitting",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una bocanada de agua y la devuelven",
+          "extra": "Gíralo antes de escupir"
+        },
+        "pt": {
+          "title": "Ambos os jogadores dividem um bocado de água e cospem de volta",
+          "extra": "Gire antes de cuspir"
+        },
+        "zh": {
+          "title": "两位玩家共用一口水然后把它吐回去"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbabahagi ng isang bibig ng tubig at pabalik ito"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ chia sẻ một miệng nước và nhổ nó trở lại"
+        },
+        "ar": {
+          "title": "يتشارك كلا اللاعبين كمية كبيرة من الماء ويبصقونها مرة أخرى"
+        },
+        "fr": {
+          "title": "Les deux joueurs partagent une gorgée d'eau et la recrachent"
+        },
+        "ko": {
+          "title": "두 선수 모두 한 입의 물을 나눠 마시고 다시 침을 뱉습니다."
+        },
+        "ru": {
+          "title": "Оба игрока выпивают глоток воды и выплевывают ее в ответ"
+        },
+        "ht": {
+          "title": "Tou de jwè yo pataje yon bouch nan dlo ak krache li tounen"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक कौर पानी साझा करते हैं और इसे वापस थूकते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler teilen sich einen Schluck Wasser und spucken es zurück"
+        },
+        "nl": {
+          "title": "Beide spelers delen een mondvol water en spugen dat terug"
+        },
+        "pl": {
+          "title": "Obaj gracze dzielą kęst wody i plują ją z powrotem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si dividono un sorso d'acqua e lo sputano all'indietro"
+        }
+      }
     },
     {
       "title": "Both players wear each other's shoes on the wrong feet",
       "extra": "Also, walk around the room like that",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores usan los zapatos del otro con el pie equivocado",
+          "extra": "Además, camina por la habitación de esa manera"
+        },
+        "pt": {
+          "title": "Ambos os jogadores usam os sapatos um do outro com os pés errados",
+          "extra": "Além disso, ande pela sala assim"
+        },
+        "zh": {
+          "title": "两位选手都把对方的鞋穿错了脚"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagsusuot ng sapatos ng bawat isa sa maling paa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều mang giày của nhau trên đôi chân sai"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يرتدون أحذية بعضهم البعض على الأقدام الخاطئة"
+        },
+        "fr": {
+          "title": "Les deux joueurs portent les chaussures de l'autre du mauvais pied"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 신발을 잘못된 발에 신고 있습니다."
+        },
+        "ru": {
+          "title": "Оба игрока носят обувь друг друга на неправильных ногах"
+        },
+        "ht": {
+          "title": "Tou de jwè yo mete soulye youn ak lòt la sou pye yo mal"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी गलत पैरों पर एक-दूसरे के जूते पहनते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler tragen die Schuhe des anderen auf den falschen Füßen"
+        },
+        "nl": {
+          "title": "Beide spelers dragen elkaars schoenen aan de verkeerde voeten"
+        },
+        "pl": {
+          "title": "Obaj gracze noszą sobie buty na niewłaściwych stopach"
+        },
+        "it": {
+          "title": "Entrambi i giocatori indossano le scarpe l'uno dell'altro con i piedi sbagliati"
+        }
+      }
     },
     {
       "title": "Both players do a silly dance with exaggerated hip movements",
       "extra": "Also, maintain eye contact while dancing",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen un baile tonto con movimientos exagerados de cadera",
+          "extra": "Además, mantén el contacto visual mientras bailas"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem uma dança boba com movimentos exagerados do quadril",
+          "extra": "Além disso, mantenha contato visual enquanto dança"
+        },
+        "zh": {
+          "title": "两位选手都用夸张的臀部动作跳了一支愚蠢的舞蹈"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng isang walang hangal na sayaw na may labis"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thực hiện một điệu nhảy ngớ ngẩn với chuyển động hông phóng đại"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين برقصة سخيفة بحركات الورك المبالغ فيها"
+        },
+        "fr": {
+          "title": "Les deux joueurs font une danse stupide avec des mouvements de hanche exagérés"
+        },
+        "ko": {
+          "title": "두 선수 모두 과장된 엉덩이 움직임으로 바보 같은 춤을 춥니다."
+        },
+        "ru": {
+          "title": "Оба игрока исполняют глупый танец с преувеличенными движениями бедер"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè yon dans san fibri ak mouvman anch egzajere"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अतिरंजित कूल्हे की हरकतों के साथ मूर्खतापूर्ण नृत्य करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler tanzen einen dummen Tanz mit übertriebenen Hüftbewegungen"
+        },
+        "nl": {
+          "title": "Beide spelers doen een flauwe dans met overdreven heupbewegingen"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują głupi taniec z przesadnymi ruchami bioder"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno una danza stupida con movimenti esagerati dell'anca"
+        }
+      }
     },
     {
       "title": "Both players sit on each other's laps and have a silly conversation",
       "extra": "Also, use baby talk throughout",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se sientan en el regazo del otro y tienen una conversación tonta",
+          "extra": "Además, usa el lenguaje infantil en todo momento"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se sentam no colo um do outro e têm uma conversa boba",
+          "extra": "Além disso, use a conversa com o bebê o tempo todo"
+        },
+        "zh": {
+          "title": "两位玩家坐在对方的腿上进行了一次愚蠢的交谈"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakaupo sa mga lap ng bawat isa at may hangal na pag-uusap"
+        },
+        "vi": {
+          "title": "Cả hai người chơi ngồi trên lòng nhau và có một cuộc trò chuyện ngớ ngẩn"
+        },
+        "ar": {
+          "title": "يجلس كلا اللاعبين على لفات بعضهما البعض ويجريان محادثة سخيفة"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'assoient sur les genoux l'un de l'autre et ont une conversation stupide"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 무릎에 앉아 우스꽝스러운 대화를 나눕니다."
+        },
+        "ru": {
+          "title": "Оба игрока сидят друг у друга на коленях и ведут глупый разговор"
+        },
+        "ht": {
+          "title": "Tou de jwè yo chita sou lap youn ak lòt la epi yo gen yon konvèsasyon san konvèsasyon"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की गोद में बैठते हैं और मूर्खतापूर्ण बातचीत करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler setzen sich gegenseitig auf den Schoß und führen ein dummes Gespräch"
+        },
+        "nl": {
+          "title": "Beide spelers zitten op elkaars schoot en voeren een dom gesprek"
+        },
+        "pl": {
+          "title": "Obaj gracze siedzą na kolanach i prowadzą głupią rozmowę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si siedono l'uno sulle ginocchia dell'altro e hanno una conversazione stupida"
+        }
+      }
     },
     {
       "title": "Both players lick each other's ears",
       "extra": "Get right inside the ear canal",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen las orejas",
+          "extra": "Entra directamente en el canal auditivo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as orelhas um do outro",
+          "extra": "Entre diretamente no canal auditivo"
+        },
+        "zh": {
+          "title": "两个玩家互相舔耳朵"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nililaan ang mga tainga ng"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ liếm tai nhau"
+        },
+        "ar": {
+          "title": "يلعق كلا اللاعبين آذان بعضهم البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se lèchent les oreilles"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 귀를 핥습니다."
+        },
+        "ru": {
+          "title": "Оба игрока лижут друг другу уши"
+        },
+        "ht": {
+          "title": "Tou de jwè yo limen zòrèy youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे के कान चाटते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler lecken sich gegenseitig die Ohren"
+        },
+        "nl": {
+          "title": "Beide spelers likken elkaars oren"
+        },
+        "pl": {
+          "title": "Obaj gracze liżą sobie uszy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si leccano le orecchie"
+        }
+      }
     },
     {
       "title": "Both players briefly pull up their shirts for the other to see",
       "extra": "Both players flash the whole group",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se levantan brevemente las camisas para que el otro las vea",
+          "extra": "Ambos jugadores muestran a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores levantam brevemente suas camisas para o outro ver",
+          "extra": "Ambos os jogadores mostram todo o grupo"
+        },
+        "zh": {
+          "title": "两位选手都短暂地把球衣拿出来让对方看见"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay maikling hinuhit ang kanilang mga shirt para makita ng iba pa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ nhanh chóng kéo áo lên để người kia xem"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بسحب قمصانهم لفترة وجيزة ليراها الآخر"
+        },
+        "fr": {
+          "title": "Les deux joueurs retroussent brièvement leur maillot pour que l'autre puisse les voir"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 상대방이 볼 수 있도록 셔츠를 잠깐 들어 올립니다."
+        },
+        "ru": {
+          "title": "Оба игрока ненадолго подтягивают футболки, чтобы их увидели друг друга."
+        },
+        "ht": {
+          "title": "Tou de jwè yon ti tan rale moute chemiz yo pou lòt la yo wè"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी थोड़ी देर के लिए अपनी शर्ट ऊपर खींचते हैं, ताकि एक दूसरे को दिखाई दे"
+        },
+        "de": {
+          "title": "Beide Spieler ziehen kurz ihre Trikots hoch, damit der andere sie sehen kann"
+        },
+        "nl": {
+          "title": "Beide spelers trekken even hun shirts omhoog zodat de ander het kan zien"
+        },
+        "pl": {
+          "title": "Obaj gracze na krótko podnoszą koszulki, aby drugi mógł je zobaczyć"
+        },
+        "it": {
+          "title": "Entrambi i giocatori alzano brevemente le maglie perché l'altro lo veda"
+        }
+      }
     },
     {
       "title": "Both players do partner push-ups - one on top of the other",
       "extra": "The top player must maintain contact with the bottom player's back",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen flexiones en pareja, una encima de la otra",
+          "extra": "El mejor jugador debe mantener contacto con la espalda del jugador inferior"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem flexões em parceria - uma em cima da outra",
+          "extra": "O melhor jogador deve manter contato com as costas do jogador inferior"
+        },
+        "zh": {
+          "title": "两位玩家都会搭档俯卧撑 —— 一个在另一个上面"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng kasosyo na push-up - isa sa ibabaw ng isa pa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thực hiện động tác chống đẩy đối tác - người này chồng lên người kia"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتمارين الضغط مع الشريك - أحدهما فوق الآخر"
+        },
+        "fr": {
+          "title": "Les deux joueurs font des push-ups en partenariat, l'un au-dessus de l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 파트너 팔 굽혀 펴기를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока делают партнерские отжимания — одно поверх другого"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè patnè pouse-ups - youn sou tèt lòt la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी पार्टनर पुश-अप्स करते हैं - एक दूसरे के ऊपर"
+        },
+        "de": {
+          "title": "Beide Spieler machen Partner-Liegestütze — einer übereinander"
+        },
+        "nl": {
+          "title": "Beide spelers doen partner-push-ups - de een boven op de ander"
+        },
+        "pl": {
+          "title": "Obaj gracze wykonują pompki partnerskie - jedna na drugiej"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno flessioni in coppia, una sopra l'altra"
+        }
+      }
     },
     {
       "title": "Both players lick each other's sweaty backs",
       "extra": "After doing some exercise",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lamen la espalda sudorosa",
+          "extra": "Después de hacer algo de ejercicio"
+        },
+        "pt": {
+          "title": "Ambos os jogadores lambem as costas suadas um do outro",
+          "extra": "Depois de fazer algum exercício"
+        },
+        "zh": {
+          "title": "两位玩家互相舔出汗的背部"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nililaan ang pawis na likod ng bawat"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ liếm lưng mồ hôi của nhau"
+        },
+        "ar": {
+          "title": "يلعق كلا اللاعبين ظهر بعضهما البعض المتعرق"
+        },
+        "fr": {
+          "title": "Les deux joueurs se lèchent le dos moite"
+        },
+        "ko": {
+          "title": "두 선수 모두 땀에 젖은 서로의 등을 핥습니다"
+        },
+        "ru": {
+          "title": "Оба игрока облизывают потные спины друг друга"
+        },
+        "ht": {
+          "title": "Tou de jwè yo lipe do swe youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की पसीने से तर पीठ चाटते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler lecken sich gegenseitig den verschwitzten Rücken"
+        },
+        "nl": {
+          "title": "Beide spelers likken elkaars bezwete ruggen"
+        },
+        "pl": {
+          "title": "Obaj gracze liżą sobie spocone plecy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si leccano la schiena sudata"
+        }
+      }
     },
     {
       "title": "The larger player pins the smaller player to the floor in a wrestling hold",
       "extra": "Maintain the pin for thirty seconds",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande clava al jugador más pequeño en el suelo en una bodega de lucha libre",
+          "extra": "Mantenga el pin durante treinta segundos"
+        },
+        "pt": {
+          "title": "O jogador maior prende o jogador menor no chão em um porão de luta livre",
+          "extra": "Mantenha o pino por trinta segundos"
+        },
+        "zh": {
+          "title": "体型较大的玩家在摔跤格中将较小的选手固定在地板上"
+        },
+        "tl": {
+          "title": "Ang mas malaking manlalaro ay naka-pin ang mas maliit na manlalaro sa sahig sa isang hawak ng wrestling"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn ghim người chơi nhỏ hơn xuống sàn trong một cú đấu vật"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الأكبر بتثبيت اللاعب الأصغر على الأرض في قبضة المصارعة"
+        },
+        "fr": {
+          "title": "Le plus grand joueur épingle le plus petit joueur au sol dans une prise de catch"
+        },
+        "ko": {
+          "title": "몸집이 큰 선수는 몸집이 작은 선수를 바닥에 고정시켜 레슬링 홀드를 합니다."
+        },
+        "ru": {
+          "title": "Более крупный игрок прижимает маленького игрока к полу в трюме для борьбы"
+        },
+        "ht": {
+          "title": "Pi gwo jwè broch jwè a pi piti nan etaj la nan yon lit kenbe"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी रेसलिंग होल्ड में छोटे खिलाड़ी को फर्श पर पिन करता है"
+        },
+        "de": {
+          "title": "Der größere Spieler drückt den kleineren Spieler in einem Wrestling-Hold auf den Boden"
+        },
+        "nl": {
+          "title": "De grotere speler zet de kleinere speler in een worstelruim op de grond"
+        },
+        "pl": {
+          "title": "Większy gracz przypina mniejszego gracza do podłogi w zapaśnictwie"
+        },
+        "it": {
+          "title": "Il giocatore più grande blocca il giocatore più piccolo a terra in una presa di wrestling"
+        }
+      }
     },
     {
       "title": "Both players moon each other",
       "extra": "Moon the whole group",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se alzan",
+          "extra": "Moon, todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores luam um para o outro",
+          "extra": "Moon, todo o grupo"
+        },
+        "zh": {
+          "title": "两个玩家互相月亮"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ang bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ mặt trăng lẫn nhau"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يقامرون بعضهم البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se rencontrent"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 서로 조준합니다"
+        },
+        "ru": {
+          "title": "Оба игрока луны друг другу"
+        },
+        "ht": {
+          "title": "Tou de jwè lalin youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक दूसरे को चांद लगाते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler monden sich gegenseitig"
+        },
+        "nl": {
+          "title": "Beide spelers bejubelen elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze księżycowali się nawzajem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si lunano a vicenda"
+        }
+      }
     },
     {
       "title": "The larger player holds the smaller player against a wall in a standing embrace",
       "extra": "Lift the smaller player's legs off the ground",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador más grande sostiene al jugador más pequeño contra una pared en un abrazo de pie.",
+          "extra": "Levanta las piernas del jugador más pequeño del suelo"
+        },
+        "pt": {
+          "title": "O jogador maior segura o jogador menor contra a parede em um abraço de pé",
+          "extra": "Levante as pernas do jogador menor do chão"
+        },
+        "zh": {
+          "title": "身材较大的玩家站着拥抱时将小玩家抱在墙上"
+        },
+        "tl": {
+          "title": "Hawak ng mas malaking manlalaro ang mas maliit na manlalaro sa isang pader sa isang nakatayo na yakap"
+        },
+        "vi": {
+          "title": "Người chơi lớn hơn giữ người chơi nhỏ hơn dựa vào tường trong vòng tay đứng"
+        },
+        "ar": {
+          "title": "يحمل اللاعب الأكبر اللاعب الأصغر على الحائط في حضن واقف"
+        },
+        "fr": {
+          "title": "Le plus grand joueur tient le plus petit joueur contre un mur en l'embrassant"
+        },
+        "ko": {
+          "title": "몸집이 큰 플레이어는 작은 플레이어를 벽에 대고 서 있는 포옹을 합니다."
+        },
+        "ru": {
+          "title": "Крупный игрок прижимает маленького игрока к стене в объятиях стоя"
+        },
+        "ht": {
+          "title": "Jwè a pi gwo kenbe jwè a ki pi piti kont yon miray nan yon anbrase kanpe"
+        },
+        "hi": {
+          "title": "बड़ा खिलाड़ी छोटे खिलाड़ी को एक दीवार के सामने खड़े आलिंगन में रखता है"
+        },
+        "de": {
+          "title": "Der größere Spieler hält den kleineren Spieler in einer stehenden Umarmung gegen eine Wand"
+        },
+        "nl": {
+          "title": "De grotere speler houdt de kleinere speler in een staande omhelzing tegen een muur"
+        },
+        "pl": {
+          "title": "Większy gracz trzyma mniejszego gracza przy ścianie w stojącym uścisku"
+        },
+        "it": {
+          "title": "Il giocatore più grande tiene il giocatore più piccolo contro un muro in un abbraccio eretto"
+        }
+      }
     },
     {
       "title": "Current player will do an awkward lap dance for dare acceptor",
       "extra": "Add guided touching",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hará un baile erótico incómodo para quien acepta el reto",
+          "extra": "Añade toques guiados"
+        },
+        "pt": {
+          "title": "O jogador da vez fará uma dança erótica estranha para quem aceita o desafio",
+          "extra": "Adicionar toque guiado"
+        },
+        "zh": {
+          "title": "当前玩家会为勇气另一位玩家跳一支尴尬的圈舞"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gagawin ng isang kakaibang lap dance para sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ thực hiện một điệu nhảy đùi khó xử cho người chơi kia"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي برقصة حضن محرجة لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel fera un lap dance maladroit pour l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어를 위해 어색한 랩 댄스를 할 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок исполнит неловкий танец на коленях в качестве другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap fè yon dans lap gòch pou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के लिए एक अजीब लैप डांस करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird einen unangenehmen Lapdance für der andere Spieler machen"
+        },
+        "nl": {
+          "title": "De huidige speler zal een lastige lapdance doen voor andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz wykona niezręczny taniec na kolanach dla drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale farà una scomoda lap dance per l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Both players flash their genitals to each other",
       "extra": "Flash the whole group",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores muestran sus genitales el uno al otro",
+          "extra": "Muestra a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mostram seus órgãos genitais um para o outro",
+          "extra": "Mostre todo o grupo"
+        },
+        "zh": {
+          "title": "两位玩家互相露出自己的生殖器"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ang kanilang maselang bahagi ng katawan sa bawat"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chớp bộ phận sinh dục với nhau"
+        },
+        "ar": {
+          "title": "يومض كلا اللاعبين أعضائهم التناسلية لبعضهم البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs montrent leurs parties génitales l'un à l'autre"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로에게 성기를 번쩍 뜨립니다."
+        },
+        "ru": {
+          "title": "Оба игрока прикладывают друг к другу свои гениталии"
+        },
+        "ht": {
+          "title": "Tou de jwè flash jenital yo youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अपने जननांगों को एक-दूसरे से जोड़ते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler zeigen sich gegenseitig ihre Genitalien zu"
+        },
+        "nl": {
+          "title": "Beide spelers laten hun genitaliën aan elkaar zien"
+        },
+        "pl": {
+          "title": "Obaj gracze błyskają do siebie genitaliami"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si mostrano i genitali l'un l'altro"
+        }
+      }
     },
     {
       "title": "From the knee, move your hand incrementally more intimate, asking \"Nervous?\" until they say yes.",
       "extra": "Use your lips instead of your hand",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Desde la rodilla, mueve la mano de forma cada vez más íntima y pregunta: «¿Nervioso?» hasta que digan que sí.",
+          "extra": "Usa los labios en lugar de la mano"
+        },
+        "pt": {
+          "title": "Do joelho, mova sua mão cada vez mais intimamente, perguntando “Nervoso?” até que eles digam sim.",
+          "extra": "Use seus lábios em vez de sua mão"
+        },
+        "zh": {
+          "title": "从膝盖开始，逐渐亲密地移动你的手，问 “紧张？”直到他们说 “是”。"
+        },
+        "tl": {
+          "title": "Mula sa tuhod, ilipat ang iyong kamay nang mas matalik, nagtatanong sa “Nerbiyos?” hanggang sa sabihin nila na oo."
+        },
+        "vi": {
+          "title": "Từ đầu gối, di chuyển bàn tay của bạn từng bước thân mật hơn, hỏi “Lo lắng?” Cho đến khi họ nói có."
+        },
+        "ar": {
+          "title": "من الركبة، حرك يدك بشكل أكثر حميمية تدريجيًا، واسأل «متوتر؟» حتى يقولون نعم."
+        },
+        "fr": {
+          "title": "À partir du genou, déplacez votre main de plus en plus intimement, en demandant « Nerveux ? » jusqu'à ce qu'ils disent oui."
+        },
+        "ko": {
+          "title": "무릎에서 손을 점점 더 친밀하게 움직여 “긴장 되니?” 라고 묻습니다.그들이 그렇다고 대답하기 전까진 말이에요"
+        },
+        "ru": {
+          "title": "От колена постепенно двигайте рукой ближе, спрашивая: «Нервничаете?» пока они не скажут «да»."
+        },
+        "ht": {
+          "title": "Soti nan jenou an, deplase men ou incremental plis entim, mande “Nève?” jiskaske yo di wi."
+        },
+        "hi": {
+          "title": "घुटने से, अपने हाथ को और अधिक अंतरंग रूप से घुमाते हुए, “नर्वस?” पूछते हुए जब तक वे हाँ न कहें।"
+        },
+        "de": {
+          "title": "Bewegen Sie Ihre Hand vom Knie aus schrittweise intimer und fragen Sie: „Nervös?“ bis sie ja sagen."
+        },
+        "nl": {
+          "title": "Beweeg vanaf de knie je hand stapsgewijs intiemer en vraag „Zenuwachtig?” tot ze ja zeggen."
+        },
+        "pl": {
+          "title": "Od kolana poruszaj ręką stopniowo bardziej intymnie, pytając „Nerwowy?” Dopóki nie powiedzą tak."
+        },
+        "it": {
+          "title": "Dal ginocchio, muovi la mano in modo incrementale più intimo, chiedendo «Nervoso?» finché non dicono di sì."
+        }
+      }
     }
   ]
 }

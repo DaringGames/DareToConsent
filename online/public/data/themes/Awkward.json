@@ -4,144 +4,1880 @@
     {
       "title": "Both players make silly faces at each other",
       "extra": "Also, make strange noises",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen muecas el uno con el otro",
+          "extra": "Además, haz ruidos extraños"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem caretas um para o outro",
+          "extra": "Além disso, faça ruídos estranhos"
+        },
+        "zh": {
+          "title": "两位玩家互相做傻脸",
+          "extra": "另外，发出奇怪的声音"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng mga hangal na mukha sa",
+          "extra": "Gayundin, gumawa ng kakaibang ingay"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều tạo ra những khuôn mặt ngớ ngẩn với nhau",
+          "extra": "Ngoài ra, tạo ra những tiếng động lạ"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يصنعون وجوهًا سخيفة لبعضهم البعض",
+          "extra": "أيضًا، قم بإصدار أصوات غريبة"
+        },
+        "fr": {
+          "title": "Les deux joueurs se font des grimaces",
+          "extra": "Faites également des bruits étranges"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로 우스꽝스러운 표정을 짓습니다.",
+          "extra": "그리고 이상한 소리도 내세요"
+        },
+        "ru": {
+          "title": "Оба игрока глупо смотрят друг на друга",
+          "extra": "Кроме того, издавайте странные звуки"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè fas sibtilè youn ak lòt",
+          "extra": "Epitou, fè bwi etranj"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे पर मूर्खतापूर्ण चेहरे बनाते हैं",
+          "extra": "इसके अलावा, अजीब शोर करें"
+        },
+        "de": {
+          "title": "Beide Spieler werfen sich gegenseitig dumme Gesichter an",
+          "extra": "Mach auch seltsame Geräusche"
+        },
+        "nl": {
+          "title": "Beide spelers trekken domme gezichten naar elkaar.",
+          "extra": "Maak ook vreemde geluiden"
+        },
+        "pl": {
+          "title": "Obaj gracze robią sobie głupie twarze",
+          "extra": "Wydawaj też dziwne dźwięki"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si fanno smorfie stupide",
+          "extra": "Inoltre, emetti strani rumori"
+        }
+      }
     },
     {
       "title": "Both players maintain 10 seconds of eye contact",
       "extra": "... with your foreheads almost touching",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores mantienen 10 segundos de contacto visual",
+          "extra": "... con la frente casi tocándose"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mantêm 10 segundos de contato visual",
+          "extra": "... com suas testas quase se tocando"
+        },
+        "zh": {
+          "title": "两位玩家都保持 10 秒的眼神交流",
+          "extra": "... 你的额头差点碰到了"
+        },
+        "tl": {
+          "title": "Pinapanatili ng parehong mga manlalaro ang 10 segundo ng contact",
+          "extra": "... na may halos nahihirapan ang iyong mga ulo"
+        },
+        "vi": {
+          "title": "Cả hai người chơi duy trì 10 giây giao tiếp bằng mắt",
+          "extra": "... với trán của bạn gần như chạm vào"
+        },
+        "ar": {
+          "title": "يحافظ كلا اللاعبين على 10 ثوانٍ من التواصل البصري",
+          "extra": "... مع ملامسة جبهتك تقريبًا"
+        },
+        "fr": {
+          "title": "Les deux joueurs maintiennent un contact visuel de 10 secondes",
+          "extra": "... le front se touchant presque"
+        },
+        "ko": {
+          "title": "두 선수 모두 10초간 눈맞춤을 유지합니다.",
+          "extra": "... 이마가 거의 닿은 상태에서"
+        },
+        "ru": {
+          "title": "Оба игрока смотрят в глаза по 10 секунд",
+          "extra": "... почти соприкасаясь со лбами"
+        },
+        "ht": {
+          "title": "Tou de jwè yo kenbe 10 segonn nan kontak je",
+          "extra": "... ak fwon ou prèske manyen"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी 10 सेकंड का आई कॉन्टैक्ट बनाए रखते हैं",
+          "extra": "... आपके माथे को लगभग छू लेने के साथ"
+        },
+        "de": {
+          "title": "Beide Spieler halten 10 Sekunden Augenkontakt",
+          "extra": "... wobei sich deine Stirn fast berührt"
+        },
+        "nl": {
+          "title": "Beide spelers houden 10 seconden oogcontact",
+          "extra": "... met je voorhoofd bijna tegen elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze utrzymują 10 sekund kontaktu wzrokowego",
+          "extra": "... z czołami prawie dotykającymi"
+        },
+        "it": {
+          "title": "Entrambi i giocatori mantengono 10 secondi di contatto visivo",
+          "extra": "... con la fronte che quasi si tocca"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players share an embarrassing childhood story",
       "extra": "Also, imitate how you acted in that story",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten una embarazosa historia de infancia",
+          "extra": "Además, imita cómo actuaste en esa historia"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham uma história de infância embaraçosa",
+          "extra": "Além disso, imite como você agiu nessa história"
+        },
+        "zh": {
+          "title": "两位玩家都分享了一个令人尴尬的童年故事",
+          "extra": "另外，模仿你在那个故事中的表现"
+        },
+        "tl": {
+          "title": "Ang parehong manlalaro ay nagbabahagi ng nakakahiyang kwento",
+          "extra": "Gayundin, tularan kung paano ka kumilos sa kuwentong iyon"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chia sẻ một câu chuyện thời thơ ấu đáng xấu hổ",
+          "extra": "Ngoài ra, hãy bắt chước cách bạn hành động trong câu chuyện đó"
+        },
+        "ar": {
+          "title": "يتشارك كلا اللاعبين قصة طفولة محرجة",
+          "extra": "قم أيضًا بتقليد الطريقة التي تصرفت بها في تلك القصة"
+        },
+        "fr": {
+          "title": "Les deux joueurs partagent une histoire d'enfance embarrassante",
+          "extra": "Imitez également la façon dont vous avez agi dans cette histoire"
+        },
+        "ko": {
+          "title": "두 선수 모두 부끄러운 어린 시절 이야기를 들려줍니다.",
+          "extra": "또한 그 이야기에서 어떻게 행동했는지 모방하십시오"
+        },
+        "ru": {
+          "title": "Оба игрока рассказывают неловкую историю детства",
+          "extra": "Кроме того, подражайте тому, как вы действовали в этой истории"
+        },
+        "ht": {
+          "title": "Tou de jwè pataje yon istwa anbarasan anbarasan",
+          "extra": "Epitou, imite ki jan ou aji nan istwa sa"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी बचपन की शर्मनाक कहानी साझा करते हैं",
+          "extra": "इसके अलावा, नकल करें कि आपने उस कहानी में कैसे अभिनय किया"
+        },
+        "de": {
+          "title": "Beide Spieler erzählen eine peinliche Kindheitsgeschichte.",
+          "extra": "Ahmen Sie auch nach, wie Sie sich in dieser Geschichte verhalten haben"
+        },
+        "nl": {
+          "title": "Beide spelers delen een gênant jeugdverhaal",
+          "extra": "Doe ook na hoe je in dat verhaal hebt gehandeld"
+        },
+        "pl": {
+          "title": "Obaj gracze dzielą się krępującą historią z dzieciństwa",
+          "extra": "Również, naśladuj, jak zachowywałeś się w tej historii"
+        },
+        "it": {
+          "title": "Entrambi i giocatori condividono un'imbarazzante storia d'infanzia",
+          "extra": "Inoltre, imita come ti sei comportato in quella storia"
+        }
+      }
     },
     {
       "title": "Both players admit a secret crush on someone in the room",
       "extra": "Also, describe what you find attractive about them",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores admiten que están enamorados en secreto por alguien en la sala",
+          "extra": "Además, describe lo que te parece atractivo de ellos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores admitem uma paixão secreta por alguém na sala",
+          "extra": "Além disso, descreva o que você acha atraente neles"
+        },
+        "zh": {
+          "title": "两位玩家都承认暗中暗恋了房间里的人",
+          "extra": "另外，请描述你觉得他们有什么吸引力"
+        },
+        "tl": {
+          "title": "Pinag-amin ng parehong mga manlalaro ang isang lihim na pagkasira sa isang tao sa sili",
+          "extra": "Gayundin, ilarawan kung ano ang nakita mong kaakit-akit tungkol sa kanila"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều thừa nhận một người bí mật yêu ai đó trong phòng",
+          "extra": "Ngoài ra, mô tả những gì bạn thấy hấp dẫn ở họ"
+        },
+        "ar": {
+          "title": "يعترف كلا اللاعبين بإعجابهم السري بشخص ما في الغرفة.",
+          "extra": "قم أيضًا بوصف ما تجده جذابًا بالنسبة لهم"
+        },
+        "fr": {
+          "title": "Les deux joueurs avouent avoir un béguin secret pour quelqu'un dans la pièce",
+          "extra": "Décrivez également ce que vous trouvez attrayant chez eux"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 방에 있는 누군가에게 은밀하게 호감을 느낀다고 인정합니다.",
+          "extra": "또한, 그들에 대해 매력적이라고 생각하는 점을 설명해 주세요."
+        },
+        "ru": {
+          "title": "Оба игрока признаются, что тайно влюблены в кого-то из присутствующих",
+          "extra": "Кроме того, опишите, что вас в них привлекает"
+        },
+        "ht": {
+          "title": "Tou de jwè yo admèt yon kraze sekrè sou yon moun nan sal la",
+          "extra": "Epitou, dekri sa ou jwenn atire sou yo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कमरे में किसी पर एक गुप्त क्रश स्वीकार करते हैं",
+          "extra": "इसके अलावा, वर्णन करें कि आपको उनके बारे में क्या आकर्षक लगता है"
+        },
+        "de": {
+          "title": "Beide Spieler geben zu, heimlich in jemanden im Raum verknallt zu sein",
+          "extra": "Beschreiben Sie auch, was Sie an ihnen attraktiv finden"
+        },
+        "nl": {
+          "title": "Beide spelers geven toe dat ze stiekem verliefd zijn op iemand in de kamer",
+          "extra": "Beschrijf ook wat je aantrekkelijk aan hen vindt"
+        },
+        "pl": {
+          "title": "Obaj gracze przyznają się do sekretnego zakochania się w kimś w pokoju",
+          "extra": "Opisz także, co uważasz za atrakcyjne w nich"
+        },
+        "it": {
+          "title": "Entrambi i giocatori ammettono di avere una cotta segreta per qualcuno nella stanza",
+          "extra": "Inoltre, descrivi cosa trovi attraente in loro"
+        }
+      }
     },
     {
       "title": "Both players maintain eye contact while making funny faces",
       "extra": "Also, don't blink for 10 seconds",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores mantienen el contacto visual mientras hacen muecas",
+          "extra": "Además, no parpadee durante 10 segundos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mantêm contato visual enquanto fazem caretas engraçadas",
+          "extra": "Além disso, não pisque por 10 segundos"
+        },
+        "zh": {
+          "title": "两位玩家在做滑稽表情的同时保持眼神交流",
+          "extra": "另外，不要闪烁 10 秒钟"
+        },
+        "tl": {
+          "title": "Pinapanatili ng parehong mga manlalaro ang contact sa mata habang gumagawa",
+          "extra": "Gayundin, huwag kumikislap sa loob ng 10 segundo"
+        },
+        "vi": {
+          "title": "Cả hai người chơi duy trì giao tiếp bằng mắt trong khi tạo ra những khuôn mặt hài hước",
+          "extra": "Ngoài ra, đừng chớp mắt trong 10 giây"
+        },
+        "ar": {
+          "title": "يحافظ كلا اللاعبين على التواصل البصري أثناء صنع وجوه مضحكة",
+          "extra": "أيضًا، لا ترمش لمدة 10 ثوانٍ"
+        },
+        "fr": {
+          "title": "Les deux joueurs maintiennent un contact visuel tout en faisant des grimaces",
+          "extra": "De plus, ne clignez pas des yeux pendant 10 secondes"
+        },
+        "ko": {
+          "title": "두 선수 모두 재미있는 표정을 짓고 눈을 마주 칩니다.",
+          "extra": "또한 10초 동안 눈을 깜박이지 마십시오."
+        },
+        "ru": {
+          "title": "Оба игрока смотрят в глаза, создавая забавные лица",
+          "extra": "Кроме того, не моргайте в течение 10 секунд"
+        },
+        "ht": {
+          "title": "Tou de jwè yo kenbe kontak je pandan y ap fè fas komik",
+          "extra": "Epitou, pa blink pou 10 segonn"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी मजाकिया चेहरे बनाते समय आंखों का संपर्क बनाए रखते हैं",
+          "extra": "इसके अलावा, 10 सेकंड के लिए ब्लिंक न करें"
+        },
+        "de": {
+          "title": "Beide Spieler halten Augenkontakt und machen gleichzeitig lustige Gesichter",
+          "extra": "Blinzeln Sie auch nicht für 10 Sekunden"
+        },
+        "nl": {
+          "title": "Beide spelers houden oogcontact terwijl ze grappige gezichten trekken",
+          "extra": "Knipper ook niet gedurende 10 seconden"
+        },
+        "pl": {
+          "title": "Obaj gracze utrzymują kontakt wzrokowy, tworząc zabawne twarze",
+          "extra": "Ponadto nie mrugaj przez 10 sekund"
+        },
+        "it": {
+          "title": "Entrambi i giocatori mantengono il contatto visivo mentre fanno facce buffe",
+          "extra": "Inoltre, non lampeggiare per 10 secondi"
+        }
+      }
     },
     {
       "title": "Whisper an embarrassing secret to each other",
       "extra": "Also, repeat it out loud for the group",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Susurra un secreto embarazoso el uno al otro",
+          "extra": "Además, repítelo en voz alta para el grupo"
+        },
+        "pt": {
+          "title": "Sussurrem um segredo embaraçoso um para o outro",
+          "extra": "Além disso, repita em voz alta para o grupo"
+        },
+        "zh": {
+          "title": "互相窃窃私语一个尴尬的秘密",
+          "extra": "另外，为小组大声重复一遍"
+        },
+        "tl": {
+          "title": "Bumulong ang isang nakakahiyang lihim sa bawat isa",
+          "extra": "Gayundin, ulitin ito nang malakas para sa grupo"
+        },
+        "vi": {
+          "title": "Thì thầm một bí mật đáng xấu hổ với nhau",
+          "extra": "Ngoài ra, lặp lại thành tiếng cho nhóm"
+        },
+        "ar": {
+          "title": "اهمس سرًا محرجًا لبعضكما البعض",
+          "extra": "كررها أيضًا بصوت عالٍ للمجموعة"
+        },
+        "fr": {
+          "title": "Murmure-toi un secret embarrassant",
+          "extra": "Répétez-le également à voix haute pour le groupe"
+        },
+        "ko": {
+          "title": "서로에게 부끄러운 비밀을 속삭여",
+          "extra": "또한 그룹을 위해 큰 소리로 반복하세요"
+        },
+        "ru": {
+          "title": "Шепчите друг другу неловкий секрет",
+          "extra": "Кроме того, повторите это вслух для группы"
+        },
+        "ht": {
+          "title": "Chiuche yon sekrè anbarasan youn ak lòt",
+          "extra": "Epitou, repete li byen fò pou gwoup la"
+        },
+        "hi": {
+          "title": "एक दूसरे के लिए एक शर्मनाक रहस्य फुसफुसाएं",
+          "extra": "इसके अलावा, समूह के लिए इसे ज़ोर से दोहराएं"
+        },
+        "de": {
+          "title": "Flüstern Sie sich gegenseitig ein peinliches Geheimnis zu",
+          "extra": "Wiederhole es auch laut für die Gruppe"
+        },
+        "nl": {
+          "title": "Fluister elkaar een gênant geheim toe",
+          "extra": "Herhaal het ook hardop voor de groep"
+        },
+        "pl": {
+          "title": "Szeptajcie sobie nawzajem krępujący sekret",
+          "extra": "Powtórz to również głośno dla grupy"
+        },
+        "it": {
+          "title": "Sussurratevi un segreto imbarazzante",
+          "extra": "Inoltre, ripetilo ad alta voce per il gruppo"
+        }
+      }
     },
     {
       "title": "Hold hands awkwardly for 30 seconds",
       "extra": "Also, interlock fingers and squeeze tightly",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "Sostenga las manos torpemente durante 30 segundos",
+          "extra": "Además, entrelaza los dedos y aprieta con fuerza"
+        },
+        "pt": {
+          "title": "Segure as mãos desajeitadamente por 30 segundos",
+          "extra": "Além disso, entrelace os dedos e aperte com força"
+        },
+        "zh": {
+          "title": "尴尬地牵手 30 秒",
+          "extra": "另外，将手指互锁并紧紧挤压"
+        },
+        "tl": {
+          "title": "Hawakan ang mga kamay nang hindi ginawa sa loob ng 30 segundo",
+          "extra": "Gayundin, i-lock ang mga daliri at pigilin nang mahigpit"
+        },
+        "vi": {
+          "title": "Nắm tay một cách lúng túng trong 30 giây",
+          "extra": "Ngoài ra, khóa các ngón tay vào nhau và siết chặt"
+        },
+        "ar": {
+          "title": "أمسك يديك بشكل غير ملائم لمدة 30 ثانية",
+          "extra": "أيضًا، قم بتشبيك الأصابع والضغط بإحكام"
+        },
+        "fr": {
+          "title": "Tenez-vous les mains maladroitement pendant 30 secondes",
+          "extra": "En outre, croisez les doigts et serrez fermement"
+        },
+        "ko": {
+          "title": "30초 동안 어색하게 손을 잡으세요.",
+          "extra": "또한 손가락을 맞대고 꽉 쥐십시오."
+        },
+        "ru": {
+          "title": "Неловко держитесь за руки в течение 30 секунд",
+          "extra": "Кроме того, заблокируйте пальцы и плотно сожмите"
+        },
+        "ht": {
+          "title": "Kenbe men awkwardly pou 30 segonn",
+          "extra": "Epitou, dwèt entèbloke ak peze byen sere"
+        },
+        "hi": {
+          "title": "30 सेकंड के लिए हाथों को अजीब तरह से पकड़ें",
+          "extra": "इसके अलावा, उंगलियों को इंटरलॉक करें और कसकर निचोड़ें"
+        },
+        "de": {
+          "title": "Hände 30 Sekunden lang unbeholfen halten",
+          "extra": "Außerdem die Finger ineinandergreifen und fest zusammendrücken"
+        },
+        "nl": {
+          "title": "Houd uw handen 30 seconden lang onhandig vast",
+          "extra": "Steek ook de vingers in elkaar en knijp ze stevig"
+        },
+        "pl": {
+          "title": "Trzymaj ręce niezręcznie przez 30 sekund",
+          "extra": "Ponadto zablokuj palce i mocno ściśnij"
+        },
+        "it": {
+          "title": "Tieni le mani goffamente per 30 secondi",
+          "extra": "Inoltre, intreccia le dita e stringi forte"
+        }
+      }
     },
     {
       "title": "Give each other awkward compliments",
       "extra": "Make them overly dramatic and cheesy",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Darse cumplidos incómodos",
+          "extra": "Hazlos demasiado dramáticos y cursis"
+        },
+        "pt": {
+          "title": "Dê elogios estranhos um ao outro",
+          "extra": "Torne-os excessivamente dramáticos e extravagantes"
+        },
+        "zh": {
+          "title": "互相尴尬地夸奖",
+          "extra": "让他们过于戏剧和俗气"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng masarap na papuri",
+          "extra": "Gawin silang labis na dramatiko at masakit"
+        },
+        "vi": {
+          "title": "Tặng nhau những lời khen ngợi khó xử",
+          "extra": "Làm cho chúng quá kịch tính và phô trương"
+        },
+        "ar": {
+          "title": "أعطوا بعضكم البعض تحيات محرجة",
+          "extra": "اجعلها مثيرة للغاية وجبنية"
+        },
+        "fr": {
+          "title": "Faites-vous des compliments maladroits",
+          "extra": "Rendez-les trop dramatiques et ringards"
+        },
+        "ko": {
+          "title": "서로에게 어색한 칭찬을 해주세요",
+          "extra": "지나치게 드라마틱하고 치즈 맛이 나게 만드세요"
+        },
+        "ru": {
+          "title": "Делайте друг другу неловкие комплименты",
+          "extra": "Сделайте их слишком драматичными и дерзкими"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt konpliman gòch",
+          "extra": "Fè yo tro dramatik ak fwomaj"
+        },
+        "hi": {
+          "title": "एक दूसरे को अजीब तारीफ दें",
+          "extra": "उन्हें अत्यधिक नाटकीय और लजीज बनाएं"
+        },
+        "de": {
+          "title": "Machen Sie sich gegenseitig unangenehme Komplimente",
+          "extra": "Mach sie übermäßig dramatisch und kitschig"
+        },
+        "nl": {
+          "title": "Elkaar ongemakkelijke complimenten geven",
+          "extra": "Maak ze overdreven dramatisch en flauw"
+        },
+        "pl": {
+          "title": "Dajcie sobie nawzajem niezręczne komplementy",
+          "extra": "Spraw, by były zbyt dramatyczne i tandetne"
+        },
+        "it": {
+          "title": "Fatevi complimenti imbarazzanti",
+          "extra": "Rendili eccessivamente drammatici e scadenti"
+        }
+      }
     },
     {
       "title": "Dance badly together for one song",
       "extra": "Also, try to mimic each other's worst moves",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Bailen mal juntos para una canción",
+          "extra": "Además, traten de imitar los peores movimientos de los demás"
+        },
+        "pt": {
+          "title": "Dançam mal juntos para uma música",
+          "extra": "Além disso, tente imitar os piores movimentos um do outro"
+        },
+        "zh": {
+          "title": "为一首歌一起跳舞很糟糕",
+          "extra": "另外，试着模仿对方最糟糕的动作"
+        },
+        "tl": {
+          "title": "Sumayaw nang masama nang magkasama para sa isang kanta",
+          "extra": "Gayundin, subukang gayahin ang pinakamasamang paggalaw ng bawat isa"
+        },
+        "vi": {
+          "title": "Nhảy xấu cùng nhau cho một bài hát",
+          "extra": "Ngoài ra, hãy cố gắng bắt chước những động tác tồi tệ nhất của nhau"
+        },
+        "ar": {
+          "title": "ارقصوا معًا بشكل سيئ لأغنية واحدة",
+          "extra": "حاول أيضًا محاكاة أسوأ حركات بعضكما البعض"
+        },
+        "fr": {
+          "title": "Dansez mal ensemble pour une chanson",
+          "extra": "Essayez également d'imiter les pires mouvements de chacun"
+        },
+        "ko": {
+          "title": "한 곡을 위해 함께 나쁘게 춤추세요",
+          "extra": "또한 서로의 최악의 동작을 흉내내내도록 하세요"
+        },
+        "ru": {
+          "title": "Плохо танцуйте вместе под одну песню",
+          "extra": "Кроме того, старайтесь имитировать худшие ходы друг друга"
+        },
+        "ht": {
+          "title": "Danse move ansanm pou yon sèl chante",
+          "extra": "Epitou, eseye imite pi move mouvman youn ak lòt"
+        },
+        "hi": {
+          "title": "एक गाने के लिए एक साथ बुरी तरह से डांस करें",
+          "extra": "इसके अलावा, एक-दूसरे की सबसे खराब चालों की नकल करने की कोशिश करें"
+        },
+        "de": {
+          "title": "Tanze schlecht zusammen für ein Lied",
+          "extra": "Versuche auch, die schlechtesten Moves des anderen nachzuahmen"
+        },
+        "nl": {
+          "title": "Dans slecht samen voor één nummer",
+          "extra": "Probeer ook elkaars slechtste bewegingen na te bootsen"
+        },
+        "pl": {
+          "title": "Zatańcz źle razem na jedną piosenkę",
+          "extra": "Postaraj się także naśladować najgorsze ruchy siebie nawzajem"
+        },
+        "it": {
+          "title": "Ballate male insieme per una canzone",
+          "extra": "Inoltre, prova a imitare le mosse peggiori l'uno dell'altro"
+        }
+      }
     },
     {
       "title": "Imitate each other's walk or mannerisms",
       "extra": "Also, exaggerate them to be ridiculous",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Imiten el caminar o los gestos de los demás",
+          "extra": "Además, exagéralos para que sean ridículos"
+        },
+        "pt": {
+          "title": "Imite a caminhada ou os maneirismos um do outro",
+          "extra": "Além disso, exagere-os para serem ridículos"
+        },
+        "zh": {
+          "title": "模仿对方的走路或举止",
+          "extra": "另外，夸大其词太荒谬了"
+        },
+        "tl": {
+          "title": "Tularan ang paglalakad o pag-uugali ng bawat isa",
+          "extra": "Gayundin, labis ang mga ito upang maging katawa-awa"
+        },
+        "vi": {
+          "title": "Bắt chước bước đi hoặc cách cư xử của nhau",
+          "extra": "Ngoài ra, phóng đại chúng để trở nên lố bịch"
+        },
+        "ar": {
+          "title": "تقليد المشي أو السلوكيات التي يقوم بها كل منكما",
+          "extra": "قم أيضًا بالمبالغة في وصفها بأنها سخيفة"
+        },
+        "fr": {
+          "title": "Imitez la marche ou les manières de chacun",
+          "extra": "Exagérez-les également pour les rendre ridicules"
+        },
+        "ko": {
+          "title": "서로의 산책이나 매너리즘을 모방하기",
+          "extra": "또한 우스꽝스럽다고 과장하십시오"
+        },
+        "ru": {
+          "title": "Подражайте поведению или манерам друг друга",
+          "extra": "Кроме того, преувеличивайте их, чтобы они были нелепыми"
+        },
+        "ht": {
+          "title": "Imite mache youn ak lòt oswa mannerism",
+          "extra": "Epitou, egzajere yo pou yo dwe ridikil"
+        },
+        "hi": {
+          "title": "एक-दूसरे की सैर या तौर-तरीकों का अनुकरण करें",
+          "extra": "इसके अलावा, उन्हें हास्यास्पद होने के लिए अतिरंजित करें"
+        },
+        "de": {
+          "title": "Ahmen Sie den Gang oder die Manierismen des anderen nach",
+          "extra": "Übertreibe sie auch, um lächerlich zu sein"
+        },
+        "nl": {
+          "title": "Imiteer elkaars manier van doen of doen",
+          "extra": "Overdrijf ze ook om belachelijk te zijn"
+        },
+        "pl": {
+          "title": "Naśladuj nawzajem chodzenie lub maniery",
+          "extra": "Również, wyolbrzymiaj je, aby były śmieszne"
+        },
+        "it": {
+          "title": "Imitate il cammino o i modi l'uno dell'altro",
+          "extra": "Inoltre, esagerali fino a renderli ridicoli"
+        }
+      }
     },
     {
       "title": "Give each other a one finger shoulder massage",
       "extra": "Only use your nose to do the massage",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "Dése un masaje con un dedo y hombro",
+          "extra": "Usa solo tu nariz para hacer el masaje"
+        },
+        "pt": {
+          "title": "Faça uma massagem nos ombros com um dedo",
+          "extra": "Use apenas o nariz para fazer a massagem"
+        },
+        "zh": {
+          "title": "互相单指肩部按摩",
+          "extra": "只用鼻子做按摩"
+        },
+        "tl": {
+          "title": "Bigyan ang bawat isa ng isang daliri na masahe sa balikat",
+          "extra": "Gamitin lamang ang iyong ilong upang gawin ang masahe"
+        },
+        "vi": {
+          "title": "Xoa bóp vai một ngón tay cho nhau",
+          "extra": "Chỉ sử dụng mũi của bạn để thực hiện massage"
+        },
+        "ar": {
+          "title": "قم بتدليك الكتف بإصبع واحد لبعضكما البعض",
+          "extra": "استخدم أنفك فقط للقيام بالتدليك"
+        },
+        "fr": {
+          "title": "Faites-vous un massage des épaules avec un doigt",
+          "extra": "Utilisez uniquement votre nez pour faire le massage"
+        },
+        "ko": {
+          "title": "서로에게 한 손가락으로 어깨 마사지를 해주세요",
+          "extra": "마사지를 할 때만 코를 사용하십시오."
+        },
+        "ru": {
+          "title": "Сделайте друг другу массаж плеч одним пальцем",
+          "extra": "Для массажа используйте только нос"
+        },
+        "ht": {
+          "title": "Bay youn ak lòt yon sèl masaj zepòl dwèt",
+          "extra": "Sèlman sèvi ak nen ou pou fè masaj la"
+        },
+        "hi": {
+          "title": "एक दूसरे को वन फिंगर शोल्डर मसाज दें",
+          "extra": "मालिश करने के लिए केवल अपनी नाक का उपयोग करें"
+        },
+        "de": {
+          "title": "Geben Sie sich gegenseitig eine Ein-Finger-Schultermassage",
+          "extra": "Benutze nur deine Nase für die Massage"
+        },
+        "nl": {
+          "title": "Geef elkaar een schoudermassage met één vinger",
+          "extra": "Gebruik alleen je neus om de massage te doen"
+        },
+        "pl": {
+          "title": "Dajcie sobie nawzajem masaż ramion jednym palcem",
+          "extra": "Używaj nosa tylko do masażu"
+        },
+        "it": {
+          "title": "Fatevi un massaggio alle spalle con un dito",
+          "extra": "Usa il naso solo per fare il massaggio"
+        }
+      }
     },
     {
       "title": "Swap an item of clothing with each other",
       "extra": "Also, wear it for the rest of the game",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Intercambien una prenda de vestir entre sí",
+          "extra": "Además, úsala durante el resto del juego"
+        },
+        "pt": {
+          "title": "Troque uma peça de roupa entre si",
+          "extra": "Além disso, use-o pelo resto do jogo"
+        },
+        "zh": {
+          "title": "互相交换一件衣服",
+          "extra": "另外，在游戏的其余部分穿上它"
+        },
+        "tl": {
+          "title": "Palitan ang isang item ng damit sa bawat isa",
+          "extra": "Gayundin, isuot ito para sa natitirang bahagi ng laro"
+        },
+        "vi": {
+          "title": "Trao đổi một mặt hàng quần áo với nhau",
+          "extra": "Ngoài ra, hãy mặc nó cho phần còn lại của trò chơi"
+        },
+        "ar": {
+          "title": "قم بتبديل قطعة من الملابس مع بعضها البعض",
+          "extra": "أيضًا، ارتديه لبقية اللعبة"
+        },
+        "fr": {
+          "title": "Échangez un vêtement entre vous",
+          "extra": "Portez-le également pour le reste de la partie"
+        },
+        "ko": {
+          "title": "한 벌의 옷을 서로 교환하세요",
+          "extra": "또한, 남은 게임에서도 착용하세요"
+        },
+        "ru": {
+          "title": "Поменяйте предметы одежды друг с другом",
+          "extra": "Кроме того, носите его до конца игры"
+        },
+        "ht": {
+          "title": "Swap yon atik rad youn ak lòt",
+          "extra": "Epitou, mete li pou rès la nan jwèt la"
+        },
+        "hi": {
+          "title": "कपड़ों की एक वस्तु को एक दूसरे के साथ स्वैप करें",
+          "extra": "इसके अलावा, इसे बाकी गेम के लिए पहनें"
+        },
+        "de": {
+          "title": "Tauschen Sie ein Kleidungsstück miteinander aus",
+          "extra": "Trage es auch für den Rest des Spiels"
+        },
+        "nl": {
+          "title": "Verwissel een kledingstuk met elkaar",
+          "extra": "Draag hem ook voor de rest van het spel"
+        },
+        "pl": {
+          "title": "Zamień ze sobą element garderoby",
+          "extra": "Noś go również przez resztę gry"
+        },
+        "it": {
+          "title": "Scambia un capo di abbigliamento l'uno con l'altro",
+          "extra": "Inoltre, indossalo per il resto del gioco"
+        }
+      }
     },
     {
       "title": "Show each other an embarrassing photo on your phone",
       "extra": "Also, set it as the other's wallpaper temporarily",
-      "spicyness": 24
+      "spicyness": 24,
+      "translations": {
+        "es": {
+          "title": "Muéstrense una foto embarazosa en su teléfono",
+          "extra": "Además, configúralo como fondo de pantalla del otro temporalmente"
+        },
+        "pt": {
+          "title": "Mostre um ao outro uma foto embaraçosa no seu telefone",
+          "extra": "Além disso, defina-o temporariamente como papel de parede do outro"
+        },
+        "zh": {
+          "title": "在手机上互相展示一张令人尴尬的照片",
+          "extra": "另外，暂时将其设置为对方的墙纸"
+        },
+        "tl": {
+          "title": "Ipakita ang bawat isa ang isang nakakahiyang larawan sa iyong telepono",
+          "extra": "Gayundin, pansamantalang itakda ito bilang wallpaper ng iba"
+        },
+        "vi": {
+          "title": "Hiển thị cho nhau một bức ảnh xấu hổ trên điện thoại của bạn",
+          "extra": "Ngoài ra, tạm thời đặt nó làm hình nền của người khác"
+        },
+        "ar": {
+          "title": "أظهر لبعضكما البعض صورة محرجة على هاتفك",
+          "extra": "أيضًا، قم بتعيينها كخلفية للآخر مؤقتًا"
+        },
+        "fr": {
+          "title": "Montrez-vous une photo embarrassante sur votre téléphone",
+          "extra": "De plus, définissez-le temporairement comme fond d'écran de l'autre"
+        },
+        "ko": {
+          "title": "핸드폰으로 서로에게 부끄러운 사진을 보여주세요",
+          "extra": "또한 일시적으로 상대방의 배경 화면으로 설정하십시오."
+        },
+        "ru": {
+          "title": "Покажите друг другу неловкую фотографию на телефоне",
+          "extra": "Кроме того, временно установите его в качестве обоев другого"
+        },
+        "ht": {
+          "title": "Montre youn ak lòt yon foto anbarasan sou telefòn ou",
+          "extra": "Epitou, mete l 'kòm D 'lòt la tanporèman"
+        },
+        "hi": {
+          "title": "अपने फोन पर एक दूसरे को एक शर्मनाक फोटो दिखाएं",
+          "extra": "इसके अलावा, इसे अस्थायी रूप से दूसरे के वॉलपेपर के रूप में सेट करें"
+        },
+        "de": {
+          "title": "Zeigen Sie sich gegenseitig ein peinliches Foto auf Ihrem Handy",
+          "extra": "Stellen Sie es außerdem vorübergehend als Hintergrundbild des anderen ein"
+        },
+        "nl": {
+          "title": "Laat elkaar een gênante foto zien op je telefoon",
+          "extra": "Stel het ook tijdelijk in als achtergrond van de ander"
+        },
+        "pl": {
+          "title": "Pokaż sobie nawzajem żenujące zdjęcie w telefonie",
+          "extra": "Ponadto tymczasowo ustaw go jako tapetę drugiej osoby"
+        },
+        "it": {
+          "title": "Mostratevi una foto imbarazzante sul telefono",
+          "extra": "Inoltre, impostalo temporaneamente come sfondo dell'altro"
+        }
+      }
     },
     {
       "title": "Sit so close that your legs are touching",
       "extra": "Also, maintain that position for 5 minutes",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Siéntate tan cerca que tus piernas se toquen",
+          "extra": "Además, mantén esa posición durante 5 minutos"
+        },
+        "pt": {
+          "title": "Sente-se tão perto que suas pernas se toquem",
+          "extra": "Além disso, mantenha essa posição por 5 minutos"
+        },
+        "zh": {
+          "title": "坐得离得太近你的双腿碰到了",
+          "extra": "另外，保持这个姿势 5 分钟"
+        },
+        "tl": {
+          "title": "Umupo nang malapit na nakahirap ang iyong mga binti",
+          "extra": "Gayundin, panatilihin ang posisyon na iyon para sa 5 minuto"
+        },
+        "vi": {
+          "title": "Ngồi quá gần đến nỗi chân của bạn chạm vào",
+          "extra": "Ngoài ra, duy trì vị trí đó trong 5 phút"
+        },
+        "ar": {
+          "title": "اجلس قريبًا جدًا بحيث تلامس ساقيك",
+          "extra": "أيضًا، حافظ على هذا الوضع لمدة 5 دقائق"
+        },
+        "fr": {
+          "title": "Asseyez-vous si près que vos jambes se touchent",
+          "extra": "Maintenez également cette position pendant 5 minutes"
+        },
+        "ko": {
+          "title": "다리가 닿을 정도로 가까이 앉으십시오.",
+          "extra": "또한 5 분 동안 그 자세를 유지하십시오"
+        },
+        "ru": {
+          "title": "Сидите так близко, чтобы ваши ноги соприкасались",
+          "extra": "Кроме того, сохраняйте это положение в течение 5 минут"
+        },
+        "ht": {
+          "title": "Chita tèlman fèmen ke janm ou ap manyen",
+          "extra": "Epitou, kenbe pozisyon sa pou 5 minit"
+        },
+        "hi": {
+          "title": "इतने करीब बैठें कि आपके पैर छू रहे हों",
+          "extra": "इसके अलावा, उस स्थिति को 5 मिनट तक बनाए रखें"
+        },
+        "de": {
+          "title": "Setz dich so nah, dass sich deine Beine berühren",
+          "extra": "Behalten Sie diese Position außerdem 5 Minuten lang bei."
+        },
+        "nl": {
+          "title": "Ga zo dicht zitten dat je benen elkaar raken",
+          "extra": "Houd die positie ook gedurende 5 minuten aan"
+        },
+        "pl": {
+          "title": "Usiądź tak blisko, aby twoje nogi się dotykały",
+          "extra": "Utrzymuj również tę pozycję przez 5 minut"
+        },
+        "it": {
+          "title": "Siediti così vicino che le gambe si toccano",
+          "extra": "Inoltre, mantieni quella posizione per 5 minuti"
+        }
+      }
     },
     {
       "title": "Both players imitate each other's laugh",
       "extra": "Also, try to make it even more exaggerated",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores imitan la risa del otro",
+          "extra": "Además, trata de hacerlo aún más exagerado"
+        },
+        "pt": {
+          "title": "Ambos os jogadores imitam a risada um do outro",
+          "extra": "Além disso, tente torná-lo ainda mais exagerado"
+        },
+        "zh": {
+          "title": "两个玩家都在模仿对方的笑声",
+          "extra": "另外，尽量让它变得更夸张"
+        },
+        "tl": {
+          "title": "Ginugaya ng parehong mga manlalaro ang tawa ng bawat isa",
+          "extra": "Gayundin, subukang gawin itong mas labis"
+        },
+        "vi": {
+          "title": "Cả hai người chơi bắt chước tiếng cười của nhau",
+          "extra": "Ngoài ra, hãy cố gắng làm cho nó thậm chí còn phóng đại hơn"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يقلدون ضحكة بعضهم البعض",
+          "extra": "حاول أيضًا أن تجعل الأمر أكثر مبالغًا فيه"
+        },
+        "fr": {
+          "title": "Les deux joueurs imitent le rire de l'autre",
+          "extra": "Essayez également de le rendre encore plus exagéré"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로의 웃음을 흉내냅니다.",
+          "extra": "또한 더 과장되게 만들어보십시오."
+        },
+        "ru": {
+          "title": "Оба игрока подражают смеху друг друга",
+          "extra": "Кроме того, постарайтесь сделать это еще более преувеличенным"
+        },
+        "ht": {
+          "title": "Tou de jwè imite ri youn ak lòt la",
+          "extra": "Epitou, eseye fè li menm plis egzajere"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे की हंसी की नकल करते हैं",
+          "extra": "इसके अलावा, इसे और भी अतिरंजित बनाने की कोशिश करें"
+        },
+        "de": {
+          "title": "Beide Spieler ahmen das Lachen des anderen nach",
+          "extra": "Versuchen Sie auch, es noch übertriebener zu machen"
+        },
+        "nl": {
+          "title": "Beide spelers imiteren elkaars lach",
+          "extra": "Probeer het ook nog eens overdreven te maken"
+        },
+        "pl": {
+          "title": "Obaj gracze naśladują nawzajem śmiech",
+          "extra": "Postaraj się też, aby było to jeszcze bardziej przesadzone"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si imitano a vicenda",
+          "extra": "Inoltre, cerca di renderlo ancora più esagerato"
+        }
+      }
     },
     {
       "title": "Both players do the chicken dance together",
       "extra": "Also, cluck like chickens throughout",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores bailan juntos el baile del pollo.",
+          "extra": "Además, cacarean como pollos por todas partes"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem a dança da galinha juntos",
+          "extra": "Além disso, cacareja como galinhas por toda parte"
+        },
+        "zh": {
+          "title": "两个玩家一起跳鸡舞",
+          "extra": "另外，自始至终都像鸡一样咯咯声"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay magkasama ang sayaw ng manok",
+          "extra": "Gayundin, kumukuha tulad ng mga manok sa buong buong"
+        },
+        "vi": {
+          "title": "Cả hai người chơi nhảy gà cùng nhau",
+          "extra": "Ngoài ra, hãy gào như gà xuyên suốt"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين برقصة الدجاج معًا.",
+          "extra": "أيضًا، اقرع مثل الدجاج في جميع الأنحاء"
+        },
+        "fr": {
+          "title": "Les deux joueurs font la danse du poulet ensemble",
+          "extra": "De plus, criez comme des poulets partout"
+        },
+        "ko": {
+          "title": "두 선수 모두 함께 치킨 댄스를 춥니다.",
+          "extra": "또한 전체적으로 닭처럼 두들겨 맞아보세요."
+        },
+        "ru": {
+          "title": "Оба игрока танцуют курицу вместе",
+          "extra": "Кроме того, кудахните, как цыплята, повсюду"
+        },
+        "ht": {
+          "title": "Tou de jwè yo fè dans la poul ansanm",
+          "extra": "Epitou, cluck tankou poul nan tout"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक साथ चिकन डांस करते हैं",
+          "extra": "इसके अलावा, पूरे समय मुर्गियों की तरह चाटें"
+        },
+        "de": {
+          "title": "Beide Spieler machen den Hühnertanz zusammen",
+          "extra": "Gackern Sie auch überall wie Hühner"
+        },
+        "nl": {
+          "title": "Beide spelers doen samen de kippendans",
+          "extra": "Kakel ook overal als kippen"
+        },
+        "pl": {
+          "title": "Obaj gracze tańczą razem kurczaka",
+          "extra": "Poza tym kręć się jak kurczaki przez cały czas"
+        },
+        "it": {
+          "title": "Entrambi i giocatori fanno la danza del pollo insieme",
+          "extra": "Inoltre, fai clic come polli dappertutto"
+        }
+      }
     },
     {
       "title": "Both players attempt to do a coordinated dance move and fail",
       "extra": "Also, laugh at each other's mistakes",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan hacer un movimiento de baile coordinado y fallan",
+          "extra": "Además, ríete de los errores de los demás"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam fazer um movimento de dança coordenado e falham",
+          "extra": "Além disso, riam dos erros uns dos outros"
+        },
+        "zh": {
+          "title": "两位选手都试图协调舞蹈动作但都失败了",
+          "extra": "另外，嘲笑对方的错误"
+        },
+        "tl": {
+          "title": "Sinusubukan ng parehong mga manlalaro na gumawa ng isang nakikipag-ugnay na paggalaw",
+          "extra": "Gayundin, tumawa sa mga pagkakamali ng bawat isa"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều cố gắng thực hiện một động tác nhảy phối hợp và thất bại",
+          "extra": "Ngoài ra, hãy cười trước những sai lầm của nhau"
+        },
+        "ar": {
+          "title": "يحاول كلا اللاعبين القيام بحركة رقص منسقة ويفشلان.",
+          "extra": "اضحكوا أيضًا على أخطاء بعضكم البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs tentent de faire un pas de danse coordonné et échouent",
+          "extra": "Riez également des erreurs des uns et des autres"
+        },
+        "ko": {
+          "title": "두 선수 모두 조율된 춤 동작을 시도했지만 실패합니다.",
+          "extra": "그리고 서로의 실수를 비웃어보세요"
+        },
+        "ru": {
+          "title": "Оба игрока пытаются сделать скоординированное танцевальное движение, но терпят неудачу",
+          "extra": "Кроме того, смейтесь над ошибками друг друга"
+        },
+        "ht": {
+          "title": "Tou de jwè yo eseye fè yon mouvman dans kowòdone ak echwe",
+          "extra": "Epitou, ri nan erè youn ak lòt yo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक समन्वित डांस मूव करने का प्रयास करते हैं और असफल हो जाते हैं",
+          "extra": "साथ ही एक-दूसरे की गलतियों पर हंसें"
+        },
+        "de": {
+          "title": "Beide Spieler versuchen, eine koordinierte Tanzbewegung auszuführen und scheitern",
+          "extra": "Lacht auch über die Fehler des anderen"
+        },
+        "nl": {
+          "title": "Beide spelers proberen een gecoördineerde dansbeweging uit te voeren en falen",
+          "extra": "Lach ook om elkaars fouten"
+        },
+        "pl": {
+          "title": "Obaj gracze próbują wykonać skoordynowany ruch taneczny i zawodzą",
+          "extra": "Poza tym śmiej się z błędów nawzajem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori tentano di eseguire una mossa di danza coordinata e falliscono",
+          "extra": "Inoltre, ridi degli errori degli altri"
+        }
+      }
     },
     {
       "title": "Both players try to speak in a foreign accent badly",
       "extra": "Also, have a full conversation in the accent",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores intentan hablar mal con acento extranjero",
+          "extra": "Además, mantén una conversación completa con el acento"
+        },
+        "pt": {
+          "title": "Ambos os jogadores tentam falar mal com sotaque estrangeiro",
+          "extra": "Além disso, tenha uma conversa completa com sotaque"
+        },
+        "zh": {
+          "title": "两位玩家都试图用外国口音说话不好",
+          "extra": "另外，用口音进行一次全面的交谈"
+        },
+        "tl": {
+          "title": "Sinusubukan ng parehong manlalaro na magsalita nang masama sa isang banyagang accent",
+          "extra": "Gayundin, magkaroon ng buong pag-uusap sa accent"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều cố gắng nói bằng giọng nước ngoài tệ",
+          "extra": "Ngoài ra, có một cuộc trò chuyện đầy đủ bằng giọng"
+        },
+        "ar": {
+          "title": "يحاول كلا اللاعبين التحدث بلكنة أجنبية بشكل سيء.",
+          "extra": "أيضًا، قم بإجراء محادثة كاملة باللهجة"
+        },
+        "fr": {
+          "title": "Les deux joueurs essaient mal de parler avec un accent étranger",
+          "extra": "Ayez également une conversation complète avec l'accent"
+        },
+        "ko": {
+          "title": "두 선수 모두 외국 억양으로 말을 심하게 시도합니다.",
+          "extra": "또한 악센트로 충분한 대화를 나누세요"
+        },
+        "ru": {
+          "title": "Оба игрока плохо стараются говорить с иностранным акцентом",
+          "extra": "Кроме того, проведите полноценный разговор с акцентом"
+        },
+        "ht": {
+          "title": "Tou de jwè yo eseye pale nan yon aksan etranje move",
+          "extra": "Epitou, gen yon konvèsasyon plen nan aksan an"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी विदेशी लहजे में बुरी तरह बोलने की कोशिश करते हैं",
+          "extra": "इसके अलावा, लहजे में पूरी बातचीत करें"
+        },
+        "de": {
+          "title": "Beide Spieler versuchen schlecht mit ausländischem Akzent zu sprechen",
+          "extra": "Führen Sie auch ein ausführliches Gespräch mit dem Akzent"
+        },
+        "nl": {
+          "title": "Beide spelers proberen slecht met een buitenlands accent te spreken",
+          "extra": "Voer ook een volledig gesprek in het accent"
+        },
+        "pl": {
+          "title": "Obaj gracze próbują źle mówić obcym akcentem",
+          "extra": "Również, przeprowadź pełną rozmowę w akcentie"
+        },
+        "it": {
+          "title": "Entrambi i giocatori cercano male di parlare con un accento straniero",
+          "extra": "Inoltre, fai una conversazione completa con l'accento"
+        }
+      }
     },
     {
       "title": "Both players make animal noises at each other",
       "extra": "Also, act like the animal for 30 seconds",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores hacen ruidos de animales el uno al otro",
+          "extra": "Además, actúa como el animal durante 30 segundos"
+        },
+        "pt": {
+          "title": "Ambos os jogadores fazem barulhos de animais um para o outro",
+          "extra": "Além disso, aja como o animal por 30 segundos"
+        },
+        "zh": {
+          "title": "两个玩家互相发出动物的声音",
+          "extra": "另外，像动物一样行动 30 秒"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay gumagawa ng ingay ng hayop sa bawat isa",
+          "extra": "Gayundin, kumilos tulad ng hayop sa loob ng 30 segundo"
+        },
+        "vi": {
+          "title": "Cả hai người chơi tạo ra tiếng động vật với nhau",
+          "extra": "Ngoài ra, hành động như con vật trong 30 giây"
+        },
+        "ar": {
+          "title": "يصدر كلا اللاعبين أصواتًا حيوانية على بعضهما البعض.",
+          "extra": "أيضًا، تصرف مثل الحيوان لمدة 30 ثانية"
+        },
+        "fr": {
+          "title": "Les deux joueurs se font des bruits d'animaux",
+          "extra": "Agissez également comme l'animal pendant 30 secondes"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 서로에게 동물 소리를 냅니다.",
+          "extra": "또한 30초 동안 동물처럼 행동하세요"
+        },
+        "ru": {
+          "title": "Оба игрока издают друг другу звуки животных",
+          "extra": "Кроме того, ведите себя как животное в течение 30 секунд"
+        },
+        "ht": {
+          "title": "Tou de jwè fè bwi bèt youn ak lòt",
+          "extra": "Epitou, aji tankou bèt la pou 30 segonn"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे पर जानवरों के शोर मचाते हैं",
+          "extra": "इसके अलावा, 30 सेकंड के लिए जानवर की तरह काम करें"
+        },
+        "de": {
+          "title": "Beide Spieler machen Tiergeräusche aufeinander los",
+          "extra": "Benimm dich außerdem 30 Sekunden lang wie das Tier"
+        },
+        "nl": {
+          "title": "Beide spelers maken dierengeluiden naar elkaar",
+          "extra": "Gedraag je ook 30 seconden als het dier"
+        },
+        "pl": {
+          "title": "Obaj gracze wydają na siebie nawzajem odgłosy zwierząt",
+          "extra": "Ponadto zachowuj się jak zwierzę przez 30 sekund"
+        },
+        "it": {
+          "title": "Entrambi i giocatori emettono rumori di animali l'uno contro l'altro",
+          "extra": "Inoltre, comportati come l'animale per 30 secondi"
+        }
+      }
     },
     {
       "title": "Wear each other's shoes on the wrong feet",
       "extra": "Also, walk around the room like that",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Usen los zapatos del otro con el pie equivocado",
+          "extra": "Además, camina por la habitación de esa manera"
+        },
+        "pt": {
+          "title": "Use os sapatos um do outro com os pés errados",
+          "extra": "Além disso, ande pela sala assim"
+        },
+        "zh": {
+          "title": "用错误的脚穿对方的鞋子",
+          "extra": "另外，像这样在房间里走来走去"
+        },
+        "tl": {
+          "title": "Magsuot ng sapatos ng bawat isa sa maling paa",
+          "extra": "Gayundin, maglakad sa paligid ng silid tulad nito"
+        },
+        "vi": {
+          "title": "Mang giày của nhau ở chân sai",
+          "extra": "Ngoài ra, đi bộ quanh phòng như thế"
+        },
+        "ar": {
+          "title": "ارتدِ أحذية بعضكما البعض على الأقدام الخاطئة",
+          "extra": "أيضًا، تجول في الغرفة بهذه الطريقة"
+        },
+        "fr": {
+          "title": "Portez les chaussures de l'autre du mauvais pied",
+          "extra": "Aussi, promenez-vous dans la pièce comme ça"
+        },
+        "ko": {
+          "title": "서로의 신발을 틀린 발에 신으세요",
+          "extra": "그리고 저렇게 방 안을 돌아다니세요"
+        },
+        "ru": {
+          "title": "Носите обувь друг друга на неправильных ногах",
+          "extra": "Кроме того, так походите по комнате"
+        },
+        "ht": {
+          "title": "Mete soulye youn ak lòt sou pye yo mal",
+          "extra": "Epitou, mache alantou sal la tankou sa"
+        },
+        "hi": {
+          "title": "गलत पैरों पर एक-दूसरे के जूते पहनें",
+          "extra": "इसके अलावा, कमरे में ऐसे ही घूमें"
+        },
+        "de": {
+          "title": "Tragen Sie die Schuhe des anderen auf den falschen Füßen",
+          "extra": "Geh auch so durch den Raum"
+        },
+        "nl": {
+          "title": "Draag elkaars schoenen aan de verkeerde voeten",
+          "extra": "Loop ook zo door de kamer"
+        },
+        "pl": {
+          "title": "Noś sobie nawzajem buty na niewłaściwych stopach",
+          "extra": "Poza tym chodź po pokoju w ten sposób"
+        },
+        "it": {
+          "title": "Indossa le scarpe dell'altro con i piedi sbagliati",
+          "extra": "Inoltre, cammina per la stanza in quel modo"
+        }
+      }
     },
     {
       "title": "Sit on each other's laps and have a silly conversation",
       "extra": "Also, use baby talk throughout",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Sentarse en el regazo del otro y tener una conversación tonta",
+          "extra": "Además, usa el lenguaje infantil en todo momento"
+        },
+        "pt": {
+          "title": "Sente-se no colo um do outro e tenha uma conversa boba",
+          "extra": "Além disso, use a conversa com o bebê o tempo todo"
+        },
+        "zh": {
+          "title": "坐在对方的腿上聊一聊",
+          "extra": "另外，自始至终都要用宝宝说话"
+        },
+        "tl": {
+          "title": "Umupo sa mga bilog ng bawat isa at magkaroon ng isang hangal na pag-uusap",
+          "extra": "Gayundin, gumamit ng baby talk sa buong buong"
+        },
+        "vi": {
+          "title": "Ngồi trên lòng nhau và có một cuộc trò chuyện ngớ ngẩn",
+          "extra": "Ngoài ra, hãy sử dụng trò chuyện với bé trong suốt"
+        },
+        "ar": {
+          "title": "اجلسوا على حضن بعضكم البعض وأجروا محادثة سخيفة",
+          "extra": "استخدم أيضًا حديث الطفل طوال الوقت"
+        },
+        "fr": {
+          "title": "Asseyez-vous l'un sur les genoux de l'autre et ayez une conversation stupide",
+          "extra": "Utilisez également Baby Talk tout au long"
+        },
+        "ko": {
+          "title": "서로의 무릎에 앉아서 우스꽝스러운 대화를 나누세요",
+          "extra": "또한 베이비 토크를 곳곳에서 사용하세요"
+        },
+        "ru": {
+          "title": "Сядьте друг у друга на колени и ведите глупый разговор",
+          "extra": "Кроме того, используйте детский разговор во всем"
+        },
+        "ht": {
+          "title": "Chita sou lap youn ak lòt la epi yo gen yon konvèsasyon sibtilè",
+          "extra": "Epitou, sèvi ak pale ti bebe nan tout"
+        },
+        "hi": {
+          "title": "एक-दूसरे की गोद में बैठें और मूर्खतापूर्ण बातचीत करें",
+          "extra": "इसके अलावा, पूरे समय बेबी टॉक का इस्तेमाल करें"
+        },
+        "de": {
+          "title": "Setzt euch gegenseitig auf den Schoß und führt ein dummes Gespräch",
+          "extra": "Verwenden Sie außerdem durchgehend Babysprache"
+        },
+        "nl": {
+          "title": "Ga op elkaars schoot zitten en voer een dom gesprek",
+          "extra": "Gebruik ook overal babypraat"
+        },
+        "pl": {
+          "title": "Usiądź na kolanach i prowadź głupią rozmowę",
+          "extra": "Również, używaj rozmów dla dzieci przez cały czas"
+        },
+        "it": {
+          "title": "Siediti l'uno sulle ginocchia dell'altro e fai una conversazione stupida",
+          "extra": "Inoltre, usa il baby talk dappertutto"
+        }
+      }
     },
     {
       "title": "Do a silly dance with exaggerated hip movements",
       "extra": "Also, maintain eye contact while dancing",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Haz un baile tonto con movimientos exagerados de cadera",
+          "extra": "Además, mantén el contacto visual mientras bailas"
+        },
+        "pt": {
+          "title": "Faça uma dança boba com movimentos exagerados do quadril",
+          "extra": "Além disso, mantenha contato visual enquanto dança"
+        },
+        "zh": {
+          "title": "用夸张的臀部动作跳个傻舞",
+          "extra": "另外，跳舞时要保持眼神交流"
+        },
+        "tl": {
+          "title": "Gumawa ng isang walang hangal na sayaw na may labis na mga paggalaw",
+          "extra": "Gayundin, panatilihin ang contact sa mata habang sumayaw"
+        },
+        "vi": {
+          "title": "Thực hiện một điệu nhảy ngớ ngẩn với chuyển động hông phóng đại",
+          "extra": "Ngoài ra, duy trì giao tiếp bằng mắt trong khi nhảy"
+        },
+        "ar": {
+          "title": "قم برقصة سخيفة بحركات الورك المبالغ فيها",
+          "extra": "حافظ أيضًا على التواصل البصري أثناء الرقص"
+        },
+        "fr": {
+          "title": "Faites une danse stupide avec des mouvements de hanches exagérés",
+          "extra": "Maintenez également un contact visuel pendant que vous dansez"
+        },
+        "ko": {
+          "title": "과장된 엉덩이 움직임으로 바보 같은 춤을 추세요",
+          "extra": "또한 춤을 추는 동안 눈을 마주 치십시오."
+        },
+        "ru": {
+          "title": "Сделайте глупый танец с преувеличенными движениями бедер",
+          "extra": "Кроме того, поддерживайте зрительный контакт во время танца"
+        },
+        "ht": {
+          "title": "Fè yon dans fòt ak mouvman anch egzajere",
+          "extra": "Epitou, kenbe kontak je pandan y ap danse"
+        },
+        "hi": {
+          "title": "अतिरंजित कूल्हे की हरकतों के साथ मूर्खतापूर्ण नृत्य करें",
+          "extra": "इसके अलावा, डांस करते समय आंखों का संपर्क बनाए रखें"
+        },
+        "de": {
+          "title": "Mache einen dummen Tanz mit übertriebenen Hüftbewegungen",
+          "extra": "Halten Sie auch beim Tanzen Augenkontakt"
+        },
+        "nl": {
+          "title": "Doe een gekke dans met overdreven heupbewegingen",
+          "extra": "Houd ook oogcontact tijdens het dansen"
+        },
+        "pl": {
+          "title": "Wykonaj głupi taniec z przesadnymi ruchami bioder",
+          "extra": "Utrzymuj również kontakt wzrokowy podczas tańca"
+        },
+        "it": {
+          "title": "Fai una danza stupida con movimenti esagerati dell'anca",
+          "extra": "Inoltre, mantieni il contatto visivo mentre balli"
+        }
+      }
     },
     {
       "title": "Both players briefly pull up their shirts for the other to see",
       "extra": "Both players flash the whole group",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se levantan brevemente las camisas para que el otro las vea",
+          "extra": "Ambos jugadores muestran a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores levantam brevemente suas camisas para o outro ver",
+          "extra": "Ambos os jogadores mostram todo o grupo"
+        },
+        "zh": {
+          "title": "两位选手都短暂地把球衣拿出来让对方看见",
+          "extra": "两位玩家都闪光了整个群组"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay maikling hinuhit ang kanilang mga shirt para makita ng iba pa",
+          "extra": "Parehong mga manlalaro ay nag-flash sa buong gru"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ nhanh chóng kéo áo lên để người kia xem",
+          "extra": "Cả hai người chơi flash cả nhóm"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بسحب قمصانهم لفترة وجيزة ليراها الآخر",
+          "extra": "يقوم كلا اللاعبين بإبهام المجموعة بأكملها"
+        },
+        "fr": {
+          "title": "Les deux joueurs retroussent brièvement leur maillot pour que l'autre puisse les voir",
+          "extra": "Les deux joueurs font clignoter l'ensemble du groupe"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 상대방이 볼 수 있도록 셔츠를 잠깐 들어 올립니다.",
+          "extra": "두 플레이어 모두 그룹 전체를 플래시합니다"
+        },
+        "ru": {
+          "title": "Оба игрока ненадолго подтягивают футболки, чтобы их увидели друг друга.",
+          "extra": "Оба игрока проигрывают всю группу"
+        },
+        "ht": {
+          "title": "Tou de jwè yon ti tan rale moute chemiz yo pou lòt la yo wè",
+          "extra": "Tou de jwè flash gwoup la tout antye"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी थोड़ी देर के लिए अपनी शर्ट ऊपर खींचते हैं, ताकि एक दूसरे को दिखाई दे",
+          "extra": "दोनों खिलाड़ी पूरे ग्रुप को फ्लैश करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler ziehen kurz ihre Trikots hoch, damit der andere sie sehen kann",
+          "extra": "Beide Spieler flashen die ganze Gruppe"
+        },
+        "nl": {
+          "title": "Beide spelers trekken even hun shirts omhoog zodat de ander het kan zien",
+          "extra": "Beide spelers flashen de hele groep"
+        },
+        "pl": {
+          "title": "Obaj gracze na krótko podnoszą koszulki, aby drugi mógł je zobaczyć",
+          "extra": "Obaj gracze flashują całą grupę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori alzano brevemente le maglie perché l'altro lo veda",
+          "extra": "Entrambi i giocatori fanno brillare l'intero gruppo"
+        }
+      }
     },
     {
       "title": "Both players moon each other",
       "extra": "Moon the whole group",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se alzan",
+          "extra": "Moon, todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores luam um para o outro",
+          "extra": "Moon, todo o grupo"
+        },
+        "zh": {
+          "title": "两个玩家互相月亮",
+          "extra": "让整个小组都登上月球"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ang bawat isa",
+          "extra": "Buwan ang buong grupo"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ mặt trăng lẫn nhau",
+          "extra": "Mặt trăng cho cả nhóm"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يقامرون بعضهم البعض",
+          "extra": "مون - المجموعة بأكملها"
+        },
+        "fr": {
+          "title": "Les deux joueurs se rencontrent",
+          "extra": "Moon, tout le groupe"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 서로 조준합니다",
+          "extra": "문 더 그룹 전체"
+        },
+        "ru": {
+          "title": "Оба игрока луны друг другу",
+          "extra": "Луна, вся группа"
+        },
+        "ht": {
+          "title": "Tou de jwè lalin youn ak lòt",
+          "extra": "Lalin tout gwoup la"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक दूसरे को चांद लगाते हैं",
+          "extra": "मून द होल ग्रुप"
+        },
+        "de": {
+          "title": "Beide Spieler monden sich gegenseitig",
+          "extra": "Mond, die ganze Gruppe"
+        },
+        "nl": {
+          "title": "Beide spelers bejubelen elkaar",
+          "extra": "Maan, de hele groep"
+        },
+        "pl": {
+          "title": "Obaj gracze księżycowali się nawzajem",
+          "extra": "Księżyc całą grupę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si lunano a vicenda",
+          "extra": "Moon, l'intero gruppo"
+        }
+      }
     },
     {
       "title": "Current player will do an awkward lap dance for dare acceptor",
       "extra": "Also, use a prop like a scarf or hat",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hará un baile erótico incómodo para quien acepta el reto",
+          "extra": "Además, usa un accesorio como una bufanda o un sombrero"
+        },
+        "pt": {
+          "title": "O jogador da vez fará uma dança erótica estranha para quem aceita o desafio",
+          "extra": "Além disso, use um adereço como um cachecol ou chapéu"
+        },
+        "zh": {
+          "title": "当前玩家会为勇气另一位玩家跳一支尴尬的圈舞",
+          "extra": "另外，使用围巾或帽子等道具"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gagawin ng isang kakaibang lap dance para sa kabilang manlalaro",
+          "extra": "Gayundin, gumamit ng prop tulad ng isang bandana o sumbrero"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ thực hiện một điệu nhảy đùi khó xử cho người chơi kia",
+          "extra": "Ngoài ra, sử dụng một đạo cụ như khăn quàng cổ hoặc mũ"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي برقصة حضن محرجة لاللاعب الآخر",
+          "extra": "استخدم أيضًا دعامة مثل الوشاح أو القبعة"
+        },
+        "fr": {
+          "title": "Le joueur actuel fera un lap dance maladroit pour l'autre joueur",
+          "extra": "Utilisez également un accessoire comme un foulard ou un chapeau"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어를 위해 어색한 랩 댄스를 할 것입니다.",
+          "extra": "또한 스카프 나 모자와 같은 소품을 사용하십시오."
+        },
+        "ru": {
+          "title": "Нынешний игрок исполнит неловкий танец на коленях в качестве другой игрок",
+          "extra": "Кроме того, используйте реквизит, например шарф или шляпу"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap fè yon dans lap gòch pou lòt jwè a",
+          "extra": "Epitou, sèvi ak yon prop tankou yon echap oswa chapo"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के लिए एक अजीब लैप डांस करेगा",
+          "extra": "इसके अलावा, स्कार्फ या टोपी जैसे प्रोप का उपयोग करें"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird einen unangenehmen Lapdance für der andere Spieler machen",
+          "extra": "Verwenden Sie auch eine Requisite wie einen Schal oder eine Mütze"
+        },
+        "nl": {
+          "title": "De huidige speler zal een lastige lapdance doen voor andere speler",
+          "extra": "Gebruik ook een rekwisiet zoals een sjaal of muts"
+        },
+        "pl": {
+          "title": "Obecny gracz wykona niezręczny taniec na kolanach dla drugi gracz",
+          "extra": "Użyj również rekwizytu, takiego jak szalik lub czapka"
+        },
+        "it": {
+          "title": "Il giocatore attuale farà una scomoda lap dance per l'altro giocatore",
+          "extra": "Inoltre, usa un oggetto di scena come una sciarpa o un cappello"
+        }
+      }
     },
     {
       "title": "Both players flash their genitals to each other",
       "extra": "Flash the whole group",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores muestran sus genitales el uno al otro",
+          "extra": "Muestra a todo el grupo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores mostram seus órgãos genitais um para o outro",
+          "extra": "Mostre todo o grupo"
+        },
+        "zh": {
+          "title": "两位玩家互相露出自己的生殖器",
+          "extra": "刷新整个群组"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ang kanilang maselang bahagi ng katawan sa bawat",
+          "extra": "I-flash ang buong grupo"
+        },
+        "vi": {
+          "title": "Cả hai người chơi chớp bộ phận sinh dục với nhau",
+          "extra": "Flash toàn bộ nhóm"
+        },
+        "ar": {
+          "title": "يومض كلا اللاعبين أعضائهم التناسلية لبعضهم البعض",
+          "extra": "فلاش المجموعة بأكملها"
+        },
+        "fr": {
+          "title": "Les deux joueurs montrent leurs parties génitales l'un à l'autre",
+          "extra": "Flashez l'ensemble du groupe"
+        },
+        "ko": {
+          "title": "두 선수 모두 서로에게 성기를 번쩍 뜨립니다.",
+          "extra": "전체 그룹 플래쉬"
+        },
+        "ru": {
+          "title": "Оба игрока прикладывают друг к другу свои гениталии",
+          "extra": "Вспышка всей группы"
+        },
+        "ht": {
+          "title": "Tou de jwè flash jenital yo youn ak lòt",
+          "extra": "Flash gwoup la tout antye"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अपने जननांगों को एक-दूसरे से जोड़ते हैं",
+          "extra": "पूरे समूह को फ्लैश करें"
+        },
+        "de": {
+          "title": "Beide Spieler zeigen sich gegenseitig ihre Genitalien zu",
+          "extra": "Die ganze Gruppe flashen"
+        },
+        "nl": {
+          "title": "Beide spelers laten hun genitaliën aan elkaar zien",
+          "extra": "De hele groep flashen"
+        },
+        "pl": {
+          "title": "Obaj gracze błyskają do siebie genitaliami",
+          "extra": "Flashuj całą grupę"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si mostrano i genitali l'un l'altro",
+          "extra": "Fai lampeggiare l'intero gruppo"
+        }
+      }
     },
     {
       "title": "Both players streak naked to the front door and back quickly",
       "extra": "Streak all the way to the mailbox and back",
-      "spicyness": 92
+      "spicyness": 92,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se lanzan desnudos a la puerta principal y regresan rápidamente",
+          "extra": "Streak hasta el buzón de correo y viceversa"
+        },
+        "pt": {
+          "title": "Ambos os jogadores correm nus até a porta da frente e voltam rapidamente",
+          "extra": "Corra até a caixa de correio e volte"
+        },
+        "zh": {
+          "title": "两名玩家都赤身裸体冲向前门然后快速返回",
+          "extra": "一路连击到邮箱然后返回"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay humuhubad sa harap na pinto at pabalik nang mabilis",
+          "extra": "Mag-streak hanggang sa mailbox at pabalik"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ khỏa thân ra cửa trước và quay trở lại một cách nhanh chóng",
+          "extra": "Dọc suốt đường đến hộp thư và trở lại"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يتسلقان عاريين إلى الباب الأمامي ويعودان بسرعة",
+          "extra": "قم بالتسلسل على طول الطريق إلى صندوق البريد والعودة"
+        },
+        "fr": {
+          "title": "Les deux joueurs se précipitent nus jusqu'à la porte d'entrée et en reviennent rapidement",
+          "extra": "Streamez jusqu'à la boîte aux lettres et vice-versa"
+        },
+        "ko": {
+          "title": "두 선수 모두 알몸으로 앞문으로 달려갔다가 빠르게 돌아옵니다.",
+          "extra": "메일박스로 이동했다가 다시 돌아오는 길"
+        },
+        "ru": {
+          "title": "Оба игрока быстро вырываются голыми к входной двери и обратно",
+          "extra": "Перемещайтесь до почтового ящика и обратно"
+        },
+        "ht": {
+          "title": "Tou de jwè streak toutouni nan pòt la devan ak tounen byen vit",
+          "extra": "Streak tout wout la nan bwat la ak tounen"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी सामने के दरवाजे पर नग्न होकर जल्दी से वापस आते हैं",
+          "extra": "मेलबॉक्स तक सभी तरह से स्ट्रीक करें और वापस जाएं"
+        },
+        "de": {
+          "title": "Beide Spieler rennen nackt zur Vordertür und schnell zurück",
+          "extra": "Den ganzen Weg zum Briefkasten und zurück"
+        },
+        "nl": {
+          "title": "Beide spelers rennen snel naakt naar de voordeur en terug",
+          "extra": "Streep helemaal naar de brievenbus en terug"
+        },
+        "pl": {
+          "title": "Obaj gracze szybko przesuwają się nago do drzwi wejściowych iz tyłu",
+          "extra": "Pasek aż do skrzynki pocztowej iz powrotem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori arrivano nudi verso la porta principale e viceversa velocemente",
+          "extra": "Streaming fino alla casella di posta e viceversa"
+        }
+      }
     },
     {
       "title": "From the knee, move your hand incrementally more intimate, asking \"Nervous?\" until they say yes.",
       "extra": "Use your lips instead of your hand",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Desde la rodilla, mueve la mano de forma cada vez más íntima y pregunta: «¿Nervioso?» hasta que digan que sí.",
+          "extra": "Usa los labios en lugar de la mano"
+        },
+        "pt": {
+          "title": "Do joelho, mova sua mão cada vez mais intimamente, perguntando “Nervoso?” até que eles digam sim.",
+          "extra": "Use seus lábios em vez de sua mão"
+        },
+        "zh": {
+          "title": "从膝盖开始，逐渐亲密地移动你的手，问 “紧张？”直到他们说 “是”。",
+          "extra": "用嘴唇代替手"
+        },
+        "tl": {
+          "title": "Mula sa tuhod, ilipat ang iyong kamay nang mas matalik, nagtatanong sa “Nerbiyos?” hanggang sa sabihin nila na oo.",
+          "extra": "Gamitin ang iyong labi sa halip na ang iyong kamay"
+        },
+        "vi": {
+          "title": "Từ đầu gối, di chuyển bàn tay của bạn từng bước thân mật hơn, hỏi “Lo lắng?” Cho đến khi họ nói có.",
+          "extra": "Sử dụng đôi môi của bạn thay vì tay của bạn"
+        },
+        "ar": {
+          "title": "من الركبة، حرك يدك بشكل أكثر حميمية تدريجيًا، واسأل «متوتر؟» حتى يقولون نعم.",
+          "extra": "استخدم شفتيك بدلاً من يدك"
+        },
+        "fr": {
+          "title": "À partir du genou, déplacez votre main de plus en plus intimement, en demandant « Nerveux ? » jusqu'à ce qu'ils disent oui.",
+          "extra": "Utilisez vos lèvres au lieu de votre main"
+        },
+        "ko": {
+          "title": "무릎에서 손을 점점 더 친밀하게 움직여 “긴장 되니?” 라고 묻습니다.그들이 그렇다고 대답하기 전까진 말이에요",
+          "extra": "손 대신 입술을 사용하세요"
+        },
+        "ru": {
+          "title": "От колена постепенно двигайте рукой ближе, спрашивая: «Нервничаете?» пока они не скажут «да».",
+          "extra": "Используйте губы вместо руки"
+        },
+        "ht": {
+          "title": "Soti nan jenou an, deplase men ou incremental plis entim, mande “Nève?” jiskaske yo di wi.",
+          "extra": "Sèvi ak bouch ou olye pou yo men ou"
+        },
+        "hi": {
+          "title": "घुटने से, अपने हाथ को और अधिक अंतरंग रूप से घुमाते हुए, “नर्वस?” पूछते हुए जब तक वे हाँ न कहें।",
+          "extra": "अपने हाथों के बजाय अपने होंठों का उपयोग करें"
+        },
+        "de": {
+          "title": "Bewegen Sie Ihre Hand vom Knie aus schrittweise intimer und fragen Sie: „Nervös?“ bis sie ja sagen.",
+          "extra": "Benutze deine Lippen statt deiner Hand"
+        },
+        "nl": {
+          "title": "Beweeg vanaf de knie je hand stapsgewijs intiemer en vraag „Zenuwachtig?” tot ze ja zeggen.",
+          "extra": "Gebruik je lippen in plaats van je hand"
+        },
+        "pl": {
+          "title": "Od kolana poruszaj ręką stopniowo bardziej intymnie, pytając „Nerwowy?” Dopóki nie powiedzą tak.",
+          "extra": "Użyj ust zamiast ręki"
+        },
+        "it": {
+          "title": "Dal ginocchio, muovi la mano in modo incrementale più intimo, chiedendo «Nervoso?» finché non dicono di sì.",
+          "extra": "Usa le labbra invece della mano"
+        }
+      }
     }
   ]
 }

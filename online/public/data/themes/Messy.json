@@ -4,114 +4,1192 @@
     {
       "title": "Both players muss up their own hair",
       "extra": "Muss up each other's hair",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se arruinan el pelo",
+          "extra": "Arruinarse el pelo el uno al otro"
+        },
+        "pt": {
+          "title": "Ambos os jogadores bagunçam seus próprios cabelos",
+          "extra": "Bagunçam o cabelo um do outro"
+        },
+        "zh": {
+          "title": "两位玩家都把自己的头发搞得一团糟"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagpapalakas ng sariling buhok"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều tự làm tóc"
+        },
+        "ar": {
+          "title": "كلا اللاعبين يفسدون شعرهم"
+        },
+        "fr": {
+          "title": "Les deux joueurs se maquillent eux-mêmes les cheveux"
+        },
+        "ko": {
+          "title": "두 선수 모두 머리를 직접 다듬습니다."
+        },
+        "ru": {
+          "title": "Оба игрока сами причесываются"
+        },
+        "ht": {
+          "title": "Tou de jwè yo moute cheve pwòp yo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अपने बालों को मसलते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler müssen sich selbst die Haare hochziehen"
+        },
+        "nl": {
+          "title": "Beide spelers missen hun eigen haar"
+        },
+        "pl": {
+          "title": "Obaj gracze rozpieszczają własne włosy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si scompigliano i capelli"
+        }
+      }
     },
     {
       "title": "Both players smear food around their mouths",
       "extra": "Help each other apply the food",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se ponen comida en la boca",
+          "extra": "Ayúdense unos a otros a aplicar la comida"
+        },
+        "pt": {
+          "title": "Ambos os jogadores espalham comida pela boca",
+          "extra": "Ajudem uns aos outros a aplicar a comida"
+        },
+        "zh": {
+          "title": "两位玩家都把食物涂在嘴里"
+        },
+        "tl": {
+          "title": "Parehong mga manlalaro ay naglalabas ng pagkain sa paligid"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ đều bôi thức ăn quanh miệng"
+        },
+        "ar": {
+          "title": "يقوم كلا اللاعبين بتلطيخ الطعام حول أفواههم."
+        },
+        "fr": {
+          "title": "Les deux joueurs mettent de la nourriture autour de leur bouche"
+        },
+        "ko": {
+          "title": "두 선수 모두 입 주변에 음식을 묻습니다."
+        },
+        "ru": {
+          "title": "Оба игрока размазывают рот едой."
+        },
+        "ht": {
+          "title": "Tou de jwè yo bouche manje alantou bouch yo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अपने मुंह के आसपास खाना सूंघते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler schmieren sich Essen um den Mund"
+        },
+        "nl": {
+          "title": "Beide spelers smeren eten rond hun mond"
+        },
+        "pl": {
+          "title": "Obaj gracze rozmazują jedzenie wokół ust"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si spalmano il cibo intorno alla bocca"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Current player will muss up dare acceptor's hair",
       "extra": "Sprinkle water in it and scrunch it messily",
-      "spicyness": 1
+      "spicyness": 1,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno estropeará el pelo de quien acepta el reto",
+          "extra": "Espolvorea agua en él y arrújalo desordenadamente"
+        },
+        "pt": {
+          "title": "O jogador da vez estragará o cabelo de quem aceita o desafio",
+          "extra": "Polvilhe água e amasse bagunçadamente"
+        },
+        "zh": {
+          "title": "当前玩家会把另一位玩家的头发弄得一团糟"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gagawin ang buhok ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhổ tóc của người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي سيفقد شعر اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel va bousiller les cheveux de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 머리카락을 망칠 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок пропустит прическу другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap muss moute cheve nan lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी स्वीकार करने वाले के बालों को चूस कर देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler verpasst die Haare des Darlehensnehmers"
+        },
+        "nl": {
+          "title": "De huidige speler zal het haar van de zorgacceptant missen"
+        },
+        "pl": {
+          "title": "Obecny gracz rozmyje włosy drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale si romperà i capelli di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Dare acceptor will squirt current player with ketchup",
       "extra": "Smear it around with your fingers",
-      "spicyness": 4
+      "spicyness": 4,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto rociará al jugador en turno con salsa de tomate",
+          "extra": "Frótalo con los dedos"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio esguichará ketchup no jogador da vez",
+          "extra": "Esfregue com os dedos"
+        },
+        "zh": {
+          "title": "另一位玩家会用番茄酱喷射当前玩家"
+        },
+        "tl": {
+          "title": "Susutin ng kabilang manlalaro ang kasalukuyang manlalaro na may ketchup"
+        },
+        "vi": {
+          "title": "người chơi kia sẽ phun nước sốt cà chua cho người chơi hiện tại"
+        },
+        "ar": {
+          "title": "سوف يقوم اللاعب الآخر برش اللاعب الحالي بالكاتشب"
+        },
+        "fr": {
+          "title": "l'autre joueur va faire gicler du ketchup au joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어에게 케첩을 뿌릴 것입니다"
+        },
+        "ru": {
+          "title": "другой игрок сбрызнет текущего игрока кетчупом"
+        },
+        "ht": {
+          "title": "lòt jwè a pral squirt jwè aktyèl ak ketchup"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी को केचप के साथ स्क्वर्ट करेगा"
+        },
+        "de": {
+          "title": "der andere Spieler spritzt den aktuellen Spieler mit Ketchup"
+        },
+        "nl": {
+          "title": "andere speler zal de huidige speler met ketchup spuiten"
+        },
+        "pl": {
+          "title": "drugi gracz wytryska obecnego gracza keczupem"
+        },
+        "it": {
+          "title": "l'altro giocatore spruzzerà ketchup al giocatore attuale"
+        }
+      }
     },
     {
       "title": "Current player will draw on dare acceptor's face with washable marker",
       "extra": "Add silly decorations all over their cheeks",
-      "spicyness": 8
+      "spicyness": 8,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno dibujará en la cara de quien acepta el reto con un rotulador lavable",
+          "extra": "Añade decoraciones tontas en sus mejillas"
+        },
+        "pt": {
+          "title": "O jogador da vez desenhará no rosto de quem aceita o desafio com um marcador lavável",
+          "extra": "Adicione decorações bobas em suas bochechas"
+        },
+        "zh": {
+          "title": "当前玩家将使用可清洗的记号笔在另一位玩家的脸上画画"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gumuhit ng mukha ng kabilang manlalaro na may hugasan na marker"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ vẽ trên khuôn mặt của người chơi kia bằng bút đánh dấu có thể giặt được"
+        },
+        "ar": {
+          "title": "سيرسم اللاعب الحالي على وجه اللاعب الآخر بعلامة قابلة للغسل"
+        },
+        "fr": {
+          "title": "Le joueur actuel dessinera sur le visage de l'autre joueur avec un marqueur lavable"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 얼굴에 세탁 가능한 마커로 그림을 그릴 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок нарисует лицо другой игрок моющимся маркером"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap trase sou figi lòt jwè a a ak makè lave"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी वॉशेबल मार्कर के साथ दूसरा खिलाड़ी के चेहरे पर आकर्षित करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler zeichnet mit einem abwaschbaren Marker auf das Gesicht des Wagnisnehmers"
+        },
+        "nl": {
+          "title": "De huidige speler tekent op het gezicht van de andere speler met een wasbare stift"
+        },
+        "pl": {
+          "title": "Obecny gracz narysuje twarz drugi gracz za pomocą zmywalnego markeru"
+        },
+        "it": {
+          "title": "Il giocatore attuale disegnerà sulla faccia di chi accetta la sfida con un pennarello lavabile"
+        }
+      }
     },
     {
       "title": "Dare acceptor will dust current player's shirt with flour",
       "extra": "Pat handprints all over their chest",
-      "spicyness": 10
+      "spicyness": 10,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto espolvoreará la camiseta del jugador en turno con harina",
+          "extra": "Dales palmaditas con las huellas de las manos por todo el pecho"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio polvilhará a camisa do jogador da vez com farinha",
+          "extra": "Impressões de mãos de Pat por todo o peito."
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会在当前玩家的球衣上撒上面粉"
+        },
+        "tl": {
+          "title": "Ilalakayin ng kabilang manlalaro ng harina ang shirt ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ phủ bột lên áo của cầu thủ hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر سينفض الغبار عن قميص اللاعب الحالي بالدقيق"
+        },
+        "fr": {
+          "title": "l'autre joueur saupoudrera de farine le maillot du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 셔츠에 밀가루를 뿌릴 것입니다."
+        },
+        "ru": {
+          "title": "другой игрок испачкает футболку текущего игрока мукой"
+        },
+        "ht": {
+          "title": "lòt jwè a pral pousyè chemiz jwè aktyèl la ak farin frans"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी की शर्ट को आटे से धूल चटाएगा"
+        },
+        "de": {
+          "title": "Der andere Spieler wird das Trikot des aktuellen Spielers mit Mehl bestäuben"
+        },
+        "nl": {
+          "title": "andere speler zal het shirt van de huidige speler met meel bestrooien"
+        },
+        "pl": {
+          "title": "drugi gracz odkurzy koszulkę obecnego gracza mąką"
+        },
+        "it": {
+          "title": "l'altro giocatore spolvererà di farina la maglia del giocatore attuale"
+        }
+      }
     },
     {
       "title": "Current player will put whipped cream on dare acceptor's nose",
       "extra": "Spread it to both cheeks with your finger",
-      "spicyness": 14
+      "spicyness": 14,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pondrá crema batida en la nariz de quien acepta el reto",
+          "extra": "Extiéndelo en ambas mejillas con el dedo"
+        },
+        "pt": {
+          "title": "O jogador da vez colocará chantilly no nariz de quem aceita o desafio",
+          "extra": "Espalhe nas duas bochechas com o dedo."
+        },
+        "zh": {
+          "title": "当前玩家会将鲜奶油涂在另一位玩家的鼻子上"
+        },
+        "tl": {
+          "title": "Maglalagay ng kasalukuyang manlalaro ang whipped cream sa ilong ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ cho kem đánh bông lên mũi của người chơi kia"
+        },
+        "ar": {
+          "title": "سيضع اللاعب الحالي الكريمة المخفوقة على أنف اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel mettra de la crème fouettée sur le nez de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터의 코에 휘핑 크림을 바를 것입니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок нанесет взбитые сливки на нос другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap mete fwi krèm sou nen lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की नाक पर व्हीप्ड क्रीम लगाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird dem anderen Spieler Schlagsahne auf die Nase geben"
+        },
+        "nl": {
+          "title": "De huidige speler zal slagroom op de neus van de andere speler smeren"
+        },
+        "pl": {
+          "title": "Obecny gracz nałoży bitą śmietanę na nos drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale metterà della panna montata sul naso di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Dare acceptor will drizzle chocolate syrup on current player's arm",
       "extra": "Spread it from wrist to elbow with both hands",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto rociará sirope de chocolate en el brazo del jugador en turno",
+          "extra": "Extiéndalo desde la muñeca hasta el codo con ambas manos"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio colocará xarope de chocolate no braço do jogador da vez",
+          "extra": "Espalhe-o do pulso ao cotovelo com as duas mãos"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会在当前玩家的手臂上淋上巧克力糖浆"
+        },
+        "tl": {
+          "title": "Ang kabilang manlalaro ay magpapagsak ng chocolate syrup sa braso ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ rưới xi-rô sô cô la lên cánh tay của người chơi hiện tại"
+        },
+        "ar": {
+          "title": "سوف يقوم اللاعب الآخر برش شراب الشوكولاتة على ذراع اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur versera du sirop de chocolat sur le bras du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 팔에 초콜릿 시럽을 뿌립니다."
+        },
+        "ru": {
+          "title": "другой игрок сбрызнет руку текущего игрока шоколадным сиропом"
+        },
+        "ht": {
+          "title": "lòt jwè a ap drizzle siwo chokola sou bra jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी की बांह पर चॉकलेट सिरप टपकाएगा"
+        },
+        "de": {
+          "title": "der andere Spieler träufelt Schokoladensirup auf den Arm des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "andere speler zal chocoladesiroop op de arm van de huidige speler druppelen"
+        },
+        "pl": {
+          "title": "drugi gracz skropi czekoladowym syropem na ramię obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore spruzzerà dello sciroppo di cioccolato sul braccio del giocatore attuale"
+        }
+      }
     },
     {
       "title": "Dare acceptor will crack an egg over current player's head",
       "extra": "Comb the egg into their hair",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto romperá un huevo sobre la cabeza del jugador en turno",
+          "extra": "Peina el huevo en su cabello"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio quebrará um ovo na cabeça do jogador da vez",
+          "extra": "Penteie o ovo em seus cabelos"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会在当前玩家的头上破解一个彩蛋"
+        },
+        "tl": {
+          "title": "Ang kabilang manlalaro ay magbabasa ng itlog sa ulo ng kasalukuyang manlalaro"
+        },
+        "vi": {
+          "title": "người chơi kia sẽ đập một quả trứng trên đầu người chơi hiện tại"
+        },
+        "ar": {
+          "title": "اللاعب الآخر سيكسر البيضة فوق رأس اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur cassera un œuf au-dessus de la tête du joueur actuel"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 머리에 달걀을 깨뜨릴 수 있습니다"
+        },
+        "ru": {
+          "title": "другой игрок разобьет яйцо по голове текущего игрока"
+        },
+        "ht": {
+          "title": "lòt jwè a pral krak yon ze sou tèt jwè aktyèl la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के सिर पर एक अंडा फोड़ेगा"
+        },
+        "de": {
+          "title": "Der andere Spieler knackt ein Ei über dem Kopf des aktuellen Spielers"
+        },
+        "nl": {
+          "title": "andere speler zal een ei boven het hoofd van de huidige speler kraken"
+        },
+        "pl": {
+          "title": "drugi gracz rozbije jajko nad głową obecnego gracza"
+        },
+        "it": {
+          "title": "l'altro giocatore romperà un uovo sulla testa del giocatore attuale"
+        }
+      }
     },
     {
       "title": "Current player will finger paint a heart on dare acceptor's forearm with chocolate",
       "extra": "Write your initials next to it and kiss their wrist",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno pintará con el dedo un corazón en el antebrazo del ganador del desafío con chocolate",
+          "extra": "Escribe tus iniciales al lado y besa su muñeca"
+        },
+        "pt": {
+          "title": "O jogador da vez pintará com o dedo um coração no antebraço de quem aceita o desafio com chocolate",
+          "extra": "Escreva suas iniciais ao lado e beije seu pulso"
+        },
+        "zh": {
+          "title": "当前玩家会用手指在另一位玩家的前臂上用巧克力画一颗心"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magpinta ng isang daliri ng puso sa braso ng kabilang manlalaro gamit ang tsokolate"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ vẽ một trái tim trên cẳng tay của người chơi kia táo bằng sô cô la"
+        },
+        "ar": {
+          "title": "سيرسم اللاعب الحالي قلبه على ساعد اللاعب الآخر بالشوكولاتة"
+        },
+        "fr": {
+          "title": "Le joueur actuel va peindre au doigt un cœur sur l'avant-bras de l'autre joueur avec du chocolat"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 팔뚝에 초콜릿으로 하트를 손가락으로 칠합니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок нарисует пальцем сердце на предплечье другой игрок шоколадом"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap dwèt penti yon kè sou avanbra lòt jwè a a ak chokola"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी चॉकलेट के साथ दूसरा खिलाड़ी के प्रकोष्ठ पर एक दिल को उंगली से पेंट करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler malt mit dem Finger ein Herz mit Schokolade auf den Unterarm des anderen Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler zal een hart op de onderarm van de andere speler met de vinger beschilderen met chocolade"
+        },
+        "pl": {
+          "title": "Obecny gracz pomaluje palcem serce na przedramieniu drugi gracz czekoladą"
+        },
+        "it": {
+          "title": "Il giocatore attuale dipingerà con il dito un cuore sull'avambraccio di l'altro giocatore con il cioccolato"
+        }
+      }
     },
     {
       "title": "Dare acceptor will pour syrup from current player's throat to collarbone",
       "extra": "Use both hands to massage it into their skin",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto echará sirope desde la garganta del jugador en turno hasta la clavícula",
+          "extra": "Usa ambas manos para masajearlo en su piel"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio despejará xarope da garganta do jogador da vez até a clavícula",
+          "extra": "Use as duas mãos para massagear a pele"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会将糖浆从当前玩家的喉咙里倒到锁骨"
+        },
+        "tl": {
+          "title": "Ibuhos ang kabilang manlalaro ng syrup mula sa lalamunan ng kasalukuyang manlalaro hanggang sa collarbone"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ đổ xi-rô từ cổ họng của người chơi hiện tại vào xương đòn"
+        },
+        "ar": {
+          "title": "سوف يقوم اللاعب الآخر بصب الشراب من حلق اللاعب الحالي إلى عظمة الترقوة"
+        },
+        "fr": {
+          "title": "l'autre joueur versera du sirop de la gorge du joueur actuel à la clavicule"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 목에서 쇄골까지 시럽을 부어줍니다"
+        },
+        "ru": {
+          "title": "другой игрок выльет сироп из горла текущего игрока в ключицу"
+        },
+        "ht": {
+          "title": "lòt jwè a pral vide siwo soti nan gòj jwè aktyèl la nan collarbone"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी के गले से कॉलरबोन तक सिरप डालेगा"
+        },
+        "de": {
+          "title": "Der andere Spieler schüttet Sirup aus der Kehle des aktuellen Spielers bis zum Schlüsselbein"
+        },
+        "nl": {
+          "title": "andere speler giet siroop van de keel van de huidige speler naar het sleutelbeen"
+        },
+        "pl": {
+          "title": "drugi gracz wleje syrop z gardła obecnego gracza do obojczyka"
+        },
+        "it": {
+          "title": "l'altro giocatore verserà dello sciroppo dalla gola del giocatore attuale alla clavicola"
+        }
+      }
     },
     {
       "title": "Current player will pie dare acceptor in the face with whipped cream",
       "extra": "Slowly wipe it around their face in circles",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le dará un golpe en la cara al que acepte el desafío con crema batida",
+          "extra": "Límpielo lentamente alrededor de la cara en círculos"
+        },
+        "pt": {
+          "title": "O jogador da vez colocará quem aceita o desafio na cara com chantilly",
+          "extra": "Limpe-o lentamente ao redor do rosto em círculos."
+        },
+        "zh": {
+          "title": "当前玩家会用鲜奶油朝着另一位玩家脸上撒馅饼"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magpapasa ng kabilang manlalaro sa mukha na may whipped cream"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ dùng kem đánh bông vào mặt người chơi kia"
+        },
+        "ar": {
+          "title": "اللاعب الحالي سيضع اللاعب الآخر في وجهه بالكريمة المخفوقة"
+        },
+        "fr": {
+          "title": "Le joueur actuel acceptera un jeu de tartes en pleine figure avec de la crème fouettée"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터를 얼굴에 휘핑 크림으로 파낼 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок со взбитыми сливками ударит по лицу другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap tat lòt jwè a nan figi a ak krèm fwi"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी व्हीप्ड क्रीम के साथ चेहरे पर दूसरा खिलाड़ी को पाई करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird einem Pie der andere Spieler mit Schlagsahne ins Gesicht schlagen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler in het gezicht staren met slagroom"
+        },
+        "pl": {
+          "title": "Obecny gracz pokaże drugi gracz w twarz bitą śmietaną"
+        },
+        "it": {
+          "title": "Il giocatore attuale farà una torta osata in faccia con panna montata"
+        }
+      }
     },
     {
       "title": "Current player will drizzle honey on dare acceptor's shoulder",
       "extra": "Lick the honey off their skin",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno rociará miel en el hombro de quien acepta el reto",
+          "extra": "Lame la miel de su piel"
+        },
+        "pt": {
+          "title": "O jogador da vez jogará mel no ombro de quem aceita o desafio",
+          "extra": "Lamba o mel de sua pele"
+        },
+        "zh": {
+          "title": "当前玩家会将蜂蜜淋在另一位玩家的肩膀上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magdudulot ng honey sa balikat ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ rưới mật ong lên vai người chơi kia"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي برش العسل على كتف اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel versera du miel sur l'épaule de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 어깨에 꿀을 뿌릴 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок будет сбрызгивать плечо другой игрок медом"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap drizzle siwo myèl sou zepòl lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के कंधे पर शहद की बूंदा बांदी करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird dem anderen Spieler Honig auf die Schulter träufeln"
+        },
+        "nl": {
+          "title": "De huidige speler zal honing op de schouder van de andere speler druppelen"
+        },
+        "pl": {
+          "title": "Obecny gracz skropi miodem na ramieniu drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale spruzzerà miele sulla spalla di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Dare acceptor will strip current player to their underwear and throw eggs at them",
       "extra": "Step closer and smear the egg around their body",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto desnudará al jugador en turno hasta dejarlo en ropa interior y le arrojará huevos",
+          "extra": "Acércate y unta el huevo alrededor de su cuerpo"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio tirará a roupa íntima do jogador da vez e jogará ovos nele",
+          "extra": "Aproxime-se e espalhe o ovo em volta do corpo."
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会脱掉当前玩家的内衣然后向他们扔鸡蛋"
+        },
+        "tl": {
+          "title": "Itatapon ng kabilang manlalaro ang kasalukuyang manlalaro sa kanilang damit na panloob at itapon sila ng mga itlog"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ lột đồ lót của người chơi hiện tại và ném trứng vào họ"
+        },
+        "ar": {
+          "title": "يقوم اللاعب الآخر بتجريد اللاعب الحالي من ملابسه الداخلية ورمي البيض عليه"
+        },
+        "fr": {
+          "title": "l'autre joueur déshabillera le joueur actuel jusqu'à ses sous-vêtements et lui lancera des œufs"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 속옷을 벗기고 달걀을 던집니다."
+        },
+        "ru": {
+          "title": "другой игрок разденет текущего игрока до нижнего белья и бросит в него яйца"
+        },
+        "ht": {
+          "title": "lòt jwè a pral dezabiye jwè aktyèl nan kilòt yo epi jete ze nan yo"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी को अपने अंडरवियर में उतारेगा और उन पर अंडे फेंकेगा"
+        },
+        "de": {
+          "title": "Der andere Spieler zieht dem aktuellen Spieler die Unterwäsche aus und wirft Eier auf ihn"
+        },
+        "nl": {
+          "title": "De andere speler zal de huidige speler uit hun ondergoed trekken en eieren naar hem gooien"
+        },
+        "pl": {
+          "title": "drugi gracz rozbierze obecnego gracza bieliznę i rzuci w niego jajkami"
+        },
+        "it": {
+          "title": "l'altro giocatore spoglierà il giocatore attuale fino alla biancheria intima e gli lancerà delle uova"
+        }
+      }
     },
     {
       "title": "Current player will draw frosting designs on dare acceptor's bare stomach",
       "extra": "Lick off one of the designs",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno dibujará diseños de glaseado con el estómago desnudo del que se atreva a aceptar",
+          "extra": "Lame uno de los diseños"
+        },
+        "pt": {
+          "title": "O jogador da vez desenhará desenhos de glacê na barriga nua de quem aceita o desafio",
+          "extra": "Escolha um dos designs"
+        },
+        "zh": {
+          "title": "当前玩家将在另一位玩家的裸腹上画出磨砂图案"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gaguhit ng frosting design sa hubad na tiyan ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ vẽ các thiết kế phủ sương trên bụng trần của người chơi kia dũng cảm"
+        },
+        "ar": {
+          "title": "سيرسم اللاعب الحالي تصميمات الزينة على معدة اللاعب الآخر العارية"
+        },
+        "fr": {
+          "title": "Le joueur actuel dessinera des motifs glacés sur le ventre nu de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 맨 배에 프로스팅 디자인을 그릴 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок нарисует узоры глазури на голом животе другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap trase desen frosting sou vant bare lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के नंगे पेट पर फ्रॉस्टिंग डिज़ाइन तैयार करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler zeichnet Glasurmuster auf den nackten Bauch des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler tekent glazuurontwerpen op de blote buik van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz narysuje wzory lukru na gołym brzuchu drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale disegnerà disegni glassati a stomaco nudo di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Dare acceptor will pour cold water down current player's back under their shirt",
       "extra": "Massage their back through the wet fabric",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto echará agua fría por la espalda del jugador en turno por debajo de su camiseta",
+          "extra": "Masajea su espalda a través de la tela mojada"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio despejará água fria nas costas do jogador da vez, debaixo da camisa",
+          "extra": "Massageie suas costas através do tecido molhado"
+        },
+        "zh": {
+          "title": "另一位玩家会将冷水倒入当前玩家的球衣下方的背部"
+        },
+        "tl": {
+          "title": "Ibuhos ang kabilang manlalaro ng malamig na tubig sa likod ng kasalukuyang manlalaro sa ilalim ng kanilang shirt"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ đổ nước lạnh xuống lưng cầu thủ hiện tại dưới áo của họ"
+        },
+        "ar": {
+          "title": "سيسكب متلقي الجرأة الماء البارد على ظهر اللاعب الحالي تحت قميصه"
+        },
+        "fr": {
+          "title": "l'autre joueur versera de l'eau froide dans le dos du joueur actuel, sous sa chemise"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 셔츠 아래 등에 찬물을 부을 것입니다."
+        },
+        "ru": {
+          "title": "другой игрок выльет холодную воду в спину текущего игрока под рубашкой"
+        },
+        "ht": {
+          "title": "lòt jwè a pral vide dlo frèt desann do jwè aktyèl la anba chemiz yo"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी अपनी शर्ट के नीचे वर्तमान खिलाड़ी की पीठ के नीचे ठंडा पानी डालेगा"
+        },
+        "de": {
+          "title": "Der andere Spieler schüttet dem aktuellen Spieler kaltes Wasser unter seinem Shirt über den Rücken"
+        },
+        "nl": {
+          "title": "De andere speler zal koud water over de rug van de huidige speler onder zijn shirt gieten"
+        },
+        "pl": {
+          "title": "drugi gracz wleje zimną wodę do pleców obecnego gracza pod koszulkę"
+        },
+        "it": {
+          "title": "Il l'altro giocatore verserà acqua fredda sulla schiena del giocatore attuale sotto la maglia"
+        }
+      }
     },
     {
       "title": "Current player will make a sundae on dare acceptor's chest with syrup and whipped cream",
       "extra": "Eat it directly off their body",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno preparará un sundae en el pecho de quien acepta el reto con sirope y crema batida",
+          "extra": "Cómelo directamente de su cuerpo"
+        },
+        "pt": {
+          "title": "O jogador da vez fará um sundae no peito de quem aceita o desafio com xarope e chantilly",
+          "extra": "Coma diretamente de seu corpo"
+        },
+        "zh": {
+          "title": "当前玩家将用糖浆和鲜奶油在另一位玩家的胸口上做一个圣代"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gagawa ng sundae sa dibdib ng kabilang manlalaro na may syrup at whipped cream"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ làm một chiếc sundae trên rương của người chơi kia với xi-rô và kem tươi"
+        },
+        "ar": {
+          "title": "سيصنع اللاعب الحالي مثلجات على صدر اللاعب الآخر مع الشراب والكريمة المخفوقة"
+        },
+        "fr": {
+          "title": "Le joueur actuel préparera un sundae sur le coffre de l'autre joueur avec du sirop et de la crème fouettée"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 가슴에 시럽과 휘핑 크림을 곁들인 선디를 만들 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок приготовит мороженое на сундуке любителя сметаны с сиропом и взбитыми сливками"
+        },
+        "ht": {
+          "title": "Aktyèl jwè pral fè yon sundae sou pwatrin azize lòt jwè a a ak siwo ak krèm fwi"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी सिरप और व्हीप्ड क्रीम के साथ दूसरा खिलाड़ी की छाती पर एक संडे बनाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler macht auf der Brust des anderen Spielerss einen Eisbecher mit Sirup und Schlagsahne"
+        },
+        "nl": {
+          "title": "De huidige speler maakt een ijscoupe op de borst van de andere speler met stroop en slagroom"
+        },
+        "pl": {
+          "title": "Obecny gracz zrobi sundae na piersi drugi gracz z syropem i bitą śmietaną"
+        },
+        "it": {
+          "title": "Il giocatore attuale preparerà un gelato sul petto di l'altro giocatore con sciroppo e panna montata"
+        }
+      }
     },
     {
       "title": "Dare acceptor will feed current player chocolate sauce from their fingers",
       "extra": "Suck each finger clean slowly",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto alimentará al jugador en turno con salsa de chocolate con sus dedos",
+          "extra": "Chupe cada dedo para limpiarlo lentamente"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio alimentará o jogador da vez com molho de chocolate com seus dedos",
+          "extra": "Chupe cada dedo lentamente"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会用手指喂当前玩家的巧克力酱"
+        },
+        "tl": {
+          "title": "Pakainin ng kabilang manlalaro ang kasalukuyang manlalaro na tsokolate sauce mula sa kanilang mga daliri"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ cho người chơi hiện tại ăn nước sốt sô cô la từ ngón tay của họ"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الآخر بتغذية اللاعب الحالي بصلصة الشوكولاتة من أصابعه"
+        },
+        "fr": {
+          "title": "l'autre joueur donnera de la sauce au chocolat au joueur actuel avec ses doigts"
+        },
+        "ko": {
+          "title": "데어 어셉터가 현재 플레이어에게 손가락으로 초콜릿 소스를 먹여줍니다."
+        },
+        "ru": {
+          "title": "другой игрок накормит нынешних игроков шоколадным соусом из их пальцев"
+        },
+        "ht": {
+          "title": "Dare lòt jwè a ap manje aktyèl jwè sòs chokola soti nan dwèt yo"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी वर्तमान खिलाड़ी को अपनी उंगलियों से चॉकलेट सॉस खिलाएगा"
+        },
+        "de": {
+          "title": "Der andere Spieler füttert den aktuellen Spieler mit Schokoladensauce aus seinen Finger"
+        },
+        "nl": {
+          "title": "andere speler zal de huidige speler chocoladesaus uit hun vingers voeren"
+        },
+        "pl": {
+          "title": "drugi gracz nakarmi obecnego gracza sosem czekoladowym z palców"
+        },
+        "it": {
+          "title": "l'altro giocatore somministrerà al giocatore attuale la salsa al cioccolato con le dita"
+        }
+      }
     },
     {
       "title": "Current player will sit on dare acceptor's lap while they pour chocolate down your back",
       "extra": "Grind against them while they spread it around",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno se sentará en el regazo de quien acepta el reto mientras le vierte chocolate por la espalda",
+          "extra": "Muela contra ellos mientras lo esparcen"
+        },
+        "pt": {
+          "title": "O jogador da vez se sentará no colo de quem aceita o desafio enquanto derrama chocolate em suas costas",
+          "extra": "Moa contra eles enquanto eles o espalham"
+        },
+        "zh": {
+          "title": "当前玩家将坐在勇气另一位玩家的腿上，同时他们将巧克力倒在你的背上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay uupo sa tubig ng kabilang manlalaro habang ibinubuhos nila ang tsokolate sa iyong likod"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ ngồi trên đùi của người chơi kia trong khi họ đổ sô cô la xuống lưng bạn"
+        },
+        "ar": {
+          "title": "سيجلس اللاعب الحالي في حضن اللاعب الآخر بينما يصب الشوكولاتة على ظهرك"
+        },
+        "fr": {
+          "title": "Le joueur actuel s'assoit sur les genoux de l'autre joueur pendant qu'il vous verse du chocolat dans le dos"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 무릎에 앉아 초콜릿을 등 아래로 쏟아부을 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок будет сидеть на коленях у другой игрок, пока он наливает вам шоколад в спину"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap chita sou lap lòt jwè a a pandan y ap yo vide chokola desann do ou"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की गोद में बैठेगा, जबकि वे आपकी पीठ के नीचे चॉकलेट डालेंगे"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler sitzt auf dem Schoß des anderen Spieler, während er dir Schokolade über den Rücken schüttet"
+        },
+        "nl": {
+          "title": "De huidige speler zal op de schoot van de andere speler zitten terwijl ze chocolade over je rug gieten"
+        },
+        "pl": {
+          "title": "Obecny gracz będzie siedział na kolanach drugi gracz, podczas gdy wylewa ci czekoladę do pleców"
+        },
+        "it": {
+          "title": "Il giocatore attuale siederà sulle ginocchia di l'altro giocatore mentre ti verserà del cioccolato sulla schiena"
+        }
+      }
     },
     {
       "title": "Dare acceptor will cover current player's chest in whipped cream and lick it off",
       "extra": "Focus extra attention on their nipples",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto cubrirá el pecho del jugador en turno con crema batida y se lo lamerá",
+          "extra": "Presta más atención a sus pezones"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio cobrirá o peito do jogador da vez com chantilly e o lamberá",
+          "extra": "Concentre atenção extra em seus mamilos"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家会用鲜奶油遮住当前玩家的胸部然后把它舔掉"
+        },
+        "tl": {
+          "title": "Tatakpan ng kabilang manlalaro ang dibdib ng kasalukuyang manlalaro sa whipped cream at lilitan ito"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ phủ kem đánh bông lên ngực của người chơi hiện tại và liếm nó"
+        },
+        "ar": {
+          "title": "سيغطي اللاعب الآخر صدر اللاعب الحالي بالكريمة المخفوقة ويلعقه"
+        },
+        "fr": {
+          "title": "l'autre joueur couvrira la poitrine du joueur actuel de crème fouettée et la lèchera"
+        },
+        "ko": {
+          "title": "데어 어셉터는 현재 플레이어의 가슴을 휘핑 크림으로 덮고 핥아줍니다."
+        },
+        "ru": {
+          "title": "другой игрок накроет грудь текущего игрока взбитыми сливками и слижет ее"
+        },
+        "ht": {
+          "title": "lòt jwè a pral kouvri pwatrin jwè aktyèl la nan fwiye krèm ak lick li koupe"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी व्हीप्ड क्रीम में वर्तमान खिलाड़ी की छाती को ढँक देगा और उसे चाटेगा"
+        },
+        "de": {
+          "title": "Der andere Spieler bedeckt die Brust des aktuellen Spielers mit Schlagsahne und leckt sie ab"
+        },
+        "nl": {
+          "title": "andere speler zal de borst van de huidige speler bedekken met slagroom en deze eraf likken"
+        },
+        "pl": {
+          "title": "drugi gracz zakryje klatkę piersiową obecnego gracza bitą śmietaną i zliże ją"
+        },
+        "it": {
+          "title": "l'altro giocatore coprirà il petto del giocatore attuale con panna montata e lo leccherà"
+        }
+      }
     },
     {
       "title": "Current player will pour honey on dare acceptor's inner thighs",
       "extra": "Lick it off slowly, getting closer to their groin",
-      "spicyness": 81
+      "spicyness": 81,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno echará miel en la parte interna de los muslos del jugador que se atreva",
+          "extra": "Lámela lentamente, acercándose a su ingle"
+        },
+        "pt": {
+          "title": "O jogador da vez colocará mel na parte interna das coxas de quem aceita o desafio",
+          "extra": "Lamba-o lentamente, chegando mais perto de sua virilha"
+        },
+        "zh": {
+          "title": "当前玩家会将蜂蜜倒在另一位玩家的大腿内侧"
+        },
+        "tl": {
+          "title": "Ibuhos ang kasalukuyang manlalaro ng honey sa panloob na hita ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ đổ mật ong lên đùi trong của người chơi kia"
+        },
+        "ar": {
+          "title": "سيصب اللاعب الحالي العسل على الفخذين الداخليين لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel versera du miel sur l'intérieur des cuisses de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터의 허벅지 안쪽에 꿀을 부을 것입니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок нальет мед на внутреннюю поверхность бедер другой игрок"
+        },
+        "ht": {
+          "title": "Kouran jwè ap vide siwo myèl sou kwis enteryè lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की आंतरिक जांघों पर शहद डालेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler schüttet Honig auf die inneren Oberschenkel des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler zal honing op de binnenkant van de dijen van de andere speler gieten"
+        },
+        "pl": {
+          "title": "Obecny gracz wyleje miód na wewnętrzne uda drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale verserà del miele sulla parte interna delle cosce di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Current player will lick chocolate sauce off dare acceptor's genitals",
       "extra": "Try to make them orgasm",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lamerá salsa de chocolate de los genitales del que se atreva a aceptar",
+          "extra": "Intenta hacer que tengan un orgasmo"
+        },
+        "pt": {
+          "title": "O jogador da vez lamberá o molho de chocolate dos órgãos genitais de quem aceita o desafio",
+          "extra": "Tente fazê-los ter orgasmos"
+        },
+        "zh": {
+          "title": "当前玩家会把巧克力酱从另一位玩家的生殖器上舔掉"
+        },
+        "tl": {
+          "title": "Dilipan ng kasalukuyang manlalaro ang tsokolate sauce sa maselang bahagi ng kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ liếm nước sốt sô cô la khỏi bộ phận sinh dục của người nhận"
+        },
+        "ar": {
+          "title": "سيلعق اللاعب الحالي صلصة الشوكولاتة من الأعضاء التناسلية لاللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel lèchera de la sauce au chocolat sur les parties génitales de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 성기에서 초콜릿 소스를 핥을 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок будет слизывать шоколадный соус с гениталий другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap lipe sòs chokola koupe bay jital lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के जननांगों से चॉकलेट सॉस चाटेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler leckt Schokoladensauce von den Genitalien des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler zal chocoladesaus van de genitaliën van de andere speler likken"
+        },
+        "pl": {
+          "title": "Obecny gracz zliże sos czekoladowy z genitaliów drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale leccherà la salsa al cioccolato dai genitali di l'altro giocatore"
+        }
+      }
     }
   ]
 }

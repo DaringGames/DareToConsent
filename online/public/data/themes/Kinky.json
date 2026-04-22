@@ -4,164 +4,1732 @@
     {
       "title": "Both players describe a kink they have heard of",
       "extra": "Both players demonstrate a kink they have",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores describen un problema del que han oído hablar",
+          "extra": "Ambos jugadores demuestran la perversión que tienen"
+        },
+        "pt": {
+          "title": "Ambos os jogadores descrevem uma distorção da qual já ouviram falar",
+          "extra": "Ambos os jogadores demonstram uma distorção que têm"
+        },
+        "zh": {
+          "title": "两位玩家都描述了他们听说过的怪癖"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay naglalarawan ng isang kink na narinig nila"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều mô tả một khúc cua mà họ đã nghe nói đến"
+        },
+        "ar": {
+          "title": "يصف كلا اللاعبين نقطة الخلل التي سمعوا عنها"
+        },
+        "fr": {
+          "title": "Les deux joueurs décrivent un kink dont ils ont entendu parler"
+        },
+        "ko": {
+          "title": "두 선수 모두 자신이 들어본 적 있는 문제를 설명합니다."
+        },
+        "ru": {
+          "title": "Оба игрока описывают перелом, о котором они слышали."
+        },
+        "ht": {
+          "title": "Tou de jwè dekri yon kink yo te tande pale de"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक ऐसी किंक का वर्णन करते हैं जिसके बारे में उन्होंने सुना है"
+        },
+        "de": {
+          "title": "Beide Spieler beschreiben einen Knick, von dem sie gehört haben"
+        },
+        "nl": {
+          "title": "Beide spelers beschrijven een kink waar ze van hebben gehoord"
+        },
+        "pl": {
+          "title": "Obaj gracze opisują załamanie, o którym słyszeli"
+        },
+        "it": {
+          "title": "Entrambi i giocatori descrivono un problema di cui hanno sentito parlare"
+        }
+      }
     },
     {
       "title": "Both players swat themselves",
       "extra": "Both players swat each other's bare skin",
-      "spicyness": 0
+      "spicyness": 0,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se golpean",
+          "extra": "Ambos jugadores se golpean la piel desnuda"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se suicidaram",
+          "extra": "Ambos os jogadores batem na pele nua um do outro"
+        },
+        "zh": {
+          "title": "两位玩家都在自欺欺人"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nag-swat"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ tự đánh nhau"
+        },
+        "ar": {
+          "title": "كلا اللاعبين ضربوا أنفسهم"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'assoient"
+        },
+        "ko": {
+          "title": "두 선수 모두 스스로 땀을 흘립니다."
+        },
+        "ru": {
+          "title": "Оба игрока присели сами"
+        },
+        "ht": {
+          "title": "Tou de jwè swat tèt yo"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी खुद स्वाट करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler schlagen sich selbst"
+        },
+        "nl": {
+          "title": "Beide spelers slaan zichzelf"
+        },
+        "pl": {
+          "title": "Obaj gracze walczyli sami"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si sono schiaffeggiati"
+        }
+      }
     }
   ],
   "examples": [
     {
       "title": "Both players share one boundary for tonight",
       "extra": "Also share something you want pushed tonight",
-      "spicyness": 5
+      "spicyness": 5,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores comparten un límite para esta noche",
+          "extra": "Comparte también algo que quieras publicar esta noche"
+        },
+        "pt": {
+          "title": "Ambos os jogadores compartilham um limite para esta noite.",
+          "extra": "Compartilhe também algo que você deseja que seja divulgado hoje à noite"
+        },
+        "zh": {
+          "title": "今晚两位选手共享一个界限"
+        },
+        "tl": {
+          "title": "Ang parehong manlalaro ay nagbabahagi ng isang hangganan"
+        },
+        "vi": {
+          "title": "Cả hai cầu thủ chia sẻ một ranh giới cho đêm nay"
+        },
+        "ar": {
+          "title": "يشترك كلا اللاعبين في حدود واحدة لهذه الليلة."
+        },
+        "fr": {
+          "title": "Les deux joueurs partagent une limite pour ce soir"
+        },
+        "ko": {
+          "title": "오늘 밤 두 선수 모두 한 가지 경계를 공유합니다"
+        },
+        "ru": {
+          "title": "Сегодня у обоих игроков одна граница."
+        },
+        "ht": {
+          "title": "Tou de jwè pataje yon sèl fontyè pou aswè a"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी आज रात के लिए एक बाउंड्री साझा करते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler teilen sich eine Grenze für heute Abend"
+        },
+        "nl": {
+          "title": "Beide spelers delen één grens voor vanavond"
+        },
+        "pl": {
+          "title": "Obaj gracze dzielą jedną granicę na dzisiejszy wieczór"
+        },
+        "it": {
+          "title": "Entrambi i giocatori condividono un limite per stasera"
+        }
+      }
     },
     {
       "title": "Current player kneels between dare acceptor's legs with eye contact",
       "extra": "Also caress their inner thighs",
-      "spicyness": 15
+      "spicyness": 15,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno se arrodilla entre las piernas de quien acepta el reto con contacto visual",
+          "extra": "Acaricia también la parte interna de sus muslos"
+        },
+        "pt": {
+          "title": "O jogador da vez se ajoelha entre as pernas de quem aceita o desafio com contato visual",
+          "extra": "Também acaricie a parte interna das coxas"
+        },
+        "zh": {
+          "title": "当前玩家跪在另一位玩家的双腿之间进行眼神交流"
+        },
+        "tl": {
+          "title": "Lumuhod ang kasalukuyang manlalaro sa pagitan ng mga binti ng kabilang manlalaro na may contact sa mata"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại quỳ giữa hai chân của người chơi kia khi giao tiếp bằng mắt"
+        },
+        "ar": {
+          "title": "يركع اللاعب الحالي بين أرجل اللاعب الآخر بالتواصل البصري"
+        },
+        "fr": {
+          "title": "Le joueur actuel s'agenouille entre les jambes de l'autre joueur avec un contact visuel"
+        },
+        "ko": {
+          "title": "현재 플레이어가 눈을 마주 치며 데어 액셉터의 다리 사이에 무릎을 꿇고 있습니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок при зрительном контакте стоит на коленях между ног акцептанта"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ajenou ant janm lòt jwè a a ak kontak je"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी आंखों के संपर्क के साथ दूसरा खिलाड़ी के पैरों के बीच घुटने टेकता है"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler kniet mit Augenkontakt zwischen den Beinen des anderen Spielerss"
+        },
+        "nl": {
+          "title": "De huidige speler knielt met oogcontact tussen de benen van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz klęka między nogami drugi gracz z kontaktem wzrokowym"
+        },
+        "it": {
+          "title": "Il giocatore attuale si inginocchia tra le gambe di chi accetta la sfida con il contatto visivo"
+        }
+      }
     },
     {
       "title": "Current player will reach around dare acceptor to pin their arms",
       "extra": "Add breath control while pinned",
-      "spicyness": 18
+      "spicyness": 18,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno rodeará a quien acepta el reto para sujetarle los brazos",
+          "extra": "Añade control de la respiración mientras estás inmovilizado"
+        },
+        "pt": {
+          "title": "O jogador da vez envolverá quem aceita o desafio para prender seus braços",
+          "extra": "Adicione controle de respiração enquanto estiver preso"
+        },
+        "zh": {
+          "title": "当前玩家将伸手围绕胆量另一位玩家固定双臂"
+        },
+        "tl": {
+          "title": "Maaabot ng kasalukuyang manlalaro ang kabilang manlalaro upang i-pin ang kanilang mga braso"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ vươn tay xung quanh người chơi kia để chốt cánh tay của họ"
+        },
+        "ar": {
+          "title": "سيتصل اللاعب الحالي إلى اللاعب الآخر لتثبيت ذراعيه"
+        },
+        "fr": {
+          "title": "Le joueur actuel va contourner l'autre joueur pour épingler ses bras"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터 주위에 손을 뻗어 팔을 고정시킵니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок дотянется до другой игрок, чтобы приколоть руки"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap rive nan alantou lòt jwè a nan PIN bra yo"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी अपनी बाहों को पिन करने के लिए दूसरा खिलाड़ी के आसपास पहुंचेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler greift um den der andere Spieler, um seine Arme festzunageln"
+        },
+        "nl": {
+          "title": "De huidige speler zal rond de andere speler reiken om zijn armen vast te zetten"
+        },
+        "pl": {
+          "title": "Obecny gracz sięga po drugi gracz, aby przypiąć ramiona"
+        },
+        "it": {
+          "title": "Il giocatore attuale raggiungerà l'avversario per bloccare le braccia"
+        }
+      }
     },
     {
       "title": "Current player will tie dare acceptor's wrists loosely with a scarf",
       "extra": "Use rope and add predicament",
-      "spicyness": 21
+      "spicyness": 21,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno atará holgadamente las muñecas de quien acepta el reto con una bufanda",
+          "extra": "Usa cuerda y añade una situación incómoda"
+        },
+        "pt": {
+          "title": "O jogador da vez amarrará os pulsos de quem aceita o desafio frouxamente com um lenço",
+          "extra": "Use corda e acrescente dificuldades"
+        },
+        "zh": {
+          "title": "当前玩家将用围巾松开绑住另一位玩家的手腕"
+        },
+        "tl": {
+          "title": "Itatali ng kasalukuyang manlalaro ang mga pulso ng kabilang manlalaro nang maluwag gamit ang isang bandana"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ buộc cổ tay của người chơi kia một cách lỏng lẻo bằng khăn quàng cổ"
+        },
+        "ar": {
+          "title": "سيربط اللاعب الحالي معصمي متلقي الجرأة بشكل فضفاض باستخدام وشاح"
+        },
+        "fr": {
+          "title": "Le joueur actuel attachera légèrement les poignets de l'autre joueur avec un foulard"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어의 손목을 스카프로 느슨하게 묶을 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок свободно свяжет запястья другой игрок шарфом"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap mare dare ponyèt lòt jwè a a libète ak yon echap"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की कलाई को दुपट्टे से शिथिल रूप से बाँध देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler bindet die Handgelenke des anderen Spielerss locker mit einem Schal zusammen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de polsen van de andere speler losjes strikken met een sjaal"
+        },
+        "pl": {
+          "title": "Obecny gracz luźno zawiąże nadgarstki drugi gracz szalikiem"
+        },
+        "it": {
+          "title": "Il giocatore attuale legherà liberamente i polsi di l'altro giocatore con una sciarpa"
+        }
+      }
     },
     {
       "title": "Both players take turns giving gentle spanks",
       "extra": "Use implements on bare skin",
-      "spicyness": 27
+      "spicyness": 27,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se turnan para dar suaves nalgadas",
+          "extra": "Use los implementos sobre la piel desnuda"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se revezam dando palmadas suaves.",
+          "extra": "Use implementos na pele nua"
+        },
+        "zh": {
+          "title": "两位玩家轮流轻打屁股"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nag-ibigay ng banayad na"
+        },
+        "vi": {
+          "title": "Cả hai người chơi thay phiên nhau đánh đòn nhẹ nhàng"
+        },
+        "ar": {
+          "title": "يتناوب كلا اللاعبين على إعطاء الضربات اللطيفة"
+        },
+        "fr": {
+          "title": "Les deux joueurs donnent à tour de rôle de légères fessées"
+        },
+        "ko": {
+          "title": "두 선수 모두 번갈아 가며 부드럽게 때립니다."
+        },
+        "ru": {
+          "title": "Оба игрока по очереди нежно шлепают."
+        },
+        "ht": {
+          "title": "Tou de jwè pran vire bay spanks dou"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी बारी-बारी से जेंटल स्पैंक्स देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler geben abwechselnd sanfte Schläge"
+        },
+        "nl": {
+          "title": "Beide spelers geven om de beurt zachte klappen"
+        },
+        "pl": {
+          "title": "Obaj gracze na zmianę dają delikatne klapsy"
+        },
+        "it": {
+          "title": "Entrambi i giocatori, a turno, danno delle sculacciate delicate."
+        }
+      }
     },
     {
       "title": "Current player will feed dare acceptor while blindfolded",
       "extra": "Add temperature play with food",
-      "spicyness": 31
+      "spicyness": 31,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno alimentará al que acepte el desafío con los ojos vendados",
+          "extra": "Añade temperatura, juega con la comida"
+        },
+        "pt": {
+          "title": "O jogador da vez alimentará quem aceita o desafio com os olhos vendados",
+          "extra": "Adicione temperatura, brinque com a comida"
+        },
+        "zh": {
+          "title": "当前玩家将在蒙住眼睛时喂食另一位玩家"
+        },
+        "tl": {
+          "title": "Magpapakain ng kasalukuyang manlalaro ang kabilang manlalaro habang nakababit"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ cho người chơi kia ăn khi bị bịt mắt"
+        },
+        "ar": {
+          "title": "سيطعم اللاعب الحالي اللاعب الآخر وهو معصوب العينين"
+        },
+        "fr": {
+          "title": "Le joueur actuel nourrira un l'autre joueur avec les yeux bandés"
+        },
+        "ko": {
+          "title": "현재 플레이어는 눈을 가린 상태에서 상대 플레이어에게 먹이를 줄 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок будет кормить другой игрок с завязанными глазами"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap manje lòt jwè a pandan y ap blindfolded"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी आंखों पर पट्टी बांधते समय दूसरा खिलाड़ी को खिलाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler füttert der andere Spieler mit verbundenen Augen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler voeden terwijl hij geblinddoekt is"
+        },
+        "pl": {
+          "title": "Obecny gracz będzie karmił drugi gracz z zawiązanymi oczami"
+        },
+        "it": {
+          "title": "Il giocatore attuale darà da mangiare a l'altro giocatore mentre è bendato"
+        }
+      }
     },
     {
       "title": "Both players whisper dirty commands to each other",
       "extra": "Obey while restrained",
-      "spicyness": 35
+      "spicyness": 35,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores se susurran órdenes sucias",
+          "extra": "Obedece mientras estés restringido"
+        },
+        "pt": {
+          "title": "Ambos os jogadores sussurram comandos sujos um para o outro",
+          "extra": "Obedeça enquanto estiver preso"
+        },
+        "zh": {
+          "title": "两位玩家互相低声说脏话"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagbubulong ng maruming utos sa bawat"
+        },
+        "vi": {
+          "title": "Cả hai người chơi thì thầm những mệnh lệnh bẩn thỉu với nhau"
+        },
+        "ar": {
+          "title": "يهمس كلا اللاعبين بأوامر قذرة لبعضهما البعض"
+        },
+        "fr": {
+          "title": "Les deux joueurs se chuchotent des ordres sales"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 서로에게 더러운 명령을 속삭입니다."
+        },
+        "ru": {
+          "title": "Оба игрока шепчут друг другу грязные команды"
+        },
+        "ht": {
+          "title": "Tou de jwè chichouche kòmandman sal youn ak lòt"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी एक-दूसरे को गंदी आज्ञा देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler flüstern sich gegenseitig schmutzige Befehle zu"
+        },
+        "nl": {
+          "title": "Beide spelers fluisteren vuile commando's naar elkaar"
+        },
+        "pl": {
+          "title": "Obaj gracze szepczą do siebie brudne polecenia"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si sussurrano comandi sporchi"
+        }
+      }
     },
     {
       "title": "Current player will apply ice to dare acceptor's skin",
       "extra": "Follow with candle wax",
-      "spicyness": 39
+      "spicyness": 39,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno aplica hielo en la piel de quien acepta el reto",
+          "extra": "Sigue con cera para velas"
+        },
+        "pt": {
+          "title": "O jogador da vez aplica gelo na pele de quem aceita o desafio",
+          "extra": "Siga com cera de vela"
+        },
+        "zh": {
+          "title": "当前玩家将对勇气另一位玩家的皮肤施加冰块"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay maglalapat ng yelo upang maglakas-loob ng balat ng"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ chườm đá lên skin của người chơi kia"
+        },
+        "ar": {
+          "title": "سيطبق اللاعب الحالي الثلج على بشرة اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel appliquera de la glace sur la peau de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터의 피부에 얼음을 발라줄 것입니다"
+        },
+        "ru": {
+          "title": "Текущий игрок будет наносить лед на кожу другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap aplike glas pou bay azade po lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की त्वचा पर बर्फ लगाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler trägt Eis auf den Skin des anderen Spieler auf"
+        },
+        "nl": {
+          "title": "De huidige speler zal ijs aanbrengen op de huid van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nałoży lód na skórę drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale applicherà del ghiaccio sulla pelle di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Current player will roleplay as master and dare acceptor will roleplay as slave",
       "extra": "Slave performs three humiliating acts",
-      "spicyness": 41
+      "spicyness": 41,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno jugará como amo y quien acepta el reto jugará como esclavo",
+          "extra": "El esclavo realiza tres actos humillantes"
+        },
+        "pt": {
+          "title": "O jogador da vez interpretará o papel de mestre e quem aceita o desafio interpretará o papel de escravo",
+          "extra": "Escravo realiza três atos humilhantes"
+        },
+        "zh": {
+          "title": "当前玩家将扮演主人，勇气另一位玩家将扮演奴隶"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay mag-role bilang master at ang kabilang manlalaro ay mag-role bilang alipin"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhập vai với tư cách là chủ và người chơi kia sẽ nhập vai với tư cách là nô lệ"
+        },
+        "ar": {
+          "title": "سيلعب اللاعب الحالي دورًا رئيسيًا وسيلعب اللاعب الآخر الجريء الأدوار كعبد"
+        },
+        "fr": {
+          "title": "Le joueur actuel jouera le rôle de maître et l'autre joueur jouera le rôle d'esclave"
+        },
+        "ko": {
+          "title": "현재 플레이어는 마스터로, 데어 어셉터는 슬레이브로 롤플레잉합니다."
+        },
+        "ru": {
+          "title": "Текущий игрок будет играть роль мастера, а другой игрок будет играть роль раба"
+        },
+        "ht": {
+          "title": "Aktyèl jwè pral roleplay kòm mèt ak lòt jwè a pral roleplay kòm esklav"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी मास्टर के रूप में भूमिका निभाएगा और दूसरा खिलाड़ी दास के रूप में भूमिका निभाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler spielt als Master und der anderen Spieler wird als Sklave spielen"
+        },
+        "nl": {
+          "title": "De huidige speler zal een rollenspel spelen als meester en andere speler zal een rollenspel als slaaf spelen"
+        },
+        "pl": {
+          "title": "Obecny gracz odgra rolę mistrza, a drugi gracz odgra rolę niewolnika"
+        },
+        "it": {
+          "title": "Il giocatore attuale giocherà come padrone e chi accetta il coraggio giocherà come schiavo"
+        }
+      }
     },
     {
       "title": "Current player will give dare acceptor sensual flogging",
       "extra": "Alternate with electrostimulation",
-      "spicyness": 45
+      "spicyness": 45,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno le dará a quien acepta el reto una sensual flagelación",
+          "extra": "Alterna con electroestimulación"
+        },
+        "pt": {
+          "title": "O jogador da vez dará açoites sensuais aquem aceita o desafio",
+          "extra": "Alterne com eletroestimulação"
+        },
+        "zh": {
+          "title": "当前玩家将对勇气另一位玩家进行感官鞭打"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magbibigay ng kabilang manlalaro sensual flogging"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ cho người chơi kia can thiệp gợi cảm"
+        },
+        "ar": {
+          "title": "اللاعب الحالي سيجلد اللاعب الآخر بشكل حسي"
+        },
+        "fr": {
+          "title": "Le joueur actuel donnera une flagellation sensuelle à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터에게 관능적인 채찍질을 할 것입니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок даст другой игрок чувственную порку"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap lòt jwè a sensual flogging"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी डेयर एक्सेप्टर सेंसुअल फॉगिंग देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird dem anderen Spieler sinnlich auspeitschen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler sensueel geselen"
+        },
+        "pl": {
+          "title": "Obecny gracz da drugi gracz zmysłowe chłostowanie"
+        },
+        "it": {
+          "title": "Il giocatore attuale darà una fustigazione sensuale a chi ama dare"
+        }
+      }
     },
     {
       "title": "Dare acceptor will wear a collar and be current player will hold the leash",
       "extra": "Add leash-guided tasks",
-      "spicyness": 49
+      "spicyness": 49,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto usará un collar y el jugador en turno sujetará la correa",
+          "extra": "Añade tareas guiadas por correa"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio usará uma coleira e o jogador da vez segurará a coleira",
+          "extra": "Adicione tarefas guiadas por coleira"
+        },
+        "zh": {
+          "title": "Dare 另一位玩家将戴项圈成为当前玩家将握住皮带"
+        },
+        "tl": {
+          "title": "Magsusuot ng kwelyo ang kabilang manlalaro at magiging kasalukuyang manlalaro ay hawakan ang leash"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ đeo cổ áo và người chơi hiện tại sẽ giữ dây xích"
+        },
+        "ar": {
+          "title": "سيرتدي اللاعب الآخر طوقًا وسيمسك اللاعب الحالي بالمقود"
+        },
+        "fr": {
+          "title": "l'autre joueur portera un collier et, en tant que joueur actuel, tiendra la laisse"
+        },
+        "ko": {
+          "title": "데어 어셉터는 목걸이를 착용하고 현재 플레이어는 목줄을 잡습니다."
+        },
+        "ru": {
+          "title": "другой игрок наденет ошейник, а текущий игрок будет держать поводок"
+        },
+        "ht": {
+          "title": "lòt jwè a pral mete yon kolye epi yo dwe aktyèl jwè ap kenbe kout la"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी एक कॉलर पहनेगा और वर्तमान खिलाड़ी होगा, पट्टा धारण करेगा"
+        },
+        "de": {
+          "title": "Der Darsteller trägt ein Halsband und der aktuelle Spieler hält die Leine"
+        },
+        "nl": {
+          "title": "De andere speler zal een halsband dragen en de huidige speler zal de riem vasthouden"
+        },
+        "pl": {
+          "title": "drugi gracz będzie nosił kołnierz i aktualny gracz będzie trzymał smycz"
+        },
+        "it": {
+          "title": "Chi accetta il coraggio indosserà un collare e il giocatore attuale terrà il guinzaglio"
+        }
+      }
     },
     {
       "title": "Current player will apply hot wax to dare acceptor's skin",
       "extra": "Follow with knife play",
-      "spicyness": 51
+      "spicyness": 51,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno aplica cera caliente en la piel de quien acepta el reto",
+          "extra": "Sigue con el juego con el cuchillo"
+        },
+        "pt": {
+          "title": "O jogador da vez aplica cera quente na pele de quem aceita o desafio",
+          "extra": "Continue com o jogo de faca"
+        },
+        "zh": {
+          "title": "当前玩家将使用热蜡涂抹在勇敢另一位玩家的皮肤上"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay maglalapat ng mainit na waks upang maglakas-loob ng balat"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ bôi sáp nóng lên da của người chơi kia"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي بتطبيق الشمع الساخن على بشرة متلقي العناية"
+        },
+        "fr": {
+          "title": "Le joueur actuel appliquera de la cire chaude sur la peau de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 어셉터의 피부에 핫 왁스를 바를 것입니다"
+        },
+        "ru": {
+          "title": "Текущий игрок нанесет горячий воск на кожу другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè yo pral aplike sir cho nan dare po lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी की त्वचा पर हॉट वैक्स लगाएगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler trägt heißes Wachs auf die Haut des anderen Spieler auf"
+        },
+        "nl": {
+          "title": "De huidige speler zal hete was aanbrengen op de huid van de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz nałoży gorący wosk na skórę drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale applicherà cera calda sulla pelle di l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Dare acceptor will be restrained while the current player teases",
       "extra": "Add sensory deprivation",
-      "spicyness": 55
+      "spicyness": 55,
+      "translations": {
+        "es": {
+          "title": "Quien acepta el reto será inmovilizado mientras el jugador en turno se burla",
+          "extra": "Añade privación sensorial"
+        },
+        "pt": {
+          "title": "Quem aceita o desafio será restringido enquanto o jogador da vez brinca",
+          "extra": "Adicione privação sensorial"
+        },
+        "zh": {
+          "title": "当当前玩家开玩笑时，胆量另一位玩家将受到限制"
+        },
+        "tl": {
+          "title": "Pipigilan ang kabilang manlalaro habang ang kasalukuyang manlalaro ay nagsisisikap"
+        },
+        "vi": {
+          "title": "người chơi kia Dare sẽ bị hạn chế trong khi người chơi hiện tại trêu chọc"
+        },
+        "ar": {
+          "title": "سيتم تقييد اللاعب الآخر بينما يضايق اللاعب الحالي"
+        },
+        "fr": {
+          "title": "l'autre joueur sera retenu pendant que le joueur actuel taquine"
+        },
+        "ko": {
+          "title": "현재 플레이어가 놀리는 동안에는 데어 액셉터가 제지됩니다."
+        },
+        "ru": {
+          "title": "Пока текущий игрок будет дразнить, тот, кто принимает вызов, будет сдержан"
+        },
+        "ht": {
+          "title": "lòt jwè a yo pral restriksyon pandan y ap jwè aktyèl la teases"
+        },
+        "hi": {
+          "title": "दूसरा खिलाड़ी को रोक दिया जाएगा जबकि वर्तमान खिलाड़ी चिढ़ाता है"
+        },
+        "de": {
+          "title": "Der anderen Spieler wird zurückgehalten, während der aktuelle Spieler neckt."
+        },
+        "nl": {
+          "title": "De andere speler wordt in bedwang gehouden terwijl de huidige speler plaagt"
+        },
+        "pl": {
+          "title": "drugi gracz zostanie powstrzymany, gdy obecny gracz dokucza"
+        },
+        "it": {
+          "title": "L'accettatore di sfide verrà trattenuto mentre il giocatore attuale prende in giro"
+        }
+      }
     },
     {
       "title": "Current player will edge dare acceptor then stop",
       "extra": "Repeat until begging",
-      "spicyness": 59
+      "spicyness": 59,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno lleva a quien acepta el reto al borde del orgasmo y luego se detiene",
+          "extra": "Repite hasta rogar"
+        },
+        "pt": {
+          "title": "O jogador da vez leva quem aceita o desafio até perto do orgasmo e depois para",
+          "extra": "Repita até implorar"
+        },
+        "zh": {
+          "title": "当前玩家将击败冒险另一位玩家然后停止"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay mag-edge kabilang manlalaro pagkatapos ay huminto"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ chấp nhận edge dare sau đó dừng lại"
+        },
+        "ar": {
+          "title": "سيتفوق اللاعب الحالي على اللاعب الآخر ثم يتوقف"
+        },
+        "fr": {
+          "title": "Le joueur actuel devancera l'autre joueur puis s'arrêtera"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어를 이기다가 멈출 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок обойдет другой игрок, а затем остановится"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap kwen lòt jwè a Lè sa a, sispann"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को किनारे करेगा, फिर रुकेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler übertrifft den der andere Spieler und stoppt dann"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler verslaan en dan stoppen"
+        },
+        "pl": {
+          "title": "Obecny gracz wygra drugi gracz, a następnie zatrzyma"
+        },
+        "it": {
+          "title": "Il giocatore attuale supererà l'accettatore di sfide e poi si fermerà"
+        }
+      }
     },
     {
       "title": "Both players expose an intimate area while others watch",
       "extra": "Add toy stimulation",
-      "spicyness": 61
+      "spicyness": 61,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores exponen una zona íntima mientras otros miran",
+          "extra": "Añade estimulación con juguetes"
+        },
+        "pt": {
+          "title": "Ambos os jogadores expõem uma área íntima enquanto outros assistem",
+          "extra": "Adicione estimulação de brinquedo"
+        },
+        "zh": {
+          "title": "两名玩家都在露出私密区域，而其他人则在观看"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay inilalantad ng isang matalik na lugar habang"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều để lộ một khu vực thân mật trong khi những người khác xem"
+        },
+        "ar": {
+          "title": "يعرض كلا اللاعبين منطقة حميمة بينما يشاهد الآخرون"
+        },
+        "fr": {
+          "title": "Les deux joueurs exposent une zone intime pendant que les autres regardent"
+        },
+        "ko": {
+          "title": "다른 플레이어가 지켜보는 동안 두 플레이어 모두 친밀한 공간을 노출합니다."
+        },
+        "ru": {
+          "title": "Оба игрока обнажают интимную зону, а другие наблюдают"
+        },
+        "ht": {
+          "title": "Tou de jwè ekspoze yon zòn entim pandan ke lòt moun gade"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी अंतरंग क्षेत्र का पर्दाफाश करते हैं जबकि अन्य देखते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler legen einen intimen Bereich frei, während andere zuschauen"
+        },
+        "nl": {
+          "title": "Beide spelers leggen een intieme zone bloot terwijl anderen toekijken"
+        },
+        "pl": {
+          "title": "Obaj gracze odsłaniają intymny obszar, podczas gdy inni oglądają"
+        },
+        "it": {
+          "title": "Entrambi i giocatori espongono un'area intima mentre gli altri guardano"
+        }
+      }
     },
     {
       "title": "Current player will receive a sensual electrostimulation",
       "extra": "Target erogenous zones",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno recibirá una sensual electroestimulación",
+          "extra": "Apunte a las zonas erógenas"
+        },
+        "pt": {
+          "title": "O jogador da vez receberá uma eletroestimulação sensual",
+          "extra": "Zonas erógenas alvo"
+        },
+        "zh": {
+          "title": "当前玩家将获得感官电刺激"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay makakatanggap ng isang sensual electrostimuli"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ nhận được một sự kích thích điện gợi cảm"
+        },
+        "ar": {
+          "title": "سيتلقى اللاعب الحالي تحفيزًا كهربائيًا حسيًا"
+        },
+        "fr": {
+          "title": "Le joueur actuel recevra une électrostimulation sensuelle"
+        },
+        "ko": {
+          "title": "현재 플레이어는 감각적인 전기 자극을 받게 됩니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок получит чувственную электростимуляцию"
+        },
+        "ht": {
+          "title": "Jwè aktyèl ap resevwa yon sensuèl elèktrostimulasyon"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी को एक कामुक इलेक्ट्रोस्टिम्यूलेशन प्राप्त होगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler erhält eine sinnliche Elektrostimulation"
+        },
+        "nl": {
+          "title": "De huidige speler krijgt een sensuele elektrostimulatie"
+        },
+        "pl": {
+          "title": "Obecny gracz otrzyma zmysłową elektrostymulację"
+        },
+        "it": {
+          "title": "Il giocatore attuale riceverà una sensuale elettrostimolazione"
+        }
+      }
     },
     {
       "title": "Current player will create a predicament bondage challenge for dare acceptor",
       "extra": "Add electrostimulation penalty",
-      "spicyness": 65
+      "spicyness": 65,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno creará un desafío de bondage difícil para quien acepta el reto",
+          "extra": "Añade penalización por electroestimulación"
+        },
+        "pt": {
+          "title": "O jogador da vez criará um desafio difícil de bondage para quem aceita o desafio",
+          "extra": "Adicionar penalidade de eletroestimulação"
+        },
+        "zh": {
+          "title": "当前玩家将为另一位玩家创建困境束缚挑战"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay lumilikha ng isang hamon sa pagkaalipin para sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ tạo ra một thử thách trói buộc khó khăn cho người chơi kia"
+        },
+        "ar": {
+          "title": "سيخلق اللاعب الحالي مأزقًا يمثل تحديًا للعبودية لاللاعب الآخر."
+        },
+        "fr": {
+          "title": "Le joueur actuel créera un défi de bondage difficile pour l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 도전을 받아들이는 플레이어에게 곤경에 처한 속박 챌린지를 만들 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок устроит испытание на рабство в затруднительном положении для другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap kreye yon defi esklavaj predicament pou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के लिए एक दुर्दशा बंधन चुनौती तैयार करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird eine Bondage-Herausforderung für der andere Spieler erstellen"
+        },
+        "nl": {
+          "title": "De huidige speler zal een bondage-uitdaging creëren voor de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz stworzy wyzwanie związane z niewolą dla drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale creerà una sfida di bondage difficile per l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Current player will humiliate dare acceptor verbally",
       "extra": "Add physical demonstration",
-      "spicyness": 66
+      "spicyness": 66,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno humillará verbalmente a quien acepta el reto",
+          "extra": "Añade demostración física"
+        },
+        "pt": {
+          "title": "O jogador da vez humilhará verbalmente quem aceita o desafio",
+          "extra": "Adicionar demonstração física"
+        },
+        "zh": {
+          "title": "当前玩家将口头羞辱另一位玩家"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magpapahiwalain nang pasalita"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ làm nhục người chơi kia bằng lời nói"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي بإذلال اللاعب الآخر شفهيًا"
+        },
+        "fr": {
+          "title": "Le joueur actuel humiliera verbalement l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 감히 수락하는 사람을 구두로 모욕할 것입니다"
+        },
+        "ru": {
+          "title": "Нынешний игрок словесно унизит другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap imilye lòt jwè a vèbalman"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को मौखिक रूप से अपमानित करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird den der andere Spieler mündlich demütigen"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler verbaal vernederen"
+        },
+        "pl": {
+          "title": "Obecny gracz ustnie upokorzy drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale umilierà verbalmente chi accetta la sfida"
+        }
+      }
     },
     {
       "title": "Current player will force orgasm on dare acceptor",
       "extra": "Continue through overstimulation",
-      "spicyness": 69
+      "spicyness": 69,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno forzará el orgasmo en quien acepta el reto",
+          "extra": "Continúe con la sobreestimulación"
+        },
+        "pt": {
+          "title": "O jogador da vez forçará o orgasmo nquem aceita o desafio",
+          "extra": "Continue com a superestimulação"
+        },
+        "zh": {
+          "title": "当前玩家将强迫另一位玩家达到高潮"
+        },
+        "tl": {
+          "title": "Pilipilit ng kasalukuyang manlalaro ang orgasm sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ ép cực khoái đối với người chơi kia dare"
+        },
+        "ar": {
+          "title": "اللاعب الحالي سيجبر النشوة الجنسية على اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel forcera l'orgasme à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 상대 플레이어에 오르가즘을 강요할 것입니다"
+        },
+        "ru": {
+          "title": "Текущий игрок будет форсировать оргазм на другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap fòse orgasme sou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी पर संभोग करने के लिए मजबूर करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler erzwingt den der andere Spieler zum Orgasmus"
+        },
+        "nl": {
+          "title": "De huidige speler zal een orgasme afdwingen op de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz wymusi orgazm na drugi graczze odwagi"
+        },
+        "it": {
+          "title": "Il giocatore attuale forzerà l'orgasmo su l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Both players plan and execute a consensual non-consent roleplay",
       "extra": "Add impact play",
-      "spicyness": 71
+      "spicyness": 71,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores planifican y ejecutan un juego de rol consensuado y sin consentimiento",
+          "extra": "Añade Impact Play"
+        },
+        "pt": {
+          "title": "Ambos os jogadores planejam e executam um RPG consensual sem consentimento",
+          "extra": "Adicione um jogo de impacto"
+        },
+        "zh": {
+          "title": "两位玩家都计划并执行双方同意的未经同意的角色扮演"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nagpaplano at nagpapatupad ng isang pinagkasunduan"
+        },
+        "vi": {
+          "title": "Cả hai người chơi đều lên kế hoạch và thực hiện một game nhập vai không đồng ý"
+        },
+        "ar": {
+          "title": "يخطط كلا اللاعبين وينفذان لعب الأدوار بالتراضي بدون موافقة"
+        },
+        "fr": {
+          "title": "Les deux joueurs planifient et exécutent un jeu de rôle consensuel sans consentement"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 합의에 따른 비동의 역할극을 계획하고 실행합니다."
+        },
+        "ru": {
+          "title": "Оба игрока планируют и проводят ролевую игру без согласия"
+        },
+        "ht": {
+          "title": "Tou de jwè yo planifye ak egzekite yon konsansyèl role ki pa konsantman"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी सहमति से गैर-सहमति वाली रोलप्ले की योजना बनाते हैं और उसे अंजाम देते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler planen ein einvernehmliches Rollenspiel ohne Zustimmung und führen es durch"
+        },
+        "nl": {
+          "title": "Beide spelers plannen en voeren een rollenspel zonder toestemming uit"
+        },
+        "pl": {
+          "title": "Obaj gracze planują i wykonują zgodną rolę odgrywającą bez zgody"
+        },
+        "it": {
+          "title": "Entrambi i giocatori pianificano ed eseguono un gioco di ruolo consensuale senza consenso"
+        }
+      }
     },
     {
       "title": "Current player will suspend dare acceptor in partial bondage",
       "extra": "Add multiple sensations",
-      "spicyness": 75
+      "spicyness": 75,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno suspenderá al que acepte el desafío en régimen de bondage parcial",
+          "extra": "Añade múltiples sensaciones"
+        },
+        "pt": {
+          "title": "O jogador da vez suspenderá quem aceita o desafio em bondage parcial",
+          "extra": "Adicione várias sensações"
+        },
+        "zh": {
+          "title": "当前玩家将在部分束缚中暂停另一位玩家"
+        },
+        "tl": {
+          "title": "Sususpinde ng kasalukuyang manlalaro ang kabilang manlalaro sa bahagyang pagkaalipin"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ đình chỉ người chơi kia trong tình trạng trói buộc một phần"
+        },
+        "ar": {
+          "title": "سيعلق اللاعب الحالي اللاعب الآخر في العبودية الجزئية"
+        },
+        "fr": {
+          "title": "Le joueur actuel suspendra l'autre joueur en cas de bondage partiel"
+        },
+        "ko": {
+          "title": "현재 플레이어는 부분적 속박 상태에서는 데어 액셉터를 정지시킬 수 있습니다."
+        },
+        "ru": {
+          "title": "Текущий игрок приостановит действие другой игрок даров в частичном рабстве"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap sispann lòt jwè a nan esklavaj pasyèl"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी आंशिक बंधन में दूसरा खिलाड़ी को निलंबित कर देगा"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler sperrt den der andere Spieler in teilweiser Knechtschaft"
+        },
+        "nl": {
+          "title": "De huidige speler zal de andere speler in gedeeltelijke slavernij schorsen"
+        },
+        "pl": {
+          "title": "Obecny gracz zawiesi drugi gracz w częściowej niewoli"
+        },
+        "it": {
+          "title": "Il giocatore attuale sospenderà l'altro giocatore in schiavitù parziale"
+        }
+      }
     },
     {
       "title": "Both players engage in public play with risk of being seen",
       "extra": "Add remote control toy",
-      "spicyness": 78
+      "spicyness": 78,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan en público con el riesgo de ser vistos",
+          "extra": "Añade juguete de control remoto"
+        },
+        "pt": {
+          "title": "Ambos os jogadores participam de jogos públicos com risco de serem vistos",
+          "extra": "Adicionar brinquedo de controle remoto"
+        },
+        "zh": {
+          "title": "两位玩家都参与公共游戏，都有被人看见的风险"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakikisali sa pampublikong paglalaro na may panganib"
+        },
+        "vi": {
+          "title": "Cả hai người chơi tham gia chơi công cộng với nguy cơ bị nhìn thấy"
+        },
+        "ar": {
+          "title": "يشارك كلا اللاعبين في اللعب العام مع خطر الظهور"
+        },
+        "fr": {
+          "title": "Les deux joueurs jouent en public avec le risque d'être vus"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 노출될 위험을 무릅쓰고 공개 플레이에 참여합니다."
+        },
+        "ru": {
+          "title": "Оба игрока участвуют в публичных играх, рискуя быть замеченными"
+        },
+        "ht": {
+          "title": "Tou de jwè yo angaje yo nan jwe piblik ak risk pou yo te wè"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी देखे जाने के जोखिम के साथ सार्वजनिक खेल में संलग्न हैं"
+        },
+        "de": {
+          "title": "Beide Spieler spielen in der Öffentlichkeit und laufen Gefahr, gesehen zu werden"
+        },
+        "nl": {
+          "title": "Beide spelers spelen in het openbaar met het risico gezien te worden"
+        },
+        "pl": {
+          "title": "Obaj gracze biorą udział w publicznej grze z ryzykiem, że zostaną zauważeni"
+        },
+        "it": {
+          "title": "Entrambi i giocatori giocano in pubblico con il rischio di essere visti"
+        }
+      }
     },
     {
       "title": "Current player will administer violet wand to dare acceptor",
       "extra": "Add sound effects",
-      "spicyness": 79
+      "spicyness": 79,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno usa una varita violeta en quien acepta el reto",
+          "extra": "Añade efectos de sonido"
+        },
+        "pt": {
+          "title": "O jogador da vez usa uma varinha violeta em quem aceita o desafio",
+          "extra": "Adicione efeitos sonoros"
+        },
+        "zh": {
+          "title": "当前玩家将使用紫色魔杖对付另一位玩家"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magpapangasiwa ng violet wand upang maglakas-loob na"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ quản lý cây đũa phép màu tím cho người chơi kia"
+        },
+        "ar": {
+          "title": "سيدير اللاعب الحالي العصا البنفسجية ليتحدى المتلقي"
+        },
+        "fr": {
+          "title": "Le joueur actuel administrera une baguette violette à l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 바이올렛 지팡이를 사용하여 감히 수락할 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок будет управлять фиолетовой палочкой, чтобы осмелиться другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap administre ralonj vyolèt yo lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी को वायलेट वैंड का प्रशासन करेगा"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler verabreicht violetten Zauberstab an der andere Spieler"
+        },
+        "nl": {
+          "title": "De huidige speler zal de Violet Wand to andere speler toedienen"
+        },
+        "pl": {
+          "title": "Obecny gracz będzie administrować fioletową różdżką, aby odważyć się drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale somministrerà violet wand a l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Current player will use dull knife play on dare acceptor",
       "extra": "Add blood play",
-      "spicyness": 81
+      "spicyness": 81,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace juego con cuchillo sin filo con quien acepta el reto",
+          "extra": "Agrega juego con sangre"
+        },
+        "pt": {
+          "title": "O jogador da vez faz jogo com faca sem fio em quem aceita o desafio",
+          "extra": "Adicione jogo com sangue"
+        },
+        "zh": {
+          "title": "当前玩家将在 另一位玩家 上使用沉闷的刀法"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay gagamitin ng mapasok na kutsilyo sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ sử dụng Dull Knife Play trên người chơi kia"
+        },
+        "ar": {
+          "title": "سيستخدم اللاعب الحالي لعبة السكين الباهتة على اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel utilisera un jeu de couteau ennuyeux sur l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터에서 둔한 나이프 플레이를 사용합니다."
+        },
+        "ru": {
+          "title": "Текущий игрок будет использовать игру с тупым ножом на другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè yo pral sèvi ak mat kouto jwe sou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी पर डल नाइफ प्ले का उपयोग करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler wird Dull Knife Play auf der andere Spieler verwenden"
+        },
+        "nl": {
+          "title": "De huidige speler zal saai messenspel gebruiken op andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz użyje nudnej gry nożem na drugi graczze odwagi"
+        },
+        "it": {
+          "title": "Il giocatore attuale utilizzerà Dull Knife play su l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Current player will perform needle play on dare acceptor",
       "extra": "Add decorative pattern",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace juego con agujas con quien acepta el reto",
+          "extra": "Añade patrón decorativo"
+        },
+        "pt": {
+          "title": "O jogador da vez faz jogo com agulhas em quem aceita o desafio",
+          "extra": "Adicionar padrão decorativo"
+        },
+        "zh": {
+          "title": "当前玩家将对冒险另一位玩家进行针头游戏"
+        },
+        "tl": {
+          "title": "Magsasagawa ang kasalukuyang manlalaro ng karayom sa kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ chơi kim trên người chơi kia"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي باللعب بالإبرة على اللاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel jouera à l'aiguille sur un l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 데어 액셉터에서 니들 플레이를 할 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок будет играть иглой на другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap fè zegwi jwe sou lòt jwè a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी पर सुई प्ले करेगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler führt Needle Play auf der andere Spieler durch"
+        },
+        "nl": {
+          "title": "De huidige speler zal naaldspel uitvoeren op de andere speler"
+        },
+        "pl": {
+          "title": "Obecny gracz wykona grę igłą na drugi graczze dare"
+        },
+        "it": {
+          "title": "Il giocatore attuale eseguirà un gioco con ago su l'altro giocatore"
+        }
+      }
     },
     {
       "title": "Both players engage in fire play with proper safety",
       "extra": "Add wax removal play",
-      "spicyness": 85
+      "spicyness": 85,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores participan en el juego con fuego con la debida seguridad",
+          "extra": "Añade juego de eliminación de cera"
+        },
+        "pt": {
+          "title": "Ambos os jogadores jogam fogo com a devida segurança",
+          "extra": "Adicione um jogo de remoção de cera"
+        },
+        "zh": {
+          "title": "两名玩家都在适当的安全条件下进行射击"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakikisali sa paglalaro ng apoy"
+        },
+        "vi": {
+          "title": "Cả hai người chơi tham gia vào trò chơi lửa với sự an toàn thích hợp"
+        },
+        "ar": {
+          "title": "يشارك كلا اللاعبين في اللعب بالنار بأمان مناسب"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'engagent dans un jeu de tir en toute sécurité"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 적절한 안전을 가지고 파이어 플레이에 참여합니다."
+        },
+        "ru": {
+          "title": "Оба игрока участвуют в игре с огнем в условиях надлежащей безопасности"
+        },
+        "ht": {
+          "title": "Tou de jwè angaje yo nan jwe dife ak sekirite apwopriye"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी उचित सुरक्षा के साथ फायर प्ले में शामिल होते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler spielen mit angemessener Sicherheit ein Feuerspiel."
+        },
+        "nl": {
+          "title": "Beide spelers spelen met de nodige veiligheid met vuur"
+        },
+        "pl": {
+          "title": "Obaj gracze angażują się w grę ogniową z odpowiednim bezpieczeństwem"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si impegnano in un gioco di fuoco con la dovuta sicurezza"
+        }
+      }
     },
     {
       "title": "Both players engage in breath play with orgasm control",
       "extra": "Add orgasm denial",
-      "spicyness": 91
+      "spicyness": 91,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores juegan con la respiración y controlan el orgasmo.",
+          "extra": "Añade negación del orgasmo"
+        },
+        "pt": {
+          "title": "Ambos os jogadores praticam jogos respiratórios com controle de orgasmos",
+          "extra": "Adicionar negação do orgasmo"
+        },
+        "zh": {
+          "title": "两位玩家都在控制性高潮的情况下进行呼吸游戏"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakikibahagi sa paglalaro ng paghinga"
+        },
+        "vi": {
+          "title": "Cả hai người chơi tham gia chơi hơi thở với khả năng kiểm soát cực khoái"
+        },
+        "ar": {
+          "title": "يشارك كلا اللاعبين في لعب التنفس مع التحكم في النشوة الجنسية"
+        },
+        "fr": {
+          "title": "Les deux joueurs jouent à un jeu de respiration avec contrôle de l'orgasme"
+        },
+        "ko": {
+          "title": "두 선수 모두 오르가즘 조절을 통해 호흡 놀이를 합니다."
+        },
+        "ru": {
+          "title": "Оба игрока играют на дыхании, контролируя оргазм"
+        },
+        "ht": {
+          "title": "Tou de jwè angaje yo nan souf jwe ak kontwòl orgasm"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी कामोन्माद नियंत्रण के साथ सांस खेलने में संलग्न हैं"
+        },
+        "de": {
+          "title": "Beide Spieler spielen Atemspiele mit Orgasmuskontrolle"
+        },
+        "nl": {
+          "title": "Beide spelers spelen ademspel met beheersing van het orgasme"
+        },
+        "pl": {
+          "title": "Obaj gracze angażują się w grę oddechową z kontrolą orgazmu"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si impegnano in un gioco del respiro con il controllo dell'orgasmo"
+        }
+      }
     },
     {
       "title": "Current player will administer electrostimulation to dare acceptor's genitals",
       "extra": "Aim for multiple orgasms",
-      "spicyness": 92
+      "spicyness": 92,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno aplica electroestimulación en los genitales de quien acepta el reto",
+          "extra": "Apunta a tener orgasmos múltiples"
+        },
+        "pt": {
+          "title": "O jogador da vez aplica eletroestimulação nos genitais de quem aceita o desafio",
+          "extra": "Procure orgasmos múltiplos"
+        },
+        "zh": {
+          "title": "当前玩家将使用电刺激来刺激受者的生殖器"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magbibigay ng electrostimulasyon upang maglakas-loob ng maselang bahagi"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ thực hiện kích thích điện để ngăn chặn bộ phận sinh dục của người nhận"
+        },
+        "ar": {
+          "title": "سيقوم اللاعب الحالي بإدارة التحفيز الكهربائي لتجريد الأعضاء التناسلية للاعب الآخر"
+        },
+        "fr": {
+          "title": "Le joueur actuel administrera une électrostimulation aux parties génitales de l'autre joueur"
+        },
+        "ko": {
+          "title": "현재 플레이어는 감히 수용자의 성기에 전기 자극을 가할 것입니다."
+        },
+        "ru": {
+          "title": "Нынешний игрок будет проводить электростимуляцию гениталий другой игрок"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap administre electrostimulation nan dare jenital lòt jwè a a"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी दूसरा खिलाड़ी के जननांगों को डेयर करने के लिए इलेक्ट्रोस्टिम्यूलेशन का प्रशासन करेगा"
+        },
+        "de": {
+          "title": "Derzeitiger Spieler führt Elektrostimulation durch, um die Genitalien des anderen Spieler zu bekommen"
+        },
+        "nl": {
+          "title": "De huidige speler zal elektrostimulatie toedienen om de genitaliën van de andere speler te durven"
+        },
+        "pl": {
+          "title": "Obecny gracz podda elektrostymulację genitaliów drugi gracz"
+        },
+        "it": {
+          "title": "Il giocatore attuale somministrerà l'elettrostimolazione ai genitali di DarAceptor"
+        }
+      }
     },
     {
       "title": "Current player will give breath play to dare acceptor using safe signals",
       "extra": "Add genital stimulation",
-      "spicyness": 96
+      "spicyness": 96,
+      "translations": {
+        "es": {
+          "title": "El jugador en turno hace juego de respiración con quien acepta el reto usando señales seguras",
+          "extra": "Añade estimulación genital"
+        },
+        "pt": {
+          "title": "O jogador da vez faz jogo de respiração com quem aceita o desafio usando sinais seguros",
+          "extra": "Adicione estimulação genital"
+        },
+        "zh": {
+          "title": "当前玩家将使用安全信号向另一位玩家屏住呼吸"
+        },
+        "tl": {
+          "title": "Ang kasalukuyang manlalaro ay magbibigay ng paglalaro ng hininga upang kabilang manlalaro"
+        },
+        "vi": {
+          "title": "Người chơi hiện tại sẽ chơi hơi thở cho người chơi kia bằng cách sử dụng tín hiệu an toàn"
+        },
+        "ar": {
+          "title": "سوف يقوم اللاعب الحالي بتشغيل النفس ليتجرأ على المتلقي باستخدام إشارات آمنة"
+        },
+        "fr": {
+          "title": "Le joueur actuel fera jouer son souffle à l'autre joueur en utilisant des signaux sûrs"
+        },
+        "ko": {
+          "title": "현재 플레이어는 안전한 신호를 사용하여 데어 액셉터에게 브레스 플레이를 할 것입니다."
+        },
+        "ru": {
+          "title": "Текущий игрок даст дыхание, сыграет, чтобы осмелиться, другой игрок, используя безопасные сигналы"
+        },
+        "ht": {
+          "title": "Aktyèl jwè ap bay souf jwe nan lòt jwè a lè l sèvi avèk siyal ki an sekirite"
+        },
+        "hi": {
+          "title": "वर्तमान खिलाड़ी सुरक्षित संकेतों का उपयोग करके दूसरा खिलाड़ी को ब्रेथ प्ले देगा"
+        },
+        "de": {
+          "title": "Der aktuelle Spieler gibt Atemspiel, um den der andere Spieler zu wagen und sichere Signale zu verwenden"
+        },
+        "nl": {
+          "title": "De huidige speler zal met behulp van veilige signalen ademspelen om de andere speler te durven"
+        },
+        "pl": {
+          "title": "Obecny gracz da grę oddechu drugi gracz za pomocą bezpiecznych sygnałów"
+        },
+        "it": {
+          "title": "Il giocatore attuale darà respiro, gioca a l'altro giocatore usando segnali sicuri"
+        }
+      }
     },
     {
       "title": "Both players engage in extreme consensual non-consent scene with penetration",
       "extra": "Add audience participation",
-      "spicyness": 99
+      "spicyness": 99,
+      "translations": {
+        "es": {
+          "title": "Ambos jugadores participan en una escena extrema de no consentimiento consensuado con penetración",
+          "extra": "Añade participación de la audiencia"
+        },
+        "pt": {
+          "title": "Ambos os jogadores se envolvem em uma cena extrema de não consentimento consensual com penetração",
+          "extra": "Adicione a participação do público"
+        },
+        "zh": {
+          "title": "两位玩家都参与了极端的自愿未经同意的场景"
+        },
+        "tl": {
+          "title": "Ang parehong mga manlalaro ay nakikisali sa matinding pinagkasunduan na eksena na hindi"
+        },
+        "vi": {
+          "title": "Cả hai người chơi tham gia vào cảnh không đồng ý cực đoan với sự thâm nhập"
+        },
+        "ar": {
+          "title": "ينخرط كلا اللاعبين في مشهد عدم الموافقة التوافقي الشديد مع الاختراق"
+        },
+        "fr": {
+          "title": "Les deux joueurs s'engagent dans une scène de non-consentement extrêmement consensuelle avec pénétration"
+        },
+        "ko": {
+          "title": "두 플레이어 모두 침투를 통해 극도의 합의에 따른 비동의 장면에 참여합니다."
+        },
+        "ru": {
+          "title": "Оба игрока участвуют в экстремальной сцене несогласия по обоюдному согласию с проникновением"
+        },
+        "ht": {
+          "title": "Tou de jwè angaje yo nan ekstrèm konsansyèl ki pa konsantman sèn ak pénétr"
+        },
+        "hi": {
+          "title": "दोनों खिलाड़ी प्रवेश के साथ अत्यधिक सहमतिपूर्ण गैर-सहमति वाले दृश्य में संलग्न होते हैं"
+        },
+        "de": {
+          "title": "Beide Spieler lassen sich auf eine extrem einvernehmliche Nichteinwilligungsszene ein, in der es um Penetration geht"
+        },
+        "nl": {
+          "title": "Beide spelers nemen deel aan een extreme consensuele scène zonder toestemming met penetratie"
+        },
+        "pl": {
+          "title": "Obaj gracze angażują się w ekstremalną zgodę scenę bez zgody z penetracją"
+        },
+        "it": {
+          "title": "Entrambi i giocatori si impegnano in una scena di mancato consenso estrema con penetrazione"
+        }
+      }
     }
   ]
 }
